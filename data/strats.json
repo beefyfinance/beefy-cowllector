@@ -1,0 +1,651 @@
+[
+  {
+    "name": "pancake-bdo/bnb",
+    "address": "0x2B19461954cCBa9e1b60bD0bC6453FeaC8aa1a17",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": true
+  },
+  {
+    "name": "pancake-bscx/bnb",
+    "address": "0x0955479C61B37074d689319fCaA84ffE1E9e8CF5",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-bhc/bnb",
+    "address": "0xc1673bD18Ee17a404563c798000e22947406217f",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-jgn/bnb",
+    "address": "0xCDCc6A0340b4b98Efa90F4344A36802C1104093e",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-unfi/bnb",
+    "address": "0xFB9Fb325D9BF39eF6783c37C025a04AA9c45309F",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-reef/bnb",
+    "address": "0x431159f856067293e650A02D37390eEe3adfb5c3",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-stax/cake",
+    "address": "0x4CC48562fC7272f580aeb39824D14B7B3C9d7B8b",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-nar/cake",
+    "address": "0x8CeF7764ca731F5D81f1F22cA28E57B6E2595cd4",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-nya/cake",
+    "address": "0xb042bd0E0f7Bf06c69Ecb0c4eC74b79D60b33F7e",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-pk-fuel/bnb",
+    "address": "0xCCa9344C12e8f4914CF92bc21DEEBFC48617228D",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-street-fuel/bnb",
+    "address": "0x8f4ca8E2e230b44f46B93db117380bBb8281f841",
+    "interval": 3,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-street-bhc/bnb",
+    "address": "0x8A91e53cdd652b96655b526656b4DB1141bCc6f6",
+    "interval": 3,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-pk-eth/bnb",
+    "address": "0xb16ceE470632ba94b7d21d2bC56d284ff0b0C04C",
+    "interval": 5,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-pk-cake/bnb",
+    "address": "0xBF36AF3bfE6C4cD0286C24761060488eB1af2618",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-pk-uni/bnb",
+    "address": "0xf8B5Cb47232938f1A75546fA5182b8af312Fc380",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-pk-link/bnb",
+    "address": "0xfA416c3b89cc2E7902F58A4bEA62Ab7E24bd5985",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-pk-busd/bnb",
+    "address": "0x45973436B06e46dc37333e65f98A190A392476a4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-pk-usdt/bnb",
+    "address": "0xB126E22F4d9EfE943c94E0Ef493FF34f98AdC9E1",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-twt/bnb",
+    "address": "0x3553f97B823F48E0C382859B4d943E96c4DAc207",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-sxp/bnb",
+    "address": "0x798552Be40E2aF875F771a5A200975E3Db544FF4",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-xvs/bnb",
+    "address": "0x00e0EA0fd65917D723EA930a16d3CBb94Fe3E2eF",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-inj/bnb",
+    "address": "0xfE9737A98f7a8fAA465A442c9fe5473328d2725f",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-unfi/bnb",
+    "address": "0xCDE1BecE18756EE67e32D877326187871055dA6E",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-ltc/bnb",
+    "address": "0x857b119e2494f8b4E06dd23BcbaB4aF4F1820dEa",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-alpha/bnb",
+    "address": "0xfF51E64c17939F6aDf6Ad3da2d2fC440Ac7Cdc3f",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-yfii/bnb",
+    "address": "0xAA5C69Dc405541245221Bfa94E726A188BdF3760",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-yfi/bnb",
+    "address": "0x285D7853E73150A6061841d56dd7f06361Df25d9",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-fil/bnb",
+    "address": "0xAcd76cc6d7bE45bCAf726FCE9627d988208b366C",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-band/bnb",
+    "address": "0x88A1a5A9775548ebA0E8A69859a07524407AA69c",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-atom/bnb",
+    "address": "0xb6f1aF249f8b17ed25B4842007FdD1ee69cC7950",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-vai/busd",
+    "address": "0x507c55A7DC12D76dC41f0436f4Bc7f7c6634C68d",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-broobee/cake",
+    "address": "0x20ef822E27428D06c80326423Fba8C05cA1BA776",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-bch",
+    "address": "0x70C247ac8323B9ca340857d2893F4aa4F7E16D5f",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-dot",
+    "address": "0xBB0C9d495F555E754ACDb76Ed127a9C115132206",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-link",
+    "address": "0x131fE92ff0288915883d6c122Cb76D68c5145D87",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-sxp",
+    "address": "0x8c1244aCCD534025641CFF00D4ee5616FcbeE154",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-usdc",
+    "address": "0xe865Ba185895634D094767688aC1c69751cb06aa",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-usdt",
+    "address": "0x45640eE6e2BE2bA6752909f2e57C32C4997965d2",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-busd",
+    "address": "0x77ed2908e3cE2197882993DF9432E69079b146B6",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-bnb",
+    "address": "0xfa3ccb086bf371a2ff33db8521be47c5b4b9d10e",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-btcb",
+    "address": "0xCA26A1f9d3e6Ec97a555d9444f782d61b64C1B0e",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-eth",
+    "address": "0x825B59385221be27495056c08c8FE38941126ffa",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-ltc",
+    "address": "0x555d9D68e96b954B9B527B7A41a9cA01311A537A",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-xrp",
+    "address": "0x76788df486C07750Ce915D88093872470e5e3E45",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "narwhal-gold/bnb",
+    "address": "0x3661576d5Ecc42b7aA84b0749d8d3180eE6D1Be4",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "narwhal-thugs/nar",
+    "address": "0xceA24d77AEB7C250be8F0F72F5Aab307cc3A6f1E",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-alpha/bnb",
+    "address": "0x6663aec74F26322C9E04A64417d146Fb52FE10B6",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-inj/bnb",
+    "address": "0x55c5280251DAd26fB6C1d175eb33Aa201aC1B9E0",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-twt/bnb",
+    "address": "0x03368dFCFa37f89ef10Bab2501350FD7e20b2D6a",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-xvs/bnb",
+    "address": "0xd4402810E985F0A1AB4cDB15cEc3c6c217F9e730",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bakery-btc-bnb",
+    "address": "0x3c9c884efab85c44d675039de227b3dd275c360e",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bakery-bake",
+    "address": "0xf35FE19042190C5135D1452E188131FA0243cA81",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bakery-bake-bnb",
+    "address": "0x31bd4354066B48D662aA472A5851FeD51030c147",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bakery-bake-busd",
+    "address": "0xF0D037813e4bCC21E4ED38F2fA506522181699Bb",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "paused": true
+  },
+  {
+    "name": "street-bch/bnb",
+    "address": "0xB5968312cEBED11E5DDF7b3b56c28Ae084d290C7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-link/bnb",
+    "address": "0x4fB6fA862081796fe22f9D527A27dE6e2779Be59",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-nar/bnb",
+    "address": "0x8329ef7D376389F20F4f8CB8279f5D02dcC3CB23",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-cake-cake",
+    "address": "0x229959480e7dc01B0F73d492101f8745EF4d4Ada",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-cake/bnb-cake",
+    "address": "0xf5d90f1b58927DCCedb741C9848c981372e86774",
+    "interval": 12,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-cake-twt-v2",
+    "address": "0xb64A810e2E073293FbaB16ec0f5A948518FB1b8d",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "thugs-drugs-guns",
+    "address": "0xc641bFAAA6D78e506F4f58d5b2b0ce911DBB9a82",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "thugs-drugs-bhc",
+    "address": "0x14A47F1c7be1C5e904EcF68868e97F8b87Cb52B7",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "thugs-drugs-jgn",
+    "address": "0x4ab29191006f58a0a966a4703bE2c9bad5028657",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-drugs/bnb",
+    "address": "0x87f86C9D9676A77aCC068528AB934B5CbBFe9479",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-thugs/bnb",
+    "address": "0x82FCd3c30E8353e432c5F2Da10eE586015717B00",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-cred/bnb",
+    "address": "0xc898F4ee9F3194d6Ed8B8D0E567100cE8038Eb57",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-guns/bnb",
+    "address": "0xe79fF4C4E1D78a483C63583330dCC7319f05aFDf",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-busd/bnb",
+    "address": "0x19A246CE9698eEEf9a6C851C034f6f3E71E4902f",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-btc/bnb",
+    "address": "0x14FCa2E3337eB956d9c810652216EFe147E0CEF8",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-eth/bnb",
+    "address": "0x70aEf5d199fDfaAC5A81747C8b7C91F77f2B6F54",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-pancakeswap-thugs/bnb",
+    "address": "0xb506bEF03ec669f122c0F276e3848239aB829Dbb",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-narwhal-thugs/bnb",
+    "address": "0x7b8056527faF16FF0BF2742A79Fe3b1C9A27fD7e",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-dai/bnb",
+    "address": "0x0042Fb96b4Ef358b65F8d11c8D7d703C41c2d1b3",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-usdt/bnb",
+    "address": "0x9204F0d9aC07c839fbCb0c22c326ccef51A8Aba4",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-bliq/bnb",
+    "address": "0x7f4deaca74a6aBbc573FB8FDf244D6d0e4c07976",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-eos/bnb",
+    "address": "0x21428EABd16a2610f6b7221B0FE2Ab7Eb903088a",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-bifi/bnb",
+    "address": "0x6A164e8DF6F554Cb2C9F4CF9a407E799b60fF497",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-bhc/bnb",
+    "address": "0x5C3847e558a82af69ab2aCe7A8eCe39E3d81A861",
+    "interval": 9,
+    "harvestSignature": "0x4641257d",
+    "paused": true
+  },
+  {
+    "name": "pancake-bnb/busd-cake",
+    "address": "0x320E9bbe84277dcB61B262c47beBEC815eb29431",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-usdt/busd-cake",
+    "address": "0x143F7d08B4AEB964662c590d52348BC65E831375",
+    "interval": 48,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-bnb/btcb-cake",
+    "address": "0xf2E87DDE08679Bb7860dF108e93611dC02F3f8A4",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": true
+  },
+  {
+    "name": "pancake-usdt/bnb-cake",
+    "address": "0xbA7E0199FEB4D2d69ABC66A77E055e0a57123C5C",
+    "interval": 48,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-eth/bnb-cake",
+    "address": "0xC4c6d4Aee9fb3A4D9aAc769f8a937802E8c9e93E",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-link/bnb-cake",
+    "address": "0x091F3E6Bb027091A7256796675cc675818a25D31",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "fry-burger-v2",
+    "address": "0x7FBA53a4DB251C4364998631E6e88b4445bF21C0",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "fortube-busd",
+    "address": "0xceeA52d3B8af005e87b309B8620038d5dA4cFCda",
+    "want": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+    "interval": 160,
+    "subsidy": 10000,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "fortube-link",
+    "address": "0x97c16Baf08f10bEa1B0E0Cd38D9aEEc282632d84",
+    "interval": 160,
+    "want": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD",
+    "subsidy": 10000,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "fortube-btcb",
+    "address": "0x3bb71a7C10Efe5FA47B5fE5B8A9162102F33fEb8",
+    "interval": 160,
+    "want": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+    "subsidy": 10000,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "fortube-dot",
+    "address": "0x419795e7743576aaf587bD84631363D577be5153",
+    "interval": 160,
+    "want": "0x7083609fCE4d1d8Dc0C979AAb8c869Ea2C873402",
+    "subsidy": 10000,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "fortube-usdt",
+    "address": "0xD3dBcd17d2f48C9BC937D3fADF3Ded5966878dD7",
+    "interval": 160,
+    "want": "0x55d398326f99059fF775485246999027B3197955",
+    "subsidy": 10000,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "fortube-fil",
+    "address": "0x201F67420C509Bc135a527D25260e09DFba25C68",
+    "interval": 160,
+    "want": "0x0D8Ce2A99Bb6e3B7Db580eD848240e4a0F9aE153",
+    "subsidy": 10000,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  }
+]
