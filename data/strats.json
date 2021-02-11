@@ -1,5 +1,27 @@
 [
   {
+    "name": "auto-cake",
+    "address": "0xf8d51dd4D9EbE8473646De7402E5CDCd152C646e",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "auto-wbnb",
+    "address": "0xF38Bed33017f5885c8AB5956A153F7a906b5dC1b",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "auto-busd",
+    "address": "0x1b27b7083a9BdA1aCD04266F61DF646f8296a872",
+    "interval": 12,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+
+  {
     "name": "sponge-spg-bnb",
     "address": "0x6B32e90a07be49e5b1F622f314292b206CA8ED4f",
     "interval": 2,
