@@ -3,10 +3,12 @@ const BandChain = require('@bandprotocol/bandchain.js');
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
+  bakery:    'https://api.beefy.finance/bakery/price',
   bakeryLp:  'https://api.beefy.finance/bakery/lps',
   bdollarLp: 'https://api.beefy.finance/bdollar/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
+  monsterLP: 'https://api.beefy.finance/monster/lps',
   narwhalLp: 'https://api.beefy.finance/narwhal/lps',
   pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
@@ -122,6 +124,10 @@ const fetchPrice = async ({ oracle, id }) => {
     case 'band':
       price = await fetchBand(id);
       break;
+    
+    case 'bakery':
+      price = await fetchLP(id, endpoints.bakery);
+      break;
 
     case 'bakery-lp':
       price = await fetchLP(id, endpoints.bakeryLp);
@@ -137,6 +143,10 @@ const fetchPrice = async ({ oracle, id }) => {
     
     case 'jetfuel-lp':
       price = await fetchLP(id, endpoints.jetfuelLp);
+      break;
+
+    case 'monster-lp':
+      price = await fetchLP(id, endpoints.monsterLP);
       break;
     
     case 'narwhal-lp':

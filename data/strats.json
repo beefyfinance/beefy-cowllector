@@ -1,127 +1,345 @@
 [
   {
-    "name": "pancake-bdo/bnb",
-    "address": "0x2B19461954cCBa9e1b60bD0bC6453FeaC8aa1a17",
+    "name": "sponge-spg-bnb",
+    "address": "0x6B32e90a07be49e5b1F622f314292b206CA8ED4f",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "sponge-soak-bnb",
+    "address": "0x882c844d8b1075D592aFA3F13a3aaF6A6E9c43c3",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "monster-mss-busd",
+    "address": "0xe1a8EeA58D63Ea64d00365531D266C2AD1f62FC4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jul-juld",
+    "address": "0x2a4B113ac4B5c7cCecB86E293F3FeEbBda18D04A",
     "interval": 6,
     "harvestSignature": "0x4641257d",
-    "paused": true
+    "paused": false
+  },
+  {
+    "name": "cake-bdo-bnb",
+    "address": "0xc662244541e857F3D444b5D2D99068CD9254cFd8",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "kebab",
+    "address": "0x9386a67ab53fec3afD3Af6dDafAd97Ed3E083C81",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "kebab-kebab/busd",
+    "address": "0x9E75f8298e458B76382870982788988A0799195b",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "kebab-kebab/bnb",
+    "address": "0x7C4b7f588CF7f365C12F245943F729DC1818771f",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+
+  {
+    "name": "cake-mamzn/ust",
+    "address": "0x8F86077f526230Ac30de6f0220C2A9111C144556",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-mgoogl/ust",
+    "address": "0x05b3C486C2502E8F6Cb3F6bce2b99C28693eBf02",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-mnflx/ust",
+    "address": "0x109A4437588a3daFf04887FE22843c4824E849F9",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-mtsla/ust",
+    "address": "0xF215A127A196e3988C09d052e16BcFD365Cd7AA3",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-wsote/bnb",
+    "address": "0xec66b4D4b1963e1DfD644824F59C56EA55Aa0F07",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-front/bnb",
+    "address": "0x05040fA951274d1D9bC568C5C684c687322d9307",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-btcst/bnb",
+    "address": "0xD403FAe0eB11D381C3C62961bAB14d34d60873CE",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bhc-bhc",
+    "address": "0x54b083Ca9fD30ae83C47CDd3a59390F00a90E9CC",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "thugs-drugs-btri",
+    "address": "0x42d15E12944fadca77f05744E0268ce4dfCF6016",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-btri/bnb",
+    "address": "0x39d575905815f7dBFB9231C5475E5A33759993a9",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "street-btri/cred",
+    "address": "0x8792D4749b40B3A5d388fD95aac95Cf24d1179d3",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-ltc/bnb",
+    "address": "0x0892a178c363b4739e5Ac89E9155B9c30214C0c0",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-ada/bnb",
+    "address": "0x57FdEB65b71e6aD212088E63E85825e314F2Ea62",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "cake-dot/bnb",
+    "address": "0x7715d9458683288024B9e20D1319DC162361B06c",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bakery-bake/busd",
+    "address": "0xF0D037813e4bCC21E4ED38F2fA506522181699Bb",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "jetfuel-vapor/bnb",
+    "address": "0xf6274138DD2D9eBe768a4220A4089c45d9a26fCa",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bdollar-sbdo/bnb-sbdo",
+    "address": "0xD1533fad98479700Dd620852C45FAFe93b04A2B7",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bdollar-sbdo/busd",
+    "address": "0xAFd5DF73D0369d3ADB4Db524609ef30039AE22A7",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "bdollar-bdo/busd",
+    "address": "0x5364F346B22EfB14a08b8eCe406e25d9776A0eAE",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-beth",
+    "address": "0x0a350c62f4b8C7dA93fBca469e53a182b5BBD044",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-dai",
+    "address": "0x3c2C339d05d4911894F08Dd975e89630D7ef4234",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "venus-fil",
+    "address": "0xd49FD324F041665950EDe4Ed9719924EE37155C3",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-ten/bnb",
+    "address": "0x2fbB1caF6271A14b13F3432f3aB2D6aF102560fA",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
+    "name": "pancake-balbt/bnb",
+    "address": "0x25DE69dA4469A96974FaE79d0C41366A63317FDC",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "paused": false
   },
   {
     "name": "pancake-bscx/bnb",
     "address": "0x0955479C61B37074d689319fCaA84ffE1E9e8CF5",
-    "interval": 6,
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-bhc/bnb",
     "address": "0xc1673bD18Ee17a404563c798000e22947406217f",
-    "interval": 6,
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-jgn/bnb",
     "address": "0xCDCc6A0340b4b98Efa90F4344A36802C1104093e",
-    "interval": 6,
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "pancake-unfi/bnb",
     "address": "0xFB9Fb325D9BF39eF6783c37C025a04AA9c45309F",
-    "interval": 6,
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "pancake-reef/bnb",
     "address": "0x431159f856067293e650A02D37390eEe3adfb5c3",
-    "interval": 6,
+    "interval": 2,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "pancake-stax/cake",
     "address": "0x4CC48562fC7272f580aeb39824D14B7B3C9d7B8b",
-    "interval": 6,
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "pancake-nar/cake",
     "address": "0x8CeF7764ca731F5D81f1F22cA28E57B6E2595cd4",
-    "interval": 6,
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "pancake-nya/cake",
     "address": "0xb042bd0E0f7Bf06c69Ecb0c4eC74b79D60b33F7e",
-    "interval": 6,
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-pk-fuel/bnb",
     "address": "0xCCa9344C12e8f4914CF92bc21DEEBFC48617228D",
-    "interval": 6,
+    "interval": 4,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-street-fuel/bnb",
     "address": "0x8f4ca8E2e230b44f46B93db117380bBb8281f841",
-    "interval": 3,
+    "interval": 4,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-street-bhc/bnb",
     "address": "0x8A91e53cdd652b96655b526656b4DB1141bCc6f6",
-    "interval": 3,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-pk-eth/bnb",
     "address": "0xb16ceE470632ba94b7d21d2bC56d284ff0b0C04C",
-    "interval": 5,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-pk-cake/bnb",
     "address": "0xBF36AF3bfE6C4cD0286C24761060488eB1af2618",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-pk-uni/bnb",
     "address": "0xf8B5Cb47232938f1A75546fA5182b8af312Fc380",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-pk-link/bnb",
     "address": "0xfA416c3b89cc2E7902F58A4bEA62Ab7E24bd5985",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-pk-busd/bnb",
     "address": "0x45973436B06e46dc37333e65f98A190A392476a4",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "jetfuel-pk-usdt/bnb",
     "address": "0xB126E22F4d9EfE943c94E0Ef493FF34f98AdC9E1",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
@@ -399,9 +617,16 @@
     "paused": false
   },
   {
+    "name": "pancake-cake-smart",
+    "address": "0x2D8ef403d947A8ff27b874ac63af703d884acDFC",
+    "interval": 3,
+    "harvestSignature": "0x4641257d",
+    "paused": false
+  },
+  {
     "name": "pancake-cake-cake",
     "address": "0x229959480e7dc01B0F73d492101f8745EF4d4Ada",
-    "interval": 6,
+    "interval": 3,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
@@ -413,79 +638,58 @@
     "paused": false
   },
   {
-    "name": "pancake-cake-twt-v2",
-    "address": "0xb64A810e2E073293FbaB16ec0f5A948518FB1b8d",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "paused": false
-  },
-  {
-    "name": "thugs-drugs-guns",
-    "address": "0xc641bFAAA6D78e506F4f58d5b2b0ce911DBB9a82",
-    "interval": 9,
-    "harvestSignature": "0x4641257d",
-    "paused": false
-  },
-  {
-    "name": "thugs-drugs-bhc",
-    "address": "0x14A47F1c7be1C5e904EcF68868e97F8b87Cb52B7",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "paused": false
-  },
-  {
-    "name": "thugs-drugs-jgn",
-    "address": "0x4ab29191006f58a0a966a4703bE2c9bad5028657",
-    "interval": 6,
+    "name": "thugs-drugs-v2",
+    "address": "0x644bF9c6b2774073C1eD41ECebe25A6a4b7732c8",
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-drugs/bnb",
     "address": "0x87f86C9D9676A77aCC068528AB934B5CbBFe9479",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-thugs/bnb",
     "address": "0x82FCd3c30E8353e432c5F2Da10eE586015717B00",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-cred/bnb",
     "address": "0xc898F4ee9F3194d6Ed8B8D0E567100cE8038Eb57",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-guns/bnb",
     "address": "0xe79fF4C4E1D78a483C63583330dCC7319f05aFDf",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-busd/bnb",
     "address": "0x19A246CE9698eEEf9a6C851C034f6f3E71E4902f",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-btc/bnb",
     "address": "0x14FCa2E3337eB956d9c810652216EFe147E0CEF8",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-eth/bnb",
     "address": "0x70aEf5d199fDfaAC5A81747C8b7C91F77f2B6F54",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
@@ -506,42 +710,42 @@
   {
     "name": "street-dai/bnb",
     "address": "0x0042Fb96b4Ef358b65F8d11c8D7d703C41c2d1b3",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-usdt/bnb",
     "address": "0x9204F0d9aC07c839fbCb0c22c326ccef51A8Aba4",
-    "interval": 8,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-bliq/bnb",
     "address": "0x7f4deaca74a6aBbc573FB8FDf244D6d0e4c07976",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-eos/bnb",
     "address": "0x21428EABd16a2610f6b7221B0FE2Ab7Eb903088a",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-bifi/bnb",
     "address": "0x6A164e8DF6F554Cb2C9F4CF9a407E799b60fF497",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": false
   },
   {
     "name": "street-bhc/bnb",
     "address": "0x5C3847e558a82af69ab2aCe7A8eCe39E3d81A861",
-    "interval": 9,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "paused": true
   },
