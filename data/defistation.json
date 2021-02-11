@@ -9,6 +9,33 @@
   },
 
   {
+    "id": "auto-cake",
+    "name": "CAKE × AUTO",
+    "contract": "0x895CF1E805cBd86355caC101aE9B252c806Dc59b",
+    "oracle": "pancake",
+    "oracleId": "Cake",
+    "tvl": 0
+  },
+
+  {
+    "id": "auto-wbnb",
+    "name": "WBNB × AUTO",
+    "contract": "0x8136C5EE816fD80b80C9679e785F37EBdf2199eE",
+    "oracle": "pancake",
+    "oracleId": "WBNB",
+    "tvl": 0
+  },
+
+  {
+    "id": "auto-busd",
+    "name": "BUSD × AUTO",
+    "contract": "0xBd198f5132631e597518529268000A0199f07492",
+    "oracle": "pancake",
+    "oracleId": "BUSD",
+    "tvl": 0
+  },
+
+  {
     "id": "monster-mss-busd",
     "name": "MonsterSlayer: MSS-BUSD LP",
     "contract": "0x3B6C7bC3BE5C60c875cF415A97e6539cC28ECa32",
