@@ -3,7 +3,7 @@ const ethers = require('ethers');
 const IStrategy = require('../abis/IStrategy.json');
 const { isNewHarvestPeriod, hasStakers, subsidyWant, sleep } = require('../utils/harvestHelpers');
 const { sendMessage } = require('../utils/discord');
-const strats = require('../data/strats.json');
+const strats = require('../data/testStrats.json');
 
 const harvest = async () => {
   const provider = new ethers.providers.JsonRpcProvider(process.env.BSC_RPC);
@@ -15,7 +15,7 @@ const harvest = async () => {
 
       let shouldHarvest = true;
 
-      if (shouldHarvest) shouldHarvest = !strat.paused;
+      if (shouldHarvest) shouldHarvest = !strat.harvestPaused;
       if (shouldHarvest) shouldHarvest = await isNewHarvestPeriod(strat, '0x4641257d');
       if (shouldHarvest) shouldHarvest = await hasStakers(strat, harvester);
 
@@ -23,7 +23,16 @@ const harvest = async () => {
         if (strat.subsidy) await subsidyWant(strat, harvester);
 
         const stratContract = new ethers.Contract(strat.address, IStrategy, harvester);
-        const tx = await stratContract.harvest({ gasLimit: 3500000 });
+        let tx;
+
+        if (strat.depositsPaused) {
+          await stratContract.unpause({ gasLimit: 3500000 });
+          tx = await stratContract.harvest({ gasLimit: 3500000 });
+          await stratContract.pause({ gasLimit: 3500000 });
+        } else {
+          tx = await stratContract.harvest({ gasLimit: 3500000 });
+        }
+
         const message = `Successfully harvested ${strat.name} with tx: ${tx.hash}`;
 
         sendMessage(message);
