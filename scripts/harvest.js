@@ -3,7 +3,7 @@ const ethers = require('ethers');
 const IStrategy = require('../abis/IStrategy.json');
 const { isNewHarvestPeriod, hasStakers, subsidyWant, sleep } = require('../utils/harvestHelpers');
 const { sendMessage } = require('../utils/discord');
-const strats = require('../data/testStrats.json');
+const strats = require('../data/strats.json');
 
 const harvest = async () => {
   const provider = new ethers.providers.JsonRpcProvider(process.env.BSC_RPC);
