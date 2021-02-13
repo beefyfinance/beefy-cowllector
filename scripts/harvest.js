@@ -30,7 +30,7 @@ const harvest = async () => {
           tx = await stratContract.harvest({ gasLimit: 4000000 });
           await stratContract.pause({ gasLimit: 3500000 });
         } else {
-          tx = await stratContract.harvest({ gasLimit: 3500000 });
+          tx = await stratContract.harvest({ gasLimit: 4000000 });
         }
 
         const message = `Successfully harvested ${strat.name} with tx: ${tx.hash}`;
