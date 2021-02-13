@@ -11,6 +11,15 @@
   {
     "id": "auto-cake",
     "name": "CAKE × AUTO",
+    "contract": "0xe0B473c0dD6D7Fea5B395c3Ce7ffd4FEF0ab4373",
+    "oracle": "pancake",
+    "oracleId": "Cake",
+    "tvl": 0
+  },
+
+  {
+    "id": "auto-cake-old",
+    "name": "CAKE × AUTO",
     "contract": "0x895CF1E805cBd86355caC101aE9B252c806Dc59b",
     "oracle": "pancake",
     "oracleId": "Cake",
@@ -18,7 +27,7 @@
   },
 
   {
-    "id": "auto-wbnb",
+    "id": "auto-wbnb-old",
     "name": "WBNB × AUTO",
     "contract": "0x8136C5EE816fD80b80C9679e785F37EBdf2199eE",
     "oracle": "pancake",
@@ -27,7 +36,7 @@
   },
 
   {
-    "id": "auto-busd",
+    "id": "auto-busd-old",
     "name": "BUSD × AUTO",
     "contract": "0xBd198f5132631e597518529268000A0199f07492",
     "oracle": "pancake",
