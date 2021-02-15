@@ -15,7 +15,7 @@ const harvest = async () => {
 
       let shouldHarvest = true;
 
-      if (shouldHarvest) shouldHarvest = !strat.paused;
+      if (shouldHarvest) shouldHarvest = !strat.harvestPaused;
       if (shouldHarvest) shouldHarvest = await isNewHarvestPeriod(strat, '0x4641257d');
       if (shouldHarvest) shouldHarvest = await hasStakers(strat, harvester);
 
@@ -23,7 +23,16 @@ const harvest = async () => {
         if (strat.subsidy) await subsidyWant(strat, harvester);
 
         const stratContract = new ethers.Contract(strat.address, IStrategy, harvester);
-        const tx = await stratContract.harvest({ gasLimit: 3500000 });
+        let tx;
+
+        if (strat.depositsPaused) {
+          await stratContract.unpause({ gasLimit: 3500000 });
+          tx = await stratContract.harvest({ gasLimit: 4000000 });
+          await stratContract.pause({ gasLimit: 3500000 });
+        } else {
+          tx = await stratContract.harvest({ gasLimit: 4000000 });
+        }
+
         const message = `Successfully harvested ${strat.name} with tx: ${tx.hash}`;
 
         sendMessage(message);
