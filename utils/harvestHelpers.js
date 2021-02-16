@@ -2,6 +2,7 @@ const ethers = require('ethers');
 const IStrategy = require('../abis/IStrategy.json');
 const axios = require('axios');
 const ERC20 = require('../abis/ERC20.json');
+const { getChainBlockTime } = require('./getChainData');
 
 const between = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
@@ -9,15 +10,31 @@ const sleep = ms => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-const isNewHarvestPeriodFromEvents = async (strat, harvester) => {
+const isNewHarvestPeriod = async (strat, harvester) => {
   const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
   const filter = strategy.filters.StratHarvest(null);
-  const logs = await strategy.queryFilter(filter);
-  console.log('YO', logs);
+  const currentBlock = await harvester.provider.getBlockNumber();
+  const blockTime = getChainBlockTime(strat.chainId);
+  const oldestPeriodBlock = currentBlock - (strat.interval * 3600) / blockTime;
+
+  let logs = [];
+  let interval = 2000;
+  let from = currentBlock - interval;
+  let to = currentBlock;
+
+  while (!logs.length) {
+    if (to <= oldestPeriodBlock) return true;
+
+    logs = await strategy.queryFilter(filter, from, to);
+
+    from -= interval;
+    to -= interval;
+  }
+
   return false;
 };
 
-const isNewHarvestPeriod = async (strat, signature) => {
+const isNewHarvestPeriodBscscan = async strat => {
   let result = false;
 
   try {
@@ -28,7 +45,7 @@ const isNewHarvestPeriod = async (strat, signature) => {
     for (let i = 0; i < txs.length; i++) {
       const tx = txs[i];
 
-      if (tx.input.substring(0, 10) === signature && tx.isError === '0') {
+      if (tx.input.substring(0, 10) === strat.signature && tx.isError === '0') {
         const now = parseInt(new Date().getTime() / 1000);
         const harvestPeriod = strat.interval * 3600;
         result = tx.timeStamp < now - harvestPeriod ? true : false;
@@ -64,7 +81,7 @@ const subsidyWant = async (strat, harvester) => {
 
 module.exports = {
   isNewHarvestPeriod,
-  isNewHarvestPeriodFromEvents,
+  isNewHarvestPeriodBscscan,
   hasStakers,
   subsidyWant,
   sleep,

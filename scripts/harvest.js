@@ -3,13 +3,13 @@ const ethers = require('ethers');
 const IStrategy = require('../abis/IStrategy.json');
 const {
   isNewHarvestPeriod,
-  isNewHarvestPeriodFromEvents,
+  isNewHarvestPeriodBscscan,
   hasStakers,
   subsidyWant,
   sleep,
 } = require('../utils/harvestHelpers');
 const { sendMessage } = require('../utils/discord');
-const getChainRpc = require('../utils/getChainRpc');
+const { getChainRpc } = require('../utils/getChainData');
 const strats = require('../data/strats.json');
 
 const harvest = async () => {
@@ -23,8 +23,14 @@ const harvest = async () => {
       let shouldHarvest = true;
 
       if (shouldHarvest) shouldHarvest = !strat.harvestPaused;
-      if (shouldHarvest) shouldHarvest = await isNewHarvestPeriodFromEvents(strat, harvester);
       if (shouldHarvest) shouldHarvest = await hasStakers(strat, harvester);
+      if (shouldHarvest) {
+        if (strat.harvestEvent) {
+          shouldHarvest = await isNewHarvestPeriod(strat, harvester);
+        } else {
+          shouldHarvest = await isNewHarvestPeriodBscscan(strat);
+        }
+      }
 
       if (shouldHarvest) {
         if (strat.subsidy) await subsidyWant(strat, harvester);

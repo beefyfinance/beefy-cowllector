@@ -6,6 +6,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": true,
     "chainId": 128
   },
   {
@@ -15,6 +16,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": true,
     "chainId": 128
   },
   {
@@ -24,6 +26,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": true,
     "chainId": 128
   },
   {
@@ -33,6 +36,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": true,
     "chainId": 128
   },
   {
@@ -42,6 +46,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": true,
     "chainId": 128
   },
   {
@@ -51,6 +56,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": true,
     "chainId": 128
   },
   {
@@ -59,7 +65,9 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
   },
   {
     "name": "cake-lit-bnb",
@@ -67,7 +75,9 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
   },
   {
     "name": "cake-hard-bnb",
@@ -75,7 +85,9 @@
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
   },
   {
     "name": "kebab-bifi-busd",
@@ -83,7 +95,9 @@
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
   },
   {
     "name": "cake-ditto-bnb",
@@ -91,7 +105,9 @@
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
   },
   {
     "name": "auto-cake",
@@ -99,7 +115,9 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
   },
   {
     "name": "auto-cake-old",
@@ -108,6 +126,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -117,6 +136,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -126,6 +146,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -135,6 +156,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -144,6 +166,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -153,6 +176,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -162,6 +186,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -171,6 +196,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -180,6 +206,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -189,6 +216,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -198,6 +226,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
 
@@ -208,6 +237,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -217,6 +247,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -226,6 +257,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -235,6 +267,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -244,6 +277,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -253,6 +287,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -262,6 +297,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -271,6 +307,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -280,6 +317,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -289,6 +327,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -298,6 +337,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -307,6 +347,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -316,6 +357,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -325,6 +367,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -334,6 +377,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -343,6 +387,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -352,6 +397,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -361,6 +407,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -370,6 +417,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -379,6 +427,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -388,6 +437,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -397,6 +447,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -406,6 +457,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -415,6 +467,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -424,6 +477,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -433,6 +487,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -442,6 +497,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -451,6 +507,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -460,6 +517,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -469,6 +527,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -478,6 +537,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -487,6 +547,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -496,6 +557,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -505,6 +567,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -514,6 +577,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -523,6 +587,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -532,6 +597,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -541,6 +607,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -550,6 +617,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -559,6 +627,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -568,6 +637,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -577,6 +647,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -586,6 +657,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -595,6 +667,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -604,6 +677,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -613,6 +687,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -622,6 +697,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -631,6 +707,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -640,6 +717,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -649,6 +727,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -658,6 +737,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -667,6 +747,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -676,6 +757,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -685,6 +767,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -694,6 +777,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -703,6 +787,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -712,6 +797,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -721,6 +807,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -730,6 +817,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -739,6 +827,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -748,6 +837,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -757,6 +847,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -766,6 +857,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -775,6 +867,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -784,6 +877,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -793,6 +887,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -802,6 +897,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -811,6 +907,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -820,6 +917,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -829,6 +927,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -838,6 +937,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -847,6 +947,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -856,6 +957,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -865,6 +967,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -874,6 +977,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -883,6 +987,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
     "harvestPaused": true,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -892,6 +997,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -901,6 +1007,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -910,6 +1017,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -919,6 +1027,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -928,6 +1037,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -937,6 +1047,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -946,6 +1057,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -955,6 +1067,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -964,6 +1077,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -973,6 +1087,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -982,6 +1097,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -991,6 +1107,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1000,6 +1117,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1009,6 +1127,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1018,6 +1137,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1027,6 +1147,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1036,6 +1157,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1045,6 +1167,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1054,6 +1177,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1063,6 +1187,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1072,6 +1197,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
     "harvestPaused": true,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1081,6 +1207,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1090,6 +1217,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1099,6 +1227,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
     "harvestPaused": true,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1108,6 +1237,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1117,6 +1247,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1126,6 +1257,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1135,6 +1267,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1146,6 +1279,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1157,6 +1291,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1168,6 +1303,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1179,6 +1315,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1190,6 +1327,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   },
   {
@@ -1201,6 +1339,7 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
+    "harvestEvent": false,
     "chainId": 56
   }
 ]
