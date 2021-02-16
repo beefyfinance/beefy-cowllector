@@ -8,12 +8,14 @@ const endpoints = {
   bdollarLp: 'https://api.beefy.finance/bdollar/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
+  kebabLp:   'https://api.beefy.finance/kebab/lps',
   monsterLP: 'https://api.beefy.finance/monster/lps',
   narwhalLp: 'https://api.beefy.finance/narwhal/lps',
   pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugsLp:   'https://api.beefy.finance/thugs/lps',
   thugs:     'https://api.beefy.finance/thugs/tickers',
+  spongeLp:  'https://api.beefy.finance/sponge/lps',
 };
 
 const CACHE_TIMEOUT = 30 * 60 * 1000;
@@ -143,6 +145,10 @@ const fetchPrice = async ({ oracle, id }) => {
     
     case 'jetfuel-lp':
       price = await fetchLP(id, endpoints.jetfuelLp);
+      break;
+
+    case 'kebab-lp':
+      price = await fetchLP(id, endpoints.kebabLp);
       break;
 
     case 'monster-lp':
