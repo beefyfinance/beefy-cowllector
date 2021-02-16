@@ -9,19 +9,25 @@ const BeefyVault = require('../abis/BeefyVault.json');
 const DEFISTATION_URL = 'https://api.defistation.io/dataProvider/tvl';
 
 const fetchVaultTvl = async ({ vault, harvester }) => {
-  const vaultContract = new ethers.Contract(vault.contract, BeefyVault, harvester);
-  const vaultBalance = await vaultContract.balance();
+  try {
+    const vaultContract = new ethers.Contract(vault.contract, BeefyVault, harvester);
+    const vaultBalance = await vaultContract.balance();
 
-  const price = await fetchPrice({ oracle: vault.oracle, id: vault.oracleId });
-  const normalizationFactor = 1000000000;
-  const normalizedPrice = BigNumber.from(Math.round(price * normalizationFactor));
-  const vaultBalanceInUsd = vaultBalance.mul(normalizedPrice.toString());
-  const result = vaultBalanceInUsd.div(normalizationFactor);
+    const price = await fetchPrice({ oracle: vault.oracle, id: vault.oracleId });
+    const normalizationFactor = 1000000000;
+    const normalizedPrice = BigNumber.from(Math.round(price * normalizationFactor));
+    const vaultBalanceInUsd = vaultBalance.mul(normalizedPrice.toString());
+    const result = vaultBalanceInUsd.div(normalizationFactor);
 
-  const vaultObjTvl = utils.formatEther(result);
-  vault.tvl = Number(vaultObjTvl).toFixed(2);
+    const vaultObjTvl = utils.formatEther(result);
+    vault.tvl = Number(vaultObjTvl).toFixed(2);
 
-  return result;
+    return result;
+  } catch (err) {
+
+    console.log('error fetching price tvl:', vault.oracleId);
+    return 0;
+  }
 };
 
 const updateDefistation = async () => {
