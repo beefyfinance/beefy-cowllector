@@ -1,22 +1,29 @@
 const ethers = require('ethers');
 
 const IStrategy = require('../abis/IStrategy.json');
-const { isNewHarvestPeriod, hasStakers, subsidyWant, sleep } = require('../utils/harvestHelpers');
+const {
+  isNewHarvestPeriod,
+  isNewHarvestPeriodFromEvents,
+  hasStakers,
+  subsidyWant,
+  sleep,
+} = require('../utils/harvestHelpers');
 const { sendMessage } = require('../utils/discord');
+const getChainRpc = require('../utils/getChainRpc');
 const strats = require('../data/strats.json');
 
 const harvest = async () => {
-  const provider = new ethers.providers.JsonRpcProvider(process.env.BSC_RPC);
-  const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
-
   for (const strat of strats) {
     try {
       console.log(`Analizing harvest of ${strat.name}.`);
 
+      const provider = new ethers.providers.JsonRpcProvider(getChainRpc(strat.chainId));
+      const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
+
       let shouldHarvest = true;
 
       if (shouldHarvest) shouldHarvest = !strat.harvestPaused;
-      if (shouldHarvest) shouldHarvest = await isNewHarvestPeriod(strat, '0x4641257d');
+      if (shouldHarvest) shouldHarvest = await isNewHarvestPeriodFromEvents(strat, harvester);
       if (shouldHarvest) shouldHarvest = await hasStakers(strat, harvester);
 
       if (shouldHarvest) {

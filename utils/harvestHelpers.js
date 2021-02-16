@@ -9,6 +9,14 @@ const sleep = ms => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
 
+const isNewHarvestPeriodFromEvents = async (strat, harvester) => {
+  const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
+  const filter = strategy.filters.StratHarvest(null);
+  const logs = await strategy.queryFilter(filter);
+  console.log('YO', logs);
+  return false;
+};
+
 const isNewHarvestPeriod = async (strat, signature) => {
   let result = false;
 
@@ -54,4 +62,11 @@ const subsidyWant = async (strat, harvester) => {
   }
 };
 
-module.exports = { isNewHarvestPeriod, hasStakers, subsidyWant, sleep, between };
+module.exports = {
+  isNewHarvestPeriod,
+  isNewHarvestPeriodFromEvents,
+  hasStakers,
+  subsidyWant,
+  sleep,
+  between,
+};
