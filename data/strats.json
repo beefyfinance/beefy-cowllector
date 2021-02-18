@@ -1,5 +1,15 @@
 [
   {
+    "name": "bifi-maxi",
+    "address": "0x92F347AdB3a2c3FD336DCE60242cde126711b9a3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
     "name": "mdex-mdx-usdt",
     "address": "0x5Eb9C8a31D25d681d0730ab420E1dBF040602C27",
     "interval": 1,
