@@ -201,22 +201,6 @@
     "harvestPaused": false
   },
   {
-    "name": "street-btri/bnb",
-    "address": "0x39d575905815f7dBFB9231C5475E5A33759993a9",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-btri/cred",
-    "address": "0x8792D4749b40B3A5d388fD95aac95Cf24d1179d3",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
     "name": "cake-ltc/bnb",
     "address": "0x0892a178c363b4739e5Ac89E9155B9c30214C0c0",
     "interval": 24,
@@ -323,22 +307,6 @@
   {
     "name": "pancake-bscx/bnb",
     "address": "0x0955479C61B37074d689319fCaA84ffE1E9e8CF5",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-bhc/bnb",
-    "address": "0xc1673bD18Ee17a404563c798000e22947406217f",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-jgn/bnb",
-    "address": "0xCDCc6A0340b4b98Efa90F4344A36802C1104093e",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -452,62 +420,6 @@
     "name": "jetfuel-pk-usdt/bnb",
     "address": "0xB126E22F4d9EfE943c94E0Ef493FF34f98AdC9E1",
     "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-twt/bnb",
-    "address": "0x3553f97B823F48E0C382859B4d943E96c4DAc207",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-sxp/bnb",
-    "address": "0x798552Be40E2aF875F771a5A200975E3Db544FF4",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-xvs/bnb",
-    "address": "0x00e0EA0fd65917D723EA930a16d3CBb94Fe3E2eF",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-inj/bnb",
-    "address": "0xfE9737A98f7a8fAA465A442c9fe5473328d2725f",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-unfi/bnb",
-    "address": "0xCDE1BecE18756EE67e32D877326187871055dA6E",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-ltc/bnb",
-    "address": "0x857b119e2494f8b4E06dd23BcbaB4aF4F1820dEa",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-alpha/bnb",
-    "address": "0xfF51E64c17939F6aDf6Ad3da2d2fC440Ac7Cdc3f",
-    "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false
@@ -745,30 +657,6 @@
     "harvestPaused": true
   },
   {
-    "name": "street-bch/bnb",
-    "address": "0xB5968312cEBED11E5DDF7b3b56c28Ae084d290C7",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-link/bnb",
-    "address": "0x4fB6fA862081796fe22f9D527A27dE6e2779Be59",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-nar/bnb",
-    "address": "0x8329ef7D376389F20F4f8CB8279f5D02dcC3CB23",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
     "name": "pancake-cake-smart",
     "address": "0x2D8ef403d947A8ff27b874ac63af703d884acDFC",
     "interval": 3,
@@ -791,126 +679,6 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false
-  },
-  {
-    "name": "street-drugs/bnb",
-    "address": "0x87f86C9D9676A77aCC068528AB934B5CbBFe9479",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-thugs/bnb",
-    "address": "0x82FCd3c30E8353e432c5F2Da10eE586015717B00",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-cred/bnb",
-    "address": "0xc898F4ee9F3194d6Ed8B8D0E567100cE8038Eb57",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-guns/bnb",
-    "address": "0xe79fF4C4E1D78a483C63583330dCC7319f05aFDf",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-busd/bnb",
-    "address": "0x19A246CE9698eEEf9a6C851C034f6f3E71E4902f",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-btc/bnb",
-    "address": "0x14FCa2E3337eB956d9c810652216EFe147E0CEF8",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-eth/bnb",
-    "address": "0x70aEf5d199fDfaAC5A81747C8b7C91F77f2B6F54",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-pancakeswap-thugs/bnb",
-    "address": "0xb506bEF03ec669f122c0F276e3848239aB829Dbb",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-narwhal-thugs/bnb",
-    "address": "0x7b8056527faF16FF0BF2742A79Fe3b1C9A27fD7e",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-dai/bnb",
-    "address": "0x0042Fb96b4Ef358b65F8d11c8D7d703C41c2d1b3",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-usdt/bnb",
-    "address": "0x9204F0d9aC07c839fbCb0c22c326ccef51A8Aba4",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-bliq/bnb",
-    "address": "0x7f4deaca74a6aBbc573FB8FDf244D6d0e4c07976",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-eos/bnb",
-    "address": "0x21428EABd16a2610f6b7221B0FE2Ab7Eb903088a",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-bifi/bnb",
-    "address": "0x6A164e8DF6F554Cb2C9F4CF9a407E799b60fF497",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false
-  },
-  {
-    "name": "street-bhc/bnb",
-    "address": "0x5C3847e558a82af69ab2aCe7A8eCe39E3d81A861",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": true
   },
   {
     "name": "pancake-bnb/busd-cake",
