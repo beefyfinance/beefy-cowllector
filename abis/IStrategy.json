@@ -65,5 +65,17 @@
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "harvester",
+        "type": "address"
+      }
+    ],
+    "name": "StratHarvest",
+    "type": "event"
   }
 ]
