@@ -45,7 +45,7 @@ const isNewHarvestPeriodBscscan = async strat => {
     for (let i = 0; i < txs.length; i++) {
       const tx = txs[i];
 
-      if (tx.input.substring(0, 10) === strat.signature && tx.isError === '0') {
+      if (tx.input.substring(0, 10) === strat.harvestSignature && tx.isError === '0') {
         const now = parseInt(new Date().getTime() / 1000);
         const harvestPeriod = strat.interval * 3600;
         result = tx.timeStamp < now - harvestPeriod ? true : false;
@@ -58,6 +58,7 @@ const isNewHarvestPeriodBscscan = async strat => {
 
     return result;
   } catch (e) {
+    console.log('Error:', e);
     return false;
   }
 };
