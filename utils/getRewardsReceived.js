@@ -1,6 +1,3 @@
-// FIXME: remove this
-const process = require('process');
-
 const Web3 = require('web3');
 const BigNumber = require('bignumber.js');
 const { sleep } = require('./harvestHelpers');
@@ -55,10 +52,6 @@ const getRewardsReceived = async () => {
 
     fromBlock = toBlock;
   }
-
-  // FIXME: remove this
-  console.log('pending rewards', result.div('1e18').toString());
-  process.exit();
 
   return result;
 };
