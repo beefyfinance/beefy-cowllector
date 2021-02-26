@@ -69,6 +69,66 @@
     "harvestEvent": true,
     "chainId": 128
   },
+   {
+    "name": "cake-bry-bnb",
+    "address": "0x578C066b5c7289f8Ba7c4DB43c110F19D7c51E03",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+   {
+    "name": "cake-zee-bnb",
+    "address": "0x29C4C22eC7dF7e936Cb3e6C4A7E5eAE751C7d86B",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+   {
+    "name": "cake-xtz-bnb",
+    "address": "0x12e09a13f5e2d95b3B8db8741dFeBa453784d1DC",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
+    "name": "cake-bch-bnb",
+    "address": "0x646C536865603cFEB51dd35C36FD90296FB8DF26",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
+    "name": "cake-dodo-bnb",
+    "address": "0x00AeC34489A7ADE91A0507B6b9dBb0a50938B7c0",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+    {
+    "name": "cake-swingby-bnb",
+    "address": "0xc1C1eB984218B9570beA53C0Dad14283a6E9E81C",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
   {
     "name": "cake-swgb-bnb",
     "address": "0x3890440541615B15d38ad2E7ceBB1C96Aeef4B04",
@@ -92,6 +152,16 @@
   {
     "name": "cake-hard-bnb",
     "address": "0x081bd67D080A3f8205b00D69bCb85D7B3F6b5592",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+   {
+    "name": "kebab-eth-btcb",
+    "address": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
