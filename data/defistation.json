@@ -7,6 +7,60 @@
     "oracleId": "BIFI",
     "tvl": 0
   },
+  
+  {
+    "id": "cake-bry-bnb",
+    "name": "BRY-BNB LP",
+    "contract": "0x578C066b5c7289f8Ba7c4DB43c110F19D7c51E03",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-bry-bnb",
+    "tvl": 0
+  },
+  
+  {
+    "id": "cake-zee-bnb",
+    "name": "ZEE-BNB LP",
+    "contract": "0x29C4C22eC7dF7e936Cb3e6C4A7E5eAE751C7d86B",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-zee-bnb",
+    "tvl": 0
+  },
+  
+   {
+    "id": "cake-xtz-bnb",
+    "name": "XTZ-BNB LP",
+    "contract": "0x12e09a13f5e2d95b3B8db8741dFeBa453784d1DC",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-xtz-bnb",
+    "tvl": 0
+  },
+  
+    {
+    "id": "cake-bch-bnb",
+    "name": "BCH-BNB LP",
+    "contract": "0x646C536865603cFEB51dd35C36FD90296FB8DF26",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-bch-bnb",
+    "tvl": 0
+  },
+  
+    {
+    "id": "cake-dodo-bnb",
+    "name": "DODO-BNB LP",
+    "contract": "0x00AeC34489A7ADE91A0507B6b9dBb0a50938B7c0",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-dodo-bnb",
+    "tvl": 0
+  },
+  
+    {
+    "id": "cake-swingby-bnb",
+    "name": "SWINGBY-BNB LP",
+    "contract": "0xc1C1eB984218B9570beA53C0Dad14283a6E9E81C",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-swingby-bnb",
+    "tvl": 0
+  },
 
   {
     "id": "cake-swgb-bnb",
@@ -32,6 +86,15 @@
     "contract": "0xc41BB9dEF52Dd7ceD10c27fF2cCEC3299603299B",
     "oracle": "pancake-lp",
     "oracleId": "cake-hard-bnb",
+    "tvl": 0
+  },
+  
+   {
+    "id": "kebab-eth-btcb",
+    "name": "Kebab: ETH-BTCB LP",
+    "contract": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
+    "oracle": "kebab-lp",
+    "oracleId": "kebab-eth-btcb",
     "tvl": 0
   },
 
