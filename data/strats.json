@@ -249,6 +249,16 @@
     "harvestEvent": false,
     "chainId": 56
   },
+    {
+    "name": "kebab-usdt-busd",
+    "address": "0x9dc7d9c4488223c0Ad50F0AE742D80AE1abEc859",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
   {
     "name": "kebab-eth-btcb",
     "address": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
@@ -315,6 +325,16 @@
     "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+    {
+    "name": "sponge-steam-bnb",
+    "address": "0x04D0bE0169694ca083996899a14752c82A953D22",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
     "harvestPaused": false,
     "harvestEvent": false,
     "chainId": 56
