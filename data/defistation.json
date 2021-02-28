@@ -514,6 +514,24 @@
   },
 
   {
+    "id": "cake-sfp-bnb",
+    "name": "PancakeSwap: SFP-BNB LP",
+    "contract": "0xCa38d57755f29c9ad17AbB1A6ae059DdAD913A0e",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-sfp-bnb",
+    "tvl": 0
+  },
+
+  {
+    "id": "cake-egld-bnb",
+    "name": "PancakeSwap: EGLD-BNB LP",
+    "contract": "0x3d0bd3C73eF66C8b487A49f50410173C44261285",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-egld-bnb",
+    "tvl": 0
+  },
+
+  {
     "id": "bakery-bake-busd",
     "name": "BakerySwap: BAKE-BUSD BLP",
     "contract": "0x23293B8A7c65aF396Bda8Ff75E02c62f6db8f202",
