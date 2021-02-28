@@ -8,6 +8,15 @@
     "tvl": 0
   },
   
+   {
+    "id": "sponge-steam-bnb",
+    "name": "STEAM-BNB LP",
+    "contract": "0x04D0bE0169694ca083996899a14752c82A953D22",
+    "oracle": "sponge-lp",
+    "oracleId": "sponge-steam-bnb",
+    "tvl": 0
+  },
+  
   {
     "id": "cake-bry-bnb",
     "name": "BRY-BNB LP",
@@ -86,6 +95,15 @@
     "contract": "0xc41BB9dEF52Dd7ceD10c27fF2cCEC3299603299B",
     "oracle": "pancake-lp",
     "oracleId": "cake-hard-bnb",
+    "tvl": 0
+  },
+  
+  {
+    "id": "kebab-usdt-busd",
+    "name": "Kebab: USDT-BUSD LP",
+    "contract": "0x9dc7d9c4488223c0Ad50F0AE742D80AE1abEc859",
+    "oracle": "kebab-lp",
+    "oracleId": "kebab-usdt-busd",
     "tvl": 0
   },
   
