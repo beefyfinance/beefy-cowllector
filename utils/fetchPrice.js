@@ -14,7 +14,6 @@ const endpoints = {
   pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugsLp:   'https://api.beefy.finance/thugs/lps',
-  thugs:     'https://api.beefy.finance/thugs/tickers',
   spongeLp:  'https://api.beefy.finance/sponge/lps',
 };
 
@@ -66,7 +65,7 @@ const fetchCoingecko = async id => {
 const fetchPancake = async id => {
   try {
     const response = await axios.get(endpoints.pancake);
-    return response.data.prices[id];
+    return response.data[id];
   } catch (err) {
     console.error(err);
     return 0;
