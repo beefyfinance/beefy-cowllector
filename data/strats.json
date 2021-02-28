@@ -335,7 +335,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -345,13 +345,13 @@
     "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
     {
     "name": "sponge-steam-bnb",
-    "address": "0x04D0bE0169694ca083996899a14752c82A953D22",
+    "address": "0x1aC4f14DDFBC48c4AF99526e9D488CD47D90801E",
     "interval": 2,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,

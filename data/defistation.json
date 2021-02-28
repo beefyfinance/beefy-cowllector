@@ -70,6 +70,26 @@
     "oracleId": "sponge-steam-bnb",
     "tvl": 0
   },
+
+  {
+    "id": "sponge-spg-bnb",
+    "name": "SPG-BNB LP",
+    "contract": "0x1B3564F698988804b5D05a2C10B1d71bE051662F",
+    "oracle": "sponge-lp",
+    "oracleId": "sponge-spg-bnb",
+    "tvl": 0
+  },
+
+  {
+    "id": "sponge-soak-bnb",
+    "name": "SOAK-BNB LP",
+    "contract": "0xE035Dce0E345Cbd46F3c0dCBf602f96c5F741813",
+    "oracle": "sponge-lp",
+    "oracleId": "sponge-soak-bnb",
+    "tvl": 0
+  },
+
+
   {
     "id": "cake-bry-bnb",
     "name": "BRY-BNB LP",
@@ -204,6 +224,15 @@
     "oracleId": "Cake",
     "tvl": 0
   },
+  
+  {
+    "id": "auto-wbnb",
+    "name": "WBNB × AUTO",
+    "contract": "0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3",
+    "oracle": "pancake",
+    "oracleId": "WBNB",
+    "tvl": 0
+  },
 
   {
     "id": "auto-wbnb-old",
@@ -213,6 +242,33 @@
     "oracleId": "WBNB",
     "tvl": 0
   },
+  
+  {
+    "id": "auto-usdt",
+    "name": "USDT × AUTO",
+    "contract": "0x58327471A57EE89Aa4b91753fF9E09f7291236C7",
+    "oracle": "pancake",
+    "oracleId": "USDT",
+    "tvl": 0
+  },
+
+  {
+    "id": "auto-usdc",
+    "name": "USDC × AUTO",
+    "contract": "0x7E45e8E3404a2C142d7E8eAE94EaEB8641607857",
+    "oracle": "pancake",
+    "oracleId": "USDC",
+    "tvl": 0
+  },
+  
+  {
+    "id": "auto-busd",
+    "name": "BUSD × AUTO",
+    "contract": "0x559C88946e1958812dCfD8edd4f89B0C7d811F74",
+    "oracle": "pancake",
+    "oracleId": "BUSD",
+    "tvl": 0
+  },
 
   {
     "id": "auto-busd-old",
@@ -220,6 +276,24 @@
     "contract": "0xBd198f5132631e597518529268000A0199f07492",
     "oracle": "pancake",
     "oracleId": "BUSD",
+    "tvl": 0
+  },
+
+  {
+    "id": "auto-btcb",
+    "name": "BTCB × AUTO",
+    "contract": "0xFf750EE63F1E428De1D6C8D9d92676b5FC8376A8",
+    "oracle": "pancake",
+    "oracleId": "BTCB",
+    "tvl": 0
+  },
+
+  {
+    "id": "auto-eth",
+    "name": "ETH × AUTO",
+    "contract": "0x0a406FCBEA86aC57ACcc812E8F1B509acE5E054c",
+    "oracle": "pancake",
+    "oracleId": "ETH",
     "tvl": 0
   },
 
@@ -292,6 +366,15 @@
     "contract": "0x2Eb92E2882030B8e153370d208462D4dDf7041d2",
     "oracle": "kebab-lp",
     "oracleId": "kebab-kebab-bnb",
+    "tvl": 0
+  },
+
+  {
+    "id": "kebab-kebab-btc",
+    "name": "Kebab: KEBAB-BTC LP",
+    "contract": "0x02a77B01BE5BB6a73b70E2b5615694F71a2c4F41",
+    "oracle": "kebab-lp",
+    "oracleId": "kebab-kebab-btc",
     "tvl": 0
   },
 
