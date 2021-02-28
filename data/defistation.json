@@ -8,6 +8,60 @@
     "tvl": 0
   },
   
+  {
+    "id": "crow-crow-busd",
+    "name": "CROW-BUSD LP",
+    "contract": "0x39C803716F67D6d4b190E633a961bF3503b8444E",
+    "oracle": "crow-lp",
+    "oracleId": "crow-crow-busd",
+    "tvl": 0
+  },
+
+  {
+    "id": "crow-crow-bnb",
+    "name": "CROW-BNB LP",
+    "contract": "0xbD701BC24485Ebfd3680285fB152509637Ab8ad4",
+    "oracle": "crow-lp",
+    "oracleId": "crow-crow-bnb",
+    "tvl": 0
+  },
+
+  {
+    "id": "ramen-ramen-bnb",
+    "name": "RAMEN-BNB LP",
+    "contract": "0x42b41189e9B371B7952b77aE791FE25E78D22681",
+    "oracle": "ramen-lp",
+    "oracleId": "ramen-ramen-bnb",
+    "tvl": 0
+  },
+
+  {
+    "id": "ramen-ramen-busd",
+    "name": "RAMEN-BUSD LP",
+    "contract": "0x605d96De6068f08489392a35E9DBE90201574bbC",
+    "oracle": "ramen-lp",
+    "oracleId": "ramen-ramen-busd",
+    "tvl": 0
+  },
+
+  {
+    "id": "cafe-brew-busd",
+    "name": "BREW-BUSD LP",
+    "contract": "0x10120B5550214ab9451B9B00e4f78e82C02D6482",
+    "oracle": "cafe-lp",
+    "oracleId": "cafe-brew-busd",
+    "tvl": 0
+  },
+
+  {
+    "id": "cafe-brew-bnb",
+    "name": "BREW-BNB LP",
+    "contract": "0xEE24B014422a53dA2190a64C0477a300590677f2",
+    "oracle": "cafe-lp",
+    "oracleId": "cafe-brew-bnb",
+    "tvl": 0
+  },
+
    {
     "id": "sponge-steam-bnb",
     "name": "STEAM-BNB LP",
@@ -16,7 +70,6 @@
     "oracleId": "sponge-steam-bnb",
     "tvl": 0
   },
-  
   {
     "id": "cake-bry-bnb",
     "name": "BRY-BNB LP",
@@ -171,6 +224,24 @@
   },
 
   {
+    "id": "monster-msc-busd",
+    "name": "MonsterSlayer: MSC-BUSD LP",
+    "contract": "0x1d9a453FCe2AC7b92FBe7b33BdC40F6e7aE14F47",
+    "oracle": "monster-lp",
+    "oracleId": "monster-msc-busd",
+    "tvl": 0
+  },
+
+  {
+    "id": "monster-msc-bnb",
+    "name": "MonsterSlayer: MSC-BNB LP",
+    "contract": "0x0F88Ce20f8af6D4c51b635BFBd8DFa03f2a36ACa",
+    "oracle": "monster-lp",
+    "oracleId": "monster-msc-bnb",
+    "tvl": 0
+  },
+
+  {
     "id": "monster-mss-busd",
     "name": "MonsterSlayer: MSS-BUSD LP",
     "contract": "0x3B6C7bC3BE5C60c875cF415A97e6539cC28ECa32",
@@ -284,6 +355,24 @@
     "contract": "0xfC083Cb104b48924AB44C69537b1450B2e78eBD6",
     "oracle": "pancake-lp",
     "oracleId": "cake-btcst-bnb",
+    "tvl": 0
+  },
+
+  {
+    "id": "cake-bts-busd",
+    "name": "PancakeSwap: BTS-BUSD LP",
+    "contract": "0x6b40106ebEDaA719B14cfbA606b89954EaeeaE9D",
+    "oracle": "bolt-lp",
+    "oracleId": "cake-bts-busd",
+    "tvl": 0
+  },
+
+  {
+    "id": "cake-btd-busd",
+    "name": "PancakeSwap: BTD-BUSD LP",
+    "contract": "0x0D3837E00C47353e68680C39e6DA6B5b08fE6897",
+    "oracle": "bolt-lp",
+    "oracleId": "cake-btd-busd",
     "tvl": 0
   },
 

@@ -10,18 +10,8 @@
     "chainId": 56
   },
   {
-    "name": "cafe-brew-bnb",
-    "address": "0x30861732f5Ec762b54eB8b9B8ef647673A696af3",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "cafe-brew-busd",
-    "address": "0xD40021F03bE89D23A8E3c81B008feaF0403Fa867",
+    "name": "crow-crow-busd",
+    "address": "0x0E687591C7a0e825bd1dBaf9C0a4ec9a4ED4F434",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -42,6 +32,36 @@
   {
     "name": "ramen-ramen-busd",
     "address": "0x593D569B2C643b529bDFD1b168d6CB1F9171A6B9",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "crow-crow-bnb",
+    "address": "0x664500A0F63F1Ba17186D8eA970CdfC7B99081fC",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cafe-brew-busd",
+    "address": "0xD40021F03bE89D23A8E3c81B008feaF0403Fa867",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cafe-brew-bnb",
+    "address": "0x30861732f5Ec762b54eB8b9B8ef647673A696af3",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
