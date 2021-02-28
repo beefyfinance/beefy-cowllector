@@ -10,6 +10,46 @@
     "chainId": 56
   },
   {
+    "name": "cafe-brew-bnb",
+    "address": "0x30861732f5Ec762b54eB8b9B8ef647673A696af3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cafe-brew-busd",
+    "address": "0xD40021F03bE89D23A8E3c81B008feaF0403Fa867",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "ramen-ramen-bnb",
+    "address": "0xD40021F03bE89D23A8E3c81B008feaF0403Fa867",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "ramen-ramen-busd",
+    "address": "0x593D569B2C643b529bDFD1b168d6CB1F9171A6B9",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "mdex-mdx-usdt",
     "address": "0x5Eb9C8a31D25d681d0730ab420E1dBF040602C27",
     "interval": 1,
@@ -69,7 +109,7 @@
     "harvestEvent": true,
     "chainId": 128
   },
-   {
+  {
     "name": "cake-bry-bnb",
     "address": "0x578C066b5c7289f8Ba7c4DB43c110F19D7c51E03",
     "interval": 4,
@@ -79,7 +119,7 @@
     "harvestEvent": false,
     "chainId": 56
   },
-   {
+  {
     "name": "cake-zee-bnb",
     "address": "0x29C4C22eC7dF7e936Cb3e6C4A7E5eAE751C7d86B",
     "interval": 4,
@@ -89,7 +129,7 @@
     "harvestEvent": false,
     "chainId": 56
   },
-   {
+  {
     "name": "cake-xtz-bnb",
     "address": "0x12e09a13f5e2d95b3B8db8741dFeBa453784d1DC",
     "interval": 4,
@@ -119,7 +159,7 @@
     "harvestEvent": false,
     "chainId": 56
   },
-    {
+  {
     "name": "cake-swingby-bnb",
     "address": "0xc1C1eB984218B9570beA53C0Dad14283a6E9E81C",
     "interval": 4,
@@ -159,7 +199,57 @@
     "harvestEvent": false,
     "chainId": 56
   },
-   {
+  {
+    "name": "monster-msc-bnb",
+    "address": "0xB97F9c6d4d3985E94266510c6a00AE448D44d78b",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
+    "name": "monster-msc-busd",
+    "address": "0xAe2a0F189996DbA008Bce55a3E67c506C742Eed5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
+    "name": "bolt-bts-busd",
+    "address": "0x22b5c879a821afc56e564bc73e3eaa7fc7cf25cc",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
+    "name": "bold-btd-busd",
+    "address": "0xa7da1bf46bc453075499d42b5396bb9aa7d6a4b1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
+    "name": "kebab-kebab-btc",
+    "address": "0x85540714bc3d330d8146bc93700a8653cb2ccbb8",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
     "name": "kebab-eth-btcb",
     "address": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
     "interval": 6,
@@ -309,7 +399,6 @@
     "harvestEvent": false,
     "chainId": 56
   },
-
   {
     "name": "cake-mamzn/ust",
     "address": "0x8F86077f526230Ac30de6f0220C2A9111C144556",
