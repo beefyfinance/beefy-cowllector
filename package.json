@@ -5,7 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "echo Cowllector ready!"
+    "start": "echo Cowllector ready!",
+    "new": "node ./scripts/addVault.js"
   },
   "dependencies": {
     "@bandprotocol/bandchain.js": "^1.2.0",
