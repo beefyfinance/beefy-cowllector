@@ -15,6 +15,10 @@ const endpoints = {
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugsLp:   'https://api.beefy.finance/thugs/lps',
   spongeLp:  'https://api.beefy.finance/sponge/lps',
+  ramenLp:   'https://api.beefy.finance/ramen/lps',
+  cafeLp:    'https://api.beefy.finance/cafe/lps',
+  crowLp:    'https://api.beefy.finance/crow/lps',
+  lps:       'https://api.beefy.finance/lps',
 };
 
 const CACHE_TIMEOUT = 30 * 60 * 1000;
@@ -172,6 +176,22 @@ const fetchPrice = async ({ oracle, id }) => {
 
     case 'thugs-lp':
       price = await fetchLP(id, endpoints.thugsLp);
+      break;
+
+    case 'ramen-lp':
+      price = await fetchLP(id, endpoints.ramenLp);
+      break;
+
+    case 'cafe-lp':
+      price = await fetchLP(id, endpoints.cafeLp);
+      break;
+
+    case 'crow-lp':
+      price = await fetchLP(id, endpoints.crowLp);
+      break;
+
+    case 'lps':
+      price = await fetchLP(id, endpoints.lps);
       break;
 
     default: price = 0;
