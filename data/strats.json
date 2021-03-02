@@ -10,6 +10,16 @@
     "chainId": 56
   },
   {
+    "name": "1inch-1inch-bnb",
+    "address": "0x5430033735d32a4f73d1729fc4e005e86e0f1ad3",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "salt-salt-busd",
     "address": "0x85d04ce16C7d20Aa4d63b7520923e9e3b2e89d6e",
     "interval": 1,
