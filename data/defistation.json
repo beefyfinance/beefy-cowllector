@@ -7,6 +7,24 @@
     "oracleId": "BIFI",
     "tvl": 0
   },
+
+  {
+    "id": "salt-salt-busd",
+    "name": "SALT-BUSD LP",
+    "contract": "0x62ad4253FB38265Da05eb389ac547F1B2c09a689",
+    "oracle": "lps",
+    "oracleId": "salt-salt-busd",
+    "tvl": 0
+  },
+
+  {
+    "id": "salt-salt-bnb",
+    "name": "SALT-BNB LP",
+    "contract": "0x57e07d6958fd38AA2f46699744e322d3fB3db60f",
+    "oracle": "lps",
+    "oracleId": "salt-salt-bnb",
+    "tvl": 0
+  },
   
   {
     "id": "crow-crow-busd",

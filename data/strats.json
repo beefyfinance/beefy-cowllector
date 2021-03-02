@@ -10,6 +10,26 @@
     "chainId": 56
   },
   {
+    "name": "salt-salt-busd",
+    "address": "0x85d04ce16C7d20Aa4d63b7520923e9e3b2e89d6e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "salt-salt-bnb",
+    "address": "0x503dc0d4d7582033a9Ac4A5940D3341aE5852CAc",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "crow-crow-busd",
     "address": "0x0E687591C7a0e825bd1dBaf9C0a4ec9a4ED4F434",
     "interval": 1,
