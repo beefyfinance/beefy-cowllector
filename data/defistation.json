@@ -88,7 +88,15 @@
     "oracleId": "sponge-soak-bnb",
     "tvl": 0
   },
-
+  
+  {
+    "id": "cake-sushi-eth",
+    "name": "SUSHI-ETH LP",
+    "contract": "0x07622B8cF9130934643522E7c9D621707EF1d34F",
+    "oracle": "pancake-lp",
+    "oracleId": "cake-sushi-eth",
+    "tvl": 0
+  },
 
   {
     "id": "cake-bry-bnb",
