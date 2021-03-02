@@ -170,6 +170,16 @@
     "chainId": 56
   },
   {
+    "name": "cake-sushi-eth",
+    "address": "0x07622B8cF9130934643522E7c9D621707EF1d34F",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
     "name": "cake-dodo-bnb",
     "address": "0xe569D4131287FA79123423BC952485F810973609",
     "interval": 4,
