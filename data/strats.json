@@ -1,5 +1,25 @@
 [
   {
+    "name": "soup-soups-bnb",
+    "address": "0x6731F513645383c25e36e7a05042B5968E899Dd3",
+    "interval": "1",
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "soup-soup-bnb",
+    "address": "0xC370B3a3958579F2aAFedF4c3548F75DeB43DB11",
+    "interval": "1",
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "banana-banana-busd",
     "address": "0x7687867eCD824674f5a220391520E1B1e83b011f",
     "interval": "1",
