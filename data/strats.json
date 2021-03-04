@@ -1,5 +1,45 @@
 [
   {
+    "name": "soup-soups-bnb",
+    "address": "0x6731F513645383c25e36e7a05042B5968E899Dd3",
+    "interval": "1",
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "soup-soup-bnb",
+    "address": "0xC370B3a3958579F2aAFedF4c3548F75DeB43DB11",
+    "interval": "1",
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-banana-busd",
+    "address": "0x7687867eCD824674f5a220391520E1B1e83b011f",
+    "interval": "1",
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-banana-bnb",
+    "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
+    "interval": "1",
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "bifi-maxi",
     "address": "0x92F347AdB3a2c3FD336DCE60242cde126711b9a3",
     "interval": 1,
@@ -51,7 +91,7 @@
   },
   {
     "name": "ramen-ramen-bnb",
-    "address": "0xD40021F03bE89D23A8E3c81B008feaF0403Fa867",
+    "address": "0xd4c89791eF0FAdE72eAAc6475296320b5572b28e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
