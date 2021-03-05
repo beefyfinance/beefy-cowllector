@@ -1,4 +1,14 @@
 [
+   {
+    "name": "venus-ada",
+    "address": "0xf9D0e760a71991AC65c9919898c09a3648E62eBB",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
   {
     "name": "soup-soups-bnb",
     "address": "0x6731F513645383c25e36e7a05042B5968E899Dd3",
@@ -241,7 +251,7 @@
   },
   {
     "name": "cake-sushi-eth",
-    "address": "0x07622B8cF9130934643522E7c9D621707EF1d34F",
+    "address": "0x8f42a75affb4c3d30c3423f7bda2095d68b16232",
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
