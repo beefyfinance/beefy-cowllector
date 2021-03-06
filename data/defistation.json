@@ -16,6 +16,22 @@
     "tvl": 0
   },
   {
+    "id": "cake-bel-bnb",
+    "name": "Moo Pancake BEL-BNB",
+    "contract": "0x7C001B962029C0a59b148293838dc780d7E5d24C",
+    "oracle": "lps",
+    "oracleId": "cake-bel-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-tpt-busd",
+    "name": "Moo Pancake TPT-BUSD",
+    "contract": "0x6b4971b8dAfc3c426EdE7E629394f31B0BdF3c16",
+    "oracle": "lps",
+    "oracleId": "cake-tpt-busd",
+    "tvl": 0
+  },
+  {
     "id": "auto-beth-eth",
     "name": "Moo Auto BETH-ETH",
     "contract": "0xF3C1EB01E40c47fd32D0397e56569809aae0e9c7",

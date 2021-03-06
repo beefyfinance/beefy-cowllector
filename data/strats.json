@@ -20,6 +20,26 @@
     "chainId": 56
   },
   {
+    "name": "cake-bel-bnb",
+    "address": "0x7AD32a7a8d6524f0C3Cb8f5FB59693F2B2BeA07c",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-tpt-busd",
+    "address": "0x0096222E8F5012AA7a8ce9266aD665795f0D4223",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "auto-beth-eth",
     "address": "0x9aD034009CCADA34baB3f31Fb5010Ad180a417C7",
     "interval": 24,
