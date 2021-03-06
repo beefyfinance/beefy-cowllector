@@ -1,4 +1,20 @@
 [
+   {
+    "id": "cafe-bifi-bnb",
+    "name": "Moo Cafe BIFI-BNB",
+    "contract": "0x8afc0f9BdC5DcA9f0408Df03A03520bFa98A15aF",
+    "oracle": "lps",
+    "oracleId": "cake-bifi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-watch-bnb",
+    "name": "Moo Pancake WATCH-BNB",
+    "contract": "0x31b4d6D89531BB32307737C441a8cD7d82224B91",
+    "oracle": "lps",
+    "oracleId": "cake-watch-bnb",
+    "tvl": 0
+  },
   {
     "id": "auto-beth-eth",
     "name": "Moo Auto BETH-ETH",
