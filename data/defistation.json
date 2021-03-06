@@ -1,5 +1,13 @@
 [
-   {
+  {
+    "id": "auto-beth-eth",
+    "name": "Moo Auto BETH-ETH",
+    "contract": "0xF3C1EB01E40c47fd32D0397e56569809aae0e9c7",
+    "oracle": "lps",
+    "oracleId": "auto-beth-eth",
+    "tvl": 0
+  },
+  {
     "id": "venus-ada",
     "name": "Moo Venus ADA",
     "contract": "0x53c0CE2EBdA0c2A39327bE0B58a3c28A8Dcde420",

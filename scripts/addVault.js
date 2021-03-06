@@ -17,7 +17,7 @@ if (!args.length) {
 const config = {
   vault: args[0],
   chainId: Number(args[1]) || 56,
-  interval: args[2] || 2,
+  interval: Number(args[2]) || 2,
 };
 
 /**

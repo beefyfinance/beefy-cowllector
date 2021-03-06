@@ -1,5 +1,15 @@
 [
-   {
+  {
+    "name": "auto-beth-eth",
+    "address": "0x9aD034009CCADA34baB3f31Fb5010Ad180a417C7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "venus-ada",
     "address": "0xf9D0e760a71991AC65c9919898c09a3648E62eBB",
     "interval": 24,
@@ -32,7 +42,7 @@
   {
     "name": "banana-banana-busd",
     "address": "0x7687867eCD824674f5a220391520E1B1e83b011f",
-    "interval": "1",
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -42,7 +52,7 @@
   {
     "name": "banana-banana-bnb",
     "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
-    "interval": "1",
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
