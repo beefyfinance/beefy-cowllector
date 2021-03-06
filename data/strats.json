@@ -1,5 +1,25 @@
 [
   {
+    "name": "cafe-bifi-bnb",
+    "address": "0xa7C062cec3EbF04FFf15f94F11e917c2aAE57a06",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+   {
+    "name": "cake-watch-bnb",
+    "address": "0xB4b49cF75CA2535e973ab57a01B396cEC7c4D869",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "auto-beth-eth",
     "address": "0x9aD034009CCADA34baB3f31Fb5010Ad180a417C7",
     "interval": 24,
