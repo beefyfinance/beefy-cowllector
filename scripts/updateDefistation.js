@@ -22,7 +22,7 @@ const fetchVaultTvl = async ({ vault, harvester }) => {
     const vaultObjTvl = utils.formatEther(result);
     vault.tvl = Number(vaultObjTvl).toFixed(2);
 
-    return result;
+    return vault.tvl;
   } catch (err) {
 
     console.log('error fetching price tvl:', vault.oracleId);
@@ -37,10 +37,10 @@ const updateDefistation = async () => {
   let promises = [];
   vaults.forEach((vault) => promises.push(fetchVaultTvl({ vault, harvester })));
   const values = await Promise.all(promises);
-  const totalTvl = values.reduce((acc, curr) => acc.add(curr));
+  const totalTvl = values.reduce((acc, curr) => Number(acc) + Number(curr));
 
   const data = {
-    tvl: Number(totalTvl / 1e18),
+    tvl: totalTvl,
     bnb: 0,
     test: false,
     data: vaults
