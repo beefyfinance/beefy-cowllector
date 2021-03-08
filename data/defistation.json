@@ -1,5 +1,29 @@
 [
   {
+    "id": "auto-btc-bnb",
+    "name": "Moo Auto BTC-BNB",
+    "contract": "0xcf2D6e0030e24F01e4750cAE376E2126e728E0c2",
+    "oracle": "lps",
+    "oracleId": "auto-btc-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "auto-busd-bnb",
+    "name": "Moo Auto BUSD-BNB",
+    "contract": "0xb01e3C7789858beD3b142c8f2499F21Ab3ea3f0f",
+    "oracle": "lps",
+    "oracleId": "auto-busd-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "auto-cake-bnb",
+    "name": "Moo Auto CAKE-BNB",
+    "contract": "0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee",
+    "oracle": "lps",
+    "oracleId": "auto-cake-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-dexe-busd",
     "name": "Moo Pancake DEXE-BUSD",
     "contract": "0xfEDB3855761B9e356671Fb1eC95593e99b153EfD",
