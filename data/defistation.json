@@ -1,5 +1,53 @@
 [
   {
+    "id": "jul-juld-bnb",
+    "name": "Moo Jul JulD-BNB",
+    "contract": "0xcB8c4416cD10836ff7A35F4b2AfD5BE0257Cc9DB",
+    "oracle": "lps",
+    "oracleId": "jul-juld-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-bifi-bnb",
+    "name": "Moo Jul BIFI-BNB",
+    "contract": "0x6a3fF116a10349BB40B22FD7687871d5D560d715",
+    "oracle": "lps",
+    "oracleId": "jul-bifi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "auto-ust-busd",
+    "name": "Moo Auto CTK-BNB",
+    "contract": "0xCa0294b89ee367ADaEDC8cdA684648dC1c5D8FEe",
+    "oracle": "lps",
+    "oracleId": "auto-ust-busd",
+    "tvl": 0
+  },
+  {
+    "id": "auto-ctk-bnb",
+    "name": "Moo Auto CTK-BNB",
+    "contract": "0x00dD62424A79C971D6F6a10bac531F33185E6d5b",
+    "oracle": "lps",
+    "oracleId": "auto-ctk-bnb",
+    "tvl": 0
+  },
+     {
+    "id": "auto-hget-bnb",
+    "name": "Moo Auto HGET-BNB",
+    "contract": "0x8f210015B2BbDd39e6d62278992136aCAfd09691",
+    "oracle": "lps",
+    "oracleId": "auto-hget-bnb",
+    "tvl": 0
+  },
+    {
+    "id": "auto-comp-eth",
+    "name": "Moo Auto COMP-ETH",
+    "contract": "0x907b3848593df20243eCb5D954b06a028092b0D6",
+    "oracle": "lps",
+    "oracleId": "auto-comp-eth",
+    "tvl": 0
+  },
+  {
     "id": "auto-auto-bnb",
     "name": "Moo Auto AUTO-BNB",
     "contract": "0x6Cb6D451e7E7ca5d5F73715D6B5dfc55EfbC1f82",
