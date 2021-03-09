@@ -1,5 +1,15 @@
 [
   {
+    "name": "auto-auto-bnb",
+    "address": "0xF87079AD78f4762b515519B63D4aA19bf0c1470E",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "auto-btc-bnb",
     "address": "0x71D322ef2ad9b6b312Cc04A51a03C5f0Da74CaA0",
     "interval": 4,
