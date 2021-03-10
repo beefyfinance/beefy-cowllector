@@ -1,5 +1,15 @@
 [
-    {
+  {
+    "name": "cake-ramp-busd",
+    "address": "0xCB1631CB1a0D8289e0D18bbc93a5EA9a82eddc67",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "auto-ust-busd",
     "address": "0x50E33d0CB8664F9C2867c679d3C955A6b2A0faD4",
     "interval": 6,
@@ -29,7 +39,7 @@
     "harvestEvent": true,
     "chainId": 56
   },
-   {
+  {
     "name": "auto-comp-eth",
     "address": "0xd07308E588679C6F19682A83124F1F5022969EF2",
     "interval": 6,
@@ -39,7 +49,7 @@
     "harvestEvent": true,
     "chainId": 56
   },
-   {
+  {
     "name": "jul-juld-bnb",
     "address": "0x2d007d239D39c1d24d4685d845063C2401060559",
     "interval": 6,
@@ -49,7 +59,7 @@
     "harvestEvent": true,
     "chainId": 56
   },
- {
+  {
     "name": "jul-bifi-busd",
     "address": "0xA4FEbF841f26a9dd297d7492cf18D70464c725a4",
     "interval": 6,
@@ -59,7 +69,7 @@
     "harvestEvent": true,
     "chainId": 56
   },
-   {
+  {
     "name": "cake-dai-busd",
     "address": "0x39e9A7F890b1a7f4251745B84560909f2820c973",
     "interval": 4,
@@ -79,7 +89,7 @@
     "harvestEvent": true,
     "chainId": 56
   },
-   {
+  {
     "name": "cake-usdc-busd",
     "address": "0xcCBFBbc4d20B1E4748da941cC3e321c12a6E480D",
     "interval": 4,

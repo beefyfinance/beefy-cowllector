@@ -1,5 +1,13 @@
 [
   {
+    "id": "cake-ramp-busd",
+    "name": "Moo Pancake RAMP-BUSD",
+    "contract": "0x32FDaa004C1d9cFCf9B8044D6015DD7bb3a7Ec5a",
+    "oracle": "lps",
+    "oracleId": "cake-ramp-busd",
+    "tvl": 0
+  },
+  {
     "id": "jul-juld-bnb",
     "name": "Moo Jul JulD-BNB",
     "contract": "0xcB8c4416cD10836ff7A35F4b2AfD5BE0257Cc9DB",
@@ -31,7 +39,7 @@
     "oracleId": "auto-ctk-bnb",
     "tvl": 0
   },
-     {
+  {
     "id": "auto-hget-bnb",
     "name": "Moo Auto HGET-BNB",
     "contract": "0x8f210015B2BbDd39e6d62278992136aCAfd09691",
@@ -39,7 +47,7 @@
     "oracleId": "auto-hget-bnb",
     "tvl": 0
   },
-    {
+  {
     "id": "auto-comp-eth",
     "name": "Moo Auto COMP-ETH",
     "contract": "0x907b3848593df20243eCb5D954b06a028092b0D6",
