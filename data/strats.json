@@ -1,5 +1,15 @@
 [
   {
+    "name": "banana-banana",
+    "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-belt-bnb",
     "address": "0xa1CB1521a75d1f44B961FaA3cE062EE9421932B5",
     "interval": 4,
