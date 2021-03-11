@@ -1,5 +1,21 @@
 [
   {
+    "id": "belt-belt-bnb",
+    "name": "Moo Belt BELT-BNB",
+    "contract": "0xfc01F7a17eEb5DABc97312E13954444b00217621",
+    "oracle": "lps",
+    "oracleId": "cake-belt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "belt-venus-blp",
+    "name": "Moo Belt VenusBLP",
+    "contract": "0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24",
+    "oracle": "pancake",
+    "oracleId": "belt-venus-blp",
+    "tvl": 0
+  },
+  {
     "id": "banana-banana",
     "name": "Moo Ape BANANA",
     "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
