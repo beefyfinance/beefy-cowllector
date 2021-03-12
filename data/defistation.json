@@ -1,5 +1,45 @@
 [
   {
+    "id": "cake-nuls-busd",
+    "name": "Moo Pancake NULS-BUSD",
+    "contract": "0x96F66Dcf58fe5D276d64AC43095E2910AD4DBfD1",
+    "oracle": "lps",
+    "oracleId": "cake-nuls-busd",
+    "tvl": 0
+  },
+   {
+    "id": "jul-xvs-bnb",
+    "name": "Moo Jul XVS-BNB",
+    "contract": "0x48cc86214C58d7EaA78C100156c55DD45A676Ed1",
+    "oracle": "lps",
+    "oracleId": "jul-xvs-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-dot-bnb",
+    "name": "Moo Jul DOT-BNB",
+    "contract": "0xa640E017Fc01dD39F6b7B07b0460B04E218c0a01",
+    "oracle": "lps",
+    "oracleId": "jul-dot-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-uni-bnb",
+    "name": "Moo Jul UNI-BNB",
+    "contract": "0xd9fe7Ff89C5303E439a14a5155F7F48E34F28518",
+    "oracle": "lps",
+    "oracleId": "jul-uni-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-btc-bnb",
+    "name": "Moo Jul BTCB-BNB",
+    "contract": "0xFa7767Cf402a6D198cC136FED32550ABA70C3e02",
+    "oracle": "lps",
+    "oracleId": "jul-btc-bnb",
+    "tvl": 0
+  },
+  {
     "id": "belt-belt-bnb",
     "name": "Moo Belt BELT-BNB",
     "contract": "0xfc01F7a17eEb5DABc97312E13954444b00217621",
