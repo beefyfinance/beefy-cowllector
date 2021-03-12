@@ -1,4 +1,54 @@
 [
+    {
+    "name": "cake-nuls-busd",
+    "address": "0x6Ac205097Ae228aC41D7ffA50CBA1b3C81272D97",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-xvs-bnb",
+    "address": "0xC733253d45909f84D36e6e9D9f8Ee81DeEd12045",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-dot-bnb",
+    "address": "0x62fc868551D7C7663C07B22bE92643610a720640",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-uni-bnb",
+    "address": "0xe1209Afd5B595eBca109b001a34400cCB5171B45",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+   {
+    "name": "jul-btc-bnb",
+    "address": "0x97f20B3918bd990e3a6A133c5D2919b0b9Cb8218",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
   {
     "name": "belt-belt-bnb",
     "address": "0x448B41d7C82c889e7940b1C958f28302b0E2e2CA",
