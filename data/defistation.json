@@ -1,5 +1,21 @@
 [
   {
+    "id": "slime-slime-busd",
+    "name": "Moo Slime SLIME-BUSD",
+    "contract": "0xd7987DB14509FACb9CC44c0b82CC86c188f5cEEF",
+    "oracle": "lps",
+    "oracleId": "slime-slime-busd",
+    "tvl": 0
+  },
+  {
+    "id": "slime-slime-bnb",
+    "name": "Moo Slime SLIME-BNB",
+    "contract": "0x62d7eC40A1a3f0AB5D1fCC0D8bd3dCb015aFe6a3",
+    "oracle": "lps",
+    "oracleId": "slime-slime-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-nuls-busd",
     "name": "Moo Pancake NULS-BUSD",
     "contract": "0x96F66Dcf58fe5D276d64AC43095E2910AD4DBfD1",
@@ -7,7 +23,7 @@
     "oracleId": "cake-nuls-busd",
     "tvl": 0
   },
-   {
+  {
     "id": "jul-xvs-bnb",
     "name": "Moo Jul XVS-BNB",
     "contract": "0x48cc86214C58d7EaA78C100156c55DD45A676Ed1",

@@ -1,5 +1,25 @@
 [
-    {
+  {
+    "name": "slime-slime-busd",
+    "address": "0x790Ad5995eAADb771efe42A20f21ca048A02cD2B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "slime-slime-bnb",
+    "address": "0x61b41A0F29b5a23b18eb28d24eAfc2aA17D3b63a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-nuls-busd",
     "address": "0x6Ac205097Ae228aC41D7ffA50CBA1b3C81272D97",
     "interval": 6,
@@ -39,7 +59,7 @@
     "harvestEvent": true,
     "chainId": 56
   },
-   {
+  {
     "name": "jul-btcb-bnb",
     "address": "0x97f20B3918bd990e3a6A133c5D2919b0b9Cb8218",
     "interval": 6,
