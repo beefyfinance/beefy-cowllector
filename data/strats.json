@@ -1,5 +1,35 @@
 [
   {
+    "name": "png-usdt-avax",
+    "address": "0x945b2379E29F503a78dBcaB2feEFFE74a6c31E2b",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-eth-avax",
+    "address": "0x026cd63Bf3Fc511449f0229BD4a6323dD2F27b5a",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-png-avax",
+    "address": "0xF0d26842c3935A618e6980C53fDa3A2D10A02eb7",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "memefarm-mfrm-bnb",
     "address": "0x5960C72F04232e1093129f08c3f5A3C2D766253a",
     "interval": 2,
