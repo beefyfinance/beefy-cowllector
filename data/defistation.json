@@ -1,5 +1,29 @@
 [
   {
+    "id": "png-usdt-avax",
+    "name": "Moo Pangolin USDT-AVAX",
+    "contract": "0x7a670e849DB824364d1031DEAfB4cD603144F23D",
+    "oracle": "lps",
+    "oracleId": "png-usdt-avax",
+    "tvl": 0
+  },
+  {
+    "id": "png-eth-avax",
+    "name": "Moo Pangolin ETH-AVAX",
+    "contract": "0xDA875A511860f2752B891677489d08CaEDac00EA",
+    "oracle": "lps",
+    "oracleId": "png-eth-avax",
+    "tvl": 0
+  },
+  {
+    "id": "png-png-avax",
+    "name": "Moo Pangolin PNG-AVAX",
+    "contract": "0x71b5852857b85D5096d4288AD6d293F217d8e162",
+    "oracle": "lps",
+    "oracleId": "png-png-avax",
+    "tvl": 0
+  },
+  {
     "id": "memefarm-mfrm-bnb",
     "name": "Moo Memefarm MFRM-BNB",
     "contract": "0x94d75413A29287Dde5766E5595dc61e668965170",
