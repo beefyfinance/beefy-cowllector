@@ -1,5 +1,125 @@
 [
   {
+    "name": "png-usdt-avax",
+    "address": "0x945b2379E29F503a78dBcaB2feEFFE74a6c31E2b",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-eth-avax",
+    "address": "0x026cd63Bf3Fc511449f0229BD4a6323dD2F27b5a",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-png-avax",
+    "address": "0xF0d26842c3935A618e6980C53fDa3A2D10A02eb7",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "memefarm-mfrm-bnb",
+    "address": "0x5960C72F04232e1093129f08c3f5A3C2D766253a",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "memefarm-ape-bnb",
+    "address": "0x0dB95418687aA9b9DdCb145E0ef525A3EaCe080D",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "slime-slime-busd",
+    "address": "0x790Ad5995eAADb771efe42A20f21ca048A02cD2B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "slime-slime-bnb",
+    "address": "0x61b41A0F29b5a23b18eb28d24eAfc2aA17D3b63a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-nuls-busd",
+    "address": "0x6Ac205097Ae228aC41D7ffA50CBA1b3C81272D97",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-xvs-bnb",
+    "address": "0xC733253d45909f84D36e6e9D9f8Ee81DeEd12045",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-dot-bnb",
+    "address": "0x62fc868551D7C7663C07B22bE92643610a720640",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-uni-bnb",
+    "address": "0xe1209Afd5B595eBca109b001a34400cCB5171B45",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-btcb-bnb",
+    "address": "0x97f20B3918bd990e3a6A133c5D2919b0b9Cb8218",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "belt-belt-bnb",
     "address": "0x448B41d7C82c889e7940b1C958f28302b0E2e2CA",
     "interval": 1,
