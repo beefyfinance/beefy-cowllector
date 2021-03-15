@@ -1,32 +1,14 @@
 const axios = require('axios');
-const BandChain = require('@bandprotocol/bandchain.js');
 
 const endpoints = {
-  bandchain: 'https://poa-api.bandchain.org',
-  bakery:    'https://api.beefy.finance/bakery/price',
-  bakeryLp:  'https://api.beefy.finance/bakery/lps',
-  bdollarLp: 'https://api.beefy.finance/bdollar/lps',
+  bakery: 'https://api.beefy.finance/bakery/price',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
-  jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
-  kebabLp:   'https://api.beefy.finance/kebab/lps',
-  monsterLP: 'https://api.beefy.finance/monster/lps',
-  narwhalLp: 'https://api.beefy.finance/narwhal/lps',
-  pancake:   'https://api.beefy.finance/pancake/price',
-  pancakeLp: 'https://api.beefy.finance/pancake/lps',
-  thugsLp:   'https://api.beefy.finance/thugs/lps',
-  spongeLp:  'https://api.beefy.finance/sponge/lps',
-  ramenLp:   'https://api.beefy.finance/ramen/lps',
-  cafeLp:    'https://api.beefy.finance/cafe/lps',
-  crowLp:    'https://api.beefy.finance/crow/lps',
-  lps:       'https://api.beefy.finance/lps',
+  pancake: 'https://api.beefy.finance/pancake/price',
+  lps: 'https://api.beefy.finance/lps',
 };
 
 const CACHE_TIMEOUT = 30 * 60 * 1000;
 const cache = {};
-
-const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-const BUSD = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
-const WBNB_BUSD = `${WBNB}_${BUSD}`
 
 function isCached({ oracle, id }) {
   if (`${oracle}-${id}` in cache) {
@@ -42,17 +24,6 @@ function getCachedPrice({ oracle, id }) {
 function addToCache({ oracle, id, price }) {
   cache[`${oracle}-${id}`] = { price: price, t: Date.now() };
 }
-
-const fetchBand = async id => {
-  try {
-    const bandchain = new BandChain(endpoints.bandchain);
-    const price = await bandchain.getReferenceData([id]);
-    return price[0].rate;
-  } catch (err) {
-    console.error(err);
-    return 0;
-  }
-};
 
 const fetchCoingecko = async id => {
   try {
@@ -70,30 +41,6 @@ const fetchPancake = async id => {
   try {
     const response = await axios.get(endpoints.pancake);
     return response.data[id];
-  } catch (err) {
-    console.error(err);
-    return 0;
-  }
-};
-
-const fetchThugs = async id => {
-  try {
-    const response = await axios.get(endpoints.thugs);
-    const ticker = response.data[id];
-    const bnb = response.data[WBNB_BUSD]['last_price'];
-
-    let price = 0;
-
-    const pair = id.split('_');
-    if (pair[0] === WBNB && pair[1] === BUSD) {
-      price = bnb;
-    } else if (pair[0] === WBNB) {
-      price = bnb / ticker['last_price'];
-    } else {
-      price = bnb * ticker['last_price'];
-    }
-
-    return price;
   } catch (err) {
     console.error(err);
     return 0;
@@ -126,80 +73,32 @@ const fetchPrice = async ({ oracle, id }) => {
 
   let price = 0;
   switch (oracle) {
-    case 'band':
-      price = await fetchBand(id);
-      break;
-    
     case 'bakery':
       price = await fetchLP(id, endpoints.bakery);
       break;
 
-    case 'bakery-lp':
-      price = await fetchLP(id, endpoints.bakeryLp);
-      break;
-    
-    case 'bdollar-lp':
-      price = await fetchLP(id, endpoints.bdollarLp);
-      break;  
-    
     case 'coingecko':
       price = await fetchCoingecko(id);
       break;
-    
-    case 'jetfuel-lp':
-      price = await fetchLP(id, endpoints.jetfuelLp);
-      break;
 
-    case 'kebab-lp':
-      price = await fetchLP(id, endpoints.kebabLp);
-      break;
-
-    case 'monster-lp':
-      price = await fetchLP(id, endpoints.monsterLP);
-      break;
-    
-    case 'narwhal-lp':
-      price = await fetchLP(id, endpoints.narwhalLp);
-      break;
-    
     case 'pancake':
       price = await fetchPancake(id);
-      break;
-
-    case 'pancake-lp':
-      price = await fetchLP(id, endpoints.pancakeLp);
       break;
 
     case 'thugs':
       price = await fetchThugs(id);
       break;
 
-    case 'thugs-lp':
-      price = await fetchLP(id, endpoints.thugsLp);
-      break;
-
-    case 'ramen-lp':
-      price = await fetchLP(id, endpoints.ramenLp);
-      break;
-
-    case 'cafe-lp':
-      price = await fetchLP(id, endpoints.cafeLp);
-      break;
-
-    case 'crow-lp':
-      price = await fetchLP(id, endpoints.crowLp);
-      break;
-
     case 'lps':
       price = await fetchLP(id, endpoints.lps);
       break;
 
-    default: price = 0;
+    default:
+      price = 0;
   }
 
   addToCache({ oracle, id, price });
   return price;
 };
-
 
 module.exports = fetchPrice;
