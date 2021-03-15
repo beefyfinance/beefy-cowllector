@@ -20,6 +20,16 @@
     "chainId": 56
   },
   {
+    "name": "pancake-alice-bnb",
+    "address": "0x39dC8831e8864766E094799933d34AE6D3536681",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-nuls-busd",
     "address": "0x6Ac205097Ae228aC41D7ffA50CBA1b3C81272D97",
     "interval": 6,
