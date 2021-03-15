@@ -1,5 +1,21 @@
 [
   {
+    "id": "memefarm-mfrm-bnb",
+    "name": "Moo Memefarm MFRM-BNB",
+    "contract": "0x94d75413A29287Dde5766E5595dc61e668965170",
+    "oracle": "lps",
+    "oracleId": "memefarm-mfrm-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "memefarm-ape-bnb",
+    "name": "Moo Memefarm APE-BNB",
+    "contract": "0xbA67606DFE07387D20d9A324eF91732954688D77",
+    "oracle": "lps",
+    "oracleId": "memefarm-ape-bnb",
+    "tvl": 0
+  },
+  {
     "id": "slime-slime-busd",
     "name": "Moo Slime SLIME-BUSD",
     "contract": "0xd7987DB14509FACb9CC44c0b82CC86c188f5cEEF",
