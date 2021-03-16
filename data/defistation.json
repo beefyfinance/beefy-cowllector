@@ -1,5 +1,133 @@
 [
   {
+    "id": "bakery-bat-bake",
+    "name": "Moo Bakery BAT-BAKE",
+    "contract": "0x92E586d7dB14483C103c2e0FE6A596F8b55DA752",
+    "oracle": "lps",
+    "oracleId": "bakery-bat-bake",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-eth-wht",
+    "name": "Moo Mdex ETH-WHT",
+    "contract": "0x07AD2C13a0D735FA4F8788DC0B6355AaaB2f3407",
+    "oracle": "lps",
+    "oracleId": "mdex-eth-wht",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-hbtc-wht",
+    "name": "Moo Mdex HBTC-WHT",
+    "contract": "0xFDafEA4529d609901E6E6CC65b3e2C1C822e223d",
+    "oracle": "lps",
+    "oracleId": "mdex-hbtc-wht",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-uni-usdt",
+    "name": "Moo Mdex UNI-USDT",
+    "contract": "0xC422261EdC5dB679CAd9BC403e886351De540e77",
+    "oracle": "lps",
+    "oracleId": "mdex-uni-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-yfi-usdt",
+    "name": "Moo Mdex YFI-USDT",
+    "contract": "0xbF7421bd2f79643a671b70d1DDE57D452C110CF8",
+    "oracle": "lps",
+    "oracleId": "mdex-yfi-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bal-usdt",
+    "name": "Moo Mdex BAL-USDT",
+    "contract": "0x666c0b9D37A20235C232081C1C6B2edc70ecC7F3",
+    "oracle": "lps",
+    "oracleId": "mdex-bal-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-link-usdt",
+    "name": "Moo Mdex LINK-USDT",
+    "contract": "0x044e87f30bd9bD961c04028aC69155493E1b9eD0",
+    "oracle": "lps",
+    "oracleId": "mdex-link-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-snx-usdt",
+    "name": "Moo Mdex SNX-USDT",
+    "contract": "0x8B1Ca7f3F0838dCd23DA8CFe223eA313739193cb",
+    "oracle": "lps",
+    "oracleId": "mdex-snx-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-aave-usdt",
+    "name": "Moo Mdex AAVE-USDT",
+    "contract": "0x6169551074826724CAcd8Deb452BF133403c2036",
+    "oracle": "lps",
+    "oracleId": "mdex-aave-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-lhb-usdt",
+    "name": "Moo Mdex LHB-USDT",
+    "contract": "0x945b2379E29F503a78dBcaB2feEFFE74a6c31E2b",
+    "oracle": "lps",
+    "oracleId": "mdex-lhb-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-hpt-usdt",
+    "name": "Moo Mdex HPT-USDT",
+    "contract": "0x7a670e849DB824364d1031DEAfB4cD603144F23D",
+    "oracle": "lps",
+    "oracleId": "mdex-hpt-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-hfil-usdt",
+    "name": "Moo Mdex HFIL-USDT",
+    "contract": "0x1433c4a55449c8B96cf5Ac0cF395cBd8dc8e5f60",
+    "oracle": "lps",
+    "oracleId": "mdex-hfil-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-hbch-usdt",
+    "name": "Moo Mdex HBCH-USDT",
+    "contract": "0xdf68Bf80D427A5827Ff2c06A9c70D407e17DC041",
+    "oracle": "lps",
+    "oracleId": "mdex-hbch-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-hdot-usdt",
+    "name": "Moo Mdex HDOT-USDT",
+    "contract": "0x2a30C5e0d577108F694d2A96179cd73611Ee069b",
+    "oracle": "lps",
+    "oracleId": "mdex-hdot-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-hltc-usdt",
+    "name": "Moo Mdex HLTC-USDT",
+    "contract": "0x41D44B276904561Ac51855159516FD4cB2c90968",
+    "oracle": "lps",
+    "oracleId": "mdex-hltc-usd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-husd-usdt",
+    "name": "Moo Mdex HUSD-USDT",
+    "contract": "0xe6CcE165Aa3e52B2cC55F17b1dBC6A8fe5D66610",
+    "oracle": "lps",
+    "oracleId": "mdex-husd-usd",
+    "tvl": 0
+  },
+  {
     "id": "png-usdt-avax",
     "name": "Moo Pangolin USDT-AVAX",
     "contract": "0x7a670e849DB824364d1031DEAfB4cD603144F23D",
