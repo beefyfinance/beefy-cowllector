@@ -18,7 +18,7 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   const oldestPeriodBlock = currentBlock - (strat.interval * 3600) / blockTime;
 
   let logs = [];
-  let interval = 2000;
+  let interval = getRpcQueryCap(strat.chainId);
   let from = currentBlock - interval;
   let to = currentBlock;
 
@@ -32,6 +32,15 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   }
 
   return false;
+};
+
+const getRpcQueryCap = chainId => {
+  switch (chainId) {
+    case 43114:
+      return 510;
+    default:
+      return 2000;
+  }
 };
 
 const isNewHarvestPeriodBscscan = async strat => {
