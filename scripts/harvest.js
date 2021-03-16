@@ -8,7 +8,6 @@ const {
   subsidyWant,
   sleep,
 } = require('../utils/harvestHelpers');
-const { sendMessage } = require('../utils/discord');
 const { getChainRpc } = require('../utils/getChainData');
 const strats = require('../data/strats.json');
 
@@ -46,18 +45,13 @@ const harvest = async () => {
           tx = await stratContract.harvest({ gasLimit: 4000000 });
         }
 
-        const message = `Successfully harvested ${strat.name} with tx: ${tx.hash}`;
-
-        sendMessage(message);
-        console.log(message);
+        console.log(`Successfully harvested ${strat.name} with tx: ${tx.hash}`);
       } else {
         console.log(`Shouldn't harvest ${strat.name}`);
       }
       console.log('---');
     } catch (e) {
-      const message = `Couldn't harvest strat ${strat.name}: ${e}`;
-      sendMessage(message);
-      console.log(message);
+      console.log(`Couldn't harvest strat ${strat.name}: ${e}`);
     }
 
     await sleep(10000);
