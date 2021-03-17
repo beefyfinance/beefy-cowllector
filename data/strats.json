@@ -1,5 +1,15 @@
 [
   {
+    "name": "cake-bifi-bnb",
+    "address": "0xFED46361d00e9881d0D63cdEfba51B11c264CcE2",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "bakery-bat-bake",
     "address": "0x2ABB0ea3A5C038f60E677Bf14d2F6095786650Ae",
     "interval": 4,
