@@ -1,5 +1,21 @@
 [
   {
+    "id": "squirrel-nuts",
+    "name": "Moo Squirrel NUTS",
+    "contract": "0x2D40beB0122aBcAD0E6b49934d47adac6Dddd97B",
+    "oracle": "pancake",
+    "oracleId": "NUTS",
+    "tvl": 0
+  },
+  {
+    "id": "squirrel-nuts-bnb",
+    "name": "Moo Squirrel NUTS-BNB",
+    "contract": "0xB1C9A27394dBa451Bfc4a5dce8Fc829f8a3E9278",
+    "oracle": "lps",
+    "oracleId": "squirrel-nuts-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-bifi-bnb",
     "name": "Moo Pancake BIFI-BNB",
     "contract": "0x3B5332A476AbCdb80Cde6645e9e5563435e97772",

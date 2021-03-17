@@ -1,5 +1,25 @@
 [
   {
+    "name": "squirrel-nuts",
+    "address": "0x2a9811dDfAA3cA01bD36d9Ed41B9cF954fd01AA2",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "squirrel-nuts-bnb",
+    "address": "0xB65131B5581C91ab900df3e71E8818512977023D",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-bifi-bnb",
     "address": "0xFED46361d00e9881d0D63cdEfba51B11c264CcE2",
     "interval": 2,
