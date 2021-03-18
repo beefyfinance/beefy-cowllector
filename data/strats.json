@@ -1,5 +1,15 @@
 [
   {
+    "name": "snob-snob-avax",
+    "address": "0xED3a4BA78079804B75e462727E033C1F1887093D",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "com-dai-avax",
     "address": "0x0955479C61B37074d689319fCaA84ffE1E9e8CF5",
     "interval": 6,
