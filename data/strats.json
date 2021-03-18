@@ -1,5 +1,85 @@
 [
   {
+    "name": "cake-dusk-bnb",
+    "address": "0x59A5a6591Db950757021DCeC564f47d4754a3B3D",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-cos-bnb",
+    "address": "0x160fe116000541559D87EEbdA476512BF1cD3409",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-txl-busd",
+    "address": "0x5d06127cCfc6b1C057c3b4494B980B7c2d556360",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "png-wbtc-avax",
+    "address": "0x5bAF3075C71cc50FC1D0CdcCd48A413c40d26c20",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-link-avax",
+    "address": "0xd4B95a7e8FAA968A90fBEf6BdAf870D89B4fc327",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-sushi-avax",
+    "address": "0x3A8A26e3b38c4544f860D0e0CBD50095602D4cE5",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-uni-avax",
+    "address": "0x666c0b9D37A20235C232081C1C6B2edc70ecC7F3",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "png-usdt-png",
+    "address": "0x033cA6926dFF4F6848983731087907Dcc9dDBEE2",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "squirrel-nuts",
     "address": "0x2a9811dDfAA3cA01bD36d9Ed41B9cF954fd01AA2",
     "interval": 4,
