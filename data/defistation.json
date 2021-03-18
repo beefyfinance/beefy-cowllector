@@ -1,5 +1,21 @@
 [
   {
+    "id": "complus-dai-avax",
+    "name": "Moo Complus DAI-AVAX",
+    "contract": "0xB5F0fF997BEc850b11792ed07b2B5AbDEa869B84",
+    "oracle": "lps",
+    "oracleId": "complus-dai-avax",
+    "tvl": 0
+  },
+  {
+    "id": "complus-com-avax",
+    "name": "Moo Complus COM-AVAX",
+    "contract": "0xA43d8f6Db69610C8260B953658553cabF01D77c6",
+    "oracle": "lps",
+    "oracleId": "complus-com-avax",
+    "tvl": 0
+  },
+  {
     "id": "cake-dusk-bnb",
     "name": "Moo Pancake DUSK-BNB",
     "contract": "0x4BeE93b29e1b3fd90bb3e6EdE9539Fe92E9836Cd",
