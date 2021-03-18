@@ -1,5 +1,69 @@
 [
   {
+    "id": "cake-dusk-bnb",
+    "name": "Moo Pancake DUSK-BNB",
+    "contract": "0x4BeE93b29e1b3fd90bb3e6EdE9539Fe92E9836Cd",
+    "oracle": "lps",
+    "oracleId": "cake-dusk-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-cos-bnb",
+    "name": "Moo Pancake COS-BNB",
+    "contract": "0x61B51dc9AEb46403628930ef5F527168941E639b",
+    "oracle": "lps",
+    "oracleId": "cake-cos-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-txl-busd",
+    "name": "Moo Pancake TXL-BUSD",
+    "contract": "0x8AA0635A4719e665A08BaDe38b13F4a6d278165A",
+    "oracle": "lps",
+    "oracleId": "cake-txl-busd",
+    "tvl": 0
+  },
+  {
+    "id": "png-wbtc-avax",
+    "name": "Moo Pangolin WBTC-AVAX",
+    "contract": "0xd5ab3Fac6200B0D8e8d76daED62793026118A78c",
+    "oracle": "lps",
+    "oracleId": "png-wbtc-avax",
+    "tvl": 0
+  },
+  {
+    "id": "png-sushi-avax",
+    "name": "Moo Pangolin SUSHI-AVAX",
+    "contract": "0x3094Ab4Af54f5208B867125B5CCeCc94Bc17cbB6",
+    "oracle": "lps",
+    "oracleId": "png-sushi-avax",
+    "tvl": 0
+  },
+  {
+    "id": "png-link-avax",
+    "name": "Moo Pangolin LINK-AVAX",
+    "contract": "0x6571052b2FB67DF6DD003ED6ed371098A030Eb0d",
+    "oracle": "lps",
+    "oracleId": "png-link-avax",
+    "tvl": 0
+  },
+  {
+    "id": "png-uni-avax",
+    "name": "Moo Pangolin UNI-AVAX",
+    "contract": "0x17657955D954bD7F7315C388D7099af7B0b851FA",
+    "oracle": "lps",
+    "oracleId": "png-uni-avax",
+    "tvl": 0
+  },
+  {
+    "id": "png-usdt-png",
+    "name": "Moo Pangolin USDT-PNG",
+    "contract": "0x044e87f30bd9bD961c04028aC69155493E1b9eD0",
+    "oracle": "lps",
+    "oracleId": "png-usdt-png",
+    "tvl": 0
+  },
+  {
     "id": "squirrel-nuts",
     "name": "Moo Squirrel NUTS",
     "contract": "0x2D40beB0122aBcAD0E6b49934d47adac6Dddd97B",
