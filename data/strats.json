@@ -1,5 +1,25 @@
 [
   {
+    "name": "com-dai-avax",
+    "address": "0x0955479C61B37074d689319fCaA84ffE1E9e8CF5",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "com-com-avax",
+    "address": "0x44e67bCDf95aE53b60ab20929626274640998FDB",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "cake-dusk-bnb",
     "address": "0x59A5a6591Db950757021DCeC564f47d4754a3B3D",
     "interval": 4,
