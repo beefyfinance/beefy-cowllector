@@ -1,5 +1,15 @@
 [
   {
+    "name": "com-com-bnb",
+    "address": "0x6770B687a7622660b31D0F148033056E0EcE5020",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "snob-snob-avax",
     "address": "0xED3a4BA78079804B75e462727E033C1F1887093D",
     "interval": 12,
