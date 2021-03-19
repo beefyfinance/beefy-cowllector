@@ -1404,8 +1404,8 @@
     "address": "0xf6274138DD2D9eBe768a4220A4089c45d9a26fCa",
     "interval": 8,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
+    "depositsPaused": true,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
