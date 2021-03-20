@@ -1,5 +1,35 @@
 [
   {
+    "name": "com-png-avax",
+    "address": "0xBceD1CF7259e8fc7BF34F55F05aF88d78bd91FEC",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "com-eth-avax",
+    "address": "0xF933075ae4e39aa789555c2bEBA710130E41Ed32",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "com-usdt-avax",
+    "address": "0xcd4db0404DEA8882EdE60Cea1b8D186AbD7F97dF",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "blizzard-blzd-bnb",
     "address": "0x6A058015A6209EeDFd77693EFEa7419976b8957C",
     "interval": 2,

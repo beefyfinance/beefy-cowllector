@@ -1,5 +1,29 @@
 [
   {
+    "id": "com-png-avax",
+    "name": "Moo Complus PNG-AVAX",
+    "contract": "0x7076a33b6525132fF77F0FeE2daB2a1e79688DA0",
+    "oracle": "lps",
+    "oracleId": "com-png-avax",
+    "tvl": 0
+  },
+  {
+    "id": "com-eth-avax",
+    "name": "Moo Complus ETH-AVAX",
+    "contract": "0x0c89Ca08b6831e6b81f9f969F37A966a2C44d3d1",
+    "oracle": "lps",
+    "oracleId": "com-eth-avax",
+    "tvl": 0
+  },
+  {
+    "id": "com-usdt-avax",
+    "name": "Moo Complus USDT-AVAX",
+    "contract": "0x14d07853560436aEe38BE12DD66d944B07D5E59F",
+    "oracle": "lps",
+    "oracleId": "com-usdt-avax",
+    "tvl": 0
+  },
+  {
     "id": "blizzard-blzd-bnb",
     "name": "Moo Blizzard BLZD-BNB",
     "contract": "0x57e6f78a7e644b8532d8c4f3A354c921709Aa897",
