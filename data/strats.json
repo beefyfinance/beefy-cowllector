@@ -1,5 +1,25 @@
 [
   {
+    "name": "blizzard-blzd-bnb",
+    "address": "0x6A058015A6209EeDFd77693EFEa7419976b8957C",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "blizzard-blzd-bnb",
+    "address": "0x86adCc7EaD8d432310a0C1DA9fEd07220c242B07",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "com-com-bnb",
     "address": "0x6770B687a7622660b31D0F148033056E0EcE5020",
     "interval": 6,

@@ -1,5 +1,21 @@
 [
   {
+    "id": "blizzard-blzd-bnb",
+    "name": "Moo Blizzard BLZD-BNB",
+    "contract": "0x57e6f78a7e644b8532d8c4f3A354c921709Aa897",
+    "oracle": "lps",
+    "oracleId": "blizzard-blzd-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "blizzard-blzd-busd",
+    "name": "Moo Blizzard BLZD-BUSD",
+    "contract": "0x1EdfEc6849C54Ee9187539516C6a67ADAcBf9704",
+    "oracle": "lps",
+    "oracleId": "blizzard-blzd-busd",
+    "tvl": 0
+  },
+  {
     "id": "com-com-bnb",
     "name": "Moo Complus COM-BNB",
     "contract": "0x0DA3EB14c8d07a87A366D029d7f2341Ac0eca775",
