@@ -1063,14 +1063,7 @@
     "oracleId": "street-btri-bnb",
     "tvl": 0
   },
-  {
-    "id": "street-btri-cred",
-    "name": "Traphouse: bTRI-CRED TLP",
-    "contract": "0x370533CB4f8b3f018caE837a83960AEfCeB36f39",
-    "oracle": "lps",
-    "oracleId": "street-btri-cred",
-    "tvl": 0
-  },
+
   {
     "id": "cake-ltc-bnb",
     "name": "PancakeSwap: LTC-BNB LP",
@@ -1400,30 +1393,6 @@
     "tvl": 0
   },
   {
-    "id": "street-inj-bnb",
-    "name": "StreetSwap: INJ-BNB TLP",
-    "contract": "0xFfEf22C020486a4118d4274a6D0573a80276d4b4",
-    "oracle": "lps",
-    "oracleId": "street-inj-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "street-unfi-bnb",
-    "name": "StreetSwap: UNFI-BNB TLP",
-    "contract": "0x8F61350871B986B098A6757e3953CEF697D46025",
-    "oracle": "lps",
-    "oracleId": "street-unfi-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "street-ltc-bnb",
-    "name": "StreetSwap: LTC-BNB TLP",
-    "contract": "0x40BBdaD2e12A3E9900F2e6e6A5B605c36182BEa0",
-    "oracle": "lps",
-    "oracleId": "street-ltc-bnb",
-    "tvl": 0
-  },
-  {
     "id": "street-alpha-bnb",
     "name": "StreetSwap: ALPHA-BNB TLP",
     "contract": "0x1061c2962fccD794C4131b3c13058302618329E9",
@@ -1607,22 +1576,7 @@
     "oracleId": "street-busd-bnb",
     "tvl": 0
   },
-  {
-    "id": "street-btc-bnb",
-    "name": "BTC-BNB LP v2",
-    "contract": "0x498515AB07d72d24A85343322834a66e79e146f8",
-    "oracle": "lps",
-    "oracleId": "street-btc-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "street-eth-bnb",
-    "name": "ETH-BNB TLP v2",
-    "contract": "0x5EA6fE190f9F7B814fDc438A6CC448d094740588",
-    "oracle": "lps",
-    "oracleId": "street-eth-bnb",
-    "tvl": 0
-  },
+
   {
     "id": "street-panacakelp-thugs-bnb",
     "name": "THUGS-BNB Pancake LP",
@@ -1669,14 +1623,6 @@
     "contract": "0x1bcc82ce9b387E16fC383af563fd400074E3f060",
     "oracle": "lps",
     "oracleId": "street-bch-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "street-link-bnb",
-    "name": "LINK-BNB TLP",
-    "contract": "0x3DbBDFA0A412Fd15ef9fc4CEb3Fcc19Ff329980b",
-    "oracle": "lps",
-    "oracleId": "street-link-bnb",
     "tvl": 0
   },
   {
