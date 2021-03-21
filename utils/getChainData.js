@@ -5,7 +5,7 @@ const getChainBlockTime = chainId => {
     case 128:
       return 3;
     case 43114:
-      return 3;
+      return 5;
     default:
       throw new Error(`Chain ID ${chainId} is not valid.`);
   }
