@@ -54,7 +54,7 @@ const main = async () => {
 
   let mooNameElements = mooName.split(' ');
 
-  newVault.oracle = mooNameElements[2].split('-').length > 1 ? 'lps' : 'pancake';
+  newVault.oracle = mooNameElements[2].split('-').length > 1 ? 'lps' : 'tokens';
 
   mooNameElements.shift();
   mooNameElements.length = 2;
