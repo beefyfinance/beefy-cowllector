@@ -1,7 +1,6 @@
 const axios = require('axios');
 
 const endpoints = {
-  bakery: 'https://api.beefy.finance/bakery/price',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   tokens: 'https://api.beefy.finance/prices',
   lps: 'https://api.beefy.finance/lps',
@@ -73,10 +72,6 @@ const fetchPrice = async ({ oracle, id }) => {
 
   let price = 0;
   switch (oracle) {
-    case 'bakery':
-      price = await fetchLP(id, endpoints.bakery);
-      break;
-
     case 'coingecko':
       price = await fetchCoingecko(id);
       break;
