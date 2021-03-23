@@ -1,5 +1,21 @@
 [
   {
+    "id": "jul-twt-bnb",
+    "name": "Moo Jul TWT-BNB",
+    "contract": "0x7091E04422d1D9Be48C211cf2F818a7E88EFd736",
+    "oracle": "lps",
+    "oracleId": "jul-twt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-vidt-bnb",
+    "name": "Moo Jul VIDT-BNB",
+    "contract": "0x621Ab9A2EF4256A43dEFeB37F0a1eACb276BbF97",
+    "oracle": "lps",
+    "oracleId": "jul-vidt-bnb",
+    "tvl": 0
+  },
+  {
     "id": "pumpy-pmp-bnb",
     "name": "Moo Pumpy PMP-BNB",
     "contract": "0xE929d65cBf543cC3cA6b18Fe7872fccC6abBf480",
