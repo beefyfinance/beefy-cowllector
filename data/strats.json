@@ -1,5 +1,15 @@
 [
   {
+    "name": "pumpy-pmp-bnb",
+    "address": "0xeEeF3d9c3260d01F9763B38BCD0968e04af8f59B",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "com-png-avax",
     "address": "0xBceD1CF7259e8fc7BF34F55F05aF88d78bd91FEC",
     "interval": 6,

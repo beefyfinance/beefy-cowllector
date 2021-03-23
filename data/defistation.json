@@ -1,5 +1,13 @@
 [
   {
+    "id": "pumpy-pmp-bnb",
+    "name": "Moo Pumpy PMP-BNB",
+    "contract": "0xE929d65cBf543cC3cA6b18Fe7872fccC6abBf480",
+    "oracle": "lps",
+    "oracleId": "pumpy-pmp-bnb",
+    "tvl": 0
+  },
+  {
     "id": "com-png-avax",
     "name": "Moo Complus PNG-AVAX",
     "contract": "0x7076a33b6525132fF77F0FeE2daB2a1e79688DA0",
@@ -1559,7 +1567,6 @@
     "oracleId": "street-busd-bnb",
     "tvl": 0
   },
-
   {
     "id": "street-panacakelp-thugs-bnb",
     "name": "THUGS-BNB Pancake LP",
