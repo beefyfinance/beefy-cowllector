@@ -1,5 +1,25 @@
 [
   {
+    "name": "jul-vidt-bnb",
+    "address": "0x147f7a4ea9f9b008462e3913d064251383a2f652",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-twt-bnb",
+    "address": "0xe4b3c2b19db4fbaafbe99bd8ec869fc4c37063ae",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "pumpy-pmp-bnb",
     "address": "0xeEeF3d9c3260d01F9763B38BCD0968e04af8f59B",
     "interval": 2,
