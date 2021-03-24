@@ -1,5 +1,15 @@
 [
   {
+    "name": "alpaca-alpaca-bnb",
+    "address": "0x8979041A2d76faF0357b5E66427116bEA58085df",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "com-png-avax",
     "address": "0xBceD1CF7259e8fc7BF34F55F05aF88d78bd91FEC",
     "interval": 6,

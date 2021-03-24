@@ -1,5 +1,13 @@
 [
   {
+    "id": "alpaca-alpaca-bnb",
+    "name": "Moo Alpaca ALPACA-BNB",
+    "contract": "0xB4CF4b0d79AF3A5627D5595483e0df9620B7d236",
+    "oracle": "lps",
+    "oracleId": "alpaca-alpaca-bnb",
+    "tvl": 0
+  },
+  {
     "id": "com-png-avax",
     "name": "Moo Complus PNG-AVAX",
     "contract": "0x7076a33b6525132fF77F0FeE2daB2a1e79688DA0",
@@ -1567,7 +1575,6 @@
     "oracleId": "street-busd-bnb",
     "tvl": 0
   },
-
   {
     "id": "street-panacakelp-thugs-bnb",
     "name": "THUGS-BNB Pancake LP",
