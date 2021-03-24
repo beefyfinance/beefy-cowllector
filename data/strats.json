@@ -2,6 +2,76 @@
   {
     "name": "alpaca-alpaca-bnb",
     "address": "0x8979041A2d76faF0357b5E66427116bEA58085df",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "space-space-busd",
+    "address": "0xaA27487A794f725465679c8B1afc52b37C41Bff1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "space-space-bnb",
+    "address": "0x3923A7bbB5B5D34FA1182360E9d092BB280f5495",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-bbadger-btcb",
+    "address": "0x13bFf7819F7568CE7644E990F7d98c7c4ABaCf70",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-bdigg-btcb",
+    "address": "0x5936Db923b6E1727DA19d801eC22CeE555b6047b",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-vidt-bnb",
+    "address": "0x147f7a4ea9f9b008462e3913d064251383a2f652",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jul-twt-bnb",
+    "address": "0xe4b3c2b19db4fbaafbe99bd8ec869fc4c37063ae",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "pumpy-pmp-bnb",
+    "address": "0xeEeF3d9c3260d01F9763B38BCD0968e04af8f59B",
     "interval": 2,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1742,16 +1812,6 @@
   {
     "name": "pancake-vai/busd",
     "address": "0x507c55A7DC12D76dC41f0436f4Bc7f7c6634C68d",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "pancake-broobee/cake",
-    "address": "0x20ef822E27428D06c80326423Fba8C05cA1BA776",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,

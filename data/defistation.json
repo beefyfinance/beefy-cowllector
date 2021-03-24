@@ -8,6 +8,62 @@
     "tvl": 0
   },
   {
+    "id": "space-space-busd",
+    "name": "Moo Space SPACE-BUSD",
+    "contract": "0xd71A3edcdAe126a30960df40CB5247d87980Bf08",
+    "oracle": "lps",
+    "oracleId": "space-space-busd",
+    "tvl": 0
+  },
+  {
+    "id": "space-space-bnb",
+    "name": "Moo Space SPACE-BNB",
+    "contract": "0xbC943C4C00E837e65Cf76BcD8Df8C365FB44Dd6f",
+    "oracle": "lps",
+    "oracleId": "space-space-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-bbadger-btcb",
+    "name": "Moo Pancake BADGER-BTCB",
+    "contract": "0x9fBa2fc7505CE6801ADCF23146310187CecfcE47",
+    "oracle": "lps",
+    "oracleId": "cake-bbadger-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-bdigg-btcb",
+    "name": "Moo Pancake bDIGG-BTCB",
+    "contract": "0x2c1a0950aC426f920f260C9647BCD3AFD0482f4e",
+    "oracle": "lps",
+    "oracleId": "cake-bdigg-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-twt-bnb",
+    "name": "Moo Jul TWT-BNB",
+    "contract": "0x7091E04422d1D9Be48C211cf2F818a7E88EFd736",
+    "oracle": "lps",
+    "oracleId": "jul-twt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-vidt-bnb",
+    "name": "Moo Jul VIDT-BNB",
+    "contract": "0x621Ab9A2EF4256A43dEFeB37F0a1eACb276BbF97",
+    "oracle": "lps",
+    "oracleId": "jul-vidt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "pumpy-pmp-bnb",
+    "name": "Moo Pumpy PMP-BNB",
+    "contract": "0xE929d65cBf543cC3cA6b18Fe7872fccC6abBf480",
+    "oracle": "lps",
+    "oracleId": "pumpy-pmp-bnb",
+    "tvl": 0
+  },
+  {
     "id": "com-png-avax",
     "name": "Moo Complus PNG-AVAX",
     "contract": "0x7076a33b6525132fF77F0FeE2daB2a1e79688DA0",
@@ -51,7 +107,7 @@
     "id": "blizzard-blzd",
     "name": "Moo Blizzard BLZD",
     "contract": "0x580b899D8d856DFe3da7895466F779F1A509D2Fd",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "blizzard-blzd",
     "tvl": 0
   },
@@ -155,7 +211,7 @@
     "id": "squirrel-nuts",
     "name": "Moo Squirrel NUTS",
     "contract": "0x2D40beB0122aBcAD0E6b49934d47adac6Dddd97B",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "NUTS",
     "tvl": 0
   },
@@ -419,7 +475,7 @@
     "id": "belt-venus-blp",
     "name": "Moo Belt VenusBLP",
     "contract": "0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "belt-venus-blp",
     "tvl": 0
   },
@@ -427,7 +483,7 @@
     "id": "banana-banana",
     "name": "Moo Ape BANANA",
     "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "banana-banana",
     "tvl": 0
   },
@@ -579,7 +635,7 @@
     "id": "venus-ada",
     "name": "Moo Venus ADA",
     "contract": "0x53c0CE2EBdA0c2A39327bE0B58a3c28A8Dcde420",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "ADA",
     "tvl": 0
   },
@@ -619,7 +675,7 @@
     "id": "bifi-maxi",
     "name": "BIFI Maxi",
     "contract": "0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BIFI",
     "tvl": 0
   },
@@ -835,7 +891,7 @@
     "id": "auto-cake",
     "name": "CAKE × AUTO",
     "contract": "0xe0B473c0dD6D7Fea5B395c3Ce7ffd4FEF0ab4373",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "Cake",
     "tvl": 0
   },
@@ -843,7 +899,7 @@
     "id": "auto-cake-old",
     "name": "CAKE × AUTO (old)",
     "contract": "0x895CF1E805cBd86355caC101aE9B252c806Dc59b",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "Cake",
     "tvl": 0
   },
@@ -851,7 +907,7 @@
     "id": "auto-wbnb",
     "name": "WBNB × AUTO",
     "contract": "0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "WBNB",
     "tvl": 0
   },
@@ -859,7 +915,7 @@
     "id": "auto-wbnb-old",
     "name": "WBNB × AUTO",
     "contract": "0x8136C5EE816fD80b80C9679e785F37EBdf2199eE",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "WBNB",
     "tvl": 0
   },
@@ -867,7 +923,7 @@
     "id": "auto-usdt",
     "name": "USDT × AUTO",
     "contract": "0x58327471A57EE89Aa4b91753fF9E09f7291236C7",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "USDT",
     "tvl": 0
   },
@@ -875,7 +931,7 @@
     "id": "auto-usdc",
     "name": "USDC × AUTO",
     "contract": "0x7E45e8E3404a2C142d7E8eAE94EaEB8641607857",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "USDC",
     "tvl": 0
   },
@@ -883,7 +939,7 @@
     "id": "auto-busd",
     "name": "BUSD × AUTO",
     "contract": "0x559C88946e1958812dCfD8edd4f89B0C7d811F74",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BUSD",
     "tvl": 0
   },
@@ -891,7 +947,7 @@
     "id": "auto-busd-old",
     "name": "BUSD × AUTO",
     "contract": "0xBd198f5132631e597518529268000A0199f07492",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BUSD",
     "tvl": 0
   },
@@ -899,7 +955,7 @@
     "id": "auto-btcb",
     "name": "BTCB × AUTO",
     "contract": "0xFf750EE63F1E428De1D6C8D9d92676b5FC8376A8",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BTCB",
     "tvl": 0
   },
@@ -907,7 +963,7 @@
     "id": "auto-eth",
     "name": "ETH × AUTO",
     "contract": "0x0a406FCBEA86aC57ACcc812E8F1B509acE5E054c",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "ETH",
     "tvl": 0
   },
@@ -955,7 +1011,7 @@
     "id": "kebab-kebab",
     "name": "Kebab: KEBAB",
     "contract": "0xE2231D4ca4921Cb35680bac714C9d40C8d217494",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "KEBAB",
     "tvl": 0
   },
@@ -1059,7 +1115,7 @@
     "id": "bhc-bhc",
     "name": "Billon: BHC",
     "contract": "0x56E899E56F6B8635B4A01b724db23674a64A7231",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BHC",
     "tvl": 0
   },
@@ -1155,7 +1211,7 @@
     "id": "venus-dai",
     "name": "Venus: DAI",
     "contract": "0x813aDbc7b9a9822FA37510F52aD14bDBc45aA306",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "DAI",
     "tvl": 0
   },
@@ -1163,7 +1219,7 @@
     "id": "venus-fil",
     "name": "Venus: FIL",
     "contract": "0x8B80E58328aEF3796D70D29F65d516d29ACD944d",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "FIL",
     "tvl": 0
   },
@@ -1259,7 +1315,7 @@
     "id": "thugs-drugs-bhc",
     "name": "DRUGS BHC",
     "contract": "0xE7408598DB157Cd4A24Bc26B579910AF36a72fad",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "DRUGS",
     "tvl": 0
   },
@@ -1267,7 +1323,7 @@
     "id": "thugs-drugs-jgn",
     "name": "DRUGS JGN",
     "contract": "0x40e39743dBcb30c7Fc4152F57F29Cd22D9fc7932",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "DRUGS",
     "tvl": 0
   },
@@ -1347,7 +1403,7 @@
     "id": "venus-bch",
     "name": "Venus: BCH",
     "contract": "0xf19878DE084C3c9753bB0DAD8aC5b9070fb7813c",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BCH",
     "tvl": 0
   },
@@ -1355,7 +1411,7 @@
     "id": "venus-dot",
     "name": "Venus: DOT",
     "contract": "0x2211191ff72505ED54Aa6aD3F6Fcc72c87CAb338",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "DOT",
     "tvl": 0
   },
@@ -1363,7 +1419,7 @@
     "id": "venus-link",
     "name": "Venus: LINK",
     "contract": "0x8da7167860EDfc2bFfd790f217AB5e398803Bbc8",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "LINK",
     "tvl": 0
   },
@@ -1448,18 +1504,10 @@
     "tvl": 0
   },
   {
-    "id": "cake-broobee-cake",
-    "name": "PancakeSwap: BROOBEE-BNB LP",
-    "contract": "0x4CcF7dC91389396801ec1f4A5E6cC675549f39E6",
-    "oracle": "lps",
-    "oracleId": "cake-broobee-cake",
-    "tvl": 0
-  },
-  {
     "id": "venus-bnb",
     "name": "Venus: BNB",
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "WBNB",
     "tvl": 0
   },
@@ -1467,7 +1515,7 @@
     "id": "venus-sxp",
     "name": "Venus: SXP",
     "contract": "0x9aaD247bAc2AFc3027256aD0Cc09A27551069bd6",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "SXP",
     "tvl": 0
   },
@@ -1475,7 +1523,7 @@
     "id": "venus-usdc",
     "name": "Venus: USDC",
     "contract": "0x07D478b679C6c7F4222388856f53F8dca7E7b378",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "USDC",
     "tvl": 0
   },
@@ -1483,7 +1531,7 @@
     "id": "venus-usdt",
     "name": "Venus: USDT",
     "contract": "0x1997D7cF0A63A374A853ca9d5b1dAcCFeCa5cEb8",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "USDT",
     "tvl": 0
   },
@@ -1491,7 +1539,7 @@
     "id": "venus-busd",
     "name": "Venus: BUSD",
     "contract": "0x2d3d152b3b94c0E0B217AC5bc1115E3D8b8018F9",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BUSD",
     "tvl": 0
   },
@@ -1499,7 +1547,7 @@
     "id": "venus-btcb",
     "name": "Venus: BTCB",
     "contract": "0x7255Ae13BA4484eD33fB48c4b833000dC12888B4",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BTCB",
     "tvl": 0
   },
@@ -1507,7 +1555,7 @@
     "id": "venus-eth",
     "name": "Venus: ETH",
     "contract": "0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "ETH",
     "tvl": 0
   },
@@ -1523,7 +1571,7 @@
     "id": "venus-ltc",
     "name": "Venus: LTC",
     "contract": "0xd61420f20e945d0B617fEdA5971f692A3DCE711c",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "LTC",
     "tvl": 0
   },
@@ -1651,7 +1699,7 @@
     "id": "cake-cake",
     "name": "PancakeSwap: CAKE",
     "contract": "0xc713ca7cb8edfE238ea652D772d41dde47A9a62d",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "Cake",
     "tvl": 0
   },
@@ -1659,7 +1707,7 @@
     "id": "cake-twt",
     "name": "PancakeSwap: CAKE TWT v2",
     "contract": "0x260879777DB293541DbC9a27c3C2fAD9c9bb48D3",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "Cake",
     "tvl": 0
   },
@@ -1667,7 +1715,7 @@
     "id": "cake-hard",
     "name": "PancakeSwap: CAKE HARD",
     "contract": "0x4B4e5F2CeEdfF00D2DD13874714C1Ef6Ea1Cd8a7",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "Cake",
     "tvl": 0
   },
@@ -1675,7 +1723,7 @@
     "id": "cake-stax",
     "name": "PancakeSwap: CAKE STAX",
     "contract": "0xa72D14bec8c37f3A9487B057C7635e55f85f50c4",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "Cake",
     "tvl": 0
   },
@@ -1795,7 +1843,7 @@
     "id": "cake-smart",
     "name": "Pancake: CAKE SMART",
     "contract": "0xB0BDBB9E507dBF55f4aC1ef6ADa3E216202e06FD",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "Cake",
     "tvl": 0
   },
@@ -1803,7 +1851,7 @@
     "id": "bakery-bake",
     "name": "Bakery: BAKE",
     "contract": "0xaC112E7744C129ae54E65F5D2cb4eA472E08eA0B",
-    "oracle": "pancake",
+    "oracle": "tokens",
     "oracleId": "BAKE",
     "tvl": 0
   },
