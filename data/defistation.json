@@ -1,5 +1,21 @@
 [
   {
+    "id": "space-space-busd",
+    "name": "Moo Space SPACE-BUSD",
+    "contract": "0xd71A3edcdAe126a30960df40CB5247d87980Bf08",
+    "oracle": "lps",
+    "oracleId": "space-space-busd",
+    "tvl": 0
+  },
+  {
+    "id": "space-space-bnb",
+    "name": "Moo Space SPACE-BNB",
+    "contract": "0xbC943C4C00E837e65Cf76BcD8Df8C365FB44Dd6f",
+    "oracle": "lps",
+    "oracleId": "space-space-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-bbadger-btcb",
     "name": "Moo Pancake BADGER-BTCB",
     "contract": "0x9fBa2fc7505CE6801ADCF23146310187CecfcE47",

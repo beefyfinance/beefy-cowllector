@@ -1,5 +1,25 @@
 [
   {
+    "name": "space-space-busd",
+    "address": "0xaA27487A794f725465679c8B1afc52b37C41Bff1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "space-space-bnb",
+    "address": "0x3923A7bbB5B5D34FA1182360E9d092BB280f5495",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-bbadger-btcb",
     "address": "0x13bFf7819F7568CE7644E990F7d98c7c4ABaCf70",
     "interval": 2,
