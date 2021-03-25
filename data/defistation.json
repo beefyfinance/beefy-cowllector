@@ -1,5 +1,53 @@
 [
   {
+    "id": "cake-zil-bnb",
+    "name": "Moo Pancake ZIL-BNB",
+    "contract": "0xdFD00D26f698d036EA26900614793829D119C0Ca",
+    "oracle": "lps",
+    "oracleId": "cake-zil-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-pcws-bnb",
+    "name": "Moo Pancake pCWS-BNB",
+    "contract": "0x80736F3dd7B2c17ea08C452D3140a7daa461f187",
+    "oracle": "lps",
+    "oracleId": "cake-pcws-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-lto-bnb",
+    "name": "Moo Pancake LTO-BNB",
+    "contract": "0x37A36B817f372A9F1bDb2Ee59bA1D2c599B2AE77",
+    "oracle": "lps",
+    "oracleId": "cake-lto-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-trade-bnb",
+    "name": "Moo Pancake TRADE-BNB",
+    "contract": "0x3F3601229F6fE7D9f3FA8554f0C3Ca4CaE8043B4",
+    "oracle": "lps",
+    "oracleId": "cake-trade-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "space-space-busd",
+    "name": "Moo Space SPACE-BUSD",
+    "contract": "0xd71A3edcdAe126a30960df40CB5247d87980Bf08",
+    "oracle": "lps",
+    "oracleId": "space-space-busd",
+    "tvl": 0
+  },
+  {
+    "id": "space-space-bnb",
+    "name": "Moo Space SPACE-BNB",
+    "contract": "0xbC943C4C00E837e65Cf76BcD8Df8C365FB44Dd6f",
+    "oracle": "lps",
+    "oracleId": "space-space-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-bbadger-btcb",
     "name": "Moo Pancake BADGER-BTCB",
     "contract": "0x9fBa2fc7505CE6801ADCF23146310187CecfcE47",
