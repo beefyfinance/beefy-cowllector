@@ -1,5 +1,15 @@
 [
   {
+    "name": "alpaca-alpaca-bnb",
+    "address": "0x8979041A2d76faF0357b5E66427116bEA58085df",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-zil-bnb",
     "address": "0x2BC4c04A7867e9fBCCDF3c8f89bBE8F74Ef96326",
     "interval": 4,
