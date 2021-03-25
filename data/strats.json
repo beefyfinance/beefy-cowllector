@@ -10,6 +10,46 @@
     "chainId": 56
   },
   {
+    "name": "cake-zil-bnb",
+    "address": "0x2BC4c04A7867e9fBCCDF3c8f89bBE8F74Ef96326",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-pcws-bnb",
+    "address": "0x42181Ca9a0122418eDBa688f09Fc77a5e0f2A4A7",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-lto-bnb",
+    "address": "0x7DE67148c4907461d8A6EF5DE55b9e541CC8f643",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-trade-bnb",
+    "address": "0x49237A7EB71e8D8C1f3498dF5Faa9254ddf29b1d",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "space-space-busd",
     "address": "0xaA27487A794f725465679c8B1afc52b37C41Bff1",
     "interval": 1,
