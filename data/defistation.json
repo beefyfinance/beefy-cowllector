@@ -1,5 +1,13 @@
 [
   {
+    "id": "naut-naut-bnb",
+    "name": "Moo Naut NAUT-BNB",
+    "contract": "0x693402b80b073b872589433e6fa1b08665E12025",
+    "oracle": "lps",
+    "oracleId": "naut-naut-bnb",
+    "tvl": 0
+  },
+  {
     "id": "alpaca-alpaca-bnb",
     "name": "Moo Alpaca ALPACA-BNB",
     "contract": "0xB4CF4b0d79AF3A5627D5595483e0df9620B7d236",
@@ -7,6 +15,7 @@
     "oracleId": "alpaca-alpaca-bnb",
     "tvl": 0
   },
+  {
     "id": "cake-zil-bnb",
     "name": "Moo Pancake ZIL-BNB",
     "contract": "0xdFD00D26f698d036EA26900614793829D119C0Ca",

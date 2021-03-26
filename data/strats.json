@@ -1,5 +1,15 @@
 [
   {
+    "name": "naut-naut-bnb",
+    "address": "0x2774162B244361e4EBf90F8c58A94013c8f6F65A",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "alpaca-alpaca-bnb",
     "address": "0x8979041A2d76faF0357b5E66427116bEA58085df",
     "interval": 6,
