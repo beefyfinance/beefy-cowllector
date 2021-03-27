@@ -1,5 +1,25 @@
 [
   {
+    "name": "ellipsis-3eps",
+    "address": "0x713d3F085373141451dE681FA39a233E771Ab787",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "ellipsis-eps-bnb",
+    "address": "0x845eFaF170c89e97b5aa252AAdA4876f81a1cdf6",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "naut-naut-bnb",
     "address": "0x2774162B244361e4EBf90F8c58A94013c8f6F65A",
     "interval": 4,
