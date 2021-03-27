@@ -1,5 +1,21 @@
 [
   {
+    "id": "ellipsis-3eps",
+    "name": "Moo Ellipsis 3Pool",
+    "contract": "0xE563c046147b4dF98bfCD3d00Dc54511F0c3b752",
+    "oracle": "tokens",
+    "oracleId": "ellipsis-3eps",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-eps-bnb",
+    "name": "Moo Ellipsis EPS-BNB",
+    "contract": "0xD467af8C117AcaF7B2725a6d35Dc5A471A683055",
+    "oracle": "lps",
+    "oracleId": "ellipsis-eps-bnb",
+    "tvl": 0
+  },
+  {
     "id": "naut-naut-bnb",
     "name": "Moo Naut NAUT-BNB",
     "contract": "0x693402b80b073b872589433e6fa1b08665E12025",
