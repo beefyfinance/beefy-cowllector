@@ -1,5 +1,15 @@
 [
   {
+    "name": "1inch-1inch",
+    "address": "0xe807517273De0161D8309BC9363193f2162b9B65",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "alpaca-salpaca",
     "address": "0x40acfAbe68f3bf55B24c9E21A3Cbc8743EB73F01",
     "interval": 6,
