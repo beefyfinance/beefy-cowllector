@@ -1,5 +1,21 @@
 [
   {
+    "id": "hps-hps-bnb",
+    "name": "Moo Billion HPS-BNB",
+    "contract": "0x17cB1Ddb71ca34958e54f8152f0913C25bC50DF6",
+    "oracle": "lps",
+    "oracleId": "hps-hps-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "hps-hps",
+    "name": "Moo Billion HPS",
+    "contract": "0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5",
+    "oracle": "tokens",
+    "oracleId": "HPS",
+    "tvl": 0
+  },
+  {
     "id": "1inch-1inch",
     "name": "Moo 1INCH 1INCH",
     "contract": "0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950",
