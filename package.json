@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "start": "echo Cowllector ready!",
-    "new": "node ./scripts/addVault.js"
+    "new": "node ./scripts/addVault.js",
+    "lost": "node ./scripts/lostDefistation.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
