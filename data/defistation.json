@@ -1,5 +1,93 @@
 [
   {
+    "id": "cake-bscx-bnb",
+    "name": "Moo Pancake BSCX-BNB",
+    "contract": "0xb5f0ff997bec850b11792ed07b2b5abdea869b84",
+    "oracle": "lps",
+    "oracleId": "cake-bscx-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cafe-brew-busd",
+    "name": "Moo Cafe BREW-BUSD",
+    "contract": "0x10120b5550214ab9451b9b00e4f78e82c02d6482",
+    "oracle": "lps",
+    "oracleId": "cafe-brew-busd",
+    "tvl": 0
+  },
+  {
+    "id": "crow-crow-bnb",
+    "name": "Moo Crow CROW-BNB",
+    "contract": "0xbd701bc24485ebfd3680285fb152509637ab8ad4",
+    "oracle": "lps",
+    "oracleId": "crow-crow-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-dai-busd",
+    "name": "Moo Pancake DAI-BUSD",
+    "contract": "0xE372825C7b436244Cd5fA79cAa16e4Cc3091D4B0",
+    "oracle": "lps",
+    "oracleId": "cake-dai-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cake-usdc-busd",
+    "name": "Moo Pancake USDC-BUSD",
+    "contract": "0x0666bDF7187307890D2ACF092493cCEA51A8CD0b",
+    "oracle": "lps",
+    "oracleId": "cake-usdc-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cake-lina-busd",
+    "name": "Moo Pancake LINA-BUSD",
+    "contract": "0x310DF4c1DD93337A165AeF8e3d45A770CaaDe3b6",
+    "oracle": "lps",
+    "oracleId": "cake-lina-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cake-iotx-busd",
+    "name": "Moo Pancake IOTX-BUSD",
+    "contract": "0x8a27f380626CAc25DF8D3Ea50Ed1fd7Db882e653",
+    "oracle": "lps",
+    "oracleId": "cake-iotx-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cake-bopen-bnb",
+    "name": "Moo Pancake BOPEN-BNB",
+    "contract": "0x847c5748A280d800690F7D3A62574603b57Cd0b7",
+    "oracle": "lps",
+    "oracleId": "cake-bopen-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-bor-bnb",
+    "name": "Moo Pancake BOR-BNB",
+    "contract": "0x2EA1175f7189BeAdd6D8A7687B0a311C6785a7a3",
+    "oracle": "lps",
+    "oracleId": "cake-bor-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-bmxx-bnb",
+    "name": "Moo Pancake BMXX-BNB",
+    "contract": "0xE7DCEFacf1c9c523c1ccCc3Fc1Ae3EB654a4e805",
+    "oracle": "lps",
+    "oracleId": "cake-bmxx-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-xmark-busd",
+    "name": "Moo Pancake XMARK-BUSD",
+    "contract": "0x9De53755e913913dEcA7360a19C0634F2214FB6d",
+    "oracle": "lps",
+    "oracleId": "cake-xmark-busd",
+    "tvl": 0
+  },
+  {
     "id": "hps-hps-bnb",
     "name": "Moo Billion HPS-BNB",
     "contract": "0x17cB1Ddb71ca34958e54f8152f0913C25bC50DF6",

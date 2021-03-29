@@ -1,5 +1,25 @@
 [
   {
+    "name": "pancake-bmxx-bnb",
+    "address": "0xf232bA88cF057031725BFf50De7006435F5a384c",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "pancake-xmark-busd",
+    "address": "0x8f34cA39CC26afeEda3159Cf7938a6E6e51803fB",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "hps-hps-bnb",
     "address": "0xC0eD05309D5f42f1684B455f370998141db2A23d",
     "interval": 2,
@@ -793,16 +813,6 @@
     "name": "jul-bifi-busd",
     "address": "0xA4FEbF841f26a9dd297d7492cf18D70464c725a4",
     "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "cake-dai-busd",
-    "address": "0x39e9A7F890b1a7f4251745B84560909f2820c973",
-    "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
