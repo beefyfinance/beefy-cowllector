@@ -123,7 +123,7 @@
     "id": "ellipsis-3eps",
     "name": "Moo Ellipsis 3Pool",
     "contract": "0xE563c046147b4dF98bfCD3d00Dc54511F0c3b752",
-    "oracle": "tokens",
+    "oracle": "lps",
     "oracleId": "ellipsis-3eps",
     "tvl": 0
   },
@@ -284,7 +284,7 @@
     "name": "Moo Blizzard BLZD",
     "contract": "0x580b899D8d856DFe3da7895466F779F1A509D2Fd",
     "oracle": "tokens",
-    "oracleId": "blizzard-blzd",
+    "oracleId": "BLZD",
     "tvl": 0
   },
   {
@@ -651,7 +651,7 @@
     "id": "belt-venus-blp",
     "name": "Moo Belt VenusBLP",
     "contract": "0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24",
-    "oracle": "tokens",
+    "oracle": "lps",
     "oracleId": "belt-venus-blp",
     "tvl": 0
   },
@@ -660,7 +660,7 @@
     "name": "Moo Ape BANANA",
     "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
     "oracle": "tokens",
-    "oracleId": "banana-banana",
+    "oracleId": "BANANA",
     "tvl": 0
   },
   {
@@ -936,11 +936,11 @@
     "tvl": 0
   },
   {
-    "id": "sponge-spg-bnb",
+    "id": "sponge-sponge-bnb",
     "name": "SPG-BNB LP",
     "contract": "0x1B3564F698988804b5D05a2C10B1d71bE051662F",
     "oracle": "lps",
-    "oracleId": "sponge-spg-bnb",
+    "oracleId": "sponge-sponge-bnb",
     "tvl": 0
   },
   {
