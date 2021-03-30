@@ -1,5 +1,21 @@
 [
   {
+    "id": "zefi-zefi-busd",
+    "name": "Moo Zefi ZEFI-BUSD",
+    "contract": "0x8152cd7b2EA135022a5E0baF625CB655302F2E7b",
+    "oracle": "lps",
+    "oracleId": "zefi-zefi-busd",
+    "tvl": 0
+  },
+  {
+    "id": "zefi-zefi-bnb",
+    "name": "Moo Zefi ZEFI-BNB",
+    "contract": "0xc9f7337E2c638C48dd7dcF506535e8fEb0c3c786",
+    "oracle": "lps",
+    "oracleId": "zefi-zefi-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-bscx-bnb",
     "name": "Moo Pancake BSCX-BNB",
     "contract": "0xb5f0ff997bec850b11792ed07b2b5abdea869b84",

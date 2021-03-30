@@ -1,5 +1,25 @@
 [
   {
+    "name": "zefi-zefi-busd",
+    "address": "0x1FEe59f0Aecb45A5Cd04e7072de9ae11f5A6c1eC",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "zefi-zefi-bnb",
+    "address": "0x7A0Aa7a489d363e44648B9615D0eFBda24dd7A91",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "pancake-bmxx-bnb",
     "address": "0xf232bA88cF057031725BFf50De7006435F5a384c",
     "interval": 4,
