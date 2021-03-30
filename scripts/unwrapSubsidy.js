@@ -1,21 +1,25 @@
 const ethers = require('ethers');
 
-const WBNB = require('../abis/WBNB.json');
+const WrappedNative = require('../abis/WrappedNative.json');
+const chains = require('../data/chains');
 
 const unwrapSubsidy = async () => {
-  const provider = new ethers.providers.JsonRpcProvider(process.env.BSC_RPC);
-  const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
+  for (chain of chains) {
+    console.log(`Unwrapping ${chain.id}`);
 
-  const wbnb = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-  const wbnbContract = new ethers.Contract(wbnb, WBNB, harvester);
-  const balance = await wbnbContract.balanceOf(harvester.address);
+    const provider = new ethers.providers.JsonRpcProvider(chain.rpc);
+    const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
 
-  if (balance > 0) {
-    try {
-      await wbnbContract.withdraw(balance.toString());
-      console.log(`Successfully unwrapped ${balance.toString()}`);
-    } catch (e) {
-      console.log(`Coulnt' unwrap: ${e}`);
+    const wrappedNativeContract = new ethers.Contract(chain.wrappedToken, WrappedNative, harvester);
+    const balance = await wrappedNativeContract.balanceOf(harvester.address);
+
+    if (balance > 0) {
+      try {
+        await wrappedNativeContract.withdraw(balance.toString());
+        console.log(`Successfully unwrapped ${balance.toString()}`);
+      } catch (e) {
+        console.log(`Couln't unwrap: ${e}`);
+      }
     }
   }
 };
