@@ -1,5 +1,25 @@
 [
   {
+    "name": "cake-mir-ust",
+    "address": "0xdFf3b750A6B1DBD59c122Fc0d7AB91abf6Ab973e",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-pbtc-bnb",
+    "address": "0x1A3C0faDe576b43e15160fb3d0539cfeA0662dA2",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "zefi-zefi-busd",
     "address": "0x1FEe59f0Aecb45A5Cd04e7072de9ae11f5A6c1eC",
     "interval": 2,

@@ -1,5 +1,21 @@
 [
   {
+    "id": "cake-mir-ust",
+    "name": "Moo Cake MIR-UST",
+    "contract": "0x8B3898642BC30b0aEF072BA3E43b427a4A2015D8",
+    "oracle": "lps",
+    "oracleId": "cake-mir-ust",
+    "tvl": 0
+  },
+  {
+    "id": "cake-pbtc-bnb",
+    "name": "Moo Cake pBTC-BNB",
+    "contract": "0x1733Ff33036C7D785d0eACDB53138a9Aff8387De",
+    "oracle": "lps",
+    "oracleId": "cake-pbtc-bnb",
+    "tvl": 0
+  },
+  {
     "id": "zefi-zefi-busd",
     "name": "Moo Zefi ZEFI-BUSD",
     "contract": "0x8152cd7b2EA135022a5E0baF625CB655302F2E7b",
