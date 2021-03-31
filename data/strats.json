@@ -1,5 +1,15 @@
 [
   {
+    "name": "swirl-swirl-bnb",
+    "address": "0xF31Dc91bf0851C662DC853ed02a185c5d2875d79",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-mir-ust",
     "address": "0xdFf3b750A6B1DBD59c122Fc0d7AB91abf6Ab973e",
     "interval": 4,
