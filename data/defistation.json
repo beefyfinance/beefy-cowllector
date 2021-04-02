@@ -1,5 +1,21 @@
 [
   {
+    "id": "tndr-tndr-busd",
+    "name": "Moo Tndr TNDR-BUSD",
+    "contract": "0x94Df3D9d2B7594AAa9D633e88bcF8195BA07819A",
+    "oracle": "lps",
+    "oracleId": "tndr-tndr-busd",
+    "tvl": 0
+  },
+  {
+    "id": "tndr-tndr-bnb",
+    "name": "Moo Tndr TNDR-BNB",
+    "contract": "0x8BdBc15aE5EbcaA00a27221D5A45469733F147F6",
+    "oracle": "lps",
+    "oracleId": "tndr-tndr-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-dego-bnb",
     "name": "Moo Cake DEGO-BNB",
     "contract": "0x669bDA1beB430D7a29fDE2dB847E071344266748",
