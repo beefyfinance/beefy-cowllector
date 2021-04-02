@@ -40,6 +40,16 @@
     "chainId": 56
   },
   {
+    "name": "swamp-swamp-bnb",
+    "address": "0xa74F0b38079e1fcd0C326f9b166a2E996c532efe",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "tndr-tndr-busd",
     "address": "0xbd0AB8835704D61Da3C9F4B6fB59eE1637E49f24",
     "interval": 4,
