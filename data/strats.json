@@ -1,5 +1,45 @@
 [
   {
+    "name": "cake-lien-bnb",
+    "address": "0x9eCA684321ec265CA7b601871f629e77ad9f1EbB",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-swth-bnb",
+    "address": "0x5dd766E859c4BB01eaBCaFc320dED1A5E8e4a147",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-dft-bnb",
+    "address": "0xeFEa46e77550F1e83a66213512AC9963dce10f6E",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "swamp-swamp-busd",
+    "address": "0x717593C671183b8af2981A5d1b190bc9978962DA",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-dego-bnb",
     "address": "0x606B4c319b5E7fC160644192eEf447df3713D212",
     "interval": 4,
