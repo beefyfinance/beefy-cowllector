@@ -1,5 +1,53 @@
 [
   {
+    "id": "swamp-swamp-busd",
+    "name": "Moo Swampy SWAMP-BUSD",
+    "contract": "0x4a759386cacb60A714275F97AbA9b555d91001c9",
+    "oracle": "lps",
+    "oracleId": "swamp-swamp-busd",
+    "tvl": 0
+  },
+  {
+    "id": "swamp-swamp-bnb",
+    "name": "Moo Swampy SWAMP-BNB",
+    "contract": "0xb500cd497dD53e8ee889c2553B9Ea82326f21bA9",
+    "oracle": "lps",
+    "oracleId": "swamp-swamp-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-lien-bnb",
+    "name": "Moo Cake LIEN-BNB",
+    "contract": "0x5157821D6FB7046e7081F6c2aa559cb379200a64",
+    "oracle": "lps",
+    "oracleId": "cake-lien-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-swth-bnb",
+    "name": "Moo Cake SWTH-BNB",
+    "contract": "0x2A3166a20a88B04282C17de6cCE1eEd032314f96",
+    "oracle": "lps",
+    "oracleId": "cake-swth-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-dft-bnb",
+    "name": "Moo Cake DFT-BNB",
+    "contract": "0x1f945e77280653549aA1D36f24620A06Bc64e712",
+    "oracle": "lps",
+    "oracleId": "cake-dft-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-dego-bnb",
+    "name": "Moo Cake DEGO-BNB",
+    "contract": "0x669bDA1beB430D7a29fDE2dB847E071344266748",
+    "oracle": "lps",
+    "oracleId": "cake-dego-bnb",
+    "tvl": 0
+  },
+  {
     "id": "tndr-tndr-busd",
     "name": "Moo Tndr TNDR-BUSD",
     "contract": "0x94Df3D9d2B7594AAa9D633e88bcF8195BA07819A",
