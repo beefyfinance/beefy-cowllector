@@ -1,5 +1,21 @@
 [
   {
+    "id": "bingo-sbgo-busd",
+    "name": "Moo Bingo SBGO-BUSD",
+    "contract": "0x7d65a619e696cE8e7020C6Af3Aa9f75542BD6a11",
+    "oracle": "lps",
+    "oracleId": "bingo-sbgo-busd",
+    "tvl": 0
+  },
+  {
+    "id": "bingo-bgo-busd",
+    "name": "Moo Bingo BGO-BUSD",
+    "contract": "0xa61B7B10B2694E1c283b41be3E55A31a29187290",
+    "oracle": "lps",
+    "oracleId": "bingo-bgo-busd",
+    "tvl": 0
+  },
+  {
     "id": "swamp-swamp-busd",
     "name": "Moo Swampy SWAMP-BUSD",
     "contract": "0x4a759386cacb60A714275F97AbA9b555d91001c9",
