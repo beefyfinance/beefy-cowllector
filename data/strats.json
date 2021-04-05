@@ -1,5 +1,25 @@
 [
   {
+    "name": "bingo-sbgo-busd",
+    "address": "0xD1fc7cA946F72bDf8ED8c6004bEe199e48Eed6E8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "bingo-bgo-busd",
+    "address": "0xccB25F540165E4AE9Ad407836662d049adBD067e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-lien-bnb",
     "address": "0x9eCA684321ec265CA7b601871f629e77ad9f1EbB",
     "interval": 4,
