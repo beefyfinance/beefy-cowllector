@@ -1,5 +1,21 @@
 [
   {
+    "id": "swamp-bifi-bnb",
+    "name": "Moo Swampy BIFI-BNB",
+    "contract": "0x56Ba15eCA5FB30b13FCaD7392c82811a5Ce98e4d",
+    "oracle": "lps",
+    "oracleId": "swamp-bifi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "swamp-cake-bnb",
+    "name": "Moo Swampy CAKE-BNB",
+    "contract": "0xe75E9Cc79c2d1dAa00f30991FBB413C8d4a86537",
+    "oracle": "lps",
+    "oracleId": "swamp-cake-bnb",
+    "tvl": 0
+  },
+  {
     "id": "bingo-sbgo-busd",
     "name": "Moo Bingo SBGO-BUSD",
     "contract": "0x7d65a619e696cE8e7020C6Af3Aa9f75542BD6a11",
