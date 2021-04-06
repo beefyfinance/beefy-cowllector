@@ -1,5 +1,15 @@
 [
   {
+    "name": "snob-3pool",
+    "address": "0x12a7738315624f6e112452E0eCFf29cE08d4992D",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "swamp-bifi-bnb",
     "address": "0xbeE70E5616a58d484298EDebeBfE6dF08F538C81",
     "interval": 4,
