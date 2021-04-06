@@ -1,5 +1,25 @@
 [
   {
+    "name": "swamp-bifi-bnb",
+    "address": "0xbeE70E5616a58d484298EDebeBfE6dF08F538C81",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "swamp-cake-bnb",
+    "address": "0xC2bBEC44Ce17C9FB478Ab899dbeC36032F4b08a0",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "bingo-sbgo-busd",
     "address": "0x29cA0ab9C14Dec42f11b6270c631c8815DF65AA4",
     "interval": 1,
