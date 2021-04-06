@@ -1,7 +1,37 @@
 [
   {
+    "name": "snob-3pool",
+    "address": "0x12a7738315624f6e112452E0eCFf29cE08d4992D",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "swamp-bifi-bnb",
+    "address": "0xbeE70E5616a58d484298EDebeBfE6dF08F538C81",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "swamp-cake-bnb",
+    "address": "0xC2bBEC44Ce17C9FB478Ab899dbeC36032F4b08a0",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "bingo-sbgo-busd",
-    "address": "0xccb25f540165e4ae9ad407836662d049adbd067e",
+    "address": "0x29cA0ab9C14Dec42f11b6270c631c8815DF65AA4",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
