@@ -1,5 +1,35 @@
 [
   {
+    "name": "swamp-cake",
+    "address": "0x28FF722D1F23613053B28060916cC1b10C94B755",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "palm-palm-busd",
+    "address": "0x49942e26B3cb04F878E67c507563197e6626c353",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "palm-palm-bnb",
+    "address": "0xccE160252f8a071615e4452d712e8fA11F422f04",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "snob-3pool",
     "address": "0x12a7738315624f6e112452E0eCFf29cE08d4992D",
     "interval": 4,
