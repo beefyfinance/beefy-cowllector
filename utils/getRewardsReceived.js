@@ -54,8 +54,6 @@ const getRewardsReceived = async () => {
       fromBlock = toBlock;
     }
 
-    console.log('Result', result.toString());
-
     return result;
   } catch (e) {
     console.log(e);
