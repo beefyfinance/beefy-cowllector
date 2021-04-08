@@ -1,5 +1,25 @@
 [
   {
+    "name": "olive-olive-avax",
+    "address": "0x6bBdC5cacB4e72884432E3d63745cc8e7A4392Ca",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "olive-olive-usdt",
+    "address": "0xDcdb088f53dBcC63f600299867F8b6eE6BC7a6cE",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "swamp-cake",
     "address": "0x28FF722D1F23613053B28060916cC1b10C94B755",
     "interval": 4,

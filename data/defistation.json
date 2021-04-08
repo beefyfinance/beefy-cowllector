@@ -1,5 +1,21 @@
 [
   {
+    "id": "olive-olive-avax",
+    "name": "Moo Olive OLIVE-AVAX",
+    "contract": "0x9Bb9B11917e7bC3528B6048E9B01cD5E302bb27B",
+    "oracle": "lps",
+    "oracleId": "olive-olive-avax",
+    "tvl": 0
+  },
+  {
+    "id": "olive-olive-usdt",
+    "name": "Moo Olive OLIVE-USDT",
+    "contract": "0xBdA8bC79705BC60226adCA2766e94Eb5512949a3",
+    "oracle": "lps",
+    "oracleId": "olive-olive-usdt",
+    "tvl": 0
+  },
+  {
     "id": "swamp-cake",
     "name": "Moo Swampy CAKE",
     "contract": "0x4d1A2b3119895d887b87509693338b86730bCE06",
