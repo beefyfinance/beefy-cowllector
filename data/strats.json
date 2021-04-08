@@ -1,5 +1,15 @@
 [
   {
+    "name": "swamp-swamp",
+    "address": "0x41b4A24c6dc9F3cA72ef5312C3353eb13DCFfB5F",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "olive-olive-avax",
     "address": "0x6bBdC5cacB4e72884432E3d63745cc8e7A4392Ca",
     "interval": 4,
