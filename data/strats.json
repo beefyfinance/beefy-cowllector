@@ -1,5 +1,45 @@
 [
   {
+    "name": "biti-biti-bnb",
+    "address": "0x95961b99AC14BFAeFABb36c40bCE4631b87b5500",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "swamp-swamp",
+    "address": "0x41b4A24c6dc9F3cA72ef5312C3353eb13DCFfB5F",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "olive-olive-avax",
+    "address": "0x6bBdC5cacB4e72884432E3d63745cc8e7A4392Ca",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "olive-olive-usdt",
+    "address": "0xDcdb088f53dBcC63f600299867F8b6eE6BC7a6cE",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "swamp-cake",
     "address": "0x28FF722D1F23613053B28060916cC1b10C94B755",
     "interval": 4,
