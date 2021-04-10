@@ -1,5 +1,15 @@
 [
   {
+    "name": "auto-busdv2",
+    "address": "0x1EB0baDDD50BB7e197990b14f18173b6C063D0b9",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "mdex-eth-usdt",
     "address": "0x3A00616A14A5C6930c45d7D3E62A385Bd81B4e7D",
     "interval": 4,

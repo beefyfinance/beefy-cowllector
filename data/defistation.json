@@ -1,5 +1,13 @@
 [
   {
+    "id": "auto-busdv2",
+    "name": "Moo Auto BUSDv2",
+    "contract": "0x4533B96E7737D2158a0DFf9a3a2A97f4419ef646",
+    "oracle": "tokens",
+    "oracleId": "BUSD",
+    "tvl": 0
+  },
+  {
     "id": "mdex-eth-usdt",
     "name": "Moo Mdex ETH-USDT",
     "contract": "0x2C74A61556AfF02Be19B3d7a746ba75A38210fd3",
