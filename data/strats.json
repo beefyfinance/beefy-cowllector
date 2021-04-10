@@ -1,5 +1,35 @@
 [
   {
+    "name": "mdex-eth-usdt",
+    "address": "0x3A00616A14A5C6930c45d7D3E62A385Bd81B4e7D",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "mdex-mdx-bnb",
+    "address": "0x569074973aC3DC3d5168545fAC988ed79cef8DEa",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "typh-typh-bnb",
+    "address": "0xe3E9A165DE6089b25489eF7fDd67dfcEf3B34318",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "biti-biti-bnb",
     "address": "0x95961b99AC14BFAeFABb36c40bCE4631b87b5500",
     "interval": 1,
