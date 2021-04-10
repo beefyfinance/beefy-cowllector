@@ -4,8 +4,8 @@ const { sleep } = require('./harvestHelpers');
 
 const { getTopicFromSignature, getTopicFromAddress, getValueFromData } = require('./topicHelpers');
 
-const RPC_QUERY_LIMIT = 5000;
-const RPC_QUERY_INTERVAL = 200;
+const RPC_QUERY_LIMIT = 1000;
+const RPC_QUERY_INTERVAL = 50;
 const FIRST_REWARD_BLOCK = 1457038;
 
 const REWARD_POOL = '0x453D4Ba9a2D594314DF88564248497F7D74d6b2C';
