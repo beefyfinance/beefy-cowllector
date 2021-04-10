@@ -1,5 +1,29 @@
 [
   {
+    "id": "mdex-eth-usdt",
+    "name": "Moo Mdex ETH-USDT",
+    "contract": "0x2C74A61556AfF02Be19B3d7a746ba75A38210fd3",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-eth-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-mdx-bnb",
+    "name": "Moo Mdex MDX-BNB",
+    "contract": "0x31e2d52A04FEb223109506E4c6f195C0cF16b98A",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-mdx-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "typh-typh-bnb",
+    "name": "Moo Typh TYPH-BNB",
+    "contract": "0xFC5C3411d4415E4fDff8f842F1Ae109350e61249",
+    "oracle": "lps",
+    "oracleId": "typh-typh-bnb",
+    "tvl": 0
+  },
+  {
     "id": "biti-biti-bnb",
     "name": "Moo Biti BITI-BNB",
     "contract": "0x554a710F4b5A354C991da0F19CC4D14E94493da1",
