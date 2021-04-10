@@ -5,7 +5,7 @@ const { sleep } = require('./harvestHelpers');
 const { getTopicFromSignature, getTopicFromAddress, getValueFromData } = require('./topicHelpers');
 
 const RPC_QUERY_LIMIT = 1000;
-const RPC_QUERY_INTERVAL = 50;
+const RPC_QUERY_INTERVAL = 100;
 const FIRST_REWARD_BLOCK = 1457038;
 
 const REWARD_POOL = '0x453D4Ba9a2D594314DF88564248497F7D74d6b2C';
@@ -26,7 +26,7 @@ const getRewardsReceived = async () => {
 
   while (fromBlock < lastBlock) {
     let toBlock = fromBlock + RPC_QUERY_LIMIT;
-    if (toBlock > lastBlock) { 
+    if (toBlock > lastBlock) {
       toBlock = lastBlock;
     }
 
@@ -47,7 +47,7 @@ const getRewardsReceived = async () => {
       const value = getValueFromData(logs[i].data);
       result = result.plus(value);
     }
-   
+
     await sleep(RPC_QUERY_INTERVAL);
 
     fromBlock = toBlock;
@@ -56,12 +56,12 @@ const getRewardsReceived = async () => {
   return result;
 };
 
-const getLastRewardAddedDetails = async (lastBlock) => {
+const getLastRewardAddedDetails = async lastBlock => {
   const topic = getTopicFromSignature('RewardAdded(uint256)');
-  
+
   let fromBlock = lastBlock - RPC_QUERY_LIMIT;
   let toBlock = lastBlock;
-  
+
   let details = { blockNumber: 0, transactionIndex: 0 };
 
   while (fromBlock > FIRST_REWARD_BLOCK) {
