@@ -100,7 +100,7 @@
     "name": "Moo Swampy BIFI-BNB",
     "contract": "0x56Ba15eCA5FB30b13FCaD7392c82811a5Ce98e4d",
     "oracle": "lps",
-    "oracleId": "swamp-bifi-bnb",
+    "oracleId": "cake-bifi-bnb",
     "tvl": 0
   },
   {
@@ -108,7 +108,7 @@
     "name": "Moo Swampy CAKE-BNB",
     "contract": "0xe75E9Cc79c2d1dAa00f30991FBB413C8d4a86537",
     "oracle": "lps",
-    "oracleId": "swamp-cake-bnb",
+    "oracleId": "cake-cake-bnb",
     "tvl": 0
   },
   {
@@ -1627,7 +1627,7 @@
     "id": "venus-beth",
     "name": "Venus: BETH",
     "contract": "0xB38D32336538559Ce6680952B0Be4917ed015c39",
-    "oracle": "bakery",
+    "oracle": "tokens",
     "oracleId": "BETH",
     "tvl": 0
   },
