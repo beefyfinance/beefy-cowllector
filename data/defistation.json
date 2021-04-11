@@ -1,5 +1,29 @@
 [
   {
+    "id": "mdex-sushi",
+    "name": "Moo Mdex SUSHI",
+    "contract": "0xC098389D4d329D4B5970dC8a1bD78Eba9DDee974",
+    "oracle": "tokens",
+    "oracleId": "SUSHI",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-inj",
+    "name": "Moo Mdex INJ",
+    "contract": "0x5212d0e82CBAD96541454E5227f273Abff986F78",
+    "oracle": "tokens",
+    "oracleId": "INJ",
+    "tvl": 0
+  },
+  {
+    "id": "auto-busdv2",
+    "name": "Moo Auto BUSDv2",
+    "contract": "0x4533B96E7737D2158a0DFf9a3a2A97f4419ef646",
+    "oracle": "tokens",
+    "oracleId": "BUSD",
+    "tvl": 0
+  },
+  {
     "id": "mdex-eth-usdt",
     "name": "Moo Mdex ETH-USDT",
     "contract": "0x2C74A61556AfF02Be19B3d7a746ba75A38210fd3",
@@ -92,7 +116,7 @@
     "name": "Moo Swampy BIFI-BNB",
     "contract": "0x56Ba15eCA5FB30b13FCaD7392c82811a5Ce98e4d",
     "oracle": "lps",
-    "oracleId": "swamp-bifi-bnb",
+    "oracleId": "cake-bifi-bnb",
     "tvl": 0
   },
   {
@@ -100,7 +124,7 @@
     "name": "Moo Swampy CAKE-BNB",
     "contract": "0xe75E9Cc79c2d1dAa00f30991FBB413C8d4a86537",
     "oracle": "lps",
-    "oracleId": "swamp-cake-bnb",
+    "oracleId": "cake-cake-bnb",
     "tvl": 0
   },
   {
@@ -504,27 +528,27 @@
     "tvl": 0
   },
   {
-    "id": "blizzard-blzd-bnb",
-    "name": "Moo Blizzard BLZD-BNB",
-    "contract": "0x57e6f78a7e644b8532d8c4f3A354c921709Aa897",
+    "id": "blizzard-xblzd-bnb",
+    "name": "Moo Blizzard xBLZD-BNB",
+    "contract": "0xF7E3273930D8ffdb967BD5B4afe67aa195DF7347",
     "oracle": "lps",
-    "oracleId": "blizzard-blzd-bnb",
+    "oracleId": "blizzard-xblzd-bnb",
     "tvl": 0
   },
   {
-    "id": "blizzard-blzd-busd",
-    "name": "Moo Blizzard BLZD-BUSD",
-    "contract": "0x1EdfEc6849C54Ee9187539516C6a67ADAcBf9704",
+    "id": "blizzard-xblzd-busd",
+    "name": "Moo Blizzard xBLZD-BUSD",
+    "contract": "0xE4012400f60ffae2584F9D9Ee61Ca65B31A24c7F",
     "oracle": "lps",
-    "oracleId": "blizzard-blzd-busd",
+    "oracleId": "blizzard-xblzd-busd",
     "tvl": 0
   },
   {
-    "id": "blizzard-blzd",
-    "name": "Moo Blizzard BLZD",
-    "contract": "0x580b899D8d856DFe3da7895466F779F1A509D2Fd",
+    "id": "blizzard-xblzd",
+    "name": "Moo Blizzard xBLZD",
+    "contract": "0xf69bA3131029173Ca97aa43400B10689f5C23f59",
     "oracle": "tokens",
-    "oracleId": "BLZD",
+    "oracleId": "xBLZD",
     "tvl": 0
   },
   {
@@ -1619,7 +1643,7 @@
     "id": "venus-beth",
     "name": "Venus: BETH",
     "contract": "0xB38D32336538559Ce6680952B0Be4917ed015c39",
-    "oracle": "bakery",
+    "oracle": "tokens",
     "oracleId": "BETH",
     "tvl": 0
   },
