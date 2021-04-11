@@ -1,5 +1,45 @@
 [
   {
+    "name": "auto-ethv2",
+    "address": "0xd9e363C22F97Afb0092269d98154ab06987252bf",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-btcv2",
+    "address": "0x4c8d2f61017053dab18ac292348b5B3Fae9157A5",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-usdcv2",
+    "address": "0xAe12a3A03055eBadf8385BB69514b75e89f400b5",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-usdtv2",
+    "address": "0xF0d6424B253f51F075f26A1569a7E7a0523e887E",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "mdex-sushi",
     "address": "0x79D2b02698d843e2c8DB53fD62DD1CE9aaEF6fC2",
     "interval": 6,

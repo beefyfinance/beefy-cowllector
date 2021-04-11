@@ -1,5 +1,37 @@
 [
   {
+    "id": "auto-ethv2",
+    "name": "Moo Auto ETHv2",
+    "contract": "0x0F47eaae1EC5fD11067455210c494a7828024524",
+    "oracle": "tokens",
+    "oracleId": "ETH",
+    "tvl": 0
+  },
+  {
+    "id": "auto-btcv2",
+    "name": "Moo Auto BTCv2",
+    "contract": "0x0845813938515FE56730c124Ab8CA2DF58B01463",
+    "oracle": "tokens",
+    "oracleId": "BTCB",
+    "tvl": 0
+  },
+  {
+    "id": "auto-usdcv2",
+    "name": "Moo Auto USDCv2",
+    "contract": "0x5d931BBcD7010935103AC1FDb8B43625A7CB67A4",
+    "oracle": "tokens",
+    "oracleId": "USDC",
+    "tvl": 0
+  },
+  {
+    "id": "auto-usdtv2",
+    "name": "Moo Auto USDTv2",
+    "contract": "0xb0C71ae9a71bbf03BE6F33A29a71C485472f5a1F",
+    "oracle": "tokens",
+    "oracleId": "USDT",
+    "tvl": 0
+  },
+  {
     "id": "mdex-sushi",
     "name": "Moo Mdex SUSHI",
     "contract": "0xC098389D4d329D4B5970dC8a1bD78Eba9DDee974",
