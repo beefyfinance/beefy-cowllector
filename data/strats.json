@@ -1520,26 +1520,6 @@
     "chainId": 56
   },
   {
-    "name": "cake-xtz-bnb",
-    "address": "0x800A8fe2BE01cef25B5950cca56B954312049924",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "cake-bch-bnb",
-    "address": "0xFc31C3CDDa5a05f6eEcd4335e0A082024a7998A6",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
     "name": "cake-sushi-eth",
     "address": "0x8f42a75affb4c3d30c3423f7bda2095d68b16232",
     "interval": 4,
@@ -2173,16 +2153,6 @@
     "name": "jetfuel-pk-usdt/bnb",
     "address": "0xB126E22F4d9EfE943c94E0Ef493FF34f98AdC9E1",
     "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "pancake-yfii/bnb",
-    "address": "0xAA5C69Dc405541245221Bfa94E726A188BdF3760",
-    "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
