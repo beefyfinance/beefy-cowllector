@@ -1,5 +1,21 @@
 [
   {
+    "id": "mdex-sushi",
+    "name": "Moo Mdex SUSHI",
+    "contract": "0xC098389D4d329D4B5970dC8a1bD78Eba9DDee974",
+    "oracle": "tokens",
+    "oracleId": "SUSHI",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-inj",
+    "name": "Moo Mdex INJ",
+    "contract": "0x5212d0e82CBAD96541454E5227f273Abff986F78",
+    "oracle": "tokens",
+    "oracleId": "INJ",
+    "tvl": 0
+  },
+  {
     "id": "auto-busdv2",
     "name": "Moo Auto BUSDv2",
     "contract": "0x4533B96E7737D2158a0DFf9a3a2A97f4419ef646",

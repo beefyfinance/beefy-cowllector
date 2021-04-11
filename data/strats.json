@@ -1,5 +1,25 @@
 [
   {
+    "name": "mdex-sushi",
+    "address": "0x79D2b02698d843e2c8DB53fD62DD1CE9aaEF6fC2",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "mdex-inj",
+    "address": "0x9C18AD8166793a92494b98Da6126B786Ea942e11",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "auto-busdv2",
     "address": "0x1EB0baDDD50BB7e197990b14f18173b6C063D0b9",
     "interval": 4,
