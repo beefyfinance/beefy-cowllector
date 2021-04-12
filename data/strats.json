@@ -590,16 +590,6 @@
     "chainId": 56
   },
   {
-    "name": "jul-twt-bnb",
-    "address": "0xe4b3c2b19db4fbaafbe99bd8ec869fc4c37063ae",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
     "name": "pumpy-pmp-bnb",
     "address": "0xeEeF3d9c3260d01F9763B38BCD0968e04af8f59B",
     "interval": 2,
@@ -1062,16 +1052,6 @@
   {
     "name": "cake-nuls-busd",
     "address": "0x6Ac205097Ae228aC41D7ffA50CBA1b3C81272D97",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "jul-xvs-bnb",
-    "address": "0xC733253d45909f84D36e6e9D9f8Ee81DeEd12045",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
