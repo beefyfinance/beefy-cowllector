@@ -1,5 +1,37 @@
 [
   {
+    "id": "auto-adav2",
+    "name": "Moo Auto ADAv2",
+    "contract": "0x8Ba14664DFae93bb175296CD43eB52a23Ba576f5",
+    "oracle": "tokens",
+    "oracleId": "ADA",
+    "tvl": 0
+  },
+  {
+    "id": "auto-sxpv2",
+    "name": "Moo Auto SXPv2",
+    "contract": "0xbB7Ed513e421ad454191790199E4731757545793",
+    "oracle": "tokens",
+    "oracleId": "SXP",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-uni",
+    "name": "Moo Mdex UNI",
+    "contract": "0xC57869A0bDeF07bf4E9Ffdd598Ffc235248987d4",
+    "oracle": "tokens",
+    "oracleId": "UNI",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-xvs",
+    "name": "Moo Mdex XVS",
+    "contract": "0x93aBCe226ac5082aD8702681354C48E739eEFDd5",
+    "oracle": "tokens",
+    "oracleId": "XVS",
+    "tvl": 0
+  },
+  {
     "id": "auto-ethv2",
     "name": "Moo Auto ETHv2",
     "contract": "0x0F47eaae1EC5fD11067455210c494a7828024524",

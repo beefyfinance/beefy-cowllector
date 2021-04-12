@@ -1,5 +1,45 @@
 [
   {
+    "name": "auto-adav2",
+    "address": "0x2f4c0054bc8f377Ab5aA7aF529479331C6597e15",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-sxpv2",
+    "address": "0xf125e40B78029150353973b9Bf33DeBbEB49e760",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "mdex-uni",
+    "address": "0x15c6063E93c6e56116dF2a63aCaA7785c85B9C41",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "mdex-xvs",
+    "address": "0x3F5e61501f73aFf389A6fBE6f5d97E0B78cEC60D",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "auto-ethv2",
     "address": "0xd9e363C22F97Afb0092269d98154ab06987252bf",
     "interval": 4,
