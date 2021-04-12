@@ -1,5 +1,61 @@
 [
   {
+    "id": "cake-hoo-busd",
+    "name": "Moo Pancake HOO-BUSD",
+    "contract": "0x9C21d39c1e790A966c81EBf5Db4FE5e8C564d1bF",
+    "oracle": "lps",
+    "oracleId": "cake-hoo-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cake-easy-bnb",
+    "name": "Moo Pancake EASY-BNB",
+    "contract": "0xF107C61f6c49e8650f080454807279D1672f9a5A",
+    "oracle": "lps",
+    "oracleId": "cake-easy-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-oddz-bnb",
+    "name": "Moo Pancake ODDZ-BNB",
+    "contract": "0xcAdC68d5834898D54929E694eD19e833e0117694",
+    "oracle": "lps",
+    "oracleId": "cake-oddz-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-apys-bnb",
+    "name": "Moo Pancake APYS-BNB",
+    "contract": "0xc3991d99a73eD1Fd9d28cd4623DD72732745963b",
+    "oracle": "lps",
+    "oracleId": "cake-apys-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-bondly-bnb",
+    "name": "Moo Pancake BONDLY-BNB",
+    "contract": "0x3a8fC02909CAC1a317e95d9e2717977Fc52ef36a",
+    "oracle": "lps",
+    "oracleId": "cake-bondly-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-itam-bnb",
+    "name": "Moo Pancake ITAM-BNB",
+    "contract": "0x4dD62Fc76fD57175151777e845dfe9E981b87aE7",
+    "oracle": "lps",
+    "oracleId": "cake-itam-bnb",
+    "tvl": 0
+  },
+   {
+    "id": "cake-arpa-bnb",
+    "name": "Moo Pancake ARPA-BNB",
+    "contract": "0x6E1D34Bac5d49E9b488D8eadFCB632953263F2eA",
+    "oracle": "lps",
+    "oracleId": "cake-arpa-bnb",
+    "tvl": 0
+  },
+  {
     "id": "auto-adav2",
     "name": "Moo Auto ADAv2",
     "contract": "0x8Ba14664DFae93bb175296CD43eB52a23Ba576f5",
