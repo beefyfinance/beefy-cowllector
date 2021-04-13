@@ -1,5 +1,25 @@
 [
   {
+    "name": "palm-palm",
+    "address": "0x31CCD38221649981BC493C287d68Ab9287BE5D93",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "mdex-bsc-mdx-busd",
+    "address": "0x4Ae6D6f9A83508b82A533e1FEBfB052d9cc7e3D4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "banana-bifi-bnb",
     "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
     "interval": 4,

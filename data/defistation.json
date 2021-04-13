@@ -1,5 +1,21 @@
 [
   {
+    "id": "palm-palm",
+    "name": "Moo Palm PALM",
+    "contract": "0xFAE7E8b7AB3bd583dEa936E829F1132909A6C6cD",
+    "oracle": "tokens",
+    "oracleId": "PALM",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-mdx-busd",
+    "name": "Moo Mdex MDX-BUSD",
+    "contract": "0x38507dAEe5F1E6c397d1767B5202931f12feef74",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-mdx-busd",
+    "tvl": 0
+  },
+  {
     "id": "banana-bifi-bnb",
     "name": "Moo Ape BIFI-BNB",
     "contract": "0x6ebA4A31c46937B42E66f44a0A1165a08495a38F",
