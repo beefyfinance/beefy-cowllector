@@ -1,5 +1,15 @@
 [
-   {
+  {
+    "name": "banana-bifi-bnb",
+    "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-hoo-busd",
     "address": "0x0849E59F6272b782B1afD244C13e3aDE29D93C67",
     "interval": 4,
