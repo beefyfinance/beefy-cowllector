@@ -1,5 +1,13 @@
 [
   {
+    "id": "banana-bifi-bnb",
+    "name": "Moo Ape BIFI-BNB",
+    "contract": "0x6ebA4A31c46937B42E66f44a0A1165a08495a38F",
+    "oracle": "lps",
+    "oracleId": "banana-bifi-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cake-hoo-busd",
     "name": "Moo Pancake HOO-BUSD",
     "contract": "0x9C21d39c1e790A966c81EBf5Db4FE5e8C564d1bF",
@@ -47,7 +55,7 @@
     "oracleId": "cake-itam-bnb",
     "tvl": 0
   },
-   {
+  {
     "id": "cake-arpa-bnb",
     "name": "Moo Pancake ARPA-BNB",
     "contract": "0x6E1D34Bac5d49E9b488D8eadFCB632953263F2eA",
