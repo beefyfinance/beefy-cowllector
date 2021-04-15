@@ -1,5 +1,35 @@
 [
   {
+    "name": "mash-mash-busd",
+    "address": "0x5072AFb7A253877333dd5664999298a1DDeE3Dd5",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "mash-mash-bnb",
+    "address": "0x07D8bcf7d77c847a920248e887c39b824F75977d",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "mash-mash",
+    "address": "0xCc747D036DB8ae32fd460631EDf507479d89Bb64",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "palm-palm",
     "address": "0x0F233071Ae1a6847553f275AA75a83663100e0C3",
     "interval": 4,
