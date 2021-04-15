@@ -1,5 +1,29 @@
 [
   {
+    "id": "mash-mash-busd",
+    "name": "Moo Mash MASH-BUSD",
+    "contract": "0x8D6130b05c59bf8dCCde1921D40979750f5685E7",
+    "oracle": "lps",
+    "oracleId": "mash-mash-busd",
+    "tvl": 0
+  },
+  {
+    "id": "mash-mash-bnb",
+    "name": "Moo Mash MASH-BNB",
+    "contract": "0x45e13311ee99f040bF9a1207eb864Aae5AEa9119",
+    "oracle": "lps",
+    "oracleId": "mash-mash-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "mash-mash",
+    "name": "Moo Mash MASH",
+    "contract": "0xE76381E4fd8C4492C2e61000D123AE2Ca3BDa41C",
+    "oracle": "tokens",
+    "oracleId": "MASH",
+    "tvl": 0
+  },
+  {
     "id": "palm-palm",
     "name": "Moo Palm PALM",
     "contract": "0xFAE7E8b7AB3bd583dEa936E829F1132909A6C6cD",
