@@ -1,5 +1,61 @@
 [
   {
+    "id": "auto-eth-beth",
+    "name": "Moo AutoMdex BETH-ETH",
+    "contract": "0xad777a366D5aD4A728A03C2CC61a3c3Ea8935BBB",
+    "oracle": "lps",
+    "oracleId": "auto-eth-beth",
+    "tvl": 0
+  },
+  {
+    "id": "auto-eth-usdt",
+    "name": "Moo AutoMdex ETH-USDT",
+    "contract": "0x68c39886eA459b4a59758F1e94c3d20C93d47133",
+    "oracle": "lps",
+    "oracleId": "auto-eth-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "auto-btcb-usdt",
+    "name": "Moo AutoMdex BTCB-USDT",
+    "contract": "0xE5e79043eC57b12F2d15d4a230ED9C7d732Ed93A",
+    "oracle": "lps",
+    "oracleId": "auto-btcb-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "auto-btcb-eth",
+    "name": "Moo AutoMdex BTCB-ETH",
+    "contract": "0x31e77776b924Cd5f0E624771C9B3d2bD6B9c919E",
+    "oracle": "lps",
+    "oracleId": "auto-btcb-eth",
+    "tvl": 0
+  },
+  {
+    "id": "auto-usdt-busd",
+    "name": "Moo AutoMdex USDT-BUSD",
+    "contract": "0x17720F863DA01Bc9e266e4eE872E3c98fA1FeAA8",
+    "oracle": "lps",
+    "oracleId": "auto-usdt-busd",
+    "tvl": 0
+  },
+  {
+    "id": "lava-lava-wht",
+    "name": "Moo Lava LAVA-WHT",
+    "contract": "0xD35ca4abBA932D6d94A3eEe73CaD1F6684cB95Ae",
+    "oracle": "lps",
+    "oracleId": "lava-lava-wht",
+    "tvl": 0
+  },
+  {
+    "id": "lava-lava-usdt",
+    "name": "Moo Lava LAVA-USDT",
+    "contract": "0xc44d493B6219A7f5C286724b74c158CEBd7fB6f7",
+    "oracle": "lps",
+    "oracleId": "lava-lava-usdt",
+    "tvl": 0
+  },
+  {
     "id": "mash-mash-busd",
     "name": "Moo Mash MASH-BUSD",
     "contract": "0x8D6130b05c59bf8dCCde1921D40979750f5685E7",
