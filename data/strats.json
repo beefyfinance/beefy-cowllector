@@ -1,5 +1,75 @@
 [
   {
+    "name": "auto-eth-beth",
+    "address": "0x8a6ea70f0a04cF7D6A2146EaF195967c8267328d",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-eth-usdt",
+    "address": "0x6064EE37A4B8537f2Ff4a9A09dE1F2b1C24E14EF",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-btcb-usdt",
+    "address": "0xF665527AfD5e7156cd1b7eF922FfDF8983508fdB",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-btcb-eth",
+    "address": "0x41f701c7096fb2882A12E0E6dbaF8ca38B936372",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "auto-usdt-busd",
+    "address": "0xA29a75775c798715a5acd4220e31Bb5933e71AAB",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "lava-lava-wht",
+    "address": "0x78AC41Dd7fd4fe86a79174fdD59a6E707E69c57E",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
+    "name": "lava-lava-usdt",
+    "address": "0x3B289DcCd55B46596FbBAFfEd6469a85d69426Dc",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
     "name": "mash-mash-busd",
     "address": "0x5072AFb7A253877333dd5664999298a1DDeE3Dd5",
     "interval": 4,
