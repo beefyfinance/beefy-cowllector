@@ -1,5 +1,15 @@
 [
   {
+    "name": "lava-lava",
+    "address": "0x3B289DcCd55B46596FbBAFfEd6469a85d69426Dc",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
     "name": "auto-eth-beth",
     "address": "0x8a6ea70f0a04cF7D6A2146EaF195967c8267328d",
     "interval": 4,
