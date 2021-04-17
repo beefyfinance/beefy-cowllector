@@ -1,5 +1,21 @@
 [
-   {
+  {
+    "id": "ellipsis-renbtc",
+    "name": "Moo Ellipsis renBTC",
+    "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
+    "oracle": "lps",
+    "oracleId": "ellipsis-renbtc",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-fusdt-3eps",
+    "name": "Moo Ellipsis fUSDT",
+    "contract": "0x8D3B7a0b20d490cbDACC2c555c05b7132B856e4b",
+    "oracle": "lps",
+    "oracleId": "ellipsis-fusdt-3eps",
+    "tvl": 0
+  },
+  {
     "id": "lava-lava",
     "name": "Moo Lava LAVA",
     "contract": "0xCd22A841e82fdd42FCFFF44ED689fDf6f6ECDEF9",

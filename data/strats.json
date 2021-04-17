@@ -1,5 +1,25 @@
 [
   {
+    "name": "ellipsis-renbtc",
+    "address": "0xdd71720cdB91dD4e94A5f7F57B3E1418Db54103f",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "ellipsis-fusdt-3eps",
+    "address": "0x8161ee6dB411DD034eAB19815A4e6aD543FF2A25",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "lava-lava",
     "address": "0x3B289DcCd55B46596FbBAFfEd6469a85d69426Dc",
     "interval": 4,
