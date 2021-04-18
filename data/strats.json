@@ -1860,26 +1860,6 @@
     "chainId": 56
   },
   {
-    "name": "monster-msc-bnb",
-    "address": "0xB97F9c6d4d3985E94266510c6a00AE448D44d78b",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "monster-msc-busd",
-    "address": "0xAe2a0F189996DbA008Bce55a3E67c506C742Eed5",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
     "name": "bolt-bts-busd",
     "address": "0x22b5c879a821afc56e564bc73e3eaa7fc7cf25cc",
     "interval": 1,
@@ -2023,16 +2003,6 @@
     "name": "sponge-soak-bnb",
     "address": "0x882c844d8b1075D592aFA3F13a3aaF6A6E9c43c3",
     "interval": 2,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "monster-mss-busd",
-    "address": "0xe1a8EeA58D63Ea64d00365531D266C2AD1f62FC4",
-    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
