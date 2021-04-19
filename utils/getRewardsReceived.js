@@ -4,28 +4,21 @@ const { sleep } = require('./harvestHelpers');
 
 const { getTopicFromSignature, getTopicFromAddress, getValueFromData } = require('./topicHelpers');
 
-const RPC_QUERY_LIMIT = 1000;
-const RPC_QUERY_INTERVAL = 100;
-const FIRST_REWARD_BLOCK = 1457038;
+const getRewardsReceived = async chain => {
+  const web3 = new Web3(chain.rpc);
 
-const REWARD_POOL = '0x453D4Ba9a2D594314DF88564248497F7D74d6b2C';
-const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-
-const web3 = new Web3(process.env.BSC_RPC);
-
-const getRewardsReceived = async () => {
   let result = new BigNumber(0);
 
   const lastBlock = await web3.eth.getBlockNumber();
-  const details = await getLastRewardAddedDetails(lastBlock);
+  const details = await getLastRewardAddedDetails(chain, lastBlock, web3);
 
   const transferTopic = getTopicFromSignature('Transfer(address,address,uint256)');
-  const toTopic = getTopicFromAddress(REWARD_POOL);
+  const toTopic = getTopicFromAddress(chain.rewardPool);
 
   let fromBlock = details.blockNumber;
 
   while (fromBlock < lastBlock) {
-    let toBlock = fromBlock + RPC_QUERY_LIMIT;
+    let toBlock = fromBlock + chain.queryLimit;
     if (toBlock > lastBlock) {
       toBlock = lastBlock;
     }
@@ -33,7 +26,7 @@ const getRewardsReceived = async () => {
     const logs = await web3.eth.getPastLogs({
       fromBlock: fromBlock,
       toBlock: toBlock - 1,
-      address: WBNB,
+      address: chain.wrappedToken,
       topics: [transferTopic, null, toTopic],
     });
 
@@ -48,7 +41,7 @@ const getRewardsReceived = async () => {
       result = result.plus(value);
     }
 
-    await sleep(RPC_QUERY_INTERVAL);
+    await sleep(chain.queryInterval);
 
     fromBlock = toBlock;
   }
@@ -56,19 +49,19 @@ const getRewardsReceived = async () => {
   return result;
 };
 
-const getLastRewardAddedDetails = async lastBlock => {
+const getLastRewardAddedDetails = async (chain, lastBlock, web3) => {
   const topic = getTopicFromSignature('RewardAdded(uint256)');
 
-  let fromBlock = lastBlock - RPC_QUERY_LIMIT;
+  let fromBlock = lastBlock - chain.queryLimit;
   let toBlock = lastBlock;
 
   let details = { blockNumber: 0, transactionIndex: 0 };
 
-  while (fromBlock > FIRST_REWARD_BLOCK) {
+  while (fromBlock > chain.firstRewardBlock) {
     const logs = await web3.eth.getPastLogs({
       fromBlock: fromBlock,
       toBlock: toBlock - 1,
-      address: REWARD_POOL,
+      address: chain.rewardPool,
       topics: [topic],
     });
 
@@ -79,10 +72,10 @@ const getLastRewardAddedDetails = async lastBlock => {
       break;
     }
 
-    await sleep(RPC_QUERY_INTERVAL);
+    await sleep(chain.queryInterval);
 
     toBlock = fromBlock;
-    fromBlock -= RPC_QUERY_LIMIT;
+    fromBlock -= chain.queryLimit;
   }
 
   return details;
