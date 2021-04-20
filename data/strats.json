@@ -1,5 +1,35 @@
 [
   {
+    "name": "ellipsis-renbtc",
+    "address": "0xdd71720cdB91dD4e94A5f7F57B3E1418Db54103f",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "ellipsis-fusdt-3eps",
+    "address": "0x8161ee6dB411DD034eAB19815A4e6aD543FF2A25",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "lava-lava",
+    "address": "0x913bd1F8770e3996B31cb3D8A023d2D44A03F350",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
     "name": "auto-eth-beth",
     "address": "0x8a6ea70f0a04cF7D6A2146EaF195967c8267328d",
     "interval": 4,
@@ -220,26 +250,6 @@
     "chainId": 56
   },
   {
-    "name": "mdex-uni",
-    "address": "0x15c6063E93c6e56116dF2a63aCaA7785c85B9C41",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "mdex-xvs",
-    "address": "0x3F5e61501f73aFf389A6fBE6f5d97E0B78cEC60D",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
     "name": "auto-ethv2",
     "address": "0xd9e363C22F97Afb0092269d98154ab06987252bf",
     "interval": 4,
@@ -272,26 +282,6 @@
   {
     "name": "auto-usdtv2",
     "address": "0xF0d6424B253f51F075f26A1569a7E7a0523e887E",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "mdex-sushi",
-    "address": "0x79D2b02698d843e2c8DB53fD62DD1CE9aaEF6fC2",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "mdex-inj",
-    "address": "0x9C18AD8166793a92494b98Da6126B786Ea942e11",
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1870,26 +1860,6 @@
     "chainId": 56
   },
   {
-    "name": "monster-msc-bnb",
-    "address": "0xB97F9c6d4d3985E94266510c6a00AE448D44d78b",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "monster-msc-busd",
-    "address": "0xAe2a0F189996DbA008Bce55a3E67c506C742Eed5",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
     "name": "bolt-bts-busd",
     "address": "0x22b5c879a821afc56e564bc73e3eaa7fc7cf25cc",
     "interval": 1,
@@ -2033,16 +2003,6 @@
     "name": "sponge-soak-bnb",
     "address": "0x882c844d8b1075D592aFA3F13a3aaF6A6E9c43c3",
     "interval": 2,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "monster-mss-busd",
-    "address": "0xe1a8EeA58D63Ea64d00365531D266C2AD1f62FC4",
-    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
