@@ -1,5 +1,15 @@
 [
   {
+    "name": "bunny-bunny",
+    "address": "0x9E16e999aB8e1F1F4ae04aE39Aa3a75064db73a6",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "ellipsis-renbtc",
     "address": "0xdd71720cdB91dD4e94A5f7F57B3E1418Db54103f",
     "interval": 4,
@@ -1555,7 +1565,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2225,7 +2235,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2235,7 +2245,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2245,7 +2255,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2445,7 +2455,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2455,7 +2465,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2465,7 +2475,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2475,7 +2485,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2485,7 +2495,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2495,7 +2505,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2505,7 +2515,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2515,7 +2525,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2525,7 +2535,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2535,7 +2545,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2545,7 +2555,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
@@ -2555,7 +2565,7 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": false,
     "chainId": 56
   },
