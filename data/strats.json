@@ -1,5 +1,105 @@
 [
   {
+    "name": "cake-broobee-bnb",
+    "address": "0x5D060698F179E7D2233480A44d6D3979e4Ae9e7f",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-tko-bnb",
+    "address": "0x97bfa4b212A153E15dCafb799e733bc7d1b70E72",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-tlm-bnb",
+    "address": "0xa07594493389B9d595135A84c0f623F28146ebe2",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-perl-bnb",
+    "address": "0xdf3038f2b17fDE374F3F17FF5C348b18dEFAb704",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-alpa-bnb",
+    "address": "0xAC24D68cD9c432E534680A9686726B379356c3b1",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-hzn-bnb",
+    "address": "0xEDfA852239966606d160ff4821D431a2ba8C6A2e",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cake-suter-bnb",
+    "address": "0x554B8fbAa5639F6bc0B984E43bFe395f48d7B5A9",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-ada-eth",
+    "address": "0x2D9e84B46e97E61415E705852Ba43862aE433059",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-iota-bnb",
+    "address": "0xafD558197FE33AAd1D653cc57B712d9A97752084",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-bat-bnb",
+    "address": "0xBfC2C7323739A616f555d4410e4a4bF4Dad89e93",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "bunny-bunny",
     "address": "0x9E16e999aB8e1F1F4ae04aE39Aa3a75064db73a6",
     "interval": 4,
@@ -245,7 +345,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -255,7 +355,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -265,7 +365,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -275,7 +375,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -285,7 +385,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -295,7 +395,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -305,7 +405,7 @@
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -1305,7 +1405,7 @@
     "interval": 2,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
