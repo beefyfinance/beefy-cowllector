@@ -1574,8 +1574,8 @@
     "address": "0xF87079AD78f4762b515519B63D4aA19bf0c1470E",
     "interval": 4,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
+    "depositsPaused": true,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -1584,8 +1584,8 @@
     "address": "0x71D322ef2ad9b6b312Cc04A51a03C5f0Da74CaA0",
     "interval": 4,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
+    "depositsPaused": true,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -1594,8 +1594,8 @@
     "address": "0x5D5d360c8529076800dfD9f57bCe514122Da35bB",
     "interval": 4,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
+    "depositsPaused": true,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
@@ -1604,8 +1604,8 @@
     "address": "0x99bF8be49DcAc945a5754BDc0f5440Dc592D302a",
     "interval": 4,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
+    "depositsPaused": true,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 56
   },
