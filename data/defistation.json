@@ -1,5 +1,221 @@
 [
   {
+    "id": "cakev2-swingby-bnb",
+    "name": "Moo CakeV2 SWINGBY-BNB",
+    "contract": "0x0Bc697E03fc1B5aF446E7ceD159195BC2f9E1b20",
+    "oracle": "lps",
+    "oracleId": "cakev2-swingby-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dodo-bnb",
+    "name": "Moo CakeV2 DODO-BNB",
+    "contract": "0x5F92E5845661b31bB899d4121b5a20d6b87Fa2Ca",
+    "oracle": "lps",
+    "oracleId": "cakev2-dodo-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-zee-bnb",
+    "name": "Moo CakeV2 ZEE-BNB",
+    "contract": "0xfeBBCb71C2ff834960289314B629941300c621B2",
+    "oracle": "lps",
+    "oracleId": "cakev2-zee-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bry-bnb",
+    "name": "Moo CakeV2 BRY-BNB",
+    "contract": "0xca2E81FAb1740C533A860935787ea5dB4bF65423",
+    "oracle": "lps",
+    "oracleId": "cakev2-bry-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-watch-bnb",
+    "name": "Moo CakeV2 WATCH-BNB",
+    "contract": "0x4925Ebaa523b2C2F66F980C7b8bb68207622bc3F",
+    "oracle": "lps",
+    "oracleId": "cakev2-watch-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-cos-bnb",
+    "name": "Moo CakeV2 COS-BNB",
+    "contract": "0xA648630bD3C5a5FAC65Cd60BD61964f16bc00e88",
+    "oracle": "lps",
+    "oracleId": "cakev2-cos-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dusk-bnb",
+    "name": "Moo CakeV2 dusk-BNB",
+    "contract": "0x6346eF9D3d9fF022E18152e3E13E263A660bFDC5",
+    "oracle": "lps",
+    "oracleId": "cakev2-dusk-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-trade-bnb",
+    "name": "Moo CakeV2 trade-BNB",
+    "contract": "0x770fFB3872dfE4B872491e7517f58f9dcC55aE07",
+    "oracle": "lps",
+    "oracleId": "cakev2-trade-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-pcws-bnb",
+    "name": "Moo CakeV2 pCWS-BNB",
+    "contract": "0x15cd0fd4c1A67EADDe83654be450C0EC61769169",
+    "oracle": "lps",
+    "oracleId": "cakev2-pcws-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-lto-bnb",
+    "name": "Moo CakeV2 LTO-BNB",
+    "contract": "0xFc7423790DcEcf83a93f9D370eA589518c91cC24",
+    "oracle": "lps",
+    "oracleId": "cakev2-lto-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-zil-bnb",
+    "name": "Moo CakeV2 ZIL-BNB",
+    "contract": "0x96DbE2a8B2a98E4aF2ecf444f95c5A8d853d69a3",
+    "oracle": "lps",
+    "oracleId": "cakev2-zil-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-lien-bnb",
+    "name": "Moo CakeV2 LIEN-BNB",
+    "contract": "0x19069ED39D3E0ad756eE9DF2200B42A83D1266e4",
+    "oracle": "lps",
+    "oracleId": "cakev2-lien-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-swth-bnb",
+    "name": "Moo CakeV2 SWTH-BNB",
+    "contract": "0xE7703725e3B294Ef0691577461Ec957AD0e1fF81",
+    "oracle": "lps",
+    "oracleId": "cakev2-swth-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dft-bnb",
+    "name": "Moo CakeV2 DFT-BNB",
+    "contract": "0xa5529E47C3086D93bB59aB99ca2B20d0Ee2EFcAe",
+    "oracle": "lps",
+    "oracleId": "cakev2-dft-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-arpa-bnb",
+    "name": "Moo CakeV2 ARPA-BNB",
+    "contract": "0x2b25fc2e80C3f4A7983306fFC72d95a553f59C9d",
+    "oracle": "lps",
+    "oracleId": "cakev2-arpa-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-itam-bnb",
+    "name": "Moo CakeV2 ITAM-BNB",
+    "contract": "0x34753f36d69d00e2112Eb99B3F7f0FE76cC35090",
+    "oracle": "lps",
+    "oracleId": "cakev2-itam-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bondly-bnb",
+    "name": "Moo CakeV2 BONDLY-BNB",
+    "contract": "0xC452538b578226933fc5F23d6436D486964736d3",
+    "oracle": "lps",
+    "oracleId": "cakev2-bondly-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-oddz-bnb",
+    "name": "Moo CakeV2 ODDZ-BNB",
+    "contract": "0x19dA11FC81cDe70F55e673C8eec41129DAA94A20",
+    "oracle": "lps",
+    "oracleId": "cakev2-oddz-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-easy-bnb",
+    "name": "Moo CakeV2 EASY-BNB",
+    "contract": "0xB1254637809D455Fbc33b901894CbA735Fc5B4a1",
+    "oracle": "lps",
+    "oracleId": "cakev2-easy-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-apys-bnb",
+    "name": "Moo CakeV2 APYS-BNB",
+    "contract": "0x526c4f570e535B221C86557b8483A0F441b69259",
+    "oracle": "lps",
+    "oracleId": "cakev2-apys-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-suter-bnb",
+    "name": "Moo CakeV2 SUTER-BNB",
+    "contract": "0x10Db0024045cDECc16b8D6581458afa4B47c0c05",
+    "oracle": "lps",
+    "oracleId": "cakev2-suter-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-hzn-bnb",
+    "name": "Moo CakeV2 HZN-BNB",
+    "contract": "0xeae012C26290f668E29b276247E1A48f60379792",
+    "oracle": "lps",
+    "oracleId": "cakev2-hzn-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-alpa-bnb",
+    "name": "Moo CakeV2 ALPA-BNB",
+    "contract": "0x29714444254C94061215cB36C610dEED43925F71",
+    "oracle": "lps",
+    "oracleId": "cakev2-alpa-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-perl-bnb",
+    "name": "Moo CakeV2 PERL-BNB",
+    "contract": "0x2dc8683F752305659ff7F97A7CB4291B1c0Df37b",
+    "oracle": "lps",
+    "oracleId": "cakev2-perl-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tlm-bnb",
+    "name": "Moo CakeV2 TLM-BNB",
+    "contract": "0x185647c55633A5706aAA3278132537565c925078",
+    "oracle": "lps",
+    "oracleId": "cakev2-tlm-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tko-bnb",
+    "name": "Moo CakeV2 TKO-BNB",
+    "contract": "0xEEdDe64Af1dF1b1d023e326FD914AD5491B5c0eD",
+    "oracle": "lps",
+    "oracleId": "cakev2-tko-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-broobee-bnb",
+    "name": "Moo CakeV2 bROOBEE-BNB",
+    "contract": "0x9292dE516411Fe2eEcB9441F9FFcf2bfdDFb0956",
+    "oracle": "lps",
+    "oracleId": "cakev2-broobee-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-bscx-bnb",
     "name": "Moo CakeV2 BSCX-BNB",
     "contract": "0x3f8C3120f57b9552e33097B83dFDdAB1539bAd47",
