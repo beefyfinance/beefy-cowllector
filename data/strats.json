@@ -1,5 +1,45 @@
 [
   {
+    "name": "cakev2-bscx-bnb",
+    "address": "0x25052858a29CCE2A969E68Ec682d346226F18D49",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-ten-bnb",
+    "address": "0x026357B7CedE56893Add7a08ff9A7A9d754B60bD",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-balbt-bnb",
+    "address": "0x65D77912CB760BaD8b7098106f452376c8474238",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-ctk-bnb",
+    "address": "0x2c6052bd213C6a43B04897C83912c97fD9123bC4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cake-broobee-bnb",
     "address": "0x5D060698F179E7D2233480A44d6D3979e4Ae9e7f",
     "interval": 4,
