@@ -1784,14 +1784,6 @@
     "tvl": 0
   },
   {
-    "id": "jul-xvs-bnb",
-    "name": "Moo Jul XVS-BNB",
-    "contract": "0x48cc86214C58d7EaA78C100156c55DD45A676Ed1",
-    "oracle": "lps",
-    "oracleId": "jul-xvs-bnb",
-    "tvl": 0
-  },
-  {
     "id": "jul-dot-bnb",
     "name": "Moo Jul DOT-BNB",
     "contract": "0xa640E017Fc01dD39F6b7B07b0460B04E218c0a01",
@@ -2149,14 +2141,6 @@
     "contract": "0x29C4C22eC7dF7e936Cb3e6C4A7E5eAE751C7d86B",
     "oracle": "lps",
     "oracleId": "cake-zee-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "cake-xtz-bnb",
-    "name": "XTZ-BNB LP",
-    "contract": "0x12e09a13f5e2d95b3B8db8741dFeBa453784d1DC",
-    "oracle": "lps",
-    "oracleId": "cake-xtz-bnb",
     "tvl": 0
   },
   {
@@ -2616,14 +2600,6 @@
     "tvl": 0
   },
   {
-    "id": "street-jgn-bnb",
-    "name": "StreetSwap: JGN-BNB TLP",
-    "contract": "0x34199dc9ad1bD3D4A6EC70c120B8780e3A2Ca6C7",
-    "oracle": "lps",
-    "oracleId": "street-jgn-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cake-unfi-bnb",
     "name": "PancakeSwap: UNFI-BNB LP",
     "contract": "0x03090F5E40934E0F1AAe73b2F1cFD240DBD7Af5E",
@@ -2784,27 +2760,11 @@
     "tvl": 0
   },
   {
-    "id": "street-sxp-bnb",
-    "name": "StreetSwap: SXP-BNB TLP",
-    "contract": "0x0F5ef847595236Bb70833825FC9Bf0ef982CDD4C",
-    "oracle": "lps",
-    "oracleId": "street-sxp-bnb",
-    "tvl": 0
-  },
-  {
     "id": "street-xvs-bnb",
     "name": "StreetSwap: XVS-BNB TLP",
     "contract": "0x7ca3761D9886D5Ac233E58d5B2E60174B3A94b82",
     "oracle": "lps",
     "oracleId": "street-xvs-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "street-alpha-bnb",
-    "name": "StreetSwap: ALPHA-BNB TLP",
-    "contract": "0x1061c2962fccD794C4131b3c13058302618329E9",
-    "oracle": "lps",
-    "oracleId": "street-alpha-bnb",
     "tvl": 0
   },
   {
@@ -3013,14 +2973,6 @@
     "contract": "0xd4572009c7580DEfa0251FFD811b04386Dd41570",
     "oracle": "lps",
     "oracleId": "street-eos-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "street-bch-bnb",
-    "name": "BCH-BNB TLP",
-    "contract": "0x1bcc82ce9b387E16fC383af563fd400074E3f060",
-    "oracle": "lps",
-    "oracleId": "street-bch-bnb",
     "tvl": 0
   },
   {
