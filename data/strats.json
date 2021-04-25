@@ -1,5 +1,85 @@
 [
   {
+    "name": "cakev2-ramp-busd",
+    "address": "0x23EdD5EeaB1D9F9E7bCBBD8dd50efdF65843b8DF",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-dexe-busd",
+    "address": "0x9622Ce77f45A271fd23da7Aa0Fd35E59BB6d5FE8",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-tpt-busd",
+    "address": "0x1E61C61943Bb84b20D7b2D6C7c80beFbeE0a857D",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-xmark-busd",
+    "address": "0x0579E6eC0d9e3134a0FE66BeB73808AAe4e9aE78",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-iotx-busd",
+    "address": "0xfcA457Be30EC6B9625ef39680CdD8A39d7280414",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-lina-busd",
+    "address": "0x32c2c5Ca892EDa53f5E14C6Df236F310258f0503",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-usdc-busd",
+    "address": "0xeBF28b5d610eDacd85092e0B43330A5DeA0E8b68",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-dai-busd",
+    "address": "0x05345A804698Fb190CAe4aCf18BCe9AcC9ed82DD",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-dego-bnb",
     "address": "0x305E548d34724877211802A56b72Ba59E85567F2",
     "interval": 4,

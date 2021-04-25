@@ -1,5 +1,69 @@
 [
   {
+    "id": "cakev2-ramp-busd",
+    "name": "Moo CakeV2 RAMP-BUSD",
+    "contract": "0x37b67318d7746faD405AC139847b96718D37b8C4",
+    "oracle": "lps",
+    "oracleId": "cakev2-ramp-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dexe-busd",
+    "name": "Moo CakeV2 DEXE-BUSD",
+    "contract": "0x257d62DB67418735f7239c6F27f4d7b426067205",
+    "oracle": "lps",
+    "oracleId": "cakev2-dexe-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tpt-busd",
+    "name": "Moo CakeV2 TPT-BUSD",
+    "contract": "0xd6D3FEACC85E5708e6344548a3415A5f484889c5",
+    "oracle": "lps",
+    "oracleId": "cakev2-tpt-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-xmark-busd",
+    "name": "Moo CakeV2 xMARK-BUSD",
+    "contract": "0xEEB6F2857746a50554a58E00D55b4E54657aba83",
+    "oracle": "lps",
+    "oracleId": "cakev2-xmark-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-iotx-busd",
+    "name": "Moo CakeV2 IOTX-BUSD",
+    "contract": "0x07fFC2258c99e6667235fEAa90De35A0a50CFBFd",
+    "oracle": "lps",
+    "oracleId": "cakev2-iotx-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-lina-busd",
+    "name": "Moo CakeV2 LINA-BUSD",
+    "contract": "0x40d29c06EFB7Da61008fB65CB113786f076058a4",
+    "oracle": "lps",
+    "oracleId": "cakev2-lina-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-usdc-busd",
+    "name": "Moo CakeV2 USDC-BUSD",
+    "contract": "0x9260c62866f36638964551A8f480C3aAAa4693fd",
+    "oracle": "lps",
+    "oracleId": "cakev2-usdc-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dai-busd",
+    "name": "Moo CakeV2 DAI-BUSD",
+    "contract": "0x6eb020663898c72F8E25958F5f7bcDC732279201",
+    "oracle": "lps",
+    "oracleId": "cakev2-dai-busd",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-dego-bnb",
     "name": "Moo CakeV2 DEGO-BNB",
     "contract": "0x98a8Fd9cA5B556dc387820CAC39f0584E4f87E51",
