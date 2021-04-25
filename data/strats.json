@@ -1,5 +1,15 @@
 [
   {
+    "name": "cakev2-cake-bnb",
+    "address": "0xE93fb2f99398581972F4B82A52790A9DcACEd8d3",
+    "interval": 3,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-hakka-busd",
     "address": "0x59852dC94eA42e0F2ac3Dc3067f9F546f8Eb1382",
     "interval": 4,
