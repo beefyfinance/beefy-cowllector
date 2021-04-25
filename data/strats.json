@@ -1,5 +1,15 @@
 [
   {
+    "name": "cakev2-mir-ust",
+    "address": "0x0BfDFEc51Dc02d3b5189BD29d9a5595159Af77f4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-bbadger-btcb",
     "address": "0xed533C9E6366CD3916e32CcDB21cf37d16566d0d",
     "interval": 4,
