@@ -1,5 +1,29 @@
 [
   {
+    "id": "cakev2-bbadger-btcb",
+    "name": "Moo CakeV2 bBADGER-BTCB",
+    "contract": "0xC4fAB5E28C9f71D59B9d08BCA51FBe283bf4542F",
+    "oracle": "lps",
+    "oracleId": "cakev2-bbadger-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bdigg-btcb",
+    "name": "Moo CakeV2 bDIGG-BTCB",
+    "contract": "0xE32e76e79E94f4C9091F9a4120A72888d0DFf3C6",
+    "oracle": "lps",
+    "oracleId": "cakev2-bdigg-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tbtc-btcb",
+    "name": "Moo CakeV2 tBTC-BTCB",
+    "contract": "0xf03B5870bb8EFdcabAd45f2283D64A7fbCdb2B0E",
+    "oracle": "lps",
+    "oracleId": "cakev2-tbtc-btcb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-ramp-busd",
     "name": "Moo CakeV2 RAMP-BUSD",
     "contract": "0x37b67318d7746faD405AC139847b96718D37b8C4",

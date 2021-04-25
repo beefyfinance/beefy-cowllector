@@ -1,5 +1,35 @@
 [
   {
+    "name": "cakev2-bbadger-btcb",
+    "address": "0xed533C9E6366CD3916e32CcDB21cf37d16566d0d",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-bdigg-btcb",
+    "address": "0x343AFb6d617683cD44b40B91F9DAf44254153891",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-tbtc-btcb",
+    "address": "0xe26C65A53B4F4f6A5dCA9f7c6Fe08fF790C197E6",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-ramp-busd",
     "address": "0x23EdD5EeaB1D9F9E7bCBBD8dd50efdF65843b8DF",
     "interval": 4,
