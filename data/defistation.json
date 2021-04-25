@@ -1,5 +1,77 @@
 [
   {
+    "id": "cakev2-dego-bnb",
+    "name": "Moo CakeV2 DEGO-BNB",
+    "contract": "0x98a8Fd9cA5B556dc387820CAC39f0584E4f87E51",
+    "oracle": "lps",
+    "oracleId": "cakev2-dego-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-gum-bnb",
+    "name": "Moo CakeV2 GUM-BNB",
+    "contract": "0x04dc8B92192183a1e9186Df0CC27024Dfc83a7f1",
+    "oracle": "lps",
+    "oracleId": "cakev2-gum-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-pbtc-bnb",
+    "name": "Moo CakeV2 pBTC-BNB",
+    "contract": "0x2D8653881D8216AF7E5de31D5321FC21f45845FE",
+    "oracle": "lps",
+    "oracleId": "cakev2-pbtc-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bifi-bnb",
+    "name": "Moo CakeV2 BIFI-BNB",
+    "contract": "0x59960d624600aE1669584Bb504a5f4F2e90EbF46",
+    "oracle": "lps",
+    "oracleId": "cakev2-bifi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-belt-bnb",
+    "name": "Moo CakeV2 BELT-BNB",
+    "contract": "0x3F0f1a8E2DCe5dA86Cad9b5914D8018c021E08b1",
+    "oracle": "lps",
+    "oracleId": "cakev2-belt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bel-bnb",
+    "name": "Moo CakeV2 BEL-BNB",
+    "contract": "0xE5FF1e597AF772BE9c6d95B9Be2193FC6b917539",
+    "oracle": "lps",
+    "oracleId": "cakev2-bel-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bmxx-bnb",
+    "name": "Moo CakeV2 bMXX-BNB",
+    "contract": "0xC83cB476c772622196a56A3B51F625ac48Ff9746",
+    "oracle": "lps",
+    "oracleId": "cakev2-bmxx-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bor-bnb",
+    "name": "Moo CakeV2 BOR-BNB",
+    "contract": "0x8C8bd55Be4610131b99B9c136834d46a379b8A27",
+    "oracle": "lps",
+    "oracleId": "cakev2-bor-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bopen-bnb",
+    "name": "Moo CakeV2 bOPEN-BNB",
+    "contract": "0x2d4bEd7FC6c5004906b380D23188cD457fD97415",
+    "oracle": "lps",
+    "oracleId": "cakev2-bopen-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-swgb-bnb",
     "name": "Moo CakeV2 SWGB-BNB",
     "contract": "0x891ac86d46c97b7cf330ba4f5a905930Ac331858",
