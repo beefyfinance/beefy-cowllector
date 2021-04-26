@@ -1,5 +1,25 @@
 [
   {
+    "name": "cakev2-vai-busd",
+    "address": "0xB85db36945De3dAfbaCcBD85059A5658B4Eaf068",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-for-busd",
+    "address": "0x6a10dc49f3F643Eb4024ed619453c02205a3A1EE",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-xvs-bnb",
     "address": "0xE5f0b4CC523db681d3e60565b6eb022a71536E4D",
     "interval": 4,

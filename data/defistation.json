@@ -1,5 +1,21 @@
 [
   {
+    "id": "cakev2-vai-busd",
+    "name": "Moo CakeV2 VAI-BUSD",
+    "contract": "0xf5eA38B6b9644224dA1aECbC1219e8543c0689b2",
+    "oracle": "lps",
+    "oracleId": "cakev2-vai-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-for-busd",
+    "name": "Moo CakeV2 FOR-BUSD",
+    "contract": "0x010ef61eb2240154C8779201be0914a8AaDcA828",
+    "oracle": "lps",
+    "oracleId": "cakev2-for-busd",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-xvs-bnb",
     "name": "Moo CakeV2 XVS-BNB",
     "contract": "0xa2f05EA4Af928BA34d66E6f69343a6703744Caba",
