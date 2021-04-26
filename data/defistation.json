@@ -1,5 +1,53 @@
 [
   {
+    "id": "cakev2-bdo-bnb",
+    "name": "Moo CakeV2 BDO-BNB",
+    "contract": "0x0dc321E38BfF5693e6c003Ab71eD85693919B04e",
+    "oracle": "lps",
+    "oracleId": "cakev2-bdo-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bfi-bnb",
+    "name": "Moo CakeV2 BFI-BNB",
+    "contract": "0x2a6163c0C608e8C2F90E94ae0D4A0df9ABc4A818",
+    "oracle": "lps",
+    "oracleId": "cakev2-bfi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bux-bnb",
+    "name": "Moo CakeV2 BUX-BNB",
+    "contract": "0x139a3434F56b12335Db3d4c8AC3b9BBcA96FC438",
+    "oracle": "lps",
+    "oracleId": "cakev2-bux-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-nrv-bnb",
+    "name": "Moo CakeV2 NRV-BNB",
+    "contract": "0xD059034677f2E57489beF03f942CE6ffAccBEdD2",
+    "oracle": "lps",
+    "oracleId": "cakev2-nrv-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-eps-bnb",
+    "name": "Moo CakeV2 EPS-BNB",
+    "contract": "0xDdfE5F59C735977d33f36f9B8D06E6A212CB9094",
+    "oracle": "lps",
+    "oracleId": "cakev2-eps-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-jgn-bnb",
+    "name": "Moo CakeV2 JGN-BNB",
+    "contract": "0x211A8D59Cc44d86e30F5b5F298253B0EB4F9bc13",
+    "oracle": "lps",
+    "oracleId": "cakev2-jgn-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-vai-busd",
     "name": "Moo CakeV2 VAI-BUSD",
     "contract": "0xf5eA38B6b9644224dA1aECbC1219e8543c0689b2",
