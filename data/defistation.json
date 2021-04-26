@@ -1,5 +1,85 @@
 [
   {
+    "id": "cakev2-xvs-bnb",
+    "name": "Moo CakeV2 XVS-BNB",
+    "contract": "0xa2f05EA4Af928BA34d66E6f69343a6703744Caba",
+    "oracle": "lps",
+    "oracleId": "cakev2-xvs-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-twt-bnb",
+    "name": "Moo CakeV2 TWT-BNB",
+    "contract": "0x9151B2E9ad4B4222d67b8467BBcf1f37597b9E7B",
+    "oracle": "lps",
+    "oracleId": "cakev2-twt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-inj-bnb",
+    "name": "Moo CakeV2 INJ-BNB",
+    "contract": "0xb0602F26Fb2b7F8bca2d9aDB3FC3EF8619502097",
+    "oracle": "lps",
+    "oracleId": "cakev2-inj-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-alpha-bnb",
+    "name": "Moo CakeV2 ALPHA-BNB",
+    "contract": "0xfcA433b1c071737F92B76234984aBA10D04De57E",
+    "oracle": "lps",
+    "oracleId": "cakev2-alpha-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-atom-bnb",
+    "name": "Moo CakeV2 ATOM-BNB",
+    "contract": "0x8815d484A3bf89b7e996f846ddAb6DAE1C4BEA3A",
+    "oracle": "lps",
+    "oracleId": "cakev2-atom-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-band-bnb",
+    "name": "Moo CakeV2 BAND-BNB",
+    "contract": "0x9e6E0D9c43dDaC58710BeE30B01a5117f8Ba69bC",
+    "oracle": "lps",
+    "oracleId": "cakev2-band-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-fil-bnb",
+    "name": "Moo CakeV2 FIL-BNB",
+    "contract": "0x7AA10F621b2A3c7a8421f1369494F6fE263F3D31",
+    "oracle": "lps",
+    "oracleId": "cakev2-fil-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-yfi-bnb",
+    "name": "Moo CakeV2 YFI-BNB",
+    "contract": "0xF5e6b5adA220F8f62310d2d2D7013103b8e91651",
+    "oracle": "lps",
+    "oracleId": "cakev2-yfi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-reef-bnb",
+    "name": "Moo CakeV2 REEF-BNB",
+    "contract": "0x8ec78a292e5E1Bce2ed917eD8b02cf9E93a78CdE",
+    "oracle": "lps",
+    "oracleId": "cakev2-reef-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-unfi-bnb",
+    "name": "Moo CakeV2 UNFI-BNB",
+    "contract": "0x85A95Ab3580d5Cb5DC6cC12DE79939508a2BFc5C",
+    "oracle": "lps",
+    "oracleId": "cakev2-unfi-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-mtsla-ust",
     "name": "Moo CakeV2 mTSLA-UST",
     "contract": "0x30E31EA485D5be9E1A63268181e6EF731b9b853f",
