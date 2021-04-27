@@ -1,5 +1,15 @@
 [
   {
+    "name": "belt-4belt",
+    "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-dfd-busd",
     "address": "0x16fe74dBB09F18BCb0f25a87fbDc9070d69f1586",
     "interval": 4,
