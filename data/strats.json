@@ -1,5 +1,15 @@
 [
   {
+    "name": "belt-bnb",
+    "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "swampv2-swamp-busd",
     "address": "0x55eE767682C29E25f2f0BE6E776c6508e3D95857",
     "interval": 2,
