@@ -1,5 +1,21 @@
 [
   {
+    "id": "swampv2-swamp-busd",
+    "name": "Moo SwampV2 SWAMP-BUSD",
+    "contract": "0xF5898cB211fAE8538253F08930e6b350cEe16444",
+    "oracle": "lps",
+    "oracleId": "swampv2-swamp-busd",
+    "tvl": 0
+  },
+  {
+    "id": "swampv2-swamp-bnb",
+    "name": "Moo SwampV2 SWAMP-BNB",
+    "contract": "0xe77Ec021543985E914C54F81938039FF58e5B0b1",
+    "oracle": "lps",
+    "oracleId": "swampv2-swamp-bnb",
+    "tvl": 0
+  },
+  {
     "id": "belt-4belt",
     "name": "Moo Belt 4BELT",
     "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
