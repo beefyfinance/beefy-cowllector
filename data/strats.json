@@ -1,5 +1,25 @@
 [
   {
+    "name": "swampv2-swamp-busd",
+    "address": "0x55eE767682C29E25f2f0BE6E776c6508e3D95857",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "swampv2-swamp-bnb",
+    "address": "0x3d74614F2b326EbA3616E757bdDA94ED6C5C5b4a",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "belt-4belt",
     "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
     "interval": 4,
