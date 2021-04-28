@@ -1,5 +1,45 @@
 [
   {
+    "id": "krill-krill-usdc",
+    "name": "Moo Polywhale KRILL-USDC",
+    "contract": "0x74907ad4E79b1Ce415caB26FEf526ae017598cEe",
+    "oracle": "lps",
+    "oracleId": "krill-krill-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "cometh-usdc-must",
+    "name": "Moo Cometh USDC-MUST",
+    "contract": "0x8a198BCbF313A5565c64A7Ed61FaA413eB4E0931",
+    "oracle": "lps",
+    "oracleId": "cometh-usdc-must",
+    "tvl": 0
+  },
+  {
+    "id": "cometh-must-matic",
+    "name": "Moo Cometh MUST-MATIC",
+    "contract": "0x7f6fE34C51d5352A0CF375C0Fbe03bD19eCD8460",
+    "oracle": "lps",
+    "oracleId": "cometh-must-matic",
+    "tvl": 0
+  },
+  {
+    "id": "cometh-eth-matic",
+    "name": "Moo Cometh ETH-MATIC",
+    "contract": "0xa5aaE3a55cA356C62b5425AA4bFC212542B17777",
+    "oracle": "lps",
+    "oracleId": "cometh-eth-matic",
+    "tvl": 0
+  },
+  {
+    "id": "swampv2-cake-bnb",
+    "name": "Moo SwampV2 CAKE-BNB",
+    "contract": "0xe503B4c52a9220E20fe5Cf499D551977A6A12796",
+    "oracle": "lps",
+    "oracleId": "swampv2-cake-bnb",
+    "tvl": 0
+  },
+  {
     "id": "belt-eth",
     "name": "Moo Belt ETH",
     "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
