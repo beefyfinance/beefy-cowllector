@@ -21,7 +21,7 @@ const getChainRpc = chainId => {
       return process.env.HECO_RPC;
     case 43114:
       return process.env.AVAX_RPC;
-    case 43114:
+    case 137:
       return process.env.POLYGON_RPC;
     default:
       throw new Error(`Chain ID ${chainId} is not valid.`);
