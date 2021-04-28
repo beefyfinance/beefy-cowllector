@@ -1,5 +1,55 @@
 [
   {
+    "name": "swampv2-cake-bnb",
+    "address": "0x595d19abccFAB79f251563117C98a0E1feeD579a",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "krill-krill-usdc",
+    "address": "0x2BDA70d1DcE6b0855e812daaBB096F3DaaEBd4Bc",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cometh-usdc-must",
+    "address": "0xf6fD90FE8f057a63F0368B0B551D5e52C7Ae821F",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cometh-must-matic",
+    "address": "0xA338D34c5de06B88197609956a2dEAAfF7Af46c8",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cometh-eth-matic",
+    "address": "0xb0F9c6FBcfE226EEAD3AE8b019ce4666cE223a78",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "cakev2-lmt-bnb",
     "address": "0x3Ab896c22fc7CF570c6792f435343a612251c1bB",
     "interval": 4,

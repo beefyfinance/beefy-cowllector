@@ -29,6 +29,16 @@ const chains = [
     queryInterval: 100,
     firstRewardBlock: 0,
   },
+  {
+    id: 'polygon',
+    wrappedToken: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+    rewardPool: null,
+    beefyFeeRecipient: null,
+    rpc: process.env.POLYGON_RPC,
+    queryLimit: 1000,
+    queryInterval: 100,
+    firstRewardBlock: 0,
+  },
 ];
 
 module.exports = chains;
