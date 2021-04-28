@@ -1,5 +1,15 @@
 [
   {
+    "name": "cakev2-lmt-bnb",
+    "address": "0x3Ab896c22fc7CF570c6792f435343a612251c1bB",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "belt-bnb",
     "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
     "interval": 4,
