@@ -2,17 +2,17 @@
   {
     "name": "swampv2-cake-bnb",
     "address": "0x595d19abccFAB79f251563117C98a0E1feeD579a",
-    "interval": 2,
+    "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
     "harvestEvent": true,
-    "chainId": 137
+    "chainId": 56
   },
   {
     "name": "krill-krill-usdc",
     "address": "0x2BDA70d1DcE6b0855e812daaBB096F3DaaEBd4Bc",
-    "interval": 2,
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
