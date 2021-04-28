@@ -1,5 +1,25 @@
 [
   {
+    "name": "belt-eth",
+    "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "belt-btc",
+    "address": "0xfDcdaF8dF2b1b7Ecaf9c5158f9024781A75BBcb2",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-lmt-bnb",
     "address": "0x3Ab896c22fc7CF570c6792f435343a612251c1bB",
     "interval": 4,

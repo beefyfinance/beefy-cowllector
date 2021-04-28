@@ -1,5 +1,21 @@
 [
   {
+    "id": "belt-eth",
+    "name": "Moo Belt ETH",
+    "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
+    "oracle": "tokens",
+    "oracleId": "belt-belteth",
+    "tvl": 0
+  },
+  {
+    "id": "belt-btc",
+    "name": "Moo Belt BTC",
+    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
+    "oracle": "tokens",
+    "oracleId": "belt-beltbtc",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-lmt-bnb",
     "name": "Moo CakeV2 LMT-BNB",
     "contract": "0x6261443B70d045f02B20Cc33e0faB096718563DF",
