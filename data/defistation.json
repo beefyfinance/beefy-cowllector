@@ -29,6 +29,22 @@
     "contract": "0xD5ff0aCA943C918EEE069b1E80Ee0D9d016b2F98",
     "oracle": "lps",
     "oracleId": "hfi-hfi-husd",
+     "tvl": 0
+  },
+  {
+    "id": "cakev2-btcb-busd",
+    "name": "Moo CakeV2 BTCB-BUSD",
+    "contract": "0x40D21bCd71B0Be8864ff3Dd62373CFFA4E151d6F",
+    "oracle": "lps",
+    "oracleId": "cakev2-btcb-busd",
+    "tvl": 0
+  },
+  {
+    "id": "typhv2-typh-bnb",
+    "name": "Moo TyphV2 TYPH-BNB",
+    "contract": "0xC598B22552a981d565eB85e5E953928Ee0a26E42",
+    "oracle": "lps",
+    "oracleId": "typhv2-typh-bnb",
     "tvl": 0
   },
   {
