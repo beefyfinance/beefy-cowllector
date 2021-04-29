@@ -3,6 +3,7 @@ const IStrategy = require('../abis/IStrategy.json');
 const axios = require('axios');
 const ERC20 = require('../abis/ERC20.json');
 const { getChainBlockTime } = require('./getChainData');
+const chains = require('../data/chains.js');
 
 const between = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
@@ -18,7 +19,7 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   const oldestPeriodBlock = currentBlock - (strat.interval * 3600) / blockTime;
 
   let logs = [];
-  let interval = getRpcQueryCap(strat.chainId);
+  let interval = getRpcQueryLimit(strat.chainId);
   let from = currentBlock - interval;
   let to = currentBlock;
 
@@ -34,13 +35,9 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   return false;
 };
 
-const getRpcQueryCap = chainId => {
-  switch (chainId) {
-    case 43114:
-      return 510;
-    default:
-      return 2000;
-  }
+const getRpcQueryLimit = chainId => {
+  const chain = chains.find(chain => chainId === chain.chainId);
+  return chain.queryLimit;
 };
 
 const isNewHarvestPeriodBscscan = async strat => {
