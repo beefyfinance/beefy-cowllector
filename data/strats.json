@@ -1,5 +1,45 @@
 [
   {
+    "name": "banana-keyfi-bnb",
+    "address": "0xCa52393444dee44EbA946EFC1A19C2F0b1572B04",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-ont-bnb",
+    "address": "0x739B8b50fC28267D92233954C189aF5Ad7C55A71",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "hfi-hfi-ht",
+    "address": "0xE2eaAf941D6C28e94eE48cdF6451CAdc7876CeD8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
+    "name": "hfi-hfi-husd",
+    "address": "0xBFd2e5D520BB40bDC1c3e906E0AEb978b8473f01",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
     "name": "belt-eth",
     "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
     "interval": 4,
