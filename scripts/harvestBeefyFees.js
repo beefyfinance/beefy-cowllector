@@ -6,11 +6,11 @@ const abi = ['function harvest() public'];
 
 const harvestBeefyFees = async () => {
   for (chain of chains) {
-    if (!chain.beefyFeeRecipient) continue;
+    if (!chain.beefyFeeBatcher) continue;
 
     const provider = new ethers.providers.JsonRpcProvider(chain.rpc);
     const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
-    const batcher = new ethers.Contract(chain.beefyFeeRecipient, abi, harvester);
+    const batcher = new ethers.Contract(chain.beefyFeeBatcher, abi, harvester);
 
     let tx = await batcher.harvest();
     tx = await tx.wait();
