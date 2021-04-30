@@ -1,5 +1,15 @@
 [
   {
+    "name": "ape-doge-bnb",
+    "address": "0x1591d2F3b59D294Bd0E98A4187794D848b751369",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "banana-keyfi-bnb",
     "address": "0xCa52393444dee44EbA946EFC1A19C2F0b1572B04",
     "interval": 4,

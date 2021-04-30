@@ -1,5 +1,13 @@
 [
   {
+    "id": "banana-doge-bnb",
+    "name": "Moo Ape DOGE-BNB",
+    "contract": "0x6c978fe7E78c52a4c40107f081bA92b5d3daEfBF",
+    "oracle": "lps",
+    "oracleId": "banana-doge-bnb",
+    "tvl": 0
+  },
+  {
     "id": "banana-keyfi-bnb",
     "name": "Moo Ape KEYFI-BNB",
     "contract": "0x4A62e870EdF51EdAe9Cc9a4BF5D17919c7759AF3",
@@ -29,7 +37,7 @@
     "contract": "0xD5ff0aCA943C918EEE069b1E80Ee0D9d016b2F98",
     "oracle": "lps",
     "oracleId": "hfi-hfi-husd",
-     "tvl": 0
+    "tvl": 0
   },
   {
     "id": "cakev2-btcb-busd",
