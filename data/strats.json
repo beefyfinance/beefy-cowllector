@@ -1,6 +1,36 @@
 [
   {
-    "name": "ape-doge-bnb",
+    "name": "quick-eth-usdt",
+    "address": "0x2C3d263b560b2700fcf19e78f2EBD4d59EB7b3c5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-eth-matic",
+    "address": "0x46CB7f33E4cc10B34c0d0fece66fd4830B869B46",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-quick-matic",
+    "address": "0x79807CCE3e75dcDb8641C834e8065dD1Cee12a2A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "banana-doge-bnb",
     "address": "0x1591d2F3b59D294Bd0E98A4187794D848b751369",
     "interval": 4,
     "harvestSignature": "0x4641257d",

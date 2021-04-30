@@ -1,5 +1,29 @@
 [
   {
+    "id": "quick-eth-usdt",
+    "name": "Moo Quick ETH-USDT",
+    "contract": "0xC422261EdC5dB679CAd9BC403e886351De540e77",
+    "oracle": "lps",
+    "oracleId": "quick-eth-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "quick-eth-matic",
+    "name": "Moo Quick ETH-MATIC",
+    "contract": "0xa008B727ddBa283Ddb178b47BB227Cdbea5C1bfD",
+    "oracle": "lps",
+    "oracleId": "quick-eth-matic",
+    "tvl": 0
+  },
+  {
+    "id": "quick-quick-matic",
+    "name": "Moo Quick QUICK-MATIC",
+    "contract": "0xa008B727ddBa283Ddb178b47BB227Cdbea5C1bfD",
+    "oracle": "lps",
+    "oracleId": "quick-quick-matic",
+    "tvl": 0
+  },
+  {
     "id": "banana-doge-bnb",
     "name": "Moo Ape DOGE-BNB",
     "contract": "0x6c978fe7E78c52a4c40107f081bA92b5d3daEfBF",
