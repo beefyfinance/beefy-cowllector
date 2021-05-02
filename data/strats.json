@@ -1,5 +1,15 @@
 [
   {
+    "name": "bifi-maxi",
+    "address": "0x87056F5E8Dce0fD71605E6E291C6a3B53cbc3818",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": false,
+    "chainId": 56
+  },
+  {
     "name": "quick-eth-usdt",
     "address": "0x2C3d263b560b2700fcf19e78f2EBD4d59EB7b3c5",
     "interval": 1,
@@ -2990,16 +3000,6 @@
     "chainId": 56
   },
   {
-    "name": "bifi-maxi",
-    "address": "0x87056F5E8Dce0fD71605E6E291C6a3B53cbc3818",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
     "name": "1inch-1inch-bnb",
     "address": "0x5430033735d32a4f73d1729fc4e005e86e0f1ad3",
     "interval": 4,
@@ -4123,78 +4123,6 @@
     "name": "fry-burger-v2",
     "address": "0x7FBA53a4DB251C4364998631E6e88b4445bF21C0",
     "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "fortube-busd",
-    "address": "0xceeA52d3B8af005e87b309B8620038d5dA4cFCda",
-    "want": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-    "interval": 160,
-    "subsidy": 10000,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "fortube-link",
-    "address": "0x97c16Baf08f10bEa1B0E0Cd38D9aEEc282632d84",
-    "interval": 160,
-    "want": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD",
-    "subsidy": 10000,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "fortube-btcb",
-    "address": "0x3bb71a7C10Efe5FA47B5fE5B8A9162102F33fEb8",
-    "interval": 160,
-    "want": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-    "subsidy": 10000,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "fortube-dot",
-    "address": "0x419795e7743576aaf587bD84631363D577be5153",
-    "interval": 160,
-    "want": "0x7083609fCE4d1d8Dc0C979AAb8c869Ea2C873402",
-    "subsidy": 10000,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "fortube-usdt",
-    "address": "0xD3dBcd17d2f48C9BC937D3fADF3Ded5966878dD7",
-    "interval": 160,
-    "want": "0x55d398326f99059fF775485246999027B3197955",
-    "subsidy": 10000,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": false,
-    "chainId": 56
-  },
-  {
-    "name": "fortube-fil",
-    "address": "0x201F67420C509Bc135a527D25260e09DFba25C68",
-    "interval": 160,
-    "want": "0x0D8Ce2A99Bb6e3B7Db580eD848240e4a0F9aE153",
-    "subsidy": 10000,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
