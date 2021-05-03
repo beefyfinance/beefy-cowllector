@@ -1,5 +1,37 @@
 [
   {
+    "id": "quick-usdc-usdt",
+    "name": "Moo Quick USDC-USDT",
+    "contract": "0x4462817b53E76b722c2D174D0148ddb81452f1dE",
+    "oracle": "lps",
+    "oracleId": "quick-usdc-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "quick-mausdc-usdc",
+    "name": "Moo Quick maUSDC-USDC",
+    "contract": "0x8c2d54BA94f4638f1bb91f623F378B66d6023324",
+    "oracle": "lps",
+    "oracleId": "quick-mausdc-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "quick-link-eth",
+    "name": "Moo Quick LINK-ETH",
+    "contract": "0xaB4105375FbE5F502B0da986F46ADf7a21762e52",
+    "oracle": "lps",
+    "oracleId": "quick-link-eth",
+    "tvl": 0
+  },
+  {
+    "id": "quick-aave-eth",
+    "name": "Moo Quick AAVE-ETH",
+    "contract": "0x752948B4493d2Ee09c95F944A76005aEBF410087",
+    "oracle": "lps",
+    "oracleId": "quick-aave-eth",
+    "tvl": 0
+  },
+  {
     "id": "quick-eth-usdt",
     "name": "Moo Quick ETH-USDT",
     "contract": "0xC422261EdC5dB679CAd9BC403e886351De540e77",
