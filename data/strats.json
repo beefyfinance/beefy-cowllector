@@ -1,5 +1,45 @@
 [
   {
+    "name": "quick-usdc-usdt",
+    "address": "0xdd3E5c7787eB38a362bBF3D395FC9f27924B7317",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-mausdc-usdc",
+    "address": "0xE6ab45f5e93FA377D0c4cC097187Ab7256c2AEBf",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-link-eth",
+    "address": "0x9C50880a547A7a247E2C8cA5b444624D3A2AB81B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-aave-eth",
+    "address": "0x1F38c4b1D4990652FC5E433583e81f4F828988a0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "bifi-maxi",
     "address": "0x87056F5E8Dce0fD71605E6E291C6a3B53cbc3818",
     "interval": 1,
@@ -3062,26 +3102,6 @@
   {
     "name": "crow-crow-bnb",
     "address": "0x664500A0F63F1Ba17186D8eA970CdfC7B99081fC",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "cafe-brew-busd",
-    "address": "0xD40021F03bE89D23A8E3c81B008feaF0403Fa867",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "harvestEvent": true,
-    "chainId": 56
-  },
-  {
-    "name": "cafe-brew-bnb",
-    "address": "0x30861732f5Ec762b54eB8b9B8ef647673A696af3",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
