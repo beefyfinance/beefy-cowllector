@@ -1,5 +1,25 @@
 [
   {
+    "name": "satis-sat-bnb",
+    "address": "0xb0B0a02C6405124C192C2B5DFf52281A23261f76",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "satis-sat-busd",
+    "address": "0xfa8aAFB7C459075412dC1cC73A99B35899f342EC",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "quick-usdc-usdt",
     "address": "0xdd3E5c7787eB38a362bBF3D395FC9f27924B7317",
     "interval": 1,
