@@ -1,5 +1,21 @@
 [
   {
+    "id": "zefiv2-zefi-bnb",
+    "name": "Moo Zefi ZEFI-BNB",
+    "contract": "0xB62eE36A03ab043Eb5b57E1eE88dEFbe9959d4C3",
+    "oracle": "lps",
+    "oracleId": "zefiv2-zefi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "zefiv2-zefi-busd",
+    "name": "Moo ZefiV2 ZEFI-BUSD",
+    "contract": "0x6b57697eb320F40d5F386547DB3d468111fF0B92",
+    "oracle": "lps",
+    "oracleId": "zefiv2-zefi-busd",
+    "tvl": 0
+  },
+  {
     "id": "satis-sat-bnb",
     "name": "Moo Satis SAT-BNB",
     "contract": "0x81a00F9789041E8CE270fCdd98dB65D8504C990B",
