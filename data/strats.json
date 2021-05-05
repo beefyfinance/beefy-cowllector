@@ -1,5 +1,105 @@
 [
   {
+    "name": "banana-busd-usdc",
+    "address": "0x9e6d68d1Fe1411d3f4DAC7f54A5BfA31156047D1",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "lyd-lyd-usdt",
+    "address": "0xbE5370a50d11D10475089222497A4172bdC600a4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "lyd-lyd-avax",
+    "address": "0x3B289DcCd55B46596FbBAFfEd6469a85d69426Dc",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "cometh-must-eth",
+    "address": "0x0BF58A328C7739D8b097B1d4199f48AA3F1b2788",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-wbtc-eth",
+    "address": "0xc53A6Af0F086B0F2762Fe3796D322b3014b4Ed45",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-defi5-eth",
+    "address": "0x470052FEd23A2887e3e679c3D8544529DA8B272f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-defi5-eth",
+    "address": "0xc1C1eB984218B9570beA53C0Dad14283a6E9E81C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-wise-eth",
+    "address": "0x88F2ADA49F24fF14005633e66050f763b2E07b7f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-cel-eth",
+    "address": "0x06A1f520555222758eaE4dA0573351FdaD1e7843",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-quick-eth",
+    "address": "0x3177389Fa69a226f52A079FDd0a564C813baB53B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "bifi-maxi",
     "address": "0x87056F5E8Dce0fD71605E6E291C6a3B53cbc3818",
     "interval": 1,
