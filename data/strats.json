@@ -1,5 +1,25 @@
 [
   {
+    "name": "ica-ica-btcb",
+    "address": "0xF113fbA8B7A409E9C68fd10BaeaE1485906D4F5e",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "ica-ica-eth",
+    "address": "0x8a18555AB976b8B08D250Ccf48d73B468f8F4f3B",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "zefiv2-zefi-bnb",
     "address": "0x42F47b98845E58a0ad7EB29E9d4087A466cA135e",
     "interval": 4,

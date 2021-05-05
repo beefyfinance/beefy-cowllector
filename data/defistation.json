@@ -1,5 +1,21 @@
 [
   {
+    "id": "ica-ica-btcb",
+    "name": "Moo Icarus ICA-BTCB",
+    "contract": "0xbf29b8AdaE718A3A372ba90040A9acBD8A5794f4",
+    "oracle": "lps",
+    "oracleId": "ica-ica-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "ica-ica-eth",
+    "name": "Moo Icarus ICA-ETH",
+    "contract": "0x389e5F8e23e88cA2D971a69b2AAADE264A9DE5Fb",
+    "oracle": "lps",
+    "oracleId": "ica-ica-eth",
+    "tvl": 0
+  },
+  {
     "id": "zefiv2-zefi-bnb",
     "name": "Moo Zefi ZEFI-BNB",
     "contract": "0xB62eE36A03ab043Eb5b57E1eE88dEFbe9959d4C3",
