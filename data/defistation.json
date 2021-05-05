@@ -1,5 +1,85 @@
 [
   {
+    "id": "banana-busd-usdc",
+    "name": "Moo Ape BUSD-USDC",
+    "contract": "0xc6631af32c5Bd444626274C9FD1dc8A759534222",
+    "oracle": "lps",
+    "oracleId": "banana-busd-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "lyd-lyd-usdt",
+    "name": "Moo Lydia LYD-USDT",
+    "contract": "0xc44d493B6219A7f5C286724b74c158CEBd7fB6f7",
+    "oracle": "lps",
+    "oracleId": "lyd-lyd-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "lyd-lyd-avax",
+    "name": "Moo Lydia LYD-AVAX",
+    "contract": "0x994aB71F95A8de4dAaF6DE3D9862284693fB2bDf",
+    "oracle": "lps",
+    "oracleId": "lyd-lyd-avax",
+    "tvl": 0
+  },
+  {
+    "id": "cometh-must-eth",
+    "name": "Moo Cometh MUST-ETH",
+    "contract": "0x7CE2332fAF6328986C75e3A8fCc1CB79621aeB1F",
+    "oracle": "lps",
+    "oracleId": "cometh-must-eth",
+    "tvl": 0
+  },
+  {
+    "id": "quick-wbtc-eth",
+    "name": "Moo Quick wBTC-ETH",
+    "contract": "0xf26607237355D7c6183ea66EC908729E9c6eEB6b",
+    "oracle": "lps",
+    "oracleId": "quick-wbtc-eth",
+    "tvl": 0
+  },
+  {
+    "id": "quick-ubt-eth",
+    "name": "Moo Quick UBT-ETH",
+    "contract": "0x942aa6324E5D0C102d3Ad6607495ac5e798a991a",
+    "oracle": "lps",
+    "oracleId": "quick-ubt-eth",
+    "tvl": 0
+  },
+  {
+    "id": "quick-defi5-eth",
+    "name": "Moo Quick DEFI5-ETH",
+    "contract": "0x53e674D5cC969930420d73E4b79Ee0D46cCdf6c4",
+    "oracle": "lps",
+    "oracleId": "quick-defi5-eth",
+    "tvl": 0
+  },
+  {
+    "id": "quick-wise-eth",
+    "name": "Moo Quick WISE-ETH",
+    "contract": "0x76cE86B1e1b7a3983B26F7E57B2A0C8896f7eB0D",
+    "oracle": "lps",
+    "oracleId": "quick-wise-eth",
+    "tvl": 0
+  },
+  {
+    "id": "quick-cel-eth",
+    "name": "Moo Quick CEL-ETH",
+    "contract": "0xeF1870FddC25586636bf8a3d7cCf4d298f6E072e",
+    "oracle": "lps",
+    "oracleId": "quick-cel-eth",
+    "tvl": 0
+  },
+  {
+    "id": "quick-quick-eth",
+    "name": "Moo Quick QUICK-ETH",
+    "contract": "0x66df1B2d22759D03A9f37BAaAc826089e56a5936",
+    "oracle": "lps",
+    "oracleId": "quick-quick-eth",
+    "tvl": 0
+  },
+  {
     "id": "quick-usdc-usdt",
     "name": "Moo Quick USDC-USDT",
     "contract": "0x4462817b53E76b722c2D174D0148ddb81452f1dE",
