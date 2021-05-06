@@ -55,7 +55,7 @@ const getLastRewardAddedDetails = async (chain, lastBlock, web3) => {
   let fromBlock = lastBlock - chain.queryLimit;
   let toBlock = lastBlock;
 
-  let details = { blockNumber: 0, transactionIndex: 0 };
+  let details = { blockNumber: chain.firstRewardBlock, transactionIndex: 0 };
 
   while (fromBlock > chain.firstRewardBlock) {
     const logs = await web3.eth.getPastLogs({

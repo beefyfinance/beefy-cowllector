@@ -36,12 +36,12 @@ const chains = [
     id: 'polygon',
     chainId: 137,
     wrappedToken: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-    rewardPool: null,
+    rewardPool: '0xDeB0a777ba6f59C78c654B8c92F80238c8002DD2',
     beefyFeeBatcher: null,
     rpc: process.env.POLYGON_RPC,
     queryLimit: 500,
     queryInterval: 100,
-    firstRewardBlock: 0,
+    firstRewardBlock: 14172110,
   },
 ];
 
