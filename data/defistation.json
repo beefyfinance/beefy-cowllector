@@ -80,6 +80,54 @@
     "tvl": 0
   },
   {
+    "id": "ica-ica-btcb",
+    "name": "Moo Icarus ICA-BTCB",
+    "contract": "0xbf29b8AdaE718A3A372ba90040A9acBD8A5794f4",
+    "oracle": "lps",
+    "oracleId": "ica-ica-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "ica-ica-eth",
+    "name": "Moo Icarus ICA-ETH",
+    "contract": "0x389e5F8e23e88cA2D971a69b2AAADE264A9DE5Fb",
+    "oracle": "lps",
+    "oracleId": "ica-ica-eth",
+    "tvl": 0
+  },
+  {
+    "id": "zefiv2-zefi-bnb",
+    "name": "Moo Zefi ZEFI-BNB",
+    "contract": "0xB62eE36A03ab043Eb5b57E1eE88dEFbe9959d4C3",
+    "oracle": "lps",
+    "oracleId": "zefiv2-zefi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "zefiv2-zefi-busd",
+    "name": "Moo ZefiV2 ZEFI-BUSD",
+    "contract": "0x6b57697eb320F40d5F386547DB3d468111fF0B92",
+    "oracle": "lps",
+    "oracleId": "zefiv2-zefi-busd",
+    "tvl": 0
+  },
+  {
+    "id": "satis-sat-bnb",
+    "name": "Moo Satis SAT-BNB",
+    "contract": "0x81a00F9789041E8CE270fCdd98dB65D8504C990B",
+    "oracle": "lps",
+    "oracleId": "satis-sat-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "satis-sat-busd",
+    "name": "Moo Satis SAT-BUSD",
+    "contract": "0xF2ce03745790fCE2F707157B008f981caA7c00b2",
+    "oracle": "lps",
+    "oracleId": "satis-sat-busd",
+    "tvl": 0
+  },
+  {
     "id": "quick-usdc-usdt",
     "name": "Moo Quick USDC-USDT",
     "contract": "0x4462817b53E76b722c2D174D0148ddb81452f1dE",
