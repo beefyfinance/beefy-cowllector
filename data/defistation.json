@@ -1,5 +1,13 @@
 [
   {
+    "id": "cakev2-alice-bnb",
+    "name": "Moo CakeV2 ALICE-BNB",
+    "contract": "0x0c65883778f16770F4d43f5524708e18BC62881b",
+    "oracle": "lps",
+    "oracleId": "cakev2-alice-bnb",
+    "tvl": 0
+  },
+  {
     "id": "banana-busd-usdc",
     "name": "Moo Ape BUSD-USDC",
     "contract": "0xc6631af32c5Bd444626274C9FD1dc8A759534222",
@@ -276,14 +284,14 @@
     "name": "Moo SwampV2 CAKE-BNB",
     "contract": "0xe503B4c52a9220E20fe5Cf499D551977A6A12796",
     "oracle": "lps",
-    "oracleId": "swampv2-cake-bnb",
+    "oracleId": "cakev2-cake-bnb",
     "tvl": 0
   },
   {
     "id": "belt-eth",
     "name": "Moo Belt ETH",
     "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
-    "oracle": "tokens",
+    "oracle": "lps",
     "oracleId": "belt-belteth",
     "tvl": 0
   },
@@ -291,7 +299,7 @@
     "id": "belt-btc",
     "name": "Moo Belt BTC",
     "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
-    "oracle": "tokens",
+    "oracle": "lps",
     "oracleId": "belt-beltbtc",
     "tvl": 0
   },
@@ -307,7 +315,7 @@
     "id": "belt-bnb",
     "name": "Moo Belt BNB",
     "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
-    "oracle": "tokens",
+    "oracle": "lps",
     "oracleId": "belt-beltbnb",
     "tvl": 0
   },
@@ -331,7 +339,7 @@
     "id": "belt-4belt",
     "name": "Moo Belt 4BELT",
     "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
-    "oracle": "tokens",
+    "oracle": "lps",
     "oracleId": "belt-4belt",
     "tvl": 0
   },
@@ -1388,7 +1396,7 @@
     "name": "Moo AutoMdex USDT-BUSD",
     "contract": "0x17720F863DA01Bc9e266e4eE872E3c98fA1FeAA8",
     "oracle": "lps",
-    "oracleId": "auto-usdt-busd",
+    "oracleId": "auto-busd-usdt",
     "tvl": 0
   },
   {
