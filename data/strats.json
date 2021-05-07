@@ -1,5 +1,55 @@
 [
   {
+    "name": "banana-bxbtc-bnb",
+    "address": "0xa81Aa01ed8aB5FAc7d4c2524c0c754097a299a7c",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-win-bnb",
+    "address": "0x486b33700c3f67Ba68cdb0D5E0c449A196F48FA8",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-trx-bnb",
+    "address": "0xd5ACf6DFA0f59c5C5A85d6fACf74F59a721478BA",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-btt-bnb",
+    "address": "0x1aAaB52Ae2cE49751B052482E9a40d63137F0bd5",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-naut-bnb",
+    "address": "0x23b7a79777Ae4c7C4D3b8A9f73C36d59C455C767",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-pnt-pbtc",
     "address": "0x6689be1A9C190227b6Caaaf4F3307867bd148C5a",
     "interval": 4,

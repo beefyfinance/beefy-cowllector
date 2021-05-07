@@ -1,5 +1,45 @@
 [
   {
+    "id": "banana-bxbtc-bnb",
+    "name": "Moo Ape bxBTC-BNB",
+    "contract": "0x8D112FcdF377A2C4cb41b60AAe32199F939a866C",
+    "oracle": "lps",
+    "oracleId": "banana-bxbtc-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-win-bnb",
+    "name": "Moo CakeV2 WIN-BNB",
+    "contract": "0x76Fcc8e2566ff7b60D11A9d5D76de12eC16cbf15",
+    "oracle": "lps",
+    "oracleId": "cakev2-win-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-trx-bnb",
+    "name": "Moo CakeV2 TRX-BNB",
+    "contract": "0xa60D572AAfC217a76F73475644716cA63a4E7528",
+    "oracle": "lps",
+    "oracleId": "cakev2-trx-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-btt-bnb",
+    "name": "Moo CakeV2 BTT-BNB",
+    "contract": "0x561860359244877A6dE987165a5A89Ef288C178D",
+    "oracle": "lps",
+    "oracleId": "cakev2-btt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-naut-bnb",
+    "name": "Moo Ape NAUT-BNB",
+    "contract": "0x9f670c6CdB8A6133016eC7C8552Dd42624FaC53F",
+    "oracle": "lps",
+    "oracleId": "banana-naut-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-pnt-pbtc",
     "name": "Moo CakeV2 PNT-pBTC",
     "contract": "0xd6d2e8c9f9a276811A8994Bf7610807f4116115f",
