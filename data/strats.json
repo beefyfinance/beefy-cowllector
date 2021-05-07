@@ -1,5 +1,15 @@
 [
   {
+    "name": "banana-bxbtc-bnb",
+    "address": "0xa81Aa01ed8aB5FAc7d4c2524c0c754097a299a7c",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-win-bnb",
     "address": "0x486b33700c3f67Ba68cdb0D5E0c449A196F48FA8",
     "interval": 4,
