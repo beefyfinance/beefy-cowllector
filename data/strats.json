@@ -1,5 +1,55 @@
 [
   {
+    "name": "boo-eth-ftm",
+    "address": "0x7c7B7FbccA5699175003ecbe1B41E79F40385469",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-aave-ftm",
+    "address": "0x28A12F017d0D843d43C71235F4F58535B8BE8563",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-crv-ftm",
+    "address": "0xC3821F0b56FA4F4794d5d760f94B812DE261361B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-boo-ftm",
+    "address": "0x98d3913474fccEDeB63077237914be00202fB007",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-ftm-usdc",
+    "address": "0xf5d76A33953365e4f074AE58e34C39A52B8E9671",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
     "name": "banana-bxbtc-bnb",
     "address": "0xa81Aa01ed8aB5FAc7d4c2524c0c754097a299a7c",
     "interval": 4,
@@ -2619,7 +2669,6 @@
     "harvestEvent": true,
     "chainId": 56
   },
-
   {
     "name": "salt-salt-busd",
     "address": "0x85d04ce16C7d20Aa4d63b7520923e9e3b2e89d6e",

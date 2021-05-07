@@ -1,5 +1,45 @@
 [
   {
+    "id": "boo-eth-ftm",
+    "name": "Moo Boo ETH-FTM",
+    "contract": "0x2a30C5e0d577108F694d2A96179cd73611Ee069b",
+    "oracle": "lps",
+    "oracleId": "boo-eth-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-aave-ftm",
+    "name": "Moo Boo AAVE-FTM",
+    "contract": "0xDa4bb93Bac7CC00F6c6e2193d115Cf45099b31a0",
+    "oracle": "lps",
+    "oracleId": "boo-aave-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-crv-ftm",
+    "name": "Moo Boo CRV-FTM",
+    "contract": "0xdf68Bf80D427A5827Ff2c06A9c70D407e17DC041",
+    "oracle": "lps",
+    "oracleId": "boo-crv-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-boo-ftm",
+    "name": "Moo Boo BOO-FTM",
+    "contract": "0xEe3a7c885Fd3cc5358FF583F2DAB3b8bC473316f",
+    "oracle": "lps",
+    "oracleId": "boo-boo-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-ftm-usdc",
+    "name": "Moo Boo FTM-USDC",
+    "contract": "0x41D44B276904561Ac51855159516FD4cB2c90968",
+    "oracle": "lps",
+    "oracleId": "boo-ftm-usdc",
+    "tvl": 0
+  },
+  {
     "id": "banana-bxbtc-bnb",
     "name": "Moo Ape bxBTC-BNB",
     "contract": "0x8D112FcdF377A2C4cb41b60AAe32199F939a866C",

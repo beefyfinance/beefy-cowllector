@@ -43,6 +43,17 @@ const chains = [
     queryInterval: 100,
     firstRewardBlock: 14172110,
   },
+  {
+    id: 'fantom',
+    chainId: 250,
+    wrappedToken: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+    rewardPool: null,
+    beefyFeeBatcher: null,
+    rpc: process.env.FANTOM_RPC,
+    queryLimit: 500,
+    queryInterval: 100,
+    firstRewardBlock: null,
+  },
 ];
 
 module.exports = chains;

@@ -8,6 +8,8 @@ const getChainBlockTime = chainId => {
       return 5;
     case 137:
       return 2;
+    case 250:
+      return 10;
     default:
       throw new Error(`Chain ID ${chainId} is not valid.`);
   }
@@ -23,6 +25,8 @@ const getChainRpc = chainId => {
       return process.env.AVAX_RPC;
     case 137:
       return process.env.POLYGON_RPC;
+    case 250:
+      return process.env.FANTOM_RPC;
     default:
       throw new Error(`Chain ID ${chainId} is not valid.`);
   }
