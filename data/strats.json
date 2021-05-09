@@ -1,5 +1,15 @@
 [
   {
+    "name": "aave-eth",
+    "address": "0x55a10618c7E9489ceE047705cD003df6d9e09195",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "boo-cover-ftm",
     "address": "0xa1Dfd44c90B7cE937FC450Fe19B691e72EE3a7D2",
     "interval": 1,
