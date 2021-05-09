@@ -1,5 +1,35 @@
 [
   {
+    "name": "banana-watch-bnb",
+    "address": "0x95D965048920A9917b079E6Eb53Bf10d1C0F66a0",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jetfuel-fts-bnb",
+    "address": "0x8038A8A1765Ae44629Ab74ffDC39Af60b02554f4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jetfuel-fuel-bnb",
+    "address": "0xaBbc97E8B55f50d648bFb58B9b4498B8e3671F22",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "boo-eth-ftm",
     "address": "0x7c7B7FbccA5699175003ecbe1B41E79F40385469",
     "interval": 1,
