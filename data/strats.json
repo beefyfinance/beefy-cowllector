@@ -1,5 +1,75 @@
 [
   {
+    "name": "boo-cover-ftm",
+    "address": "0xa1Dfd44c90B7cE937FC450Fe19B691e72EE3a7D2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-cover-ftm",
+    "address": "0xCCcEBC4551FF20acA4e0356DAD8875806CE8df10",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-cream-ftm",
+    "address": "0x6FfF95AC47b586bDDEea244b3c2fe9c4B07b9F76",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-snx-ftm",
+    "address": "0xF47B1d1b23621dbc519033399C9fFf25B7fBFA2A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-yfi-ftm",
+    "address": "0x7F678d27120A59396f55398A3A2A8b07375BdCa9",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-usdt-ftm",
+    "address": "0x8F769621E63acE71132987Ec4DB14cc3d06AA684",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-btc-ftm",
+    "address": "0x1433c4a55449c8B96cf5Ac0cF395cBd8dc8e5f60",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
     "name": "banana-watch-bnb",
     "address": "0x95D965048920A9917b079E6Eb53Bf10d1C0F66a0",
     "interval": 4,
