@@ -17,7 +17,7 @@ if (!args.length) {
 const config = {
   vault: args[0],
   chainId: Number(args[1]) || 56,
-  interval: Number(args[2]) || 2,
+  interval: Number(args[2]) || 2
 };
 
 /**
@@ -32,7 +32,7 @@ const main = async () => {
     contract: config.vault,
     oracle: null,
     oracleId: null,
-    tvl: 0,
+    tvl: 0
   };
 
   const newStrat = {
@@ -43,7 +43,7 @@ const main = async () => {
     depositsPaused: false,
     harvestPaused: false,
     harvestEvent: true,
-    chainId: config.chainId,
+    chainId: config.chainId
   };
 
   const provider = new ethers.providers.JsonRpcProvider(getChainRpc(config.chainId));
@@ -71,10 +71,12 @@ const main = async () => {
   newStrat.address = strategyAddress;
   newStrat.name = id;
 
-  fs.writeFileSync(
-    path.resolve(__dirname, '..', 'data', 'defistation.json'),
-    JSON.stringify([newVault, ...vaults], null, 2)
-  );
+  if (config.chainId === 56) {
+    fs.writeFileSync(
+      path.resolve(__dirname, '..', 'data', 'defistation.json'),
+      JSON.stringify([newVault, ...vaults], null, 2)
+    );
+  }
   fs.writeFileSync(
     path.resolve(__dirname, '..', 'data', 'strats.json'),
     JSON.stringify([newStrat, ...strats], null, 2)
