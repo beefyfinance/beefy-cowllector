@@ -420,6 +420,66 @@
     "chainId": 56
   },
   {
+    "name": "sushi-aave-eth",
+    "address": "0x71e2c040F3B9670C693215509A0c0846D221756a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-eth-dai",
+    "address": "0xB982421883c5c022181b67cBC6b4709A564A6728",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-btc-eth",
+    "address": "0x170712B04A24FdBCC021Dd461Afd048c8cF2348d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-eth-usdt",
+    "address": "0xc4cb1Dc51eAD37fD19d0C24EC6136Dbb639789cA",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-usdc-eth",
+    "address": "0xB4cc236af16e8FBEf8600C2D482901E84AB723c4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-matic-eth",
+    "address": "0x8A8E3aBAb418671bdb7A47E45d2Fcd7726e46D74",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "quick-usdc-usdt",
     "address": "0xdd3E5c7787eB38a362bBF3D395FC9f27924B7317",
     "interval": 1,
