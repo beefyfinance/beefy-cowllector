@@ -10,7 +10,7 @@ const unwrapSubsidy = async () => {
     const provider = new ethers.providers.JsonRpcProvider(chain.rpc);
     const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
 
-    const wrappedNativeContract = new ethers.Contract(chain.wrappedToken, WrappedNative, harvester);
+    const wrappedNativeContract = new ethers.Contract(chain.wnative, WrappedNative, harvester);
     const balance = await wrappedNativeContract.balanceOf(harvester.address);
 
     if (balance > 0) {

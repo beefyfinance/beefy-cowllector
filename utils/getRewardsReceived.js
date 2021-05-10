@@ -26,7 +26,7 @@ const getRewardsReceived = async chain => {
     const logs = await web3.eth.getPastLogs({
       fromBlock: fromBlock,
       toBlock: toBlock - 1,
-      address: chain.wrappedToken,
+      address: chain.wnative,
       topics: [transferTopic, null, toTopic],
     });
 
