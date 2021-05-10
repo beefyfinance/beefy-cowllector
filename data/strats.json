@@ -1,5 +1,15 @@
 [
   {
+    "name": "cakev2-mcoin-ust",
+    "address": "0xaF58a603E6c31d97459f8c3caE56C21006479968",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "aave-eth",
     "address": "0x55a10618c7E9489ceE047705cD003df6d9e09195",
     "interval": 1,
