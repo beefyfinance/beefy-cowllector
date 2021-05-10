@@ -1,5 +1,25 @@
 [
   {
+    "name": "froyo-3pool",
+    "address": "0x15fd34559B0508F4C8504aC4c1122b4AD35d2660",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "froyo-froyo-ftm",
+    "address": "0x3C9C884eFAB85c44D675039de227b3Dd275c360e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
     "name": "cakev2-mcoin-ust",
     "address": "0xaF58a603E6c31d97459f8c3caE56C21006479968",
     "interval": 4,
