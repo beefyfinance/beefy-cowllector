@@ -256,6 +256,54 @@
     "tvl": 0
   },
   {
+    "id": "sushi-aave-eth",
+    "name": "Moo Sushi AAVE-ETH",
+    "contract": "0x866a910F3375d0dEBDdD904A36B3940aFcD29900",
+    "oracle": "lps",
+    "oracleId": "sushi-aave-eth",
+    "tvl": 0
+  },
+  {
+    "id": "sushi-eth-dai",
+    "name": "Moo Sushi ETH-DAI",
+    "contract": "0x6b6ca47520dDC9333B8bD09a1e64204648B63274",
+    "oracle": "lps",
+    "oracleId": "sushi-eth-dai",
+    "tvl": 0
+  },
+  {
+    "id": "sushi-btc-eth",
+    "name": "Moo Sushi BTC-ETH",
+    "contract": "0x6530E351074f1f9fdf254dC7d7d8A44324E158a4",
+    "oracle": "lps",
+    "oracleId": "sushi-btc-eth",
+    "tvl": 0
+  },
+  {
+    "id": "sushi-eth-usdt",
+    "name": "Moo Sushi ETH-USDT",
+    "contract": "0xE8417099971151CD5CfAE264e25634Fac05cA2b3",
+    "oracle": "lps",
+    "oracleId": "sushi-eth-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "sushi-usdc-eth",
+    "name": "Moo Sushi USDC-ETH",
+    "contract": "0xE4DB97A2AAFbfef40D1a4AE8B709f61d6756F8e1",
+    "oracle": "lps",
+    "oracleId": "sushi-usdc-eth",
+    "tvl": 0
+  },
+  {
+    "id": "sushi-matic-eth",
+    "name": "Moo Sushi MATIC-ETH",
+    "contract": "0xC8e809a9180d637Cc23dAf60b41B70CA1ad5Fc08",
+    "oracle": "lps",
+    "oracleId": "sushi-matic-eth",
+    "tvl": 0
+  },
+  {
     "id": "quick-usdc-usdt",
     "name": "Moo Quick USDC-USDT",
     "contract": "0x4462817b53E76b722c2D174D0148ddb81452f1dE",
