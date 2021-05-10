@@ -1,5 +1,145 @@
 [
   {
+    "name": "froyo-3pool",
+    "address": "0x15fd34559B0508F4C8504aC4c1122b4AD35d2660",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "froyo-froyo-ftm",
+    "address": "0x3C9C884eFAB85c44D675039de227b3Dd275c360e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "cakev2-mcoin-ust",
+    "address": "0xaF58a603E6c31d97459f8c3caE56C21006479968",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "aave-eth",
+    "address": "0x55a10618c7E9489ceE047705cD003df6d9e09195",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "boo-cover-ftm",
+    "address": "0xa1Dfd44c90B7cE937FC450Fe19B691e72EE3a7D2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-cover-ftm",
+    "address": "0xCCcEBC4551FF20acA4e0356DAD8875806CE8df10",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-cream-ftm",
+    "address": "0x6FfF95AC47b586bDDEea244b3c2fe9c4B07b9F76",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-snx-ftm",
+    "address": "0xF47B1d1b23621dbc519033399C9fFf25B7fBFA2A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-yfi-ftm",
+    "address": "0x7F678d27120A59396f55398A3A2A8b07375BdCa9",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-usdt-ftm",
+    "address": "0x8F769621E63acE71132987Ec4DB14cc3d06AA684",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "boo-btc-ftm",
+    "address": "0x1433c4a55449c8B96cf5Ac0cF395cBd8dc8e5f60",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "banana-watch-bnb",
+    "address": "0x95D965048920A9917b079E6Eb53Bf10d1C0F66a0",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jetfuel-fts-bnb",
+    "address": "0x8038A8A1765Ae44629Ab74ffDC39Af60b02554f4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jetfuel-fuel-bnb",
+    "address": "0xaBbc97E8B55f50d648bFb58B9b4498B8e3671F22",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "boo-eth-ftm",
     "address": "0x7c7B7FbccA5699175003ecbe1B41E79F40385469",
     "interval": 1,
