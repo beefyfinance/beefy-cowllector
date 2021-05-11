@@ -272,7 +272,7 @@
   {
     "name": "lyd-lyd-usdt",
     "address": "0xbE5370a50d11D10475089222497A4172bdC600a4",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -282,7 +282,7 @@
   {
     "name": "lyd-lyd-avax",
     "address": "0x3B289DcCd55B46596FbBAFfEd6469a85d69426Dc",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2192,7 +2192,7 @@
   {
     "name": "olive-olive-avax",
     "address": "0x6bBdC5cacB4e72884432E3d63745cc8e7A4392Ca",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2202,7 +2202,7 @@
   {
     "name": "olive-olive-usdt",
     "address": "0xDcdb088f53dBcC63f600299867F8b6eE6BC7a6cE",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2242,7 +2242,7 @@
   {
     "name": "snob-3pool",
     "address": "0x12a7738315624f6e112452E0eCFf29cE08d4992D",
-    "interval": 4,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2392,7 +2392,7 @@
   {
     "name": "com-png-avax",
     "address": "0xBceD1CF7259e8fc7BF34F55F05aF88d78bd91FEC",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2402,7 +2402,7 @@
   {
     "name": "com-eth-avax",
     "address": "0xF933075ae4e39aa789555c2bEBA710130E41Ed32",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2412,7 +2412,7 @@
   {
     "name": "com-usdt-avax",
     "address": "0xcd4db0404DEA8882EdE60Cea1b8D186AbD7F97dF",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2472,7 +2472,7 @@
   {
     "name": "png-wbtc-avax",
     "address": "0xc8a59Fb425796dcF5F50E7Fa6DBbb2E68276CD8F",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2482,7 +2482,7 @@
   {
     "name": "png-link-avax",
     "address": "0x29f034B3c5Ffe34E975ACA63D48C0d5Bd8A5d7a4",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2492,7 +2492,7 @@
   {
     "name": "png-sushi-avax",
     "address": "0xF913f07b0B19DA83B1D7FB8BCbc54eFA39D5dA6e",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2502,7 +2502,7 @@
   {
     "name": "png-uni-avax",
     "address": "0x2CBBD9157899680E2475E4C172Dd2a9921dBa9ae",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2512,7 +2512,7 @@
   {
     "name": "png-usdt-png",
     "address": "0x697aC228808CAb8DB149C8c43D5086d9a698CC58",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2522,7 +2522,7 @@
   {
     "name": "squirrel-nuts",
     "address": "0x2a9811dDfAA3cA01bD36d9Ed41B9cF954fd01AA2",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2692,7 +2692,7 @@
   {
     "name": "png-usdt-avax",
     "address": "0x1326f4648F4c64fc1D15d94a5910787cAf569d70",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2702,7 +2702,7 @@
   {
     "name": "png-eth-avax",
     "address": "0xd14a7e95B4C57BeD5a36721a0702E90FceE7CEa8",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2712,7 +2712,7 @@
   {
     "name": "png-png-avax",
     "address": "0xa0580866d70A33DcF8d053504a55a7e2138cEace",
-    "interval": 6,
+    "interval": 12,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
