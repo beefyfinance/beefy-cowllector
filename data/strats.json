@@ -1,5 +1,55 @@
 [
   {
+    "name": "cometh-doki-eth",
+    "address": "0xfb7344a4cF25CDe5aaF6415107a8deF769FC200B",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cometh-azuki-eth",
+    "address": "0xa54e6dc91FCb22a24437e8650266BfE9590a2820",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "goal-goal-busd",
+    "address": "0x73B68fe0854e3fF25E2450E0E2791cAB6FBa12ec",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-kun-busd",
+    "address": "0x3698E26b628c9cb257B3506aD00c7304bFe29448",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-math-busd",
+    "address": "0x64b3A40cdB1C366278607f9778d299ef88115b16",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "froyo-3pool",
     "address": "0x15fd34559B0508F4C8504aC4c1122b4AD35d2660",
     "interval": 1,
@@ -40,7 +90,7 @@
     "chainId": 137
   },
   {
-    "name": "boo-cover-ftm",
+    "name": "boo-link-ftm",
     "address": "0xa1Dfd44c90B7cE937FC450Fe19B691e72EE3a7D2",
     "interval": 1,
     "harvestSignature": "0x4641257d",

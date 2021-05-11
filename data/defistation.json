@@ -1,5 +1,101 @@
 [
   {
+    "id": "cometh-doki-eth",
+    "name": "Moo Cometh DOKI-ETH",
+    "contract": "0x383489a0A5deA3f1499c638e0258F7e6a68a253f",
+    "oracle": "lps",
+    "oracleId": "cometh-doki-eth",
+    "tvl": 0
+  },
+  {
+    "id": "cometh-azuki-eth",
+    "name": "Moo Cometh AZUKI-ETH",
+    "contract": "0xe95d14D09a8F6034C582bd993A2F2aA8ecEC72f0",
+    "oracle": "lps",
+    "oracleId": "cometh-azuki-eth",
+    "tvl": 0
+  },
+  {
+    "id": "boo-link-ftm",
+    "name": "Moo Boo LINK-FTM",
+    "contract": "0x711969A90C9EDD815A5C2b441FC80d067EC5E969",
+    "oracle": "lps",
+    "oracleId": "boo-link-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-cover-ftm",
+    "name": "Moo Boo COVER-FTM",
+    "contract": "0xF5Bf6b3624eb10Ee855FEC1C5a4af81D90996b6c",
+    "oracle": "lps",
+    "oracleId": "boo-cover-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-cream-ftm",
+    "name": "Moo Boo CREAM-FTM",
+    "contract": "0x2BDA70d1DcE6b0855e812daaBB096F3DaaEBd4Bc",
+    "oracle": "lps",
+    "oracleId": "boo-cream-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-snx-ftm",
+    "name": "Moo Boo SNX-FTM",
+    "contract": "0x74907ad4E79b1Ce415caB26FEf526ae017598cEe",
+    "oracle": "lps",
+    "oracleId": "boo-snx-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-yfi-ftm",
+    "name": "Moo Boo YFI-FTM",
+    "contract": "0x2dC73D17Ae01De6D49aab45668601591FF283dee",
+    "oracle": "lps",
+    "oracleId": "boo-yfi-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-usdt-ftm",
+    "name": "Moo Boo USDT-FTM",
+    "contract": "0x5d89017d2465115007AbA00da1E6446dF2C19f34",
+    "oracle": "lps",
+    "oracleId": "boo-usdt-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "boo-btc-ftm",
+    "name": "Moo Boo BTC-FTM",
+    "contract": "0xA3e3Af161943CfB3941B631676134bb048739727",
+    "oracle": "lps",
+    "oracleId": "boo-btc-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "goal-goal-busd",
+    "name": "Moo Goal GOAL-BUSD",
+    "contract": "0xF18784Ba03fA5017E1ae4D82c4a3e00F5E8fF16f",
+    "oracle": "lps",
+    "oracleId": "goal-goal-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-kun-busd",
+    "name": "Moo CakeV2 KUN-BUSD",
+    "contract": "0x52823D1A0F3745D9481557eDF3ACff04857D28B6",
+    "oracle": "lps",
+    "oracleId": "cakev2-kun-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-math-busd",
+    "name": "Moo CakeV2 MATH-BUSD",
+    "contract": "0xE8A2455e485440EFB359267ce23402912324A3bE",
+    "oracle": "lps",
+    "oracleId": "cakev2-math-busd",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-mcoin-ust",
     "name": "Moo CakeV2 mCOIN-UST",
     "contract": "0xF803F277D5aAe38ac5CBfe8BA7B2e265983cc2a6",
