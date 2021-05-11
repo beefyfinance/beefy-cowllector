@@ -1,5 +1,29 @@
 [
   {
+    "id": "goal-goal-busd",
+    "name": "Moo Goal GOAL-BUSD",
+    "contract": "0xF18784Ba03fA5017E1ae4D82c4a3e00F5E8fF16f",
+    "oracle": "lps",
+    "oracleId": "goal-goal-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-kun-busd",
+    "name": "Moo CakeV2 KUN-BUSD",
+    "contract": "0x52823D1A0F3745D9481557eDF3ACff04857D28B6",
+    "oracle": "lps",
+    "oracleId": "cakev2-kun-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-math-busd",
+    "name": "Moo CakeV2 MATH-BUSD",
+    "contract": "0xE8A2455e485440EFB359267ce23402912324A3bE",
+    "oracle": "lps",
+    "oracleId": "cakev2-math-busd",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-mcoin-ust",
     "name": "Moo CakeV2 mCOIN-UST",
     "contract": "0xF803F277D5aAe38ac5CBfe8BA7B2e265983cc2a6",

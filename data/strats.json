@@ -1,5 +1,35 @@
 [
   {
+    "name": "goal-goal-busd",
+    "address": "0x73B68fe0854e3fF25E2450E0E2791cAB6FBa12ec",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-kun-busd",
+    "address": "0x3698E26b628c9cb257B3506aD00c7304bFe29448",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-math-busd",
+    "address": "0x64b3A40cdB1C366278607f9778d299ef88115b16",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "froyo-3pool",
     "address": "0x15fd34559B0508F4C8504aC4c1122b4AD35d2660",
     "interval": 1,
