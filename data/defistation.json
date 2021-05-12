@@ -1,5 +1,29 @@
 [
   {
+    "id": "tofy-tofy",
+    "name": "Moo Tofy TOFY",
+    "contract": "0xE9F13aBE42A29BA302E7d57171f57430A2a2f8d0",
+    "oracle": "tokens",
+    "oracleId": "tofy-tofy",
+    "tvl": 0
+  },
+  {
+    "id": "tofy-tofy-mash",
+    "name": "Moo Tofy TOFY-MASH",
+    "contract": "0xceCa548809FBb923974609EF3a2013134815741A",
+    "oracle": "lps",
+    "oracleId": "tofy-tofy-mash",
+    "tvl": 0
+  },
+  {
+    "id": "tofy-tofy-bnb",
+    "name": "Moo Tofy TOFY-BNB",
+    "contract": "0x67C079A0bd936270981A8399f5d38c39f00941F4",
+    "oracle": "lps",
+    "oracleId": "tofy-tofy-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cometh-doki-eth",
     "name": "Moo Cometh DOKI-ETH",
     "contract": "0x383489a0A5deA3f1499c638e0258F7e6a68a253f",

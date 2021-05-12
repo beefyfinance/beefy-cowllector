@@ -1,5 +1,35 @@
 [
   {
+    "name": "tofy-tofy",
+    "address": "0x9AE72e62259DEC1c5d01E709DFbB9001f6D6ae91",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "tofy-tofy-mash",
+    "address": "0x2dea9166765D740617525a2Cb751B73C2Aa61A6A",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "tofy-tofy-bnb",
+    "address": "0x421a34E3433fc6485f792BDD74e521ea925220C0",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cometh-doki-eth",
     "address": "0xfb7344a4cF25CDe5aaF6415107a8deF769FC200B",
     "interval": 4,
