@@ -1,5 +1,35 @@
 [
   {
+    "name": "aave-wbtc",
+    "address": "0x3777a06B71B2Aaf105e855693C56768117712B6F",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "aave-usdc",
+    "address": "0x4Dcbd7A18d04343aFa534f945ad13E096ebd9Ae1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "aave-dai",
+    "address": "0xb29cCE04365400409d476e95410547275D1F86Cf",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "tofy-tofy",
     "address": "0x9AE72e62259DEC1c5d01E709DFbB9001f6D6ae91",
     "interval": 4,
