@@ -1,10 +1,74 @@
 [
   {
+    "id": "boo-boo",
+    "name": "Moo Boo BOO",
+    "contract": "0x6240D7361e29e5C6a53B5Be4256055592E1dD44F",
+    "oracle": "tokens",
+    "oracleId": "BOO",
+    "tvl": 0
+  },
+  {
+    "id": "boo-bnb-ftm",
+    "name": "Moo Boo BNB-FTM",
+    "contract": "0xC5b2a6aB801E74F098aCC8Bb62B786b47319c4D9",
+    "oracle": "lps",
+    "oracleId": "boo-bnb-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "quick-mocean-matic",
+    "name": "Moo Quick ANY-QUICK",
+    "contract": "0x82303a4b2c821204A84AB2a068eC8EDf3Bc23061",
+    "oracle": "lps",
+    "oracleId": "quick-mocean-matic",
+    "tvl": 0
+  },
+  {
+    "id": "quick-any-quick",
+    "name": "Moo Quick ANY-QUICK",
+    "contract": "0x2849095eE44eCd5f60Ed04f94e5BB45623A8e75a",
+    "oracle": "lps",
+    "oracleId": "quick-any-quick",
+    "tvl": 0
+  },
+  {
+    "id": "quick-frax-quick",
+    "name": "Moo Quick FRAX-QUICK",
+    "contract": "0x442ca31De7E6732455e60e3641Ac076fa7a0905f",
+    "oracle": "lps",
+    "oracleId": "quick-frax-quick",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bifi-usdt",
+    "name": "Moo Mdex BIFI-USDT",
+    "contract": "0xD34A51815892368fE96D9730376b2CEdE99F83D8",
+    "oracle": "lps",
+    "oracleId": "mdex-bifi-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bsc-bifi-usdt",
+    "name": "Moo Mdex BIFI-USDT",
+    "contract": "0x78dB17F440A223464B15046A25A273De510A14Ce",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-bifi-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "bunny-bunny",
+    "name": "Moo Bunny V2",
+    "contract": "0x2288dC6e2D2FaBd94a0ab63DD558AE149Bbc9eD9",
+    "oracle": "tokens",
+    "oracleId": "BUNNY",
+    "tvl": 0
+  },
+  {
     "id": "tofy-tofy",
     "name": "Moo Tofy TOFY",
     "contract": "0xE9F13aBE42A29BA302E7d57171f57430A2a2f8d0",
     "oracle": "tokens",
-    "oracleId": "tofy-tofy",
+    "oracleId": "TOFY",
     "tvl": 0
   },
   {
