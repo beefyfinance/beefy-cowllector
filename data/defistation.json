@@ -1,5 +1,29 @@
 [
   {
+    "id": "iron-steel-iron",
+    "name": "Moo Iron STEEL-IRON",
+    "contract": "0x1384Ed18E881C0CC9027DC04ab88bFBF641c6106",
+    "oracle": "lps",
+    "oracleId": "iron-steel-iron",
+    "tvl": 0
+  },
+  {
+    "id": "iron-steel-bnb",
+    "name": "Moo Iron STEEL-BNB",
+    "contract": "0xCB01313B8Cf1d2742D0bc7209B2E5d1D0d172b36",
+    "oracle": "lps",
+    "oracleId": "iron-steel-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "iron-iron-busd",
+    "name": "Moo IRON IRON-BUSD",
+    "contract": "0x4b1dF138339627416a8b991a75769919F65cCD8d",
+    "oracle": "lps",
+    "oracleId": "iron-iron-busd",
+    "tvl": 0
+  },
+  {
     "id": "boo-boo",
     "name": "Moo Boo BOO",
     "contract": "0x6240D7361e29e5C6a53B5Be4256055592E1dD44F",
