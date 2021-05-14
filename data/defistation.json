@@ -1,5 +1,93 @@
 [
   {
+    "id": "iron-steel-iron",
+    "name": "Moo Iron STEEL-IRON",
+    "contract": "0x1384Ed18E881C0CC9027DC04ab88bFBF641c6106",
+    "oracle": "lps",
+    "oracleId": "iron-steel-iron",
+    "tvl": 0
+  },
+  {
+    "id": "iron-steel-bnb",
+    "name": "Moo Iron STEEL-BNB",
+    "contract": "0xCB01313B8Cf1d2742D0bc7209B2E5d1D0d172b36",
+    "oracle": "lps",
+    "oracleId": "iron-steel-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "iron-iron-busd",
+    "name": "Moo IRON IRON-BUSD",
+    "contract": "0x4b1dF138339627416a8b991a75769919F65cCD8d",
+    "oracle": "lps",
+    "oracleId": "iron-iron-busd",
+    "tvl": 0
+  },
+  {
+    "id": "boo-boo",
+    "name": "Moo Boo BOO",
+    "contract": "0x6240D7361e29e5C6a53B5Be4256055592E1dD44F",
+    "oracle": "tokens",
+    "oracleId": "BOO",
+    "tvl": 0
+  },
+  {
+    "id": "boo-bnb-ftm",
+    "name": "Moo Boo BNB-FTM",
+    "contract": "0xC5b2a6aB801E74F098aCC8Bb62B786b47319c4D9",
+    "oracle": "lps",
+    "oracleId": "boo-bnb-ftm",
+    "tvl": 0
+  },
+  {
+    "id": "quick-mocean-matic",
+    "name": "Moo Quick ANY-QUICK",
+    "contract": "0x82303a4b2c821204A84AB2a068eC8EDf3Bc23061",
+    "oracle": "lps",
+    "oracleId": "quick-mocean-matic",
+    "tvl": 0
+  },
+  {
+    "id": "quick-any-quick",
+    "name": "Moo Quick ANY-QUICK",
+    "contract": "0x2849095eE44eCd5f60Ed04f94e5BB45623A8e75a",
+    "oracle": "lps",
+    "oracleId": "quick-any-quick",
+    "tvl": 0
+  },
+  {
+    "id": "quick-frax-quick",
+    "name": "Moo Quick FRAX-QUICK",
+    "contract": "0x442ca31De7E6732455e60e3641Ac076fa7a0905f",
+    "oracle": "lps",
+    "oracleId": "quick-frax-quick",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bifi-usdt",
+    "name": "Moo Mdex BIFI-USDT",
+    "contract": "0xD34A51815892368fE96D9730376b2CEdE99F83D8",
+    "oracle": "lps",
+    "oracleId": "mdex-bifi-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bsc-bifi-usdt",
+    "name": "Moo Mdex BIFI-USDT",
+    "contract": "0x78dB17F440A223464B15046A25A273De510A14Ce",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-bifi-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "bunny-bunny",
+    "name": "Moo Bunny V2",
+    "contract": "0x2288dC6e2D2FaBd94a0ab63DD558AE149Bbc9eD9",
+    "oracle": "tokens",
+    "oracleId": "BUNNY",
+    "tvl": 0
+  },
+  {
     "id": "boo-boo",
     "name": "Moo Boo BOO",
     "contract": "0x6240D7361e29e5C6a53B5Be4256055592E1dD44F",

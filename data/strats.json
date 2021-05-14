@@ -1,5 +1,35 @@
 [
   {
+    "name": "iron-steel-iron",
+    "address": "0x10d82E0BcAAaAEDdfC770bEa3D3F1D79E0fc7eA6",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "iron-steel-bnb",
+    "address": "0x4c36e84cFd0d0917d09847701d21c92114B80FEF",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "iron-iron-busd",
+    "address": "0x411Ff6C7dCa700D7f1867eBF885498Fce4a7d080",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "boo-bnb-ftm",
     "address": "0x9D55cAEE108aBdd4C47E42088C97ecA43510E969",
     "interval": 1,
