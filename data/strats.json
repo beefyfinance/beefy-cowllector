@@ -630,6 +630,36 @@
     "chainId": 56
   },
   {
+    "name": "sushi-crv-eth",
+    "address": "0xCF0354f8dAB741b889e753cCe1656327fe6ce474",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-usdc-usdt",
+    "address": "0x5FCcFcd07D03FfdDa3A560d3af15d2bd7AaeE21d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-link-eth",
+    "address": "0x0536984a70BE296A35feD83DC8fF5d30338AbeA1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "sushi-aave-eth",
     "address": "0x71e2c040F3B9670C693215509A0c0846D221756a",
     "interval": 1,
