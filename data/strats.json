@@ -1,5 +1,35 @@
 [
   {
+    "name": "gondola-zdai-dai",
+    "address": "0x5CBE59aC5D539534B43d3c1c1bE2996DEA3697a1",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "gondola-zusdt-usdt",
+    "address": "0x68eB8692882544419d9a363D593d2803f76e78d5",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
+    "name": "gondola-zeth-eth",
+    "address": "0x78f17F125179f6134c19Cc9D4545cB2436ceC819",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 43114
+  },
+  {
     "name": "iron-steel-iron",
     "address": "0x10d82E0BcAAaAEDdfC770bEa3D3F1D79E0fc7eA6",
     "interval": 4,
