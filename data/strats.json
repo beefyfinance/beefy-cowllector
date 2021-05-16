@@ -1,5 +1,25 @@
 [
   {
+    "name": "aave-aave",
+    "address": "0x8F755873546F4D0EDf7d41fF8604C8A632113eB7",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "aave-matic",
+    "address": "0x57FdEB65b71e6aD212088E63E85825e314F2Ea62",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "gondola-zdai-dai",
     "address": "0x5CBE59aC5D539534B43d3c1c1bE2996DEA3697a1",
     "interval": 4,
