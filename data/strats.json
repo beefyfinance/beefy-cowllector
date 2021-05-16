@@ -1,5 +1,15 @@
 [
   {
+    "name": "garuda-garuda-usdt",
+    "address": "0xf92a7dE75dd3Eb9Ca505D5040D682b8091f707eD",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "aave-aave",
     "address": "0x8F755873546F4D0EDf7d41fF8604C8A632113eB7",
     "interval": 1,
