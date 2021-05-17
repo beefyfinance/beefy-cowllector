@@ -1,5 +1,45 @@
 [
   {
+    "id": "banana-link-bnb",
+    "name": "Moo Ape LINK-BNB",
+    "contract": "0xfb04ba534ED800d9bFFce22B5F86eDaA4fc76D50",
+    "oracle": "lps",
+    "oracleId": "banana-link-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-aave-bnb",
+    "name": "Moo Ape AAVE-BNB",
+    "contract": "0x2EF1B47174d9f9bC6e9a37E863928C0E6100324d",
+    "oracle": "lps",
+    "oracleId": "banana-aave-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-comp-bnb",
+    "name": "Moo Ape COMP-BNB",
+    "contract": "0x117298872069E8e3BcB5E02727852f9Ca94930Cb",
+    "oracle": "lps",
+    "oracleId": "banana-comp-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-ftm-bnb",
+    "name": "Moo Ape FTM-BNB",
+    "contract": "0xb61fa9e4548f0d3e1405cfba7a12de8ff11c0e4b",
+    "oracle": "lps",
+    "oracleId": "banana-ftm-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-ada-bnb",
+    "name": "Moo Ape ADA-BNB",
+    "contract": "0xb8E6a5EDbC8ae71f74Fd02f65E95Ba0a8733c5a1",
+    "oracle": "lps",
+    "oracleId": "banana-ada-bnb",
+    "tvl": 0
+  },
+  {
     "id": "garuda-garuda-usdt",
     "name": "Moo Garuda GARUDA-USDT",
     "contract": "0x1e8Cf92A803781b4ecB9102031fc5506A476E2A4",

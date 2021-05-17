@@ -1,5 +1,85 @@
 [
   {
+    "name": "mdex-shib-usdt",
+    "address": "0x2849095eE44eCd5f60Ed04f94e5BB45623A8e75a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
+    "name": "cometh-bifi-must",
+    "address": "0x25C3E6f91C71A4403CaFb794C4f9f9DDDA07Dac5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cometh-bifi-eth",
+    "address": "0xF813c1B8b800AAa516331ac6A4C29e649edab6Fd",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "boo-woofy-ftm",
+    "address": "0x0BF58A328C7739D8b097B1d4199f48AA3F1b2788",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "banana-link-bnb",
+    "address": "0x77BFDfc5e6358B83e9D251Af6dD2611871CEd3Bb",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-aave-bnb",
+    "address": "0xF56d5E0FA434Be8F8833FF866cEc0D2FC251DBFE",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-comp-bnb",
+    "address": "0xCCc04D8E4db259Eeaf932813527D21cE7eA37a0D",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-ftm-bnb",
+    "address": "0x24af8AE18B5336C090546CdEF5630e417B437ca4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "banana-ada-bnb",
     "address": "0xBfb6Be9553E676A0a559885262Aee98bC50A6eeE",
     "interval": 4,
