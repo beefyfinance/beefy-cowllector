@@ -576,6 +576,30 @@
     "tvl": 0
   },
   {
+    "id": "sushi-crv-eth",
+    "name": "Moo Sushi CRV-ETH",
+    "contract": "0xE695fCeD8fD93eeE54204a7fC33323a60d41865A",
+    "oracle": "lps",
+    "oracleId": "sushi-crv-eth",
+    "tvl": 0
+  },
+  {
+    "id": "sushi-usdc-usdt",
+    "name": "Moo Sushi USDC-USDT",
+    "contract": "0xB6B89a05ad8228b98d0D8a77e1a695c54500db3b",
+    "oracle": "lps",
+    "oracleId": "sushi-usdc-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "sushi-link-eth",
+    "name": "Moo Sushi LINK-ETH",
+    "contract": "0xaE65a66B3c7f8cc1ba71cEA740C953aBa0F3Ce8b",
+    "oracle": "lps",
+    "oracleId": "sushi-link-eth",
+    "tvl": 0
+  },
+  {
     "id": "sushi-aave-eth",
     "name": "Moo Sushi AAVE-ETH",
     "contract": "0x866a910F3375d0dEBDdD904A36B3940aFcD29900",
