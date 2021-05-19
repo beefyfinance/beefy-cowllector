@@ -1,5 +1,85 @@
 [
   {
+    "id": "cakev2-hyfi-bnb",
+    "name": "Moo CakeV2 HYFI-BNB",
+    "contract": "0xfe9bB1AFF4D1A2928F0aFEcaBF7d96479ece7eF4",
+    "oracle": "lps",
+    "oracleId": "cakev2-hyfi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-doge-bnb",
+    "name": "Moo CakeV2 DOGE-BNB",
+    "contract": "0x3b3bc8AE6dcAcCeaaC3C19E196ebD3341Cfe9c4e",
+    "oracle": "lps",
+    "oracleId": "cakev2-doge-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-fine-bnb",
+    "name": "Moo CakeV2 FINE-BNB",
+    "contract": "0xDCbf0c895d641FB67FB993456b6E99E478c7B087",
+    "oracle": "lps",
+    "oracleId": "cakev2-fine-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tdoge-bnb",
+    "name": "Moo CakeV2 tDOGE-BNB",
+    "contract": "0x6AF821Aaf981D54aD37d58bFbA7fD2E2c41b623d",
+    "oracle": "lps",
+    "oracleId": "cakev2-tdoge-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-oin-busd",
+    "name": "Moo CakeV2 OIN-BUSD",
+    "contract": "0x50bFd46216afcCA24890Ebd6eC67a0Cb92ce9aED",
+    "oracle": "lps",
+    "oracleId": "cakev2-oin-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-one-busd",
+    "name": "Moo CakeV2 ONE-BUSD",
+    "contract": "0x94A901E76140e27dD72Ba9a22988419e95324826",
+    "oracle": "lps",
+    "oracleId": "cakev2-one-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-pmon-busd",
+    "name": "Moo CakeV2 PMON-BUSD",
+    "contract": "0x82eaf01Bc5947d23Ca140221F2cd3f27250DF5Ac",
+    "oracle": "lps",
+    "oracleId": "cakev2-pmon-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-btr-busd",
+    "name": "Moo CakeV2 BTR-BUSD",
+    "contract": "0x6051785dBEA79BDF2e0B278a5cb4741Fe1a2Fd12",
+    "oracle": "lps",
+    "oracleId": "cakev2-btr-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-ubxt-busd",
+    "name": "Moo CakeV2 UBXT-BUSD",
+    "contract": "0x173BCBDd7E5f8AadC1e9dEC2f030c9567230b253",
+    "oracle": "lps",
+    "oracleId": "cakev2-ubxt-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-wmass-busd",
+    "name": "Moo CakeV2 WMASS-BUSD",
+    "contract": "0x84D4B046c060730b0A2fd65703F20c4A61EaAff7",
+    "oracle": "lps",
+    "oracleId": "cakev2-wmass-busd",
+    "tvl": 0
+  },
+  {
     "id": "banana-link-bnb",
     "name": "Moo Ape LINK-BNB",
     "contract": "0xfb04ba534ED800d9bFFce22B5F86eDaA4fc76D50",
