@@ -1,5 +1,25 @@
 [
   {
+    "name": "iron-dnd-bnb",
+    "address": "0xa6f996065E99F179678e76D0Bf68a9cf2e9497c7",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "iron-dnd",
+    "address": "0x793D305e3b98951925d52382536188596F3fd81F",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-hyfi-bnb",
     "address": "0x880f32d087a329DFF1b5cb571ef672D89e44440d",
     "interval": 4,

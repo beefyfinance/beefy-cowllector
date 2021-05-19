@@ -1,5 +1,21 @@
 [
   {
+    "id": "iron-dnd-bnb",
+    "name": "Moo Iron DND-BNB",
+    "contract": "0x0a4f69E053EE16fA127De5EA5d23EAd075e429D3",
+    "oracle": "lps",
+    "oracleId": "iron-dnd-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "iron-dnd",
+    "name": "Moo Iron DND",
+    "contract": "0xc2B68b16ABA7444D07258CACA55cD3fD3a3C5268",
+    "oracle": "tokens",
+    "oracleId": "DND",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-hyfi-bnb",
     "name": "Moo CakeV2 HYFI-BNB",
     "contract": "0xfe9bB1AFF4D1A2928F0aFEcaBF7d96479ece7eF4",
