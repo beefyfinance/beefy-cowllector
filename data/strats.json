@@ -1,5 +1,15 @@
 [
   {
+    "name": "heco-bifi-maxi",
+    "address": "0xfdF1088F5B9Bd338D5197aCfB00b468f04bCC374",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 128
+  },
+  {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
     "interval": 1,
@@ -644,8 +654,8 @@
     "address": "0x7F678d27120A59396f55398A3A2A8b07375BdCa9",
     "interval": 1,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
+    "depositsPaused": true,
+    "harvestPaused": true,
     "harvestEvent": true,
     "chainId": 250
   },
