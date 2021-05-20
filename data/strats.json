@@ -1,5 +1,25 @@
 [
   {
+    "name": "ester-est",
+    "address": "0xBceD1CF7259e8fc7BF34F55F05aF88d78bd91FEC",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "ester-est-ftm",
+    "address": "0x7bA322C00372037De54797B0449a4157CaB81BB4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
     "name": "pzap-pzap-usdc",
     "address": "0x76BC10591eB5f2ED08Fd2C09B5aD1B01353D3C16",
     "interval": 2,
