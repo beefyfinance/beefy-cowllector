@@ -1,5 +1,15 @@
 [
   {
+    "name": "polygon-bifi-maxi",
+    "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "satis-xsat-busd",
     "address": "0xD033C1A265850F360400BF68A2E286e600CC4150",
     "interval": 4,
