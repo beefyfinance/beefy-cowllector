@@ -280,6 +280,16 @@
     "chainId": 56
   },
   {
+    "name": "adamant-addy",
+    "address": "0xbeCDA5b41Ebbd55E8D668Bc16d2b6afAF2420b0C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "aave-aave",
     "address": "0x8F755873546F4D0EDf7d41fF8604C8A632113eB7",
     "interval": 1,
