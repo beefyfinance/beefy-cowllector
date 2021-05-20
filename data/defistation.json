@@ -1,5 +1,21 @@
 [
   {
+    "id": "satis-xsat-busd",
+    "name": "Moo Satis xSAT-BUSD",
+    "contract": "0x538c84e85e71F775Df1A896927008ecE3e14f47e",
+    "oracle": "lps",
+    "oracleId": "satis-xsat-busd",
+    "tvl": 0
+  },
+  {
+    "id": "satis-xsat-bnb",
+    "name": "Moo Satis xSAT-BNB",
+    "contract": "0x0F2A749bD7C64BC7E4f9cAE7C54eAEFD72E27193",
+    "oracle": "lps",
+    "oracleId": "satis-xsat-bnb",
+    "tvl": 0
+  },
+  {
     "id": "iron-dnd-bnb",
     "name": "Moo Iron DND-BNB",
     "contract": "0x0a4f69E053EE16fA127De5EA5d23EAd075e429D3",
