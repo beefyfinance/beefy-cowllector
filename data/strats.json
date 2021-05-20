@@ -1,5 +1,25 @@
 [
   {
+    "name": "pzap-pzap-usdc",
+    "address": "0x76BC10591eB5f2ED08Fd2C09B5aD1B01353D3C16",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "pzap-pzap-matic",
+    "address": "0x501aD8381d6d541E998b79E2e7F38a103734C88c",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "iron-dnd-bnb",
     "address": "0xa6f996065E99F179678e76D0Bf68a9cf2e9497c7",
     "interval": 4,
