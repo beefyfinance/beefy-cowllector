@@ -1,5 +1,15 @@
 [
   {
+    "name": "jetswap-wings",
+    "address": "0xeAFfC400B7220e19Ed23aa753D3723915bFD3Cf3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "grand-grand-bnb",
     "address": "0xD91CF07574D4d9039E400347F2636E5Ffc27A243",
     "interval": 4,
