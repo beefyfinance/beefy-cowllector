@@ -1,6 +1,6 @@
 [
-	"function balanceOf(address who) external view returns(uint256)",
-	"function balance() external view returns(uint256)",
-	"function name() external view returns(string)",
-	"function strategy() external view returns(address)"
+  "function balanceOf(address who) external view returns(uint256)",
+  "function balance() external view returns(uint256)",
+  "function name() external view returns(string)",
+  "function strategy() external view returns(address)"
 ]
