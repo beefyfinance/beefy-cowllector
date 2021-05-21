@@ -1,5 +1,21 @@
 [
   {
+    "id": "grand-grand-bnb",
+    "name": "Moo Grand GRAND-BNB",
+    "contract": "0x40dA18484963Fb672c3D2FE4942ddF363265b410",
+    "oracle": "lps",
+    "oracleId": "grand-grand-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "grand-grand",
+    "name": "Moo Grand GRAND",
+    "contract": "0x547c889C676fe449018A3987866cFC674518b700",
+    "oracle": "tokens",
+    "oracleId": "GRAND",
+    "tvl": 0
+  },
+  {
     "id": "dumpling-sdump-busd",
     "name": "Moo Dumpling SDUMP-BUSD",
     "contract": "0xAF142b8678917C57703604fD4A4de2600f9e7551",

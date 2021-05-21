@@ -1,5 +1,25 @@
 [
   {
+    "name": "grand-grand-bnb",
+    "address": "0xD91CF07574D4d9039E400347F2636E5Ffc27A243",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "grand-grand",
+    "address": "0xd9898f080d8322fB6892B1Eb02466c952a967794",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "dumpling-sdump-busd",
     "address": "0x8Edb024A5a551B5E51213E687765662a1A5FF850",
     "interval": 2,
