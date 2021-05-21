@@ -1,5 +1,21 @@
 [
   {
+    "id": "dumpling-sdump-busd",
+    "name": "Moo Dumpling SDUMP-BUSD",
+    "contract": "0xAF142b8678917C57703604fD4A4de2600f9e7551",
+    "oracle": "lps",
+    "oracleId": "dumpling-sdump-busd",
+    "tvl": 0
+  },
+  {
+    "id": "dumpling-sdump-bnb",
+    "name": "Moo Dumpling SDUMP-BNB",
+    "contract": "0x0396F46444D9256753E36408FC89D829d1f12A09",
+    "oracle": "lps",
+    "oracleId": "dumpling-sdump-bnb",
+    "tvl": 0
+  },
+  {
     "id": "jetswap-busd-bnb",
     "name": "Moo Jetswap BUSD-BNB",
     "contract": "0xDb207D797cA68112f5AA2677ee01301cF91c3c6E",

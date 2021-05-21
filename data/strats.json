@@ -1,5 +1,25 @@
 [
   {
+    "name": "dumpling-sdump-busd",
+    "address": "0x8Edb024A5a551B5E51213E687765662a1A5FF850",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "dumpling-sdump-bnb",
+    "address": "0x4080875874457d5B2617Cb4a70d602DF2488b967",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "jetswap-busd-bnb",
     "address": "0xB946c0956C0Db9937728cBA230e63797aDE31773",
     "interval": 4,
