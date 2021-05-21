@@ -1,5 +1,15 @@
 [
   {
+    "name": "banana-avax-bnb",
+    "address": "0xC9BfCFD64d6f55BDDEe70de66e6eBE31157D3d10",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "jetswap-wings",
     "address": "0xeAFfC400B7220e19Ed23aa753D3723915bFD3Cf3",
     "interval": 1,
