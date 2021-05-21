@@ -1,10 +1,10 @@
 const { Contract, Provider } = require('ethers-multicall');
 const ethers = require('ethers');
+const fs = require('fs');
+const path = require('path');
 
 const { getVaults } = require('../utils/getVaults');
 let strats = require('../data/strats.json');
-
-strats = strats.filter(strat => strat.chainId == 56);
 
 const abi = ['function strategy() view public returns(address)'];
 
@@ -26,17 +26,20 @@ const main = async () => {
     vaults[i].strategy = strategyAddresses[i];
   }
 
-  for (strat of strats) {
+  strats = strats.filter(strat => {
+    if (strat.chainId !== 56) return true;
+
     const match = vaults.find(vault => vault.strategy == strat.address);
 
-    if (match == undefined || match.status == 'eol' || match.status === 'refund') {
-      console.log(`The strat ${strat.name} should be removed.`);
+    if (match === undefined || match.status == 'eol' || match.status === 'refund') {
+      console.log(`Removing the strat ${strat.name} from the harvest schedule.`);
+      return false;
+    } else {
+      return true;
     }
-  }
+  });
 
-  // Check if something is in panic and should be paused?
-
-  // Make it remove the strats...?
+  fs.writeFileSync(path.join(__dirname, '../data/strats.json'), JSON.stringify(strats, null, 2));
 };
 
 main();
