@@ -1,9 +1,8 @@
 const axios = require('axios');
 
-const vaultsEndpoint =
-  'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/bsc_pools.js';
+const getVaults = async fileName => {
+  const vaultsEndpoint = `https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/${fileName}`;
 
-const getVaults = async () => {
   try {
     const response = await axios.get(vaultsEndpoint);
     const data = response.data;
