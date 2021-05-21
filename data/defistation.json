@@ -1,5 +1,29 @@
 [
   {
+    "id": "jetswap-busd-bnb",
+    "name": "Moo Jetswap BUSD-BNB",
+    "contract": "0xDb207D797cA68112f5AA2677ee01301cF91c3c6E",
+    "oracle": "lps",
+    "oracleId": "jetswap-busd-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jetswap-wings-busd",
+    "name": "Moo Jetswap WINGS-BUSD",
+    "contract": "0xE16f790B414C235Ada8cBC419C5C1Ae61ff49A84",
+    "oracle": "lps",
+    "oracleId": "jetswap-wings-busd",
+    "tvl": 0
+  },
+  {
+    "id": "jetswap-wings-bnb",
+    "name": "Moo Jetswap WINGS-BNB",
+    "contract": "0x2dEF6c368248d665082Db40a7Dc9F772CAD1DE75",
+    "oracle": "lps",
+    "oracleId": "jetswap-wings-bnb",
+    "tvl": 0
+  },
+  {
     "id": "mdex-bsc-mdx",
     "name": "Moo Mdex MDX",
     "contract": "0xc34C7923B73eB68E363AaEB2b7fbBeC11Cf90884",

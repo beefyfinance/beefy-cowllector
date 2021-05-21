@@ -1,5 +1,35 @@
 [
   {
+    "name": "jetswap-busd-bnb",
+    "address": "0xB946c0956C0Db9937728cBA230e63797aDE31773",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jetswap-wings-busd",
+    "address": "0x8783f4D85aC64c2d0b3245425B6e4Eb73C6b0ad8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "jetswap-wings-bnb",
+    "address": "0x735cA7E490e7086aeA15ca8b72d3CE4beb92f97d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "heco-bifi-maxi",
     "address": "0xfdF1088F5B9Bd338D5197aCfB00b468f04bCC374",
     "interval": 1,
