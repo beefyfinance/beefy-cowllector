@@ -7,7 +7,8 @@
   "scripts": {
     "start": "echo Cowllector ready!",
     "new": "node ./scripts/addVaultFromCli.js",
-    "lost": "node ./scripts/lostDefistation.js"
+    "lost": "node ./scripts/lostDefistation.js",
+    "sync": "node ./scripts/updateStrats.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
