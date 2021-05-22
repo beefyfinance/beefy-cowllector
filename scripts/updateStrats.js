@@ -61,7 +61,7 @@ const main = async () => {
           vault: vault.earnedTokenAddress,
           chainId: chain.chainId,
           interval: 6,
-          vaults,
+          vaults: defistationVaults,
           strats,
         });
 
