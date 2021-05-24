@@ -1,5 +1,25 @@
 [
   {
+    "name": "dopple-dop-lp",
+    "address": "0x39126B7E783f299E0Bbe58d3ff0781b3e169104A",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "dopple-dolly-lp",
+    "address": "0x9aBdA120556178C9d0Bfeb98253153BCadc96aAE",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "garuda-garuda-usdc",
     "address": "0xF275971e8A06Ef493Ef38b71aA0b2C6B9d0bA8A5",
     "interval": 2,

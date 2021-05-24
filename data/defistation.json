@@ -1,5 +1,21 @@
 [
   {
+    "id": "dopple-dop-lp",
+    "name": "Moo Dopple DopLP",
+    "contract": "0x8464365600d6A1b86A7f7c80DCD63AFa861069dB",
+    "oracle": "lps",
+    "oracleId": "dopple-dop-lp",
+    "tvl": 0
+  },
+  {
+    "id": "dopple-dolly-lp",
+    "name": "Moo Dopple DollyLP",
+    "contract": "0xCcb7A9E2e4F08407065f51d32C365304fbF2FD01",
+    "oracle": "lps",
+    "oracleId": "dopple-dolly-lp",
+    "tvl": 0
+  },
+  {
     "id": "garuda-garuda-usdc",
     "name": "Moo Garuda GARUDA-USDC",
     "contract": "0xE783464c205Ddf7240D5A86C62AD31DdfEdFCfde",
