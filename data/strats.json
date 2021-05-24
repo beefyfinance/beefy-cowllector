@@ -1,5 +1,15 @@
 [
   {
+    "name": "cakev2-cake-busd",
+    "address": "0x30e30EB5483700Db044F0Aaacf653dA063C94378",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "dopple-dop-lp",
     "address": "0x39126B7E783f299E0Bbe58d3ff0781b3e169104A",
     "interval": 4,
