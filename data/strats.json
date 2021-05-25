@@ -1,5 +1,15 @@
 [
   {
+    "name": "banana-ltc-bnb",
+    "address": "0xF6Cb4d2Ca247A53F6Fd52641e0372EFbE68f5a82",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "curve-am3crv",
     "address": "0xfA9F7aAF7864316E33659361F7809423e83f1Da1",
     "interval": 1,
