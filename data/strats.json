@@ -1,5 +1,15 @@
 [
   {
+    "name": "curve-am3crv",
+    "address": "0xfA9F7aAF7864316E33659361F7809423e83f1Da1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "cakev2-cake-busd",
     "address": "0x30e30EB5483700Db044F0Aaacf653dA063C94378",
     "interval": 4,
