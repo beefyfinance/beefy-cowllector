@@ -1,5 +1,21 @@
 [
   {
+    "id": "cakev2-rfox-bnb",
+    "name": "Moo CakeV2 RFOX-BNB",
+    "contract": "0x070Dcc132461571676eF5e3F64b0D730136C0898",
+    "oracle": "lps",
+    "oracleId": "cakev2-rfox-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-hotcross-bnb",
+    "name": "Moo CakeV2 HOTCROSS-BNB",
+    "contract": "0xfA4f79Cf4Eb504eD42fd77a931057815c1E41EC0",
+    "oracle": "lps",
+    "oracleId": "cakev2-hotcross-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-cake-busd",
     "name": "Moo CakeV2 CAKE-BUSD",
     "contract": "0x1542885D6EeD4EE3AC1a110d3f159003a0774101",

@@ -1,5 +1,45 @@
 [
   {
+    "name": "quick-cc10-eth",
+    "address": "0x9e6d524b000066e60284E2Ee14437d071B6b498F",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-degen-eth",
+    "address": "0xaEaF5294Cc6FAcB023c0999A0b1786C4C0b3d520",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cakev2-rfox-bnb",
+    "address": "0x902ccd33607D0cc5cE70A074fAe5323da6BC9480",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-hotcross-bnb",
+    "address": "0xA9BB5b8046730ce627cb1264865196AE0f3359fF",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "banana-ltc-bnb",
     "address": "0xF6Cb4d2Ca247A53F6Fd52641e0372EFbE68f5a82",
     "interval": 6,
