@@ -55,14 +55,14 @@ const chains = [
     id: 'fantom',
     chainId: 250,
     wnative: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
-    rewardPool: null,
+    rewardPool: '0x7fB900C14c9889A559C777D016a885995cE759Ee',
     beefyFeeBatcher: null,
     rpc: process.env.FANTOM_RPC,
     appVaultsFilename: 'fantom_pools.js',
     multicall: '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982',
     queryLimit: 500,
     queryInterval: 100,
-    firstRewardBlock: null,
+    firstRewardBlock: 7673132,
   },
 ];
 
