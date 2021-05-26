@@ -1,5 +1,25 @@
 [
   {
+    "name": "iron-iron-usdc",
+    "address": "0x402ee2A54138465D19EFdEFA60c1d9ffDFfF41eC",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "iron-titan-matic",
+    "address": "0x83c6e9C6119D0a7C1ac4fF86b970e54278140D45",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "quick-cc10-eth",
     "address": "0x9e6d524b000066e60284E2Ee14437d071B6b498F",
     "interval": 6,
