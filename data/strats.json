@@ -1,5 +1,25 @@
 [
   {
+    "name": "quick-bifi-quick",
+    "address": "0xA9319b8F327dBB744c63e6b9FfaDf9A93C30687c",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-bifi-eth",
+    "address": "0xa425DeadFf443f3574F02585CE5154BBd5D14213",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "quick-vision-eth",
     "address": "0xB682a2F1e6C87819e9aDEdBe366548B59Ab122E8",
     "interval": 6,
