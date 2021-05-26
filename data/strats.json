@@ -1,5 +1,45 @@
 [
   {
+    "name": "quick-vision-eth",
+    "address": "0xB682a2F1e6C87819e9aDEdBe366548B59Ab122E8",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-matic-usdc",
+    "address": "0x75bC3FC2Cd3756f0dC7dc5211CE44fAcDd9B005E",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cakev2-deri-busd",
+    "address": "0x0bb686a137D60710f9b5bE0122A5d690d6854166",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-chr-busd",
+    "address": "0x24AEa3B309e7ddEE3e838d188E34EaFf34603928",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "iron-iron-usdc",
     "address": "0x402ee2A54138465D19EFdEFA60c1d9ffDFfF41eC",
     "interval": 1,
