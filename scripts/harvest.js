@@ -8,7 +8,7 @@ const {
   subsidyWant,
   sleep,
 } = require('../utils/harvestHelpers');
-const { getChainRpc } = require('../utils/getChainData');
+const chains = require('../data/chains');
 const strats = require('../data/strats.json');
 
 const harvest = async () => {
@@ -16,7 +16,7 @@ const harvest = async () => {
     try {
       console.log(`Analizing harvest of ${strat.name}.`);
 
-      const provider = new ethers.providers.JsonRpcProvider(getChainRpc(strat.chainId));
+      const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
       const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
 
       let shouldHarvest = true;

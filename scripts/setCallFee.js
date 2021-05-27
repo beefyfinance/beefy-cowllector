@@ -1,7 +1,7 @@
 const ethers = require('ethers');
 
 const strats = require('../data/strats.json');
-const { getChainRpc } = require('../utils/getChainData');
+const chains = require('../data/chains');
 
 const abi = [
   'function setCallFee(uint256 _callFee) public',
@@ -18,7 +18,7 @@ async function main() {
     // Not the chain we're interested. Skip.
     if (strat.chainId !== config.chainToUpdate) continue;
 
-    const provider = new ethers.providers.JsonRpcProvider(getChainRpc(strat.chainId));
+    const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
     const signer = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
     const stratContract = new ethers.Contract(strat.address, abi, signer);
 

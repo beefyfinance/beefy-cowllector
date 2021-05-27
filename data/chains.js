@@ -1,9 +1,10 @@
-const chains = [
-  {
+const chains = {
+  56: {
     id: 'bsc',
     chainId: 56,
     wnative: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     rewardPool: '0x453D4Ba9a2D594314DF88564248497F7D74d6b2C',
+    treasury: '0x4A32De8c248533C28904b24B4cFCFE18E9F2ad01',
     beefyFeeBatcher: '0xEB41298BA4Ea3865c33bDE8f60eC414421050d53',
     rpc: process.env.BSC_RPC,
     appVaultsFilename: 'bsc_pools.js',
@@ -11,25 +12,29 @@ const chains = [
     queryLimit: 1000,
     queryInterval: 100,
     firstRewardBlock: 1457038,
+    blockTime: 3,
   },
-  {
+  128: {
     id: 'heco',
     chainId: 128,
     wnative: '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F',
     rewardPool: '0x5f7347fedfD0b374e8CE8ed19Fc839F59FB59a3B',
-    beefyFeeBatcher: null,
+    treasury: '0xf4859A3f36fBcA24BF8299bf56359fB441b03034',
+    beefyFeeBatcher: '0x183D1aaEf1a86De6f16B2737c30eF94a6d2A9308',
     rpc: process.env.HECO_RPC,
     appVaultsFilename: 'heco_pools.js',
     multicall: '0x2776CF9B6E2Fa7B33A37139C3CB1ee362Ff0356e',
     queryLimit: 2000,
     queryInterval: 100,
     firstRewardBlock: 3850000,
+    blockTime: 3,
   },
-  {
+  43114: {
     id: 'avax',
     chainId: 43114,
     wnative: '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
     rewardPool: '0x86d38c6b6313c5A3021D68D1F57CF5e69197592A',
+    treasury: '0xA3e3Af161943CfB3941B631676134bb048739727',
     beefyFeeBatcher: null,
     rpc: process.env.AVAX_RPC,
     appVaultsFilename: 'avalanche_pools.js',
@@ -37,12 +42,14 @@ const chains = [
     queryLimit: 512,
     queryInterval: 100,
     firstRewardBlock: 0,
+    blockTime: 5,
   },
-  {
+  137: {
     id: 'polygon',
     chainId: 137,
     wnative: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     rewardPool: '0xDeB0a777ba6f59C78c654B8c92F80238c8002DD2',
+    treasury: '0x09EF0e7b555599A9F810789FfF68Db8DBF4c51a0',
     beefyFeeBatcher: null,
     rpc: process.env.POLYGON_RPC,
     appVaultsFilename: 'polygon_pools.js',
@@ -50,12 +57,14 @@ const chains = [
     queryLimit: 1000,
     queryInterval: 100,
     firstRewardBlock: 14172110,
+    blockTime: 2,
   },
-  {
+  250: {
     id: 'fantom',
     chainId: 250,
     wnative: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
     rewardPool: '0x7fB900C14c9889A559C777D016a885995cE759Ee',
+    treasury: '0xe6CcE165Aa3e52B2cC55F17b1dBC6A8fe5D66610',
     beefyFeeBatcher: null,
     rpc: process.env.FANTOM_RPC,
     appVaultsFilename: 'fantom_pools.js',
@@ -63,7 +72,8 @@ const chains = [
     queryLimit: 500,
     queryInterval: 100,
     firstRewardBlock: 7673132,
+    blockTime: 10,
   },
-];
+};
 
 module.exports = chains;

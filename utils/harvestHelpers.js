@@ -2,7 +2,6 @@ const ethers = require('ethers');
 const IStrategy = require('../abis/IStrategy.json');
 const axios = require('axios');
 const ERC20 = require('../abis/ERC20.json');
-const { getChainBlockTime } = require('./getChainData');
 const chains = require('../data/chains.js');
 
 const between = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -15,7 +14,7 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
   const filter = strategy.filters.StratHarvest(null);
   const currentBlock = await harvester.provider.getBlockNumber();
-  const blockTime = getChainBlockTime(strat.chainId);
+  const blockTime = chains[strat.chainId].blockTime;
   const oldestPeriodBlock = currentBlock - (strat.interval * 3600) / blockTime;
 
   let logs = [];

@@ -1,6 +1,6 @@
 const ethers = require('ethers');
 
-const { getChainRpc } = require('../utils/getChainData');
+const chains = require('../data/chains');
 const BeefyVault = require('../abis/BeefyVault.json');
 
 const addVault = async ({ vault, chainId, interval, vaults, strats }) => {
@@ -24,7 +24,7 @@ const addVault = async ({ vault, chainId, interval, vaults, strats }) => {
     chainId: chainId,
   };
 
-  const provider = new ethers.providers.JsonRpcProvider(getChainRpc(chainId));
+  const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
   const vaultContract = new ethers.Contract(vault, BeefyVault, provider);
 
   const mooName = await vaultContract.name();
