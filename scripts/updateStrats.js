@@ -13,7 +13,7 @@ const BeefyVault = require('../abis/BeefyVault.json');
 const addVault = require('../utils/addVault');
 
 const main = async () => {
-  for (chain of chains) {
+  for (chain of Object.values(chains)) {
     let vaults = await getVaults(chain.appVaultsFilename);
 
     const web3 = new Web3(chain.rpc);
