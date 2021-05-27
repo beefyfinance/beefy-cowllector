@@ -1,5 +1,85 @@
 [
   {
+    "name": "quick-bifi-quick",
+    "address": "0xA9319b8F327dBB744c63e6b9FfaDf9A93C30687c",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-bifi-eth",
+    "address": "0xa425DeadFf443f3574F02585CE5154BBd5D14213",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-vision-eth",
+    "address": "0xB682a2F1e6C87819e9aDEdBe366548B59Ab122E8",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "quick-matic-usdc",
+    "address": "0x75bC3FC2Cd3756f0dC7dc5211CE44fAcDd9B005E",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "cakev2-deri-busd",
+    "address": "0x0bb686a137D60710f9b5bE0122A5d690d6854166",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-chr-busd",
+    "address": "0x24AEa3B309e7ddEE3e838d188E34EaFf34603928",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "iron-iron-usdc",
+    "address": "0x402ee2A54138465D19EFdEFA60c1d9ffDFfF41eC",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "iron-titan-matic",
+    "address": "0x83c6e9C6119D0a7C1ac4fF86b970e54278140D45",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "quick-cc10-eth",
     "address": "0x9e6d524b000066e60284E2Ee14437d071B6b498F",
     "interval": 6,
