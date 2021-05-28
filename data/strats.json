@@ -1,5 +1,15 @@
 [
   {
+    "name": "dopple-ust-lp",
+    "address": "0xbF50324fE8be7Dc33914EF72394fae035e6d5A4C",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "quick-bifi-quick",
     "address": "0xA9319b8F327dBB744c63e6b9FfaDf9A93C30687c",
     "interval": 6,
