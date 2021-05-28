@@ -1,5 +1,37 @@
 [
   {
+    "id": "quick-btc-usdc",
+    "name": "Moo Quick wBTC-USDC",
+    "contract": "0x91a55E4b057119e20334258f7C5EAB8822491CEb",
+    "oracle": "lps",
+    "oracleId": "quick-btc-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "banana-sushi-bnb",
+    "name": "Moo Ape SUSHI-BNB",
+    "contract": "0x0DC52004341103FF00C65b9c1370c2c2d125CBc5",
+    "oracle": "lps",
+    "oracleId": "banana-sushi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-dot-bnb",
+    "name": "Moo Ape DOT-BNB",
+    "contract": "0x036D059Dbf58CB624CfdFDaAbCa6D3f80c2f8b3C",
+    "oracle": "lps",
+    "oracleId": "banana-dot-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-xrp-bnb",
+    "name": "Moo Ape XRP-BNB",
+    "contract": "0xb8624845cfaC1B65Da120bD25d0C1a921f8B178d",
+    "oracle": "lps",
+    "oracleId": "banana-xrp-bnb",
+    "tvl": 0
+  },
+  {
     "id": "dopple-ust-lp",
     "name": "Moo Dopple UstLP",
     "contract": "0x4Af8ED7c9f5D0C672F71a82c827FC3A02485791F",

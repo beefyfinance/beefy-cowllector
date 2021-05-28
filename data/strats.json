@@ -1,5 +1,45 @@
 [
   {
+    "name": "quick-btc-usdc",
+    "address": "0x15b0A1c6463261Ef4941b9212F09d54f2CD51899",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "banana-sushi-bnb",
+    "address": "0xA349d04BFE6215D97a8a6350EEE0A3f00fb7ddF1",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-dot-bnb",
+    "address": "0x4BC5a4199C61F907D9dBeE36F93bA3dD1F770C1E",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "banana-xrp-bnb",
+    "address": "0xb3C630f032041D3e45855a44B7bCF459D8b226f8",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "dopple-ust-lp",
     "address": "0xbF50324fE8be7Dc33914EF72394fae035e6d5A4C",
     "interval": 2,
