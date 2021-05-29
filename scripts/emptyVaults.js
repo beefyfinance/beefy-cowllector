@@ -8,6 +8,7 @@ const { getVaults } = require('../utils/getVaults');
 const chains = require('../data/chains');
 const BeefyVault = require('../abis/BeefyVault.json');
 
+// eval "$(cat .env.example | tr '\n' ' ') yarn empty"
 const main = async () => {
   for (const chain of Object.values(chains)) {
     const vaults = await getVaults(chain.appVaultsFilename);
