@@ -1,5 +1,35 @@
 [
   {
+    "name": "cakev2-kalm-bnb",
+    "address": "0x2E92EE2670E21C5d9e1e49eFb4BB9868134Fe010",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-ez-bnb",
+    "address": "0x10B655116b9E7677945D74027cAd51cC16ff7d53",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-vrt-bnb",
+    "address": "0x1daC7dfAFD2388c28464476420ffD875fa340bFB",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "quick-btc-usdc",
     "address": "0x15b0A1c6463261Ef4941b9212F09d54f2CD51899",
     "interval": 1,

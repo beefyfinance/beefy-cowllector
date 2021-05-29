@@ -1,5 +1,29 @@
 [
   {
+    "id": "cakev2-kalm-bnb",
+    "name": "Moo CakeV2 KALM-BNB",
+    "contract": "0x487D8014F8803757e0542e127854DEBd213A39e5",
+    "oracle": "lps",
+    "oracleId": "cakev2-kalm-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-ez-bnb",
+    "name": "Moo CakeV2 EZ-BNB",
+    "contract": "0x3Ee4b86Bf6BbceBf46695C0F3703F87Ff18a776b",
+    "oracle": "lps",
+    "oracleId": "cakev2-ez-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-vrt-bnb",
+    "name": "Moo CakeV2 VRT-BNB",
+    "contract": "0xA8cC688E9B387b0cBe41D0CcF55875CE2318695A",
+    "oracle": "lps",
+    "oracleId": "cakev2-vrt-bnb",
+    "tvl": 0
+  },
+  {
     "id": "quick-btc-usdc",
     "name": "Moo Quick wBTC-USDC",
     "contract": "0x91a55E4b057119e20334258f7C5EAB8822491CEb",
