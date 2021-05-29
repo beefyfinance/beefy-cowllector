@@ -1,5 +1,37 @@
 [
   {
+    "id": "cakev2-well-busd",
+    "name": "Moo CakeV2 WELL-BUSD",
+    "contract": "0x78B8AfFA682ef34ac92b800715C3AdfF7E2D3879",
+    "oracle": "lps",
+    "oracleId": "cakev2-well-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-popen-bnb",
+    "name": "Moo CakeV2 POPEN-BNB",
+    "contract": "0xC1D74e394ed525A780f3a02d6b3716803035e6bE",
+    "oracle": "lps",
+    "oracleId": "cakev2-popen-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-blz-bnb",
+    "name": "Moo Ape BLZ-BNB",
+    "contract": "0x6081601e62F51d9e956aa704B506E4c202E0E016",
+    "oracle": "lps",
+    "oracleId": "banana-blz-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-snx-bnb",
+    "name": "Moo Ape SNX-BNB",
+    "contract": "0x0e4FCD49Bd0A50D31f321509C8B2e7f21Fb87D26",
+    "oracle": "lps",
+    "oracleId": "banana-snx-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-kalm-bnb",
     "name": "Moo CakeV2 KALM-BNB",
     "contract": "0x487D8014F8803757e0542e127854DEBd213A39e5",
