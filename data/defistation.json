@@ -1,5 +1,13 @@
 [
   {
+    "id": "mdex-bsc-fil-usdt",
+    "name": "mooMdexFIL-USDT",
+    "contract": "0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-fil-usdt",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-well-busd",
     "name": "Moo CakeV2 WELL-BUSD",
     "contract": "0x78B8AfFA682ef34ac92b800715C3AdfF7E2D3879",

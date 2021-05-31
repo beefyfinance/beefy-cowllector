@@ -1,5 +1,15 @@
 [
   {
+    "name": "mdex-bsc-fil-usdt",
+    "address": "0xf219cfd4d0d32a3c1204fd7323e0acfdd505302f",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "iron-titan-iron",
     "address": "0xa3c2E189a3c809a04d52DD1FfF1610439798887c",
     "interval": 1,
