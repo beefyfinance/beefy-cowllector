@@ -1,5 +1,15 @@
 [
   {
+    "name": "ellipsis-eps",
+    "address": "0x1F88694dE93983aea55E2e3C8e0bA46Cf7b3b047",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "mdex-bsc-fil-usdt",
     "address": "0xf219cfd4d0d32a3c1204fd7323e0acfdd505302f",
     "interval": 4,
