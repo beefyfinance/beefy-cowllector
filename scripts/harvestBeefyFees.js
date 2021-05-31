@@ -10,7 +10,7 @@ const harvestBeefyFees = async () => {
 
     try {
       const provider = new ethers.providers.JsonRpcProvider(chain.rpc);
-      const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
+      const harvester = new ethers.Wallet(process.env.HARVESTER_PK, provider);
       const batcher = new ethers.Contract(chain.beefyFeeBatcher, abi, harvester);
 
       let tx = await batcher.harvest();

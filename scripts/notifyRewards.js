@@ -12,7 +12,7 @@ const notifyRewards = async () => {
 
     try {
       const provider = new ethers.providers.JsonRpcProvider(chain.rpc);
-      const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
+      const harvester = new ethers.Wallet(process.env.REWARDER_PK, provider);
       const rewardsContract = new ethers.Contract(chain.rewardPool, RewardPool, harvester);
       const wnativeContract = new ethers.Contract(chain.wnative, WrappedNative, harvester);
 

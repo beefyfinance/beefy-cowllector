@@ -18,7 +18,7 @@ const main = async () => {
     if (strat.chainId !== config.chainId) continue;
 
     const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
-    const signer = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
+    const signer = new ethers.Wallet(process.env.UPGRADER_PK, provider);
     const stratContract = new ethers.Contract(strat.address, abi, signer);
 
     let beefyFeeRecipient;

@@ -1,4 +1,4 @@
-const {BigNumber, utils, ethers} = require('ethers');
+const { BigNumber, utils, ethers } = require('ethers');
 const axios = require('axios');
 
 const fetchPrice = require('../utils/fetchPrice');
@@ -24,7 +24,6 @@ const fetchVaultTvl = async ({ vault, harvester }) => {
 
     return vault.tvl;
   } catch (err) {
-
     console.log('error fetching price tvl:', vault.oracleId);
     return 0;
   }
@@ -32,10 +31,10 @@ const fetchVaultTvl = async ({ vault, harvester }) => {
 
 const updateDefistation = async () => {
   const provider = new ethers.providers.JsonRpcProvider(process.env.BSC_RPC);
-  const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
-  
+  const harvester = new ethers.Wallet(process.env.REWARDER_PK, provider);
+
   let promises = [];
-  vaults.forEach((vault) => promises.push(fetchVaultTvl({ vault, harvester })));
+  vaults.forEach(vault => promises.push(fetchVaultTvl({ vault, harvester })));
   const values = await Promise.all(promises);
   const totalTvl = values.reduce((acc, curr) => Number(acc) + Number(curr));
 
@@ -43,23 +42,26 @@ const updateDefistation = async () => {
     tvl: totalTvl,
     bnb: 0,
     test: false,
-    data: vaults
+    data: vaults,
   };
-  
-  const auth = Buffer.from(`${process.env.DEFISTATION_ID}:${process.env.DEFISTATION_KEY}`).toString('base64');
 
-  axios.post(DEFISTATION_URL, data, {
-    headers: {
-      'Authorization': `Basic ${auth}`,
-      'Content-Type': 'application/json'
-    }
-  })
-  .then((res) => {
-    console.log(res.data)
-  })
-  .catch((error) => {
-    console.error(error)
-  })
+  const auth = Buffer.from(`${process.env.DEFISTATION_ID}:${process.env.DEFISTATION_KEY}`).toString(
+    'base64'
+  );
+
+  axios
+    .post(DEFISTATION_URL, data, {
+      headers: {
+        Authorization: `Basic ${auth}`,
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(res => {
+      console.log(res.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
 
   // DEBUG tvl
   // console.log(data);

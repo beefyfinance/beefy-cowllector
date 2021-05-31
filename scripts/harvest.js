@@ -17,7 +17,7 @@ const harvest = async () => {
       console.log(`Analizing harvest of ${strat.name}.`);
 
       const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
-      const harvester = new ethers.Wallet(process.env.REWARDER_PRIVATE_KEY, provider);
+      const harvester = new ethers.Wallet(process.env.HARVESTER_PK, provider);
 
       let shouldHarvest = true;
 
