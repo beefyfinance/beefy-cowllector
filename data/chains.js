@@ -65,7 +65,7 @@ const chains = {
     wnative: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
     rewardPool: '0x7fB900C14c9889A559C777D016a885995cE759Ee',
     treasury: '0xe6CcE165Aa3e52B2cC55F17b1dBC6A8fe5D66610',
-    beefyFeeBatcher: '0x0b1d21660EC88a4e56B79420AA15627835b09a04',
+    beefyFeeBatcher: '0x4f8865A1FcE2877cCB55264600D4759d222E8fEB',
     rpc: process.env.FANTOM_RPC,
     appVaultsFilename: 'fantom_pools.js',
     multicall: '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982',
