@@ -1,5 +1,75 @@
 [
   {
+    "name": "sushi-grt-eth",
+    "address": "0x441b8Ad6Cfa6707E7A8F1398c2067996611fbc66",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-frax-fxs",
+    "address": "0x3bb6D727622A35816916C3e04920ADd7800BAB0E",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-frax-usdc",
+    "address": "0xE4cd42e17bbc54455c5855eCF4Bd46D51dA5133C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-wmatic-woofy",
+    "address": "0x7fB420eB7D5B19131f40E8D0422202cF0B46d458",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-renDOGE-eth",
+    "address": "0x6D973E33af0801Af13b7939956745c72bB17aa1E",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-usdc-dai",
+    "address": "0xeb38761E6b58Bb9acB4F52077d9eEbFf7D0248Bd ",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-snx-eth",
+    "address": "0x98F332EC4D39fB943080813B381b88D57b432124",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "ellipsis-eps",
     "address": "0x1F88694dE93983aea55E2e3C8e0bA46Cf7b3b047",
     "interval": 4,
