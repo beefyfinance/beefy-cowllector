@@ -1,5 +1,25 @@
 [
   {
+    "name": "boo-bifi-ftm",
+    "address": "0xD5ff0aCA943C918EEE069b1E80Ee0D9d016b2F98",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
+    "name": "fantom-bifi-maxi",
+    "address": "0x230691a28C8290A553BFBC911Ab2AbA0b2df152D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 250
+  },
+  {
     "name": "sushi-grt-eth",
     "address": "0x441b8Ad6Cfa6707E7A8F1398c2067996611fbc66",
     "interval": 1,
