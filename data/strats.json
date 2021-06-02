@@ -1,5 +1,25 @@
 [
   {
+    "name": "polycat-sushi-fish-matic",
+    "address": "0x2ABB0ea3A5C038f60E677Bf14d2F6095786650Ae",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "polycat-quick-fish-matic",
+    "address": "0x92E586d7dB14483C103c2e0FE6A596F8b55DA752",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
     "name": "cakev2-ktn-bnb",
     "address": "0xE2fE9501c5D0C7823Ad9f15081df8FD0d8a85755",
     "interval": 4,
