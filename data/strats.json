@@ -1,5 +1,45 @@
 [
   {
+    "name": "quick-titan-eth",
+    "address": "0x8136C5EE816fD80b80C9679e785F37EBdf2199eE",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "iron-quick-iron-usdc",
+    "address": "0x099CE8F12D9824F7441950759d2999022b717ff2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 137
+  },
+  {
+    "name": "mdex-bsc-bnb-usdt",
+    "address": "0xD82Ba12777422D88b8D38518804F9C2Aa2888049",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-tusd-busd",
+    "address": "0x31a0eDa9758c11b0639fFbb3F10c27E580AA58bd",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "polycat-sushi-fish-matic",
     "address": "0x2ABB0ea3A5C038f60E677Bf14d2F6095786650Ae",
     "interval": 1,
