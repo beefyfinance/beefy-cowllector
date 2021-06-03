@@ -1,5 +1,21 @@
 [
   {
+    "id": "mdex-bsc-bnb-usdt",
+    "name": "Moo Mdex BNB-USDT",
+    "contract": "0x7638db36fc21E030D5F8158B27181c3b27418bE2",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-bnb-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tusd-busd",
+    "name": "Moo CakeV2 TUSD-BUSD",
+    "contract": "0x62Cce60Bca43926e062ca2A4e2DcdAbEA5D2EAD2",
+    "oracle": "lps",
+    "oracleId": "cakev2-tusd-busd",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-ktn-bnb",
     "name": "Moo CakeV2 KTN-BNB",
     "contract": "0xBD322911Bd9E944743CDb88Cb5f9da33B5CD55BE",
