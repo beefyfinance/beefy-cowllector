@@ -6,18 +6,24 @@ let strats = require('../data/strats.json');
 
 const config = {
   chains: [56],
-  interval: 1,
+  min: 1,
+  max: 7,
+  interval: 2,
 };
 
 const main = async () => {
   strats = strats.map(strat => {
-    if (!config.chains.includes(strat.chainId)) {
-      return strat;
+    if (config.chains.includes(strat.chainId)) {
+      if (strat.interval >= config.min && strat.interval <= config.max) {
+        return {
+          ...strat,
+          interval: strat.interval + config.interval,
+        };
+      } else {
+        return strat;
+      }
     } else {
-      return {
-        ...strat,
-        interval: strat.interval + config.interval,
-      };
+      return strat;
     }
   });
 

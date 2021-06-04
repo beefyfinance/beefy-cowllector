@@ -13,6 +13,7 @@ const getRewardsReceived = async chain => {
   const details = await getLastRewardAddedDetails(chain, lastBlock, web3);
 
   const transferTopic = getTopicFromSignature('Transfer(address,address,uint256)');
+  const fromTopic = getTopicFromAddress(chain.beefyFeeBatcher);
   const toTopic = getTopicFromAddress(chain.rewardPool);
 
   let fromBlock = details.blockNumber;
@@ -27,7 +28,7 @@ const getRewardsReceived = async chain => {
       fromBlock: fromBlock,
       toBlock: toBlock - 1,
       address: chain.wnative,
-      topics: [transferTopic, null, toTopic],
+      topics: [transferTopic, fromTopic, toTopic],
     });
 
     for (let i = 0; i < logs.length; i++) {

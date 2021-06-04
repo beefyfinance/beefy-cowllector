@@ -1,6 +1,6 @@
-const { addressBook } = require("blockchain-addressbook")
+const { addressBook } = require('blockchain-addressbook');
 
-const { bsc, heco, avax, polygon, fantom } = addressBook
+const { bsc, heco, avax, polygon, fantom } = addressBook;
 
 const chains = {
   56: {
