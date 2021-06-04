@@ -18,26 +18,30 @@ async function main() {
     // Not the chain we're interested. Skip.
     if (strat.chainId !== config.chainToUpdate) continue;
 
-    const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
-    const signer = new ethers.Wallet(process.env.KEEPER_PK, provider);
-    const stratContract = new ethers.Contract(strat.address, abi, signer);
+    try {
+      const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
+      const signer = new ethers.Wallet(process.env.KEEPER_PK, provider);
+      const stratContract = new ethers.Contract(strat.address, abi, signer);
 
-    const callFee = await stratContract.callFee();
+      const callFee = await stratContract.callFee();
 
-    // The call fee is already the target value.
-    if (callFee.eq(config.newCallFee)) continue;
+      // The call fee is already the target value.
+      if (callFee.eq(config.newCallFee)) continue;
 
-    // Update the call fee.
-    let tx = await stratContract.setCallFee(config.newCallFee);
-    tx = await tx.wait();
+      // Update the call fee.
+      let tx = await stratContract.setCallFee(config.newCallFee);
+      tx = await tx.wait();
 
-    const newCallFee = await stratContract.callFee();
+      const newCallFee = await stratContract.callFee();
 
-    tx.status === 1
-      ? console.log(
-          `Call fee updated for ${strat.name}. Old: ${callFee} | New: ${newCallFee}. done with tx: ${tx.transactionHash}`
-        )
-      : console.log(`Call fee update for ${strat.name} failed with tx: ${tx.transactionHash}`);
+      tx.status === 1
+        ? console.log(
+            `Call fee updated for ${strat.name}. Old: ${callFee} | New: ${newCallFee}. done with tx: ${tx.transactionHash}`
+          )
+        : console.log(`Call fee update for ${strat.name} failed with tx: ${tx.transactionHash}`);
+    } catch (e) {
+      console.log(`Something went wrong with ${strat.name}: ${e}`);
+    }
   }
 }
 

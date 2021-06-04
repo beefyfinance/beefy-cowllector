@@ -17,14 +17,26 @@ const notifyRewards = async () => {
       const wnativeContract = new ethers.Contract(chain.wnative, WrappedNative, harvester);
 
       const rewardsReceived = await getRewardsReceived(chain);
+      const rewardsNormalized = rewardsReceived.div('1e18').toFixed();
+
       let balance = await wnativeContract.balanceOf(chain.rewardPool);
       balance = new BigNumber(balance.toString());
 
       if (rewardsReceived.lte(balance)) {
-        await rewardsContract.notifyRewardAmount(rewardsReceived.toFixed());
-        console.log(`${rewardsReceived.div('1e18').toFixed()} in rewards notified on ${chain.id}.`);
+        let tx = await rewardsContract.notifyRewardAmount(rewardsReceived.toFixed(), {
+          gasLimit: 200000,
+        });
+        tx = await tx.wait();
+
+        tx.status === 1
+          ? console.log(
+              `Notify ${rewardsNormalized} on ${chain.id} with tx: ${tx.transactionHash}.`
+            )
+          : console.log(
+              `Notify of ${rewardsNormalized} on chain ${chain.chainId} failed with tx: ${tx.transactionHash}`
+            );
       } else {
-        console.log('Attempting to notify more than balance', rewardsReceived.toFixed());
+        console.log(`Attempting to notify more than balance: ${rewardsNormalized}`);
       }
     } catch (e) {
       console.log(`Something went wrong with chain ${chain.chainId}: ${e}`);

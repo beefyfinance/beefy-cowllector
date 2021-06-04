@@ -15,8 +15,14 @@ const unwrapSubsidy = async () => {
       const balance = await wrappedNativeContract.balanceOf(harvester.address);
 
       if (balance > 0) {
-        await wrappedNativeContract.withdraw(balance.toString());
-        console.log(`Successfully unwrapped ${balance.toString()}`);
+        let tx = await wrappedNativeContract.withdraw(balance.toString(), { gasLimit: 300000 });
+        tx = await tx.wait();
+
+        tx.status === 1
+          ? console.log(
+              `Successfully unwrapped ${balance.toString()} with tx: ${tx.transactionHash}.`
+            )
+          : console.log(`Unwrap of ${balance.toString()} failed with tx: ${tx.transactionHash}`);
       }
     } catch (e) {
       console.log(`Something went wrong with chain ${chain.chainId}. Couldn't unwrap: ${e}`);
