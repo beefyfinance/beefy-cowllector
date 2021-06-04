@@ -1,5 +1,25 @@
 [
   {
+    "name": "panther-panther-bnb",
+    "address": "0x07f35757Fb1057a3c4b184af58312B1EB7eB5e26",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "panther-panther-busd",
+    "address": "0x98798cFf9D3a208A8E4e0661C3708Aacfe38b1eD",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "quick-titan-eth",
     "address": "0x8136C5EE816fD80b80C9679e785F37EBdf2199eE",
     "interval": 1,
