@@ -1,5 +1,45 @@
 [
   {
+    "name": "cakev2-mtrg-busd",
+    "address": "0x10804eF940f6258378f73cC48Be9e3d55592674c",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-qkc-busd",
+    "address": "0x4Fa2E74E3bE13cc9B3a68237E84A82Ef03E50019",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-mx-busd",
+    "address": "0x6352206e5E056A71eE83838b27F63f1d8236D4C3",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-bcfx-busd",
+    "address": "0x32E2495B7Bf9C76E93EE3Bfd536f006A790a2bba",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "garuda-garuda-bnb",
     "address": "0xA4bF615396bf919FC424822a72431cDB0ABF2DEb",
     "interval": 2,

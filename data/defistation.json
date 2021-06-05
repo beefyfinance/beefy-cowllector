@@ -1,4 +1,37 @@
 [
+
+  {
+    "id": "cakev2-mtrg-busd",
+    "name": "Moo CakeV2 MTRG-BUSD",
+    "contract": "0xD1A43172f05D0D9a3DD1B9c861332378FdaDB88c",
+    "oracle": "lps",
+    "oracleId": "cakev2-mtrg-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-qkc-busd",
+    "name": "Moo CakeV2 QKC-BUSD",
+    "contract": "0xE61b206339EA172824fBF334cADFe2A6b0dEbAeD",
+    "oracle": "lps",
+    "oracleId": "cakev2-qkc-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-mx-busd",
+    "name": "Moo CakeV2 MX-BUSD",
+    "contract": "0x7e7CEbCC006c74a406138BF94CA3815CE04461e0",
+    "oracle": "lps",
+    "oracleId": "cakev2-mx-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bcfx-busd",
+    "name": "Moo CakeV2 BCFX-BUSD",
+    "contract": "0x642b255718D365212f1CD2c7DFc8409573158e1d",
+    "oracle": "lps",
+    "oracleId": "cakev2-bcfx-busd",
+    "tvl": 0
+  },
   {
     "id": "garuda-garuda-bnb",
     "name": "Moo Garuda GARUDA-BNB",
