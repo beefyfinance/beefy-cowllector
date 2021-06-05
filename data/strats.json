@@ -1,5 +1,15 @@
 [
   {
+    "name": "garuda-garuda-bnb",
+    "address": "0xA4bF615396bf919FC424822a72431cDB0ABF2DEb",
+    "interval": 2,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "harvestEvent": true,
+    "chainId": 56
+  },
+  {
     "name": "panther-panther-bnb",
     "address": "0x07f35757Fb1057a3c4b184af58312B1EB7eB5e26",
     "interval": 6,
