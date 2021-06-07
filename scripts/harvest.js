@@ -5,7 +5,6 @@ const {
   isNewHarvestPeriod,
   isNewHarvestPeriodBscscan,
   hasStakers,
-  subsidyWant,
   sleep,
 } = require('../utils/harvestHelpers');
 const chains = require('../data/chains');
@@ -32,8 +31,6 @@ const harvest = async () => {
       }
 
       if (shouldHarvest) {
-        if (strat.subsidy) await subsidyWant(strat, harvester);
-
         const stratContract = new ethers.Contract(strat.address, IStrategy, harvester);
         let tx;
 

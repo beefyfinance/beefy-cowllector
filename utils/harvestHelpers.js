@@ -69,22 +69,10 @@ const hasStakers = async (strat, harvester) => {
   return balance.gt(0) ? true : false;
 };
 
-// Sometimes required due to the Fortube strat bug.
-// It will crash if users haven't withdrawn anything.
-const subsidyWant = async (strat, harvester) => {
-  const { want, address, subsidy } = strat;
-  const wantContract = new ethers.Contract(want, ERC20, harvester);
-  const balance = await wantContract.balanceOf(address);
-  if (balance.lt(subsidy)) {
-    await wantContract.transfer(address, subsidy);
-  }
-};
-
 module.exports = {
   isNewHarvestPeriod,
   isNewHarvestPeriodBscscan,
   hasStakers,
-  subsidyWant,
   sleep,
   between,
 };
