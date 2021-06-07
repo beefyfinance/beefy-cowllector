@@ -1,5 +1,12 @@
 [
-
+  {
+    "id": "mdex-fil-usdt",
+    "name": "Moo Mdex FIL-USDT",
+    "contract": "0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622",
+    "oracle": "lps",
+    "oracleId": "mdex-fil-usdt",
+    "tvl": 0
+  },
   {
     "id": "cakev2-mtrg-busd",
     "name": "Moo CakeV2 MTRG-BUSD",
