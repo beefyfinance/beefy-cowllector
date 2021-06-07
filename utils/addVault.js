@@ -20,7 +20,6 @@ const addVault = async ({ vault, chainId, interval, vaults, strats }) => {
     harvestSignature: '0x4641257d',
     depositsPaused: false,
     harvestPaused: false,
-    harvestEvent: true,
     chainId: chainId,
   };
 
