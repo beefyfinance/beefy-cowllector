@@ -1,5 +1,32 @@
 [
   {
+    "name": "banana-shib-bnb",
+    "address": "0x7963f31845293943F828264EE02823672eD2B745",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-celr-bnb",
+    "address": "0x46d44d6B242884ee587513a892e05c133C8fe3aB",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-ata-bnb",
+    "address": "0xBAf13A54507d41b6b4f31C49db2c0dE6ACa9aD14",
+    "interval": 8,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "quick-defi5-quick",
     "address": "0x1848FBA9Ac7B4783F513d336171037941a637c55",
     "interval": 6,

@@ -1,5 +1,29 @@
 [
   {
+    "id": "banana-shib-bnb",
+    "name": "Moo Ape SHIB-BNB",
+    "contract": "0x25699A5Bdcb524e3030a89c2f5088a076DC562bC",
+    "oracle": "lps",
+    "oracleId": "banana-shib-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-celr-bnb",
+    "name": "Moo Ape CELR-BNB",
+    "contract": "0x04E56F75EDD898BEe4A136bDBAb2b47Be59109c8",
+    "oracle": "lps",
+    "oracleId": "banana-celr-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-ata-bnb",
+    "name": "Moo CakeV2 ATA-BNB",
+    "contract": "0x76746cDb7C1DDA92c6211D5Cc4bC03859c5Ee8a1",
+    "oracle": "lps",
+    "oracleId": "cakev2-ata-bnb",
+    "tvl": 0
+  },
+  {
     "id": "mdex-fil-usdt",
     "name": "Moo Mdex FIL-USDT",
     "contract": "0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622",
