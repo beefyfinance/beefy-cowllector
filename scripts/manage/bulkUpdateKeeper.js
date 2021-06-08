@@ -1,7 +1,7 @@
 const ethers = require('ethers');
 
-const chains = require('../data/chains');
-const strats = require('../data/strats.json');
+const chains = require('../../data/chains');
+const strats = require('../../data/strats.json');
 
 const abi = [
   'function setKeeper(address _keeper) public',

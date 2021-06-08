@@ -1,7 +1,7 @@
 const ethers = require('ethers');
 
-const chains = require('../data/chains');
-const { getVaults } = require('../utils/getVaults');
+const chains = require('../../data/chains');
+const { getVaults } = require('../../utils/getVaults');
 
 const abi = [
   'function transferOwnership(address _owner) public',

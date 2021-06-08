@@ -648,15 +648,6 @@
     "chainId": 56
   },
   {
-    "name": "jetfuel-streetlp",
-    "address": "0x8A91e53cdd652b96655b526656b4DB1141bCc6f6",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "nyacash-nyas/usdt",
     "address": "0xd9A4E5Cc19AFfe1660Bb4C80771b227F14fCD23f",
     "interval": 10,
@@ -1415,24 +1406,6 @@
   {
     "name": "banana-watch-bnb",
     "address": "0x95D965048920A9917b079E6Eb53Bf10d1C0F66a0",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-fts-bnb",
-    "address": "0x8038A8A1765Ae44629Ab74ffDC39Af60b02554f4",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-fuel-bnb",
-    "address": "0xaBbc97E8B55f50d648bFb58B9b4498B8e3671F22",
     "interval": 10,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3922,69 +3895,6 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-street-fuel/bnb",
-    "address": "0x8f4ca8E2e230b44f46B93db117380bBb8281f841",
-    "interval": 8,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-pk-eth/bnb",
-    "address": "0xb16ceE470632ba94b7d21d2bC56d284ff0b0C04C",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-pk-cake/bnb",
-    "address": "0xBF36AF3bfE6C4cD0286C24761060488eB1af2618",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-pk-uni/bnb",
-    "address": "0xf8B5Cb47232938f1A75546fA5182b8af312Fc380",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-pk-link/bnb",
-    "address": "0xfA416c3b89cc2E7902F58A4bEA62Ab7E24bd5985",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-pk-busd/bnb",
-    "address": "0x45973436B06e46dc37333e65f98A190A392476a4",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "jetfuel-pk-usdt/bnb",
-    "address": "0xB126E22F4d9EfE943c94E0Ef493FF34f98AdC9E1",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
     "chainId": 56
   },
   {
