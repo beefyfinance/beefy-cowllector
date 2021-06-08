@@ -1,5 +1,32 @@
 [
   {
+    "name": "lendhub-eth",
+    "address": "0xE7db2DDDbd4cab341A93feFb27696CeA6072532B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 128
+  },
+  {
+    "name": "lendhub-lhb-usdt",
+    "address": "0x73766FceB829357bC0a9eddD0807467970A5dCA0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 128
+  },
+  {
+    "name": "lendhub-lhb-wht",
+    "address": "0xCDa53a5Cc60B138EFd677249BC3d3e2dc0b8e016",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 128
+  },
+  {
     "name": "banana-shib-bnb",
     "address": "0x7963f31845293943F828264EE02823672eD2B745",
     "interval": 8,
