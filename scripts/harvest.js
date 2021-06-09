@@ -57,7 +57,7 @@ const harvest = async () => {
       console.log(`Couldn't harvest strat ${strat.name}: ${e}`);
     }
 
-    await sleep(5000);
+    await sleep(2000);
   }
 };
 
