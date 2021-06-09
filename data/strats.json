@@ -1,5 +1,23 @@
 [
   {
+    "name": "tenfi-tenfi-busd",
+    "address": "0x1c04cAf119Bc1367923d9DeE8B119d8d3735ea82",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "tenfi-tenfi-bnb",
+    "address": "0xc211F209b437206C7293CD3F60179155F0FFF01d",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "lendhub-eth",
     "address": "0xE7db2DDDbd4cab341A93feFb27696CeA6072532B",
     "interval": 1,
