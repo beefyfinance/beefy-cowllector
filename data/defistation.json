@@ -1,5 +1,29 @@
 [
   {
+    "id": "cakev2-mbox-bnb",
+    "name": "Moo CakeV2 MBOX-BNB",
+    "contract": "0x2Dd2a81d1B44723f6106f621d0D64848fbdbCc77",
+    "oracle": "lps",
+    "oracleId": "cakev2-mbox-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "tenfi-tenfi-busd",
+    "name": "Moo Ten TENFI-BUSD",
+    "contract": "0x00F204F524a433f45a6278c2C0E10F5292b3C5B9",
+    "oracle": "lps",
+    "oracleId": "tenfi-tenfi-busd",
+    "tvl": 0
+  },
+  {
+    "id": "tenfi-tenfi-bnb",
+    "name": "Moo Ten TENFI-BNB",
+    "contract": "0x0Ce6FeC7521b7d054b5B0a5F43D49120f9d6CFbc",
+    "oracle": "lps",
+    "oracleId": "tenfi-tenfi-bnb",
+    "tvl": 0
+  },
+  {
     "id": "banana-shib-bnb",
     "name": "Moo Ape SHIB-BNB",
     "contract": "0x25699A5Bdcb524e3030a89c2f5088a076DC562bC",
