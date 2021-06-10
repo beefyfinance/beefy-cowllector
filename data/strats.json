@@ -1,5 +1,68 @@
 [
   {
+    "name": "boo-ftm-sushi",
+    "address": "0x3C180c415332999Fa7e5a65E8490A57fe8Fd7fdb",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-ftm-band",
+    "address": "0x3464ab12F2c2fe3DAa90Aa7D90DDe6BA470422BD",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-ftm-badger",
+    "address": "0xa6914AbA898D613152DB7D338381d53b5Eae0C1d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-ftm-ice",
+    "address": "0x8F35521cf1B9145E2C5231B8B3E1c3AEadDc4027",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "quick-fff-quick",
+    "address": "0x4E0e85692b239e57128103b4Ad6f39Ac3BBE0c15",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-dai-eth",
+    "address": "0x9B14a16609b0Bf5DA858115b4537e2CD01B3133C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-usdc-eth",
+    "address": "0x2F6Ebc03469De09FE6D933e4FA56772dF400BfA6",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "banana-typh-bnb",
     "address": "0x02aeDd0d8dE62aEf91aE41E78EfCD0A4d6D70807",
     "interval": 4,
