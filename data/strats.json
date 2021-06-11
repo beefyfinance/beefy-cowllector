@@ -1,5 +1,32 @@
 [
   {
+    "name": "quick-usdc-dai",
+    "address": "0xD9756b1e8DB54d0ceB2312D1A690994B9aB5b99E",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-quick-uni",
+    "address": "0xc69888f561CcC4A8811d238d54F5C2BB4A88b49D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-link-quick",
+    "address": "0x384906EeC45e7E1020488880b8E619ac900F4ba2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "boo-ftm-sushi",
     "address": "0x3C180c415332999Fa7e5a65E8490A57fe8Fd7fdb",
     "interval": 1,
