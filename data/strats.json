@@ -1,7 +1,25 @@
 [
   {
+    "name": "sushi-eth-iron",
+    "address": "0x07EA978EB37731B78369a9c50C487C3aFD0BcA13",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-eth-wfil",
+    "address": "0x12B5EC1cFa07732540F3d9D4eCF040328bc1EEdC",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "quick-usdc-dai",
-    "address": "0xD9756b1e8DB54d0ceB2312D1A690994B9aB5b99E",
+    "address": "0x197c055e30c2e882A1BE6822480c688100658BEd",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -10,7 +28,7 @@
   },
   {
     "name": "quick-quick-uni",
-    "address": "0xc69888f561CcC4A8811d238d54F5C2BB4A88b49D",
+    "address": "0x4b0e4CDEA00C90F786bd817751159f46EA38A58D",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -19,7 +37,7 @@
   },
   {
     "name": "quick-link-quick",
-    "address": "0x384906EeC45e7E1020488880b8E619ac900F4ba2",
+    "address": "0xD208C42cd08a5CaD8C53add2365153e8e24EbdF9",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
