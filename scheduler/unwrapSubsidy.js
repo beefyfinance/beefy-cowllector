@@ -1,7 +1,7 @@
 const unwrapSubsidy = require('../scripts/unwrapSubsidy');
 
 const run = async () => {
-  console.log('>>>>>', 'harvestSubsidyRewarder()');
+  console.log('>>>>>', 'unwrapSubsidy()');
   await unwrapSubsidy();
 };
 

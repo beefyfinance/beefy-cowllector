@@ -2,12 +2,18 @@ const ethers = require('ethers');
 
 const WrappedNative = require('../abis/WrappedNative.json');
 const chains = require('../data/chains');
+const { isNewHarvestPeriodNaive } = require('../utils/harvestHelpers');
 
 const unwrapSubsidy = async () => {
   for (chain of Object.values(chains)) {
-    try {
-      console.log(`Unwrapping ${chain.id}`);
+    console.log(`Unwrapping ${chain.id}`);
 
+    if (!isNewHarvestPeriodNaive(chain.wnativeUnwrapInterval)) {
+      console.log(`It's not time to unwrap ${chain.id}.`);
+      continue;
+    }
+
+    try {
       const provider = new ethers.providers.JsonRpcProvider(chain.rpc);
       const harvester = new ethers.Wallet(process.env.HARVESTER_PK, provider);
 
@@ -20,9 +26,15 @@ const unwrapSubsidy = async () => {
 
         tx.status === 1
           ? console.log(
-              `Successfully unwrapped ${balance.toString()} with tx: ${tx.transactionHash}.`
+              `Successfully unwrapped ${balance.toString()} on ${chain.id} with tx: ${
+                tx.transactionHash
+              }.`
             )
-          : console.log(`Unwrap of ${balance.toString()} failed with tx: ${tx.transactionHash}`);
+          : console.log(
+              `Unwrap of ${balance.toString()} on ${chain.id} failed with tx: ${tx.transactionHash}`
+            );
+      } else {
+        console.log(`There is no balance to unwrap on ${chain.id}.`);
       }
     } catch (e) {
       console.log(`Something went wrong with chain ${chain.chainId}. Couldn't unwrap: ${e}`);
