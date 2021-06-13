@@ -9,6 +9,12 @@ const sleep = ms => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
 
+const isNewHarvestPeriodNaive = interval => {
+  const now = new Date();
+  const hour = now.getHours();
+  return hour % interval === 0;
+};
+
 const isNewHarvestPeriod = async (strat, harvester) => {
   const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
   const filter = strategy.filters.StratHarvest(null);
@@ -70,6 +76,7 @@ const hasStakers = async (strat, harvester) => {
 
 module.exports = {
   isNewHarvestPeriod,
+  isNewHarvestPeriodNaive,
   isNewHarvestPeriodBscscan,
   hasStakers,
   sleep,
