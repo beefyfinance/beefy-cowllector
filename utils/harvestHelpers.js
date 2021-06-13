@@ -1,7 +1,6 @@
 const ethers = require('ethers');
 const IStrategy = require('../abis/IStrategy.json');
 const axios = require('axios');
-const ERC20 = require('../abis/ERC20.json');
 const chains = require('../data/chains.js');
 
 const between = (min, max) => Math.floor(Math.random() * (max - min) + min);

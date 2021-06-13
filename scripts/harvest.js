@@ -14,6 +14,7 @@ const harvest = async () => {
   for (const strat of strats) {
     try {
       console.log(`Analizing harvest of ${strat.name}.`);
+      if (strat.chainId != 56) continue;
 
       const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
       const harvester = new ethers.Wallet(process.env.HARVESTER_PK, provider);
