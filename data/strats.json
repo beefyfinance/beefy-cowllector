@@ -1,8 +1,134 @@
 [
   {
-    "name": "iron-steel",
-    "address": "0xCC87C7c5372Cd11Ca0c39F7Fba970fdf4A9dDeC7",
-    "interval": 8,
+    "name": "polycat-fish",
+    "address": "0x53F816063523D9883C83863CbD5D8EAF9Ffc4641",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "lendhub-dot",
+    "address": "0x67c8CC2dbEF5B5974306Fbc597aAE171885163E7",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 128
+  },
+  {
+    "name": "lendhub-btc",
+    "address": "0xfA5053Ed3B2283EAC9C48f69db9312bf0E766D64",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 128
+  },
+  {
+    "name": "cakev2-eth-usdc",
+    "address": "0xF2740E97889F799F667B2Ac0b10ae7E6c51648D6",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-btcb-eth",
+    "address": "0x18A181860Bc95282CD3Ee1616b9087d4E199d03B",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-wex-bnb",
+    "address": "0x4884012E35e069ACb6ca132E7afB8eD80B97cb96",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-usdt-wex",
+    "address": "0xD01d4635E243C60df164452464346ca75Ea0ceA7",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-alpaca-bnb",
+    "address": "0x40EcBbF121c40042CF0E3f529ef1d348faB4Aad8",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-xrp-busd",
+    "address": "0x61c35FC2Dd6128071BB41dB5877E3bBfC26A57D7",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-ada-busd",
+    "address": "0xDFE80211789A4C298Cb3Ae505e6c6C65f2e99809",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-ltc-busd",
+    "address": "0x4A9BaE1E704a34c20034CDD9156c8Cc0829084db",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-usdt-matic",
+    "address": "0xA2b86F76E6Cce6FC1899F539974d7c1b544f4dD0",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-usdt-alpaca",
+    "address": "0xA5E1B41a4B96b474699Dc424882b8d3B10931F1f",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-eth-bnb",
+    "address": "0x8a683A57f292A1889Cc84892E0AA2B87b11726ce",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-ampl-bsc-mp-busd",
+    "address": "0x657B91259e3d612D683A201b5B30fb706677B205",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,

@@ -1,5 +1,101 @@
 [
   {
+    "id": "cakev2-eth-usdc",
+    "name": "Moo CakeV2 ETH-USDC",
+    "contract": "0x26107644A6dbC38385F4B7263d9bA96D829eC090",
+    "oracle": "lps",
+    "oracleId": "cakev2-eth-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-btcb-eth",
+    "name": "Moo CakeV2 BTCB-ETH",
+    "contract": "0xEf43E54Bb4221106953951238FC301a1f8939490",
+    "oracle": "lps",
+    "oracleId": "cakev2-btcb-eth",
+    "tvl": 0
+  },
+  {
+    "id": "wault-wex-bnb",
+    "name": "Moo Wault WEX-BNB",
+    "contract": "0x8988EE959828A41872734D1408d7dC612f085872",
+    "oracle": "lps",
+    "oracleId": "wault-wex-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "wault-usdt-wex",
+    "name": "Moo Wault USDT-WEX",
+    "contract": "0xdC048A42a6a57483EDC40C549b58d3A5fE5E5218",
+    "oracle": "lps",
+    "oracleId": "wault-usdt-wex",
+    "tvl": 0
+  },
+  {
+    "id": "wault-alpaca-bnb",
+    "name": "Moo Wault ALPACA-BNB",
+    "contract": "0xD2111F59eaE79B7066D2B5970D6755d2e3bEa358",
+    "oracle": "lps",
+    "oracleId": "wault-alpaca-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "wault-xrp-busd",
+    "name": "Moo Wault XRP-BUSD",
+    "contract": "0x3b82B5740505908E181c9449E23f89Dc9F19B7a4",
+    "oracle": "lps",
+    "oracleId": "wault-xrp-busd",
+    "tvl": 0
+  },
+  {
+    "id": "wault-ada-busd",
+    "name": "Moo Wault ADA-BUSD",
+    "contract": "0x847bA37DeE3d8757cB2493e14715ba079afe6865",
+    "oracle": "lps",
+    "oracleId": "wault-ada-busd",
+    "tvl": 0
+  },
+  {
+    "id": "wault-ltc-busd",
+    "name": "Moo Wault LTC-BUSD",
+    "contract": "0x6281b00F67b84cB424d4A9b29bbdd904dCb61126",
+    "oracle": "lps",
+    "oracleId": "wault-ltc-busd",
+    "tvl": 0
+  },
+  {
+    "id": "wault-usdt-matic",
+    "name": "Moo Wault USDT-MATIC",
+    "contract": "0x6Bc93525A78c151c6392b93A3f1E2DB7313fc2c7",
+    "oracle": "lps",
+    "oracleId": "wault-usdt-matic",
+    "tvl": 0
+  },
+  {
+    "id": "wault-usdt-alpaca",
+    "name": "Moo Wault USDT-ALPACA",
+    "contract": "0x68f967F903Fb99D6e00d825ebaE482bE031584dA",
+    "oracle": "lps",
+    "oracleId": "wault-usdt-alpaca",
+    "tvl": 0
+  },
+  {
+    "id": "wault-eth-bnb",
+    "name": "Moo Wault ETH-BNB",
+    "contract": "0x8B238319E06009F5A8d89BC4667727f9624E52E1",
+    "oracle": "lps",
+    "oracleId": "wault-eth-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-ampl-bsc-mp-busd",
+    "name": "Moo CakeV2 AMPL-BSC-MP-BUSD",
+    "contract": "0x6F327421a2B4c96C3E6e7e9588423F02A5A0165B",
+    "oracle": "lps",
+    "oracleId": "cakev2-ampl-bsc-mp-busd",
+    "tvl": 0
+  },
+  {
     "id": "cake-cakev2",
     "name": "Moo CakeV2",
     "contract": "0x97e5d50Fe0632A95b9cf1853E744E02f7D816677",
