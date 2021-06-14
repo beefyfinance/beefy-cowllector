@@ -1,5 +1,32 @@
 [
   {
+    "name": "wexpoly-wex",
+    "address": "0xcb6e386Ad643a6D77C940BF69303cEBD34c04757",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-bifi-matic",
+    "address": "0xb15B8E50b79b4D6723DC297aD6313B9Dc3c51Db3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-wex-matic",
+    "address": "0x0D62f1b1BF511E155e357184dcfC1e8D54B41a5f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "cake-cakev2",
     "address": "0x5448C07cb55Adb7Ee19185144108b09Ed291fDEd",
     "interval": 1,
