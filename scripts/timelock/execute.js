@@ -1,42 +1,37 @@
 const ethers = require('ethers');
 
-const chains = require('../../data/chains');
 const TimelockAbi = require('../../abis/TimelockController.json');
 
-const config = {
-  timelockAddress: '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F',
-  chainId: 137,
-  target: chains[137].rewardPool,
-  value: 0,
-  data: '0xf2fde38b000000000000000000000000d529b1894491a0a26b18939274ae8ede93e81dba',
-  predecessor: ethers.constants.HashZero,
-  salt: ethers.constants.HashZero,
-};
-
-const main = async () => {
-  const provider = new ethers.providers.JsonRpcProvider(chains[config.chainId].rpc);
-  const signer = new ethers.Wallet(process.env.UPGRADER_PK, provider);
-  const timelock = new ethers.Contract(config.timelockAddress, TimelockAbi, signer);
+const execute = async ({ timelockAddr, target, value, data, predecessor, salt, signer }) => {
+  const timelock = new ethers.Contract(timelockAddr, TimelockAbi, signer);
 
   try {
-    const minDelay = await timelock.getMinDelay();
+    const operationHash = await timelock.hashOperation(target, value, data, predecessor, salt);
 
-    let tx = await timelock.execute(
-      config.target,
-      config.value,
-      config.data,
-      config.predecessor,
-      config.salt,
-      { gasLimit: 1000000 }
-    );
+    const isOperationReady = await timelock.isOperationReady(operationHash);
+    if (!isOperationReady) {
+      console.log(`${target} is not an operation or not ready, skipping.`);
+      return;
+    } else {
+      console.log(
+        `Operation ${operationHash} should be executed.`,
+        target,
+        value,
+        data,
+        predecessor,
+        salt
+      );
+    }
+
+    let tx = await timelock.execute(target, value, data, predecessor, salt, { gasLimit: 3000000 });
     tx = await tx.wait();
 
     tx.status === 1
-      ? console.log(`Executed with tx: ${tx.transactionHash}`)
-      : console.log(`Failed with tx: ${tx.transactionHash}`);
+      ? console.log(`${target} executed with tx: ${tx.transactionHash}`)
+      : console.log(`${target} failed with tx: ${tx.transactionHash}`);
   } catch (e) {
-    console.log(`Something went wrong: ${e}`);
+    console.log(`Something went wrong with ${target}: ${e}`);
   }
 };
 
-main();
+module.exports = execute;

@@ -9,8 +9,8 @@ const abi = [
 ];
 
 const config = {
-  chainId: 43114,
-  beefyFeeRecipient: '0x85517F37d1e2ab145094A74C4E1DfE87E4D3f631',
+  chainId: 137,
+  beefyFeeRecipient: '0xb66Ca5319eFc42FD1462693BAB51ee0C9E452745',
 };
 
 const main = async () => {
@@ -18,7 +18,7 @@ const main = async () => {
     if (strat.chainId !== config.chainId) continue;
 
     const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
-    const signer = new ethers.Wallet(process.env.UPGRADER_PK, provider);
+    const signer = new ethers.Wallet(process.env.REWARDER_PK, provider);
     const stratContract = new ethers.Contract(strat.address, abi, signer);
 
     let beefyFeeRecipient;
@@ -40,6 +40,8 @@ const main = async () => {
       console.log(`Strat ${strat.name} already has the correct beefy fee recipient.`);
       continue;
     }
+
+    console.log(`Strat ${strat.name} should be updated.`);
 
     try {
       let tx = await stratContract.setBeefyFeeRecipient(config.beefyFeeRecipient, {

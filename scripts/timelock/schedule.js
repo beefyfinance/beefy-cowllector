@@ -6,17 +6,11 @@ const schedule = async ({ timelockAddr, target, value, data, predecessor, salt, 
   const timelock = new ethers.Contract(timelockAddr, TimelockAbi, signer);
 
   try {
-    const operationHash = await timelock.hashOperation(
-      strat.address,
-      config.value,
-      config.data,
-      config.predecessor,
-      config.salt
-    );
+    const operationHash = await timelock.hashOperation(target, value, data, predecessor, salt);
 
     const isOperation = await timelock.isOperation(operationHash);
     if (isOperation) {
-      console.log(`${strat.name} is scheduled already, skipping.`);
+      console.log(`${target} is scheduled already, skipping.`);
       return;
     }
 
