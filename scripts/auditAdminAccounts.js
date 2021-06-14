@@ -1,9 +1,16 @@
 const ethers = require('ethers');
+const { addressBook } = require('blockchain-addressbook');
+
+const chains = require('../data/chains');
+const strats = require('../data/strats.json');
 
 const stratAbi = [
-  'function setKeeper(address _keeper) public',
   'function keeper() public view returns (address)',
+  'function owner() public view returns (address)',
+  'function vault() public view returns (address)',
 ];
+
+const vaultAbi = ['function owner() public view returns (address)'];
 
 const pks = {
   '0xd529b1894491a0a26B18939274ae8ede93E81dbA': process.env.REWARDER_PK,
@@ -12,7 +19,7 @@ const pks = {
   '0xDe30AcAE712F090C0C3A255F61Bfae876d491F6E': process.env.HARVESTER_PK,
 };
 
-const setKeeper = async (contract, target, provider) => {
+const auditAdminAccounts = async () => {
   for (strat of strats) {
     console.log('======');
     console.log(`Analizing admin accounts of ${strat.name}`);
@@ -82,4 +89,4 @@ const verifyOwner = async (contract, target) => {
   }
 };
 
-module.exports = setKeeper;
+auditAdminAccounts();
