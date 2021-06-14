@@ -1,5 +1,23 @@
 [
   {
+    "name": "tomb-tshare-ftm",
+    "address": "0x6719022AdAD7051e86fd0E8758535f8A4F98b82F",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "tomb-tomb-ftm",
+    "address": "0x4b5f7De737531673B23ceB43D45ea3f1297e4C6d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "sushi-eth-iron",
     "address": "0x07EA978EB37731B78369a9c50C487C3aFD0BcA13",
     "interval": 1,
