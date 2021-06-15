@@ -1,5 +1,14 @@
 [
   {
+    "name": "quick-usdc-mimatic",
+    "address": "0x9ED77C14DE83a24c9E1Ca97472a22a86d90EEA0c",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "memefarmv2-ape-bnb",
     "address": "0x5A11a47C3c6C9Ee92B9Ba7892Ccb2246D4D76204",
     "interval": 4,
