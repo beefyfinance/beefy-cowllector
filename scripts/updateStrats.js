@@ -14,6 +14,11 @@ const addVault = require('../utils/addVault');
 
 const main = async () => {
   for (chain of Object.values(chains)) {
+    if (!chain.rpc) {
+      console.warn(`No RPC for ${chain.id}`);
+      continue;
+    }
+
     let vaults = await getVaults(chain.appVaultsFilename);
 
     const web3 = new Web3(chain.rpc);
