@@ -1,5 +1,41 @@
 [
   {
+    "name": "memefarmv2-ape-bnb",
+    "address": "0x5A11a47C3c6C9Ee92B9Ba7892Ccb2246D4D76204",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "memefarmv2-mfrm-bnb",
+    "address": "0x8CDed7955f13Eb56339B16A4C06C860b922BED13",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wexpoly-usdc-usdt",
+    "address": "0x0B7FEA4506006f1bA0718585cFAb638424A86d94",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-wex-usdc",
+    "address": "0x6a440102015bf4D81D56fBc2fd4F27797D183931",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "polycat-fish",
     "address": "0x53F816063523D9883C83863CbD5D8EAF9Ffc4641",
     "interval": 6,

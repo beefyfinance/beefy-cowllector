@@ -1,5 +1,21 @@
 [
   {
+    "id": "memefarmv2-ape-bnb",
+    "name": "Moo MemeFarmV2 APE-BNB",
+    "contract": "0x1eda2b152742A9965e4692eDA509802755303373",
+    "oracle": "lps",
+    "oracleId": "memefarmv2-ape-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "memefarmv2-mfrm-bnb",
+    "name": "Moo MemeFarmV2 MFRM-BNB",
+    "contract": "0x172b06cCA865eC9368D648de66d707431f09e8E9",
+    "oracle": "lps",
+    "oracleId": "memefarmv2-mfrm-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-eth-usdc",
     "name": "Moo CakeV2 ETH-USDC",
     "contract": "0x26107644A6dbC38385F4B7263d9bA96D829eC090",
