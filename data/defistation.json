@@ -1,5 +1,13 @@
 [
   {
+    "id": "wex-eth-beth",
+    "name": "Moo Wault ETH-BETH",
+    "contract": "0x71f20694f66432f08A0D0B71a07A7CBDeA40971E",
+    "oracle": "lps",
+    "oracleId": "wex-eth-beth",
+    "tvl": 0
+  },
+  {
     "id": "merlin-merlin",
     "name": "Moo Merlin MERL",
     "contract": "0x6261d793BdAe82842461A72B746bc18a5B7D2Bc4",
@@ -40,75 +48,75 @@
     "tvl": 0
   },
   {
-    "id": "wault-wex-bnb",
+    "id": "wex-wex-bnb",
     "name": "Moo Wault WEX-BNB",
     "contract": "0x8988EE959828A41872734D1408d7dC612f085872",
     "oracle": "lps",
-    "oracleId": "wault-wex-bnb",
+    "oracleId": "wex-wex-bnb",
     "tvl": 0
   },
   {
-    "id": "wault-usdt-wex",
+    "id": "wex-usdt-wex",
     "name": "Moo Wault USDT-WEX",
     "contract": "0xdC048A42a6a57483EDC40C549b58d3A5fE5E5218",
     "oracle": "lps",
-    "oracleId": "wault-usdt-wex",
+    "oracleId": "wex-usdt-wex",
     "tvl": 0
   },
   {
-    "id": "wault-alpaca-bnb",
+    "id": "wex-alpaca-bnb",
     "name": "Moo Wault ALPACA-BNB",
     "contract": "0xD2111F59eaE79B7066D2B5970D6755d2e3bEa358",
     "oracle": "lps",
-    "oracleId": "wault-alpaca-bnb",
+    "oracleId": "wex-alpaca-bnb",
     "tvl": 0
   },
   {
-    "id": "wault-xrp-busd",
+    "id": "wex-xrp-busd",
     "name": "Moo Wault XRP-BUSD",
     "contract": "0x3b82B5740505908E181c9449E23f89Dc9F19B7a4",
     "oracle": "lps",
-    "oracleId": "wault-xrp-busd",
+    "oracleId": "wex-xrp-busd",
     "tvl": 0
   },
   {
-    "id": "wault-ada-busd",
+    "id": "wex-ada-busd",
     "name": "Moo Wault ADA-BUSD",
     "contract": "0x847bA37DeE3d8757cB2493e14715ba079afe6865",
     "oracle": "lps",
-    "oracleId": "wault-ada-busd",
+    "oracleId": "wex-ada-busd",
     "tvl": 0
   },
   {
-    "id": "wault-ltc-busd",
+    "id": "wex-ltc-busd",
     "name": "Moo Wault LTC-BUSD",
     "contract": "0x6281b00F67b84cB424d4A9b29bbdd904dCb61126",
     "oracle": "lps",
-    "oracleId": "wault-ltc-busd",
+    "oracleId": "wex-ltc-busd",
     "tvl": 0
   },
   {
-    "id": "wault-usdt-matic",
+    "id": "wex-usdt-matic",
     "name": "Moo Wault USDT-MATIC",
     "contract": "0x6Bc93525A78c151c6392b93A3f1E2DB7313fc2c7",
     "oracle": "lps",
-    "oracleId": "wault-usdt-matic",
+    "oracleId": "wex-usdt-matic",
     "tvl": 0
   },
   {
-    "id": "wault-usdt-alpaca",
+    "id": "wex-usdt-alpaca",
     "name": "Moo Wault USDT-ALPACA",
     "contract": "0x68f967F903Fb99D6e00d825ebaE482bE031584dA",
     "oracle": "lps",
-    "oracleId": "wault-usdt-alpaca",
+    "oracleId": "wex-usdt-alpaca",
     "tvl": 0
   },
   {
-    "id": "wault-eth-bnb",
+    "id": "wex-eth-bnb",
     "name": "Moo Wault ETH-BNB",
     "contract": "0x8B238319E06009F5A8d89BC4667727f9624E52E1",
     "oracle": "lps",
-    "oracleId": "wault-eth-bnb",
+    "oracleId": "wex-eth-bnb",
     "tvl": 0
   },
   {

@@ -1,5 +1,14 @@
 [
   {
+    "name": "wex-eth-beth",
+    "address": "0xBBC4277DfA909baaC81f0A674f8c39610EeBE9ce",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "wexpoly-matic-usdc",
     "address": "0xea025B73A536F876d63022629B1d4a2271556056",
     "interval": 6,
@@ -153,7 +162,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-wex-bnb",
+    "name": "wex-wex-bnb",
     "address": "0x4884012E35e069ACb6ca132E7afB8eD80B97cb96",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -162,7 +171,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-usdt-wex",
+    "name": "wex-usdt-wex",
     "address": "0xD01d4635E243C60df164452464346ca75Ea0ceA7",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -171,7 +180,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-alpaca-bnb",
+    "name": "wex-alpaca-bnb",
     "address": "0x40EcBbF121c40042CF0E3f529ef1d348faB4Aad8",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -180,7 +189,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-xrp-busd",
+    "name": "wex-xrp-busd",
     "address": "0x61c35FC2Dd6128071BB41dB5877E3bBfC26A57D7",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -189,7 +198,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-ada-busd",
+    "name": "wex-ada-busd",
     "address": "0xDFE80211789A4C298Cb3Ae505e6c6C65f2e99809",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -198,7 +207,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-ltc-busd",
+    "name": "wex-ltc-busd",
     "address": "0x4A9BaE1E704a34c20034CDD9156c8Cc0829084db",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -207,7 +216,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-usdt-matic",
+    "name": "wex-usdt-matic",
     "address": "0xA2b86F76E6Cce6FC1899F539974d7c1b544f4dD0",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -216,7 +225,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-usdt-alpaca",
+    "name": "wex-usdt-alpaca",
     "address": "0xA5E1B41a4B96b474699Dc424882b8d3B10931F1f",
     "interval": 6,
     "harvestSignature": "0x4641257d",
@@ -225,7 +234,7 @@
     "chainId": 56
   },
   {
-    "name": "wault-eth-bnb",
+    "name": "wex-eth-bnb",
     "address": "0x8a683A57f292A1889Cc84892E0AA2B87b11726ce",
     "interval": 6,
     "harvestSignature": "0x4641257d",
