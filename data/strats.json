@@ -1,8 +1,44 @@
 [
   {
+    "name": "cakev2-o3-busd",
+    "address": "0x61c6344dA8d6d6308E082616BD347354DFDfa155",
+    "interval": 10,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-boring-bnb",
+    "address": "0x2D9843f2437BB3AE190b099e6408124A0E75aF05",
+    "interval": 10,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-marsh-bnb",
+    "address": "0x6d1bE82278a8C24DCddd3c0653Ff1ea1C2019EAB",
+    "interval": 10,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-hai-bnb",
+    "address": "0x77D1dd705eE757b1C2f57Eb35807F64Be3f7c432",
+    "interval": 10,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "wex-eth-beth",
     "address": "0xBBC4277DfA909baaC81f0A674f8c39610EeBE9ce",
-    "interval": 6,
+    "interval": 10,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -83,7 +119,7 @@
   {
     "name": "memefarmv2-ape-bnb",
     "address": "0x5A11a47C3c6C9Ee92B9Ba7892Ccb2246D4D76204",
-    "interval": 4,
+    "interval": 10,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -92,7 +128,7 @@
   {
     "name": "memefarmv2-mfrm-bnb",
     "address": "0x8CDed7955f13Eb56339B16A4C06C860b922BED13",
-    "interval": 4,
+    "interval": 10,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,

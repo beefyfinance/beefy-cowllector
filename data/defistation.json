@@ -1,5 +1,37 @@
 [
   {
+    "id": "cakev2-o3-busd",
+    "name": "Moo CakeV2 O3-BUSD",
+    "contract": "0xfF36953Cc5B159FE31FBf5E68a3B4BD6010cdeed",
+    "oracle": "lps",
+    "oracleId": "cakev2-o3-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-boring-bnb",
+    "name": "Moo CakeV2 BORING-BNB",
+    "contract": "0x4E59eD7b9A88720c7635E26970982bE77ED9cA9B",
+    "oracle": "lps",
+    "oracleId": "cakev2-boring-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-marsh-bnb",
+    "name": "Moo CakeV2 MARSH-BNB",
+    "contract": "0x0d7Cc12D33Fc60C59308201f277a88e7Ff8Df681",
+    "oracle": "lps",
+    "oracleId": "cakev2-marsh-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-hai-bnb",
+    "name": "Moo CakeV2 HAI-BNB",
+    "contract": "0x36591BB1f679e5deE9f454A7909CDaC84cc6828e",
+    "oracle": "lps",
+    "oracleId": "cakev2-hai-bnb",
+    "tvl": 0
+  }, 
+  {
     "id": "wex-eth-beth",
     "name": "Moo Wault ETH-BETH",
     "contract": "0x71f20694f66432f08A0D0B71a07A7CBDeA40971E",
