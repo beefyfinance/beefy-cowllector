@@ -6,7 +6,7 @@ const schedule = require('./schedule');
 const config = {
   timelockAddress: '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F',
   chainId: 137,
-  target: '0x2F6Ebc03469De09FE6D933e4FA56772dF400BfA6',
+  target: '0x53F816063523D9883C83863CbD5D8EAF9Ffc4641',
   value: 0,
   data: '0xa68833e5000000000000000000000000b66ca5319efc42fd1462693bab51ee0c9e452745',
   predecessor: ethers.constants.HashZero,
