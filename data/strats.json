@@ -1,5 +1,77 @@
 [
   {
+    "name": "wexpoly-matic-usdc",
+    "address": "0xea025B73A536F876d63022629B1d4a2271556056",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-matic-eth",
+    "address": "0xE91262c6Cf7B28948EF6f8a6B554758791c31340",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-wbtc-eth",
+    "address": "0x8E82b1A03698d0597D3414F6CC5C57005480DEf4",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-wbtc-usdc",
+    "address": "0xaf9DD4c1d755402868fFE2A0B7C0E8a6664a0f2F",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-eth-fff",
+    "address": "0x401Fa12777e303CBbFa0Ce8c95014d3CA1ee02c0",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-dai-usdt",
+    "address": "0x4ee0f311b55Dd983FBe82A0EEEa06429726Da932",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "merlin-merlin",
+    "address": "0x63C268F2a283fFfE6fC58C8c2fBc6AdA96156b0C",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "quick-usdc-mimatic",
+    "address": "0x9ED77C14DE83a24c9E1Ca97472a22a86d90EEA0c",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "memefarmv2-ape-bnb",
     "address": "0x5A11a47C3c6C9Ee92B9Ba7892Ccb2246D4D76204",
     "interval": 4,
@@ -1483,15 +1555,6 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56
-  },
-  {
-    "name": "adamant-addy",
-    "address": "0x90337ecE11Ac8fD538A47a8F9F1D04E29cA595af",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
   },
   {
     "name": "aave-aave",
