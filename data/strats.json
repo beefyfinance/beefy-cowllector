@@ -1,5 +1,23 @@
 [
   {
+    "name": "ica-zbtc",
+    "address": "0xDAC16532E9d6d632999b6e1CC17D2E83bE74E970",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "ica-zeth",
+    "address": "0x7dBB1A0BcB8029cf0471c4e3478Cfcf05c8c1f52",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-o3-busd",
     "address": "0x61c6344dA8d6d6308E082616BD347354DFDfa155",
     "interval": 10,

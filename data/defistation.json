@@ -1,5 +1,21 @@
 [
   {
+    "id": "ica-zbtc",
+    "name": "Moo Icarus ZBTC",
+    "contract": "0xd98625cc5d60afBce022a70eEAFa9811F47d6d63",
+    "oracle": "tokens",
+    "oracleId": "ZBTC",
+    "tvl": 0
+  },
+  {
+    "id": "ica-zeth",
+    "name": "Moo Icarus ZETH",
+    "contract": "0xE1e15BaF9Adb643269b97baDB7fB5fEE4aDC0705",
+    "oracle": "tokens",
+    "oracleId": "ZETH",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-o3-busd",
     "name": "Moo CakeV2 O3-BUSD",
     "contract": "0xfF36953Cc5B159FE31FBf5E68a3B4BD6010cdeed",
@@ -30,7 +46,7 @@
     "oracle": "lps",
     "oracleId": "cakev2-hai-bnb",
     "tvl": 0
-  }, 
+  },
   {
     "id": "wex-eth-beth",
     "name": "Moo Wault ETH-BETH",
