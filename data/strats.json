@@ -3556,69 +3556,6 @@
     "chainId": 56
   },
   {
-    "name": "auto-adav2",
-    "address": "0x2f4c0054bc8f377Ab5aA7aF529479331C6597e15",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "auto-sxpv2",
-    "address": "0xf125e40B78029150353973b9Bf33DeBbEB49e760",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "auto-ethv2",
-    "address": "0xd9e363C22F97Afb0092269d98154ab06987252bf",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "auto-btcv2",
-    "address": "0x4c8d2f61017053dab18ac292348b5B3Fae9157A5",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "auto-usdcv2",
-    "address": "0xAe12a3A03055eBadf8385BB69514b75e89f400b5",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "auto-usdtv2",
-    "address": "0xF0d6424B253f51F075f26A1569a7E7a0523e887E",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "auto-busdv2",
-    "address": "0x1EB0baDDD50BB7e197990b14f18173b6C063D0b9",
-    "interval": 12,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
     "name": "mdex-eth-usdt",
     "address": "0x3A00616A14A5C6930c45d7D3E62A385Bd81B4e7D",
     "interval": 12,
@@ -4078,15 +4015,6 @@
     "chainId": 43114
   },
   {
-    "name": "belt-venusblp",
-    "address": "0x84759f0d7705B3c8f4554431E6FBCa2ccd63BEc2",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
     "name": "banana-banana",
     "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
     "interval": 10,
@@ -4119,15 +4047,6 @@
     "interval": 10,
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-ada",
-    "address": "0xf9D0e760a71991AC65c9919898c09a3648E62eBB",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 56
   },
@@ -4276,24 +4195,6 @@
     "chainId": 56
   },
   {
-    "name": "auto-wbnb",
-    "address": "0x93BC0B24a7025d7040938c617818fF184a8669ba",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "auto-busd-old",
-    "address": "0x1b27b7083a9BdA1aCD04266F61DF646f8296a872",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
     "name": "sponge-steam-bnb",
     "address": "0x1aC4f14DDFBC48c4AF99526e9D488CD47D90801E",
     "interval": 10,
@@ -4363,132 +4264,6 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "venus-beth",
-    "address": "0x0a350c62f4b8C7dA93fBca469e53a182b5BBD044",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-dai",
-    "address": "0x3c2C339d05d4911894F08Dd975e89630D7ef4234",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-fil",
-    "address": "0xd49FD324F041665950EDe4Ed9719924EE37155C3",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-bch",
-    "address": "0x70C247ac8323B9ca340857d2893F4aa4F7E16D5f",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-dot",
-    "address": "0xBB0C9d495F555E754ACDb76Ed127a9C115132206",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-link",
-    "address": "0x131fE92ff0288915883d6c122Cb76D68c5145D87",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-sxp",
-    "address": "0x8c1244aCCD534025641CFF00D4ee5616FcbeE154",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-usdc",
-    "address": "0xe865Ba185895634D094767688aC1c69751cb06aa",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-usdt",
-    "address": "0x45640eE6e2BE2bA6752909f2e57C32C4997965d2",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-busd",
-    "address": "0x77ed2908e3cE2197882993DF9432E69079b146B6",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-btcb",
-    "address": "0xCA26A1f9d3e6Ec97a555d9444f782d61b64C1B0e",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-eth",
-    "address": "0x825B59385221be27495056c08c8FE38941126ffa",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-ltc",
-    "address": "0x00AF29ddd77ec424f971813303Be7be04f43d588",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
-    "name": "venus-xrp",
-    "address": "0x76788df486C07750Ce915D88093872470e5e3E45",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
     "chainId": 56
   },
   {
