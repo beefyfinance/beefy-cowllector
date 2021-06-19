@@ -1,5 +1,68 @@
 [
   {
+    "name": "curve-am3crv",
+    "address": "0xCF11B9D51f99a43A10305101C0967DDf83b0ad6d",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-usdc-dai",
+    "address": "0x107711a7f61c2867B72E0Dd926755dDeEe75F9f0",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-dai-eth",
+    "address": "0x1C5e120604537B44B635f9c932A26Abf7bb97E4E",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-aave-eth",
+    "address": "0x23679B038eb6f090f9b0f121A1F29b7cA3993F77",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-link-eth",
+    "address": "0x038A80FA19191FF6A1788cEb6f503FB0FDf83aE8",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-snx-eth",
+    "address": "0x156463c7a644726994b658B5164edA0B6D68544E",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "wexpoly-polydoge-matic",
+    "address": "0xC0F43f3d242fEDd9FD82e5a5856E577d908a083A",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "ica-zbtc",
     "address": "0xDAC16532E9d6d632999b6e1CC17D2E83bE74E970",
     "interval": 4,
@@ -648,15 +711,6 @@
     "chainId": 56
   },
   {
-    "name": "garuda-garuda-bnb",
-    "address": "0xA4bF615396bf919FC424822a72431cDB0ABF2DEb",
-    "interval": 2,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "panther-panther-bnb",
     "address": "0x07f35757Fb1057a3c4b184af58312B1EB7eB5e26",
     "interval": 6,
@@ -1080,15 +1134,6 @@
     "chainId": 56
   },
   {
-    "name": "curve-am3crv",
-    "address": "0xfA9F7aAF7864316E33659361F7809423e83f1Da1",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "cakev2-cake-busd",
     "address": "0x30e30EB5483700Db044F0Aaacf653dA063C94378",
     "interval": 8,
@@ -1164,15 +1209,6 @@
     "name": "dopple-dolly-lp",
     "address": "0x9aBdA120556178C9d0Bfeb98253153BCadc96aAE",
     "interval": 8,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "garuda-garuda-usdc",
-    "address": "0xF275971e8A06Ef493Ef38b71aA0b2C6B9d0bA8A5",
-    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -1604,15 +1640,6 @@
   {
     "name": "banana-ada-bnb",
     "address": "0xBfb6Be9553E676A0a559885262Aee98bC50A6eeE",
-    "interval": 8,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "garuda-garuda-usdt",
-    "address": "0xf92a7dE75dd3Eb9Ca505D5040D682b8091f707eD",
     "interval": 8,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3763,15 +3790,6 @@
     "chainId": 56
   },
   {
-    "name": "pumpy-pmp-bnb",
-    "address": "0xeEeF3d9c3260d01F9763B38BCD0968e04af8f59B",
-    "interval": 8,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": true,
-    "chainId": 56
-  },
-  {
     "name": "com-eth-avax",
     "address": "0xF933075ae4e39aa789555c2bEBA710130E41Ed32",
     "interval": 18,
@@ -4231,15 +4249,6 @@
     "chainId": 128
   },
   {
-    "name": "kebab-usdt-busd",
-    "address": "0xD5C4CE5c881574b3CBe9A51117108390F6aA5180",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "kebab-eth-btcb",
     "address": "0xCbD729536bfd98Aa2E216055A62103EB9124ab45",
     "interval": 12,
@@ -4351,33 +4360,6 @@
     "name": "bakery-bake/busd",
     "address": "0xF0D037813e4bCC21E4ED38F2fA506522181699Bb",
     "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bdollar-sbdo/bnb-sbdo",
-    "address": "0xD1533fad98479700Dd620852C45FAFe93b04A2B7",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bdollar-sbdo/busd",
-    "address": "0xAFd5DF73D0369d3ADB4Db524609ef30039AE22A7",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bdollar-bdo/busd",
-    "address": "0x5364F346B22EfB14a08b8eCe406e25d9776A0eAE",
-    "interval": 10,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
