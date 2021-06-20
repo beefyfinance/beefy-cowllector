@@ -1,7 +1,7 @@
 const ethers = require('ethers');
 
 const chains = require('../data/chains');
-const { isNewHarvestPeriodNaive } = require('../utils/harvestHelpers');
+const { isNewPeriodNaive } = require('../utils/harvestHelpers');
 
 const abi = ['function harvest() public'];
 
@@ -11,7 +11,7 @@ const harvestBeefyFees = async () => {
       console.log(`${chain.id} does not have a fee batcher, skipping.`);
       continue;
     }
-    if (!isNewHarvestPeriodNaive(chain.beefyFeeHarvestInterval)) {
+    if (!isNewPeriodNaive(chain.beefyFeeHarvestInterval)) {
       console.log(`Is not time to harvest ${chain.id}, skipping.`);
       continue;
     }

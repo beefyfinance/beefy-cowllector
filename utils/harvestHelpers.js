@@ -9,7 +9,7 @@ const sleep = ms => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-const isNewHarvestPeriodNaive = interval => {
+const isNewPeriodNaive = interval => {
   const now = new Date();
   const hour = now.getHours();
   return hour % interval === 0;
@@ -76,7 +76,7 @@ const hasStakers = async (strat, harvester) => {
 
 module.exports = {
   isNewHarvestPeriod,
-  isNewHarvestPeriodNaive,
+  isNewPeriodNaive,
   isNewHarvestPeriodBscscan,
   hasStakers,
   sleep,

@@ -2,13 +2,13 @@ const ethers = require('ethers');
 
 const WrappedNative = require('../abis/WrappedNative.json');
 const chains = require('../data/chains');
-const { isNewHarvestPeriodNaive } = require('../utils/harvestHelpers');
+const { isNewPeriodNaive } = require('../utils/harvestHelpers');
 
 const unwrapSubsidy = async () => {
   for (chain of Object.values(chains)) {
     console.log(`Unwrapping ${chain.id}`);
 
-    if (!isNewHarvestPeriodNaive(chain.wnativeUnwrapInterval)) {
+    if (!isNewPeriodNaive(chain.wnativeUnwrapInterval)) {
       console.log(`It's not time to unwrap ${chain.id}.`);
       continue;
     }

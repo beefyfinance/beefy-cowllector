@@ -4,11 +4,17 @@ const BigNumber = require('bignumber.js');
 const RewardPool = require('../abis/RewardPool.json');
 const WrappedNative = require('../abis/WrappedNative.json');
 const getRewardsReceived = require('../utils/getRewardsReceived');
+const { isNewPeriodNaive } = require('../utils/harvestHelpers');
 const chains = require('../data/chains');
 
 const notifyRewards = async () => {
   for (chain of Object.values(chains)) {
     if (!chain.rewardPool) continue;
+
+    if (!isNewPeriodNaive(chain.notifyInterval)) {
+      console.log(`Is not time to notify ${chain.id}, skipping.`);
+      continue;
+    }
 
     try {
       const provider = new ethers.providers.JsonRpcProvider(chain.rpc);
