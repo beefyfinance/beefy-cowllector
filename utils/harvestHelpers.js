@@ -39,35 +39,6 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   return false;
 };
 
-const isNewHarvestPeriodBscscan = async strat => {
-  let result = false;
-
-  try {
-    const url = `https://api.bscscan.com/api?module=account&action=txlist&address=${strat.address}&startblock=0&endblock=99999999&sort=asc`;
-    const response = await axios.get(url);
-    let txs = response.data.result.reverse();
-
-    for (let i = 0; i < txs.length; i++) {
-      const tx = txs[i];
-
-      if (tx.input.substring(0, 10) === strat.harvestSignature && tx.isError === '0') {
-        const now = parseInt(new Date().getTime() / 1000);
-        const harvestPeriod = strat.interval * 3600;
-        result = tx.timeStamp < now - harvestPeriod ? true : false;
-
-        console.log(`Last harvest was: ${((now - tx.timeStamp) / 3600).toFixed(2)} hours ago.`);
-
-        break;
-      }
-    }
-
-    return result;
-  } catch (e) {
-    console.log('Error:', e);
-    return false;
-  }
-};
-
 const hasStakers = async (strat, harvester) => {
   const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
   const balance = await strategy.balanceOf();
@@ -77,7 +48,6 @@ const hasStakers = async (strat, harvester) => {
 module.exports = {
   isNewHarvestPeriod,
   isNewPeriodNaive,
-  isNewHarvestPeriodBscscan,
   hasStakers,
   sleep,
   between,

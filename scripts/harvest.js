@@ -3,7 +3,7 @@ const ethers = require('ethers');
 const IStrategy = require('../abis/IStrategy.json');
 const {
   isNewHarvestPeriod,
-  isNewHarvestPeriodBscscan,
+  isNewPeriodNaive,
   hasStakers,
   sleep,
 } = require('../utils/harvestHelpers');
@@ -23,7 +23,7 @@ const harvest = async () => {
       if (shouldHarvest) shouldHarvest = await hasStakers(strat, harvester);
       if (shouldHarvest) {
         if (strat.noHarvestEvent) {
-          shouldHarvest = await isNewHarvestPeriodBscscan(strat);
+          shouldHarvest = await isNewPeriodNaive(strat.interval);
         } else {
           shouldHarvest = await isNewHarvestPeriod(strat, harvester);
         }
