@@ -1,5 +1,32 @@
 [
   {
+    "name": "cakev2-dg-bnb",
+    "address": "0xd67F6f3c29EB8c1978DEc0BD4838209B174B30b4",
+    "interval": 10,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-woo-bnb",
+    "address": "0xF0cA7E203dc545bE28Bd858a1988a5f9c0097848",
+    "interval": 10,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-htb-bnb",
+    "address": "0x066D968c831C3B8B8a3EA9b2909e459C23B72A81",
+    "interval": 10,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "curve-am3crv",
     "address": "0xCF11B9D51f99a43A10305101C0967DDf83b0ad6d",
     "interval": 6,
