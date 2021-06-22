@@ -1,5 +1,14 @@
 [
   {
+    "name": "ape-banana-matic",
+    "address": "0x453054B9C2CD3dF1c57E0866241f460B78eE3ebB",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "quick-usdc-pbnb",
     "address": "0x47c1772E850F627Bf41f52e44219d9bDab66D963",
     "interval": 6,
