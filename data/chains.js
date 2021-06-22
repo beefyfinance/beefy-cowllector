@@ -20,6 +20,7 @@ const chains = {
     queryInterval: 100,
     firstRewardBlock: 1457038,
     blockTime: 3,
+    blockExplorer: "http://bscscan.com"
   },
   128: {
     id: 'heco',
@@ -38,6 +39,7 @@ const chains = {
     queryInterval: 100,
     firstRewardBlock: 3850000,
     blockTime: 3,
+    blockExplorer: "https://hecoinfo.com"
   },
   43114: {
     id: 'avax',
@@ -56,6 +58,7 @@ const chains = {
     queryInterval: 100,
     firstRewardBlock: 0,
     blockTime: 5,
+    blockExplorer: "https://cchain.explorer.avax.network"
   },
   137: {
     id: 'polygon',
@@ -74,6 +77,7 @@ const chains = {
     queryInterval: 100,
     firstRewardBlock: 14172110,
     blockTime: 2,
+    blockExplorer: "https://polygonscan.com"
   },
   250: {
     id: 'fantom',
@@ -92,6 +96,7 @@ const chains = {
     queryInterval: 100,
     firstRewardBlock: 7673132,
     blockTime: 10,
+    blockExplorer: "https://ftmscan.com"
   },
 };
 
