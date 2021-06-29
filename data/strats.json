@@ -1,5 +1,104 @@
 [
   {
+    "name": "pangolin-uni-png",
+    "address": "0x0F8bD166EC82fB859dBd7a582082143f66D5606A",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "pangolin-sushi-png",
+    "address": "0xa1FfEecc6a48c54f1f810dC832208663392861A3",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "pangolin-dai-png",
+    "address": "0x7b48944Da7C9B03Cb85442AAFc9E492Bf4f41a91",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "pangolin-link-png",
+    "address": "0x829e1F69709f4DEfD33a3b95D66D582C9eA21eb4",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "pangolin-eth-png",
+    "address": "0xe9A792d3814c0EB20FfBC99147A3C8922c24c493",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "pangolin-wbtc-png",
+    "address": "0x861fDCD999d84DD093a70aB294f318f4afEf599C",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "apeswap-matic-dai",
+    "address": "0x0603141F2D39264BCE263a2107fA2045cC435b47",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "apeswap-matic-usdt",
+    "address": "0xB63e910A2DcD6362f7F631542a700C3139b6185a",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "cakev2-cake-usdt",
+    "address": "0x9FF08e50a832830F7CC545b0f9Dbf5a5b78104e4",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-usdt-usdc",
+    "address": "0xc83aE721681B472bCefc944B65f27B72A3b78EFd",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-watch-bnb",
+    "address": "0x5A7b4eb232287955981331b384fd6D2d24f68213",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cometh-bifi-must",
     "address": "0xd8d7DB8272C02fcf784a6794b4e51647258c0660",
     "interval": 6,

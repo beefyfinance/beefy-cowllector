@@ -1,5 +1,29 @@
 [
   {
+    "id": "cakev2-cake-usdt",
+    "name": "Moo CakeV2 Cake-USDT",
+    "contract": "0x969b3fb717C432735088e9e7A7F261F37fb2e526",
+    "oracle": "lps",
+    "oracleId": "cakev2-cake-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-usdt-usdc",
+    "name": "Moo CakeV2 USDT-USDC",
+    "contract": "0x094259b4A2Bb8fb65e55cD3744ff832a84cdCF37",
+    "oracle": "lps",
+    "oracleId": "cakev2-usdt-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "wault-watch-bnb",
+    "name": "Moo Wault WATCH-BNB",
+    "contract": "0xcaB54b92D6Bb43B7d8f6aE3C69C4D032882e7Eac",
+    "oracle": "lps",
+    "oracleId": "wault-watch-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-waultx-wbnb",
     "name": "Moo CakeV2 WAULTx-WBNB",
     "contract": "0x4e1B2951CC4C36D0997B7e2B67Ff957a2D53c17c",
