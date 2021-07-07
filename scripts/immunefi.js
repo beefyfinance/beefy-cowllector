@@ -7,7 +7,6 @@ const { MultiCall } = require('eth-multicall');
 
 const { getVaults } = require('../utils/getVaults');
 const chains = require('../data/chains');
-let strats = require('../data/strats.json');
 
 const BeefyVault = require('../abis/BeefyVault.json');
 
@@ -29,16 +28,13 @@ const main = async () => {
 
     for (let i = 0; i < vaults.length; i++) {
       vaults[i].strategy = strategyAddresses[i].strategy;
+      vaults[i].vault = vaults[i].earnedTokenAddress;
     }
 
-    strats = strats.filter(strat => {
-      if (strat.chainId !== chain.chainId) return false;
-
-      const match = vaults.find(vault => vault.strategy == strat.address);
-
-      if (match === undefined || match.status === 'eol' || match.status === 'refund') {
+    vaults = vaults.filter(vault => {
+      if (vault.status === 'eol' || vault.status === 'refund') {
         console.log(
-          `Removing the strat ${strat.name} from the bug bounty scope. Chain: ${strat.chainId}`
+          `Removing the strat ${vault.id} from the bug bounty scope. Chain: ${chain.chainId}`
         );
         return false;
       } else {
@@ -46,7 +42,15 @@ const main = async () => {
       }
     });
 
-    fs.writeFileSync(path.join(__dirname, `../data/immunefi_${chain.appVaultsFilename}.json`), JSON.stringify(strats, null, 2));
+    vaults.forEach(vault => {
+      const validKeys = ['id', 'strategy', 'vault'];
+      Object.keys(vault).forEach(key => validKeys.includes(key) || delete vault[key]);
+    });
+
+    fs.writeFileSync(
+      path.join(__dirname, `../data/immunefi_${chain.appVaultsFilename}.json`),
+      JSON.stringify(vaults, null, 2)
+    );
   }
 };
 
