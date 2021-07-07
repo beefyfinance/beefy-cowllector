@@ -1,5 +1,59 @@
 [
   {
+    "name": "ellipsis-pbtc",
+    "address": "0xF3fd55054e031761176DDE4F593d6f2b8298eDb5",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "boneswap-quick-bone-usdc",
+    "address": "0x7207E31f503981DC0D57cC04AD4713DCBD5C0010",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "boneswap-ape-bone-wmatic",
+    "address": "0x5a2448b0306D24C2ed3AE3186f32bbB023B8dCf9",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "boneswap-sushi-bone-wmatic",
+    "address": "0x3dE892BBc1cC1D22F069a4A985F58052244Acc5e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "boneswap-quick-bone-wmatic",
+    "address": "0xC32CCCfF0777C145e7d658081D141ec8A38f8133",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "polycat-dfyn-fish-matic",
+    "address": "0xcd170fa0C80Ea060a9Df6bf91BfF24cBDC4e0f30",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "polypup-quick",
     "address": "0x1Fb8021FcAB1b54B3f2C6D9D8562DC16CF1fAe21",
     "interval": 6,
