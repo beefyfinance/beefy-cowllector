@@ -1,5 +1,23 @@
 [
   {
+    "name": "quick-polybunny-eth",
+    "address": "0xa6a9da7890DeD8FEcc3be2f8b13ca424689fc413",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-polybunny-quick",
+    "address": "0xA58f0953261EcB55A128F721841416717B327833",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "dfyn-uft-dfyn",
     "address": "0x8c5E402F3F43958Ecb83b10aD9bE98Fd026C52c6",
     "interval": 6,
