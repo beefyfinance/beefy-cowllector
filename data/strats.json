@@ -1,5 +1,32 @@
 [
   {
+    "name": "cakev2-one-wbnb",
+    "address": "0x6359D2B1eDC09fC6150cc438f9302449F685C446",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-titan-busd",
+    "address": "0xbAD401fA02EeE77F81dd5E23b95723D4B6f278ED",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wault-wex-btcb",
+    "address": "0xb563Df6c2a33816e92DF6f7E3e62F894aaFB1446",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "jetswap-poly-usdc-usdt",
     "address": "0x986B6a9097D1B3fb01BC593cD63784B750401Fe4",
     "interval": 1,
