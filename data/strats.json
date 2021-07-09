@@ -1,5 +1,41 @@
 [
   {
+    "name": "jetswap-poly-usdc-usdt",
+    "address": "0x986B6a9097D1B3fb01BC593cD63784B750401Fe4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "jetswap-poly-pwings-usdt",
+    "address": "0x9CD8DC671172f1c30a3bc65A197Db38D9104C0F8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "jetswap-poly-pwings-matic",
+    "address": "0x80F442b0207Fbc58efBd55da37F2fCc134CAEE7B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "jetswap-poly-pwings-usdc",
+    "address": "0x77092b29492163c0695Af17e94d29E73Dcba8743",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "banana-twt-bnb",
     "address": "0x11134Cc913A99df0cA59f70fFdb4eEb480e2Ae43",
     "interval": 6,
