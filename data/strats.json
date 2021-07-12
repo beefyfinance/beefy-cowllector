@@ -1,5 +1,14 @@
 [
   {
+    "name": "ironswap-3usd",
+    "address": "0x6195187d06948fB14b20FD3c639F8cb8a335c29c",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "wexpoly-wbtc-wex",
     "address": "0x476be63e41f8E47910eDa5F50507EF49aC75A8a3",
     "interval": 6,
