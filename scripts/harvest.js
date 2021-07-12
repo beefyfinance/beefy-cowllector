@@ -43,10 +43,12 @@ const harvest = async () => {
           await stratContract.pause({ gasLimit: 3500000 });
         } else {
           tx = await stratContract.harvest({ gasLimit: 4000000 });
-          tx = await tx.wait();
-          tx.status === 1
-            ? console.log(`${strat.name} harvested with tx: ${tx.transactionHash}`)
-            : console.log(`${strat.name} harvest failed with tx: ${tx.transactionHash}`);
+          // FIX: Polygon is taking too long to confirm. Harvesting without waiting for mining for now.
+          // tx = await tx.wait();
+          // tx.status === 1
+          //   ? console.log(`${strat.name} harvested with tx: ${tx.transactionHash}`)
+          //   : console.log(`${strat.name} harvest failed with tx: ${tx.transactionHash}`);
+          console.log(`${strat.name} harvested`)
         }
       } else {
         console.log(`Shouldn't harvest ${strat.name}`);
