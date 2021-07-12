@@ -1,5 +1,32 @@
 [
   {
+    "name": "wexpoly-wbtc-wex",
+    "address": "0x476be63e41f8E47910eDa5F50507EF49aC75A8a3",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "cakev2-chess-usdc",
+    "address": "0x48aab8A4019829430A34ca5328810257b2fB9855",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "ape-yfi-bnb",
+    "address": "0xF0Eee33F9382cC5C93B833765189e085E0B81BaD",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "dfyn-bifi-dfyn",
     "address": "0x0010cB56ABF8969EA3885950CcAADB2300cd5C7d",
     "interval": 1,

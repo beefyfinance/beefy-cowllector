@@ -1,5 +1,21 @@
 [
   {
+    "id": "cakev2-chess-usdc",
+    "name": "Moo CakeV2 CHESS-USDC",
+    "contract": "0x44B59f89cD4EAbCb08d6cD97B8998A96400E8c6F",
+    "oracle": "lps",
+    "oracleId": "cakev2-chess-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "ape-yfi-bnb",
+    "name": "Moo Ape YFI-BNB",
+    "contract": "0x4A1f31E1014087B9F9e023147Cf319fF1534B209",
+    "oracle": "lps",
+    "oracleId": "ape-yfi-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-one-wbnb",
     "name": "Moo CakeV2 ONE-WBNB",
     "contract": "0xd1fa26820d7c549979790595F5ad9f5D8D16f55f",
