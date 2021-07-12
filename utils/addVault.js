@@ -7,7 +7,7 @@ const addVault = async ({ vault, chainId, interval, vaults, strats }) => {
   let newVault = {
     id: null,
     name: null,
-    contract: vault,
+    contract: vault.earnedTokenAddress,
     oracle: null,
     oracleId: null,
     tvl: 0,
@@ -24,29 +24,17 @@ const addVault = async ({ vault, chainId, interval, vaults, strats }) => {
   };
 
   const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
-  const vaultContract = new ethers.Contract(vault, BeefyVault, provider);
+  const vaultContract = new ethers.Contract(vault.earnedTokenAddress, BeefyVault, provider);
 
   const mooName = await vaultContract.name();
   newVault.name = mooName;
 
-  let mooNameElements = mooName.split(' ');
-
-  newVault.oracle = mooNameElements[2].split('-').length > 1 ? 'lps' : 'tokens';
-
-  mooNameElements.shift();
-  mooNameElements.length = 2;
-  const id = mooNameElements.join('-').toLowerCase();
-  newVault.id = id;
-
-  if (newVault.oracle === 'lps') {
-    newVault.oracleId = id;
-  } else {
-    newVault.oracleId = id.toUpperCase();
-  }
+  newVault.oracle = vault.oracle;
+  newVault.oracleId = vault.oracleId;
 
   const strategyAddress = await vaultContract.strategy();
   newStrat.address = strategyAddress;
-  newStrat.name = id;
+  newStrat.name = newVault.oracle === 'lps' ? vault.oracleId : vault.id;
 
   return {
     newVaults: chainId === 56 ? [newVault, ...vaults] : vaults,

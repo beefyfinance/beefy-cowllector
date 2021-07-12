@@ -64,7 +64,7 @@ const main = async () => {
           `Vault ${vault.id} with address ${vault.earnedTokenAddress} is in ${chain.appVaultsFilename} but not in 'data/strats.json'. Adding now...`
         );
         const { newStrats, newVaults } = await addVault({
-          vault: vault.earnedTokenAddress,
+          vault: vault,
           chainId: chain.chainId,
           interval: 6,
           vaults: defistationVaults,
