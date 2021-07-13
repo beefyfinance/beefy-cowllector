@@ -6,7 +6,6 @@
   "private": true,
   "scripts": {
     "start": "echo Cowllector ready!",
-    "new": "node ./scripts/addVaultFromCli.js",
     "lost": "node ./scripts/lostDefistation.js",
     "sync": "node ./scripts/updateStrats.js",
     "empty": "node ./scripts/emptyVaults.js"
