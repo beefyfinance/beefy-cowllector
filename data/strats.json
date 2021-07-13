@@ -1,5 +1,23 @@
 [
   {
+    "name": "ooe-ooe-busd",
+    "address": "0x4B69c421748B8b9ED5974694F34c99C5Ab3D389a",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "ooe-ooe-bnb",
+    "address": "0xDD891BA224a4a63094b4599abb2f007fB2E41ee5",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "ironswap-3usd",
     "address": "0x6195187d06948fB14b20FD3c639F8cb8a335c29c",
     "interval": 1,

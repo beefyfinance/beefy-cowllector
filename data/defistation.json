@@ -1,5 +1,21 @@
 [
   {
+    "id": "ooe-ooe-busd",
+    "name": "Moo OOE OOE-BUSD",
+    "contract": "0xC7981CD58062B6C2c782418ddb235d06A3AB80a9",
+    "oracle": "lps",
+    "oracleId": "ooe-ooe-busd",
+    "tvl": 0
+  },
+  {
+    "id": "ooe-ooe-bnb",
+    "name": "Moo OOE OOE-BNB",
+    "contract": "0xfA9f791Ff43128bbEB8B89Ee452Ba31eEFDd52f0",
+    "oracle": "lps",
+    "oracleId": "ooe-ooe-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-chess-usdc",
     "name": "Moo CakeV2 CHESS-USDC",
     "contract": "0x44B59f89cD4EAbCb08d6cD97B8998A96400E8c6F",
