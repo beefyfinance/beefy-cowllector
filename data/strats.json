@@ -1,5 +1,23 @@
 [
   {
+    "name": "ironswap-ice-eth",
+    "address": "0x57e07d6958fd38AA2f46699744e322d3fB3db60f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "ironswap-ice-usdc",
+    "address": "0x40e51fc986405684ca3E4f049426a78c20A1BC03",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "ooe-ooe-busd",
     "address": "0x4B69c421748B8b9ED5974694F34c99C5Ab3D389a",
     "interval": 4,
