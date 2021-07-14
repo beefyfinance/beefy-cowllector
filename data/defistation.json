@@ -1,5 +1,21 @@
 [
   {
+    "id": "kingdefi-krown",
+    "name": "Moo KingDefi KROWN",
+    "contract": "0xEb4804389A843676686715785C8Df27EA6E43F9b",
+    "oracle": "tokens",
+    "oracleId": "KRW",
+    "tvl": 0
+  },
+  {
+    "id": "kingdefi-krown-bnb",
+    "name": "Moo KingDefi KROWN-BNB",
+    "contract": "0x7436E25d56b22646122448BbFD05F732984B4f19",
+    "oracle": "lps",
+    "oracleId": "kingdefi-krown-bnb",
+    "tvl": 0
+  },
+  {
     "id": "ooe-ooe-busd",
     "name": "Moo OOE OOE-BUSD",
     "contract": "0xC7981CD58062B6C2c782418ddb235d06A3AB80a9",
