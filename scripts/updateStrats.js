@@ -7,12 +7,14 @@ const { MultiCall } = require('eth-multicall');
 
 const { getVaults } = require('../utils/getVaults');
 const chains = require('../data/chains');
-let strats = require('../data/strats.json');
-let defistationVaults = require('../data/defistation.json');
-const BeefyVault = require('../abis/BeefyVault.json');
-const addVault = require('../utils/addVault');
+const strats = require('../data/strats.json');
+const defistationVaults = require('../data/defistation.json');
+const BeefyVaultABI = require('../abis/BeefyVault.json');
 
 const main = async () => {
+  let newStrats = [];
+  let newDefistationVaults = [];
+
   for (chain of Object.values(chains)) {
     if (!chain.rpc) {
       console.warn(`No RPC for ${chain.id}`);
@@ -25,63 +27,89 @@ const main = async () => {
     const multicall = new MultiCall(web3, chain.multicall);
 
     const calls = vaults.map(vault => {
-      const vaultContract = new web3.eth.Contract(BeefyVault, vault.earnedTokenAddress);
+      const vaultContract = new web3.eth.Contract(BeefyVaultABI, vault.earnedTokenAddress);
       return {
+        name: vaultContract.methods.name(),
         strategy: vaultContract.methods.strategy(),
       };
     });
 
-    const [strategyAddresses] = await multicall.all([calls]);
-
+    const [callResults] = await multicall.all([calls]);
     for (let i = 0; i < vaults.length; i++) {
-      vaults[i].strategy = strategyAddresses[i].strategy;
+      vaults[i].tokenName = callResults[i].name;
+      vaults[i].strategy = callResults[i].strategy;
     }
 
-    // Find if there are strats that we should remove from the harvest schedule.
-    strats = strats.filter(strat => {
-      if (strat.chainId !== chain.chainId) return true;
-
-      const match = vaults.find(vault => vault.strategy == strat.address);
-
-      if (match === undefined || match.status === 'eol' || match.status === 'refund') {
-        console.log(
-          `Removing the strat ${strat.name} from the harvest schedule. Chain: ${strat.chainId}`
-        );
-        return false;
-      } else {
-        return true;
-      }
-    });
+    const knownStrategies = strats
+      .filter(s => s.chainId === chain.chainId)
+      .map(s => s.address);
 
     // Find if there are vaults that we should have but don't.
     for (vault of vaults) {
-      if (vault.status === 'eol' || vault.status === 'refund') continue;
+      const isExistingStrategy = knownStrategies.includes(vault.strategy);
 
-      const match = strats.find(strat => vault.strategy == strat.address);
-
-      if (match === undefined) {
-        console.log(
-          `Vault ${vault.id} with address ${vault.earnedTokenAddress} is in ${chain.appVaultsFilename} but not in 'data/strats.json'. Adding now...`
+      if (['eol', 'refund'].includes(vault.status)) {
+        if (isExistingStrategy) console.log(
+          `Strat ${vault.id} on ${chain.id} is in ${vault.status} status. Removing from the harvest schedule...`
         );
-        const { newStrats, newVaults } = await addVault({
-          vault: vault.earnedTokenAddress,
-          chainId: chain.chainId,
-          interval: 6,
-          vaults: defistationVaults,
-          strats,
-        });
-
-        defistationVaults = newVaults;
-        strats = newStrats;
+        continue;
       }
+
+      if (!isExistingStrategy) console.log(
+        `Found new ${vault.id} with address ${vault.earnedTokenAddress} in ${chain.appVaultsFilename}. Adding now...`
+      );
+
+      const stratData = strats.find(s => s.chainId === chain.chainId && s.address === vault.strategy);
+      if (stratData && stratData.name != vault.id) console.log(`Renaming ${stratData.name} to ${vault.id}...`)
+
+      newStrats.push({
+        name: vault.id,
+        address: vault.strategy,
+        interval: stratData?.interval || 6,
+        harvestSignature: stratData?.harvestSignature || '0x4641257d',
+        depositsPaused: !!vault.depositsPaused,
+        harvestPaused: stratData?.harvestPaused || false,
+        chainId: chain.chainId,
+      });
+
+      if (chain.id === 'bsc') newDefistationVaults.push({
+        id: vault.id,
+        name: vault.tokenName,
+        contract: vault.earnedTokenAddress,
+        oracle: vault.oracle,
+        oracleId: vault.oracleId,
+        tvl: 0,
+      });
+
     }
   }
 
-  fs.writeFileSync(path.join(__dirname, '../data/strats.json'), JSON.stringify(strats, null, 2));
+  // Surface deleted strategies
+  const stratDifference = strats.filter(o => !newStrats.some(n =>
+    (o.address === n.address && o.chainId === n.chainId)
+  ));
+  if (stratDifference.length > 0) {
+    console.log(
+      `Removing strats which are not represented in the beefy-app:`,
+      stratDifference.map(s => s.name).join(', ')
+    );
+  };
+
+  // Preserve existing defistation list
+  const vaultDifference = defistationVaults.filter(o => !newDefistationVaults.some(n =>
+    (o.contract === n.contract)
+  ));
+  newDefistationVaults.push(...vaultDifference)
+
+  fs.writeFileSync(
+    path.join(__dirname, '../data/strats.json'),
+    JSON.stringify(newStrats, null, 2));
+
   fs.writeFileSync(
     path.join(__dirname, '../data/defistation.json'),
-    JSON.stringify(defistationVaults, null, 2)
+    JSON.stringify(newDefistationVaults, null, 2)
   );
+
 };
 
 main();
