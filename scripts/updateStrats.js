@@ -8,6 +8,7 @@ const { MultiCall } = require('eth-multicall');
 const { getVaults } = require('../utils/getVaults');
 const chains = require('../data/chains');
 const strats = require('../data/strats.json');
+const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
 
 const main = async () => {
@@ -93,6 +94,12 @@ const main = async () => {
       stratDifference.map(s => s.name).join(', ')
     );
   };
+
+  // Preserve existing defistation list
+  const vaultDifference = defistationVaults.filter(o => !newDefistationVaults.some(n =>
+    (o.contract === n.contract)
+  ));
+  newDefistationVaults.push(...vaultDifference)
 
   fs.writeFileSync(
     path.join(__dirname, '../data/strats.json'),

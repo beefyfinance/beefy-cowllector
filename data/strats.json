@@ -18,6 +18,24 @@
     "chainId": 56
   },
   {
+    "name": "kingdefi-krown-bnb",
+    "address": "0xDeb8Fca869d5A1ED5E003ef1Eabf74E1233EB5Fe",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "kingdefi-krown",
+    "address": "0xbF4bC77Bb1eBA1b2f8a3Aa1219b792C2F217c221",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "ooe-ooe-bnb",
     "address": "0xDD891BA224a4a63094b4599abb2f007fB2E41ee5",
     "interval": 4,
@@ -2691,15 +2709,6 @@
     "chainId": 56
   },
   {
-    "name": "venus-wbnb",
-    "address": "0xFA3CcB086Bf371A2Ff33Db8521Be47c5B4b9d10E",
-    "interval": 10,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "narwhal-gold-bnb",
     "address": "0x3661576d5Ecc42b7aA84b0749d8d3180eE6D1Be4",
     "interval": 26,
@@ -3051,6 +3060,15 @@
     "chainId": 137
   },
   {
+    "name": "dfyn-ice-dfyn",
+    "address": "0x6ef302f46543d1045F3c93D2eE77AcD58d3854C4",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "ironswap-ice-eth",
     "address": "0x57e07d6958fd38AA2f46699744e322d3fB3db60f",
     "interval": 1,
@@ -3114,26 +3132,8 @@
     "chainId": 137
   },
   {
-    "name": "jetswap-poly-pwings-usdc",
-    "address": "0x77092b29492163c0695Af17e94d29E73Dcba8743",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "jetswap-poly-pwings-matic",
     "address": "0x80F442b0207Fbc58efBd55da37F2fCc134CAEE7B",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "jetswap-poly-pwings-usdt",
-    "address": "0x9CD8DC671172f1c30a3bc65A197Db38D9104C0F8",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
