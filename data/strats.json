@@ -3051,6 +3051,69 @@
     "chainId": 137
   },
   {
+    "name": "quick-nexo-eth",
+    "address": "0x5566b0b16BCd6dc44B3b15eB4b41ed2B1063C3a4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-nexo-quick",
+    "address": "0xc7A53569Bb87E631A2Db5BfaC12A619284C9589d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "telxchange-quick-quick-tel",
+    "address": "0x968Eb3feCFEE8310C035CdAE07F6eD804b460c45",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "telxchange-quick-wmatic-tel",
+    "address": "0x8C0410A6C1fF46be696E5aCC6b3cA977AD5b176A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "telxchange-quick-eth-tel",
+    "address": "0x9D78991a30f9822f6b5cBc521D5Ba203f0930c0E",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "telxchange-quick-aave-tel",
+    "address": "0x83ee18Af41163e6889C502Fa3c876366E53D15DA",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "telxchange-quick-wbtc-tel",
+    "address": "0xAa4EFbd9a98503844036306A6510B7DA59EfEaB3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "curve-poly-atricrypto",
     "address": "0x0C0C75AF434519AB96E34EB3bbEea726324d6264",
     "interval": 1,
