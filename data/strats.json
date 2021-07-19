@@ -27,6 +27,15 @@
     "chainId": 56
   },
   {
+    "name": "wex-krown-bnb",
+    "address": "0x7cF5B614dA3d2781F426E826ccfc5451e346bB1E",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "kingdefi-krown-bnb",
     "address": "0xDeb8Fca869d5A1ED5E003ef1Eabf74E1233EB5Fe",
     "interval": 6,
@@ -3349,7 +3358,7 @@
   },
   {
     "name": "polypup-pup",
-    "address": "0xE44D57D43478e50a7CE720a407Dc43fec9ADB584",
+    "address": "0x21a9b464DAD1c10985eB8B735A3918fFf24034bc",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
