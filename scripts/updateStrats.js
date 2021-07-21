@@ -11,11 +11,22 @@ const strats = require('../data/strats.json');
 const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
 
+const defaultInterval = (chain) => {
+  switch (chain.id) {
+    case 'bsc':
+      return 4;
+    case 'avax':
+      return 6;
+    default:
+      return 1;
+  }
+};
+
 const main = async () => {
   let newStrats = [];
   let newDefistationVaults = [];
 
-  for (chain of Object.values(chains)) {
+  for (const chain of Object.values(chains)) {
     if (!chain.rpc) {
       console.warn(`No RPC for ${chain.id}`);
       continue;
@@ -30,7 +41,7 @@ const main = async () => {
       const vaultContract = new web3.eth.Contract(BeefyVaultABI, vault.earnedTokenAddress);
       return {
         name: vaultContract.methods.name(),
-        strategy: vaultContract.methods.strategy(),
+        strategy: vaultContract.methods.strategy()
       };
     });
 
@@ -60,16 +71,16 @@ const main = async () => {
       );
 
       const stratData = strats.find(s => s.chainId === chain.chainId && s.address === vault.strategy);
-      if (stratData && stratData.name != vault.id) console.log(`Renaming ${stratData.name} to ${vault.id}...`)
+      if (stratData && stratData.name != vault.id) console.log(`Renaming ${stratData.name} to ${vault.id}...`);
 
       newStrats.push({
         name: vault.id,
         address: vault.strategy,
-        interval: stratData?.interval || 6,
+        interval: stratData?.interval || defaultInterval(chain),
         harvestSignature: stratData?.harvestSignature || '0x4641257d',
         depositsPaused: !!vault.depositsPaused,
         harvestPaused: stratData?.harvestPaused || false,
-        chainId: chain.chainId,
+        chainId: chain.chainId
       });
 
       if (chain.id === 'bsc') newDefistationVaults.push({
@@ -78,7 +89,7 @@ const main = async () => {
         contract: vault.earnedTokenAddress,
         oracle: vault.oracle,
         oracleId: vault.oracleId,
-        tvl: 0,
+        tvl: 0
       });
 
     }
@@ -93,13 +104,13 @@ const main = async () => {
       `Removing strats which are not represented in the beefy-app:`,
       stratDifference.map(s => s.name).join(', ')
     );
-  };
+  }
 
   // Preserve existing defistation list
   const vaultDifference = defistationVaults.filter(o => !newDefistationVaults.some(n =>
     (o.contract === n.contract)
   ));
-  newDefistationVaults.push(...vaultDifference)
+  newDefistationVaults.push(...vaultDifference);
 
   fs.writeFileSync(
     path.join(__dirname, '../data/strats.json'),
