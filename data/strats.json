@@ -2844,11 +2844,11 @@
     "chainId": 128
   },
   {
-    "name": "mdex-mdx",
+    "name": "mdex-mdx-pause",
     "address": "0x38086c829017621561Ac7d38501988E3A6152A0E",
     "interval": 6,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 128
   },
@@ -3071,6 +3071,33 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-dino-usdc",
+    "address": "0xF00Fd3EAAc684fDcdB5a740550ceAbF7e580E8D5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-usdc-mimatic",
+    "address": "0xC42908F4C14E01379C0D16cF07dcBB413D2f6a2A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-usdc-usdt",
+    "address": "0x8e1097A2374C81D17E0589cbD935957329bbC331",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
