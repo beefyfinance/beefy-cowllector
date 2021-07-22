@@ -6,8 +6,8 @@ let strats = require('../data/strats.json');
 
 const config = {
   chains: [56],
-  min: 1,
-  max: 7,
+  min: 4,
+  max: 10,
   interval: 2,
 };
 
