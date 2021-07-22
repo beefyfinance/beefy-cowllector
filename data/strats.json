@@ -4401,6 +4401,33 @@
     "chainId": 250
   },
   {
+    "name": "curve-ftm-2pool",
+    "address": "0x1d23ecC0645B07791b7D99349e253ECEbe43f614",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "curve-ftm-fusdt",
+    "address": "0xDcdb088f53dBcC63f600299867F8b6eE6BC7a6cE",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "curve-ftm-ren",
+    "address": "0x6c7814eDB8288f7d75C9588173C4b56aCEE85720",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "boo-mim-ftm",
     "address": "0x567FF0A6067C9021DBd50D09bA747F78aEfAB9c2",
     "interval": 1,
