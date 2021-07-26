@@ -418,7 +418,7 @@
     "address": "0x5A11a47C3c6C9Ee92B9Ba7892Ccb2246D4D76204",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -427,7 +427,7 @@
     "address": "0x8CDed7955f13Eb56339B16A4C06C860b922BED13",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -1287,15 +1287,6 @@
     "chainId": 56
   },
   {
-    "name": "banana-bxbtc-bnb",
-    "address": "0xa81Aa01ed8aB5FAc7d4c2524c0c754097a299a7c",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-btt-bnb",
     "address": "0x1aAaB52Ae2cE49751B052482E9a40d63137F0bd5",
     "interval": 24,
@@ -1521,15 +1512,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-blk-bnb",
-    "address": "0x9855a453cC9E33605612a155700B40285c9CC3ad",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-helmet-bnb",
     "address": "0xcE0d4E21eC388F436Fcaaf67Caf543a99d5c41d9",
     "interval": 24,
@@ -1559,15 +1541,6 @@
   {
     "name": "cakev2-nrv-bnb",
     "address": "0xE95871AFD0366E68e43393506B13EAAB9B70F860",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-bdo-bnb",
-    "address": "0x904216D58d0Bcd9F025C1C87D109F94623122a83",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2772,11 +2745,11 @@
     "chainId": 128
   },
   {
-    "name": "mdex-mdx-pause",
+    "name": "mdex-mdx",
     "address": "0x94a06C3dAd933c81739a7D78E15EBc874e9A13f1",
     "interval": 1,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
+    "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128
   },
@@ -3008,6 +2981,15 @@
   {
     "name": "polyyeld-xyeld-quick-wmatic-xyeld",
     "address": "0x459beC2474D88D6fCf50071E36124b9c420aa9e0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-xmark-usdc",
+    "address": "0x6048e8BC353bCEe221e11Cde2359E3b34ee9a726",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
