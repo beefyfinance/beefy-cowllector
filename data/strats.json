@@ -18,6 +18,33 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-c98-wbnb",
+    "address": "0x11a37990e5F5202B7a43FBf9592995e3B9697eA3",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wex-bnb-ont",
+    "address": "0x76F3D8204CF10E3382d93C9243f4f244e4666C27",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "mdex-bsc-mdx",
+    "address": "0x2B1e1d46a3497379e2F338F956Ea2dC3e5857539",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "wex-tusd-usdt",
     "address": "0xB8817AC5F57d69524196eD7EaD69430e78621763",
     "interval": 4,
@@ -446,15 +473,6 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "mdex-bsc-mdx-pause",
-    "address": "0xcC3aC47Fd871717DbbFbC669803086cC18e2b898",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -3322,8 +3340,8 @@
   },
   {
     "name": "dfyn-route-dfyn",
-    "address": "0x1Fff1654DBE0aa26cbc0e754a7BA641B89B95910",
-    "interval": 6,
+    "address": "0x773de346a6E148981076140a6f82Bb709c387c05",
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
