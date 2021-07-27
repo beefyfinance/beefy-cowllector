@@ -18,6 +18,15 @@
     "chainId": 56
   },
   {
+    "name": "wex-tusd-usdt",
+    "address": "0xB8817AC5F57d69524196eD7EaD69430e78621763",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-axs-wbnb",
     "address": "0x30f19CC8249f81fad6154eF58469a4AFEB9c4816",
     "interval": 24,
@@ -418,8 +427,8 @@
     "address": "0x5A11a47C3c6C9Ee92B9Ba7892Ccb2246D4D76204",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
+    "depositsPaused": false,
+    "harvestPaused": true,
     "chainId": 56
   },
   {
@@ -427,8 +436,8 @@
     "address": "0x8CDed7955f13Eb56339B16A4C06C860b922BED13",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
+    "depositsPaused": false,
+    "harvestPaused": true,
     "chainId": 56
   },
   {
@@ -866,15 +875,6 @@
   {
     "name": "cakev2-deri-busd",
     "address": "0x0bb686a137D60710f9b5bE0122A5d690d6854166",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "hps-hps",
-    "address": "0x48A7390823398d09b67948316839c76ce2c59007",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2403,15 +2403,6 @@
     "chainId": 56
   },
   {
-    "name": "alpaca-salpaca",
-    "address": "0x40acfAbe68f3bf55B24c9E21A3Cbc8743EB73F01",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "space-space-bnb",
     "address": "0x3923A7bbB5B5D34FA1182360E9d092BB280f5495",
     "interval": 24,
@@ -2981,6 +2972,24 @@
   {
     "name": "polyyeld-xyeld-quick-wmatic-xyeld",
     "address": "0x459beC2474D88D6fCf50071E36124b9c420aa9e0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "polycracker-lith",
+    "address": "0xc2f3338847D05A9A28b763c77556cD693f7f6C7e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "polycracker-lith-usdc",
+    "address": "0xa6984233aD18987de3dbDAF37Bc0F0C4070F5faC",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,

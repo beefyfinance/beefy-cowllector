@@ -16,6 +16,14 @@
     "tvl": 0
   },
   {
+    "id": "wex-tusd-usdt",
+    "name": "Moo Wault TUSD-USDT",
+    "contract": "0x54be68B8330D49e454DF63A9F74Baa62B90fB768",
+    "oracle": "lps",
+    "oracleId": "wex-tusd-usdt",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-axs-wbnb",
     "name": "Moo CakeV2 AXS-WBNB",
     "contract": "0x97579c19A91c9e174D1DF4782739A2ec0971c0D8",
@@ -776,14 +784,6 @@
     "tvl": 0
   },
   {
-    "id": "hps-hps",
-    "name": "Moo Billion HPS",
-    "contract": "0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5",
-    "oracle": "tokens",
-    "oracleId": "HPS",
-    "tvl": 0
-  },
-  {
     "id": "dopple-dolly-lp",
     "name": "Moo Dopple DollyLP",
     "contract": "0xCcb7A9E2e4F08407065f51d32C365304fbF2FD01",
@@ -1144,14 +1144,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-bxbtc-bnb",
-    "name": "Moo Ape bxBTC-BNB",
-    "contract": "0x8D112FcdF377A2C4cb41b60AAe32199F939a866C",
-    "oracle": "lps",
-    "oracleId": "banana-bxbtc-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-btt-bnb",
     "name": "Moo CakeV2 BTT-BNB",
     "contract": "0x561860359244877A6dE987165a5A89Ef288C178D",
@@ -1381,14 +1373,6 @@
     "contract": "0xD059034677f2E57489beF03f942CE6ffAccBEdD2",
     "oracle": "lps",
     "oracleId": "cakev2-nrv-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-bdo-bnb",
-    "name": "Moo CakeV2 BDO-BNB",
-    "contract": "0x0dc321E38BfF5693e6c003Ab71eD85693919B04e",
-    "oracle": "lps",
-    "oracleId": "cakev2-bdo-bnb",
     "tvl": 0
   },
   {
@@ -2152,14 +2136,6 @@
     "tvl": 0
   },
   {
-    "id": "alpaca-salpaca",
-    "name": "Moo Alpaca sALPACA",
-    "contract": "0xCd1C6adca69071F61EfE5aaa0BB63cA3419D5088",
-    "oracle": "tokens",
-    "oracleId": "ALPACA",
-    "tvl": 0
-  },
-  {
     "id": "space-space-bnb",
     "name": "Moo Space SPACE-BNB",
     "contract": "0xbC943C4C00E837e65Cf76BcD8Df8C365FB44Dd6f",
@@ -2405,6 +2381,38 @@
     "contract": "0x3e1B60EB79b17d41F8E268936d853A43BEA24259",
     "oracle": "lps",
     "oracleId": "bakery-bake-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "hps-hps",
+    "name": "Moo Billion HPS",
+    "contract": "0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5",
+    "oracle": "tokens",
+    "oracleId": "HPS",
+    "tvl": 0
+  },
+  {
+    "id": "banana-bxbtc-bnb",
+    "name": "Moo Ape bxBTC-BNB",
+    "contract": "0x8D112FcdF377A2C4cb41b60AAe32199F939a866C",
+    "oracle": "lps",
+    "oracleId": "banana-bxbtc-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bdo-bnb",
+    "name": "Moo CakeV2 BDO-BNB",
+    "contract": "0x0dc321E38BfF5693e6c003Ab71eD85693919B04e",
+    "oracle": "lps",
+    "oracleId": "cakev2-bdo-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "alpaca-salpaca",
+    "name": "Moo Alpaca sALPACA",
+    "contract": "0xCd1C6adca69071F61EfE5aaa0BB63cA3419D5088",
+    "oracle": "tokens",
+    "oracleId": "ALPACA",
     "tvl": 0
   },
   {
