@@ -18,6 +18,15 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-sps-wbnb",
+    "address": "0x9d6534cec46D253dC1fdd2B892816a8A863Db079",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-c98-wbnb",
     "address": "0x11a37990e5F5202B7a43FBf9592995e3B9697eA3",
     "interval": 4,
@@ -2981,6 +2990,15 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-yamp-usdc",
+    "address": "0xe72E12c4c242595B20a1a718a582FFF7116010a7",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
