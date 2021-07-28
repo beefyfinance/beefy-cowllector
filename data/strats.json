@@ -2988,15 +2988,6 @@
     "chainId": 137
   },
   {
-    "name": "polyyeld-xyeld-quick-wmatic-xyeld",
-    "address": "0x459beC2474D88D6fCf50071E36124b9c420aa9e0",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "polycracker-lith",
     "address": "0xc2f3338847D05A9A28b763c77556cD693f7f6C7e",
     "interval": 1,
@@ -3071,33 +3062,6 @@
   {
     "name": "polypup-usdc-bone",
     "address": "0x315324Bcd724b8CF01FfE6d04F029328f595e126",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polyyeld-xyeld-xyeld",
-    "address": "0xB8cb0958B3943E63917Bdfe4b93201Cf5cC7De18",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polyyeld-xyeld-yeld",
-    "address": "0x59d6200BD6E5c3326Ab2A3784bce65EfDD36f8BD",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polyyeld-xyeld-quick-wmatic-yeld",
-    "address": "0xdeAdcbc04D78440612dC4Ed0651C2698695C2AD2",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3465,15 +3429,6 @@
     "chainId": 137
   },
   {
-    "name": "polyyeld-ape-wmatic-yeld",
-    "address": "0xA82b0a53Dc044C7B885D32FA4EEaA4FeD7528773",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "sushi-wbtc-ibbtc",
     "address": "0x46FfF3f004afeE180CF96cCa92560a94A696044B",
     "interval": 6,
@@ -3513,24 +3468,6 @@
     "name": "ape-banana-matic",
     "address": "0x453054B9C2CD3dF1c57E0866241f460B78eE3ebB",
     "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polyyeld-sushi-wmatic-yeld",
-    "address": "0x966fC9Ee8500b470C653c339c8fa0a68520CC3ea",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polyyeld-quick-usdc-yeld",
-    "address": "0x7593747a19a50451bBe6E0f1D427D4F80796f684",
-    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
