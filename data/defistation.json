@@ -8,11 +8,27 @@
     "tvl": 0
   },
   {
+    "id": "banana-banana",
+    "name": "Moo Ape BANANA",
+    "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
+    "oracle": "tokens",
+    "oracleId": "BANANA",
+    "tvl": 0
+  },
+  {
     "id": "cake-cakev2",
     "name": "Moo CakeV2",
     "contract": "0x97e5d50Fe0632A95b9cf1853E744E02f7D816677",
     "oracle": "tokens",
     "oracleId": "Cake",
+    "tvl": 0
+  },
+  {
+    "id": "pera-pera-bnb",
+    "name": "Moo Pera PERA-BNB",
+    "contract": "0xE48888E2d11307c467AB364FeaD6d8C214210D2B",
+    "oracle": "lps",
+    "oracleId": "pera-pera-bnb",
     "tvl": 0
   },
   {
@@ -2261,14 +2277,6 @@
     "contract": "0x0c65883778f16770F4d43f5524708e18BC62881b",
     "oracle": "lps",
     "oracleId": "cakev2-alice-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-banana",
-    "name": "Moo Ape BANANA",
-    "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
-    "oracle": "tokens",
-    "oracleId": "BANANA",
     "tvl": 0
   },
   {

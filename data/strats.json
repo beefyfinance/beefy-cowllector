@@ -9,9 +9,27 @@
     "chainId": 56
   },
   {
+    "name": "banana-banana",
+    "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cake-cakev2",
     "address": "0x5448C07cb55Adb7Ee19185144108b09Ed291fDEd",
     "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "pera-pera-bnb",
+    "address": "0x8f817ED8DC70aF64F542f1B43e24442a811abf7d",
+    "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2540,15 +2558,6 @@
   {
     "name": "cakev2-alice-bnb",
     "address": "0x050388f9215e2D9611F3d9E28Fa070bdB7B3F5E7",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-banana",
-    "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
