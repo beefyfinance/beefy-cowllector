@@ -27,6 +27,42 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-revv-bnb",
+    "address": "0xEBA5082def68C8A86D2DE828fbd05359a7b1766E",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-bnb-sista",
+    "address": "0xcD3C21e3f8dAdDf753B2f355825FF7A307f88756",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wex-bnb-dep",
+    "address": "0x29C215679d3B17C7Cff71277256eA7987db724c9",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "jetswap-btcb-bnb",
+    "address": "0x1D8d4172afD6EBa8b026107C59FECF0E81A25F74",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "pera-pera-bnb",
     "address": "0x8f817ED8DC70aF64F542f1B43e24442a811abf7d",
     "interval": 4,
@@ -3062,6 +3098,69 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-dfyn-ust-usdt",
+    "address": "0x6ed82Aaa6D421404D43389a4F497923912De0916",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-dfyn-eth-dfyn",
+    "address": "0x680fFd9E16a3f18576be2A0a03c528a353D6B622",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-quick-yamp",
+    "address": "0xed28adB653C55B63997C6f576DAcFaB2b1c94f17",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-quick-rendgb",
+    "address": "0xA4352F2eCC3DDDb85CCfEaDf2ab991dB2Eb5bbf2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-quick-woo",
+    "address": "0x0BFf7F289a99204648C003D77f24da68F7eC9323",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-woo-eth",
+    "address": "0xb590D3d2F74661c010092d266edc7DD0117C165a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-start-quick",
+    "address": "0x39ecdEAf9e442B993d53c35c77789e278f090cd2",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
