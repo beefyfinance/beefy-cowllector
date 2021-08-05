@@ -27,8 +27,71 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-btt-busd",
+    "address": "0x33E4532f3aca53d9e4806DD0408e42Ea55cc51eC",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-trx-busd",
+    "address": "0xF98B505fb14FC1DD845Ebee72F5F68fd467fb521",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-win-busd",
+    "address": "0xd62938936C8ec78bFf00390F10a6c735C1E4EA4b",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-revv-bnb",
     "address": "0xEBA5082def68C8A86D2DE828fbd05359a7b1766E",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-mcrn-wbnb",
+    "address": "0x3081ab1E19320e93CcA9817Eca037813BbDB64c1",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-wsg-wbnb",
+    "address": "0x7D800E70FEA730d1853c204682BCbaD8537b87F9",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-bmon-wbnb",
+    "address": "0x01aC8038c88Ca42e36E2B4BEbaF602264C3Cba0f",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-wbnb-babycake",
+    "address": "0x8e4691EC043714C55b76a738B72657a8D217d983",
     "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -219,6 +282,15 @@
     "name": "banana-fruit-bnb",
     "address": "0x46a0F73198192951C746B4b7a9E91E6edef38d9E",
     "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "stablequant-quant-busd",
+    "address": "0x1245549819F6E0c95109cC2fF3C75C12Fc0a4B92",
+    "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -1424,33 +1496,6 @@
   {
     "name": "banana-watch-bnb",
     "address": "0x95D965048920A9917b079E6Eb53Bf10d1C0F66a0",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-btt-bnb",
-    "address": "0x1aAaB52Ae2cE49751B052482E9a40d63137F0bd5",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-trx-bnb",
-    "address": "0xd5ACf6DFA0f59c5C5A85d6fACf74F59a721478BA",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-win-bnb",
-    "address": "0x486b33700c3f67Ba68cdb0D5E0c449A196F48FA8",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3098,6 +3143,24 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-guard-usdc",
+    "address": "0x54b1FE5f9162141740A2cF0e2044D82b8F570e08",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-dino-eth",
+    "address": "0xd85BAF8b9Ab657921c6D2700AA0e78928dC2922C",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
