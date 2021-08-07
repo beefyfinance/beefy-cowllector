@@ -24,6 +24,30 @@
     "tvl": 0
   },
   {
+    "id": "honeyfarm-honey-busd",
+    "name": "Moo HoneyFarm HONEY-BUSD",
+    "contract": "0x703Ab45f572db0f961520787f34F0E8bf7C2208B",
+    "oracle": "lps",
+    "oracleId": "honeyfarm-honey-busd",
+    "tvl": 0
+  },
+  {
+    "id": "honeyfarm-honey-bnb",
+    "name": "Moo HoneyFarm HONEY-BNB",
+    "contract": "0xE0e445357e86464C8DB8B4302e35852B3F92ac5d",
+    "oracle": "lps",
+    "oracleId": "honeyfarm-honey-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-pots-bnb",
+    "name": "Moo Ape POTS-BNB",
+    "contract": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
+    "oracle": "lps",
+    "oracleId": "banana-pots-bnb",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-btt-busd",
     "name": "Moo CakeV2 BTT-BUSD",
     "contract": "0x0f10758Bf5A088471FbDeCbfd3051E4FAC927d1f",

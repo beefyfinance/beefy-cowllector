@@ -27,6 +27,33 @@
     "chainId": 56
   },
   {
+    "name": "honeyfarm-honey-busd",
+    "address": "0x6A559D3dB54926900923c3A5f8846d8dea1cd81f",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "honeyfarm-honey-bnb",
+    "address": "0x362C5251Ea02dDfaCcF38034d89C70AbA723727e",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-pots-bnb",
+    "address": "0x4643BF3ad84F239A8016d5533489B1B0CD5b71b4",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-btt-busd",
     "address": "0x33E4532f3aca53d9e4806DD0408e42Ea55cc51eC",
     "interval": 4,
@@ -3663,15 +3690,6 @@
     "chainId": 137
   },
   {
-    "name": "dfyn-uft-dfyn",
-    "address": "0x8c5E402F3F43958Ecb83b10aD9bE98Fd026C52c6",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "polypup-bone",
     "address": "0xf2F5C13686b79b92dC73F6Bb1D2663329658EC87",
     "interval": 6,
@@ -4556,6 +4574,15 @@
   {
     "name": "fantom-bifi-maxi",
     "address": "0x230691a28C8290A553BFBC911Ab2AbA0b2df152D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-yfi-eth",
+    "address": "0x490701fb9DCC30B89734F934120B24Dd90317BB7",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
