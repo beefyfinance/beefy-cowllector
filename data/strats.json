@@ -27,6 +27,15 @@
     "chainId": 56
   },
   {
+    "name": "banana-land-bnb",
+    "address": "0xD062f938F9AB7C88b987FDC60A3fDc4889F56B88",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "honeyfarm-honey-busd",
     "address": "0x6A559D3dB54926900923c3A5f8846d8dea1cd81f",
     "interval": 4,
@@ -3170,6 +3179,24 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-sol-matic",
+    "address": "0xcBb3dBE7e9dC48f5be0CecB38cA228E285C1fC60",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-uni-eth",
+    "address": "0x9CE2Ac0634eFBA6e11e3C1bF423C397c9512672f",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
