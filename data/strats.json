@@ -9,8 +9,8 @@
     "chainId": 56
   },
   {
-    "name": "banana-banana",
-    "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
+    "name": "cake-cakev2",
+    "address": "0x5448C07cb55Adb7Ee19185144108b09Ed291fDEd",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -18,8 +18,17 @@
     "chainId": 56
   },
   {
-    "name": "cake-cakev2",
-    "address": "0x5448C07cb55Adb7Ee19185144108b09Ed291fDEd",
+    "name": "cakev2-pots-busd",
+    "address": "0x97a92bb98567C508068eD3b972c0d0F9E63177DC",
+    "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-banana",
+    "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3375,24 +3384,6 @@
     "chainId": 137
   },
   {
-    "name": "polycracker-lith",
-    "address": "0xc2f3338847D05A9A28b763c77556cD693f7f6C7e",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polycracker-lith-usdc",
-    "address": "0xa6984233aD18987de3dbDAF37Bc0F0C4070F5faC",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "dinoswap-xmark-usdc",
     "address": "0x6048e8BC353bCEe221e11Cde2359E3b34ee9a726",
     "interval": 1,
@@ -4367,15 +4358,6 @@
   {
     "name": "quick-any-quick",
     "address": "0x5E70Ad3438Fe87e0ec89CF15a53aFb2caC39cC6C",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-frax-quick",
-    "address": "0x57b3D28fe4824d42c1F8d2786B89bC89e8c68d66",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,

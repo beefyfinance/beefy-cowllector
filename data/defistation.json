@@ -8,19 +8,27 @@
     "tvl": 0
   },
   {
-    "id": "banana-banana",
-    "name": "Moo Ape BANANA",
-    "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
-    "oracle": "tokens",
-    "oracleId": "BANANA",
-    "tvl": 0
-  },
-  {
     "id": "cake-cakev2",
     "name": "Moo CakeV2",
     "contract": "0x97e5d50Fe0632A95b9cf1853E744E02f7D816677",
     "oracle": "tokens",
     "oracleId": "Cake",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-pots-busd",
+    "name": "Moo CakeV2 POTS-BUSD",
+    "contract": "0x3106d9B3d5e04ff5D575212140FAb1Cf17C8933F",
+    "oracle": "lps",
+    "oracleId": "cakev2-pots-busd",
+    "tvl": 0
+  },
+  {
+    "id": "banana-banana",
+    "name": "Moo Ape BANANA",
+    "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
+    "oracle": "tokens",
+    "oracleId": "BANANA",
     "tvl": 0
   },
   {
