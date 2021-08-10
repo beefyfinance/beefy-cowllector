@@ -3195,6 +3195,42 @@
     "chainId": 137
   },
   {
+    "name": "polygonfarm-spade-matic",
+    "address": "0xA54f5470D3C03BF088372F31dD0a69Cf6c262478",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "polygonfarm-spade-usdc",
+    "address": "0x2DE7e25b19dbff36d92B62d6692eb568Bba29c3c",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "cometh-eth-wbtc",
+    "address": "0xd0AEd4Bb2050b4E4b8F5C9A4bcC5D1C46D4b397b",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "cometh-eth-usdc",
+    "address": "0x33b35C38Ae0a3c2c4C9262217cb34DAdfB37a985",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "quick-sol-matic",
     "address": "0xcBb3dBE7e9dC48f5be0CecB38cA228E285C1fC60",
     "interval": 1,
