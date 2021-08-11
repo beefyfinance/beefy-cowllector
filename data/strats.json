@@ -3195,6 +3195,24 @@
     "chainId": 137
   },
   {
+    "name": "pearzap-pear-usdc",
+    "address": "0x585b4c8C0D4C62f663DF6945524E59F69273f1Df",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "pearzap-pear-matic",
+    "address": "0x9616eD357812ddc14bE3833fEc37F6Ce76eB5D1e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "polygonfarm-spade-matic",
     "address": "0xA54f5470D3C03BF088372F31dD0a69Cf6c262478",
     "interval": 1,
