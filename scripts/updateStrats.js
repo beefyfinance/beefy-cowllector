@@ -11,10 +11,10 @@ const strats = require('../data/strats.json');
 const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
 
-const defaultInterval = (chain) => {
+const defaultInterval = chain => {
   switch (chain.id) {
     case 'bsc':
-      return 4;
+      return 24;
     case 'avax':
       return 6;
     default:
@@ -41,7 +41,7 @@ const main = async () => {
       const vaultContract = new web3.eth.Contract(BeefyVaultABI, vault.earnedTokenAddress);
       return {
         name: vaultContract.methods.name(),
-        strategy: vaultContract.methods.strategy()
+        strategy: vaultContract.methods.strategy(),
       };
     });
 
@@ -51,27 +51,30 @@ const main = async () => {
       vaults[i].strategy = callResults[i].strategy;
     }
 
-    const knownStrategies = strats
-      .filter(s => s.chainId === chain.chainId)
-      .map(s => s.address);
+    const knownStrategies = strats.filter(s => s.chainId === chain.chainId).map(s => s.address);
 
     // Find if there are vaults that we should have but don't.
     for (vault of vaults) {
       const isExistingStrategy = knownStrategies.includes(vault.strategy);
 
       if (['eol', 'refund'].includes(vault.status)) {
-        if (isExistingStrategy) console.log(
-          `Strat ${vault.id} on ${chain.id} is in ${vault.status} status. Removing from the harvest schedule...`
-        );
+        if (isExistingStrategy)
+          console.log(
+            `Strat ${vault.id} on ${chain.id} is in ${vault.status} status. Removing from the harvest schedule...`
+          );
         continue;
       }
 
-      if (!isExistingStrategy) console.log(
-        `Found new ${vault.id} with address ${vault.earnedTokenAddress} in ${chain.appVaultsFilename}. Adding now...`
-      );
+      if (!isExistingStrategy)
+        console.log(
+          `Found new ${vault.id} with address ${vault.earnedTokenAddress} in ${chain.appVaultsFilename}. Adding now...`
+        );
 
-      const stratData = strats.find(s => s.chainId === chain.chainId && s.address === vault.strategy);
-      if (stratData && stratData.name != vault.id) console.log(`Renaming ${stratData.name} to ${vault.id}...`);
+      const stratData = strats.find(
+        s => s.chainId === chain.chainId && s.address === vault.strategy
+      );
+      if (stratData && stratData.name != vault.id)
+        console.log(`Renaming ${stratData.name} to ${vault.id}...`);
 
       newStrats.push({
         name: vault.id,
@@ -80,25 +83,25 @@ const main = async () => {
         harvestSignature: stratData?.harvestSignature || '0x4641257d',
         depositsPaused: !!vault.depositsPaused,
         harvestPaused: stratData?.harvestPaused || false,
-        chainId: chain.chainId
+        chainId: chain.chainId,
       });
 
-      if (chain.id === 'bsc') newDefistationVaults.push({
-        id: vault.id,
-        name: vault.tokenName,
-        contract: vault.earnedTokenAddress,
-        oracle: vault.oracle,
-        oracleId: vault.oracleId,
-        tvl: 0
-      });
-
+      if (chain.id === 'bsc')
+        newDefistationVaults.push({
+          id: vault.id,
+          name: vault.tokenName,
+          contract: vault.earnedTokenAddress,
+          oracle: vault.oracle,
+          oracleId: vault.oracleId,
+          tvl: 0,
+        });
     }
   }
 
   // Surface deleted strategies
-  const stratDifference = strats.filter(o => !newStrats.some(n =>
-    (o.address === n.address && o.chainId === n.chainId)
-  ));
+  const stratDifference = strats.filter(
+    o => !newStrats.some(n => o.address === n.address && o.chainId === n.chainId)
+  );
   if (stratDifference.length > 0) {
     console.log(
       `Removing strats which are not represented in the beefy-app:`,
@@ -107,20 +110,17 @@ const main = async () => {
   }
 
   // Preserve existing defistation list
-  const vaultDifference = defistationVaults.filter(o => !newDefistationVaults.some(n =>
-    (o.contract === n.contract)
-  ));
+  const vaultDifference = defistationVaults.filter(
+    o => !newDefistationVaults.some(n => o.contract === n.contract)
+  );
   newDefistationVaults.push(...vaultDifference);
 
-  fs.writeFileSync(
-    path.join(__dirname, '../data/strats.json'),
-    JSON.stringify(newStrats, null, 2));
+  fs.writeFileSync(path.join(__dirname, '../data/strats.json'), JSON.stringify(newStrats, null, 2));
 
   fs.writeFileSync(
     path.join(__dirname, '../data/defistation.json'),
     JSON.stringify(newDefistationVaults, null, 2)
   );
-
 };
 
 main();
