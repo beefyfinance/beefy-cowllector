@@ -18,6 +18,15 @@
     "chainId": 56
   },
   {
+    "name": "alpaca-ibalpaca",
+    "address": "0x8F5555623C61d5adD046206007a42766C74086b6",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-pots-busd",
     "address": "0x97a92bb98567C508068eD3b972c0d0F9E63177DC",
     "interval": 24,
@@ -56,6 +65,15 @@
   {
     "name": "honeyfarm-honey-bnb",
     "address": "0x362C5251Ea02dDfaCcF38034d89C70AbA723727e",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-cyt-bnb",
+    "address": "0x4460ab68B3531ce1527A2dd9615Ae47e144eC4D4",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,

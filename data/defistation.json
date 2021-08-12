@@ -16,6 +16,14 @@
     "tvl": 0
   },
   {
+    "id": "alpaca-ibalpaca",
+    "name": "Moo ibAlpaca",
+    "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
+    "oracle": "lps",
+    "oracleId": "alpaca-ibalpaca",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-pots-busd",
     "name": "Moo CakeV2 POTS-BUSD",
     "contract": "0x3106d9B3d5e04ff5D575212140FAb1Cf17C8933F",
@@ -53,6 +61,14 @@
     "contract": "0xE0e445357e86464C8DB8B4302e35852B3F92ac5d",
     "oracle": "lps",
     "oracleId": "honeyfarm-honey-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-cyt-bnb",
+    "name": "Moo Ape CYT-BNB",
+    "contract": "0x673F5c29811107407744080F7403A4ABC43B646f",
+    "oracle": "lps",
+    "oracleId": "banana-cyt-bnb",
     "tvl": 0
   },
   {
