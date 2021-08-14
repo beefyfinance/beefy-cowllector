@@ -8,11 +8,35 @@
     "tvl": 0
   },
   {
+    "id": "banana-bananav2",
+    "name": "Moo Banana",
+    "contract": "0xED4ea41Daf652964789b16e3Ff76eC07d99d2340",
+    "oracle": "tokens",
+    "oracleId": "BANANA",
+    "tvl": 0
+  },
+  {
     "id": "cake-cakev2",
     "name": "Moo CakeV2",
     "contract": "0x97e5d50Fe0632A95b9cf1853E744E02f7D816677",
     "oracle": "tokens",
     "oracleId": "Cake",
+    "tvl": 0
+  },
+  {
+    "id": "banana-cake-bnb",
+    "name": "Moo Ape CAKE-BNB",
+    "contract": "0x2337AEc28Bd34639277E321C67571623940A5b1D",
+    "oracle": "lps",
+    "oracleId": "banana-cake-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-btcb-bnb",
+    "name": "Moo Ape BTCB-BNB",
+    "contract": "0x5B5da11711C1CaA47550137c481ee1516c136D4a",
+    "oracle": "lps",
+    "oracleId": "banana-btcb-bnb",
     "tvl": 0
   },
   {
@@ -37,6 +61,14 @@
     "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
     "oracle": "tokens",
     "oracleId": "BANANA",
+    "tvl": 0
+  },
+  {
+    "id": "banana-guard-bnb",
+    "name": "Moo Banana GUARD-BNB",
+    "contract": "0xB65381D73d96348D38C683f34998c0352F9c4EFF",
+    "oracle": "lps",
+    "oracleId": "banana-guard-bnb",
     "tvl": 0
   },
   {
@@ -1224,14 +1256,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-tdoge-bnb",
-    "name": "Moo CakeV2 tDOGE-BNB",
-    "contract": "0x6AF821Aaf981D54aD37d58bFbA7fD2E2c41b623d",
-    "oracle": "lps",
-    "oracleId": "cakev2-tdoge-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-fine-bnb",
     "name": "Moo CakeV2 FINE-BNB",
     "contract": "0xDCbf0c895d641FB67FB993456b6E99E478c7B087",
@@ -1789,14 +1813,6 @@
     "contract": "0x268e83D800c22ED8F00C4a8eFb9c3d44Ad61CB2e",
     "oracle": "lps",
     "oracleId": "cakev2-mir-ust",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-tbtc-btcb",
-    "name": "Moo CakeV2 tBTC-BTCB",
-    "contract": "0xf03B5870bb8EFdcabAd45f2283D64A7fbCdb2B0E",
-    "oracle": "lps",
-    "oracleId": "cakev2-tbtc-btcb",
     "tvl": 0
   },
   {
@@ -2597,6 +2613,22 @@
     "contract": "0x3e1B60EB79b17d41F8E268936d853A43BEA24259",
     "oracle": "lps",
     "oracleId": "bakery-bake-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tdoge-bnb",
+    "name": "Moo CakeV2 tDOGE-BNB",
+    "contract": "0x6AF821Aaf981D54aD37d58bFbA7fD2E2c41b623d",
+    "oracle": "lps",
+    "oracleId": "cakev2-tdoge-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tbtc-btcb",
+    "name": "Moo CakeV2 tBTC-BTCB",
+    "contract": "0xf03B5870bb8EFdcabAd45f2283D64A7fbCdb2B0E",
+    "oracle": "lps",
+    "oracleId": "cakev2-tbtc-btcb",
     "tvl": 0
   },
   {

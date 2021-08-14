@@ -9,9 +9,36 @@
     "chainId": 56
   },
   {
+    "name": "banana-bananav2",
+    "address": "0xf3995BB32dFd21865D0dA03782D888fa454F3dB1",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cake-cakev2",
     "address": "0x5448C07cb55Adb7Ee19185144108b09Ed291fDEd",
     "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-cake-bnb",
+    "address": "0xC664B2Cc5CE23ed7C22291B80343e85281aB0D7F",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-btcb-bnb",
+    "address": "0x133F45baE4E3C32A346aEc225614d82937Ca8F01",
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -39,6 +66,15 @@
     "name": "banana-banana",
     "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
     "interval": 4,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": true,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-guard-bnb",
+    "address": "0x2e424d2Cb390fac4311Bc2422707091E2A5d7271",
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -1377,15 +1413,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-tdoge-bnb",
-    "address": "0x07bcEDa6eFa0BeD5B8ECa04094453A80eb84F441",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-fine-bnb",
     "address": "0x2e3a99c45b8ee89aB15f8528CE84d102645cCb04",
     "interval": 24,
@@ -2012,15 +2039,6 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-tbtc-btcb",
-    "address": "0xe26C65A53B4F4f6A5dCA9f7c6Fe08fF790C197E6",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -4655,6 +4673,15 @@
   {
     "name": "fantom-bifi-maxi",
     "address": "0x230691a28C8290A553BFBC911Ab2AbA0b2df152D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "steakhouse-scream-ftm",
+    "address": "0xaD9b17cBD600980F95F4dd6DEB180aDF401AFc6d",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
