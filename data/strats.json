@@ -27,6 +27,24 @@
     "chainId": 56
   },
   {
+    "name": "alpaca-ibalpaca",
+    "address": "0x8F5555623C61d5adD046206007a42766C74086b6",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wex-wusd-busd",
+    "address": "0xa86194eDe8A852508Ef90627955CdBA8beB9bAaC",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "banana-cake-bnb",
     "address": "0xC664B2Cc5CE23ed7C22291B80343e85281aB0D7F",
     "interval": 24,
@@ -38,15 +56,6 @@
   {
     "name": "banana-btcb-bnb",
     "address": "0x133F45baE4E3C32A346aEc225614d82937Ca8F01",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "alpaca-ibalpaca",
-    "address": "0x8F5555623C61d5adD046206007a42766C74086b6",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -94,7 +103,7 @@
     "address": "0x6A559D3dB54926900923c3A5f8846d8dea1cd81f",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -103,7 +112,7 @@
     "address": "0x362C5251Ea02dDfaCcF38034d89C70AbA723727e",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },

@@ -24,6 +24,22 @@
     "tvl": 0
   },
   {
+    "id": "alpaca-ibalpaca",
+    "name": "Moo ibAlpaca",
+    "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
+    "oracle": "lps",
+    "oracleId": "alpaca-ibalpaca",
+    "tvl": 0
+  },
+  {
+    "id": "wex-wusd-busd",
+    "name": "Moo Wault WUSD-BUSD",
+    "contract": "0x3D1BF2D911a0068B5733E84228AA6eB9b908671f",
+    "oracle": "lps",
+    "oracleId": "wex-wusd-busd",
+    "tvl": 0
+  },
+  {
     "id": "banana-cake-bnb",
     "name": "Moo Ape CAKE-BNB",
     "contract": "0x2337AEc28Bd34639277E321C67571623940A5b1D",
@@ -37,14 +53,6 @@
     "contract": "0x5B5da11711C1CaA47550137c481ee1516c136D4a",
     "oracle": "lps",
     "oracleId": "banana-btcb-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "alpaca-ibalpaca",
-    "name": "Moo ibAlpaca",
-    "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
-    "oracle": "lps",
-    "oracleId": "alpaca-ibalpaca",
     "tvl": 0
   },
   {
