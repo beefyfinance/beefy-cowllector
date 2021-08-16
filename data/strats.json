@@ -36,6 +36,78 @@
     "chainId": 56
   },
   {
+    "name": "honeyfarm-bear-bnb",
+    "address": "0x4A3a8B2DF03e07DeF9058289758A5ED2EEAF142d",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "honeyfarm-bear-busd",
+    "address": "0x1569Ec2aE07945A5E8ff8aDf5D525321A7F4682D",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "honeyfarm-honey-bnb",
+    "address": "0xf622490Dd4464e7AB437c3d7931a70b002B1473A",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "honeyfarm-honey-busd",
+    "address": "0xAFb4ebc2C8820b256Bf2560a248bFEDa7501A772",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-eth-bnb",
+    "address": "0x5A7a59704BD1aC93a1629a1a5830aEB65307CE60",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-busd-bnb",
+    "address": "0xA6aE241fE32Ed678122ADf26fCFCad8d4BBFAc7a",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-sxp-bnb",
+    "address": "0x321cEc4ca87Fd95f7CA4fE5A4c952970e2FcCcb7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-bake-bnb",
+    "address": "0x643E5dbd9Ca9bDd70E3AFEd8821333A577C51d9E",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "wex-wusd-busd",
     "address": "0xa86194eDe8A852508Ef90627955CdBA8beB9bAaC",
     "interval": 24,
@@ -95,24 +167,6 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "honeyfarm-honey-busd",
-    "address": "0x6A559D3dB54926900923c3A5f8846d8dea1cd81f",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "honeyfarm-honey-bnb",
-    "address": "0x362C5251Ea02dDfaCcF38034d89C70AbA723727e",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -958,7 +1012,7 @@
     "address": "0x39126B7E783f299E0Bbe58d3ff0781b3e169104A",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -1021,7 +1075,7 @@
     "address": "0xbF50324fE8be7Dc33914EF72394fae035e6d5A4C",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
