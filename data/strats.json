@@ -72,6 +72,15 @@
     "chainId": 56
   },
   {
+    "name": "banana-hotcross-busd",
+    "address": "0x6806EBf8092603dfA124B322B24065378b07EFa4",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "banana-eth-bnb",
     "address": "0x5A7a59704BD1aC93a1629a1a5830aEB65307CE60",
     "interval": 24,
@@ -2945,6 +2954,33 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-usdc-quick",
+    "address": "0xD49eC9631bae541E8f86C6d8046492Da90671D39",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-wmatic-avax",
+    "address": "0x58Cf352d153E6560bc05a0821fa14E2Be798143B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-wmatic-ht",
+    "address": "0x926c3557bc1A6B9211A888bEf84895c6B4a25f07",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
