@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-cake-bnb",
+    "address": "0xE93fb2f99398581972F4B82A52790A9DcACEd8d3",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "banana-bananav2",
     "address": "0xf3995BB32dFd21865D0dA03782D888fa454F3dB1",
     "interval": 24,
@@ -1017,15 +1026,6 @@
     "chainId": 56
   },
   {
-    "name": "dopple-dop-lp",
-    "address": "0x39126B7E783f299E0Bbe58d3ff0781b3e169104A",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-tusd-busd",
     "address": "0x31a0eDa9758c11b0639fFbb3F10c27E580AA58bd",
     "interval": 24,
@@ -1076,15 +1076,6 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "dopple-ust-lp",
-    "address": "0xbF50324fE8be7Dc33914EF72394fae035e6d5A4C",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -1190,15 +1181,6 @@
   {
     "name": "cakev2-deri-busd",
     "address": "0x0bb686a137D60710f9b5bE0122A5d690d6854166",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "dopple-dolly-lp",
-    "address": "0x9aBdA120556178C9d0Bfeb98253153BCadc96aAE",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1370,15 +1352,6 @@
   {
     "name": "cakev2-ubxt-busd",
     "address": "0xc173F8bDf470FE6812E7aD1107050f27DaC8387b",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-btr-busd",
-    "address": "0xE5FA9e049DafE4DE649C782D9C39b13e0111D49A",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1665,15 +1638,6 @@
     "chainId": 56
   },
   {
-    "name": "swampv2-cake-bnb",
-    "address": "0x595d19abccFAB79f251563117C98a0E1feeD579a",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "beltv2-belt-bnb",
     "address": "0xd64B3BD56AFC7aba73634818cd903D73aAd08122",
     "interval": 24,
@@ -1856,15 +1820,6 @@
   {
     "name": "cakev2-atom-bnb",
     "address": "0x1EDcBEE8d91AA0043392fE34E86F3Cacae5AfA9D",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-cake-bnb",
-    "address": "0xE93fb2f99398581972F4B82A52790A9DcACEd8d3",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2961,6 +2916,42 @@
     "chainId": 137
   },
   {
+    "name": "polypup-ball-ball",
+    "address": "0x969D6b814303DAe5a05485a5957C8c181d7FC8d7",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "polypup-ball-usdc-ball",
+    "address": "0xD556A69d7f37FeCe0C025bd4934Da2799cD48234",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "polypup-ball-wmatic-ball",
+    "address": "0x4750Efcdc3809b624515A78794777a7F64051362",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "dinoswap-dfyn-route-eth",
+    "address": "0x0E4850a525aF1AaA05359C9d38839e1d82BF9c48",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "quick-usdc-quick",
     "address": "0xD49eC9631bae541E8f86C6d8046492Da90671D39",
     "interval": 1,
@@ -3513,15 +3504,6 @@
     "name": "dfyn-route-dfyn",
     "address": "0x773de346a6E148981076140a6f82Bb709c387c05",
     "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "dfyn-sx-dfyn",
-    "address": "0x827D4f4f92281690aD0591aFa0F90450A785199F",
-    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
