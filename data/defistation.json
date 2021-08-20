@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "belt-4belt",
+    "name": "Moo Belt 4BELT",
+    "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
+    "oracle": "lps",
+    "oracleId": "belt-4belt",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-cake-bnb",
     "name": "Moo CakeV2 CAKE-BNB",
     "contract": "0xb26642B6690E4c4c9A6dAd6115ac149c700C7dfE",
@@ -37,6 +45,14 @@
     "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
     "oracle": "lps",
     "oracleId": "alpaca-ibalpaca",
+    "tvl": 0
+  },
+  {
+    "id": "banana-bhc-bnb",
+    "name": "Moo Banana BHC-BNB",
+    "contract": "0x6023C372e5feeD42664986094914f08bBBa49f36",
+    "oracle": "lps",
+    "oracleId": "banana-bhc-bnb",
     "tvl": 0
   },
   {
@@ -1157,14 +1173,6 @@
     "contract": "0x40dA18484963Fb672c3D2FE4942ddF363265b410",
     "oracle": "lps",
     "oracleId": "grand-grand-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "belt-4belt",
-    "name": "Moo Belt 4BELT",
-    "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
-    "oracle": "lps",
-    "oracleId": "belt-4belt",
     "tvl": 0
   },
   {

@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "belt-4belt",
+    "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-cake-bnb",
     "address": "0xE93fb2f99398581972F4B82A52790A9DcACEd8d3",
     "interval": 24,
@@ -38,6 +47,15 @@
   {
     "name": "alpaca-ibalpaca",
     "address": "0x8F5555623C61d5adD046206007a42766C74086b6",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-bhc-bnb",
+    "address": "0x921A885D9c7B3Ac3D8BC93f4D371A01e2f0be98E",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1305,15 +1323,6 @@
     "chainId": 56
   },
   {
-    "name": "belt-4belt",
-    "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "satis-xsat-busd",
     "address": "0xD033C1A265850F360400BF68A2E286e600CC4150",
     "interval": 24,
@@ -1507,7 +1516,7 @@
     "address": "0xa41C537d5d2C7caD5264b23d257b581738c4c71E",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -4233,24 +4242,6 @@
     "name": "sushi-matic-eth",
     "address": "0x8A8E3aBAb418671bdb7A47E45d2Fcd7726e46D74",
     "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "cometh-azuki-eth",
-    "address": "0xa54e6dc91FCb22a24437e8650266BfE9590a2820",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "cometh-doki-eth",
-    "address": "0xfb7344a4cF25CDe5aaF6415107a8deF769FC200B",
-    "interval": 4,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
