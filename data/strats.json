@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "belt-belteth",
+    "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-4belt",
     "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
     "interval": 24,
@@ -39,6 +48,24 @@
     "name": "cake-cakev2",
     "address": "0x5448C07cb55Adb7Ee19185144108b09Ed291fDEd",
     "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "yel-yel",
+    "address": "0x2c5D8824454fDc0A3c84f4963f1CAf6f4C86f99D",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "yel-yel-wbnb",
+    "address": "0x99265e31ecC2993Ab37fD7F8290779e367535Dd8",
+    "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -230,15 +257,6 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-banana-eol",
-    "address": "0xE5B8Bce75247d1B5aEC2F367803443887bD7c6D6",
-    "interval": 4,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -1523,24 +1541,6 @@
   {
     "name": "banana-ada-bnb",
     "address": "0xBfb6Be9553E676A0a559885262Aee98bC50A6eeE",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bhc-bhc",
-    "address": "0x54b083Ca9fD30ae83C47CDd3a59390F00a90E9CC",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "belt-belteth",
-    "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2972,6 +2972,15 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-eth-rendoge",
+    "address": "0x6449598b7F50b8a757F79A4991f27AA25506d23e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,

@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "belt-belteth",
+    "name": "Moo Belt ETH",
+    "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
+    "oracle": "lps",
+    "oracleId": "belt-belteth",
+    "tvl": 0
+  },
+  {
     "id": "belt-4belt",
     "name": "Moo Belt 4BELT",
     "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
@@ -37,6 +45,22 @@
     "contract": "0x97e5d50Fe0632A95b9cf1853E744E02f7D816677",
     "oracle": "tokens",
     "oracleId": "Cake",
+    "tvl": 0
+  },
+  {
+    "id": "yel-yel",
+    "name": "Moo Yel",
+    "contract": "0xC5C11A531e60378c605383dd54ad1e4C598aD93A",
+    "oracle": "tokens",
+    "oracleId": "YEL",
+    "tvl": 0
+  },
+  {
+    "id": "yel-yel-wbnb",
+    "name": "Moo Yel YEL-BNB",
+    "contract": "0xE2f9EC1898F8C759cD1FeeC9c035CAD8071a5d4B",
+    "oracle": "lps",
+    "oracleId": "yel-yel-wbnb",
     "tvl": 0
   },
   {
@@ -205,14 +229,6 @@
     "contract": "0x3106d9B3d5e04ff5D575212140FAb1Cf17C8933F",
     "oracle": "lps",
     "oracleId": "cakev2-pots-busd",
-    "tvl": 0
-  },
-  {
-    "id": "banana-banana-eol",
-    "name": "Moo Ape BANANA",
-    "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
-    "oracle": "tokens",
-    "oracleId": "BANANA",
     "tvl": 0
   },
   {
@@ -1360,22 +1376,6 @@
     "tvl": 0
   },
   {
-    "id": "bhc-bhc",
-    "name": "Moo BHC",
-    "contract": "0x56E899E56F6B8635B4A01b724db23674a64A7231",
-    "oracle": "tokens",
-    "oracleId": "BHC",
-    "tvl": 0
-  },
-  {
-    "id": "belt-belteth",
-    "name": "Moo Belt ETH",
-    "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
-    "oracle": "lps",
-    "oracleId": "belt-belteth",
-    "tvl": 0
-  },
-  {
     "id": "banana-matic-bnb",
     "name": "Moo Ape MATIC-BNB",
     "contract": "0xB9dA6EdEeF7e3db24265EcFBeBF4e06B7c7A455f",
@@ -2389,6 +2389,22 @@
     "contract": "0x3e1B60EB79b17d41F8E268936d853A43BEA24259",
     "oracle": "lps",
     "oracleId": "bakery-bake-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-banana-eol",
+    "name": "Moo Ape BANANA",
+    "contract": "0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786",
+    "oracle": "tokens",
+    "oracleId": "BANANA",
+    "tvl": 0
+  },
+  {
+    "id": "bhc-bhc",
+    "name": "Moo BHC",
+    "contract": "0x56E899E56F6B8635B4A01b724db23674a64A7231",
+    "oracle": "tokens",
+    "oracleId": "BHC",
     "tvl": 0
   },
   {
