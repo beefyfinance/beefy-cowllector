@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "belt-beltbnb",
+    "name": "Moo Belt BNB",
+    "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
+    "oracle": "lps",
+    "oracleId": "belt-beltbnb",
+    "tvl": 0
+  },
+  {
     "id": "belt-belteth",
     "name": "Moo Belt ETH",
     "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
@@ -29,6 +37,30 @@
     "contract": "0xb26642B6690E4c4c9A6dAd6115ac149c700C7dfE",
     "oracle": "lps",
     "oracleId": "cakev2-cake-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "tosdisbsc-dis-wbnb",
+    "name": "Moo TosDis DIS-BNB",
+    "contract": "0x7FdC26B1381A53dBB6B65984857c55746f60d156",
+    "oracle": "lps",
+    "oracleId": "tosdisbsc-dis-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-ont-bnb",
+    "name": "Moo Ape ONT-BNB",
+    "contract": "0xf8ED3D2E36eA4eA13eA4cCcaD5c72ac55B64e651",
+    "oracle": "lps",
+    "oracleId": "banana-ont-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "wex-bnb-ont",
+    "name": "Moo Wault BNB-ONT",
+    "contract": "0x9b188c2C76a01bb290A17FadB65BD400Dc3F53F0",
+    "oracle": "lps",
+    "oracleId": "wex-bnb-ont",
     "tvl": 0
   },
   {
@@ -397,14 +429,6 @@
     "contract": "0x13071d48A5FDe2735102657e15D1132F92eE8C83",
     "oracle": "lps",
     "oracleId": "cakev2-c98-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "wex-bnb-ont",
-    "name": "Moo Wault BNB-ONT",
-    "contract": "0x9b188c2C76a01bb290A17FadB65BD400Dc3F53F0",
-    "oracle": "lps",
-    "oracleId": "wex-bnb-ont",
     "tvl": 0
   },
   {
@@ -1488,14 +1512,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-ont-bnb",
-    "name": "Moo Ape ONT-BNB",
-    "contract": "0xf8ED3D2E36eA4eA13eA4cCcaD5c72ac55B64e651",
-    "oracle": "lps",
-    "oracleId": "banana-ont-bnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-keyfi-bnb",
     "name": "Moo Ape KEYFI-BNB",
     "contract": "0x4A62e870EdF51EdAe9Cc9a4BF5D17919c7759AF3",
@@ -1517,14 +1533,6 @@
     "contract": "0x190DD361Ee7EDB1801d66e9E957C5CDF1e7Be75b",
     "oracle": "lps",
     "oracleId": "cakev2-belt-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "belt-beltbnb",
-    "name": "Moo Belt BNB",
-    "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
-    "oracle": "lps",
-    "oracleId": "belt-beltbnb",
     "tvl": 0
   },
   {

@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "belt-beltbnb",
+    "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-belteth",
     "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
     "interval": 24,
@@ -29,6 +38,33 @@
   {
     "name": "cakev2-cake-bnb",
     "address": "0xE93fb2f99398581972F4B82A52790A9DcACEd8d3",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "tosdisbsc-dis-wbnb",
+    "address": "0xD315BA5a98F698A1cBCFE62678e1396A6C621547",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-ont-bnb",
+    "address": "0x739B8b50fC28267D92233954C189aF5Ad7C55A71",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wex-bnb-ont",
+    "address": "0x76F3D8204CF10E3382d93C9243f4f244e4666C27",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -443,15 +479,6 @@
   {
     "name": "cakev2-c98-wbnb",
     "address": "0x11a37990e5F5202B7a43FBf9592995e3B9697eA3",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "wex-bnb-ont",
-    "address": "0x76F3D8204CF10E3382d93C9243f4f244e4666C27",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1674,15 +1701,6 @@
     "chainId": 56
   },
   {
-    "name": "banana-ont-bnb",
-    "address": "0x739B8b50fC28267D92233954C189aF5Ad7C55A71",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "banana-keyfi-bnb",
     "address": "0xCa52393444dee44EbA946EFC1A19C2F0b1572B04",
     "interval": 24,
@@ -1703,15 +1721,6 @@
   {
     "name": "beltv2-belt-bnb",
     "address": "0xd64B3BD56AFC7aba73634818cd903D73aAd08122",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "belt-beltbnb",
-    "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2972,6 +2981,15 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "ironswap-iron",
+    "address": "0xA11C1200c06f1B3e10137e551783ba01b8AD1b88",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
