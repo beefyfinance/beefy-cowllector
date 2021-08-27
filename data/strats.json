@@ -4626,6 +4626,24 @@
     "chainId": 43114
   },
   {
+    "name": "olive-dai.e-usdt.e",
+    "address": "0x2Eb92E2882030B8e153370d208462D4dDf7041d2",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "olive-busd.e-usdt.e",
+    "address": "0x0ff26aa85A44b16e3c42A9c6d3e141B0e823B617",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "pangolin-png-qi",
     "address": "0x16a7285514ca6dDcf2093dF3CE5FF45d25196723",
     "interval": 18,
@@ -4808,15 +4826,6 @@
   {
     "name": "olive-olive-avax",
     "address": "0x6bBdC5cacB4e72884432E3d63745cc8e7A4392Ca",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "olive-olive-usdt",
-    "address": "0xDcdb088f53dBcC63f600299867F8b6eE6BC7a6cE",
     "interval": 16,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
