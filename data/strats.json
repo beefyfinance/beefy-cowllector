@@ -2781,6 +2781,15 @@
     "chainId": 137
   },
   {
+    "name": "sushi-avax-weth",
+    "address": "0x44831fc132CbFa5099335517B9A83f817bFE41ee",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "ironswap-iron",
     "address": "0xA11C1200c06f1B3e10137e551783ba01b8AD1b88",
     "interval": 1,
@@ -4788,15 +4797,6 @@
     "chainId": 43114
   },
   {
-    "name": "lyd-lyd-usdt",
-    "address": "0xbE5370a50d11D10475089222497A4172bdC600a4",
-    "interval": 16,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
     "name": "lyd-lyd-avax",
     "address": "0x3B289DcCd55B46596FbBAFfEd6469a85d69426Dc",
     "interval": 16,
@@ -4824,35 +4824,8 @@
     "chainId": 43114
   },
   {
-    "name": "com-usdt-avax",
-    "address": "0xcd4db0404DEA8882EdE60Cea1b8D186AbD7F97dF",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "com-eth-avax",
-    "address": "0xF933075ae4e39aa789555c2bEBA710130E41Ed32",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
     "name": "com-com-avax",
     "address": "0x44e67bCDf95aE53b60ab20929626274640998FDB",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "com-dai-avax",
-    "address": "0x0955479C61B37074d689319fCaA84ffE1E9e8CF5",
     "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
