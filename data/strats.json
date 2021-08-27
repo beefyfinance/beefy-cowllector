@@ -2781,6 +2781,15 @@
     "chainId": 137
   },
   {
+    "name": "curve-poly-atricrypto3",
+    "address": "0x3612dAFEcD9D1E614F49eB55dCeEd904Db3B72c3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "sushi-avax-weth",
     "address": "0x44831fc132CbFa5099335517B9A83f817bFE41ee",
     "interval": 1,
@@ -2792,15 +2801,6 @@
   {
     "name": "ironswap-iron",
     "address": "0xA11C1200c06f1B3e10137e551783ba01b8AD1b88",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "curve-poly-atricrypto2",
-    "address": "0x245718Cb77D185799BA76a439d4dE5Db9e3f652c",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
