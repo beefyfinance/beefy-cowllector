@@ -1224,15 +1224,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-popen-bnb",
-    "address": "0x47c757C516280012e6aCa77C6450F8c6dF201f13",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "banana-ltc-bnb",
     "address": "0xF6Cb4d2Ca247A53F6Fd52641e0372EFbE68f5a82",
     "interval": 24,
@@ -1496,15 +1487,6 @@
   {
     "name": "goal-goal-busd",
     "address": "0x73B68fe0854e3fF25E2450E0E2791cAB6FBa12ec",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-kun-busd",
-    "address": "0x3698E26b628c9cb257B3506aD00c7304bFe29448",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2241,15 +2223,6 @@
     "chainId": 56
   },
   {
-    "name": "bakery-bat-bake",
-    "address": "0x2ABB0ea3A5C038f60E677Bf14d2F6095786650Ae",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-alice-bnb",
     "address": "0x050388f9215e2D9611F3d9E28Fa070bdB7B3F5E7",
     "interval": 24,
@@ -2421,24 +2394,6 @@
     "chainId": 56
   },
   {
-    "name": "bakery-bake-busd",
-    "address": "0xF0D037813e4bCC21E4ED38F2fA506522181699Bb",
-    "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bakery-btc-bnb",
-    "address": "0x3C9C884eFAB85c44D675039de227b3Dd275c360e",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "venus-bnb",
     "address": "0xFA3CcB086Bf371A2Ff33Db8521Be47c5B4b9d10E",
     "interval": 24,
@@ -2451,24 +2406,6 @@
     "name": "narwhal-gold-bnb",
     "address": "0x3661576d5Ecc42b7aA84b0749d8d3180eE6D1Be4",
     "interval": 26,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bakery-bake",
-    "address": "0xf35FE19042190C5135D1452E188131FA0243cA81",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bakery-bake-bnb",
-    "address": "0x31bd4354066B48D662aA472A5851FeD51030c147",
-    "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -2756,6 +2693,15 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-axs-eth",
+    "address": "0xE166AaF67DC8FA9607B2F34Ac4057e98E6197462",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4610,7 +4556,7 @@
   {
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
-    "interval": 12,
+    "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -4619,7 +4565,7 @@
   {
     "name": "olive-dai.e-usdt.e",
     "address": "0x2Eb92E2882030B8e153370d208462D4dDf7041d2",
-    "interval": 6,
+    "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -4628,7 +4574,7 @@
   {
     "name": "olive-busd.e-usdt.e",
     "address": "0x0ff26aa85A44b16e3c42A9c6d3e141B0e823B617",
-    "interval": 6,
+    "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -4799,7 +4745,7 @@
   {
     "name": "png-bnb-avax",
     "address": "0x23F11b73CBc0734db9c20D362C01d0932A93D44E",
-    "interval": 1,
+    "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
