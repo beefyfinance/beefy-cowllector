@@ -16,6 +16,14 @@
     "tvl": 0
   },
   {
+    "id": "belt-4belt",
+    "name": "Moo Belt 4BELT",
+    "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
+    "oracle": "lps",
+    "oracleId": "belt-4belt",
+    "tvl": 0
+  },
+  {
     "id": "belt-beltbnb",
     "name": "Moo Belt BNB",
     "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
@@ -32,19 +40,43 @@
     "tvl": 0
   },
   {
+    "id": "auro-auro-busd",
+    "name": "Moo Viralata AURO-BUSD",
+    "contract": "0x02503B56D6c0861170E49d2E24cD6409660275BE",
+    "oracle": "lps",
+    "oracleId": "auro-auro-busd",
+    "tvl": 0
+  },
+  {
+    "id": "auro-auro-bnb",
+    "name": "Moo Viralata AURO-BNB",
+    "contract": "0x7cBab71cB057b2167976546b6874ce0f0d09F7FA",
+    "oracle": "lps",
+    "oracleId": "auro-auro-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "elk-elk-bnb",
+    "name": "Moo Elk ELK-BNB",
+    "contract": "0x69B2f487B2eDD9E272211f7CD8f57C1cddE0764E",
+    "oracle": "lps",
+    "oracleId": "elk-elk-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "elk-elk-dai",
+    "name": "Moo Elk ELK-DAI",
+    "contract": "0x41a6CdA789316B2Fa5D824EF27E4223872E4cB34",
+    "oracle": "lps",
+    "oracleId": "elk-elk-dai",
+    "tvl": 0
+  },
+  {
     "id": "wex-wusd-wex",
     "name": "Moo Wault WUSD-WEX",
     "contract": "0xa5Ba15875afA08e2C86F67AE2958B560A50a3823",
     "oracle": "lps",
     "oracleId": "wex-wusd-wex",
-    "tvl": 0
-  },
-  {
-    "id": "belt-4belt",
-    "name": "Moo Belt 4BELT",
-    "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
-    "oracle": "lps",
-    "oracleId": "belt-4belt",
     "tvl": 0
   },
   {
@@ -72,11 +104,11 @@
     "tvl": 0
   },
   {
-    "id": "omnifarm-usdo-wbnb",
-    "name": "Moo Omnifarm USDO-WBNB",
-    "contract": "0x95b7Ac779Dc476fa4Fe62B8c97F7f71913DFfB76",
+    "id": "omnifarm-usdo-busd-ot",
+    "name": "Moo OmnifarmOmnitrade BUSD-USDO",
+    "contract": "0x73f9F03A7f639a1AC874445153c09f16cED9316b",
     "oracle": "lps",
-    "oracleId": "omnifarm-usdo-wbnb",
+    "oracleId": "omnifarm-usdo-busd-ot",
     "tvl": 0
   },
   {
@@ -85,6 +117,14 @@
     "contract": "0x76adF521dBFA9822937eCB1C15ed60f95B519FF8",
     "oracle": "lps",
     "oracleId": "omnifarm-usdo-busd",
+    "tvl": 0
+  },
+  {
+    "id": "omnifarm-usdo-wbnb",
+    "name": "Moo Omnifarm USDO-WBNB",
+    "contract": "0x95b7Ac779Dc476fa4Fe62B8c97F7f71913DFfB76",
+    "oracle": "lps",
+    "oracleId": "omnifarm-usdo-wbnb",
     "tvl": 0
   },
   {

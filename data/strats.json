@@ -18,6 +18,15 @@
     "chainId": 56
   },
   {
+    "name": "belt-4belt",
+    "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-beltbnb",
     "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
     "interval": 24,
@@ -36,8 +45,8 @@
     "chainId": 56
   },
   {
-    "name": "wex-wusd-wex",
-    "address": "0x224f3ceC2C7aF306be378282Aefd7B9C341a09b9",
+    "name": "auro-auro-busd",
+    "address": "0xB488C64A79F21D84F9e489793cC4e93175B264DA",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -45,8 +54,35 @@
     "chainId": 56
   },
   {
-    "name": "belt-4belt",
-    "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
+    "name": "auro-auro-bnb",
+    "address": "0x87F05230AB80a8dE476cc73477a5d31b2E223D0C",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "elk-elk-bnb",
+    "address": "0xea75ff4F580418A1430Bd3EBaF26B03C096D9489",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "elk-elk-dai",
+    "address": "0x781805AdE7fD7E34205D54F975E8754621b7E6F3",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wex-wusd-wex",
+    "address": "0x224f3ceC2C7aF306be378282Aefd7B9C341a09b9",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -81,8 +117,8 @@
     "chainId": 56
   },
   {
-    "name": "omnifarm-usdo-wbnb",
-    "address": "0xDA56E69Fe5fD277f6894559BCd40e0e1B2F64430",
+    "name": "omnifarm-usdo-busd-ot",
+    "address": "0xDfaC95290937e402e61A12b6fe75B9A1c3096814",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -92,6 +128,15 @@
   {
     "name": "omnifarm-usdo-busd",
     "address": "0x820d674C18782578c1f1491827D24f84162186Ff",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "omnifarm-usdo-wbnb",
+    "address": "0xDA56E69Fe5fD277f6894559BCd40e0e1B2F64430",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
