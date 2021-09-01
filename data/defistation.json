@@ -8,6 +8,22 @@
     "tvl": 0
   },
   {
+    "id": "banana-pots-bnb",
+    "name": "Moo Ape POTS-BNB",
+    "contract": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
+    "oracle": "lps",
+    "oracleId": "banana-pots-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-pots-busd",
+    "name": "Moo CakeV2 POTS-BUSD",
+    "contract": "0x3106d9B3d5e04ff5D575212140FAb1Cf17C8933F",
+    "oracle": "lps",
+    "oracleId": "cakev2-pots-busd",
+    "tvl": 0
+  },
+  {
     "id": "belt-beltbtc",
     "name": "Moo Belt BTC",
     "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
@@ -37,6 +53,14 @@
     "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
     "oracle": "lps",
     "oracleId": "belt-belteth",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-qbt-wbnb",
+    "name": "Moo CakeV2 QBT-WBNB",
+    "contract": "0x6Ab5c71b96dAC5E832fa9B8386D983a53D46ae2F",
+    "oracle": "lps",
+    "oracleId": "cakev2-qbt-wbnb",
     "tvl": 0
   },
   {
@@ -344,14 +368,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-pots-busd",
-    "name": "Moo CakeV2 POTS-BUSD",
-    "contract": "0x3106d9B3d5e04ff5D575212140FAb1Cf17C8933F",
-    "oracle": "lps",
-    "oracleId": "cakev2-pots-busd",
-    "tvl": 0
-  },
-  {
     "id": "banana-guard-bnb",
     "name": "Moo Banana GUARD-BNB",
     "contract": "0xB65381D73d96348D38C683f34998c0352F9c4EFF",
@@ -373,14 +389,6 @@
     "contract": "0x673F5c29811107407744080F7403A4ABC43B646f",
     "oracle": "lps",
     "oracleId": "banana-cyt-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-pots-bnb",
-    "name": "Moo Ape POTS-BNB",
-    "contract": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
-    "oracle": "lps",
-    "oracleId": "banana-pots-bnb",
     "tvl": 0
   },
   {
@@ -1208,22 +1216,6 @@
     "tvl": 0
   },
   {
-    "id": "grand-grand",
-    "name": "Moo Grand GRAND",
-    "contract": "0x547c889C676fe449018A3987866cFC674518b700",
-    "oracle": "tokens",
-    "oracleId": "GRAND",
-    "tvl": 0
-  },
-  {
-    "id": "grand-grand-bnb",
-    "name": "Moo Grand GRAND-BNB",
-    "contract": "0x40dA18484963Fb672c3D2FE4942ddF363265b410",
-    "oracle": "lps",
-    "oracleId": "grand-grand-bnb",
-    "tvl": 0
-  },
-  {
     "id": "satis-xsat-busd",
     "name": "Moo Satis xSAT-BUSD",
     "contract": "0x538c84e85e71F775Df1A896927008ecE3e14f47e",
@@ -2024,14 +2016,6 @@
     "tvl": 0
   },
   {
-    "id": "jul-juld-bnb",
-    "name": "Moo Jul JulD BNB",
-    "contract": "0xcB8c4416cD10836ff7A35F4b2AfD5BE0257Cc9DB",
-    "oracle": "lps",
-    "oracleId": "jul-juld-bnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-banana-bnb",
     "name": "Moo Ape BANANA-BNB",
     "contract": "0x15396D3BD9338A14AE90613Fc2b85c5F7b5621CF",
@@ -2181,6 +2165,30 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "grand-grand",
+    "name": "Moo Grand GRAND",
+    "contract": "0x547c889C676fe449018A3987866cFC674518b700",
+    "oracle": "tokens",
+    "oracleId": "GRAND",
+    "tvl": 0
+  },
+  {
+    "id": "grand-grand-bnb",
+    "name": "Moo Grand GRAND-BNB",
+    "contract": "0x40dA18484963Fb672c3D2FE4942ddF363265b410",
+    "oracle": "lps",
+    "oracleId": "grand-grand-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "jul-juld-bnb",
+    "name": "Moo Jul JulD BNB",
+    "contract": "0xcB8c4416cD10836ff7A35F4b2AfD5BE0257Cc9DB",
+    "oracle": "lps",
+    "oracleId": "jul-juld-bnb",
     "tvl": 0
   },
   {
