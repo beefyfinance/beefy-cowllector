@@ -45,6 +45,24 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-bscdefi-wbnb",
+    "address": "0x16037b031182d55B0EF7BDb8fAb992b64bdEE03B",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-bp-wbnb",
+    "address": "0xB6AEa87A1F3e97C0b0e2F0f7Ab896302C731b2C9",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-beltbnb",
     "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
     "interval": 24,
@@ -2135,15 +2153,6 @@
   {
     "name": "banana-bifi-bnb",
     "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "blizzard-xblzd-bnb",
-    "address": "0x915b02b1a74C11F059Be8Ae2aB1c2D0801D87dcD",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4396,7 +4405,7 @@
     "address": "0x6719022AdAD7051e86fd0E8758535f8A4F98b82F",
     "interval": 1,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 250
   },
@@ -4405,7 +4414,7 @@
     "address": "0x4b5f7De737531673B23ceB43D45ea3f1297e4C6d",
     "interval": 1,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 250
   },
@@ -4626,9 +4635,72 @@
     "chainId": 43114
   },
   {
+    "name": "joe-mim-wavax",
+    "address": "0x5f936c74bBAEE6A80aeF0d8028aF68407bF13d7f",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-qi-wavax",
+    "address": "0x055Fd27eCCF8aF2724FB3EAE95273ed26a010e5D",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-syn-wavax",
+    "address": "0x0D5376e471605AaE08144DcF48f3bB6D7127cd05",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-weth.e-usdt.e",
+    "address": "0x9DF1007D548eDF1212D8700C4f2DbEf7454B2cdd",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wbtc.e-usdt.e",
+    "address": "0x7F348Faa50Ee41cD9edcFcb31816FAf6b1cc132e",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wbtc.e-wavax",
+    "address": "0x397b5294959124D9A2dD1A322B74ad3f638371Bf",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-weth.e-wavax",
+    "address": "0x94a06C3dAd933c81739a7D78E15EBc874e9A13f1",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "joe-usdc.e-dai.e",
     "address": "0x165F290c9861249C59D2C1302A5C120A6A102F71",
-    "interval": 6,
+    "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -4637,7 +4709,7 @@
   {
     "name": "joe-usdc.e-wavax",
     "address": "0x5ce238A82c38D21cb3561866Fc33d9e0F7243af7",
-    "interval": 6,
+    "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -4646,7 +4718,7 @@
   {
     "name": "joe-wavax-dai.e",
     "address": "0x8D6136A1c1a4F96516B47b1FF43bDc796d0952b1",
-    "interval": 6,
+    "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
