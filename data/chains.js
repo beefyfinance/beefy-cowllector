@@ -1,6 +1,6 @@
 const { addressBook } = require('blockchain-addressbook');
 
-const { bsc, heco, avax, polygon, fantom } = addressBook;
+const { bsc, heco, avax, polygon, fantom, one } = addressBook;
 
 const chains = {
   56: {
@@ -97,6 +97,25 @@ const chains = {
     firstRewardBlock: 7673132,
     blockTime: 10,
     blockExplorer: "https://ftmscan.com"
+  },
+  1666600000: {
+    id: 'harmony',
+    chainId: 1666600000,
+    wnative: one.tokens.WONE.address,
+    rewardPool: one.platforms.beefyfinance.rewardPool,
+    notifyInterval: 10,
+    treasury: one.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: one.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 1,
+    wnativeUnwrapInterval: 4,
+    rpc: process.env.ONE_RPC,
+    appVaultsFilename: 'harmony_pools.js',
+    multicall: one.platforms.beefyfinance.multicall,
+    queryLimit: 500,
+    queryInterval: 100,
+    firstRewardBlock: 16823869,
+    blockTime: 3,
+    blockExplorer: "https://explorer.harmony.one/"
   },
 };
 
