@@ -22,17 +22,9 @@ const unwrapSubsidy = async () => {
 
       if (balance > 0) {
         let tx = await wrappedNativeContract.withdraw(balance.toString(), { gasLimit: 300000 });
-        tx = await tx.wait();
-
-        tx.status === 1
-          ? console.log(
-              `Successfully unwrapped ${balance.toString()} on ${chain.id} with tx: ${
-                tx.transactionHash
-              }.`
-            )
-          : console.log(
-              `Unwrap of ${balance.toString()} on ${chain.id} failed with tx: ${tx.transactionHash}`
-            );
+        `Successfully unwrapped ${balance.toString()} on ${chain.id} with tx: ${
+          tx.transactionHash
+        }.`;
       } else {
         console.log(`There is no balance to unwrap on ${chain.id}.`);
       }
