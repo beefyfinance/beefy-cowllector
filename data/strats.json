@@ -9,8 +9,53 @@
     "chainId": 56
   },
   {
+    "name": "banana-bifi-bnb",
+    "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-4belt",
     "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "long-long-wbnb",
+    "address": "0x9D6BcfCDfeA506c4088aFCF374E03679C234DD08",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-wbnb-gnt",
+    "address": "0x228209554bd5bc0E162760F70261A4dcc64b4a5a",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-dvi-wbnb",
+    "address": "0xb0d18CA4fb070e14f263eD9Cb81DB3979eE32689",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-mcrn-wbnb",
+    "address": "0x3081ab1E19320e93CcA9817Eca037813BbDB64c1",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -706,7 +751,7 @@
     "address": "0x1245549819F6E0c95109cC2fF3C75C12Fc0a4B92",
     "interval": 24,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
@@ -2171,15 +2216,6 @@
   {
     "name": "mdex-bsc-mdx-busd",
     "address": "0x4Ae6D6f9A83508b82A533e1FEBfB052d9cc7e3D4",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-bifi-bnb",
-    "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
