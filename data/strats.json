@@ -4284,6 +4284,15 @@
     "chainId": 250
   },
   {
+    "name": "boo-boo",
+    "address": "0x004fd8d1667D4eE60945d97f91dAb1bbc32A099A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "stakesteak-fusd-usdc",
     "address": "0x72cE4D7bB0fDeC6c973232E2DE97B48F857c132d",
     "interval": 1,
@@ -4557,15 +4566,6 @@
     "name": "boo-woofy-ftm",
     "address": "0x0BF58A328C7739D8b097B1d4199f48AA3F1b2788",
     "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250
-  },
-  {
-    "name": "boo-boo",
-    "address": "0x0bF4DB9fB7294C190f80C01B7ff913FaeEBb7AAB",
-    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
