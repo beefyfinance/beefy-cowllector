@@ -8,6 +8,22 @@
     "tvl": 0
   },
   {
+    "id": "belt-beltbnb",
+    "name": "Moo Belt BNB",
+    "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
+    "oracle": "lps",
+    "oracleId": "belt-beltbnb",
+    "tvl": 0
+  },
+  {
+    "id": "belt-belteth",
+    "name": "Moo Belt ETH",
+    "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
+    "oracle": "lps",
+    "oracleId": "belt-belteth",
+    "tvl": 0
+  },
+  {
     "id": "banana-bifi-bnb",
     "name": "Moo Ape BIFI-BNB",
     "contract": "0x6ebA4A31c46937B42E66f44a0A1165a08495a38F",
@@ -21,6 +37,38 @@
     "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
     "oracle": "lps",
     "oracleId": "belt-4belt",
+    "tvl": 0
+  },
+  {
+    "id": "pearzap-pear-bnb",
+    "name": "Moo PearZap PEAR-BNB",
+    "contract": "0xa2728d080650d3828e525881Dfd296481b273ab8",
+    "oracle": "lps",
+    "oracleId": "pearzap-pear-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "pearzap-pear-busd",
+    "name": "Moo PearZap PEAR-BUSD",
+    "contract": "0xa94f3a0cEA66F7141DC4a2039E65205c68Db83ab",
+    "oracle": "lps",
+    "oracleId": "pearzap-pear-busd",
+    "tvl": 0
+  },
+  {
+    "id": "czf-czf-bnb",
+    "name": "Moo CZF CZF-BNB",
+    "contract": "0x98CADFb805fAc92eF70e3Ed900c76a487cDb26a1",
+    "oracle": "lps",
+    "oracleId": "czf-czf-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "czf-czf-busd",
+    "name": "Moo CZF CZF-BUSD",
+    "contract": "0x3c7f71a03B61EE15658f22f7fa8bd103811297f3",
+    "oracle": "lps",
+    "oracleId": "czf-czf-busd",
     "tvl": 0
   },
   {
@@ -149,22 +197,6 @@
     "contract": "0x6709b27eDeD9c594C4490c98ba8efb3EEb0DE9f4",
     "oracle": "lps",
     "oracleId": "cakev2-bp-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "belt-beltbnb",
-    "name": "Moo Belt BNB",
-    "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
-    "oracle": "lps",
-    "oracleId": "belt-beltbnb",
-    "tvl": 0
-  },
-  {
-    "id": "belt-belteth",
-    "name": "Moo Belt ETH",
-    "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
-    "oracle": "lps",
-    "oracleId": "belt-belteth",
     "tvl": 0
   },
   {
@@ -917,22 +949,6 @@
     "contract": "0x71f20694f66432f08A0D0B71a07A7CBDeA40971E",
     "oracle": "lps",
     "oracleId": "wex-eth-beth",
-    "tvl": 0
-  },
-  {
-    "id": "memefarmv2-ape-bnb",
-    "name": "Moo MemeFarmV2 APE-BNB",
-    "contract": "0x1eda2b152742A9965e4692eDA509802755303373",
-    "oracle": "lps",
-    "oracleId": "memefarmv2-ape-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "memefarmv2-mfrm-bnb",
-    "name": "Moo MemeFarmV2 MFRM-BNB",
-    "contract": "0x172b06cCA865eC9368D648de66d707431f09e8E9",
-    "oracle": "lps",
-    "oracleId": "memefarmv2-mfrm-bnb",
     "tvl": 0
   },
   {
@@ -2229,6 +2245,22 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "memefarmv2-ape-bnb",
+    "name": "Moo MemeFarmV2 APE-BNB",
+    "contract": "0x1eda2b152742A9965e4692eDA509802755303373",
+    "oracle": "lps",
+    "oracleId": "memefarmv2-ape-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "memefarmv2-mfrm-bnb",
+    "name": "Moo MemeFarmV2 MFRM-BNB",
+    "contract": "0x172b06cCA865eC9368D648de66d707431f09e8E9",
+    "oracle": "lps",
+    "oracleId": "memefarmv2-mfrm-bnb",
     "tvl": 0
   },
   {
