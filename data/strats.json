@@ -9,6 +9,24 @@
     "chainId": 56
   },
   {
+    "name": "belt-beltbnb",
+    "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "belt-belteth",
+    "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "banana-bifi-bnb",
     "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
     "interval": 24,
@@ -20,6 +38,42 @@
   {
     "name": "belt-4belt",
     "address": "0x5Df9cE05EA92Af1EA324996d12f139847AF3dFC7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "pearzap-pear-bnb",
+    "address": "0x49A2F8F28585BA73b87Eb1664EAC088A7659e654",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "pearzap-pear-busd",
+    "address": "0x2dBaEEE5fe63119BFD0ea83a3C1f1F100F279b38",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "czf-czf-bnb",
+    "address": "0x58b302082Cb6eDf437F842106A49D990F98Ef3d2",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "czf-czf-busd",
+    "address": "0x40f95692B01a7c7d6C4b92a0510B930837a07fdd",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -171,24 +225,6 @@
     "chainId": 56
   },
   {
-    "name": "belt-beltbnb",
-    "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "belt-belteth",
-    "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-qbt-wbnb",
     "address": "0xd01b0e498ad4F41D8293755E343b189eD9Cdd178",
     "interval": 24,
@@ -217,7 +253,7 @@
   },
   {
     "name": "elk-elk-bnb",
-    "address": "0xea75ff4F580418A1430Bd3EBaF26B03C096D9489",
+    "address": "0x4fF3Bc86dd9DeCd7bd27b6553B1E3E83c3145166",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -226,7 +262,7 @@
   },
   {
     "name": "elk-elk-dai",
-    "address": "0x781805AdE7fD7E34205D54F975E8754621b7E6F3",
+    "address": "0x262fC7130808DE679247f33B7Ab22D49B2067B81",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1028,24 +1064,6 @@
   {
     "name": "wex-eth-beth",
     "address": "0xBBC4277DfA909baaC81f0A674f8c39610EeBE9ce",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "memefarmv2-ape-bnb",
-    "address": "0x5A11a47C3c6C9Ee92B9Ba7892Ccb2246D4D76204",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "memefarmv2-mfrm-bnb",
-    "address": "0x8CDed7955f13Eb56339B16A4C06C860b922BED13",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2799,6 +2817,24 @@
     "chainId": 137
   },
   {
+    "name": "quick-usdc-rbnb",
+    "address": "0xFa27d93EBE4598C068a7667C9534Dd3E23BC2299",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "mai-qi-matic",
+    "address": "0x464893e1A23026de87fd487A25341553B0f9cf03",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "quick-qi-eth",
     "address": "0x836A5D93DF7a02099B3C9f8BA06716e3521dA8B9",
     "interval": 1,
@@ -4284,6 +4320,51 @@
     "chainId": 250
   },
   {
+    "name": "boo-usdc-woo",
+    "address": "0xf088F60199D6f2938F100a3f8742225EbD1342f0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-wftm-shade",
+    "address": "0xC0E74E2929BFa1233803e05CcADc8fE3ee03E019",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-wftm-treeb",
+    "address": "0xA58f0953261EcB55A128F721841416717B327833",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "scream-crv",
+    "address": "0xA1CFCE884357EF0dFBaED4265299c950c058Ce4c",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "scream-link",
+    "address": "0x3E25CcCD4aC11d4F417b992285188714E80BAE8C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "boo-boo",
     "address": "0x004fd8d1667D4eE60945d97f91dAb1bbc32A099A",
     "interval": 1,
@@ -4674,6 +4755,33 @@
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wavax-spell",
+    "address": "0x7D9b96634F77B9c96cE4070350664aa4F87e62aa",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-frax-wavax",
+    "address": "0x5006B88C2FC9E6193773F6766CC82648bc99F21C",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-time-wavax",
+    "address": "0xc38b6ffFf4A60d76223aFEB9ceeC1cc9fBb87Ba4",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
