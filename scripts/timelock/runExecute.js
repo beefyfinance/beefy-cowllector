@@ -1,23 +1,20 @@
 const ethers = require('ethers');
+const { addressBook } = require('blockchain-addressbook');
 
 const chains = require('../../data/chains');
 const { sleep } = require('../../utils/harvestHelpers');
 const execute = require('./execute');
 
 const config = {
-  timelockAddress: '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F',
-  chainId: 250,
-  pk: process.env.UPGRADER_PK,
+  timelockAddress: addressBook['bsc'].platforms.beefyfinance.vaultOwner,
+  chainId: 56,
+  pk: process.env.REWARDER_PK,
   value: 0,
-  data: '0xa68833e50000000000000000000000004f8865a1fce2877ccb55264600d4759d222e8feb',
+  data: '0xe6685244',
   predecessor: ethers.constants.HashZero,
   salt: ethers.constants.HashZero,
-  delay: 3000,
-  addresses: [
-    '0xa6914AbA898D613152DB7D338381d53b5Eae0C1d',
-    '0x3464ab12F2c2fe3DAa90Aa7D90DDe6BA470422BD',
-    '0x3C180c415332999Fa7e5a65E8490A57fe8Fd7fdb',
-  ],
+  delay: 21600,
+  addresses: ['0xbFa24f7C2376c28407504Fb8512797dD8D316aBf'],
 };
 
 const main = async () => {
