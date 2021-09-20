@@ -16,6 +16,7 @@ const harvest = async () => {
       console.log(`Analizing harvest of ${strat.name}.`);
       const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);
       const harvester = new ethers.Wallet(process.env.HARVESTER_PK, provider);
+      const keeper = new ethers.Wallet(process.env.KEEPER_PK, provider);
 
       let shouldHarvest = true;
 
@@ -34,13 +35,13 @@ const harvest = async () => {
         let tx;
 
         if (strat.depositsPaused) {
-          await stratContract.unpause({ gasLimit: 3500000 });
+          await stratContract.connect(keeper).unpause({ gasLimit: 3500000 });
           tx = await stratContract.harvest({ gasLimit: 4000000 });
           tx = await tx.wait();
           tx.status === 1
             ? console.log(`${strat.name} harvested with tx: ${tx.transactionHash}`)
             : console.log(`${strat.name} harvest failed with tx: ${tx.transactionHash}`);
-          await stratContract.pause({ gasLimit: 3500000 });
+          await stratContract.connect(keeper).pause({ gasLimit: 3500000 });
         } else {
           tx = await stratContract.harvest({ gasLimit: 4000000 });
           // FIX: Polygon is taking too long to confirm. Harvesting without waiting for mining for now.
@@ -48,7 +49,7 @@ const harvest = async () => {
           // tx.status === 1
           //   ? console.log(`${strat.name} harvested with tx: ${tx.transactionHash}`)
           //   : console.log(`${strat.name} harvest failed with tx: ${tx.transactionHash}`);
-          console.log(`${strat.name} harvested`)
+          console.log(`${strat.name} harvested`);
         }
       } else {
         console.log(`Shouldn't harvest ${strat.name}`);
