@@ -80,30 +80,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-wbnb-gnt",
-    "name": "Moo CakeV2 GNT-BNB",
-    "contract": "0xB3D26C518558F10283C7870B8c97a786EC1B9098",
-    "oracle": "lps",
-    "oracleId": "cakev2-wbnb-gnt",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-dvi-wbnb",
-    "name": "Moo CakeV2 DVI-WBNB",
-    "contract": "0x9D193d68249131A94EA0EA6d88db4171ad2C42b7",
-    "oracle": "lps",
-    "oracleId": "cakev2-dvi-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-mcrn-wbnb",
-    "name": "Moo CakeV2 MCRN-WBNB",
-    "contract": "0x3da80295D96dcA4bc24c865F4548D23da4a44AE2",
-    "oracle": "lps",
-    "oracleId": "cakev2-mcrn-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-pots-bnb",
     "name": "Moo Ape POTS-BNB",
     "contract": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
@@ -2237,6 +2213,30 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-wbnb-gnt",
+    "name": "Moo CakeV2 GNT-BNB",
+    "contract": "0xB3D26C518558F10283C7870B8c97a786EC1B9098",
+    "oracle": "lps",
+    "oracleId": "cakev2-wbnb-gnt",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dvi-wbnb",
+    "name": "Moo CakeV2 DVI-WBNB",
+    "contract": "0x9D193d68249131A94EA0EA6d88db4171ad2C42b7",
+    "oracle": "lps",
+    "oracleId": "cakev2-dvi-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-mcrn-wbnb",
+    "name": "Moo CakeV2 MCRN-WBNB",
+    "contract": "0x3da80295D96dcA4bc24c865F4548D23da4a44AE2",
+    "oracle": "lps",
+    "oracleId": "cakev2-mcrn-wbnb",
     "tvl": 0
   },
   {

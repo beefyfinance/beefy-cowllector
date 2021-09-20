@@ -90,33 +90,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-wbnb-gnt",
-    "address": "0x228209554bd5bc0E162760F70261A4dcc64b4a5a",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-dvi-wbnb",
-    "address": "0xb0d18CA4fb070e14f263eD9Cb81DB3979eE32689",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-mcrn-wbnb",
-    "address": "0x3081ab1E19320e93CcA9817Eca037813BbDB64c1",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "banana-pots-bnb",
     "address": "0x59f822b216663e1b5EB6fC6D544CFB732Eb8693D",
     "interval": 24,
@@ -4701,6 +4674,15 @@
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-usdc.e-usdt.e",
+    "address": "0x625cCb753fc64A1cbC30C351e69549bc0bA64279",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
