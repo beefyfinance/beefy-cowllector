@@ -1424,14 +1424,6 @@
     "tvl": 0
   },
   {
-    "id": "bunny-bunny",
-    "name": "Moo Bunny V2",
-    "contract": "0x2288dC6e2D2FaBd94a0ab63DD558AE149Bbc9eD9",
-    "oracle": "tokens",
-    "oracleId": "BUNNY",
-    "tvl": 0
-  },
-  {
     "id": "mdex-bsc-bifi-usdt",
     "name": "Moo Mdex BIFI-USDT",
     "contract": "0x78dB17F440A223464B15046A25A273De510A14Ce",
@@ -2245,6 +2237,14 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "bunny-bunny",
+    "name": "Moo Bunny V2",
+    "contract": "0x2288dC6e2D2FaBd94a0ab63DD558AE149Bbc9eD9",
+    "oracle": "tokens",
+    "oracleId": "BUNNY",
     "tvl": 0
   },
   {
