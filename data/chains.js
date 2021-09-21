@@ -1,6 +1,6 @@
 const { addressBook } = require('blockchain-addressbook');
 
-const { bsc, heco, avax, polygon, fantom, one } = addressBook;
+const { arbitrum, bsc, heco, avax, polygon, fantom, one } = addressBook;
 
 const chains = {
   56: {
@@ -103,7 +103,6 @@ const chains = {
     chainId: 1666600000,
     wnative: one.tokens.WONE.address,
     rewardPool: one.platforms.beefyfinance.rewardPool,
-    notifyInterval: 10,
     treasury: one.platforms.beefyfinance.treasury,
     beefyFeeBatcher: one.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
@@ -116,6 +115,24 @@ const chains = {
     firstRewardBlock: 16823869,
     blockTime: 3,
     blockExplorer: 'https://explorer.harmony.one/',
+  },
+  42161: {
+    id: 'arbitrum',
+    chainId: 42161,
+    wnative: arbitrum.tokens.WETH.address,
+    rewardPool: arbitrum.platforms.beefyfinance.rewardPool,
+    treasury: arbitrum.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: arbitrum.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 20,
+    wnativeUnwrapInterval: 20,
+    rpc: process.env.ARBITRUM_RPC,
+    appVaultsFilename: 'arbitrum_pools.js',
+    multicall: arbitrum.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    firstRewardBlock: 1033652,
+    blockTime: 1,
+    blockExplorer: 'http://arbiscan.com',
   },
 };
 

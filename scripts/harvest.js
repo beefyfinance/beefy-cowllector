@@ -12,6 +12,7 @@ const strats = require('../data/strats.json');
 
 const harvest = async () => {
   for (const strat of strats) {
+    if (strat.chainId !== 42161) continue;
     try {
       console.log(`Analizing harvest of ${strat.name}.`);
       const provider = new ethers.providers.JsonRpcProvider(chains[strat.chainId].rpc);

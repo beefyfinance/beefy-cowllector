@@ -13,6 +13,8 @@ const BeefyVaultABI = require('../abis/BeefyVault.json');
 
 const defaultInterval = chain => {
   switch (chain.id) {
+    case 'arbitrum':
+      return 24;
     case 'bsc':
       return 24;
     case 'avax':
