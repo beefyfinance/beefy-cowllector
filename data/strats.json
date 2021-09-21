@@ -4698,6 +4698,24 @@
     "chainId": 43114
   },
   {
+    "name": "joe-wavax-bifi",
+    "address": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-bnb-wavax",
+    "address": "0xf1F5368A043f5c873BB771eA7E90615F21fC9E11",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "joe-usdc.e-usdt.e",
     "address": "0x625cCb753fc64A1cbC30C351e69549bc0bA64279",
     "interval": 6,
