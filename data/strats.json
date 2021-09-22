@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "belt-beltbtc",
+    "address": "0xfDcdaF8dF2b1b7Ecaf9c5158f9024781A75BBcb2",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-beltbnb",
     "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
     "interval": 24,
@@ -20,6 +29,24 @@
   {
     "name": "belt-belteth",
     "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "annex-ann-busd",
+    "address": "0x567A855a9d426bb0450c5A60d2897a9A6Ae4979d",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "annex-ann",
+    "address": "0xceBdeAaac3F44BceF25136b6Da74aE553f49A9fF",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -101,15 +128,6 @@
   {
     "name": "cakev2-pots-busd",
     "address": "0x97a92bb98567C508068eD3b972c0d0F9E63177DC",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "belt-beltbtc",
-    "address": "0xfDcdaF8dF2b1b7Ecaf9c5158f9024781A75BBcb2",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4678,96 +4696,6 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250
-  },
-  {
-    "name": "sushi-arb-spell-weth",
-    "address": "0x66be88070D38d9F8eE96913aeDF1709ED35aB29A",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "sushi-arb-weth-mim",
-    "address": "0xa61D6440880b51CFbD95b00B4189E6bF81aF4214",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "sushi-arb-weth-link",
-    "address": "0x3DC588c510C5735568d38dED3aB3eB426f5E7474",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "sushi-arb-eth-usdc",
-    "address": "0x5A1Aa857361a63dfcbbfCdEA811F6656822f367D",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "curve-arb-tricrypto",
-    "address": "0xf099233515DEDB44D463B4467CB56dF85e123274",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "curve-arb-2pool",
-    "address": "0x65c6FC773729c30aC4d570C8B8040C454fFA5960",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "curve-arb-ren",
-    "address": "0xcd4db0404DEA8882EdE60Cea1b8D186AbD7F97dF",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "sushi-arb-wbtc-weth",
-    "address": "0xc5Be4084b3D945fe83e1Be4bd96522FA1D1c722D",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "sushi-arb-sushi-eth",
-    "address": "0xa9E6E271b27b20F65394914f8784B3B860dBd259",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
-  },
-  {
-    "name": "sushi-arb-weth-usdt",
-    "address": "0xaDB9DDFA24E326dC9d337561f6c7ba2a6Ecec697",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 42161
   },
   {
     "name": "avax-bifi-maxi",

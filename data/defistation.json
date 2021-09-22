@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "belt-beltbtc",
+    "name": "Moo Belt BTC",
+    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
+    "oracle": "lps",
+    "oracleId": "belt-beltbtc",
+    "tvl": 0
+  },
+  {
     "id": "belt-beltbnb",
     "name": "Moo Belt BNB",
     "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
@@ -21,6 +29,22 @@
     "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
     "oracle": "lps",
     "oracleId": "belt-belteth",
+    "tvl": 0
+  },
+  {
+    "id": "annex-ann-busd",
+    "name": "Moo Annex ANN-BUSD",
+    "contract": "0x6D56c98Df063EF0CB7431AAf87BA6c2f2Fe24611",
+    "oracle": "lps",
+    "oracleId": "annex-ann-busd",
+    "tvl": 0
+  },
+  {
+    "id": "annex-ann",
+    "name": "Moo Annex ANN",
+    "contract": "0xB3e80cf1e9A0478F917Ec81f6B223C495CA20a27",
+    "oracle": "tokens",
+    "oracleId": "ANN",
     "tvl": 0
   },
   {
@@ -93,14 +117,6 @@
     "contract": "0x3106d9B3d5e04ff5D575212140FAb1Cf17C8933F",
     "oracle": "lps",
     "oracleId": "cakev2-pots-busd",
-    "tvl": 0
-  },
-  {
-    "id": "belt-beltbtc",
-    "name": "Moo Belt BTC",
-    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
-    "oracle": "lps",
-    "oracleId": "belt-beltbtc",
     "tvl": 0
   },
   {
