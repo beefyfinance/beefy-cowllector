@@ -4698,6 +4698,96 @@
     "chainId": 250
   },
   {
+    "name": "sushi-arb-spell-weth",
+    "address": "0x66be88070D38d9F8eE96913aeDF1709ED35aB29A",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "sushi-arb-weth-mim",
+    "address": "0xa61D6440880b51CFbD95b00B4189E6bF81aF4214",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "sushi-arb-weth-link",
+    "address": "0x3DC588c510C5735568d38dED3aB3eB426f5E7474",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "sushi-arb-eth-usdc",
+    "address": "0x5A1Aa857361a63dfcbbfCdEA811F6656822f367D",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "curve-arb-tricrypto",
+    "address": "0xf099233515DEDB44D463B4467CB56dF85e123274",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "curve-arb-2pool",
+    "address": "0x65c6FC773729c30aC4d570C8B8040C454fFA5960",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "curve-arb-ren",
+    "address": "0xcd4db0404DEA8882EdE60Cea1b8D186AbD7F97dF",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "sushi-arb-wbtc-weth",
+    "address": "0xc5Be4084b3D945fe83e1Be4bd96522FA1D1c722D",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "sushi-arb-sushi-eth",
+    "address": "0xa9E6E271b27b20F65394914f8784B3B860dBd259",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
+    "name": "sushi-arb-weth-usdt",
+    "address": "0xaDB9DDFA24E326dC9d337561f6c7ba2a6Ecec697",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42161
+  },
+  {
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
