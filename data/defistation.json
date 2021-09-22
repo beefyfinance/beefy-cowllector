@@ -1136,14 +1136,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-vrt-bnb",
-    "name": "Moo CakeV2 VRT-BNB",
-    "contract": "0xA8cC688E9B387b0cBe41D0CcF55875CE2318695A",
-    "oracle": "lps",
-    "oracleId": "cakev2-vrt-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-kalm-bnb",
     "name": "Moo CakeV2 KALM-BNB",
     "contract": "0x487D8014F8803757e0542e127854DEBd213A39e5",
@@ -2213,6 +2205,14 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-vrt-bnb",
+    "name": "Moo CakeV2 VRT-BNB",
+    "contract": "0xA8cC688E9B387b0cBe41D0CcF55875CE2318695A",
+    "oracle": "lps",
+    "oracleId": "cakev2-vrt-bnb",
     "tvl": 0
   },
   {
