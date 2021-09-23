@@ -21,7 +21,7 @@ const harvestBeefyFees = async () => {
       const harvester = new ethers.Wallet(process.env.HARVESTER_PK, provider);
       const batcher = new ethers.Contract(chain.beefyFeeBatcher, abi, harvester);
 
-      let tx = await batcher.harvest({ gasLimit: 1000000 });
+      let tx = await batcher.harvest({ gasLimit: 4000000 });
       console.log(`Harvested chain ${chain.chainId}`);
     } catch (e) {
       console.log(`harvestBeefyFees failed ${chain.chainId}: ${e}`);
