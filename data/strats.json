@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "banana-banana-bnb",
+    "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-beltbtc",
     "address": "0xfDcdaF8dF2b1b7Ecaf9c5158f9024781A75BBcb2",
     "interval": 24,
@@ -29,6 +38,24 @@
   {
     "name": "belt-belteth",
     "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "pacoca-pacoca-bnb",
+    "address": "0x33B2eF1B148257f34fAc406Ebb9868b9D96eBBeE",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "pacoca-pacoca",
+    "address": "0x85F91D46e0065B98898E67A30365E0fA74529853",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -810,15 +837,6 @@
     "chainId": 56
   },
   {
-    "name": "kingdefi-krown",
-    "address": "0xbF4bC77Bb1eBA1b2f8a3Aa1219b792C2F217c221",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "ooe-ooe-bnb",
     "address": "0xDD891BA224a4a63094b4599abb2f007fB2E41ee5",
     "interval": 24,
@@ -963,15 +981,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-adx-busd",
-    "address": "0x1be592f6Ab06a3ff4392dC50e4AA5A3a31295531",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-usdt-usdc",
     "address": "0xc83aE721681B472bCefc944B65f27B72A3b78EFd",
     "interval": 24,
@@ -1055,15 +1064,6 @@
   {
     "name": "wex-eth-beth",
     "address": "0xBBC4277DfA909baaC81f0A674f8c39610EeBE9ce",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-ampl-bsc-mp-busd",
-    "address": "0x657B91259e3d612D683A201b5B30fb706677B205",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1244,15 +1244,6 @@
   {
     "name": "panther-panther-bnb",
     "address": "0x07f35757Fb1057a3c4b184af58312B1EB7eB5e26",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-mx-busd",
-    "address": "0x6352206e5E056A71eE83838b27F63f1d8236D4C3",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1611,15 +1602,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-math-busd",
-    "address": "0x64b3A40cdB1C366278607f9778d299ef88115b16",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "banana-watch-bnb",
     "address": "0x95D965048920A9917b079E6Eb53Bf10d1C0F66a0",
     "interval": 24,
@@ -1971,15 +1953,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-dego-bnb",
-    "address": "0x305E548d34724877211802A56b72Ba59E85567F2",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-belt-bnb",
     "address": "0x37cf856227Ef3191cf921a55D958f49dCbD5F1d1",
     "interval": 24,
@@ -1991,15 +1964,6 @@
   {
     "name": "cakev2-bel-bnb",
     "address": "0x8fBF967f6C3B9022a2a588c758eC5fA1d423ec6F",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-lit-bnb",
-    "address": "0x5a7a8bB24389a27f7bEEf963A95f4C0F7ee9F9c4",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2054,15 +2018,6 @@
   {
     "name": "cakev2-dot-bnb",
     "address": "0x582787697465d0658142f1B7c86E6a367466b4C9",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-zil-bnb",
-    "address": "0xb5e4F6ee6ccb99656A0B180b26EC80DE3dBeE22C",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2324,15 +2279,6 @@
   {
     "name": "cakev2-alice-bnb",
     "address": "0x050388f9215e2D9611F3d9E28Fa070bdB7B3F5E7",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-banana-bnb",
-    "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2783,6 +2729,15 @@
   {
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "ape-banana-matic",
+    "address": "0x453054B9C2CD3dF1c57E0866241f460B78eE3ebB",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3504,15 +3459,6 @@
     "name": "ape-bnb-matic",
     "address": "0x35D578CBeFf8F7A4e1c3Beed0D8CC42D71A08A27",
     "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "ape-banana-matic",
-    "address": "0x453054B9C2CD3dF1c57E0866241f460B78eE3ebB",
-    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
