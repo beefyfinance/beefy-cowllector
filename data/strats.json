@@ -2763,6 +2763,24 @@
     "chainId": 137
   },
   {
+    "name": "polywise-usdc-wise",
+    "address": "0x2b92996787D7aB695FAb545ccb984b3895409619",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "polywise-wmatic-wise",
+    "address": "0x5cC78F9FE3DaDeccAaeF83726c1864996D1FAb49",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "polyalpha-alpha-matic",
     "address": "0xAC074B7515011E08828821d53A3b71fB643773aB",
     "interval": 1,
