@@ -35,13 +35,14 @@ const harvest = async () => {
         let tx;
 
         if (strat.depositsPaused) {
-          await stratContract.connect(keeper).unpause({ gasLimit: 3500000 });
-          tx = await stratContract.harvest({ gasLimit: 4000000 });
-          tx = await tx.wait();
-          tx.status === 1
-            ? console.log(`${strat.name} harvested with tx: ${tx.transactionHash}`)
-            : console.log(`${strat.name} harvest failed with tx: ${tx.transactionHash}`);
-          await stratContract.connect(keeper).pause({ gasLimit: 3500000 });
+          // TODO: Improve how we harvest paused strategies. Unpause/Harvest/Pause sometimes fails.
+          // await stratContract.connect(keeper).unpause({ gasLimit: 3500000 });
+          // tx = await stratContract.harvest({ gasLimit: 4000000 });
+          // tx = await tx.wait();
+          // tx.status === 1
+          //   ? console.log(`${strat.name} harvested with tx: ${tx.transactionHash}`)
+          //   : console.log(`${strat.name} harvest failed with tx: ${tx.transactionHash}`);
+          // await stratContract.connect(keeper).pause({ gasLimit: 3500000 });
         } else {
           tx = await stratContract.harvest({ gasLimit: 4000000 });
           // FIX: Polygon is taking too long to confirm. Harvesting without waiting for mining for now.
