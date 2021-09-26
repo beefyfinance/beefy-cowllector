@@ -131,7 +131,7 @@ const chains = {
     queryLimit: 1000,
     queryInterval: 100,
     firstRewardBlock: 1033652,
-    blockTime: 1,
+    blockTime: 2.8,
     blockExplorer: 'http://arbiscan.com',
   },
 };
