@@ -368,14 +368,6 @@
     "tvl": 0
   },
   {
-    "id": "tosdisbsc-dis-wbnb",
-    "name": "Moo TosDis DIS-BNB",
-    "contract": "0x7FdC26B1381A53dBB6B65984857c55746f60d156",
-    "oracle": "lps",
-    "oracleId": "tosdisbsc-dis-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-ont-bnb",
     "name": "Moo Ape ONT-BNB",
     "contract": "0xf8ED3D2E36eA4eA13eA4cCcaD5c72ac55B64e651",
@@ -2189,6 +2181,14 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "tosdisbsc-dis-wbnb",
+    "name": "Moo TosDis DIS-BNB",
+    "contract": "0x7FdC26B1381A53dBB6B65984857c55746f60d156",
+    "oracle": "lps",
+    "oracleId": "tosdisbsc-dis-wbnb",
     "tvl": 0
   },
   {

@@ -414,15 +414,6 @@
     "chainId": 56
   },
   {
-    "name": "tosdisbsc-dis-wbnb",
-    "address": "0xD315BA5a98F698A1cBCFE62678e1396A6C621547",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "banana-ont-bnb",
     "address": "0x739B8b50fC28267D92233954C189aF5Ad7C55A71",
     "interval": 24,
@@ -2844,15 +2835,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-usdc-rbnb",
-    "address": "0xFa27d93EBE4598C068a7667C9534Dd3E23BC2299",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "mai-qi-matic",
     "address": "0x464893e1A23026de87fd487A25341553B0f9cf03",
     "interval": 1,
@@ -3105,15 +3087,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-guard-usdc",
-    "address": "0x54b1FE5f9162141740A2cF0e2044D82b8F570e08",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "dinoswap-dino-eth",
     "address": "0xd85BAF8b9Ab657921c6D2700AA0e78928dC2922C",
     "interval": 1,
@@ -3141,60 +3114,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-quick-yamp",
-    "address": "0xed28adB653C55B63997C6f576DAcFaB2b1c94f17",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-quick-rendgb",
-    "address": "0xA4352F2eCC3DDDb85CCfEaDf2ab991dB2Eb5bbf2",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-quick-woo",
-    "address": "0x0BFf7F289a99204648C003D77f24da68F7eC9323",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-woo-eth",
-    "address": "0xb590D3d2F74661c010092d266edc7DD0117C165a",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-start-quick",
-    "address": "0x39ecdEAf9e442B993d53c35c77789e278f090cd2",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-quick-polydoge",
-    "address": "0x78b8C22A2FbB6C4Bf9E9570DCAC3b1F5EFB7D6a5",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "farmhero-quick-usdc-honor",
     "address": "0x9ab0f5b4504A9Ee0b2c830BC84dc78Aae54F4DD9",
     "interval": 1,
@@ -3206,15 +3125,6 @@
   {
     "name": "farmhero-wault-usdc-honor",
     "address": "0x8699D5a2DFDd48Ea7333E9069125e7EfDe4AfF91",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-yamp-usdc",
-    "address": "0xe72E12c4c242595B20a1a718a582FFF7116010a7",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3312,15 +3222,6 @@
     "chainId": 137
   },
   {
-    "name": "dfyn-ice-dfyn",
-    "address": "0x6ef302f46543d1045F3c93D2eE77AcD58d3854C4",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "ironswap-ice-eth",
     "address": "0x57e07d6958fd38AA2f46699744e322d3fB3db60f",
     "interval": 1,
@@ -3384,51 +3285,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-qi-quick",
-    "address": "0xa145e4b08969b344Eb9478E89e351cc6b5c7D5EF",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-usdc-mimatic",
-    "address": "0x9ED77C14DE83a24c9E1Ca97472a22a86d90EEA0c",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-polybunny-eth",
-    "address": "0xa6a9da7890DeD8FEcc3be2f8b13ca424689fc413",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-polybunny-quick",
-    "address": "0xA58f0953261EcB55A128F721841416717B327833",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "dfyn-route-dfyn",
-    "address": "0x09b379B9008BF69a06A5ed8D97FEd39Bc830784E",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "ape-matic-usdt",
     "address": "0xB63e910A2DcD6362f7F631542a700C3139b6185a",
     "interval": 6,
@@ -3440,15 +3296,6 @@
   {
     "name": "ape-matic-dai",
     "address": "0x0603141F2D39264BCE263a2107fA2045cC435b47",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-eth-ramp",
-    "address": "0xa7377CDb25BfA2889B6e4c9463Cd0858A57aB315",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3510,35 +3357,8 @@
     "chainId": 137
   },
   {
-    "name": "quick-pbnb-quick",
-    "address": "0x1a09FD524D6a7c99903648Bfa8535D43B4F215c2",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-usdc-pbnb",
-    "address": "0x47c1772E850F627Bf41f52e44219d9bDab66D963",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "quick-dai-usdt",
     "address": "0x4ee0f311b55Dd983FBe82A0EEEa06429726Da932",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-eth-fff",
-    "address": "0x401Fa12777e303CBbFa0Ce8c95014d3CA1ee02c0",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3699,15 +3519,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-link-quick",
-    "address": "0xD208C42cd08a5CaD8C53add2365153e8e24EbdF9",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "quick-usdc-eth",
     "address": "0x2F6Ebc03469De09FE6D933e4FA56772dF400BfA6",
     "interval": 1,
@@ -3719,15 +3530,6 @@
   {
     "name": "quick-dai-eth",
     "address": "0x9B14a16609b0Bf5DA858115b4537e2CD01B3133C",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-fff-quick",
-    "address": "0x4E0e85692b239e57128103b4Ad6f39Ac3BBE0c15",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3807,51 +3609,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-bifi-eth",
-    "address": "0xa425DeadFf443f3574F02585CE5154BBd5D14213",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-bifi-quick",
-    "address": "0xA9319b8F327dBB744c63e6b9FfaDf9A93C30687c",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-degen-quick",
-    "address": "0x658F5577b5a161A4aC2F0bb513af49ece812f077",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-cc10-quick",
-    "address": "0x05b6e52227985C401eDd5d1635DcEa204857a81d",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-defi5-quick",
-    "address": "0x1848FBA9Ac7B4783F513d336171037941a637c55",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "quick-btc-usdc",
     "address": "0x15b0A1c6463261Ef4941b9212F09d54f2CD51899",
     "interval": 1,
@@ -3863,33 +3620,6 @@
   {
     "name": "quick-matic-usdc",
     "address": "0x75bC3FC2Cd3756f0dC7dc5211CE44fAcDd9B005E",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-vision-eth",
-    "address": "0xB682a2F1e6C87819e9aDEdBe366548B59Ab122E8",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-degen-eth",
-    "address": "0xaEaF5294Cc6FAcB023c0999A0b1786C4C0b3d520",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-cc10-eth",
-    "address": "0x9e6d524b000066e60284E2Ee14437d071B6b498F",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3996,24 +3726,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-mocean-matic",
-    "address": "0xe1B9EB8eAf3F278800AcE13a815DDdc24673F0C6",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-any-quick",
-    "address": "0x5E70Ad3438Fe87e0ec89CF15a53aFb2caC39cC6C",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "sushi-aave-eth",
     "address": "0x71e2c040F3B9670C693215509A0c0846D221756a",
     "interval": 1,
@@ -4088,42 +3800,6 @@
   {
     "name": "quick-eth-btc",
     "address": "0x481E3e463a78eC1DC6f02e664491C7d94F6d82a5",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-ubt-eth",
-    "address": "0x470052FEd23A2887e3e679c3D8544529DA8B272f",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-defi5-eth",
-    "address": "0xc1C1eB984218B9570beA53C0Dad14283a6E9E81C",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-wise-eth",
-    "address": "0x88F2ADA49F24fF14005633e66050f763b2E07b7f",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-cel-eth",
-    "address": "0x06A1f520555222758eaE4dA0573351FdaD1e7843",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4214,6 +3890,42 @@
   {
     "name": "fantom-bifi-maxi",
     "address": "0x230691a28C8290A553BFBC911Ab2AbA0b2df152D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "jetswap-fantom-eth-btc",
+    "address": "0x3BaD499212125Db1e8199C24Fc55492CA5496d55",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "jetswap-fantom-eth-usdc",
+    "address": "0xb52baF0FF3312b3b786fB14fF5DEE3559CE1A955",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "jetswap-fantom-btc-usdc",
+    "address": "0x0D9d59F1BB5e52dE04f66c7C228c47C3836BA1e7",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "jetswap-fantom-fusdt-usdc",
+    "address": "0xd2C5b841B7a10DA5e9aaBf802cC31D3b80f4b483",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4761,6 +4473,15 @@
     "chainId": 43114
   },
   {
+    "name": "joe-joe",
+    "address": "0xf68C61E3c2f9C48E53391E1FCd2db1f19998151b",
+    "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "joe-joe-usdc.e",
     "address": "0x81f2c701dB19a255B0BBc557D1d86FBf92dA8A78",
     "interval": 6,
@@ -4916,15 +4637,6 @@
   {
     "name": "joe-joe-usdt.e",
     "address": "0x435626d62a49454988bd4B523D67F3e5804154f2",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "joe-joe",
-    "address": "0xf68C61E3c2f9C48E53391E1FCd2db1f19998151b",
     "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
