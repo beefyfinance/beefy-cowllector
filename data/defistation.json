@@ -8,6 +8,46 @@
     "tvl": 0
   },
   {
+    "id": "banana-bifi-bnb",
+    "name": "Moo Ape BIFI-BNB",
+    "contract": "0x6ebA4A31c46937B42E66f44a0A1165a08495a38F",
+    "oracle": "lps",
+    "oracleId": "banana-bifi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bsc-bifi-usdt",
+    "name": "Moo Mdex BIFI-USDT",
+    "contract": "0x78dB17F440A223464B15046A25A273De510A14Ce",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-bifi-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "sing-sing-busd",
+    "name": "Moo Sing SING-BUSD",
+    "contract": "0x70E397fE8C402F2993EB2AC54C522f5AE9F33eDb",
+    "oracle": "lps",
+    "oracleId": "sing-sing-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cafev2-brew-bnb",
+    "name": "Moo CafeSwap BREW-BNB",
+    "contract": "0x6D23D73B219B73560E871021D1E1AC382793727a",
+    "oracle": "lps",
+    "oracleId": "cafev2-brew-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cafev2-brew-busd",
+    "name": "Moo CafeSwap BREW-BUSD",
+    "contract": "0xa7f299F51143e91a411805a4648434092788a111",
+    "oracle": "lps",
+    "oracleId": "cafev2-brew-busd",
+    "tvl": 0
+  },
+  {
     "id": "banana-banana-bnb",
     "name": "Moo Ape BANANA-BNB",
     "contract": "0x15396D3BD9338A14AE90613Fc2b85c5F7b5621CF",
@@ -85,14 +125,6 @@
     "contract": "0xB3e80cf1e9A0478F917Ec81f6B223C495CA20a27",
     "oracle": "tokens",
     "oracleId": "ANN",
-    "tvl": 0
-  },
-  {
-    "id": "banana-bifi-bnb",
-    "name": "Moo Ape BIFI-BNB",
-    "contract": "0x6ebA4A31c46937B42E66f44a0A1165a08495a38F",
-    "oracle": "lps",
-    "oracleId": "banana-bifi-bnb",
     "tvl": 0
   },
   {
@@ -1317,14 +1349,6 @@
     "contract": "0xB9dA6EdEeF7e3db24265EcFBeBF4e06B7c7A455f",
     "oracle": "lps",
     "oracleId": "banana-matic-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "mdex-bsc-bifi-usdt",
-    "name": "Moo Mdex BIFI-USDT",
-    "contract": "0x78dB17F440A223464B15046A25A273De510A14Ce",
-    "oracle": "lps",
-    "oracleId": "mdex-bsc-bifi-usdt",
     "tvl": 0
   },
   {

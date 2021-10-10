@@ -5,16 +5,18 @@ const chains = require('../../data/chains');
 const { sleep } = require('../../utils/harvestHelpers');
 const execute = require('./execute');
 
+const UPGRADE_STRAT = '0xe6685244';
+
 const config = {
   timelockAddress: addressBook['bsc'].platforms.beefyfinance.vaultOwner,
   chainId: 56,
   pk: process.env.REWARDER_PK,
   value: 0,
-  data: '0xe6685244',
+  data: UPGRADE_STRAT,
   predecessor: ethers.constants.HashZero,
   salt: ethers.constants.HashZero,
   delay: 21600,
-  addresses: ['0xbFa24f7C2376c28407504Fb8512797dD8D316aBf'],
+  addresses: ['0xb26642B6690E4c4c9A6dAd6115ac149c700C7dfE'],
 };
 
 const main = async () => {
