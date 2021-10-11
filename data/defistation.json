@@ -24,6 +24,14 @@
     "tvl": 0
   },
   {
+    "id": "cakev2-wbnb-beta",
+    "name": "Moo Cake BETA-BNB",
+    "contract": "0x53BD8254BFe7D3615E6879D877522309DA7dD130",
+    "oracle": "lps",
+    "oracleId": "cakev2-wbnb-beta",
+    "tvl": 0
+  },
+  {
     "id": "sing-sing-busd",
     "name": "Moo Sing SING-BUSD",
     "contract": "0x70E397fE8C402F2993EB2AC54C522f5AE9F33eDb",
@@ -581,14 +589,6 @@
     "contract": "0x5E21De9266820e00039Ccc4211eE135114944b5b",
     "oracle": "lps",
     "oracleId": "cakev2-win-busd",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-revv-bnb-eol",
-    "name": "Moo CakeV2 REVV-BNB",
-    "contract": "0xe0F782FFAeC27DC2377b8b656B828820dDB7BEd4",
-    "oracle": "lps",
-    "oracleId": "cakev2-revv-bnb",
     "tvl": 0
   },
   {
@@ -2101,6 +2101,14 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-revv-bnb-eol",
+    "name": "Moo CakeV2 REVV-BNB",
+    "contract": "0xe0F782FFAeC27DC2377b8b656B828820dDB7BEd4",
+    "oracle": "lps",
+    "oracleId": "cakev2-revv-bnb",
     "tvl": 0
   },
   {
