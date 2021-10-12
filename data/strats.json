@@ -2763,6 +2763,15 @@
     "chainId": 137
   },
   {
+    "name": "sushi-fox-eth",
+    "address": "0x580B20B86a706db51D28C819A1117Ca5A33bebAB",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "sushi-wmatic-ghst",
     "address": "0x42844d785816e53adfFBdFc66d6BFC2E3E83d8FD",
     "interval": 1,
@@ -4555,7 +4564,7 @@
   },
   {
     "name": "sing-usdt.e-sing",
-    "address": "0x372b3C83b6ec4B0cE2f4c49427580584848A6d3d",
+    "address": "0x0ab24Bfc2503bB536ad667c00685BBB70fA90433",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
