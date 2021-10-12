@@ -8,6 +8,30 @@
     "tvl": 0
   },
   {
+    "id": "belt-beltbnb",
+    "name": "Moo Belt BNB",
+    "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
+    "oracle": "lps",
+    "oracleId": "belt-beltbnb",
+    "tvl": 0
+  },
+  {
+    "id": "belt-belteth",
+    "name": "Moo Belt ETH",
+    "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
+    "oracle": "lps",
+    "oracleId": "belt-belteth",
+    "tvl": 0
+  },
+  {
+    "id": "banana-nfty-wbnb",
+    "name": "Moo Ape NFTY-BNB",
+    "contract": "0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1",
+    "oracle": "lps",
+    "oracleId": "banana-nfty-wbnb",
+    "tvl": 0
+  },
+  {
     "id": "banana-bifi-bnb",
     "name": "Moo Ape BIFI-BNB",
     "contract": "0x6ebA4A31c46937B42E66f44a0A1165a08495a38F",
@@ -21,6 +45,30 @@
     "contract": "0x78dB17F440A223464B15046A25A273De510A14Ce",
     "oracle": "lps",
     "oracleId": "mdex-bsc-bifi-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "baby-baby",
+    "name": "Moo Baby",
+    "contract": "0x87F9A89B51dA28CE8653A700d362CDa9b9bA7d88",
+    "oracle": "tokens",
+    "oracleId": "BABY",
+    "tvl": 0
+  },
+  {
+    "id": "baby-baby-usdt",
+    "name": "Moo Baby BABY-USDT",
+    "contract": "0xbFF84AC91c3d4123e5D5aAF32996c05A90c7CDAB",
+    "oracle": "lps",
+    "oracleId": "baby-baby-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "baby-baby-bnb",
+    "name": "Moo Baby BABY-BNB",
+    "contract": "0x5968bCf6fA9d697bc7EbbD925BdaD0b487fB02bC",
+    "oracle": "lps",
+    "oracleId": "baby-baby-bnb",
     "tvl": 0
   },
   {
@@ -69,22 +117,6 @@
     "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
     "oracle": "lps",
     "oracleId": "belt-beltbtc",
-    "tvl": 0
-  },
-  {
-    "id": "belt-beltbnb",
-    "name": "Moo Belt BNB",
-    "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
-    "oracle": "lps",
-    "oracleId": "belt-beltbnb",
-    "tvl": 0
-  },
-  {
-    "id": "belt-belteth",
-    "name": "Moo Belt ETH",
-    "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
-    "oracle": "lps",
-    "oracleId": "belt-belteth",
     "tvl": 0
   },
   {
