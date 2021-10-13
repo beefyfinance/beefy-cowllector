@@ -2691,6 +2691,33 @@
     "chainId": 137
   },
   {
+    "name": "kyber-usdc-jeur",
+    "address": "0xaD403e47d7e288Ed473338F6B7BF176e7C42c748",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "kyber-usdc-jgbp",
+    "address": "0x4c102FD608B3D78095AbC785E9362328bE81746F",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "kyber-usdc-jchf",
+    "address": "0x864C305c57B78803D36E064490F5078A0bDED7e0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "curve-poly-ren",
     "address": "0xAccf2f81F8c13e8D97ee272D141b6f4B613aB46D",
     "interval": 1,
@@ -4556,6 +4583,24 @@
   {
     "name": "joe-wavax-bifi",
     "address": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "curve-avax-av3crv",
+    "address": "0x0C4593903D888d5cFDB30E759A09b283d96a9EE0",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "curve-avax-atricrypto",
+    "address": "0x5EB330BC1B4E7eBC4355ebC330EC5a5D36Fb73CA",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
