@@ -1913,8 +1913,8 @@
   },
   {
     "id": "blizzard-xblzd",
-    "name": "Moo Blizzard xBLZD",
-    "contract": "0xf69bA3131029173Ca97aa43400B10689f5C23f59",
+    "name": "Moo Blizzard xBLZDv2",
+    "contract": "0x47a27220Db5458DB4b238fefCBb8178232cBFa5D",
     "oracle": "tokens",
     "oracleId": "xBLZD",
     "tvl": 0
@@ -2133,6 +2133,14 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "blizzard-xblzd",
+    "name": "Moo Blizzard xBLZD",
+    "contract": "0xf69bA3131029173Ca97aa43400B10689f5C23f59",
+    "oracle": "tokens",
+    "oracleId": "xBLZD",
     "tvl": 0
   },
   {

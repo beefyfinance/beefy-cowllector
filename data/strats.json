@@ -2152,7 +2152,7 @@
   },
   {
     "name": "blizzard-xblzd",
-    "address": "0x79f9f323783f9E21dA0C1c786A6002EfB6B2AB4a",
+    "address": "0x139f12DA92a1b7c80b160D3967e1f578D7921906",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3888,6 +3888,15 @@
     "chainId": 250
   },
   {
+    "name": "boo-wftm-spell",
+    "address": "0x31F5eec2719eAc3A61a8B76ed9ceFF13437BE65a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "spirit-link-ftm",
     "address": "0xC0907E0e29f6576E864492D6ec12716dc1d21A87",
     "interval": 1,
@@ -3908,6 +3917,15 @@
   {
     "name": "curve-ftm-tricrypto",
     "address": "0x64C60e7eAb8A0F9a36827908E1C47C2230a9c4D0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "sing-ftm-usdc-sing",
+    "address": "0x1A10a5B868CBb1aCA7e393423c8D0fC1f1683A33",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
