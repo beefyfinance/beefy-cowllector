@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "banana-bananav2",
+    "name": "Moo Banana",
+    "contract": "0xED4ea41Daf652964789b16e3Ff76eC07d99d2340",
+    "oracle": "tokens",
+    "oracleId": "BANANA",
+    "tvl": 0
+  },
+  {
     "id": "belt-beltbnb",
     "name": "Moo Belt BNB",
     "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
@@ -21,6 +29,14 @@
     "contract": "0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA",
     "oracle": "lps",
     "oracleId": "belt-belteth",
+    "tvl": 0
+  },
+  {
+    "id": "banana-wbnb-ceek",
+    "name": "Moo Ape CEEK-BNB",
+    "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
+    "oracle": "lps",
+    "oracleId": "banana-wbnb-ceek",
     "tvl": 0
   },
   {
@@ -453,14 +469,6 @@
     "contract": "0x9b188c2C76a01bb290A17FadB65BD400Dc3F53F0",
     "oracle": "lps",
     "oracleId": "wex-bnb-ont",
-    "tvl": 0
-  },
-  {
-    "id": "banana-bananav2",
-    "name": "Moo Banana",
-    "contract": "0xED4ea41Daf652964789b16e3Ff76eC07d99d2340",
-    "oracle": "tokens",
-    "oracleId": "BANANA",
     "tvl": 0
   },
   {

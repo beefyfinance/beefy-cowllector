@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "banana-bananav2",
+    "address": "0xf3995BB32dFd21865D0dA03782D888fa454F3dB1",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "belt-beltbnb",
     "address": "0x1687D94bA7C2b8b142b3De04849F87dd73286CFf",
     "interval": 24,
@@ -20,6 +29,15 @@
   {
     "name": "belt-belteth",
     "address": "0x2E616d78F93660c45DF86ea37e7fA44eDE9367E7",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-wbnb-ceek",
+    "address": "0xC847c35CC6632a30E46C5Cb62a776d81f822330F",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -506,15 +524,6 @@
   {
     "name": "wex-bnb-ont",
     "address": "0x76F3D8204CF10E3382d93C9243f4f244e4666C27",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-bananav2",
-    "address": "0xf3995BB32dFd21865D0dA03782D888fa454F3dB1",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2881,7 +2890,7 @@
   },
   {
     "name": "quick-usdt-matic",
-    "address": "0xc4203E3C807e1f3d447f7200c88F91023Ff44C80",
+    "address": "0x7BB5e5fb8b2843C2f94265eFe94B4F448eB916Ff",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3592,7 +3601,7 @@
   },
   {
     "name": "quick-matic-usdc",
-    "address": "0x25554b6cdaA4c94Af527dE6ba8eB84AfCbB30B97",
+    "address": "0x736Ea4A3a0143986B8cc8bCcD077F93052231996",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3817,7 +3826,7 @@
   },
   {
     "name": "quick-eth-matic",
-    "address": "0xc62d82371b82036Be9Ed2302A7D1A43d5a4c7A22",
+    "address": "0xe14bA7aa3f5c76c3B77a5F8a29B1aB9CCB11b9F5",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3826,7 +3835,7 @@
   },
   {
     "name": "quick-quick-matic",
-    "address": "0xd73c8B93bD636B8d7D2945BDC52792f869c99541",
+    "address": "0xD621e3Bb2Aa579E4D41A998dE119b4F85f190428",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
