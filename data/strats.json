@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "banana-banana-bnb",
+    "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "banana-bananav2",
     "address": "0xf3995BB32dFd21865D0dA03782D888fa454F3dB1",
     "interval": 24,
@@ -45,15 +54,6 @@
     "chainId": 56
   },
   {
-    "name": "banana-nfty-wbnb",
-    "address": "0xAc73e203ACd060202165dd51BE2aC27BAB032196",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "banana-bifi-bnb",
     "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
     "interval": 24,
@@ -65,6 +65,33 @@
   {
     "name": "mdex-bsc-bifi-usdt",
     "address": "0xE90c9627c1DD49B73691bfCDE0141B387EF57908",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-wbnb-dep",
+    "address": "0xD7Cae2ECaC077B002754e27347309ee8C7A1dB32",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wex-wusd-dep",
+    "address": "0xEb8Fb5ddc33279bd923E02a29219B7b9AB300B58",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-nfty-wbnb",
+    "address": "0xAc73e203ACd060202165dd51BE2aC27BAB032196",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -146,15 +173,6 @@
   {
     "name": "cafev2-brew-busd",
     "address": "0xB8A1b9dafC120E703390eA622F86cB647F8BC5D5",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-banana-bnb",
-    "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1310,15 +1328,6 @@
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-kalm-bnb-eol",
-    "address": "0x2E92EE2670E21C5d9e1e49eFb4BB9868134Fe010",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 56
   },
