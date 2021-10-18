@@ -72,6 +72,24 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-rpg-busd",
+    "address": "0xF3Ae190E817c0250fe259dbeF2798611C2cCB6f0",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-mcb-wbnb",
+    "address": "0x13E3be3F2165A3084554f7aAf6fc8a2c957F10d6",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "baby-baby",
     "address": "0x1582c28Fb47F559be62F35387f9d2787347532B2",
     "interval": 24,
@@ -2700,6 +2718,15 @@
     "chainId": 137
   },
   {
+    "name": "ape-wmatic-crystl",
+    "address": "0xBBf720404ba3F71d03fBda851F30267156c2cec2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "kyber-usdc-jeur",
     "address": "0xaD403e47d7e288Ed473338F6B7BF176e7C42c748",
     "interval": 1,
@@ -3872,6 +3899,33 @@
   {
     "name": "fantom-bifi-maxi",
     "address": "0x230691a28C8290A553BFBC911Ab2AbA0b2df152D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "scream-frax",
+    "address": "0x7434583cdf49E56206193908F599aA62177a1497",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "scream-mim-supply",
+    "address": "0xc1A77cE3707d19b5aa6D62438bF7BD86078E1146",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "spirit-wmemo-mim",
+    "address": "0x656F150F36dEB46982ce5bBDb8Fe35c2cE0883BA",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
