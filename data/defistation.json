@@ -288,43 +288,11 @@
     "tvl": 0
   },
   {
-    "id": "honeyfarm-moon-bnb",
-    "name": "Moo HoneyFarm MOON-BNB",
-    "contract": "0x6DA3C7518c86D4d6b1cD42E79990c08BCbAD509f",
-    "oracle": "lps",
-    "oracleId": "honeyfarm-moon-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "honeyfarm-moon-busd",
-    "name": "Moo HoneyFarm MOON-BUSD",
-    "contract": "0xF8Ee4Bf5deEC42E31cb6bD1a9B2E63aDE0E633CC",
-    "oracle": "lps",
-    "oracleId": "honeyfarm-moon-busd",
-    "tvl": 0
-  },
-  {
     "id": "mdex-usdt-btcb",
     "name": "Moo Mdex USDT-BTCB",
     "contract": "0x397967AE34c9e91c11e3DCb72e566c598e929754",
     "oracle": "lps",
     "oracleId": "mdex-usdt-btcb",
-    "tvl": 0
-  },
-  {
-    "id": "mdex-bsc-usdt-usdc",
-    "name": "Moo Mdex USDT-USDC",
-    "contract": "0x75243be5e97e9f9F404177249da71F70A42BFB7D",
-    "oracle": "lps",
-    "oracleId": "mdex-usdt-usdc",
-    "tvl": 0
-  },
-  {
-    "id": "mdex-bsc-usdt-busd",
-    "name": "Moo Mdex USDT-BUSD",
-    "contract": "0x879277127B9240160eEffC23c902Fc7990a27261",
-    "oracle": "lps",
-    "oracleId": "mdex-usdt-busd",
     "tvl": 0
   },
   {
@@ -1320,19 +1288,11 @@
     "tvl": 0
   },
   {
-    "id": "satis-xsat-busd",
+    "id": "satis-xsat-busd-eol",
     "name": "Moo Satis xSAT-BUSD",
     "contract": "0x538c84e85e71F775Df1A896927008ecE3e14f47e",
     "oracle": "lps",
     "oracleId": "satis-xsat-busd",
-    "tvl": 0
-  },
-  {
-    "id": "satis-xsat-bnb",
-    "name": "Moo Satis xSAT-BNB",
-    "contract": "0x0F2A749bD7C64BC7E4f9cAE7C54eAEFD72E27193",
-    "oracle": "lps",
-    "oracleId": "satis-xsat-bnb",
     "tvl": 0
   },
   {
@@ -2032,14 +1992,6 @@
     "tvl": 0
   },
   {
-    "id": "sponge-steam-bnb",
-    "name": "Moo Sponge STEAM-BNB",
-    "contract": "0x04D0bE0169694ca083996899a14752c82A953D22",
-    "oracle": "lps",
-    "oracleId": "sponge-steam-bnb",
-    "tvl": 0
-  },
-  {
     "id": "salt-salt-busd",
     "name": "Moo Salt Salt-BUSD",
     "contract": "0x62ad4253FB38265Da05eb389ac547F1B2c09a689",
@@ -2112,14 +2064,6 @@
     "tvl": 0
   },
   {
-    "id": "sponge-sponge-bnb",
-    "name": "Moo Sponge SPG-BNB",
-    "contract": "0x1B3564F698988804b5D05a2C10B1d71bE051662F",
-    "oracle": "lps",
-    "oracleId": "sponge-sponge-bnb",
-    "tvl": 0
-  },
-  {
     "id": "sponge-soak-bnb",
     "name": "Moo Sponge SOAK-BNB",
     "contract": "0xE035Dce0E345Cbd46F3c0dCBf602f96c5F741813",
@@ -2165,6 +2109,62 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "honeyfarm-moon-bnb",
+    "name": "Moo HoneyFarm MOON-BNB",
+    "contract": "0x6DA3C7518c86D4d6b1cD42E79990c08BCbAD509f",
+    "oracle": "lps",
+    "oracleId": "honeyfarm-moon-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "honeyfarm-moon-busd",
+    "name": "Moo HoneyFarm MOON-BUSD",
+    "contract": "0xF8Ee4Bf5deEC42E31cb6bD1a9B2E63aDE0E633CC",
+    "oracle": "lps",
+    "oracleId": "honeyfarm-moon-busd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bsc-usdt-usdc",
+    "name": "Moo Mdex USDT-USDC",
+    "contract": "0x75243be5e97e9f9F404177249da71F70A42BFB7D",
+    "oracle": "lps",
+    "oracleId": "mdex-usdt-usdc",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bsc-usdt-busd",
+    "name": "Moo Mdex USDT-BUSD",
+    "contract": "0x879277127B9240160eEffC23c902Fc7990a27261",
+    "oracle": "lps",
+    "oracleId": "mdex-usdt-busd",
+    "tvl": 0
+  },
+  {
+    "id": "satis-xsat-bnb",
+    "name": "Moo Satis xSAT-BNB",
+    "contract": "0x0F2A749bD7C64BC7E4f9cAE7C54eAEFD72E27193",
+    "oracle": "lps",
+    "oracleId": "satis-xsat-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "sponge-steam-bnb",
+    "name": "Moo Sponge STEAM-BNB",
+    "contract": "0x04D0bE0169694ca083996899a14752c82A953D22",
+    "oracle": "lps",
+    "oracleId": "sponge-steam-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "sponge-sponge-bnb",
+    "name": "Moo Sponge SPG-BNB",
+    "contract": "0x1B3564F698988804b5D05a2C10B1d71bE051662F",
+    "oracle": "lps",
+    "oracleId": "sponge-sponge-bnb",
     "tvl": 0
   },
   {
