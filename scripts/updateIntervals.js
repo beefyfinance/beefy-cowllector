@@ -5,10 +5,10 @@ const path = require('path');
 let strats = require('../data/strats.json');
 
 const config = {
-  chains: [43114],
-  min: 4,
-  max: 12,
-  interval: 2,
+  chains: [137],
+  min: 1,
+  max: 6,
+  interval: 1,
 };
 
 const main = async () => {
