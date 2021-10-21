@@ -1449,15 +1449,6 @@
     "chainId": 56
   },
   {
-    "name": "satis-xsat-busd-eol",
-    "address": "0xD033C1A265850F360400BF68A2E286e600CC4150",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-hotcross-bnb",
     "address": "0xA9BB5b8046730ce627cb1264865196AE0f3359fF",
     "interval": 24,
@@ -2322,15 +2313,6 @@
     "chainId": 56
   },
   {
-    "name": "sponge-soak-bnb",
-    "address": "0x882c844d8b1075D592aFA3F13a3aaF6A6E9c43c3",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "kebab-kebab",
     "address": "0x9386a67ab53fec3afD3Af6dDafAd97Ed3E083C81",
     "interval": 24,
@@ -2667,6 +2649,15 @@
     "name": "sushi-usdc-bifi",
     "address": "0x703372131e77aE0c69B51e41A901315087A314D2",
     "interval": 7,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-jrt-eth",
+    "address": "0xA81ef4627471AC434b784C4efa271Fba1C53Be04",
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -3141,26 +3132,8 @@
     "chainId": 137
   },
   {
-    "name": "telxchange-quick-quick-tel",
-    "address": "0x968Eb3feCFEE8310C035CdAE07F6eD804b460c45",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "telxchange-quick-wmatic-tel",
     "address": "0x8C0410A6C1fF46be696E5aCC6b3cA977AD5b176A",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "telxchange-quick-eth-tel",
-    "address": "0x9D78991a30f9822f6b5cBc521D5Ba203f0930c0E",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3215,15 +3188,6 @@
   {
     "name": "wexpoly-wbtc-wex",
     "address": "0x476be63e41f8E47910eDa5F50507EF49aC75A8a3",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "dfyn-bifi-dfyn",
-    "address": "0x0010cB56ABF8969EA3885950CcAADB2300cd5C7d",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3458,15 +3422,6 @@
   {
     "name": "quick-usdc-dai",
     "address": "0x1885b6281Ff3F43df54bD61513B80b6fd64B45aC",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "quick-quick-uni",
-    "address": "0x4b0e4CDEA00C90F786bd817751159f46EA38A58D",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3845,6 +3800,51 @@
   {
     "name": "fantom-bifi-maxi",
     "address": "0x230691a28C8290A553BFBC911Ab2AbA0b2df152D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-fidelio-duetto",
+    "address": "0xE723f1c6c1d7aCaf209Db28c75f848855E7a8f3b",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-symphony-nr-10",
+    "address": "0x69Ee6efa98D8053cD75DFb21880B5a684c4F69a6",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-grand-orchestra",
+    "address": "0x0A6bC5F2650E03C00D8c8D8Ef61991c780174468",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-fantom-of-opera",
+    "address": "0x7A2303aB59536E6e80cF6Bd8f6EDb4A9fc712156",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-steady-beets",
+    "address": "0x133fBAc050138f7A0e3Ef8C60FdDfeaEd174e39e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
