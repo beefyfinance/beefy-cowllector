@@ -1288,14 +1288,6 @@
     "tvl": 0
   },
   {
-    "id": "satis-xsat-busd-eol",
-    "name": "Moo Satis xSAT-BUSD",
-    "contract": "0x538c84e85e71F775Df1A896927008ecE3e14f47e",
-    "oracle": "lps",
-    "oracleId": "satis-xsat-busd",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-hotcross-bnb",
     "name": "Moo CakeV2 HOTCROSS-BNB",
     "contract": "0xfA4f79Cf4Eb504eD42fd77a931057815c1E41EC0",
@@ -2064,14 +2056,6 @@
     "tvl": 0
   },
   {
-    "id": "sponge-soak-bnb",
-    "name": "Moo Sponge SOAK-BNB",
-    "contract": "0xE035Dce0E345Cbd46F3c0dCBf602f96c5F741813",
-    "oracle": "lps",
-    "oracleId": "sponge-soak-bnb",
-    "tvl": 0
-  },
-  {
     "id": "kebab-kebab",
     "name": "Moo Kebab",
     "contract": "0xE2231D4ca4921Cb35680bac714C9d40C8d217494",
@@ -2109,6 +2093,22 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "satis-xsat-busd-eol",
+    "name": "Moo Satis xSAT-BUSD",
+    "contract": "0x538c84e85e71F775Df1A896927008ecE3e14f47e",
+    "oracle": "lps",
+    "oracleId": "satis-xsat-busd",
+    "tvl": 0
+  },
+  {
+    "id": "sponge-soak-bnb",
+    "name": "Moo Sponge SOAK-BNB",
+    "contract": "0xE035Dce0E345Cbd46F3c0dCBf602f96c5F741813",
+    "oracle": "lps",
+    "oracleId": "sponge-soak-bnb",
     "tvl": 0
   },
   {
