@@ -3807,8 +3807,15 @@
     "chainId": 250
   },
   {
+    "name": "beets-sound-of-moosic",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "curve-ftm-geist",
-    "address": "0xb16371eeF67825b860578379330949dE8650C1E5",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3817,7 +3824,6 @@
   },
   {
     "name": "pearzap-fpear-ftm",
-    "address": "0xeaE2Db34817C3658ae5f2F4A6106Db3d88C36cA2",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3826,7 +3832,70 @@
   },
   {
     "name": "pearzap-fpear-usdc",
-    "address": "0x0A54B1e0A7873818b5EcFa72112ebC6A049EAC37",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-ftm-sonata",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-dance-of-degens",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-magic-touch-daniele",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-classic-trio",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-e-major",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-b-major",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-ziggy-mim",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-guqin-qi",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3835,7 +3904,6 @@
   },
   {
     "name": "beets-fidelio-duetto",
-    "address": "0xE723f1c6c1d7aCaf209Db28c75f848855E7a8f3b",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3844,7 +3912,6 @@
   },
   {
     "name": "beets-symphony-nr-10",
-    "address": "0x69Ee6efa98D8053cD75DFb21880B5a684c4F69a6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3853,7 +3920,6 @@
   },
   {
     "name": "beets-grand-orchestra",
-    "address": "0x0A6bC5F2650E03C00D8c8D8Ef61991c780174468",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3862,7 +3928,6 @@
   },
   {
     "name": "beets-fantom-of-opera",
-    "address": "0x7A2303aB59536E6e80cF6Bd8f6EDb4A9fc712156",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3871,7 +3936,6 @@
   },
   {
     "name": "beets-steady-beets",
-    "address": "0x133fBAc050138f7A0e3Ef8C60FdDfeaEd174e39e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3880,7 +3944,6 @@
   },
   {
     "name": "scream-frax",
-    "address": "0x7434583cdf49E56206193908F599aA62177a1497",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3889,7 +3952,6 @@
   },
   {
     "name": "scream-mim",
-    "address": "0xc1A77cE3707d19b5aa6D62438bF7BD86078E1146",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
