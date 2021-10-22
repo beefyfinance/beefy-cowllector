@@ -3807,6 +3807,33 @@
     "chainId": 250
   },
   {
+    "name": "curve-ftm-geist",
+    "address": "0xb16371eeF67825b860578379330949dE8650C1E5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "pearzap-fpear-ftm",
+    "address": "0xeaE2Db34817C3658ae5f2F4A6106Db3d88C36cA2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "pearzap-fpear-usdc",
+    "address": "0x0A54B1e0A7873818b5EcFa72112ebC6A049EAC37",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "beets-fidelio-duetto",
     "address": "0xE723f1c6c1d7aCaf209Db28c75f848855E7a8f3b",
     "interval": 1,
