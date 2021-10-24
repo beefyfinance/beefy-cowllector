@@ -3807,7 +3807,8 @@
     "chainId": 250
   },
   {
-    "name": "beets-sound-of-moosic",
+    "name": "curve-ftm-geist",
+    "address": "0xb16371eeF67825b860578379330949dE8650C1E5",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3815,7 +3816,8 @@
     "chainId": 250
   },
   {
-    "name": "curve-ftm-geist",
+    "name": "beets-sound-of-moosic",
+    "address": "0x50A80d9BF5960a5d10891FCe5A937662b3EfBDC1",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3824,6 +3826,7 @@
   },
   {
     "name": "pearzap-fpear-ftm",
+    "address": "0xeaE2Db34817C3658ae5f2F4A6106Db3d88C36cA2",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3832,6 +3835,7 @@
   },
   {
     "name": "pearzap-fpear-usdc",
+    "address": "0x0A54B1e0A7873818b5EcFa72112ebC6A049EAC37",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3840,6 +3844,7 @@
   },
   {
     "name": "beets-ftm-sonata",
+    "address": "0x421098D70348C98A5e3E26A89F7468D0a443cec6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3848,6 +3853,7 @@
   },
   {
     "name": "beets-dance-of-degens",
+    "address": "0x3c68a70C4ab49522Aac5d7e138e431983a0D025a",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3856,6 +3862,7 @@
   },
   {
     "name": "beets-magic-touch-daniele",
+    "address": "0x1B1F7fc5B17c450655BB46cb351b7010d2b12a2e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3864,6 +3871,7 @@
   },
   {
     "name": "beets-classic-trio",
+    "address": "0x458dfE38ea064FA624fC4B736EC00294591d1de9",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3872,6 +3880,7 @@
   },
   {
     "name": "beets-e-major",
+    "address": "0x38c5DF15117c195B8736F3a5fbEfC1b3A2082880",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3880,6 +3889,7 @@
   },
   {
     "name": "beets-b-major",
+    "address": "0x9efD024ab9bBd5C3ce17e567040A8EF1ecd55e26",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3888,6 +3898,7 @@
   },
   {
     "name": "beets-ziggy-mim",
+    "address": "0x054a8e3c11268591E048F7206937C8b74b6B7b97",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3896,6 +3907,7 @@
   },
   {
     "name": "beets-guqin-qi",
+    "address": "0x4bE413ECF4a18eA63e33008eDfF87d160442AdF7",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3904,6 +3916,7 @@
   },
   {
     "name": "beets-fidelio-duetto",
+    "address": "0xE723f1c6c1d7aCaf209Db28c75f848855E7a8f3b",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3912,6 +3925,7 @@
   },
   {
     "name": "beets-symphony-nr-10",
+    "address": "0x69Ee6efa98D8053cD75DFb21880B5a684c4F69a6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3920,6 +3934,7 @@
   },
   {
     "name": "beets-grand-orchestra",
+    "address": "0x0A6bC5F2650E03C00D8c8D8Ef61991c780174468",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3928,6 +3943,7 @@
   },
   {
     "name": "beets-fantom-of-opera",
+    "address": "0x7A2303aB59536E6e80cF6Bd8f6EDb4A9fc712156",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3936,6 +3952,7 @@
   },
   {
     "name": "beets-steady-beets",
+    "address": "0x133fBAc050138f7A0e3Ef8C60FdDfeaEd174e39e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3944,6 +3961,7 @@
   },
   {
     "name": "scream-frax",
+    "address": "0x7434583cdf49E56206193908F599aA62177a1497",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3952,6 +3970,7 @@
   },
   {
     "name": "scream-mim",
+    "address": "0xc1A77cE3707d19b5aa6D62438bF7BD86078E1146",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
