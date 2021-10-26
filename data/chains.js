@@ -1,6 +1,6 @@
 const { addressBook } = require('blockchain-addressbook');
 
-const { arbitrum, bsc, heco, avax, polygon, fantom, one } = addressBook;
+const { arbitrum, bsc, heco, avax, polygon, fantom, one, celo } = addressBook;
 
 const chains = {
   56: {
@@ -137,20 +137,18 @@ const chains = {
   42220: {
     id: 'celo',
     chainId: 42161,
-    wnative: arbitrum.tokens.WETH.address,
-    rewardPool: arbitrum.platforms.beefyfinance.rewardPool,
-    treasury: arbitrum.platforms.beefyfinance.treasury,
-    beefyFeeBatcher: arbitrum.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 20,
-    wnativeUnwrapInterval: 20,
+    rewardPool: celo.platforms.beefyfinance.rewardPool,
+    treasury: celo.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: celo.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 6,
     rpc: process.env.CELO_RPC || 'https://forno.celo.org',
-    appVaultsFilename: 'arbitrum_pools.js',
-    multicall: arbitrum.platforms.beefyfinance.multicall,
+    appVaultsFilename: 'celo_pools.js',
+    multicall: celo.platforms.beefyfinance.multicall,
     queryLimit: 1000,
     queryInterval: 100,
-    firstRewardBlock: 1033652,
-    blockTime: 2.8,
-    blockExplorer: 'http://arbiscan.com',
+    firstRewardBlock: 9442098,
+    blockTime: 5,
+    blockExplorer: 'https://explorer.celo.org/',
   },
 };
 

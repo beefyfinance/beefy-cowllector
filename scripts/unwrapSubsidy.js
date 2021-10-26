@@ -8,6 +8,8 @@ const unwrapSubsidy = async () => {
   for (chain of Object.values(chains)) {
     console.log(`Unwrapping ${chain.id}`);
 
+    if (!chain.wnative) continue;
+
     if (!isNewPeriodNaive(chain.wnativeUnwrapInterval)) {
       console.log(`It's not time to unwrap ${chain.id}.`);
       continue;
@@ -21,7 +23,7 @@ const unwrapSubsidy = async () => {
       const balance = await wrappedNativeContract.balanceOf(harvester.address);
 
       if (balance > 0) {
-        let tx = await wrappedNativeContract.withdraw(balance.toString(), { gasLimit: 300000 });
+        let tx = await wrappedNativeContract.withdraw(balance.toString(), { gasLimit: 800000 });
         `Successfully unwrapped ${balance.toString()} on ${chain.id} with tx: ${
           tx.transactionHash
         }.`;
