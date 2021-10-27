@@ -459,24 +459,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-naos-wbnb",
-    "address": "0x6693687f1d5bb8A1c9d11ee590B6B2FAAD9Fb142",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-pha-busd",
-    "address": "0x16b2172853fA6126Ede6002E9E65F1a39c6236f7",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "omnifarm-usdo-busd-ot",
     "address": "0xDfaC95290937e402e61A12b6fe75B9A1c3096814",
     "interval": 24,
@@ -1044,15 +1026,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-form-busd",
-    "address": "0xA90d33E66B341da01b309Ffe4a63ca803630e2A1",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-bscpad-wbnb",
     "address": "0x5F0c93cA90B338Fb4B57786f436F6040A2cD2d36",
     "interval": 24,
@@ -1262,15 +1235,6 @@
   {
     "name": "banana-shib-bnb",
     "address": "0x7963f31845293943F828264EE02823672eD2B745",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-ata-bnb",
-    "address": "0xBAf13A54507d41b6b4f31C49db2c0dE6ACa9aD14",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1656,15 +1620,6 @@
     "chainId": 56
   },
   {
-    "name": "banana-keyfi-bnb",
-    "address": "0xCa52393444dee44EbA946EFC1A19C2F0b1572B04",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "beltv2-belt-bnb",
     "address": "0xd64B3BD56AFC7aba73634818cd903D73aAd08122",
     "interval": 24,
@@ -1800,24 +1755,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-reef-bnb",
-    "address": "0xaF16C93f9C212F7Fb07D1c31FfD08180da4fdBEB",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-band-bnb",
-    "address": "0x6d017bBD28A47C3050E8154bb3A799D90965AfCE",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-link-bnb",
     "address": "0xEa1a95A55BBbF94aA7f2f0f6A4493aF6F1Ee059d",
     "interval": 24,
@@ -1946,15 +1883,6 @@
   {
     "name": "cakev2-belt-bnb",
     "address": "0x37cf856227Ef3191cf921a55D958f49dCbD5F1d1",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-bel-bnb",
-    "address": "0x8fBF967f6C3B9022a2a588c758eC5fA1d423ec6F",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2180,15 +2108,6 @@
   {
     "name": "mdex-bsc-eth-usdt",
     "address": "0x3A00616A14A5C6930c45d7D3E62A385Bd81B4e7D",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "auto-auto-bnb",
-    "address": "0xF87079AD78f4762b515519B63D4aA19bf0c1470E",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2667,6 +2586,33 @@
     "name": "curve-am3crv",
     "address": "0x748f243931b841F2C4d6f298abB85d7A23FE7c2a",
     "interval": 7,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-shib-matic",
+    "address": "0xD771f9711b863c0d1CE007fd6b613a69b16CFA41",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-dpi-eth",
+    "address": "0xC3F4f41cC874146b1fA7F4a0A35168eb8C0E3761",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-ftm-matic",
+    "address": "0xE7c85f80fA04f013241a7509FBbCb613bbCc50c2",
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -3844,6 +3790,25 @@
   },
   {
     "name": "curve-ftm-geist",
+    "address": "0xb16371eeF67825b860578379330949dE8650C1E5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "summit-summit",
+    "address": "0x4C315EeE595071584D79BD7d3E5e1388DB066104",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "summit-summit-ftm",
+    "address": "0x79eD0206F9849d0bd109e566B4995aFd65222B8e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3852,6 +3817,7 @@
   },
   {
     "name": "beets-sound-of-moosic",
+    "address": "0x50A80d9BF5960a5d10891FCe5A937662b3EfBDC1",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3860,6 +3826,7 @@
   },
   {
     "name": "pearzap-fpear-ftm",
+    "address": "0xeaE2Db34817C3658ae5f2F4A6106Db3d88C36cA2",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3868,6 +3835,7 @@
   },
   {
     "name": "pearzap-fpear-usdc",
+    "address": "0x0A54B1e0A7873818b5EcFa72112ebC6A049EAC37",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3876,6 +3844,7 @@
   },
   {
     "name": "beets-ftm-sonata",
+    "address": "0x421098D70348C98A5e3E26A89F7468D0a443cec6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3884,6 +3853,7 @@
   },
   {
     "name": "beets-dance-of-degens",
+    "address": "0x3c68a70C4ab49522Aac5d7e138e431983a0D025a",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3892,6 +3862,7 @@
   },
   {
     "name": "beets-magic-touch-daniele",
+    "address": "0x1B1F7fc5B17c450655BB46cb351b7010d2b12a2e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3900,6 +3871,7 @@
   },
   {
     "name": "beets-classic-trio",
+    "address": "0x458dfE38ea064FA624fC4B736EC00294591d1de9",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3908,6 +3880,7 @@
   },
   {
     "name": "beets-e-major",
+    "address": "0x38c5DF15117c195B8736F3a5fbEfC1b3A2082880",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3916,6 +3889,7 @@
   },
   {
     "name": "beets-b-major",
+    "address": "0x9efD024ab9bBd5C3ce17e567040A8EF1ecd55e26",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3924,6 +3898,7 @@
   },
   {
     "name": "beets-ziggy-mim",
+    "address": "0x054a8e3c11268591E048F7206937C8b74b6B7b97",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3932,6 +3907,7 @@
   },
   {
     "name": "beets-guqin-qi",
+    "address": "0x4bE413ECF4a18eA63e33008eDfF87d160442AdF7",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3940,6 +3916,7 @@
   },
   {
     "name": "beets-fidelio-duetto",
+    "address": "0xE723f1c6c1d7aCaf209Db28c75f848855E7a8f3b",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3948,6 +3925,7 @@
   },
   {
     "name": "beets-symphony-nr-10",
+    "address": "0x69Ee6efa98D8053cD75DFb21880B5a684c4F69a6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3956,6 +3934,7 @@
   },
   {
     "name": "beets-grand-orchestra",
+    "address": "0x0A6bC5F2650E03C00D8c8D8Ef61991c780174468",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3964,6 +3943,7 @@
   },
   {
     "name": "beets-fantom-of-opera",
+    "address": "0x7A2303aB59536E6e80cF6Bd8f6EDb4A9fc712156",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3972,6 +3952,7 @@
   },
   {
     "name": "beets-steady-beets",
+    "address": "0x133fBAc050138f7A0e3Ef8C60FdDfeaEd174e39e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3980,6 +3961,7 @@
   },
   {
     "name": "scream-frax",
+    "address": "0x7434583cdf49E56206193908F599aA62177a1497",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3988,6 +3970,7 @@
   },
   {
     "name": "scream-mim",
+    "address": "0xc1A77cE3707d19b5aa6D62438bF7BD86078E1146",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4977,7 +4960,7 @@
   },
   {
     "name": "joe-wavax-spell",
-    "address": "0x7D9b96634F77B9c96cE4070350664aa4F87e62aa",
+    "address": "0xC0907E0e29f6576E864492D6ec12716dc1d21A87",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5012,18 +4995,9 @@
     "chainId": 43114
   },
   {
-    "name": "joe-mai-usdc.e",
-    "address": "0x020Bf7360352D0387D2eea7Bc823d958cD63dFff",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
     "name": "joe-joe-wavax",
-    "address": "0xAfA6A912A2aBb92d69CffA82301E72297162e4F8",
-    "interval": 18,
+    "address": "0xD53b145739352c1BCc7079cDdA0cf6EDfbd8F015",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -5059,24 +5033,6 @@
   {
     "name": "joe-syn-wavax",
     "address": "0x0D5376e471605AaE08144DcF48f3bB6D7127cd05",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "joe-weth.e-usdt.e",
-    "address": "0x9DF1007D548eDF1212D8700C4f2DbEf7454B2cdd",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "joe-wbtc.e-usdt.e",
-    "address": "0x7F348Faa50Ee41cD9edcFcb31816FAf6b1cc132e",
     "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
