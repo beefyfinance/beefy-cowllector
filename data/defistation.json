@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "belt-beltbtc",
+    "name": "Moo Belt BTC",
+    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
+    "oracle": "lps",
+    "oracleId": "belt-beltbtc",
+    "tvl": 0
+  },
+  {
     "id": "banana-banana-bnb",
     "name": "Moo Ape BANANA-BNB",
     "contract": "0x15396D3BD9338A14AE90613Fc2b85c5F7b5621CF",
@@ -40,14 +48,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-wbnb-ceek",
-    "name": "Moo Ape CEEK-BNB",
-    "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
-    "oracle": "lps",
-    "oracleId": "banana-wbnb-ceek",
-    "tvl": 0
-  },
-  {
     "id": "banana-bifi-bnb",
     "name": "Moo Ape BIFI-BNB",
     "contract": "0x6ebA4A31c46937B42E66f44a0A1165a08495a38F",
@@ -56,11 +56,51 @@
     "tvl": 0
   },
   {
+    "id": "wsg-wsg",
+    "name": "Moo WSG",
+    "contract": "0xf6581Be77F4933FDcf92C9E0D49e7f85e5360705",
+    "oracle": "tokens",
+    "oracleId": "WSG",
+    "tvl": 0
+  },
+  {
+    "id": "wsg-wsg-bnb",
+    "name": "Moo Wsg WSG-BNB",
+    "contract": "0xc408b3f112deE85eeA36bCdf8A65c2C6DD86966a",
+    "oracle": "lps",
+    "oracleId": "wsg-wsg-bnb",
+    "tvl": 0
+  },
+  {
     "id": "mdex-bsc-bifi-usdt",
     "name": "Moo Mdex BIFI-USDT",
     "contract": "0x78dB17F440A223464B15046A25A273De510A14Ce",
     "oracle": "lps",
     "oracleId": "mdex-bsc-bifi-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "banana-tusd-busd",
+    "name": "Moo Ape TUSD-BUSD",
+    "contract": "0xB40a5A891CCadCA136cb8cdC9BAa72B3eF9C593a",
+    "oracle": "lps",
+    "oracleId": "banana-tusd-busd",
+    "tvl": 0
+  },
+  {
+    "id": "banana-fil-wbnb",
+    "name": "Moo Ape FIL-BNB",
+    "contract": "0xC9412193f775BadBCEfabE7F0350c83d4F66fEeb",
+    "oracle": "lps",
+    "oracleId": "banana-fil-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-wbnb-ceek",
+    "name": "Moo Ape CEEK-BNB",
+    "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
+    "oracle": "lps",
+    "oracleId": "banana-wbnb-ceek",
     "tvl": 0
   },
   {
@@ -157,14 +197,6 @@
     "contract": "0xa7f299F51143e91a411805a4648434092788a111",
     "oracle": "lps",
     "oracleId": "cafev2-brew-busd",
-    "tvl": 0
-  },
-  {
-    "id": "belt-beltbtc",
-    "name": "Moo Belt BTC",
-    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
-    "oracle": "lps",
-    "oracleId": "belt-beltbtc",
     "tvl": 0
   },
   {

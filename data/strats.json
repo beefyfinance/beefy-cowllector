@@ -9,6 +9,15 @@
     "chainId": 56
   },
   {
+    "name": "belt-beltbtc",
+    "address": "0xaBf0cDd827aB1902213269fc4427c3A8655e60c2",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "banana-banana-bnb",
     "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
     "interval": 24,
@@ -45,15 +54,6 @@
     "chainId": 56
   },
   {
-    "name": "banana-wbnb-ceek",
-    "address": "0xC847c35CC6632a30E46C5Cb62a776d81f822330F",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "banana-bifi-bnb",
     "address": "0x58d44b967bDc31e04be0fDc15F520c2C0C049b7C",
     "interval": 24,
@@ -63,8 +63,53 @@
     "chainId": 56
   },
   {
+    "name": "wsg-wsg",
+    "address": "0x0EF7CFA64406C124C0b8C44c519c3f7bCeE6a06E",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "wsg-wsg-bnb",
+    "address": "0xE13EA948c542b2da6F5DAd1C38f082B83C0f5E31",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "mdex-bsc-bifi-usdt",
     "address": "0xE90c9627c1DD49B73691bfCDE0141B387EF57908",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-tusd-busd",
+    "address": "0xDDa38712B0753843857D53C9eDFDbf02152EC13c",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-fil-wbnb",
+    "address": "0xeEF09b4Ad74d44925745CBffB15e2904C3779da0",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-wbnb-ceek",
+    "address": "0xC847c35CC6632a30E46C5Cb62a776d81f822330F",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -173,15 +218,6 @@
   {
     "name": "cafev2-brew-busd",
     "address": "0xB8A1b9dafC120E703390eA622F86cB647F8BC5D5",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "belt-beltbtc",
-    "address": "0xaBf0cDd827aB1902213269fc4427c3A8655e60c2",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3808,7 +3844,6 @@
   },
   {
     "name": "curve-ftm-geist",
-    "address": "0xb16371eeF67825b860578379330949dE8650C1E5",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3817,7 +3852,6 @@
   },
   {
     "name": "beets-sound-of-moosic",
-    "address": "0x50A80d9BF5960a5d10891FCe5A937662b3EfBDC1",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3826,7 +3860,6 @@
   },
   {
     "name": "pearzap-fpear-ftm",
-    "address": "0xeaE2Db34817C3658ae5f2F4A6106Db3d88C36cA2",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3835,7 +3868,6 @@
   },
   {
     "name": "pearzap-fpear-usdc",
-    "address": "0x0A54B1e0A7873818b5EcFa72112ebC6A049EAC37",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3844,7 +3876,6 @@
   },
   {
     "name": "beets-ftm-sonata",
-    "address": "0x421098D70348C98A5e3E26A89F7468D0a443cec6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3853,7 +3884,6 @@
   },
   {
     "name": "beets-dance-of-degens",
-    "address": "0x3c68a70C4ab49522Aac5d7e138e431983a0D025a",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3862,7 +3892,6 @@
   },
   {
     "name": "beets-magic-touch-daniele",
-    "address": "0x1B1F7fc5B17c450655BB46cb351b7010d2b12a2e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3871,7 +3900,6 @@
   },
   {
     "name": "beets-classic-trio",
-    "address": "0x458dfE38ea064FA624fC4B736EC00294591d1de9",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3880,7 +3908,6 @@
   },
   {
     "name": "beets-e-major",
-    "address": "0x38c5DF15117c195B8736F3a5fbEfC1b3A2082880",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3889,7 +3916,6 @@
   },
   {
     "name": "beets-b-major",
-    "address": "0x9efD024ab9bBd5C3ce17e567040A8EF1ecd55e26",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3898,7 +3924,6 @@
   },
   {
     "name": "beets-ziggy-mim",
-    "address": "0x054a8e3c11268591E048F7206937C8b74b6B7b97",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3907,7 +3932,6 @@
   },
   {
     "name": "beets-guqin-qi",
-    "address": "0x4bE413ECF4a18eA63e33008eDfF87d160442AdF7",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3916,7 +3940,6 @@
   },
   {
     "name": "beets-fidelio-duetto",
-    "address": "0xE723f1c6c1d7aCaf209Db28c75f848855E7a8f3b",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3925,7 +3948,6 @@
   },
   {
     "name": "beets-symphony-nr-10",
-    "address": "0x69Ee6efa98D8053cD75DFb21880B5a684c4F69a6",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3934,7 +3956,6 @@
   },
   {
     "name": "beets-grand-orchestra",
-    "address": "0x0A6bC5F2650E03C00D8c8D8Ef61991c780174468",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3943,7 +3964,6 @@
   },
   {
     "name": "beets-fantom-of-opera",
-    "address": "0x7A2303aB59536E6e80cF6Bd8f6EDb4A9fc712156",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3952,7 +3972,6 @@
   },
   {
     "name": "beets-steady-beets",
-    "address": "0x133fBAc050138f7A0e3Ef8C60FdDfeaEd174e39e",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3961,7 +3980,6 @@
   },
   {
     "name": "scream-frax",
-    "address": "0x7434583cdf49E56206193908F599aA62177a1497",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3970,7 +3988,6 @@
   },
   {
     "name": "scream-mim",
-    "address": "0xc1A77cE3707d19b5aa6D62438bF7BD86078E1146",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4705,6 +4722,51 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161
+  },
+  {
+    "name": "sushi-celo-celo-weth",
+    "address": "0xb0F9c6FBcfE226EEAD3AE8b019ce4666cE223a78",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42220
+  },
+  {
+    "name": "sushi-celo-cusd-dai",
+    "address": "0x4f22BD7CE44b0e0B2681A28e300A7285319de3a0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42220
+  },
+  {
+    "name": "sushi-celo-ceur-weth",
+    "address": "0xC96b496F78d1a45D9cec6d628a75614ed230D6D4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42220
+  },
+  {
+    "name": "sushi-celo-cusd-weth",
+    "address": "0xdeEf8995156Bd26e8814E96387Df79F197dED6A2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42220
+  },
+  {
+    "name": "sushi-celo-cusd-ceur",
+    "address": "0xcD5B6833d4A30c43F1c30bDC4D8DC5c7aCB50972",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 42220
   },
   {
     "name": "avax-bifi-maxi",
