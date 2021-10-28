@@ -2,25 +2,24 @@ const ethers = require('ethers');
 const { addressBook } = require('blockchain-addressbook');
 
 const chains = require('../../data/chains');
-const { sleep } = require('../../utils/harvestHelpers');
 const executeBatch = require('./executeBatch');
 
-const UPGRADE_STRAT = '0xe6685244';
+const targets = [
+  '0xad777a366D5aD4A728A03C2CC61a3c3Ea8935BBB',
+  '0x31e77776b924Cd5f0E624771C9B3d2bD6B9c919E',
+  '0xE5e79043eC57b12F2d15d4a230ED9C7d732Ed93A',
+  '0x68c39886eA459b4a59758F1e94c3d20C93d47133',
+  '0x17720F863DA01Bc9e266e4eE872E3c98fA1FeAA8',
+];
 
 const config = {
-  timelockAddress: addressBook['polygon'].platforms.beefyfinance.vaultOwner,
-  chainId: 137,
-  pk: process.env.KEEPER_PK,
-  values: [0, 0, 0, 0],
-  data: [UPGRADE_STRAT, UPGRADE_STRAT, UPGRADE_STRAT, UPGRADE_STRAT],
+  timelockAddress: addressBook['bsc'].platforms.beefyfinance.vaultOwner,
+  chainId: 56,
+  pk: process.env.REWARDER_PK,
+  values: Array.from({ length: targets.length }, () => 0),
+  data: Array.from({ length: targets.length }, () => '0xe6685244'),
   predecessor: ethers.constants.HashZero,
   salt: ethers.constants.HashZero,
-  targets: [
-    '0x7c0E28652523e36f0dF89C5A895cF59D493cb04c',
-    '0xC4FABD1E2A99c84b7fd152a41426B77c217c5764',
-    '0x764B2aAcfDE7e33888566a6d44005Dc982F02031',
-    '0xba1548b3f673950094dc00eDc1eB71683f371696',
-  ],
 };
 
 const main = async () => {
@@ -29,7 +28,7 @@ const main = async () => {
 
   await executeBatch({
     timelockAddr: config.timelockAddress,
-    targets: config.targets,
+    targets: targets,
     values: config.values,
     data: config.data,
     predecessor: config.predecessor,

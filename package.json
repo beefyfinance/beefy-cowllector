@@ -8,7 +8,8 @@
     "start": "echo Cowllector ready!",
     "lost": "node ./scripts/lostDefistation.js",
     "sync": "node ./scripts/updateStrats.js",
-    "empty": "node ./scripts/emptyVaults.js"
+    "empty": "node ./scripts/emptyVaults.js",
+    "exec:batch": "node ./scripts/timelock/runExecuteBatch.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
