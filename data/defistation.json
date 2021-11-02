@@ -32,6 +32,38 @@
     "tvl": 0
   },
   {
+    "id": "cakev2-lazio-wbnb",
+    "name": "Moo CakeV2 LAZIO-BNB",
+    "contract": "0x3CB18Ba59dD2eB47D4594D1a80a07a721e8a9B2A",
+    "oracle": "lps",
+    "oracleId": "cakev2-lazio-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dkt-wbnb",
+    "name": "Moo CakeV2 DKT-BNB",
+    "contract": "0x16E60cF196653847325936FD1978435a12D580E3",
+    "oracle": "lps",
+    "oracleId": "cakev2-dkt-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-rusd-busd",
+    "name": "Moo CakeV2 rUSD-BUSD",
+    "contract": "0xf49ea5eF72CE090f390e888a5B73971E2E274C61",
+    "oracle": "lps",
+    "oracleId": "cakev2-rusd-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bmon-wbnb",
+    "name": "Moo CakeV2 BMON-WBNB",
+    "contract": "0xb6f1f0797F975FE72a19AfF84e216ea9BDf1C6Ca",
+    "oracle": "lps",
+    "oracleId": "cakev2-bmon-wbnb",
+    "tvl": 0
+  },
+  {
     "id": "belt-beltbnb",
     "name": "Moo Belt BNB",
     "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
@@ -480,14 +512,6 @@
     "tvl": 0
   },
   {
-    "id": "wex-bnb-ont",
-    "name": "Moo Wault BNB-ONT",
-    "contract": "0x9b188c2C76a01bb290A17FadB65BD400Dc3F53F0",
-    "oracle": "lps",
-    "oracleId": "wex-bnb-ont",
-    "tvl": 0
-  },
-  {
     "id": "cake-cakev2",
     "name": "Moo CakeV2",
     "contract": "0x97e5d50Fe0632A95b9cf1853E744E02f7D816677",
@@ -656,14 +680,6 @@
     "tvl": 0
   },
   {
-    "id": "wex-bnb-dep",
-    "name": "Moo Wault BNB-DEP",
-    "contract": "0xAf36873ecC5C8BC18173a16a862CD53f117Bf0f7",
-    "oracle": "lps",
-    "oracleId": "wex-bnb-dep",
-    "tvl": 0
-  },
-  {
     "id": "jetswap-btcb-bnb",
     "name": "Moo Jetswap BTCB-BNB",
     "contract": "0x1301Bfedaec0592e7915012A0f1AE2aCBaFbA4c3",
@@ -741,14 +757,6 @@
     "contract": "0xc34C7923B73eB68E363AaEB2b7fbBeC11Cf90884",
     "oracle": "tokens",
     "oracleId": "MDX",
-    "tvl": 0
-  },
-  {
-    "id": "wex-tusd-usdt",
-    "name": "Moo Wault TUSD-USDT",
-    "contract": "0x54be68B8330D49e454DF63A9F74Baa62B90fB768",
-    "oracle": "lps",
-    "oracleId": "wex-tusd-usdt",
     "tvl": 0
   },
   {
@@ -2056,6 +2064,30 @@
     "tvl": 0
   },
   {
+    "id": "wex-bnb-ont",
+    "name": "Moo Wault BNB-ONT",
+    "contract": "0x9b188c2C76a01bb290A17FadB65BD400Dc3F53F0",
+    "oracle": "lps",
+    "oracleId": "wex-bnb-ont",
+    "tvl": 0
+  },
+  {
+    "id": "wex-bnb-dep",
+    "name": "Moo Wault BNB-DEP",
+    "contract": "0xAf36873ecC5C8BC18173a16a862CD53f117Bf0f7",
+    "oracle": "lps",
+    "oracleId": "wex-bnb-dep",
+    "tvl": 0
+  },
+  {
+    "id": "wex-tusd-usdt",
+    "name": "Moo Wault TUSD-USDT",
+    "contract": "0x54be68B8330D49e454DF63A9F74Baa62B90fB768",
+    "oracle": "lps",
+    "oracleId": "wex-tusd-usdt",
+    "tvl": 0
+  },
+  {
     "id": "cakev2-naos-wbnb",
     "name": "Moo CakeV2 NAOS-BNB",
     "contract": "0x1D13dF9D7012914f45B8BAD8A2a9b1E9886B2173",
@@ -2592,14 +2624,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-rusd-busd",
-    "name": "Moo CakeV2 rUSD-BUSD",
-    "contract": "0xf49ea5eF72CE090f390e888a5B73971E2E274C61",
-    "oracle": "lps",
-    "oracleId": "cakev2-rusd-busd",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-bmon-busd",
     "name": "Moo CakeV2 BMON-BUSD",
     "contract": "0x4b9Dacb9eBD82ddA49A2b25751a732f082Abe137",
@@ -2917,14 +2941,6 @@
     "contract": "0x57Fd8B7c7f7520281a472f54275C47CfE7E28716",
     "oracle": "lps",
     "oracleId": "cakev2-wsg-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-bmon-wbnb",
-    "name": "Moo CakeV2 BMON-WBNB",
-    "contract": "0xb6f1f0797F975FE72a19AfF84e216ea9BDf1C6Ca",
-    "oracle": "lps",
-    "oracleId": "cakev2-bmon-wbnb",
     "tvl": 0
   },
   {

@@ -1,6 +1,6 @@
 const { addressBook } = require('blockchain-addressbook');
 
-const { arbitrum, bsc, heco, avax, polygon, fantom, one, celo } = addressBook;
+const { arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver } = addressBook;
 
 const chains = {
   56: {
@@ -149,6 +149,22 @@ const chains = {
     firstRewardBlock: 9402098,
     blockTime: 5,
     blockExplorer: 'https://explorer.celo.org/',
+  },
+  1285: {
+    id: 'moonriver',
+    chainId: 1285,
+    rewardPool: moonriver.platforms.beefyfinance.rewardPool,
+    treasury: moonriver.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: moonriver.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 1,
+    rpc: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
+    appVaultsFilename: 'moonriver_pools.js',
+    multicall: moonriver.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    firstRewardBlock: 9402098,
+    blockTime: 15,
+    blockExplorer: 'https://moonriver.moonscan.io/',
   },
 };
 
