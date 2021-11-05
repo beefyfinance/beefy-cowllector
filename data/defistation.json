@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "ellipsis-renbtc",
+    "name": "Moo Ellipsis renBTC",
+    "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
+    "oracle": "lps",
+    "oracleId": "ellipsis-renbtc",
+    "tvl": 0
+  },
+  {
     "id": "belt-beltbtc",
     "name": "Moo Belt BTC",
     "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
@@ -29,6 +37,14 @@
     "contract": "0xED4ea41Daf652964789b16e3Ff76eC07d99d2340",
     "oracle": "tokens",
     "oracleId": "BANANA",
+    "tvl": 0
+  },
+  {
+    "id": "banana-exp-wbnb",
+    "name": "Moo Ape EXP-BNB",
+    "contract": "0x5B5ADf5cA7a7149194182a86fDA329019c57524b",
+    "oracle": "lps",
+    "oracleId": "banana-exp-wbnb",
     "tvl": 0
   },
   {
@@ -368,27 +384,11 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-bscdefi-wbnb",
-    "name": "Moo CakeV2 BSCDEFI-BNB",
-    "contract": "0x109272Cc6b89465AdEc21bFB98864b7640CE8A17",
-    "oracle": "lps",
-    "oracleId": "cakev2-bscdefi-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-bp-wbnb",
     "name": "Moo CakeV2 BP-BNB",
     "contract": "0x6709b27eDeD9c594C4490c98ba8efb3EEb0DE9f4",
     "oracle": "lps",
     "oracleId": "cakev2-bp-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-qbt-wbnb",
-    "name": "Moo CakeV2 QBT-WBNB",
-    "contract": "0x6Ab5c71b96dAC5E832fa9B8386D983a53D46ae2F",
-    "oracle": "lps",
-    "oracleId": "cakev2-qbt-wbnb",
     "tvl": 0
   },
   {
@@ -1800,14 +1800,6 @@
     "tvl": 0
   },
   {
-    "id": "ellipsis-renbtc",
-    "name": "Moo Ellipsis renBTC",
-    "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
-    "oracle": "lps",
-    "oracleId": "ellipsis-renbtc",
-    "tvl": 0
-  },
-  {
     "id": "ellipsis-fusdt-3eps",
     "name": "Moo Ellipsis fUSDT",
     "contract": "0x8D3B7a0b20d490cbDACC2c555c05b7132B856e4b",
@@ -2061,6 +2053,22 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bscdefi-wbnb",
+    "name": "Moo CakeV2 BSCDEFI-BNB",
+    "contract": "0x109272Cc6b89465AdEc21bFB98864b7640CE8A17",
+    "oracle": "lps",
+    "oracleId": "cakev2-bscdefi-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-qbt-wbnb",
+    "name": "Moo CakeV2 QBT-WBNB",
+    "contract": "0x6Ab5c71b96dAC5E832fa9B8386D983a53D46ae2F",
+    "oracle": "lps",
+    "oracleId": "cakev2-qbt-wbnb",
     "tvl": 0
   },
   {
