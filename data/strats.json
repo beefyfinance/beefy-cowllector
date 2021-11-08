@@ -3789,6 +3789,60 @@
     "chainId": 250
   },
   {
+    "name": "geist-ftm",
+    "address": "0xFd41FDec0d4a245B13d15786fdcd9427B660Ec21",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "geist-wbtc",
+    "address": "0x82EE77037DE0F540eF5cb72355C689f33361423C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "geist-eth",
+    "address": "0x22d53d93c476Db639079943efA80B9426500Afee",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "geist-fusdt",
+    "address": "0x3Faf7CBfC85F78D7085915846537950e4D2e0C8a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "geist-usdc",
+    "address": "0x223b87a14D08A5d2fF7B7B911F1480F9aDc47dE7",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "geist-dai",
+    "address": "0x5F12a657032D3A43f2bBe368caD5e8074BD65eAE",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "beets-song-ice-fire",
     "address": "0x0410d614BCD5A1dD8614C8F0a7D508A2D3aFd110",
     "interval": 1,
@@ -4660,6 +4714,15 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250
+  },
+  {
+    "name": "solarbeam-frax-wmovr",
+    "address": "0x76C01cD33ab2Ea4bC0d641206b6a199A438195f4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
   },
   {
     "name": "solarbeam-solar",
