@@ -8,6 +8,38 @@
     "tvl": 0
   },
   {
+    "id": "alpaca-ibalpaca",
+    "name": "Moo ibAlpaca",
+    "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
+    "oracle": "lps",
+    "oracleId": "alpaca-ibalpaca",
+    "tvl": 0
+  },
+  {
+    "id": "banana-nfty-wbnb",
+    "name": "Moo Ape NFTY-BNB",
+    "contract": "0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1",
+    "oracle": "lps",
+    "oracleId": "banana-nfty-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-bnb-stars",
+    "name": "Moo Ape BNB-STARS",
+    "contract": "0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e",
+    "oracle": "lps",
+    "oracleId": "banana-bnb-stars",
+    "tvl": 0
+  },
+  {
+    "id": "banana-wbnb-ceek",
+    "name": "Moo Ape CEEK-BNB",
+    "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
+    "oracle": "lps",
+    "oracleId": "banana-wbnb-ceek",
+    "tvl": 0
+  },
+  {
     "id": "ellipsis-renbtc",
     "name": "Moo Ellipsis renBTC",
     "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
@@ -16,19 +48,27 @@
     "tvl": 0
   },
   {
-    "id": "belt-beltbtc",
-    "name": "Moo Belt BTC",
-    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
-    "oracle": "lps",
-    "oracleId": "belt-beltbtc",
-    "tvl": 0
-  },
-  {
     "id": "banana-banana-bnb",
     "name": "Moo Ape BANANA-BNB",
     "contract": "0x15396D3BD9338A14AE90613Fc2b85c5F7b5621CF",
     "oracle": "lps",
     "oracleId": "banana-banana-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "nfty-nfty",
+    "name": "Moo Nfty",
+    "contract": "0x55669f1c00D55F55bA1E736A23cEE54877D922Be",
+    "oracle": "tokens",
+    "oracleId": "NFTY",
+    "tvl": 0
+  },
+  {
+    "id": "belt-beltbtc",
+    "name": "Moo Belt BTC",
+    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
+    "oracle": "lps",
+    "oracleId": "belt-beltbtc",
     "tvl": 0
   },
   {
@@ -144,14 +184,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-wbnb-ceek",
-    "name": "Moo Ape CEEK-BNB",
-    "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
-    "oracle": "lps",
-    "oracleId": "banana-wbnb-ceek",
-    "tvl": 0
-  },
-  {
     "id": "banana-wbnb-dep",
     "name": "Moo Ape DEP-BNB",
     "contract": "0x62BA2D4A572664036c35f0D76cEe81cC8b77199b",
@@ -165,14 +197,6 @@
     "contract": "0xE1A80C5f37D25421511991a10986d9E82D000200",
     "oracle": "lps",
     "oracleId": "wex-wusd-dep",
-    "tvl": 0
-  },
-  {
-    "id": "banana-nfty-wbnb",
-    "name": "Moo Ape NFTY-BNB",
-    "contract": "0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1",
-    "oracle": "lps",
-    "oracleId": "banana-nfty-wbnb",
     "tvl": 0
   },
   {
@@ -536,14 +560,6 @@
     "tvl": 0
   },
   {
-    "id": "alpaca-ibalpaca",
-    "name": "Moo ibAlpaca",
-    "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
-    "oracle": "lps",
-    "oracleId": "alpaca-ibalpaca",
-    "tvl": 0
-  },
-  {
     "id": "banana-bhc-bnb",
     "name": "Moo Banana BHC-BNB",
     "contract": "0x6023C372e5feeD42664986094914f08bBBa49f36",
@@ -709,14 +725,6 @@
     "contract": "0x69DDD966e3FAaB30c09D7A2C40609Ea859F4107E",
     "oracle": "lps",
     "oracleId": "banana-axs-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-bnb-stars",
-    "name": "Moo Ape BNB-STARS",
-    "contract": "0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e",
-    "oracle": "lps",
-    "oracleId": "banana-bnb-stars",
     "tvl": 0
   },
   {
