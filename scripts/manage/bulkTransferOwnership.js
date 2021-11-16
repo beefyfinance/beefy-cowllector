@@ -13,6 +13,7 @@ const config = {
   owner: addressBook[chainName].platforms.beefyfinance.strategyOwner,
   pk: process.env.REWARDER_PK,
   addresses: [],
+  delay: 500,
 };
 
 const main = async () => {
@@ -22,7 +23,7 @@ const main = async () => {
 
     await transferOwnership({ address, owner: config.owner, signer });
 
-    await sleep(500);
+    await sleep(config.delay);
   }
 };
 
