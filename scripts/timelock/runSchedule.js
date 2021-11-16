@@ -13,12 +13,7 @@ const config = {
   predecessor: ethers.constants.HashZero,
   salt: ethers.constants.HashZero,
   delay: 3000,
-  addresses: [
-    '0x8F35521cf1B9145E2C5231B8B3E1c3AEadDc4027',
-    '0xa6914AbA898D613152DB7D338381d53b5Eae0C1d',
-    '0x3464ab12F2c2fe3DAa90Aa7D90DDe6BA470422BD',
-    '0x3C180c415332999Fa7e5a65E8490A57fe8Fd7fdb',
-  ],
+  addresses: [],
 };
 
 const main = async () => {
