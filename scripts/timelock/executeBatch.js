@@ -16,17 +16,10 @@ const executeBatch = async ({ timelockAddr, targets, values, data, predecessor, 
 
     const isOperationReady = await timelock.isOperationReady(operationHash);
     if (!isOperationReady) {
-      console.log(`${targets} is not an operation or not ready, skipping.`);
+      console.log(`${operationHash} is not an operation or not ready, skipping.`);
       return;
     } else {
-      console.log(
-        `Operation ${operationHash} should be executed.`,
-        targets,
-        values,
-        data,
-        predecessor,
-        salt
-      );
+      console.log(`Operation ${operationHash} should be executed.`);
     }
 
     let tx = await timelock.executeBatch(targets, values, data, predecessor, salt, {
@@ -35,8 +28,8 @@ const executeBatch = async ({ timelockAddr, targets, values, data, predecessor, 
     tx = await tx.wait();
 
     tx.status === 1
-      ? console.log(`${targets} executed with tx: ${tx.transactionHash}`)
-      : console.log(`${targets} failed with tx: ${tx.transactionHash}`);
+      ? console.log(`Executed with tx: ${tx.transactionHash}`)
+      : console.log(`Failed with tx: ${tx.transactionHash}`);
   } catch (e) {
     console.log(`Something went wrong with ${targets}: ${e}`);
   }
