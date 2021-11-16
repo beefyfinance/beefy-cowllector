@@ -4,12 +4,14 @@ const { addressBook } = require('blockchain-addressbook');
 const chains = require('../../data/chains');
 const { sleep } = require('../../utils/harvestHelpers');
 const execute = require('./execute');
+const chainIdFromName = require('../../utils/chainIdFromName');
 
 const UPGRADE_STRAT = '0xe6685244';
+const chainName = 'bsc';
 
 const config = {
-  timelockAddress: addressBook['bsc'].platforms.beefyfinance.vaultOwner,
-  chainId: 56,
+  timelockAddress: addressBook[chainName].platforms.beefyfinance.vaultOwner,
+  chainId: chainIdFromName(chainName),
   pk: process.env.REWARDER_PK,
   value: 0,
   data: UPGRADE_STRAT,

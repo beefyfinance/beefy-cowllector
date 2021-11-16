@@ -3,12 +3,14 @@ const { addressBook } = require('blockchain-addressbook');
 
 const chains = require('../../data/chains');
 const executeBatch = require('./executeBatch');
+const chainIdFromName = require('../../utils/chainIdFromName');
 
+const chainName = 'bsc';
 const targets = [];
 
 const config = {
-  timelockAddress: addressBook['bsc'].platforms.beefyfinance.vaultOwner,
-  chainId: 56,
+  timelockAddress: addressBook[chainName].platforms.beefyfinance.vaultOwner,
+  chainId: chainIdFromName(chainName),
   pk: process.env.REWARDER_PK,
   values: Array.from({ length: targets.length }, () => 0),
   data: Array.from({ length: targets.length }, () => '0xe6685244'),

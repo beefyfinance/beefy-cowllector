@@ -3,10 +3,13 @@ const ethers = require('ethers');
 const chains = require('../../data/chains');
 const { sleep } = require('../../utils/harvestHelpers');
 const schedule = require('./schedule');
+const chainIdFromName = require('../../utils/chainIdFromName');
+
+const chainName = 'moonriver';
 
 const config = {
   timelockAddress: '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F',
-  chainId: 250,
+  chainId: chainIdFromName(chainName),
   pk: process.env.UPGRADER_PK,
   value: 0,
   data: '0xa68833e50000000000000000000000004f8865a1fce2877ccb55264600d4759d222e8feb',

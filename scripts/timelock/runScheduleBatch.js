@@ -3,12 +3,14 @@ const { addressBook } = require('blockchain-addressbook');
 
 const chains = require('../../data/chains');
 const scheduleBatch = require('./scheduleBatch');
+const chainIdFromName = require('../../utils/chainIdFromName');
 
+const chainName = 'polygon';
 const targets = [];
 
 const config = {
-  timelockAddress: addressBook['polygon'].platforms.beefyfinance.strategyOwner,
-  chainId: 137,
+  timelockAddress: addressBook[chainName].platforms.beefyfinance.strategyOwner,
+  chainId: chainIdFromName(chainName),
   pk: process.env.UPGRADER_PK,
   values: Array.from({ length: targets.length }, () => 0),
   data: Array.from(
