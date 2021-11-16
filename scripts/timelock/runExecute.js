@@ -18,7 +18,7 @@ const config = {
   predecessor: ethers.constants.HashZero,
   salt: ethers.constants.HashZero,
   sleep: 21600,
-  addresses: ['0x70E397fE8C402F2993EB2AC54C522f5AE9F33eDb'],
+  addresses: [],
 };
 
 const main = async () => {
