@@ -17,7 +17,7 @@ const config = {
   data: UPGRADE_STRAT,
   predecessor: ethers.constants.HashZero,
   salt: ethers.constants.HashZero,
-  sleep: 21600,
+  delay: 21600,
   addresses: [],
 };
 
@@ -36,7 +36,7 @@ const main = async () => {
       signer,
     });
 
-    await sleep(config.sleep);
+    await sleep(config.delay);
   }
 };
 
