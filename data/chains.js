@@ -1,6 +1,6 @@
 const { addressBook } = require('blockchain-addressbook');
 
-const { arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver } = addressBook;
+const { arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos } = addressBook;
 
 const chains = {
   56: {
@@ -166,6 +166,22 @@ const chains = {
     firstRewardBlock: 9402098,
     blockTime: 15,
     blockExplorer: 'https://moonriver.moonscan.io/',
+  },
+  25: {
+    id: 'cronos',
+    chainId: 25,
+    rewardPool: cronos.platforms.beefyfinance.rewardPool,
+    treasury: cronos.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: cronos.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 1,
+    rpc: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
+    appVaultsFilename: 'cronos_pools.js',
+    multicall: cronos.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    firstRewardBlock: 132884,
+    blockTime: 5,
+    blockExplorer: 'https://cronos.crypto.org/explorer/',
   },
 };
 

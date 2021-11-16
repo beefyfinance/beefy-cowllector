@@ -1,5 +1,50 @@
 [
   {
+    "name": "vvs-vvs",
+    "address": "0x03509283B8927B69DE0E3314097c99C9Dfdcf011",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
+    "name": "vvs-vvs-usdc",
+    "address": "0x14d07853560436aEe38BE12DD66d944B07D5E59F",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
+    "name": "vvs-vvs-cro",
+    "address": "0x55D618be955e58B5c3A917c4fdd6dab10c54d24F",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
+    "name": "vvs-cro-eth",
+    "address": "0x0955479C61B37074d689319fCaA84ffE1E9e8CF5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
+    "name": "vvs-cro-btc",
+    "address": "0x3040387C46e21B453e4a8f648528368b9066628B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
     "name": "bifi-maxi",
     "address": "0x87056F5E8Dce0fD71605E6E291C6a3B53cbc3818",
     "interval": 1,
