@@ -4,10 +4,13 @@ const { addressBook } = require('blockchain-addressbook');
 const { sleep } = require('../../utils/harvestHelpers');
 const chains = require('../../data/chains');
 const transferOwnership = require('./transferOwnership');
+const chainIdFromName = require('../../utils/chainIdFromName');
+
+const chainName = 'avax';
 
 const config = {
-  chainId: 250,
-  owner: addressBook[chains[250].id].platforms.beefyfinance.strategyOwner,
+  chainId: chainIdFromName(chainName),
+  owner: addressBook[chainName].platforms.beefyfinance.strategyOwner,
   pk: process.env.REWARDER_PK,
   addresses: [],
 };
