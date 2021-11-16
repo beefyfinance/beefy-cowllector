@@ -153,6 +153,7 @@ const chains = {
   1285: {
     id: 'moonriver',
     chainId: 1285,
+    wnative: moonriver.tokens.WMOVR.address,
     rewardPool: moonriver.platforms.beefyfinance.rewardPool,
     treasury: moonriver.platforms.beefyfinance.treasury,
     beefyFeeBatcher: moonriver.platforms.beefyfinance.beefyFeeRecipient,
