@@ -99,7 +99,7 @@ const chains = {
     blockExplorer: 'https://ftmscan.com',
   },
   1666600000: {
-    id: 'harmony',
+    id: 'one',
     chainId: 1666600000,
     wnative: one.tokens.WONE.address,
     rewardPool: one.platforms.beefyfinance.rewardPool,
