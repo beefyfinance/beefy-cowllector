@@ -1,6 +1,7 @@
 const ethers = require('ethers');
 const { addressBook } = require('blockchain-addressbook');
 
+const { sleep } = require('../../utils/harvestHelpers');
 const chains = require('../../data/chains');
 const transferOwnership = require('./transferOwnership');
 
@@ -17,6 +18,8 @@ const main = async () => {
     const signer = new ethers.Wallet(config.pk, provider);
 
     await transferOwnership({ address, owner: config.owner, signer });
+
+    await sleep(500);
   }
 };
 
