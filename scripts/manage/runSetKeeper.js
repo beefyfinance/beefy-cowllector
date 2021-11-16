@@ -3,10 +3,13 @@ const { addressBook } = require('blockchain-addressbook');
 
 const { sleep } = require('../../utils/harvestHelpers');
 const chains = require('../../data/chains');
-const setBeefyFeeRecipient = require('./setBeefyFeeRecipient');
+const setKeeper = require('./setKeeper');
+const chainIdFromName = require('../../utils/chainIdFromName');
+
+const chainName = 'bsc';
 
 const config = {
-  chainId: 56,
+  chainId: chainIdFromName(chainName),
   pk: process.env.REWARDER_PK,
   strats: [],
   delay: 500,
@@ -16,10 +19,9 @@ const main = async () => {
   for (strat of config.strats) {
     const provider = new ethers.providers.JsonRpcProvider(chains[config.chainId].rpc);
     const signer = new ethers.Wallet(config.pk, provider);
-    const chainName = chains[config.chainId].id;
-    const { beefyFeeRecipient } = addressBook[chainName].platforms.beefyfinance;
+    const { keeper } = addressBook[chainName].platforms.beefyfinance;
 
-    await setBeefyFeeRecipient({ strat, recipient: beefyFeeRecipient, signer });
+    await setKeeper({ strat, keeper, signer });
 
     await sleep(config.delay);
   }
