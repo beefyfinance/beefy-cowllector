@@ -170,10 +170,11 @@ const chains = {
   25: {
     id: 'cronos',
     chainId: 25,
+    wnative: cronos.tokens.WCRO.address,
     rewardPool: cronos.platforms.beefyfinance.rewardPool,
     treasury: cronos.platforms.beefyfinance.treasury,
     beefyFeeBatcher: cronos.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 1,
+    beefyFeeHarvestInterval: 6,
     rpc: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
     appVaultsFilename: 'cronos_pools.js',
     multicall: cronos.platforms.beefyfinance.multicall,
