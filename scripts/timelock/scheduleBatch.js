@@ -1,6 +1,7 @@
 const ethers = require('ethers');
 
 const TimelockAbi = require('../../abis/TimelockController.json');
+const findDuplicates = require('../../utils/findDuplicates');
 
 const scheduleBatch = async ({
   timelockAddr,
@@ -12,6 +13,11 @@ const scheduleBatch = async ({
   signer,
 }) => {
   const timelock = new ethers.Contract(timelockAddr, TimelockAbi, signer);
+
+  const duplicates = findDuplicates(targets);
+  if (duplicates.length) {
+    console.log(`Be careful, some targets have duplicates: ${duplicates}`);
+  }
 
   try {
     const operationHash = await timelock.hashOperationBatch(
