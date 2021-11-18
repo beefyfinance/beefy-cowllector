@@ -243,6 +243,24 @@
     "chainId": 56
   },
   {
+    "name": "banana-frax-busd",
+    "address": "0x8e3bc200860052F23Ad4E36094165eaC5df90Ff0",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-wbnb-fxs",
+    "address": "0x50D58cC2293ED8e6849EddD8395F749137e12646",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "betu-betu",
     "address": "0xa07704e69fa64408BEfb3ac1891166d8bbC2585c",
     "interval": 24,
@@ -2025,15 +2043,6 @@
     "chainId": 56
   },
   {
-    "name": "cakev2-dexe-busd",
-    "address": "0x9622Ce77f45A271fd23da7Aa0Fd35E59BB6d5FE8",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-tpt-busd",
     "address": "0x1E61C61943Bb84b20D7b2D6C7c80beFbeE0a857D",
     "interval": 24,
@@ -2099,15 +2108,6 @@
   {
     "name": "cakev2-sfp-bnb",
     "address": "0xDbA250c4AB640b59a270Ee4176EC49C2bDF1A655",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "cakev2-front-bnb",
-    "address": "0xac14f3b1a8a6a14bd006cC410BEF4cE7082E446D",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2882,24 +2882,6 @@
   {
     "name": "curve-poly-ren",
     "address": "0xAccf2f81F8c13e8D97ee272D141b6f4B613aB46D",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polysage-usdc-sage",
-    "address": "0x17F9352c4bf06cD29395bd0C98D28c28e626d93a",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "polysage-wmatic-sage",
-    "address": "0x7Ea5eed1E90A52D29a4bF2051703c6802cEEA7fD",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5301,6 +5283,15 @@
     "chainId": 43114
   },
   {
+    "name": "joe-wavax-boo",
+    "address": "0x06B515128cac164C63ba4Fd48229839Ba769f71F",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "spell-avax-mim-crv",
     "address": "0x4e713AD07ad300897dAe4ac2D31fFd60db9f4BA1",
     "interval": 6,
@@ -5591,15 +5582,6 @@
   {
     "name": "joe-wavax-spell",
     "address": "0xC0907E0e29f6576E864492D6ec12716dc1d21A87",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "joe-frax-wavax",
-    "address": "0x5006B88C2FC9E6193773F6766CC82648bc99F21C",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
