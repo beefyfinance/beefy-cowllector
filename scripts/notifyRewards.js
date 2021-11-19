@@ -9,7 +9,7 @@ const chains = require('../data/chains');
 
 const notifyRewards = async () => {
   for (chain of Object.values(chains)) {
-    if (!chain.rewardPool) continue;
+    if (!chain.notifyInterval) continue;
 
     if (!isNewPeriodNaive(chain.notifyInterval)) {
       console.log(`Is not time to notify ${chain.id}, skipping.`);
