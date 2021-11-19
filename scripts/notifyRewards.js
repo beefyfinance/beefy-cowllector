@@ -25,6 +25,8 @@ const notifyRewards = async () => {
       const rewardsReceived = await getRewardsReceived(chain);
       const rewardsNormalized = rewardsReceived.div('1e18').toFixed();
 
+      console.log(`Should notify ${rewardsNormalized} on chain ${chain.chainId}`);
+
       let balance = await wnativeContract.balanceOf(chain.rewardPool);
       balance = new BigNumber(balance.toString());
 
