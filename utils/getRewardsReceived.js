@@ -13,23 +13,34 @@ const getRewardsReceived = async chain => {
   const details = await getLastRewardAddedDetails(chain, lastBlock, web3);
 
   const transferTopic = getTopicFromSignature('Transfer(address,address,uint256)');
-  const fromTopic = getTopicFromAddress(chain.beefyFeeBatcher);
   const toTopic = getTopicFromAddress(chain.rewardPool);
 
   let fromBlock = details.blockNumber;
 
   while (fromBlock < lastBlock) {
+    console.log('getRewardsReceived', fromBlock);
     let toBlock = fromBlock + chain.queryLimit;
     if (toBlock > lastBlock) {
       toBlock = lastBlock;
     }
 
-    const logs = await web3.eth.getPastLogs({
-      fromBlock: fromBlock,
-      toBlock: toBlock - 1,
-      address: chain.wnative,
-      topics: [transferTopic, fromTopic, toTopic],
-    });
+    let logs;
+    try {
+      logs = await web3.eth.getPastLogs({
+        fromBlock: fromBlock,
+        toBlock: toBlock - 1,
+        address: chain.wnative,
+        topics: [transferTopic, null, toTopic],
+      });
+    } catch (err) {
+      console.error('getRewardsReceived', err);
+      await sleep(30 * 1000);
+      continue;
+    }
+
+    console.log('=============================');
+    console.log(logs);
+    console.log('=============================');
 
     for (let i = 0; i < logs.length; i++) {
       if (
@@ -59,12 +70,20 @@ const getLastRewardAddedDetails = async (chain, lastBlock, web3) => {
   let details = { blockNumber: chain.firstRewardBlock, transactionIndex: 0 };
 
   while (fromBlock > chain.firstRewardBlock) {
-    const logs = await web3.eth.getPastLogs({
-      fromBlock: fromBlock,
-      toBlock: toBlock - 1,
-      address: chain.rewardPool,
-      topics: [topic],
-    });
+    console.log('getLastRewardAddedDetails', fromBlock);
+    let logs;
+    try {
+      logs = await web3.eth.getPastLogs({
+        fromBlock: fromBlock,
+        toBlock: toBlock - 1,
+        address: chain.rewardPool,
+        topics: [topic],
+      });
+    } catch (err) {
+      console.error('getLastRewardAddedDetails', err);
+      await sleep(30 * 1000);
+      continue;
+    }
 
     if (logs.length) {
       const last = logs[logs.length - 1];
