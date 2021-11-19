@@ -28,7 +28,9 @@ const notifyRewards = async () => {
       let balance = await wnativeContract.balanceOf(chain.rewardPool);
       balance = new BigNumber(balance.toString());
 
-      if (rewardsReceived.lte(balance)) {
+      if (rewardsReceived.eq(0)) {
+        console.log('There are no rewards to notify. Skipping.');
+      } else if (rewardsReceived.lte(balance)) {
         let tx = await rewardsContract.notifyRewardAmount(rewardsReceived.toFixed(), {
           gasLimit: 200000,
         });
