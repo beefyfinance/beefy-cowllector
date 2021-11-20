@@ -1,5 +1,14 @@
 [
   {
+    "name": "vvs-vvs-usdt",
+    "address": "0x05353E2666d955300a9525eB5861349450eb2fAF",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
     "name": "vvs-usdt-usdc",
     "address": "0x0a350c62f4b8C7dA93fBca469e53a182b5BBD044",
     "interval": 1,
@@ -4932,8 +4941,35 @@
     "chainId": 1285
   },
   {
-    "name": "solarbeam-frax-wmovr",
-    "address": "0x76C01cD33ab2Ea4bC0d641206b6a199A438195f4",
+    "name": "solarbeam-wbtc-wmovr",
+    "address": "0xe536F8141D8EB7B1f096934AF3329cB581bFe995",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "solarbeam-eth-wmovr",
+    "address": "0x22b3d90BDdC3Ad5F2948bE3914255C64Ebc8c9b3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "solarbeam-bnb-wmovr",
+    "address": "0x1Dfc065DAC613454f394Af648F55E4B4EA58f48d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "solarbeam-frax-wmovr-2",
+    "address": "0xdc036Ab31d2f105E15c1896f88D13B7bcF3e9292",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
