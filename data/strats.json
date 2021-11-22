@@ -5220,6 +5220,42 @@
     "chainId": 43114
   },
   {
+    "name": "blizz-avax",
+    "address": "0x7D5bDbA328c659f5D28C6451be790DC67f5a7CA3",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "blizz-eth",
+    "address": "0xeefF390037c6630240ac5e575a19bd7DAde2cEC1",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "blizz-wbtc",
+    "address": "0x0c3cCeb581A6C83280D45b7CB3fBbAA3D21FAaE7",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "blizz-blzz-avax",
+    "address": "0x344C421f2698C2aA12cE013f085cb6C65b475bbC",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "joe-cra-wavax",
     "address": "0x9eCA684321ec265CA7b601871f629e77ad9f1EbB",
     "interval": 6,
@@ -5303,15 +5339,6 @@
   {
     "name": "bankerjoe-mim",
     "address": "0x50d6e8216bb5D4018BA6ad6e7118716eF292A184",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "blizz-blzz-avax",
-    "address": "0x344C421f2698C2aA12cE013f085cb6C65b475bbC",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
