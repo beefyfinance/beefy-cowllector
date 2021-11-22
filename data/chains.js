@@ -7,7 +7,7 @@ const chains = {
   56: {
     id: 'bsc',
     chainId: 56,
-    wnative: bsc.tokens.WBNB.address,
+    wnative: bsc.tokens.WNATIVE.address,
     rewardPool: bsc.platforms.beefyfinance.rewardPool,
     notifyInterval: 10,
     treasury: bsc.platforms.beefyfinance.treasury,
@@ -26,7 +26,7 @@ const chains = {
   128: {
     id: 'heco',
     chainId: 128,
-    wnative: heco.tokens.WHT.address,
+    wnative: heco.tokens.WNATIVE.address,
     rewardPool: heco.platforms.beefyfinance.rewardPool,
     treasury: heco.platforms.beefyfinance.treasury,
     beefyFeeBatcher: heco.platforms.beefyfinance.beefyFeeRecipient,
@@ -44,7 +44,7 @@ const chains = {
   43114: {
     id: 'avax',
     chainId: 43114,
-    wnative: avax.tokens.WAVAX.address,
+    wnative: avax.tokens.WNATIVE.address,
     rewardPool: avax.platforms.beefyfinance.rewardPool,
     treasury: avax.platforms.beefyfinance.treasury,
     beefyFeeBatcher: avax.platforms.beefyfinance.beefyFeeRecipient,
@@ -62,7 +62,7 @@ const chains = {
   137: {
     id: 'polygon',
     chainId: 137,
-    wnative: polygon.tokens.WMATIC.address,
+    wnative: polygon.tokens.WNATIVE.address,
     rewardPool: polygon.platforms.beefyfinance.rewardPool,
     treasury: polygon.platforms.beefyfinance.treasury,
     beefyFeeBatcher: polygon.platforms.beefyfinance.beefyFeeRecipient,
@@ -80,7 +80,7 @@ const chains = {
   250: {
     id: 'fantom',
     chainId: 250,
-    wnative: fantom.tokens.WFTM.address,
+    wnative: fantom.tokens.WNATIVE.address,
     rewardPool: fantom.platforms.beefyfinance.rewardPool,
     treasury: fantom.platforms.beefyfinance.treasury,
     beefyFeeBatcher: fantom.platforms.beefyfinance.beefyFeeRecipient,
@@ -98,7 +98,7 @@ const chains = {
   1666600000: {
     id: 'one',
     chainId: 1666600000,
-    wnative: one.tokens.WONE.address,
+    wnative: one.tokens.WNATIVE.address,
     rewardPool: one.platforms.beefyfinance.rewardPool,
     treasury: one.platforms.beefyfinance.treasury,
     beefyFeeBatcher: one.platforms.beefyfinance.beefyFeeRecipient,
@@ -116,7 +116,7 @@ const chains = {
   42161: {
     id: 'arbitrum',
     chainId: 42161,
-    wnative: arbitrum.tokens.WETH.address,
+    wnative: arbitrum.tokens.WNATIVE.address,
     rewardPool: arbitrum.platforms.beefyfinance.rewardPool,
     treasury: arbitrum.platforms.beefyfinance.treasury,
     beefyFeeBatcher: arbitrum.platforms.beefyfinance.beefyFeeRecipient,
@@ -150,7 +150,7 @@ const chains = {
   1285: {
     id: 'moonriver',
     chainId: 1285,
-    wnative: moonriver.tokens.WMOVR.address,
+    wnative: moonriver.tokens.WNATIVE.address,
     rewardPool: moonriver.platforms.beefyfinance.rewardPool,
     treasury: moonriver.platforms.beefyfinance.treasury,
     beefyFeeBatcher: moonriver.platforms.beefyfinance.beefyFeeRecipient,
@@ -167,7 +167,7 @@ const chains = {
   25: {
     id: 'cronos',
     chainId: 25,
-    wnative: cronos.tokens.WCRO.address,
+    wnative: cronos.tokens.WNATIVE.address,
     rewardPool: cronos.platforms.beefyfinance.rewardPool,
     treasury: cronos.platforms.beefyfinance.treasury,
     beefyFeeBatcher: cronos.platforms.beefyfinance.beefyFeeRecipient,
