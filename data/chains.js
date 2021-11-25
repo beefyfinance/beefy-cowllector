@@ -175,25 +175,25 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cronos.crypto.org/explorer/',
   },
-  1313161554: {
-    id: 'aurora',
-    chainId: 1313161554,
-    wnative: aurora.tokens.WNATIVE.address,
-    rewardPool: aurora.platforms.beefyfinance.rewardPool,
-    treasury: aurora.platforms.beefyfinance.treasury,
-    beefyFeeBatcher: aurora.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 2,
-    wnativeUnwrapInterval: 8,
-    rpc:
-      process.env.aurora_RPC ||
-      'https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek',
-    appVaultsFilename: 'aurora_pools.js',
-    multicall: aurora.platforms.beefyfinance.multicall,
-    queryLimit: 1000,
-    queryInterval: 100,
-    blockTime: 1,
-    blockExplorer: 'https://explorer.mainnet.aurora.dev/',
-  },
+  // 1313161554: {
+  //   id: 'aurora',
+  //   chainId: 1313161554,
+  //   wnative: aurora.tokens.WNATIVE.address,
+  //   rewardPool: aurora.platforms.beefyfinance.rewardPool,
+  //   treasury: aurora.platforms.beefyfinance.treasury,
+  //   beefyFeeBatcher: aurora.platforms.beefyfinance.beefyFeeRecipient,
+  //   beefyFeeHarvestInterval: 2,
+  //   wnativeUnwrapInterval: 8,
+  //   rpc:
+  //     process.env.aurora_RPC ||
+  //     'https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek',
+  //   appVaultsFilename: 'aurora_pools.js',
+  //   multicall: aurora.platforms.beefyfinance.multicall,
+  //   queryLimit: 1000,
+  //   queryInterval: 100,
+  //   blockTime: 1,
+  //   blockExplorer: 'https://explorer.mainnet.aurora.dev/',
+  // },
 };
 
 module.exports = chains;
