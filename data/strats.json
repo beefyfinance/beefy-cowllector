@@ -1,5 +1,23 @@
 [
   {
+    "name": "cronos-bifi-maxi",
+    "address": "0xa9E6E271b27b20F65394914f8784B3B860dBd259",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
+    "name": "vvs-cro-usdt",
+    "address": "0x2a15C47F706DD9F03D04001bBD67870E6754838D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
     "name": "vvs-cro-usdc",
     "address": "0xC7EFbf084d0199D6814F3cAd730d28611e06E1c9",
     "interval": 1,
@@ -2862,6 +2880,15 @@
     "chainId": 137
   },
   {
+    "name": "curve-poly-eurt",
+    "address": "0x0CD180b70201e67EB81C6Bb57087963A9672523a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "kyber-usdc-jeur",
     "address": "0xaD403e47d7e288Ed473338F6B7BF176e7C42c748",
     "interval": 6,
@@ -3879,6 +3906,15 @@
     "chainId": 250
   },
   {
+    "name": "beets-phantom-dai-opera",
+    "address": "0xEc72A27121a5B639550bf096369D99f39de0A8b4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "boo-usdc-tusd",
     "address": "0x97A3d559d62E8668e1b4644C2A6F4E4147898552",
     "interval": 1,
@@ -4860,6 +4896,42 @@
     "chainId": 1285
   },
   {
+    "name": "solarbeam-frax-wmovr-2",
+    "address": "0xdc036Ab31d2f105E15c1896f88D13B7bcF3e9292",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "finn-wmovr-finn",
+    "address": "0x1d9695E7EF656b7d8D6a70353B4ed9964EbC60FD",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "finn-usdc-finn",
+    "address": "0xE31596fdB92063877235bb500D0d5f329b5768ff",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "finn-dot-finn",
+    "address": "0x42ECfA11Db08FB3Bb0AAf722857be56FA8E57Dc0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
     "name": "solarbeam-wbtc-wmovr",
     "address": "0xe536F8141D8EB7B1f096934AF3329cB581bFe995",
     "interval": 1,
@@ -4879,16 +4951,7 @@
   },
   {
     "name": "solarbeam-bnb-wmovr",
-    "address": "0x1Dfc065DAC613454f394Af648F55E4B4EA58f48d",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 1285
-  },
-  {
-    "name": "solarbeam-frax-wmovr-2",
-    "address": "0xdc036Ab31d2f105E15c1896f88D13B7bcF3e9292",
+    "address": "0x732161B51Ff7A2fee4D953E19f32827b3603c999",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5232,6 +5295,15 @@
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "synapse-nusdlp",
+    "address": "0x66D85bAB9286FC0aA5dd607e61F2ed0d2FA53A6e",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
