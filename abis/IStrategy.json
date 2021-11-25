@@ -187,6 +187,13 @@
   },
   {
     "inputs": [],
+    "name": "lastHarvest",
+    "outputs": [{ "internalType": "uint256", "name": "_lastHarvest", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "ica",
     "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "stateMutability": "view",
