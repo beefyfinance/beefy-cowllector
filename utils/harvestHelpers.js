@@ -39,8 +39,7 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   return false;
 };
 
-const hasStakers = async (strat, harvester) => {
-  const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
+const hasStakers = async strategy => {
   const balance = await strategy.balanceOf();
   return balance.gt(0) ? true : false;
 };
