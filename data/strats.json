@@ -9,6 +9,15 @@
     "chainId": 25
   },
   {
+    "name": "vvs-cro-dai",
+    "address": "0x632a66b1Ff24A830aCcbBa28AE557e284BaE0221",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
     "name": "crona-crona-usdc",
     "address": "0x1f533AD4232F52dA09CBDC3778DF8404A010A7Db",
     "interval": 1,
@@ -2955,6 +2964,24 @@
     "name": "curve-am3crv",
     "address": "0x748f243931b841F2C4d6f298abB85d7A23FE7c2a",
     "interval": 7,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-matic-wcro",
+    "address": "0x04a7D46df890fc20664217301850dadeEBDB7b38",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-matic-mana",
+    "address": "0xB6ca7D8F93a2eb0CcBC83b38d4d94B4b0FB6811c",
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
@@ -6176,6 +6203,24 @@
   {
     "name": "one-bifi-maxi",
     "address": "0x5135C0af3080DF01ABF66491d5a1eD21fBEF3a7C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1666600000
+  },
+  {
+    "name": "curve-harmony-tricrypto",
+    "address": "0xFFf5df2dEcC66075E8d337349a34D5a12F7ADF62",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1666600000
+  },
+  {
+    "name": "curve-harmony-3pool",
+    "address": "0xBB4c90641e0eb43f19c5931C411C0Bc1a09d2cAA",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
