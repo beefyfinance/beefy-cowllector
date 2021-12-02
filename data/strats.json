@@ -261,8 +261,44 @@
     "chainId": 56
   },
   {
-    "name": "1inch-1inch",
-    "address": "0xe807517273De0161D8309BC9363193f2162b9B65",
+    "name": "ellipsis-renbtc",
+    "address": "0xdd71720cdB91dD4e94A5f7F57B3E1418Db54103f",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-bnb-stars",
+    "address": "0xb7313844d9c57552e334e77f1203979765BC035e",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "bison-bison-bnb",
+    "address": "0x4583fAC48BdD776096559514A42a957e3DF93C1A",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "banana-wbnb-ceek",
+    "address": "0xC847c35CC6632a30E46C5Cb62a776d81f822330F",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "belt-beltbtc",
+    "address": "0xaBf0cDd827aB1902213269fc4427c3A8655e60c2",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -279,8 +315,17 @@
     "chainId": 56
   },
   {
-    "name": "belt-beltbtc",
-    "address": "0xaBf0cDd827aB1902213269fc4427c3A8655e60c2",
+    "name": "charge-static-busd",
+    "address": "0xF5Ea95dA6E7D9DdAdE65D6b54CCBbC3a6f19A0a4",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "charge-charge-busd",
+    "address": "0xdB9E24c78d68c87bEF858Aa489D112e88Bff3A14",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -306,6 +351,15 @@
     "chainId": 56
   },
   {
+    "name": "1inch-1inch",
+    "address": "0xe807517273De0161D8309BC9363193f2162b9B65",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "banana-oasis-wbnb",
     "address": "0xe723E67bd24405aCeed8972a2330FA17130d89D3",
     "interval": 24,
@@ -324,33 +378,6 @@
     "chainId": 56
   },
   {
-    "name": "banana-bnb-stars",
-    "address": "0xb7313844d9c57552e334e77f1203979765BC035e",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-wbnb-ceek",
-    "address": "0xC847c35CC6632a30E46C5Cb62a776d81f822330F",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bison-bison-bnb",
-    "address": "0x4583fAC48BdD776096559514A42a957e3DF93C1A",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "bison-bison",
     "address": "0x914B22a365155DC7fe869Ec8dF60334df15d9f86",
     "interval": 24,
@@ -362,15 +389,6 @@
   {
     "name": "blockmine-nugget-goldcoin",
     "address": "0xD67f4A698eA6a251148F39AA3CF5dDab47E2Dd5f",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "ellipsis-renbtc",
-    "address": "0xdd71720cdB91dD4e94A5f7F57B3E1418Db54103f",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3987,6 +4005,24 @@
     "chainId": 250
   },
   {
+    "name": "beets-guqin-qi-2",
+    "address": "0xa623c28f64A429baE0426Aa8AEbE64d307A38cC0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-solana-sonata",
+    "address": "0xFbe1d176888798A51FAe70a06ABeb84C81FC16bD",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "scream-tusd",
     "address": "0xa3aBB8BCc6ffEa82d3a0a8f800050F684Db27Db8",
     "interval": 1,
@@ -4160,15 +4196,6 @@
   {
     "name": "scream-dola",
     "address": "0x12F1A8C91Ffdb0aF421b703A75b8E9f57ADDF0b9",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250
-  },
-  {
-    "name": "beets-guqin-qi-2",
-    "address": "0xa623c28f64A429baE0426Aa8AEbE64d307A38cC0",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5535,6 +5562,15 @@
     "chainId": 43114
   },
   {
+    "name": "joe-gohm-wavax",
+    "address": "0x6B2CFabf0703D807784D11eEE07759559EDeFF6A",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "synapse-nusdlp",
     "address": "0x66D85bAB9286FC0aA5dd607e61F2ed0d2FA53A6e",
     "interval": 6,
@@ -6095,15 +6131,6 @@
   {
     "name": "pangolin-weth.e-png",
     "address": "0xc2394A5B78c6208fb87AbEC3C452DC0a033F5610",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "pangolin-wbtc.e-png",
-    "address": "0x6347C23cd6283E619728854D44FF852A462fBaAc",
     "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,

@@ -8,11 +8,43 @@
     "tvl": 0
   },
   {
-    "id": "1inch-1inch",
-    "name": "Moo 1INCH 1INCH",
-    "contract": "0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950",
-    "oracle": "tokens",
-    "oracleId": "1INCH",
+    "id": "ellipsis-renbtc",
+    "name": "Moo Ellipsis renBTC",
+    "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
+    "oracle": "lps",
+    "oracleId": "ellipsis-renbtc",
+    "tvl": 0
+  },
+  {
+    "id": "banana-bnb-stars",
+    "name": "Moo Ape BNB-STARS",
+    "contract": "0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e",
+    "oracle": "lps",
+    "oracleId": "banana-bnb-stars",
+    "tvl": 0
+  },
+  {
+    "id": "bison-bison-bnb",
+    "name": "Moo Bison BISON-BNB",
+    "contract": "0x813EBFD51604E0066bFA4E0Bf6d2324eA8CebE60",
+    "oracle": "lps",
+    "oracleId": "bison-bison-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-wbnb-ceek",
+    "name": "Moo Ape CEEK-BNB",
+    "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
+    "oracle": "lps",
+    "oracleId": "banana-wbnb-ceek",
+    "tvl": 0
+  },
+  {
+    "id": "belt-beltbtc",
+    "name": "Moo Belt BTC",
+    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
+    "oracle": "lps",
+    "oracleId": "belt-beltbtc",
     "tvl": 0
   },
   {
@@ -24,11 +56,19 @@
     "tvl": 0
   },
   {
-    "id": "belt-beltbtc",
-    "name": "Moo Belt BTC",
-    "contract": "0xD411121C948Cff739857513E1ADF25ED448623f8",
+    "id": "charge-static-busd",
+    "name": "Moo Charge STATIC-BUSD",
+    "contract": "0xaAe97E1B198406D691d75B5aA60Ac0b4e4b0E5CD",
     "oracle": "lps",
-    "oracleId": "belt-beltbtc",
+    "oracleId": "charge-static-busd",
+    "tvl": 0
+  },
+  {
+    "id": "charge-charge-busd",
+    "name": "Moo Charge CHARGE-BUSD",
+    "contract": "0xDf988851e4CbA99565A9949706ff75Fd7f3b1b7A",
+    "oracle": "lps",
+    "oracleId": "charge-charge-busd",
     "tvl": 0
   },
   {
@@ -48,6 +88,14 @@
     "tvl": 0
   },
   {
+    "id": "1inch-1inch",
+    "name": "Moo 1INCH 1INCH",
+    "contract": "0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950",
+    "oracle": "tokens",
+    "oracleId": "1INCH",
+    "tvl": 0
+  },
+  {
     "id": "banana-oasis-wbnb",
     "name": "Moo Ape OASIS-BNB",
     "contract": "0xb69fE74aeD526BBEe0fc47db72Ced2BDBF9747CF",
@@ -64,30 +112,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-bnb-stars",
-    "name": "Moo Ape BNB-STARS",
-    "contract": "0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e",
-    "oracle": "lps",
-    "oracleId": "banana-bnb-stars",
-    "tvl": 0
-  },
-  {
-    "id": "banana-wbnb-ceek",
-    "name": "Moo Ape CEEK-BNB",
-    "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
-    "oracle": "lps",
-    "oracleId": "banana-wbnb-ceek",
-    "tvl": 0
-  },
-  {
-    "id": "bison-bison-bnb",
-    "name": "Moo Bison BISON-BNB",
-    "contract": "0x813EBFD51604E0066bFA4E0Bf6d2324eA8CebE60",
-    "oracle": "lps",
-    "oracleId": "bison-bison-bnb",
-    "tvl": 0
-  },
-  {
     "id": "bison-bison",
     "name": "Moo Bison",
     "contract": "0x7886484722747F66B53A27b2854eF4e6Cdd80881",
@@ -101,14 +125,6 @@
     "contract": "0xd3FC1C726E1FaF21bADc029382FD10EC6c9Bc9A8",
     "oracle": "lps",
     "oracleId": "blockmine-nugget-goldcoin",
-    "tvl": 0
-  },
-  {
-    "id": "ellipsis-renbtc",
-    "name": "Moo Ellipsis renBTC",
-    "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
-    "oracle": "lps",
-    "oracleId": "ellipsis-renbtc",
     "tvl": 0
   },
   {
