@@ -297,6 +297,42 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-nabox-busd",
+    "address": "0xf4cd3E9119bfEaE8aa69f21669C055195Ae6Ba43",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-santos-wbnb",
+    "address": "0x7934CB368017ae6092125ef65B33eE96caa0CafF",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-quidd-wbnb",
+    "address": "0x6c0D796ced093b1fd7ecbd89814d3a84A4487780",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
+    "name": "cakev2-zoo-wbnb",
+    "address": "0xc64Ea56904cd32996F18E3a57115421F49ffaa2b",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "charge-static-busd",
     "address": "0xF5Ea95dA6E7D9DdAdE65D6b54CCBbC3a6f19A0a4",
     "interval": 24,
@@ -2866,7 +2902,7 @@
     "address": "0xaD403e47d7e288Ed473338F6B7BF176e7C42c748",
     "interval": 6,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 137
   },
@@ -2965,7 +3001,7 @@
     "address": "0x4c102FD608B3D78095AbC785E9362328bE81746F",
     "interval": 6,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 137
   },
@@ -2974,7 +3010,7 @@
     "address": "0x864C305c57B78803D36E064490F5078A0bDED7e0",
     "interval": 6,
     "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
+    "depositsPaused": true,
     "harvestPaused": false,
     "chainId": 137
   },
