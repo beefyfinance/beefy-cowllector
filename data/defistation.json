@@ -16,11 +16,35 @@
     "tvl": 0
   },
   {
+    "id": "banana-nfty-wbnb",
+    "name": "Moo Ape NFTY-BNB",
+    "contract": "0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1",
+    "oracle": "lps",
+    "oracleId": "banana-nfty-wbnb",
+    "tvl": 0
+  },
+  {
     "id": "banana-bnb-stars",
     "name": "Moo Ape BNB-STARS",
     "contract": "0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e",
     "oracle": "lps",
     "oracleId": "banana-bnb-stars",
+    "tvl": 0
+  },
+  {
+    "id": "charge-static-busd",
+    "name": "Moo Charge STATIC-BUSD",
+    "contract": "0xaAe97E1B198406D691d75B5aA60Ac0b4e4b0E5CD",
+    "oracle": "lps",
+    "oracleId": "charge-static-busd",
+    "tvl": 0
+  },
+  {
+    "id": "charge-charge-busd",
+    "name": "Moo Charge CHARGE-BUSD",
+    "contract": "0xDf988851e4CbA99565A9949706ff75Fd7f3b1b7A",
+    "oracle": "lps",
+    "oracleId": "charge-charge-busd",
     "tvl": 0
   },
   {
@@ -64,22 +88,6 @@
     "tvl": 0
   },
   {
-    "id": "charge-static-busd",
-    "name": "Moo Charge STATIC-BUSD",
-    "contract": "0xaAe97E1B198406D691d75B5aA60Ac0b4e4b0E5CD",
-    "oracle": "lps",
-    "oracleId": "charge-static-busd",
-    "tvl": 0
-  },
-  {
-    "id": "charge-charge-busd",
-    "name": "Moo Charge CHARGE-BUSD",
-    "contract": "0xDf988851e4CbA99565A9949706ff75Fd7f3b1b7A",
-    "oracle": "lps",
-    "oracleId": "charge-charge-busd",
-    "tvl": 0
-  },
-  {
     "id": "banana-wbnb-ceek",
     "name": "Moo Ape CEEK-BNB",
     "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
@@ -120,27 +128,11 @@
     "tvl": 0
   },
   {
-    "id": "1inch-1inch",
-    "name": "Moo 1INCH 1INCH",
-    "contract": "0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950",
-    "oracle": "tokens",
-    "oracleId": "1INCH",
-    "tvl": 0
-  },
-  {
     "id": "banana-oasis-wbnb",
     "name": "Moo Ape OASIS-BNB",
     "contract": "0xb69fE74aeD526BBEe0fc47db72Ced2BDBF9747CF",
     "oracle": "lps",
     "oracleId": "banana-oasis-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-nfty-wbnb",
-    "name": "Moo Ape NFTY-BNB",
-    "contract": "0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1",
-    "oracle": "lps",
-    "oracleId": "banana-nfty-wbnb",
     "tvl": 0
   },
   {
@@ -237,14 +229,6 @@
     "contract": "0x55669f1c00D55F55bA1E736A23cEE54877D922Be",
     "oracle": "tokens",
     "oracleId": "NFTY",
-    "tvl": 0
-  },
-  {
-    "id": "banana-exp-wbnb",
-    "name": "Moo Ape EXP-BNB",
-    "contract": "0x5B5ADf5cA7a7149194182a86fDA329019c57524b",
-    "oracle": "lps",
-    "oracleId": "banana-exp-wbnb",
     "tvl": 0
   },
   {
@@ -480,22 +464,6 @@
     "tvl": 0
   },
   {
-    "id": "pearzap-pear-bnb",
-    "name": "Moo PearZap PEAR-BNB",
-    "contract": "0xa2728d080650d3828e525881Dfd296481b273ab8",
-    "oracle": "lps",
-    "oracleId": "pearzap-pear-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "pearzap-pear-busd",
-    "name": "Moo PearZap PEAR-BUSD",
-    "contract": "0xa94f3a0cEA66F7141DC4a2039E65205c68Db83ab",
-    "oracle": "lps",
-    "oracleId": "pearzap-pear-busd",
-    "tvl": 0
-  },
-  {
     "id": "czf-czf-bnb",
     "name": "Moo CZF CZF-BNB",
     "contract": "0x98CADFb805fAc92eF70e3Ed900c76a487cDb26a1",
@@ -549,14 +517,6 @@
     "contract": "0x397967AE34c9e91c11e3DCb72e566c598e929754",
     "oracle": "lps",
     "oracleId": "mdex-usdt-btcb",
-    "tvl": 0
-  },
-  {
-    "id": "mdex-bsc-rabbit-busd",
-    "name": "Moo Mdex RABBIT-BUSD",
-    "contract": "0xF191Ff7Ce1BdBaA9149f63eF857b877Dc60f1a56",
-    "oracle": "lps",
-    "oracleId": "mdex-rabbit-busd",
     "tvl": 0
   },
   {
@@ -920,38 +880,6 @@
     "tvl": 0
   },
   {
-    "id": "fruit-fruit-cake",
-    "name": "Moo Fruit FRUIT-CAKE",
-    "contract": "0xe7D4C514621C2687391cee9e3a150a738EbF2C92",
-    "oracle": "lps",
-    "oracleId": "fruit-fruit-cake",
-    "tvl": 0
-  },
-  {
-    "id": "fruit-fruit-xvs",
-    "name": "Moo Fruit FRUIT-XVS",
-    "contract": "0x76BB40099580dD8987Fd9B860272B7EA387155a8",
-    "oracle": "lps",
-    "oracleId": "fruit-fruit-xvs",
-    "tvl": 0
-  },
-  {
-    "id": "banana-fruit-bnb",
-    "name": "Moo Ape FRUIT-BNB",
-    "contract": "0xf33352769cF8A1fC840FC573A9B4Bf92e398311f",
-    "oracle": "lps",
-    "oracleId": "banana-fruit-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "stablequant-quant-busd",
-    "name": "Moo StableQuant QUANT-BUSD",
-    "contract": "0xa4918a9B3CE89c3A179Ea873A45a901a4535eC65",
-    "oracle": "lps",
-    "oracleId": "stablequant-quant-busd",
-    "tvl": 0
-  },
-  {
     "id": "kingdefi-krown-bnb",
     "name": "Moo KingDefi KROWN-BNB",
     "contract": "0x7436E25d56b22646122448BbFD05F732984B4f19",
@@ -997,14 +925,6 @@
     "contract": "0x7C86bF8e0Db2D327EF1b0D616C5617E9733CdDf6",
     "oracle": "lps",
     "oracleId": "cakev2-mask-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "ellipsis-pbtc",
-    "name": "Moo Ellipsis pBTC",
-    "contract": "0x8Fa781Fe4995cB9F7de6BD46042A7034c920824B",
-    "oracle": "lps",
-    "oracleId": "ellipsis-pbtc",
     "tvl": 0
   },
   {
@@ -1429,14 +1349,6 @@
     "contract": "0xB9dA6EdEeF7e3db24265EcFBeBF4e06B7c7A455f",
     "oracle": "lps",
     "oracleId": "banana-matic-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "tofy-tofy-eol",
-    "name": "Moo Tofy TOFY",
-    "contract": "0xE9F13aBE42A29BA302E7d57171f57430A2a2f8d0",
-    "oracle": "tokens",
-    "oracleId": "TOFY",
     "tvl": 0
   },
   {
@@ -1960,14 +1872,6 @@
     "tvl": 0
   },
   {
-    "id": "com-com-bnb",
-    "name": "Moo Complus COM-BNB",
-    "contract": "0x0DA3EB14c8d07a87A366D029d7f2341Ac0eca775",
-    "oracle": "lps",
-    "oracleId": "com-com-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-alice-bnb",
     "name": "Moo CakeV2 ALICE-BNB",
     "contract": "0x0c65883778f16770F4d43f5524708e18BC62881b",
@@ -2032,14 +1936,6 @@
     "tvl": 0
   },
   {
-    "id": "cake-btd-busd",
-    "name": "Moo BoltDollar BTD-BUSD",
-    "contract": "0x0D3837E00C47353e68680C39e6DA6B5b08fE6897",
-    "oracle": "lps",
-    "oracleId": "cake-btd-busd",
-    "tvl": 0
-  },
-  {
     "id": "kebab-kebab-btc",
     "name": "Moo Kebab KEBAB-BTCB",
     "contract": "0x02a77B01BE5BB6a73b70E2b5615694F71a2c4F41",
@@ -2093,6 +1989,110 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "1inch-1inch",
+    "name": "Moo 1INCH 1INCH",
+    "contract": "0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950",
+    "oracle": "tokens",
+    "oracleId": "1INCH",
+    "tvl": 0
+  },
+  {
+    "id": "banana-exp-wbnb",
+    "name": "Moo Ape EXP-BNB",
+    "contract": "0x5B5ADf5cA7a7149194182a86fDA329019c57524b",
+    "oracle": "lps",
+    "oracleId": "banana-exp-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "pearzap-pear-bnb",
+    "name": "Moo PearZap PEAR-BNB",
+    "contract": "0xa2728d080650d3828e525881Dfd296481b273ab8",
+    "oracle": "lps",
+    "oracleId": "pearzap-pear-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "pearzap-pear-busd",
+    "name": "Moo PearZap PEAR-BUSD",
+    "contract": "0xa94f3a0cEA66F7141DC4a2039E65205c68Db83ab",
+    "oracle": "lps",
+    "oracleId": "pearzap-pear-busd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bsc-rabbit-busd",
+    "name": "Moo Mdex RABBIT-BUSD",
+    "contract": "0xF191Ff7Ce1BdBaA9149f63eF857b877Dc60f1a56",
+    "oracle": "lps",
+    "oracleId": "mdex-rabbit-busd",
+    "tvl": 0
+  },
+  {
+    "id": "fruit-fruit-cake",
+    "name": "Moo Fruit FRUIT-CAKE",
+    "contract": "0xe7D4C514621C2687391cee9e3a150a738EbF2C92",
+    "oracle": "lps",
+    "oracleId": "fruit-fruit-cake",
+    "tvl": 0
+  },
+  {
+    "id": "fruit-fruit-xvs",
+    "name": "Moo Fruit FRUIT-XVS",
+    "contract": "0x76BB40099580dD8987Fd9B860272B7EA387155a8",
+    "oracle": "lps",
+    "oracleId": "fruit-fruit-xvs",
+    "tvl": 0
+  },
+  {
+    "id": "banana-fruit-bnb",
+    "name": "Moo Ape FRUIT-BNB",
+    "contract": "0xf33352769cF8A1fC840FC573A9B4Bf92e398311f",
+    "oracle": "lps",
+    "oracleId": "banana-fruit-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "stablequant-quant-busd",
+    "name": "Moo StableQuant QUANT-BUSD",
+    "contract": "0xa4918a9B3CE89c3A179Ea873A45a901a4535eC65",
+    "oracle": "lps",
+    "oracleId": "stablequant-quant-busd",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-pbtc",
+    "name": "Moo Ellipsis pBTC",
+    "contract": "0x8Fa781Fe4995cB9F7de6BD46042A7034c920824B",
+    "oracle": "lps",
+    "oracleId": "ellipsis-pbtc",
+    "tvl": 0
+  },
+  {
+    "id": "tofy-tofy-eol",
+    "name": "Moo Tofy TOFY",
+    "contract": "0xE9F13aBE42A29BA302E7d57171f57430A2a2f8d0",
+    "oracle": "tokens",
+    "oracleId": "TOFY",
+    "tvl": 0
+  },
+  {
+    "id": "com-com-bnb",
+    "name": "Moo Complus COM-BNB",
+    "contract": "0x0DA3EB14c8d07a87A366D029d7f2341Ac0eca775",
+    "oracle": "lps",
+    "oracleId": "com-com-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-btd-busd",
+    "name": "Moo BoltDollar BTD-BUSD",
+    "contract": "0x0D3837E00C47353e68680C39e6DA6B5b08fE6897",
+    "oracle": "lps",
+    "oracleId": "cake-btd-busd",
     "tvl": 0
   },
   {
