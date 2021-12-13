@@ -243,24 +243,6 @@
     "chainId": 25
   },
   {
-    "name": "crona-usdt-matic",
-    "address": "0xeEaFF5116C09ECc20Ab72b53860A7ceAd97F0Ab4",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 25
-  },
-  {
-    "name": "crona-usdt-avax",
-    "address": "0xfb959572709ef7913B0669bF816736765ee6304f",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 25
-  },
-  {
     "name": "crona-usdt-ftm",
     "address": "0xC3c2c91C82d3472F3FA4Cd7Bf48005d0EE43A723",
     "interval": 1,
@@ -4734,6 +4716,24 @@
     "chainId": 1285
   },
   {
+    "name": "solarbeam-frax-rome",
+    "address": "0x225ed8407835285BAF4aD2788b828EFc56C54697",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "solarbeam-wmovr-mai",
+    "address": "0xE63a7Efe21aeE6c4e9225622db71aBccf303D426",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
     "name": "solarbeam-frax-wmovr-2",
     "address": "0xdc036Ab31d2f105E15c1896f88D13B7bcF3e9292",
     "interval": 1,
@@ -5268,6 +5268,42 @@
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-awool-wavax",
+    "address": "0x8326978b457Df83e1BE95597D0D756DC831F1aea",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-klo-wavax",
+    "address": "0x4ce28E6aA9bDa98AA64711000203c71CCC54Ecbc",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-craft-wavax",
+    "address": "0x653B205f0ceB4dF38DBFBfEAcaacC2003C553883",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-melt-wavax",
+    "address": "0xD0CbC822a186c8E9fe4E66dC140b061aF42ff306",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
