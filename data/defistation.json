@@ -8,11 +8,27 @@
     "tvl": 0
   },
   {
+    "id": "banana-banana-busd",
+    "name": "Moo Ape BANANA-BUSD",
+    "contract": "0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f",
+    "oracle": "lps",
+    "oracleId": "banana-banana-busd",
+    "tvl": 0
+  },
+  {
     "id": "ellipsis-renbtc",
     "name": "Moo Ellipsis renBTC",
     "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
     "oracle": "lps",
     "oracleId": "ellipsis-renbtc",
+    "tvl": 0
+  },
+  {
+    "id": "banana-crush-wbnb",
+    "name": "Moo Ape CRUSH-BNB",
+    "contract": "0x566b68521968569aC04873c4CCFfa45C8d653463",
+    "oracle": "lps",
+    "oracleId": "banana-crush-wbnb",
     "tvl": 0
   },
   {
@@ -541,22 +557,6 @@
     "contract": "0x7cBab71cB057b2167976546b6874ce0f0d09F7FA",
     "oracle": "lps",
     "oracleId": "auro-auro-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "elk-elk-bnb",
-    "name": "Moo Elk ELK-BNB",
-    "contract": "0x69B2f487B2eDD9E272211f7CD8f57C1cddE0764E",
-    "oracle": "lps",
-    "oracleId": "elk-elk-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "elk-elk-dai",
-    "name": "Moo Elk ELK-DAI",
-    "contract": "0x41a6CdA789316B2Fa5D824EF27E4223872E4cB34",
-    "oracle": "lps",
-    "oracleId": "elk-elk-dai",
     "tvl": 0
   },
   {
@@ -1880,14 +1880,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-banana-busd",
-    "name": "Moo Ape BANANA-BUSD",
-    "contract": "0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f",
-    "oracle": "lps",
-    "oracleId": "banana-banana-busd",
-    "tvl": 0
-  },
-  {
     "id": "salt-salt-busd",
     "name": "Moo Salt Salt-BUSD",
     "contract": "0x62ad4253FB38265Da05eb389ac547F1B2c09a689",
@@ -1989,6 +1981,22 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "elk-elk-bnb",
+    "name": "Moo Elk ELK-BNB",
+    "contract": "0x69B2f487B2eDD9E272211f7CD8f57C1cddE0764E",
+    "oracle": "lps",
+    "oracleId": "elk-elk-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "elk-elk-dai",
+    "name": "Moo Elk ELK-DAI",
+    "contract": "0x41a6CdA789316B2Fa5D824EF27E4223872E4cB34",
+    "oracle": "lps",
+    "oracleId": "elk-elk-dai",
     "tvl": 0
   },
   {
