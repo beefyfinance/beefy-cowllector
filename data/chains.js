@@ -148,7 +148,7 @@ const chains = {
     rewardPool: moonriver.platforms.beefyfinance.rewardPool,
     treasury: moonriver.platforms.beefyfinance.treasury,
     beefyFeeBatcher: moonriver.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 2,
+    beefyFeeHarvestInterval: 8,
     wnativeUnwrapInterval: 6,
     rpc: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
     appVaultsFilename: 'moonriver_pools.js',
