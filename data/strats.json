@@ -18,6 +18,15 @@
     "chainId": 25
   },
   {
+    "name": "vvs-tonic-usdc",
+    "address": "0x184DC721a1C1D594E17161Ff5310cF42025dA798",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
     "name": "liq-liq-cro",
     "address": "0x6677c03B2c7Da09dfbD869daeec3ccFd4eCC4B5F",
     "interval": 1,
@@ -2799,6 +2808,51 @@
     "chainId": 137
   },
   {
+    "name": "quick-tomb-mimatic",
+    "address": "0xb19482B4f628Fa1218a637232D91e761053eC70D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-hbar[0x]-mimatic",
+    "address": "0x8BCEff0f5143A04D85893433a04a8C94d6f2d8b6",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "quick-mimatic-clam",
+    "address": "0x17720F863DA01Bc9e266e4eE872E3c98fA1FeAA8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-bct-klima",
+    "address": "0x825B726fc5DEb89b42352458C28f9F2ce20AEc13",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-usdc-bct",
+    "address": "0x1F9871133c8E093e9e1E2815Ca76B75CC7bB8c11",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "sushi-eth-gohm",
     "address": "0xbD9238a23C7D88aaaF18a188191f57bB5D99AAfb",
     "interval": 1,
@@ -3845,6 +3899,15 @@
   {
     "name": "beets-guqin-qi-2",
     "address": "0xa623c28f64A429baE0426Aa8AEbE64d307A38cC0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "spirit-dai-usdc",
+    "address": "0xBDFeDfCCc2729C114fe7F3E97e18E173E3cb526F",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
