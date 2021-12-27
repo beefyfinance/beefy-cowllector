@@ -8,19 +8,19 @@
     "tvl": 0
   },
   {
+    "id": "baby-usdt-milk",
+    "name": "Moo Baby USDT-MILK",
+    "contract": "0xBBEfaf1f7585EDc59180fDdc5bAf46b8A5D7A206",
+    "oracle": "lps",
+    "oracleId": "baby-usdt-milk",
+    "tvl": 0
+  },
+  {
     "id": "banana-banana-busd",
     "name": "Moo Ape BANANA-BUSD",
     "contract": "0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f",
     "oracle": "lps",
     "oracleId": "banana-banana-busd",
-    "tvl": 0
-  },
-  {
-    "id": "ellipsis-renbtc",
-    "name": "Moo Ellipsis renBTC",
-    "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
-    "oracle": "lps",
-    "oracleId": "ellipsis-renbtc",
     "tvl": 0
   },
   {
@@ -61,6 +61,14 @@
     "contract": "0xDf988851e4CbA99565A9949706ff75Fd7f3b1b7A",
     "oracle": "lps",
     "oracleId": "charge-charge-busd",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-renbtc",
+    "name": "Moo Ellipsis renBTC",
+    "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
+    "oracle": "lps",
+    "oracleId": "ellipsis-renbtc",
     "tvl": 0
   },
   {
@@ -1040,14 +1048,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-typh-bnb",
-    "name": "Moo Ape TYPH-BNB",
-    "contract": "0xdAfE6095F8e2509CfF05E489eE971dB0EdED8d6f",
-    "oracle": "lps",
-    "oracleId": "banana-typh-bnb",
-    "tvl": 0
-  },
-  {
     "id": "tenfi-tenfi-bnb",
     "name": "Moo Ten TENFI-BNB",
     "contract": "0x0Ce6FeC7521b7d054b5B0a5F43D49120f9d6CFbc",
@@ -1920,14 +1920,6 @@
     "tvl": 0
   },
   {
-    "id": "cake-bts-busd",
-    "name": "Moo BoltDollar BTS-BUSD",
-    "contract": "0x6b40106ebEDaA719B14cfbA606b89954EaeeaE9D",
-    "oracle": "lps",
-    "oracleId": "cake-bts-busd",
-    "tvl": 0
-  },
-  {
     "id": "kebab-kebab-btc",
     "name": "Moo Kebab KEBAB-BTCB",
     "contract": "0x02a77B01BE5BB6a73b70E2b5615694F71a2c4F41",
@@ -1981,6 +1973,22 @@
     "contract": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
     "oracle": "lps",
     "oracleId": "narwhal-gold-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-typh-bnb",
+    "name": "Moo Ape TYPH-BNB",
+    "contract": "0xdAfE6095F8e2509CfF05E489eE971dB0EdED8d6f",
+    "oracle": "lps",
+    "oracleId": "banana-typh-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cake-bts-busd",
+    "name": "Moo BoltDollar BTS-BUSD",
+    "contract": "0x6b40106ebEDaA719B14cfbA606b89954EaeeaE9D",
+    "oracle": "lps",
+    "oracleId": "cake-bts-busd",
     "tvl": 0
   },
   {
