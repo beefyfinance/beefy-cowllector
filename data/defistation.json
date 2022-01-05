@@ -8,6 +8,14 @@
     "tvl": 0
   },
   {
+    "id": "baby-aot-usdt",
+    "name": "Moo Baby AOT-USDT",
+    "contract": "0xC9215F674876da17A671f22C2083E200eD78D0C8",
+    "oracle": "lps",
+    "oracleId": "baby-aot-usdt",
+    "tvl": 0
+  },
+  {
     "id": "baby-usdt-milk",
     "name": "Moo Baby USDT-MILK",
     "contract": "0xBBEfaf1f7585EDc59180fDdc5bAf46b8A5D7A206",
@@ -16,35 +24,11 @@
     "tvl": 0
   },
   {
-    "id": "banana-banana-busd",
-    "name": "Moo Ape BANANA-BUSD",
-    "contract": "0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f",
-    "oracle": "lps",
-    "oracleId": "banana-banana-busd",
-    "tvl": 0
-  },
-  {
-    "id": "banana-crush-wbnb",
-    "name": "Moo Ape CRUSH-BNB",
-    "contract": "0x566b68521968569aC04873c4CCFfa45C8d653463",
-    "oracle": "lps",
-    "oracleId": "banana-crush-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-nfty-wbnb",
     "name": "Moo Ape NFTY-BNB",
     "contract": "0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1",
     "oracle": "lps",
     "oracleId": "banana-nfty-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-bnb-stars",
-    "name": "Moo Ape BNB-STARS",
-    "contract": "0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e",
-    "oracle": "lps",
-    "oracleId": "banana-bnb-stars",
     "tvl": 0
   },
   {
@@ -69,6 +53,30 @@
     "contract": "0x24AE9e5424575690aCab61a384B6A76d69F4f89c",
     "oracle": "lps",
     "oracleId": "ellipsis-renbtc",
+    "tvl": 0
+  },
+  {
+    "id": "banana-banana-busd",
+    "name": "Moo Ape BANANA-BUSD",
+    "contract": "0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f",
+    "oracle": "lps",
+    "oracleId": "banana-banana-busd",
+    "tvl": 0
+  },
+  {
+    "id": "banana-crush-wbnb",
+    "name": "Moo Ape CRUSH-BNB",
+    "contract": "0x566b68521968569aC04873c4CCFfa45C8d653463",
+    "oracle": "lps",
+    "oracleId": "banana-crush-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-bnb-stars",
+    "name": "Moo Ape BNB-STARS",
+    "contract": "0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e",
+    "oracle": "lps",
+    "oracleId": "banana-bnb-stars",
     "tvl": 0
   },
   {

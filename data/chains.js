@@ -1,6 +1,6 @@
 const { addressBook } = require('blockchain-addressbook');
 
-const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos } =
+const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos, fuse } =
   addressBook;
 
 const chains = {
@@ -47,7 +47,7 @@ const chains = {
     rewardPool: avax.platforms.beefyfinance.rewardPool,
     treasury: avax.platforms.beefyfinance.treasury,
     beefyFeeBatcher: avax.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 8,
+    beefyFeeHarvestInterval: 12,
     wnativeUnwrapInterval: 8,
     rpc: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
     appVaultsFilename: 'avalanche_pools.js',
@@ -100,7 +100,7 @@ const chains = {
     beefyFeeBatcher: one.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
     wnativeUnwrapInterval: 4,
-    rpc: process.env.ONE_RPC || 'https://api.harmony.one',
+    rpc: process.env.ONE_RPC || 'https://api.s0.t.hmny.io/',
     appVaultsFilename: 'harmony_pools.js',
     multicall: one.platforms.beefyfinance.multicall,
     queryLimit: 500,
