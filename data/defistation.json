@@ -152,14 +152,6 @@
     "tvl": 0
   },
   {
-    "id": "alpaca-ibalpaca",
-    "name": "Moo ibAlpaca",
-    "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
-    "oracle": "lps",
-    "oracleId": "alpaca-ibalpaca",
-    "tvl": 0
-  },
-  {
     "id": "banana-oasis-wbnb",
     "name": "Moo Ape OASIS-BNB",
     "contract": "0xb69fE74aeD526BBEe0fc47db72Ced2BDBF9747CF",
@@ -685,14 +677,6 @@
     "contract": "0x6023C372e5feeD42664986094914f08bBBa49f36",
     "oracle": "lps",
     "oracleId": "banana-bhc-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-caps-bnb",
-    "name": "Moo Banana CAPS-BNB",
-    "contract": "0x9FF87464352156C7C9D700A40307121479A26754",
-    "oracle": "lps",
-    "oracleId": "banana-caps-bnb",
     "tvl": 0
   },
   {
@@ -1237,14 +1221,6 @@
     "contract": "0x0dd3afc66F1250eC402E703CA093EE17537478CB",
     "oracle": "lps",
     "oracleId": "banana-coti-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-etc-bnb",
-    "name": "Moo Ape ETC-BNB",
-    "contract": "0x3D64f2950412a7eed6B59704D18B07B3C22411F5",
-    "oracle": "lps",
-    "oracleId": "banana-etc-bnb",
     "tvl": 0
   },
   {
@@ -1997,6 +1973,30 @@
     "contract": "0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190",
     "oracle": "lps",
     "oracleId": "cakev2-xcv-busd",
+    "tvl": 0
+  },
+  {
+    "id": "alpaca-ibalpaca",
+    "name": "Moo ibAlpaca",
+    "contract": "0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36",
+    "oracle": "lps",
+    "oracleId": "alpaca-ibalpaca",
+    "tvl": 0
+  },
+  {
+    "id": "banana-caps-bnb",
+    "name": "Moo Banana CAPS-BNB",
+    "contract": "0x9FF87464352156C7C9D700A40307121479A26754",
+    "oracle": "lps",
+    "oracleId": "banana-caps-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-etc-bnb",
+    "name": "Moo Ape ETC-BNB",
+    "contract": "0x3D64f2950412a7eed6B59704D18B07B3C22411F5",
+    "oracle": "lps",
+    "oracleId": "banana-etc-bnb",
     "tvl": 0
   },
   {

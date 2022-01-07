@@ -9,6 +9,15 @@
     "chainId": 25
   },
   {
+    "name": "vvs-tonic-cro",
+    "address": "0x2a1EFA6150a2e270CFD4F04140943f7e7aBFc3f7",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 25
+  },
+  {
     "name": "vvs-cro-btc",
     "address": "0x3040387C46e21B453e4a8f648528368b9066628B",
     "interval": 1,
@@ -461,15 +470,6 @@
   {
     "name": "banana-banana-bnb",
     "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "alpaca-ibalpaca",
-    "address": "0x8F5555623C61d5adD046206007a42766C74086b6",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1064,15 +1064,6 @@
   {
     "name": "banana-bhc-bnb",
     "address": "0x921A885D9c7B3Ac3D8BC93f4D371A01e2f0be98E",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-caps-bnb",
-    "address": "0x5CE19115DA9Df4FA1c9271702cE0F918cC98b617",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -1685,15 +1676,6 @@
   {
     "name": "banana-coti-bnb",
     "address": "0x598618b12181D54BD71d12bB412fb82E54Ca674B",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "banana-etc-bnb",
-    "address": "0x13ca3AfcA271CFcb7D17860F21660992d75598C6",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3897,6 +3879,24 @@
     "chainId": 250
   },
   {
+    "name": "spartacadabra-lambda-crv",
+    "address": "0x350119De8e903d5667a702d9345fa7EEDCE67393",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "spartacadabra-charm-usdc",
+    "address": "0x1b59e6A4286E2ac2663459a7A641052B1A13FD2D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "beets-guqin-qi-2",
     "address": "0xa623c28f64A429baE0426Aa8AEbE64d307A38cC0",
     "interval": 1,
@@ -4457,15 +4457,6 @@
   {
     "name": "spirit-fusdt-ftm",
     "address": "0x883171A2DE2e70355017662cd06720946a7fF38D",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250
-  },
-  {
-    "name": "spirit-ftm-mim",
-    "address": "0xf06bD6C98963ACCc6C995e74644d8904ce1c4d11",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
