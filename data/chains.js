@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { addressBook } = require('blockchain-addressbook');
 
-const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos } =
+const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos, fuse } =
   addressBook;
 
 const chains = {
@@ -24,12 +24,6 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'http://bscscan.com',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://api.bscscan.com/api',
-        apikey: process.env.BSC_GAS_INFO_API_KEY,
-      },
       limit: 2e7,
       price: 5e9,
     },
@@ -52,12 +46,6 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'https://hecoinfo.com',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://api.hecoinfo.com/api',
-        apikey: process.env.HECO_GAS_INFO_API_KEY,
-      },
       limit: 30e6,
       price: 3e9,
     },
@@ -79,12 +67,6 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cchain.explorer.avax.network',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://api.snowtrace.io/api',
-        apikey: process.env.AVAX_GAS_INFO_API_KEY,
-      },
       limit: 1e6,
       price: 30e9,
     },
@@ -106,12 +88,6 @@ const chains = {
     blockTime: 2,
     blockExplorer: 'https://polygonscan.com',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://api.polygonscan.com/api',
-        apikey: process.env.POLYGON_GAS_INFO_API_KEY,
-      },
       limit: 2e6,
       price: 60e9,
     },
@@ -133,12 +109,6 @@ const chains = {
     blockTime: 10,
     blockExplorer: 'https://ftmscan.com',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://api.ftmscan.com/api',
-        apikey: process.env.FANTOM_GAS_INFO_API_KEY,
-      },
       limit: 3e5,
       price: null,
     },
@@ -160,12 +130,6 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'https://explorer.harmony.one/',
     gas: {
-      info: {
-        type: 'rpc', // { rest | rpc }
-        method: 'hmy_gasPrice',
-        url: 'https://api.harmony.one',
-        apikey: process.env.ONE_GAS_INFO_API_KEY,
-      },
       limit: 1e6,
       price: null,
     },
@@ -187,12 +151,6 @@ const chains = {
     blockTime: 2.8,
     blockExplorer: 'http://arbiscan.com',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://api.arbiscan.io/api',
-        apikey: process.env.ARBITRUM_GAS_INFO_API_KEY,
-      },
       limit: 30e6,
       price: 5e9,
     },
@@ -213,12 +171,6 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://explorer.celo.org/',
     gas: {
-      info: {
-        type: 'rpc', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://explorer.celo.org/api ',
-        apikey: process.env.CELO_GAS_INFO_API_KEY,
-      },
       limit: 5e6,
       price: 5e8,
     },
@@ -240,12 +192,6 @@ const chains = {
     blockTime: 15,
     blockExplorer: 'https://moonriver.moonscan.io/',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://api-moonriver.moonscan.io/api',
-        apikey: process.env.MOONRIVER_GAS_INFO_API_KEY,
-      },
       limit: 5e6,
       price: 1e9,
     },
@@ -267,45 +213,54 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cronos.crypto.org/explorer/',
     gas: {
-      info: {
-        type: 'rest', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://cronos.crypto.org/explorer/api',
-        apikey: process.env.CRONOS_GAS_INFO_API_KEY,
-      },
       limit: 1e6,
       price: 5e12,
     },
   },
-  1313161554: {
-    id: 'aurora',
-    chainId: 1313161554,
-    wnative: aurora.tokens.WNATIVE.address,
-    rewardPool: aurora.platforms.beefyfinance.rewardPool,
-    treasury: aurora.platforms.beefyfinance.treasury,
-    beefyFeeBatcher: aurora.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 2,
-    wnativeUnwrapInterval: 8,
-    rpc:
-      process.env.aurora_RPC ||
-      'https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek',
-    appVaultsFilename: 'aurora_pools.js',
-    multicall: aurora.platforms.beefyfinance.multicall,
+  122: {
+    id: 'fuse',
+    chainId: 122,
+    wnative: fuse.tokens.WNATIVE.address,
+    rewardPool: fuse.platforms.beefyfinance.rewardPool,
+    treasury: fuse.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: fuse.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 1,
+    wnativeUnwrapInterval: 6,
+    rpc: process.env.FUSE_RPC || 'https://rpc.fuse.io',
+    appVaultsFilename: 'fuse_pools.js',
+    multicall: fuse.platforms.beefyfinance.multicall,
     queryLimit: 1000,
     queryInterval: 100,
-    blockTime: 1,
-    blockExplorer: 'https://explorer.mainnet.aurora.dev/',
+    blockTime: 5,
+    blockExplorer: 'https://explorer.fuse.io/',
     gas: {
-      info: {
-        type: 'rpc', // { rest | rpc }
-        model: 'etherscan', // { etherscan | blockscout }
-        url: 'https://explorer.mainnet.aurora.dev/api',
-        apikey: process.env.AURORA_GAS_INFO_API_KEY,
-      },
       limit: 30e6,
       price: 1e9,
     },
   },
+  // 1313161554: {
+  //   id: 'aurora',
+  //   chainId: 1313161554,
+  //   wnative: aurora.tokens.WNATIVE.address,
+  //   rewardPool: aurora.platforms.beefyfinance.rewardPool,
+  //   treasury: aurora.platforms.beefyfinance.treasury,
+  //   beefyFeeBatcher: aurora.platforms.beefyfinance.beefyFeeRecipient,
+  //   beefyFeeHarvestInterval: 2,
+  //   wnativeUnwrapInterval: 8,
+  //   rpc:
+  //     process.env.aurora_RPC ||
+  //     'https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek',
+  //   appVaultsFilename: 'aurora_pools.js',
+  //   multicall: aurora.platforms.beefyfinance.multicall,
+  //   queryLimit: 1000,
+  //   queryInterval: 100,
+  //   blockTime: 1,
+  //   blockExplorer: 'https://explorer.mainnet.aurora.dev/',
+  // gas: {
+  //   limit: 30e6,
+  //   price: 1e9,
+  // },
+  // },
 };
 
 module.exports = chains;
