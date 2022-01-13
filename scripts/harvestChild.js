@@ -145,6 +145,29 @@ const shouldHarvest = async (strat, harvesterPK) => {
   }
 };
 
+const broadcastMessage = async ({
+  type = 'info',
+  title = 'this is a title',
+  message = 'this is a message',
+  platforms = ['discord'],
+}) => {
+  try {
+    let res = await axios.post(
+      // beefy-broadcast.herokuapp.com
+      `http://localhost:3000/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
+      {
+        type,
+        title,
+        message,
+        platforms,
+      }
+    );
+    return res;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   const trickyChains = [250, 137, 43114];
 
@@ -174,6 +197,13 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               for (const key of Object.keys(JSONRPC_ERRORS)) {
                 if (error.message.includes(key)) {
                   console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
+                  try {
+                    await broadcastMessage({
+                      type: 'error',
+                      title: `Error trying to harvest ${strat.name}`,
+                      message: `- error code: ${JSONRPC_ERRORS[key]}\n- address: ${strat.address}`,
+                    });
+                  } catch (e) {}
                   return {
                     contract: strat.address,
                     status: 'failed',
@@ -182,6 +212,13 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   };
                 }
               }
+              try {
+                await broadcastMessage({
+                  type: 'error',
+                  title: `Error trying to harvest ${strat.name}`,
+                  message: `- error code: unknown\n- address: ${strat.address}\n- tx hash: ${tx.hash}`,
+                });
+              } catch (e) {}
               return {
                 contract: strat.address,
                 status: 'failed',
@@ -290,11 +327,11 @@ const main = async () => {
             (total, h) => total + ethers.BigNumber.from(h.data.gasUsed) / 1e9,
             0
           ),
-          averageGasUsed: 0;
+          averageGasUsed: 0,
           totalHarvested: success.length,
           totalFailed: harvesteds.length - success.length,
         };
-        if(report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
+        if (report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
         report.cowllectorBalance = await harvesterPK.getBalance();
 
         let now = new Date().toISOString();
@@ -307,24 +344,20 @@ const main = async () => {
           };
           let uploaded = await fleekStorage.upload(input);
           try {
-            let res = await axios.post(
-              // beefy-broadcast.herokuapp.com
-              `http://localhost:3000/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
-              {
-                type: 'info',
-                title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-                message: `- Total strats to harvest: ${
-                  harvesteds.length
-                }\n- Total successfully harvested: ${
-                  report.totalHarvested
-                } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
-                  report.gasUsed
-                }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
-                  report.cowllectorBalance / 1e18
-                }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
-                platforms: ['discord'],
-              }
-            );
+            let broadcast = await broadcastMessage({
+              type: 'info',
+              title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
+              message: `- Total strats to harvest: ${
+                harvesteds.length
+              }\n- Total successfully harvested: ${
+                report.totalHarvested
+              } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
+                report.gasUsed
+              }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
+                report.cowllectorBalance / 1e18
+              }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
+              platforms: ['discord'],
+            });
           } catch (error) {
             console.error(error);
           }
