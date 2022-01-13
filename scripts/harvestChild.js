@@ -153,8 +153,7 @@ const broadcastMessage = async ({
 }) => {
   try {
     let res = await axios.post(
-      // beefy-broadcast.herokuapp.com
-      `http://localhost:3000/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
+      `https://beefy-broadcast.herokuapp.com/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
       {
         type,
         title,
