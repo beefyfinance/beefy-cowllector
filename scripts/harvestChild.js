@@ -2,12 +2,13 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const ethers = require('ethers');
+const { default: axios } = require('axios');
+const fleekStorage = require('@fleekhq/fleek-storage-js');
 const IStrategy = require('../abis/IStrategy.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
 const chains = require('../data/chains');
 let strats = require('../data/strats.json');
-const { default: Axios } = require('axios');
 const { addressBook } = require('blockchain-addressbook');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
@@ -167,6 +168,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 contract: strat.address,
                 status: 'success',
                 message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.hash}`,
+                data: receipt,
               };
             } catch (error) {
               for (const key of Object.keys(JSONRPC_ERRORS)) {
@@ -198,6 +200,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               contract: strat.address,
               status: 'success',
               message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.transactionHash}`,
+              data: tx,
             };
           }
         }
@@ -277,8 +280,63 @@ const main = async () => {
         }
         await unwrap(harvesterPK);
       }
-      console.log('Harvested report');
       console.table(harvesteds);
+
+      if (harvesteds.length) {
+        let success = harvesteds.filter(h => h.status === 'success');
+        let report = {
+          harvesteds,
+          gasUsed: success.reduce(
+            (total, h) => total + ethers.BigNumber.from(h.data.gasUsed) / 1e9,
+            0
+          ),
+          averageGasUsed: 0;
+          totalHarvested: success.length,
+          totalFailed: harvesteds.length - success.length,
+        };
+        if(report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
+        report.cowllectorBalance = await harvesterPK.getBalance();
+
+        let now = new Date().toISOString();
+        try {
+          let input = {
+            apiKey: process.env.FLEEK_STORAGE_API_KEY,
+            apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
+            key: `cowllector-reports/${CHAIN.id}-${now}.json`,
+            data: JSON.stringify(report),
+          };
+          let uploaded = await fleekStorage.upload(input);
+          try {
+            let res = await axios.post(
+              // beefy-broadcast.herokuapp.com
+              `http://localhost:3000/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
+              {
+                type: 'info',
+                title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
+                message: `- Total strats to harvest: ${
+                  harvesteds.length
+                }\n- Total successfully harvested: ${
+                  report.totalHarvested
+                } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
+                  report.gasUsed
+                }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
+                  report.cowllectorBalance / 1e18
+                }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
+                platforms: ['discord'],
+              }
+            );
+          } catch (error) {
+            console.error(error);
+          }
+          console.log(
+            `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
+              uploaded.hash
+            }`
+          );
+        } catch (error) {
+          console.log(error);
+        }
+      }
     } catch (error) {
       console.log(error);
     }
