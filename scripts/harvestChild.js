@@ -65,7 +65,7 @@ const getGasPrice = async provider => {
 
 const unwrap = async (harvesterPK, minBalance = 1e17) => {
   try {
-    if (!CHAIN.wnative) throw new Error('Not unwrappeable chain');
+    if (!CHAIN.wnative) return false;
 
     let wNative = new ethers.Contract(
       addressBook[CHAIN.id].tokens.WNATIVE.address,
@@ -73,7 +73,7 @@ const unwrap = async (harvesterPK, minBalance = 1e17) => {
       harvesterPK
     );
     let wNativeBalance = await wNative.balanceOf(harvesterPK.address);
-    if (wNativeBalance < minBalance) throw new Error('Not has the minimum to unwrap');
+    if (wNativeBalance < minBalance) return false;
     console.log(`unwrapping ${wNativeBalance / 1e18}`);
     let tx = await wNative.withdraw(wNativeBalance);
     tx = await tx.wait();
