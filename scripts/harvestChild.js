@@ -108,7 +108,13 @@ const addGasLimit = async (strats, provider) => {
   return strats;
 };
 
-const shouldHarvest = async strat => {
+/**
+ * Check if Strat should be harvest
+ * @description check if strats is in range of time that should be harvested and if harvest can be runned without problem
+ * @param {object} strat
+ * @returns strat
+ */
+const shouldHarvest = async (strat, harvesterPK) => {
   try {
     if (strat.lastHarvest !== 0) {
       let now = Math.floor(new Date().getTime() / 1000);
@@ -122,13 +128,12 @@ const shouldHarvest = async strat => {
       let isNewHarvestPeriod = await harvestHelpers.isNewHarvestPeriod(strat, harvesterPK);
       if (!isNewHarvestPeriod) throw new Error(`is not new harvest period`);
     }
-
     try {
-      let callStaticPassed = await stratContract.callStatic.harvest();
+      const contract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
+      let callStaticPassed = await contract.callStatic.harvest();
     } catch (error) {
       throw new Error(`Start did not passed callStatic => ${error}`);
     }
-
     return strat;
   } catch (error) {
     throw error;
