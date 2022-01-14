@@ -13,6 +13,7 @@ const chains = require('../data/chains');
 let strats = require('../data/strats.json');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
+const trickyChains = [250, 137, 43114];
 
 require('../utils/logger')(CHAIN_ID);
 
@@ -67,16 +68,16 @@ const unwrap = async (harvesterPK, minBalance = 1e17) => {
   try {
     if (!CHAIN.wnative) return false;
 
-    let wNative = new ethers.Contract(
-      addressBook[CHAIN.id].tokens.WNATIVE.address,
-      IWrappedNative,
-      harvesterPK
-    );
+    let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, harvesterPK);
     let wNativeBalance = await wNative.balanceOf(harvesterPK.address);
     if (wNativeBalance < minBalance) return false;
     console.log(`unwrapping ${wNativeBalance / 1e18}`);
-    let tx = await wNative.withdraw(wNativeBalance);
-    tx = await tx.wait();
+
+    let tx;
+    try {
+      tx = await wNative.withdraw(wNativeBalance);
+      if (!trickyChains.includes(CHAIN_ID)) tx = await tx.wait();
+    } catch (error) {}
   } catch (error) {
     console.log(error.message);
   }
@@ -163,8 +164,6 @@ const broadcastMessage = async ({
 };
 
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
-  const trickyChains = [250, 137, 43114];
-
   const tryTX = async (stratContract, max = 5) => {
     if (nonce) options.nonce = nonce;
     let tries = 0;
