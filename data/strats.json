@@ -3267,15 +3267,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-qi-eth",
-    "address": "0x528e01637aaE1c5CAa3c34b0295958Cc8f382C09",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "quick-mai-usdt",
     "address": "0xa69D35C1b1b66B6e977294C76542e2C86617Adb7",
     "interval": 6,
@@ -3953,6 +3944,87 @@
   {
     "name": "fantom-bifi-maxi",
     "address": "0x230691a28C8290A553BFBC911Ab2AbA0b2df152D",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "scream-ftm",
+    "address": "0x6d8CA0589702F30cED94C0D5c5d33b9e40D05C31",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "2omb-2omb-ftm",
+    "address": "0x3b5a1eAbDAeC99cb6abceB8740876D9dCAD048d5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "2omb-2share-ftm",
+    "address": "0xD586d0125590F3390Fde37DcD123f84913b20cC1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-kek-ftm",
+    "address": "0x5D2E7cF86b374506A9d65370F5f0D94271bb2979",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-steady-beets-2",
+    "address": "0x8a1F4b25556AB28FD0529A53Ed7b3f10caCB0b98",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-two-became-one",
+    "address": "0x0e71583dE953cd5cC627d0BEb1Bd7360DD47E675",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-dante-symphony",
+    "address": "0x53bCc69Ef22deA7c65af915D117586A2481adFa5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-ode-to-joy",
+    "address": "0x37020a164ebdc68D73abaAC98Fc12F5FB4C611c1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-wagmi-index",
+    "address": "0xF462051dA59cFbB3b55a5b3375002C85c20a8A22",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
