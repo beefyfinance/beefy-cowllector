@@ -108,7 +108,7 @@ const chains = {
     blockTime: 10,
     blockExplorer: 'https://ftmscan.com',
     gas: {
-      limit: 3e5,
+      limit: 3e6,
       price: null,
     },
   },
