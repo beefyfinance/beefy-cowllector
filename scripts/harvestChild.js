@@ -13,7 +13,7 @@ const chains = require('../data/chains');
 let strats = require('../data/strats.json');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
-const trickyChains = [250, 137, 43114];
+const TRICKY_CHAINS = [250, 137, 43114];
 
 require('../utils/logger')(CHAIN_ID);
 
@@ -64,7 +64,7 @@ const getGasPrice = async provider => {
   }
 };
 
-const unwrap = async (harvesterPK, minBalance = 1e17) => {
+const unwrap = async (harvesterPK, options, minBalance = 1e17) => {
   try {
     if (!CHAIN.wnative) return false;
 
@@ -75,8 +75,8 @@ const unwrap = async (harvesterPK, minBalance = 1e17) => {
 
     let tx;
     try {
-      tx = await wNative.withdraw(wNativeBalance);
-      if (!trickyChains.includes(CHAIN_ID)) tx = await tx.wait();
+      tx = await wNative.withdraw(wNativeBalance, options);
+      if (!TRICKY_CHAINS.includes(CHAIN_ID)) tx = await tx.wait();
     } catch (error) {}
   } catch (error) {
     console.log(error.message);
@@ -96,16 +96,10 @@ const addGasLimit = async (strats, provider) => {
     gasLimitWanted.map(strat => harvestHelpers.estimateGas(strat, CHAIN_ID, provider))
   );
   responses = responses.filter(s => s.status === 'fulfilled').map(s => s.value);
-  gasLimits.push(...responses);
-  fs.writeFileSync(
-    path.join(__dirname, '../data/gasLimits.json'),
-    JSON.stringify(gasLimits, null, 2)
-  );
+  filtered.push(...responses);
 
   // get strats with gaslimit
-  strats = gasLimits
-    .filter(s => s.chainId === CHAIN_ID)
-    .filter(g => strats.some(s => g.address === s.address));
+  strats = filtered.filter(g => strats.some(s => g.address === s.address));
   return strats;
 };
 
@@ -172,7 +166,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
       let tx;
       try {
         tx = await stratContract.harvest(options);
-        if (trickyChains.includes(CHAIN_ID)) {
+        if (TRICKY_CHAINS.includes(CHAIN_ID)) {
           let receipt = null;
           while (receipt === null) {
             try {
@@ -284,7 +278,7 @@ const main = async () => {
       let gasPrice = await getGasPrice(provider);
       console.log(`Gas Price: ${gasPrice}`);
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
-      let unwrapped = await unwrap(harvesterPK);
+      let unwrapped = await unwrap(harvesterPK, { gasPrice });
       let balance = await harvesterPK.getBalance();
 
       strats = await addGasLimit(strats, provider);
