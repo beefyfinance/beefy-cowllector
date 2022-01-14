@@ -247,7 +247,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     if (balance < options.gasPrice * options.gasLimit) {
       try {
         let res = await broadcastMessage({
-          type: 'error',
+          type: 'warning',
           title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
           message: `- Gas required **${((options.gasPrice * options.gasLimit) / 1e18).toFixed(
             4
