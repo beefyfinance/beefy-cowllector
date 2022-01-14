@@ -1,4 +1,6 @@
+const Web3 = require('web3');
 const ethers = require('ethers');
+const { MultiCall } = require('eth-multicall');
 const IStrategy = require('../abis/IStrategy.json');
 const chains = require('../data/chains.js');
 
@@ -36,6 +38,32 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   }
 
   return false;
+};
+
+/**
+ * Multicall contracts methods
+ * @description works with only view methods, function will return same array of contracts passed as first parameter with a extra prop with the results of method called
+ * @param {object} chain object, see chains.js
+ * @param {array} contracts
+ * @param {string} method method to call
+ * @param {json} ABI Aplication Binary Interface
+ * @returns {array } contacts
+ */
+const multicall = async (chain, contracts, method = 'balanceOf', ABI = IStrategy) => {
+  const web3 = new Web3(chain.rpc);
+  const multicall = new MultiCall(web3, chain.multicall);
+
+  const calls = contracts.map(c => {
+    const contract = new web3.eth.Contract(ABI, c.address);
+    return {
+      [method]: contract.methods[method](),
+    };
+  });
+  const [callResults] = await multicall.all([calls]);
+  for (let i = 0; i < contracts.length; i++) {
+    contracts[i][method] = callResults[i][method] || 0;
+  }
+  return contracts;
 };
 
 const hasStakers = async strategy => {
@@ -125,6 +153,7 @@ const estimateGas = async (strat, chainId, provider, topic = null) => {
 };
 
 module.exports = {
+  multicall,
   isNewHarvestPeriod,
   isNewPeriodNaive,
   hasStakers,

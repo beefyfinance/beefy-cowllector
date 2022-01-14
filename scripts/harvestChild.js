@@ -4,12 +4,13 @@ const path = require('path');
 const ethers = require('ethers');
 const { default: axios } = require('axios');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
+const { addressBook } = require('blockchain-addressbook');
+
 const IStrategy = require('../abis/IStrategy.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
 const chains = require('../data/chains');
 let strats = require('../data/strats.json');
-const { addressBook } = require('blockchain-addressbook');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
 
@@ -63,10 +64,8 @@ const getGasPrice = async provider => {
 };
 
 const unwrap = async (harvesterPK, minBalance = 1e17) => {
-  const NOT_UNWRAPPEABLES = ['celo'];
-
   try {
-    if (NOT_UNWRAPPEABLES.includes(CHAIN.id)) throw new Error('Not unwrappeable chain');
+    if (!CHAIN.wnative) throw new Error('Not unwrappeable chain');
 
     let wNative = new ethers.Contract(
       addressBook[CHAIN.id].tokens.WNATIVE.address,
@@ -109,20 +108,11 @@ const addGasLimit = async (strats, provider) => {
   return strats;
 };
 
-const shouldHarvest = async (strat, harvesterPK) => {
+const shouldHarvest = async strat => {
   try {
-    if (strat.depositsPaused) throw new Error(`deposits paused`);
-    if (strat.harvestPaused) throw new Error(`harvest paused`);
-    const stratContract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
-    let hasStakers = await harvestHelpers.hasStakers(stratContract);
-    if (!hasStakers) throw new Error(`has not stakers`);
-    let lastHarvest = 0;
-    try {
-      lastHarvest = await stratContract.lastHarvest();
-    } catch (err) {}
-    if (lastHarvest !== 0) {
+    if (strat.lastHarvest !== 0) {
       let now = Math.floor(new Date().getTime() / 1000);
-      let secondsSinceHarvest = now - lastHarvest;
+      let secondsSinceHarvest = now - strat.lastHarvest;
       if (!(secondsSinceHarvest >= strat.interval * 3600))
         throw new Error(`lower than the interval`);
     } else if (strat.noHarvestEvent) {
@@ -197,7 +187,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 if (error.message.includes(key)) {
                   console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
                   try {
-                    await broadcastMessage({
+                    let res = await broadcastMessage({
                       type: 'error',
                       title: `Error trying to harvest ${strat.name}`,
                       message: `- error code: ${JSONRPC_ERRORS[key]}\n- address: ${strat.address}`,
@@ -212,7 +202,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 }
               }
               try {
-                await broadcastMessage({
+                let res = await broadcastMessage({
                   type: 'error',
                   title: `Error trying to harvest ${strat.name}`,
                   message: `- error code: unknown\n- address: ${strat.address}\n- tx hash: ${tx.hash}`,
@@ -292,10 +282,16 @@ const main = async () => {
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
       let unwrapped = await unwrap(harvesterPK);
       let balance = await harvesterPK.getBalance();
+
       strats = await addGasLimit(strats, provider);
+      strats = strats.filter(s => s.depositsPaused === false || s.harvestPaused === false);
+      strats = await harvestHelpers.multicall(CHAIN, strats, 'balanceOf');
+      strats = strats.filter(s => s.balanceOf > 0);
+      strats = await harvestHelpers.multicall(CHAIN, strats, 'lastHarvest');
       strats = await Promise.allSettled(strats.map(strat => shouldHarvest(strat, harvesterPK)));
       strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
-      console.log(`To Harvest`);
+
+      console.log(`${strats.length} strats to harvest`);
       console.table(strats);
       let totalGas = strats.reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
       console.log(
