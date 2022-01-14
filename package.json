@@ -9,7 +9,7 @@
     "lost": "node ./scripts/lostDefistation.js",
     "sync": "node ./scripts/updateStrats.js",
     "updateGasLimit": "node ./scripts/updateGasLimits.js",
-    "harvest": "node ./scripts/harvest.js",
+    "harvest": "node ./scheduler/harvest.js",
     "empty": "node ./scripts/emptyVaults.js",
     "exec:batch": "node ./scripts/timelock/runExecuteBatch.js"
   },
