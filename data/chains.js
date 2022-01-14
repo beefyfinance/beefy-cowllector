@@ -88,7 +88,7 @@ const chains = {
     blockExplorer: 'https://polygonscan.com',
     gas: {
       limit: 2e6,
-      price: 60e9,
+      price: 30e9,
     },
   },
   250: {
