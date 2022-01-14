@@ -1,11 +1,7 @@
 require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
 const ethers = require('ethers');
 const { default: axios } = require('axios');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
-const { addressBook } = require('blockchain-addressbook');
-
 const IStrategy = require('../abis/IStrategy.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
@@ -143,7 +139,7 @@ const broadcastMessage = async ({
 }) => {
   try {
     let res = await axios.post(
-      `https://beefy-broadcast.herokuapp.com/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
+      `https://$beefy-broadcast.herokuapp.com/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
       {
         type,
         title,
@@ -248,12 +244,26 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   try {
     // check if have minimum for gas harvest ( balance > gasPrice * gasLimit)
     let balance = await harvesterPK.getBalance();
-    if (balance < options.gasPrice * options.gasLimit)
+    if (balance < options.gasPrice * options.gasLimit) {
+      try {
+        let res = await broadcastMessage({
+          type: 'error',
+          title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
+          message: `- Gas required **${((options.gasPrice * options.gasLimit) / 1e18).toFixed(
+            4
+          )}** and Cowllector has **${(balance / 1e18).toFixed(4)}** \n- Contract Address: ${
+            strat.address
+          } \n- Please feed me with more coins 🪙 🐮 \n`,
+        });
+      } catch (e) {
+        console.log(e);
+      }
       throw new Error(
         `${strat.name}: INSUFFICIENT_FUNDS - gas required ${
           (options.gasPrice * options.gasLimit) / 1e18
         } and you has ${balance / 1e18}`
       );
+    }
 
     const stratContract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
     let tx = await tryTX(stratContract);
