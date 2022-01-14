@@ -1,6 +1,7 @@
+const Web3 = require('web3');
 const ethers = require('ethers');
+const { MultiCall } = require('eth-multicall');
 const IStrategy = require('../abis/IStrategy.json');
-const axios = require('axios');
 const chains = require('../data/chains.js');
 
 const between = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -39,15 +40,124 @@ const isNewHarvestPeriod = async (strat, harvester) => {
   return false;
 };
 
+/**
+ * Multicall contracts methods
+ * @description works with only view methods, function will return same array of contracts passed as first parameter with a extra prop with the results of method called
+ * @param {object} chain object, see chains.js
+ * @param {array} contracts
+ * @param {string} method method to call
+ * @param {json} ABI Aplication Binary Interface
+ * @returns {array } contacts
+ */
+const multicall = async (chain, contracts, method = 'balanceOf', ABI = IStrategy) => {
+  const web3 = new Web3(chain.rpc);
+  const multicall = new MultiCall(web3, chain.multicall);
+
+  const calls = contracts.map(c => {
+    const contract = new web3.eth.Contract(ABI, c.address);
+    return {
+      [method]: contract.methods[method](),
+    };
+  });
+  const [callResults] = await multicall.all([calls]);
+  for (let i = 0; i < contracts.length; i++) {
+    contracts[i][method] = callResults[i][method] || 0;
+  }
+  return contracts;
+};
+
 const hasStakers = async strategy => {
   const balance = await strategy.balanceOf();
   return balance.gt(0) ? true : false;
 };
 
+/**
+ * Estimate Gas Limit
+ * @description This function returns gasLimit with higher of this three strategies
+ * 1. Get Average of gas used on the last 10.000 blocks
+ * 2. Estimate gas using eth_estimateGas jsonrpc method
+ * 3. Set default gasLimit preset on every chain in chains.js
+ * @param {object} strat - Object with strat key struct - see strats.json
+ * @param {number} chainId - Chain Id - see chains.js
+ * @param {object} provider - Ethers Provider Instance
+ * @param {string} [topic='StratHarvest(address)'] - Log Event topic to estimate gas average - default is 'StratHarvest(address)'
+ * @returns strat with gasLimit key inside
+ */
+const estimateGas = async (strat, chainId, provider, topic = null) => {
+  topic = topic || ethers.utils.id('StratHarvest(address)'); // 0x577a37fdb49a88d66684922c6f913df5239b4f214b2b97c53ef8e3bbb2034cb5
+
+  strat.gasLimit = 0;
+  strat.gasLimitStrategy = "average of last tx's logs";
+
+  // Estimate Gas using gas used in logs
+  try {
+    let filter = {
+      address: strat.address,
+      toBlock: 'latest',
+      fromBlock: -1e5,
+      topics: [topic],
+    };
+    let logs = await provider.getLogs(filter);
+    if (logs.length) {
+      let responses = await Promise.allSettled(
+        logs.map(log => provider.getTransaction(log.transactionHash))
+      );
+
+      let txs = responses.filter(res => res.status === 'fulfilled');
+      if (txs.length === 0) throw new Error('no txs to get average of gas');
+
+      let gasLimitWithLog = txs.reduce((reduce, tx) => {
+        let gas = Number(tx.value.limit);
+        if (!Number.isNaN(gas)) return reduce + gas;
+      }, 0);
+      gasLimitWithLog = parseInt(gasLimitWithLog / txs.length);
+      if (Number.isNaN(gasLimitWithLog)) throw new Error('no txs to get average of gas');
+
+      strat.gasLimit = parseInt((gasLimitWithLog * 130) / 100); // Add a 30% of estimated gas
+      strat.gasLimitStrategy = "average of last tx's logs";
+    }
+  } catch (error) {
+    // console.error(error);
+  }
+
+  // Estimage Gas using eth_estimateGas
+  try {
+    let limit = await provider.estimateGas({
+      to: strat.address,
+      data: strat.harvestSignature,
+    });
+    let gasLimitWithEstimateGas = parseInt((limit * 130) / 100); // Add a 30% of estimated gas
+    if (gasLimitWithEstimateGas > strat.gasLimit) {
+      strat.gasLimit = gasLimitWithEstimateGas;
+      strat.gasLimitStrategy = 'eth_estimateGas';
+    }
+  } catch (error) {
+    // console.error(error);
+  }
+
+  try {
+    // Estimage Gas setting chain default gas
+    if (chains[chainId] && chains[chainId].gas && chains[chainId].gas.limit) {
+      let gasLimitDefaultConfig = parseInt(chains[chainId].gas.limit);
+      if (gasLimitDefaultConfig > strat.gasLimit) {
+        strat.gasLimit = gasLimitDefaultConfig;
+        strat.gasLimitStrategy = 'default chain config';
+      }
+    }
+  } catch (error) {
+    // console.error(error)
+  }
+  if (strat.gasLimit) return strat;
+
+  throw new Error(`Cannot estimate gas of contract ${strat.address}`);
+};
+
 module.exports = {
+  multicall,
   isNewHarvestPeriod,
   isNewPeriodNaive,
   hasStakers,
   sleep,
   between,
+  estimateGas,
 };

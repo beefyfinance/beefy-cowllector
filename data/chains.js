@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { addressBook } = require('blockchain-addressbook');
 
 const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos, fuse } =
@@ -14,7 +15,7 @@ const chains = {
     beefyFeeBatcher: bsc.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 4,
     wnativeUnwrapInterval: 8,
-    rpc: process.env.BSC_RPC || 'https://bsc-dataseed.binance.org/',
+    rpc: process.env.BSC_RPC || 'https://bsc-dataseed2.defibit.io/',
     appVaultsFilename: 'bsc_pools.js',
     multicall: bsc.platforms.beefyfinance.multicall,
     queryLimit: 1000,
@@ -22,6 +23,10 @@ const chains = {
     firstRewardBlock: 1457038,
     blockTime: 3,
     blockExplorer: 'http://bscscan.com',
+    gas: {
+      limit: 2e7,
+      price: 5e9,
+    },
   },
   128: {
     id: 'heco',
@@ -39,6 +44,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 3,
     blockExplorer: 'https://hecoinfo.com',
+    gas: {
+      limit: 30e6,
+      price: 3e9,
+    },
   },
   43114: {
     id: 'avax',
@@ -47,7 +56,7 @@ const chains = {
     rewardPool: avax.platforms.beefyfinance.rewardPool,
     treasury: avax.platforms.beefyfinance.treasury,
     beefyFeeBatcher: avax.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 12,
+    beefyFeeHarvestInterval: 8,
     wnativeUnwrapInterval: 8,
     rpc: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
     appVaultsFilename: 'avalanche_pools.js',
@@ -56,6 +65,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 5,
     blockExplorer: 'https://cchain.explorer.avax.network',
+    gas: {
+      limit: 1e6,
+      price: 30e9,
+    },
   },
   137: {
     id: 'polygon',
@@ -73,6 +86,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 2,
     blockExplorer: 'https://polygonscan.com',
+    gas: {
+      limit: 2e6,
+      price: 60e9,
+    },
   },
   250: {
     id: 'fantom',
@@ -90,6 +107,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 10,
     blockExplorer: 'https://ftmscan.com',
+    gas: {
+      limit: 3e6,
+      price: null,
+    },
   },
   1666600000: {
     id: 'one',
@@ -107,6 +128,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 3,
     blockExplorer: 'https://explorer.harmony.one/',
+    gas: {
+      limit: 1e6,
+      price: null,
+    },
   },
   42161: {
     id: 'arbitrum',
@@ -124,6 +149,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 2.8,
     blockExplorer: 'http://arbiscan.com',
+    gas: {
+      limit: 30e6,
+      price: 5e9,
+    },
   },
   42220: {
     id: 'celo',
@@ -140,6 +169,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 5,
     blockExplorer: 'https://explorer.celo.org/',
+    gas: {
+      limit: 5e6,
+      price: 5e8,
+    },
   },
   1285: {
     id: 'moonriver',
@@ -148,7 +181,7 @@ const chains = {
     rewardPool: moonriver.platforms.beefyfinance.rewardPool,
     treasury: moonriver.platforms.beefyfinance.treasury,
     beefyFeeBatcher: moonriver.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 8,
+    beefyFeeHarvestInterval: 2,
     wnativeUnwrapInterval: 6,
     rpc: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
     appVaultsFilename: 'moonriver_pools.js',
@@ -157,6 +190,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 15,
     blockExplorer: 'https://moonriver.moonscan.io/',
+    gas: {
+      limit: 5e6,
+      price: 1e9,
+    },
   },
   25: {
     id: 'cronos',
@@ -174,6 +211,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 5,
     blockExplorer: 'https://cronos.crypto.org/explorer/',
+    gas: {
+      limit: 1e6,
+      price: 5e12,
+    },
   },
   122: {
     id: 'fuse',
@@ -191,6 +232,10 @@ const chains = {
     queryInterval: 100,
     blockTime: 5,
     blockExplorer: 'https://explorer.fuse.io/',
+    gas: {
+      limit: 30e6,
+      price: 1e9,
+    },
   },
   // 1313161554: {
   //   id: 'aurora',
@@ -210,6 +255,10 @@ const chains = {
   //   queryInterval: 100,
   //   blockTime: 1,
   //   blockExplorer: 'https://explorer.mainnet.aurora.dev/',
+  // gas: {
+  //   limit: 30e6,
+  //   price: 1e9,
+  // },
   // },
 };
 

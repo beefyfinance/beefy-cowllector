@@ -57,7 +57,7 @@ const updateDefistation = async () => {
       },
     })
     .then(res => {
-      console.log(res.data);
+      console.table(res.data.data);
     })
     .catch(error => {
       console.error(error);
