@@ -20,7 +20,9 @@ const main = async () => {
     if (Object.hasOwnProperty.call(chains, CHAIN_ID)) {
       const CHAIN = chains[CHAIN_ID];
       console.log(
-        `Adding Gas Limit for strats on ${CHAIN.id} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${CHAIN.blockExplorer}]`
+        `Adding Gas Limit for strats on ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${
+          CHAIN.rpc
+        }] [explorer=${CHAIN.blockExplorer}]`
       );
       const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
 
@@ -33,6 +35,7 @@ const main = async () => {
       console.table(added);
     }
   }
+  fs.writeFileSync(path.join(__dirname, '../data/gasLimits.json'), '');
   fs.writeFileSync(
     path.join(__dirname, '../data/gasLimits.json'),
     JSON.stringify(gasLimits, null, 2)
