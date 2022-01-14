@@ -24,8 +24,8 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'http://bscscan.com',
     gas: {
-      limit: 2e7,
-      price: 5e9,
+      limit: Number(process.env.BSC_GAS_LIMIT) || 2e7,
+      price: Number(process.env.BSC_GAS_PRICE) || 5e9,
     },
   },
   128: {
@@ -45,8 +45,8 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'https://hecoinfo.com',
     gas: {
-      limit: 30e6,
-      price: 3e9,
+      limit: Number(process.env.HECO_GAS_LIMIT) || 30e6,
+      price: Number(process.env.HECO_GAS_PRICE) || 3e9,
     },
   },
   43114: {
@@ -66,8 +66,8 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cchain.explorer.avax.network',
     gas: {
-      limit: 1e6,
-      price: 30e9,
+      limit: Number(process.env.AVAX_GAS_LIMIT) || 1e6,
+      price: Number(process.env.AVAX_GAS_PRICE) || 30e9,
     },
   },
   137: {
@@ -87,8 +87,8 @@ const chains = {
     blockTime: 2,
     blockExplorer: 'https://polygonscan.com',
     gas: {
-      limit: 2e6,
-      price: 30e9,
+      limit: Number(process.env.POLYGON_GAS_LIMIT) || 2e6,
+      price: Number(process.env.POLYGON_GAS_PRICE) || 40e9,
     },
   },
   250: {
@@ -108,8 +108,8 @@ const chains = {
     blockTime: 10,
     blockExplorer: 'https://ftmscan.com',
     gas: {
-      limit: 3e6,
-      price: null,
+      limit: Number(process.env.FANTOM_GAS_LIMIT) || 3e6,
+      price: Number(process.env.FANTOM_GAS_PRICE) || null,
     },
   },
   1666600000: {
@@ -129,8 +129,8 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'https://explorer.harmony.one/',
     gas: {
-      limit: 1e6,
-      price: null,
+      limit: Number(process.env.ONE_GAS_LIMIT) || 1e6,
+      price: Number(process.env.ONE_GAS_PRICE) || null,
     },
   },
   42161: {
@@ -150,8 +150,8 @@ const chains = {
     blockTime: 2.8,
     blockExplorer: 'http://arbiscan.com',
     gas: {
-      limit: 30e6,
-      price: 5e9,
+      limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 30e6,
+      price: Number(process.env.ARBITRUM_GAS_PRICE) || 5e9,
     },
   },
   42220: {
@@ -170,8 +170,8 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://explorer.celo.org/',
     gas: {
-      limit: 5e6,
-      price: 5e8,
+      limit: Number(process.env.CELO_GAS_LIMIT) || 5e6,
+      price: Number(process.env.CELO_GAS_PRICE) || 5e8,
     },
   },
   1285: {
@@ -191,8 +191,8 @@ const chains = {
     blockTime: 15,
     blockExplorer: 'https://moonriver.moonscan.io/',
     gas: {
-      limit: 5e6,
-      price: 1e9,
+      limit: Number(process.env.MOONRIVER_GAS_LIMIT) || 5e6,
+      price: Number(process.env.MOONRIVER_GAS_PRICE) || 1e9,
     },
   },
   25: {
@@ -212,8 +212,8 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cronos.crypto.org/explorer/',
     gas: {
-      limit: 1e6,
-      price: 5e12,
+      limit: Number(process.env.CRONOS_GAS_LIMIT) || 1e6,
+      price: Number(process.env.CRONOS_GAS_PRICE) || 5e12,
     },
   },
   122: {
@@ -233,8 +233,8 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://explorer.fuse.io/',
     gas: {
-      limit: 30e6,
-      price: 1e9,
+      limit: Number(process.env.FUSE_GAS_LIMIT) || 30e6,
+      price: Number(process.env.FUSE_GAS_PRICE) || 1e9,
     },
   },
   // 1313161554: {
@@ -256,8 +256,8 @@ const chains = {
   //   blockTime: 1,
   //   blockExplorer: 'https://explorer.mainnet.aurora.dev/',
   // gas: {
-  //   limit: 30e6,
-  //   price: 1e9,
+  //   limit: Number(process.env.AURORA_GAS_LIMIT) || 30e6,
+  //   price: Number(process.env.AURORA_GAS_PRICE) || 1e9,
   // },
   // },
 };
