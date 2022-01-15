@@ -285,6 +285,20 @@ const main = async () => {
     );
     try {
       const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
+      // patch for CELO chain
+      if (CHAIN.id === 'celo') {
+        const originalBlockFormatter = provider.formatter._block;
+        provider.formatter._block = (value, format) => {
+          return originalBlockFormatter(
+            {
+              gasLimit: ethers.BigNumber.from(0),
+              ...value,
+            },
+            format
+          );
+        };
+      }
+
       let gasPrice = await getGasPrice(provider);
       console.log(`Gas Price: ${gasPrice}`);
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
