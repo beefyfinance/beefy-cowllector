@@ -9,7 +9,7 @@ const chains = require('../data/chains');
 let strats = require('../data/strats.json');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
-const TRICKY_CHAINS = [250, 137, 43114];
+const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
 
 require('../utils/logger')(CHAIN_ID);
 
@@ -72,7 +72,7 @@ const unwrap = async (harvesterPK, options, minBalance = 1e17) => {
     let tx;
     try {
       tx = await wNative.withdraw(wNativeBalance, options);
-      if (!TRICKY_CHAINS.includes(CHAIN_ID)) tx = await tx.wait();
+      if (!TRICKY_CHAINS.includes(CHAIN.id)) tx = await tx.wait();
     } catch (error) {}
   } catch (error) {
     console.log(error.message);
@@ -162,7 +162,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
       let tx;
       try {
         tx = await stratContract.harvest(options);
-        if (TRICKY_CHAINS.includes(CHAIN_ID)) {
+        if (TRICKY_CHAINS.includes(CHAIN.id)) {
           let receipt = null;
           while (receipt === null) {
             try {
