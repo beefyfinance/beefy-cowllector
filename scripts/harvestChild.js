@@ -280,9 +280,27 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 
 const main = async () => {
   if (CHAIN && CHAIN.id) {
+    /**
+     * Check hour interval if harvest_child should run for this chain
+     * @dev on file data/chain.js you can find, for every chain, a prop harvestHourInterval that explain when hourly harvest should be run for it
+     */
+    let hour = new Date().getUTCHours();
+    if (hour === 0) hour++;
+    if (hour % CHAIN.harvestHourInterval) {
+      console.log(
+        `Is not Harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
+          CHAIN.harvestHourInterval
+        }]`
+      );
+      return false;
+    }
+
     console.log(
-      `Starting Harvester on ${CHAIN.id} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${CHAIN.blockExplorer}]`
+      `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
+        CHAIN.blockExplorer
+      }] [hour_interval=${CHAIN.harvestHourInterval}]`
     );
+
     try {
       const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
       // patch for CELO chain
