@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { addressBook } = require('blockchain-addressbook');
 
-const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos, fuse } =
+const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos, fuse, metis } =
   addressBook;
 
 const chains = {
@@ -246,6 +246,28 @@ const chains = {
     gas: {
       limit: Number(process.env.FUSE_GAS_LIMIT) || 30e6,
       price: Number(process.env.FUSE_GAS_PRICE) || 1e9,
+    },
+  },
+  1088: {
+    id: 'metis',
+    chainId: 1088,
+    wnative: metis.tokens.WNATIVE.address,
+    rewardPool: metis.platforms.beefyfinance.rewardPool,
+    treasury: metis.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: metis.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 4,
+    harvestHourInterval: parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL) || 1,
+    wnativeUnwrapInterval: 6,
+    rpc: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
+    appVaultsFilename: 'metis_pools.js',
+    multicall: metis.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 1,
+    blockExplorer: 'https://andromeda-explorer.metis.io/',
+    gas: {
+      limit: Number(process.env.METIS_GAS_LIMIT) || 30e6,
+      price: Number(process.env.METIS_GAS_PRICE) || 30e9,
     },
   },
   // 1313161554: {
