@@ -377,7 +377,7 @@ const main = async () => {
         };
         if (report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
         report.cowllectorBalance = await harvesterPK.getBalance();
-        report.profit = report.cowllectorBalance - balance;
+        report.profit = (report.cowllectorBalance - balance) / 1e18;
 
         let now = new Date().toISOString();
         try {
