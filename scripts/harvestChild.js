@@ -60,19 +60,29 @@ const getGasPrice = async provider => {
   }
 };
 
-const unwrap = async (harvesterPK, options, minBalance = 1e17) => {
+const unwrap = async (harvesterPK, provider, options, minBalance = 1e17) => {
   try {
     if (!CHAIN.wnative) return false;
-
     let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, harvesterPK);
     let wNativeBalance = await wNative.balanceOf(harvesterPK.address);
     if (wNativeBalance < minBalance) return false;
-    console.log(`unwrapping ${wNativeBalance / 1e18}`);
-
     let tx;
     try {
       tx = await wNative.withdraw(wNativeBalance, options);
-      if (!TRICKY_CHAINS.includes(CHAIN.id)) tx = await tx.wait();
+      if (TRICKY_CHAINS.includes(CHAIN.id)) {
+        let receipt = null;
+        while (receipt === null) {
+          try {
+            await harvestHelpers.sleep(500);
+            receipt = await provider.getTransactionReceipt(tx.hash);
+            if (receipt === null) continue;
+            console.log(`unwrapped ${wNativeBalance / 1e18}`);
+          } catch (error) {}
+        }
+      } else {
+        tx = await tx.wait();
+        console.log(`unwrapped ${wNativeBalance / 1e18}`);
+      }
     } catch (error) {}
   } catch (error) {
     console.log(error.message);
@@ -319,7 +329,7 @@ const main = async () => {
       let gasPrice = await getGasPrice(provider);
       console.log(`Gas Price: ${gasPrice}`);
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
-      let unwrapped = await unwrap(harvesterPK, { gasPrice });
+      let unwrapped = await unwrap(harvesterPK, provider, { gasPrice });
       let balance = await harvesterPK.getBalance();
 
       strats = await addGasLimit(strats, provider);
@@ -349,7 +359,7 @@ const main = async () => {
         } catch (error) {
           console.log(error.message);
         }
-        await unwrap(harvesterPK);
+        await unwrap(harvesterPK, provider, { gasPrice });
       }
       console.table(harvesteds);
 
@@ -369,40 +379,40 @@ const main = async () => {
         report.cowllectorBalance = await harvesterPK.getBalance();
 
         let now = new Date().toISOString();
-        try {
-          let input = {
-            apiKey: process.env.FLEEK_STORAGE_API_KEY,
-            apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
-            key: `cowllector-reports/${CHAIN.id}-${now}.json`,
-            data: JSON.stringify(report),
-          };
-          let uploaded = await fleekStorage.upload(input);
-          try {
-            let broadcast = await broadcastMessage({
-              type: 'info',
-              title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-              message: `- Total strats to harvest: ${
-                harvesteds.length
-              }\n- Total successfully harvested: ${
-                report.totalHarvested
-              } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
-                report.gasUsed
-              }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
-                report.cowllectorBalance / 1e18
-              }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
-              platforms: ['discord'],
-            });
-          } catch (error) {
-            console.error(error);
-          }
-          console.log(
-            `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
-              uploaded.hash
-            }`
-          );
-        } catch (error) {
-          console.log(error);
-        }
+        // try {
+        //   let input = {
+        //     apiKey: process.env.FLEEK_STORAGE_API_KEY,
+        //     apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
+        //     key: `cowllector-reports/${CHAIN.id}-${now}.json`,
+        //     data: JSON.stringify(report),
+        //   };
+        //   let uploaded = await fleekStorage.upload(input);
+        //   try {
+        //     let broadcast = await broadcastMessage({
+        //       type: 'info',
+        //       title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
+        //       message: `- Total strats to harvest: ${
+        //         harvesteds.length
+        //       }\n- Total successfully harvested: ${
+        //         report.totalHarvested
+        //       } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
+        //         report.gasUsed
+        //       }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
+        //         report.cowllectorBalance / 1e18
+        //       }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
+        //       platforms: ['discord'],
+        //     });
+        //   } catch (error) {
+        //     console.error(error);
+        //   }
+        //   console.log(
+        //     `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
+        //       uploaded.hash
+        //     }`
+        //   );
+        // } catch (error) {
+        //   console.log(error);
+        // }
       }
     } catch (error) {
       console.log(error);
