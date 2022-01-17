@@ -1,10 +1,10 @@
 require('dotenv').config();
 const ethers = require('ethers');
-const { default: axios } = require('axios');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
 const IStrategy = require('../abis/IStrategy.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
+const broadcast = require('../utils/broadcast');
 const chains = require('../data/chains');
 let strats = require('../data/strats.json');
 const CHAIN_ID = parseInt(process.argv[2]);
@@ -143,28 +143,6 @@ const shouldHarvest = async (strat, harvesterPK) => {
   }
 };
 
-const broadcastMessage = async ({
-  type = 'info',
-  title = 'this is a title',
-  message = 'this is a message',
-  platforms = ['discord'],
-}) => {
-  try {
-    let res = await axios.post(
-      `https://beefy-broadcast.herokuapp.com/broadcasts?apikey=${process.env.BEEFY_BROADCAST_API_KEY}`,
-      {
-        type,
-        title,
-        message,
-        platforms,
-      }
-    );
-    return res;
-  } catch (error) {
-    throw error;
-  }
-};
-
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   const tryTX = async (stratContract, max = 5) => {
     if (nonce) options.nonce = nonce;
@@ -193,27 +171,30 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 if (error.message.includes(key)) {
                   console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
                   try {
-                    let res = await broadcastMessage({
+                    let res = await broadcast.send({
                       type: 'error',
                       title: `Error trying to harvest ${strat.name}`,
                       message: `- error code: ${JSONRPC_ERRORS[key]}\n- address: ${strat.address}`,
                     });
-                  } catch (e) {}
+                  } catch (error) {
+                    console.log(`Error trying to send message to broadcast: ${error.message}`);
+                  }
                   return {
                     contract: strat.address,
                     status: 'failed',
                     message: `${strat.name}: ${JSONRPC_ERRORS[key]}`,
-                    data: error.message,
                   };
                 }
               }
               try {
-                let res = await broadcastMessage({
+                let res = await broadcast.send({
                   type: 'error',
                   title: `Error trying to harvest ${strat.name}`,
                   message: `- error code: unknown\n- address: ${strat.address}\n- tx hash: ${tx.hash}`,
                 });
-              } catch (e) {}
+              } catch (error) {
+                console.log(`Error trying to send message to broadcast: ${error.message}`);
+              }
               return {
                 contract: strat.address,
                 status: 'failed',
@@ -258,7 +239,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
-        let res = await broadcastMessage({
+        let res = await broadcast.send({
           type: 'warning',
           title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
           message: `- Gas required **${((options.gasPrice * options.gasLimit) / 1e18).toFixed(
@@ -267,8 +248,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
             strat.address
           } \n- Please feed me with more coins 🪙 🐮 \n`,
         });
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        console.log(`Error trying to send message to broadcast: ${error.message}`);
       }
       throw new Error(
         `${strat.name}: INSUFFICIENT_FUNDS - gas required ${
@@ -391,7 +372,7 @@ const main = async () => {
           };
           let uploaded = await fleekStorage.upload(input);
           try {
-            let broadcast = await broadcastMessage({
+            let res = await broadcast.send({
               type: 'info',
               title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
               message: `- Total strats to harvest: ${
@@ -408,7 +389,7 @@ const main = async () => {
               platforms: ['discord'],
             });
           } catch (error) {
-            console.error(error);
+            console.log(`Error trying to send message to broadcast: ${error.message}`);
           }
           console.log(
             `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
