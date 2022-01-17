@@ -377,6 +377,7 @@ const main = async () => {
         };
         if (report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
         report.cowllectorBalance = await harvesterPK.getBalance();
+        report.profit = report.cowllectorBalance - balance;
 
         let now = new Date().toISOString();
         try {
@@ -395,11 +396,13 @@ const main = async () => {
                 harvesteds.length
               }\n- Total successfully harvested: ${
                 report.totalHarvested
-              } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
+              }\n- Total harvest failed: ${report.totalFailed}\n- Total gas used: ${
                 report.gasUsed
               }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
                 report.cowllectorBalance / 1e18
-              }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
+              }\n- Profit: ${report.profit}\nIPFS link: https://ipfs.fleek.co/ipfs/${
+                uploaded.hash
+              }\n `,
               platforms: ['discord'],
             });
           } catch (error) {
