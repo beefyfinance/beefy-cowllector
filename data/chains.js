@@ -251,7 +251,7 @@ const chains = {
   1088: {
     id: 'metis',
     chainId: 1088,
-    wnative: metis.tokens.WNATIVE.address,
+    wnative: null,
     rewardPool: metis.platforms.beefyfinance.rewardPool,
     treasury: metis.platforms.beefyfinance.treasury,
     beefyFeeBatcher: metis.platforms.beefyfinance.beefyFeeRecipient,
