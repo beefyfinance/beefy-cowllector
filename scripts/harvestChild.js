@@ -285,7 +285,6 @@ const main = async () => {
      * @dev on file data/chain.js you can find, for every chain, a prop harvestHourInterval that explain when hourly harvest should be run for it
      */
     let hour = new Date().getUTCHours();
-    if (hour === 0) hour++;
     if (hour % CHAIN.harvestHourInterval) {
       console.log(
         `Is not Harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
