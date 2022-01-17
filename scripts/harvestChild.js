@@ -379,40 +379,40 @@ const main = async () => {
         report.cowllectorBalance = await harvesterPK.getBalance();
 
         let now = new Date().toISOString();
-        // try {
-        //   let input = {
-        //     apiKey: process.env.FLEEK_STORAGE_API_KEY,
-        //     apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
-        //     key: `cowllector-reports/${CHAIN.id}-${now}.json`,
-        //     data: JSON.stringify(report),
-        //   };
-        //   let uploaded = await fleekStorage.upload(input);
-        //   try {
-        //     let broadcast = await broadcastMessage({
-        //       type: 'info',
-        //       title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-        //       message: `- Total strats to harvest: ${
-        //         harvesteds.length
-        //       }\n- Total successfully harvested: ${
-        //         report.totalHarvested
-        //       } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
-        //         report.gasUsed
-        //       }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
-        //         report.cowllectorBalance / 1e18
-        //       }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
-        //       platforms: ['discord'],
-        //     });
-        //   } catch (error) {
-        //     console.error(error);
-        //   }
-        //   console.log(
-        //     `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
-        //       uploaded.hash
-        //     }`
-        //   );
-        // } catch (error) {
-        //   console.log(error);
-        // }
+        try {
+          let input = {
+            apiKey: process.env.FLEEK_STORAGE_API_KEY,
+            apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
+            key: `cowllector-reports/${CHAIN.id}-${now}.json`,
+            data: JSON.stringify(report),
+          };
+          let uploaded = await fleekStorage.upload(input);
+          try {
+            let broadcast = await broadcastMessage({
+              type: 'info',
+              title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
+              message: `- Total strats to harvest: ${
+                harvesteds.length
+              }\n- Total successfully harvested: ${
+                report.totalHarvested
+              } \n- Total harvest failed: ${report.totalFailed} \n- Total gas used: ${
+                report.gasUsed
+              }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
+                report.cowllectorBalance / 1e18
+              }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
+              platforms: ['discord'],
+            });
+          } catch (error) {
+            console.error(error);
+          }
+          console.log(
+            `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
+              uploaded.hash
+            }`
+          );
+        } catch (error) {
+          console.log(error);
+        }
       }
     } catch (error) {
       console.log(error);
