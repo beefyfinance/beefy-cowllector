@@ -1,8 +1,21 @@
 require('dotenv').config();
 const { addressBook } = require('blockchain-addressbook');
 
-const { aurora, arbitrum, bsc, heco, avax, polygon, fantom, one, celo, moonriver, cronos, fuse, metis } =
-  addressBook;
+const {
+  aurora,
+  arbitrum,
+  bsc,
+  heco,
+  avax,
+  polygon,
+  fantom,
+  one,
+  celo,
+  moonriver,
+  cronos,
+  fuse,
+  metis,
+} = addressBook;
 
 const chains = {
   56: {
@@ -266,7 +279,7 @@ const chains = {
     blockTime: 1,
     blockExplorer: 'https://andromeda-explorer.metis.io/',
     gas: {
-      limit: Number(process.env.METIS_GAS_LIMIT) || 30e6,
+      limit: Number(process.env.METIS_GAS_LIMIT) || 10e6,
       price: Number(process.env.METIS_GAS_PRICE) || 30e9,
     },
   },
