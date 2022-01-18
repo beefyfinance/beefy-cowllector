@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: apt update && apt install -y openssh-client git node
+      - run: apt-get update && apt-get install -y openssh-client git node
       - run: npm install --global yarn
       - name: Setup key
         uses: webfactory/ssh-agent@v0.5.4
