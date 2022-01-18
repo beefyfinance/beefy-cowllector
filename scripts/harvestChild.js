@@ -347,15 +347,19 @@ const main = async () => {
       console.table(harvesteds);
 
       if (harvesteds.length) {
+        await unwrap(harvesterPK, provider, { gasPrice }, 0);
         let success = harvesteds.filter(h => h.status === 'success');
+        let gasUsed =
+          harvesteds.reduce((total, h) => {
+            if (h.data && h.data.gasUsed)
+              return total + ethers.BigNumber.from(h.data.gasUsed).toNumber();
+            return total;
+          }, 0) / 1e9;
         let report = {
           harvesteds,
-          gasUsed: success.reduce(
-            (total, h) => total + ethers.BigNumber.from(h.data.gasUsed) / 1e9,
-            0
-          ),
+          gasUsed,
           averageGasUsed: 0,
-          totalHarvested: success.length,
+          totalSuccess: success.length,
           totalFailed: harvesteds.length - success.length,
         };
         if (report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
