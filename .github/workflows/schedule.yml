@@ -1,0 +1,28 @@
+name: "sync cowllector"
+on:
+  schedule:
+    - cron:  '0 */4 * * *'    # At the start of every 4th hour
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: apt update && apt install -y openssh-client git node 
+      - run: npm install --global yarn
+      - name: Setup key
+          uses: webfactory/ssh-agent@v0.5.4
+          with:
+            ssh-private-key: |
+                  ${{ secrets.BEEFY_BOT_SSH_PK }}
+      - name: Sync Cowllector
+      - run: git clone git@github.com:beefyfinance/beefy-cowllector.git cowllector
+      - run: cd cowllector
+      - run: yarn install
+      - run: yarn lost
+      - run: yarn sync
+      - run: yarn updateGasLimit
+      - run: git add .
+      - run: git commit -m "sync"
+      - run: git push origin master
+      - run: echo "done"
