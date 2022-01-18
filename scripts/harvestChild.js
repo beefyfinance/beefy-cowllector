@@ -379,11 +379,9 @@ const main = async () => {
             let res = await broadcast.send({
               type: 'info',
               title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-              message: `- Total strats to harvest: ${
-                harvesteds.length
-              }\n- Total successfully harvested: ${
-                report.totalHarvested
-              }\n- Total harvest failed: ${report.totalFailed}\n- Total gas used: ${
+              message: `- Total strats to harvest: ${harvesteds.length}\n- Total success: ${
+                report.totalSuccess
+              }\n- Total failed: ${report.totalFailed}\n- Total gas used: ${
                 report.gasUsed
               }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
                 report.cowllectorBalance / 1e18
