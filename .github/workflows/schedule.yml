@@ -1,7 +1,8 @@
 name: "sync cowllector"
 on:
   schedule:
-    - cron:  '0 */4 * * *'    # At the start of every 4th hour
+    - cron:  '0 */4 * * *' # At the start of every 4th hour
+  workflow_dispatch:
 
 jobs:
   update:
