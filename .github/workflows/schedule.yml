@@ -1,7 +1,7 @@
-name: "sync cowllector"
+name: 'sync cowllector'
 on:
   schedule:
-    - cron:  '0 */4 * * *' # At the start of every 4th hour
+    - cron: '0 */4 * * *' # At the start of every 4th hour
   workflow_dispatch:
 
 jobs:
@@ -9,21 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: apt update && apt install -y openssh-client git node 
+      - run: apt update && apt install -y openssh-client git node
       - run: npm install --global yarn
       - name: Setup key
         uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: |
-                ${{ secrets.BEEFY_BOT_SSH_PK }}
+            ${{ secrets.BEEFY_BOT_SSH_PK }}
       - name: Sync Cowllector
-        run: git clone git@github.com:beefyfinance/beefy-cowllector.git cowllector
-        run: cd cowllector
-        run: yarn install
-        run: yarn lost
-        run: yarn sync
-        run: yarn updateGasLimit
-        run: git add .
-        run: git commit -m "sync"
-        run: git push origin master
-        run: echo "done"
+        run: |
+          git clone git@github.com:beefyfinance/beefy-cowllector.git cowllector
+          cd cowllector
+          yarn install
+          yarn lost
+          yarn sync
+          yarn updateGasLimit
+          git add .
+          git commit -m "sync"
+          git push origin master
+          echo "done"
