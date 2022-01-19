@@ -3933,6 +3933,33 @@
     "chainId": 250
   },
   {
+    "name": "spirit-fusdt-usdc",
+    "address": "0xf2e24273821835D177eB7A6C222c5AfE5de38e87",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "spirit-frax-usdc",
+    "address": "0x5ef24da9a51a577FE17a9385Ca9206A7266161B0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "spirit-mim-usdc",
+    "address": "0xA7Ba5D21CE2E9F002fa0348aA71f228a8974273B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "2omb-2omb-ftm",
     "address": "0x3b5a1eAbDAeC99cb6abceB8740876D9dCAD048d5",
     "interval": 1,
@@ -3944,6 +3971,15 @@
   {
     "name": "2omb-2share-ftm",
     "address": "0xD586d0125590F3390Fde37DcD123f84913b20cC1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-wftm-brush",
+    "address": "0x8dD82D887a5B0C970F42bE8691203ABa22F832A3",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5011,6 +5047,15 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250
+  },
+  {
+    "name": "metis-bifi-maxi",
+    "address": "0x436D5127F16fAC1F021733dda090b5E6DE30b3bB",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1088
   },
   {
     "name": "netswap-nett-m.usdt",
@@ -6266,15 +6311,6 @@
   {
     "name": "pangolin-uni.e-wavax-pause",
     "address": "0xC733253d45909f84D36e6e9D9f8Ee81DeEd12045",
-    "interval": 18,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "pangolin-yfi.e-wavax-pause",
-    "address": "0x62fc868551D7C7663C07B22bE92643610a720640",
     "interval": 18,
     "harvestSignature": "0x4641257d",
     "depositsPaused": true,
