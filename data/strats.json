@@ -5058,6 +5058,42 @@
     "chainId": 1088
   },
   {
+    "name": "tethys-tethys-metis",
+    "address": "0x0624Ab4290F9305fB2dE3fB287aa5CDcf36D6B51",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1088
+  },
+  {
+    "name": "tethys-m.usdt-metis",
+    "address": "0x370a099D35c13188ADA19F46733A9892057b9d6e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1088
+  },
+  {
+    "name": "tethys-metis-m.usdc",
+    "address": "0xad8d4C77E32bCE1C9b9cBc43566AFDD41223fFb1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1088
+  },
+  {
+    "name": "tethys-weth-metis",
+    "address": "0x9584e368355D4634f1bdD7b0e7B08fFEa38ED0b0",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1088
+  },
+  {
     "name": "netswap-nett-m.usdt",
     "address": "0xc34b9c9DBB39Be0Ef850170127A7b4283484f804",
     "interval": 1,
