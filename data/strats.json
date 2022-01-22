@@ -3924,6 +3924,24 @@
     "chainId": 250
   },
   {
+    "name": "0xdao-tomb",
+    "address": "0x48523832Cef18F78161dD59066c6A0200e95538B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "0xdao-weth",
+    "address": "0xa3bD813824b5e4AF5C30812366B88F2681B1cc36",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "oxd-oxd-usdc",
     "address": "0xD21026fF33908789cB98652ccC56fe6789fcb9Cd",
     "interval": 1,
