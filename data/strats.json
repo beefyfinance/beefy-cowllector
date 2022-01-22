@@ -324,6 +324,15 @@
     "chainId": 56
   },
   {
+    "name": "cakev2-fuse-wbnb",
+    "address": "0x036259F19C31edcC9112Ff87A71bB8283649F3ff",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "baby-aot-usdt",
     "address": "0x49c791784d36f3fE8Af25f216df19E47AcdB04Fe",
     "interval": 24,
@@ -2853,6 +2862,15 @@
     "chainId": 137
   },
   {
+    "name": "jarvis-2cad",
+    "address": "0x0FdE527bed903B3787181a4B61d9dFF5459C0788",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
     "name": "quick-kiro-matic",
     "address": "0x22F8365a9d689Fe32aAD7B455c9D14F04b395419",
     "interval": 1,
@@ -3899,6 +3917,42 @@
   {
     "name": "scream-ftm",
     "address": "0x6d8CA0589702F30cED94C0D5c5d33b9e40D05C31",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "oxd-oxd-usdc",
+    "address": "0xD21026fF33908789cB98652ccC56fe6789fcb9Cd",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-spooky-tempered-clavier",
+    "address": "0x89c39450B30188BBbFd53b0e3e3BB332d0171353",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-paint-it-black",
+    "address": "0xc1c94a9cd02EB7b0C85A73c7DA89afC8Bef70b11",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "boo-btc-eth",
+    "address": "0x7f32C0b25f565E4e9F9e6Ec78108775C9b9db298",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5799,6 +5853,15 @@
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "png-png",
+    "address": "0x23d3c50DF5ebcfdAc6B1C5D10506E1183c54B826",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
