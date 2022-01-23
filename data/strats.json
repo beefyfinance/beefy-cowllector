@@ -3924,8 +3924,53 @@
     "chainId": 250
   },
   {
+    "name": "0xdao-wftm",
+    "address": "0xe7B675CC0B240857fCD8b8Fcc7B17cBF31444eF5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "0xdao-usdc",
+    "address": "0x65322319417991B8bcb6befc8dF0d5b84a4c31a5",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "0xdao-dai",
+    "address": "0x726b227A8dEA2dbDF790c59c932eBfE408Cc44D2",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "0xdao-mim",
+    "address": "0xb1aA61aBb55480d010FB96584C3dB8006ec9Ef34",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "0xdao-tomb",
     "address": "0x48523832Cef18F78161dD59066c6A0200e95538B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "0xdao-wbtc",
+    "address": "0xe82acC86fF20c28e1965be8Ff37E2e88e72a1aFB",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
