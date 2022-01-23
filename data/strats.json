@@ -3924,6 +3924,69 @@
     "chainId": 250
   },
   {
+    "name": "sushi-usdc-wftm",
+    "address": "0xB17857c6c382680140Eb4EB1aAC4EB1184987D47",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "sushi-wftm-eth",
+    "address": "0xec10AaC4A445d28Eebd50F908cfc69816C8E9d7d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "sushi-fusdt-wftm",
+    "address": "0xafD558197FE33AAd1D653cc57B712d9A97752084",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "sushi-eth-dai",
+    "address": "0x6ffFA724b231610e6C99b3F41b26c4aBF94F05F8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "sushi-usdc-mim",
+    "address": "0x67E7cC5405429D9D7b468c836989B849b5D66543",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "sushi-btc-eth",
+    "address": "0xa5F6387fB58AC5268F130bFc2d0A5e53343fB798",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "sushi-wftm-sushi",
+    "address": "0xC67c5F7F4aAA34E3e94051e22Fce83C455a2562C",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "0xdao-wftm",
     "address": "0xe7B675CC0B240857fCD8b8Fcc7B17cBF31444eF5",
     "interval": 1,
