@@ -4,7 +4,7 @@
   <br>
   <br>
   <h1>🐮 Cowllector 🐮</h1>
-  <strong>The path to your next Open Source contribution</strong>
+  <strong>The path to your next Open Source cowtribution</strong>
 </div>
 <br>
 <p align="center">
@@ -75,3 +75,7 @@ Got Questions? Join the conversation in our [Discord](https://discord.gg/yq8wfHd
 # 👷‍♀️👷 Maintainers
 
 [@0xww](https://github.com/0xww)
+
+## Cowtributors
+
+[@beefybot](https://github.com/beefybot)
