@@ -30,4 +30,7 @@ jobs:
           git add .
           git commit -m "sync"
           git push origin master
+          git checkout prod
+          git merge master
+          git push origin prod
           echo "done"
