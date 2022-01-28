@@ -343,7 +343,6 @@ const main = async () => {
       let gasPrice = await getGasPrice(provider);
       console.log(`Gas Price: ${gasPrice / 1e9} GWEI`);
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
-      // let unwrapped = await unwrap(harvesterPK, provider, { gasPrice });
       let balance = await harvesterPK.getBalance();
 
       strats = await addGasLimit(strats, provider);
@@ -398,7 +397,7 @@ const main = async () => {
         } catch (error) {
           console.log(error.message);
         }
-        // await unwrap(harvesterPK, provider, { gasPrice });
+        await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMintoUnwrap);
       }
 
       strats = strats.map(s => {
@@ -408,7 +407,6 @@ const main = async () => {
       });
 
       if (strats.length) {
-        // await unwrap(harvesterPK, provider, { gasPrice }, 0);
         let success = strats.filter(s => s.harvest && s.harvest.status === 'success');
         let gasUsed =
           harvesteds.reduce((total, h) => {
