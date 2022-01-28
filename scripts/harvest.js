@@ -7,7 +7,7 @@ const groups = _.groupBy(strats, 'chainId');
 const main = async () => {
   for (const chainId in groups) {
     if (Object.hasOwnProperty.call(groups, chainId)) {
-      let child = cp.fork('./scripts/harvestChild.js', [chainId]);
+      let child = cp.fork('./scripts/harvest_child.js', [chainId]);
       child.on('message', msg => {
         console.log(msg);
       });
