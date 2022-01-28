@@ -189,6 +189,7 @@ const chains = {
     beefyFeeBatcher: celo.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
     harvestHourInterval: parseInt(process.env.CELO_HARVEST_HOUR_INTERVAL) || 1,
+    wnative: null,
     wnativeUnwrapInterval: null,
     wnativeMintoUnwrap: parseInt(process.env.CELO_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.CELO_RPC || 'https://forno.celo.org',
