@@ -279,15 +279,6 @@
     "chainId": 25
   },
   {
-    "name": "crona-usdt-ftm",
-    "address": "0xC3c2c91C82d3472F3FA4Cd7Bf48005d0EE43A723",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 25
-  },
-  {
     "name": "crona-usdt-usdc",
     "address": "0x83a7a434b8219ae3e0976b74741bf8035a35A89B",
     "interval": 1,
@@ -3942,6 +3933,15 @@
     "chainId": 250
   },
   {
+    "name": "0xdao-xboo",
+    "address": "0x1Ce9640991f793800C5d278d105fd947E6D4C577",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "0xdao-oxd",
     "address": "0x3DA796c4F3A1124E94AE5940731f260A9557763a",
     "interval": 1,
@@ -4394,15 +4394,6 @@
   {
     "name": "boo-wftm-joe",
     "address": "0x6259f854125a6af8E6cfC2f9c5BF5a6BdD24B3A5",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250
-  },
-  {
-    "name": "spirit-spell-sspell",
-    "address": "0xDb16Ad11a58111D8875eB179B19BBad17Dc69c07",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5328,6 +5319,33 @@
     "chainId": 1285
   },
   {
+    "name": "finn-finn-xcrmrk",
+    "address": "0x81F2F132465Ffb4B3C5d11f3d94582cC5c281c04",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "finn-finn-xcksm",
+    "address": "0x98e6d738350a091d93719289C414C64a8C270FC6",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
+    "name": "finn-usdc.m-wmovr",
+    "address": "0xD295d690b9BF17bd217B94BC50C12729762C1862",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1285
+  },
+  {
     "name": "sushi-mr-eth-usdt",
     "address": "0xc6C6Ba4Ad592f3dbE64f3002dd78169815813a22",
     "interval": 1,
@@ -6003,6 +6021,24 @@
     "chainId": 43114
   },
   {
+    "name": "joe-usdt-usdt.e",
+    "address": "0xc729B40Dc115A5470A38AaE71Def4CD5a5cfa096",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wavax-frax",
+    "address": "0xdE6590ee7fde7b1d615894Bc6876e73a46c3D852",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "joe-wavax-cly",
     "address": "0xD2307A2F555fe2D56aA1Bbb21994c9fE5db5D7fe",
     "interval": 6,
@@ -6122,15 +6158,6 @@
   {
     "name": "joe-wavax-boo",
     "address": "0x06B515128cac164C63ba4Fd48229839Ba769f71F",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "spell-avax-mim-crv",
-    "address": "0x4e713AD07ad300897dAe4ac2D31fFd60db9f4BA1",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
