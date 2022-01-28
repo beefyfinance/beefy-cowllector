@@ -63,9 +63,15 @@ const getGasPrice = async provider => {
   }
 };
 
-const getWnativeBalance = async harvesterPK => {
-  let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, harvesterPK);
-  let wNativeBalance = await wNative.balanceOf(harvesterPK.address);
+/**
+ * Get wnative balance
+ * @param {Object} signer Ethers Signer class
+ * @returns BigNumber
+ */
+const getWnativeBalance = async signer => {
+  if (!CHAIN.wnative) return ethers.BigNumber.from(0);
+  let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, signer);
+  let wNativeBalance = await wNative.balanceOf(signer.address);
   return wNativeBalance;
 };
 
@@ -84,12 +90,12 @@ const unwrap = async (harvesterPK, provider, options, minBalance = 1e17) => {
             await harvestHelpers.sleep(500);
             receipt = await provider.getTransactionReceipt(tx.hash);
             if (receipt === null) continue;
-            console.log(`unwrapped ${wNativeBalance / 1e18}`);
+            console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)}`);
           } catch (error) {}
         }
       } else {
         tx = await tx.wait();
-        console.log(`unwrapped ${wNativeBalance / 1e18}`);
+        console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)}`);
       }
     } catch (error) {}
   } catch (error) {
@@ -273,11 +279,12 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         let res = await broadcast.send({
           type: 'warning',
           title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
-          message: `- Gas required **${((options.gasPrice * options.gasLimit) / 1e18).toFixed(
-            4
-          )}** and Cowllector has **${(balance / 1e18).toFixed(4)}** \n- Contract Address: ${
-            strat.address
-          } \n- Please feed me with more coins 🪙 🐮 \n`,
+          message: `- Gas required **${
+            (options.gasPrice * options.gasLimit) / 1e18
+          }** and Cowllector has **${ethers.utils.formatUnits(
+            balance,
+            'gwei'
+          )}** \n- Contract Address: ${strat.address} \n- Please feed me with more coins 🪙 🐮 \n`,
         });
       } catch (error) {
         console.log(`Error trying to send message to broadcast: ${error.message}`);
@@ -285,7 +292,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
       throw new Error(
         `${strat.name}: INSUFFICIENT_FUNDS - gas required ${
           (options.gasPrice * options.gasLimit) / 1e18
-        } and you has ${balance / 1e18}`
+        } and you has ${ethers.utils.formatUnits(balance)}`
       );
     }
 
@@ -341,7 +348,7 @@ const main = async () => {
       }
 
       let gasPrice = await getGasPrice(provider);
-      console.log(`Gas Price: ${gasPrice / 1e9} GWEI`);
+      console.log(`Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} GWEI`);
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
       const balance = await harvesterPK.getBalance();
       const wNativeBalance = await getWnativeBalance(harvesterPK);
@@ -381,9 +388,9 @@ const main = async () => {
           .filter(s => s.shouldHarvest)
           .reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
       console.log(
-        `Total gas to use ${(totalGas * gasPrice) / 1e9} GWEI , current balance ${
-          balance / 1e9
-        } GWEI`
+        `Total gas to use ${(totalGas * gasPrice) / 1e9} GWEI , current balance ${balance.div(
+          1e9
+        )} GWEI`
       );
 
       let harvesteds = [];
@@ -409,26 +416,25 @@ const main = async () => {
 
       if (strats.length) {
         let success = strats.filter(s => s.harvest && s.harvest.status === 'success');
-        let gasUsed =
-          harvesteds.reduce((total, h) => {
-            if (h.data && h.data.gasUsed)
-              return total + ethers.BigNumber.from(h.data.gasUsed).toNumber();
-            return total;
-          }, 0) / 1e9;
+        let gasUsed = harvesteds.reduce((total, h) => {
+          if (h.data && h.data.gasUsed) return total.add(ethers.BigNumber.from(h.data.gasUsed));
+          return total;
+        }, ethers.BigNumber.from(0));
         let report = {
           strats,
-          gasUsed,
-          averageGasUsed: 0,
-          stratsToHarvest: stratsToHarvest.length,
+          gasUsed: gasUsed,
+          averageGasUsed: ethers.BigNumber.from(0),
+          harvesteds: harvesteds.length,
           success: success.length,
           failed: harvesteds.length - success.length,
-          noHarvested: strats.length - harvesteds.length,
         };
-        if (report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
+        if (gasUsed.gt(0)) {
+          report.averageGasUsed = gasUsed.div(ethers.BigNumber.from(success.length));
+        }
         let currentWNativeBalance = await getWnativeBalance(harvesterPK);
         let currentBalance = await harvesterPK.getBalance();
-        report.balance = (currentWNativeBalance + currentBalance) / 1e18;
-        report.profit = report.balance - (balance + wNativeBalance) / 1e18;
+        report.balance = currentWNativeBalance.add(currentBalance);
+        report.profit = balance.add(wNativeBalance).sub(currentWNativeBalance.add(currentBalance));
 
         let now = new Date().toISOString();
         try {
@@ -436,24 +442,28 @@ const main = async () => {
             apiKey: process.env.FLEEK_STORAGE_API_KEY,
             apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
             key: `cowllector-reports/${CHAIN.id}-${now}.json`,
-            data: JSON.stringify(report),
+            data: JSON.stringify(report, null, 2),
           };
           let uploaded = await fleekStorage.upload(input);
           try {
             let res = await broadcast.send({
               type: 'info',
               title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-              message: `- Total strats: ${strats.length}\n- Total harvested: ${
-                harvesteds.length
-              }\n- Total no harvested: ${report.noHarvested}\n- Total success: ${
+              message: `- Total strats: ${strats.length}\n- Harvested: ${
+                report.harvesteds
+              }\n  + Failed: ${report.failed}\n  + success: ${
                 report.success
-              }\n- Total failed: ${report.failed}\n- Total gas used: ${
-                report.gasUsed
-              }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
-                report.balance / 1e18
-              }\n- Profit: ${report.profit}\nIPFS link: https://ipfs.fleek.co/ipfs/${
-                uploaded.hash
-              }\n `,
+              }\n- Total gas used: ${ethers.utils.formatUnits(
+                report.gasUsed,
+                'gwei'
+              )}\n  + Avg per strat: ${ethers.utils.formatUnits(
+                report.averageGasUsed,
+                'gwei'
+              )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
+                report.balance
+              )}\n- Profit: ${ethers.utils.formatUnits(
+                report.profit
+              )}\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n`,
               platforms: ['discord'],
             });
           } catch (error) {
@@ -466,6 +476,11 @@ const main = async () => {
           );
         } catch (error) {
           console.log(error);
+          let res = await broadcast.send({
+            type: 'info',
+            title: `Error trying to upload report to ipfs.fleek.co - ${CHAIN.id.toUpperCase()}`,
+            message: '',
+          });
         }
       }
     } catch (error) {
