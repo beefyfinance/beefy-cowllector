@@ -1,6 +1,5 @@
 require('dotenv').config();
 const ethers = require('ethers');
-const fs = require('fs');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
 const IStrategy = require('../abis/IStrategy.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
@@ -440,7 +439,6 @@ const main = async () => {
             key: `cowllector-reports/${CHAIN.id}-${now}.json`,
             data: JSON.stringify(report),
           };
-          fs.writeFileSync('report.json', JSON.stringify(report));
           let uploaded = await fleekStorage.upload(input);
           try {
             let res = await broadcast.send({
