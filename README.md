@@ -2,8 +2,7 @@
   <br>
   <img alt="Open Sauced" src="https://www.beefy.finance/img/COW.svg" width="100px">
   <br>
-  <br>
-  <h1>🐮 Cowllector 🐮</h1>
+  <h1>🧑‍🌾 Cowllector 🌾</h1>
   <strong>The path to your next Open Source cowtribution</strong>
 </div>
 <br>
@@ -13,8 +12,17 @@
   <a href="https://https://github.com/beefyfinance/beefy-cowllector/issues">
     <img src="https://img.shields.io/github/issues/beefyfinance/beefy-cowllector" alt="GitHub issues">
   </a>
+  <a href="https://beefy.finance">
+    <img alt="website" src="https://img.shields.io/badge/Website-231d9b?logo=google%20chrome&logoColor=ffffff">
+  </a>
   <a href="https://discord.gg/yq8wfHd">
-    <img src="https://img.shields.io/discord/714698561081704529.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" alt="Discord">
+    <img src="https://img.shields.io/discord/755231190134554696.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" alt="Discord">
+  </a>
+    <a href="https://t.me/beefyfinance">
+    <img alt="telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white">
+  </a>
+  <a href="https://twitter.com/beefyfinance">
+    <img alt="twitter" src="https://img.shields.io/twitter/follow/beefyfinance?&color=%231d9bf0&label=%40beefyfinance&logo=twitter&logoColor=23fff">
   </a>
 </p>
 
@@ -22,9 +30,9 @@ The bot to harvest all vaults and notify the BIFI rewards pool.
 
 ## 🔄 Auto sync
 
-if you are a beefy strategist, you DON'T need anymore push or sync your strat
+if you are a **Beefy Strategist**, you DON'T need anymore push or sync your strat here.
 
-This repo auto sync every 4 hours thanks to our beauty [Cowbot](https://github.com/beefybot)
+This repo auto sync every 4 hours thanks to our beauty [Cowbot](https://github.com/beefybot).
 
 ## 📖 Prerequisites
 
@@ -50,7 +58,7 @@ To start harvest one chain:
 node ./script/harvest_child.js <chain id>
 ```
 
-### 🔑 Enviroment
+## 🔑 Enviroment
 
 See [enviroment variable example](./.env.example) file for ENV required to run cowllector
 
@@ -70,12 +78,15 @@ In case you want to contribute, please follow next steps:ç
 
 ## 🍕 Community
 
-Got Questions? Join the conversation in our [Discord](https://discord.gg/yq8wfHd).
+- Got Questions? Join the conversation in our [Discord](https://discord.gg/yq8wfHd).
+- Want to up to date with Beefy? Follow us in [Twitter](https://twitter.com/beefyfinance).
+- We also have community chat in [Telegram](https://t.me/beefyfinance).
+- Announcement channel in [Telegram](https://t.me/bifinews).
 
-# 👷‍♀️👷 Maintainers
+## 👷‍♀️👷 Maintainers
 
 [@0xww](https://github.com/0xww)
 
-## Cowtributors
+### Cowtributors
 
 [@beefybot](https://github.com/beefybot)
