@@ -430,7 +430,7 @@ const main = async () => {
         let wNativeBalance = await getWnativeBalance(harvesterPK);
         let currentBalance = await harvesterPK.getBalance();
         report.balance = (wNativeBalance + currentBalance) / 1e18;
-        report.profit = report.balance - balance / 1e18;
+        report.profit = (report.balance - balance) / 1e18;
 
         let now = new Date().toISOString();
         try {
@@ -448,13 +448,15 @@ const main = async () => {
               title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
               message: `- Total strats: ${strats.length}\n- Total harvested: ${
                 harvesteds.length
-              }\n- Total success: ${report.success}\n- Total failed: ${
-                report.failed
-              }\n- Total gas used: ${report.gasUsed}\n- Average gas used per strat: ${
-                report.averageGasUsed
-              }\n- Cowllector Balance: ${report.cowllectorBalance / 1e18}\n- Profit: ${
-                report.profit
-              }\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n `,
+              }\n- Total no harvested: ${report.noHarvested}\n- Total success: ${
+                report.success
+              }\n- Total failed: ${report.failed}\n- Total gas used: ${
+                report.gasUsed
+              }\n- Average gas used per strat: ${report.averageGasUsed}\n- Cowllector Balance: ${
+                report.balance / 1e18
+              }\n- Profit: ${report.profit}\nIPFS link: https://ipfs.fleek.co/ipfs/${
+                uploaded.hash
+              }\n `,
               platforms: ['discord'],
             });
           } catch (error) {
