@@ -343,7 +343,8 @@ const main = async () => {
       let gasPrice = await getGasPrice(provider);
       console.log(`Gas Price: ${gasPrice / 1e9} GWEI`);
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
-      let balance = await harvesterPK.getBalance();
+      const balance = await harvesterPK.getBalance();
+      const wNativeBalance = await getWnativeBalance(harvesterPK);
 
       strats = await addGasLimit(strats, provider);
       strats = strats.map(s => {
@@ -424,10 +425,10 @@ const main = async () => {
           noHarvested: strats.length - harvesteds.length,
         };
         if (report.gasUsed) report.averageGasUsed = report.gasUsed / success.length;
-        let wNativeBalance = await getWnativeBalance(harvesterPK);
+        let currentWNativeBalance = await getWnativeBalance(harvesterPK);
         let currentBalance = await harvesterPK.getBalance();
-        report.balance = (wNativeBalance + currentBalance) / 1e18;
-        report.profit = (report.balance - balance) / 1e18;
+        report.balance = (currentWNativeBalance + currentBalance) / 1e18;
+        report.profit = report.balance - (balance + wNativeBalance) / 1e18;
 
         let now = new Date().toISOString();
         try {
