@@ -2493,6 +2493,15 @@
     "chainId": 56
   },
   {
+    "name": "sushi-wfuse-weth",
+    "address": "0x0073C4b8E39698631d8d3E61b487Ec620101BD4c",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 122
+  },
+  {
     "name": "fusefi-wfuse-usdc",
     "address": "0xC3821F0b56FA4F4794d5d760f94B812DE261361B",
     "interval": 1,
@@ -5925,6 +5934,33 @@
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "png-wavax-frax",
+    "address": "0x8CCD6516D75b876509D7aE5B186873A7b95Ba199",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "png-link.e-wavax",
+    "address": "0x4229Bedd0D680fDd7E7B2d52002edbc87a1fCB81",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "png-jewel-wavax",
+    "address": "0x73c14fFB1F7C0447072fA28876CE70020D6F8DA0",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
