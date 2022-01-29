@@ -434,7 +434,7 @@ const main = async () => {
         let currentWNativeBalance = await getWnativeBalance(harvesterPK);
         let currentBalance = await harvesterPK.getBalance();
         report.balance = currentWNativeBalance.add(currentBalance);
-        report.profit = balance.add(wNativeBalance).sub(currentWNativeBalance.add(currentBalance));
+        report.profit = currentBalance.add(currentWNativeBalance).sub(balance.add(wNativeBalance));
 
         let now = new Date().toISOString();
         try {
