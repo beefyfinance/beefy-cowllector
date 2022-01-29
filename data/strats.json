@@ -495,15 +495,6 @@
     "chainId": 56
   },
   {
-    "name": "bison-bison-bnb",
-    "address": "0x4583fAC48BdD776096559514A42a957e3DF93C1A",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "cakev2-nabox-busd",
     "address": "0xf4cd3E9119bfEaE8aa69f21669C055195Ae6Ba43",
     "interval": 24,
@@ -578,15 +569,6 @@
   {
     "name": "banana-oasis-wbnb",
     "address": "0xe723E67bd24405aCeed8972a2330FA17130d89D3",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "bison-bison",
-    "address": "0x914B22a365155DC7fe869Ec8dF60334df15d9f86",
     "interval": 24,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -5553,15 +5535,6 @@
     "chainId": 1285
   },
   {
-    "name": "finn-finn-doge",
-    "address": "0xD5d634926a5b58b2952F19335537F1ED3F09bfce",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 1285
-  },
-  {
     "name": "finn-usdc-finn",
     "address": "0xE31596fdB92063877235bb500D0d5f329b5768ff",
     "interval": 1,
@@ -5600,15 +5573,6 @@
   {
     "name": "solarbeam-bnb-wmovr",
     "address": "0x732161B51Ff7A2fee4D953E19f32827b3603c999",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 1285
-  },
-  {
-    "name": "solarbeam-solar",
-    "address": "0xe10F7d1b694e90C67c8797F95762Afb08e255f71",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,

@@ -184,14 +184,6 @@
     "tvl": 0
   },
   {
-    "id": "bison-bison-bnb",
-    "name": "Moo Bison BISON-BNB",
-    "contract": "0x813EBFD51604E0066bFA4E0Bf6d2324eA8CebE60",
-    "oracle": "lps",
-    "oracleId": "bison-bison-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-nabox-busd",
     "name": "Moo CakeV2 NABOX-BUSD",
     "contract": "0x9D03b1115c6B2e4a7A29bA45c0Cb463965b77F20",
@@ -261,14 +253,6 @@
     "contract": "0xb69fE74aeD526BBEe0fc47db72Ced2BDBF9747CF",
     "oracle": "lps",
     "oracleId": "banana-oasis-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "bison-bison",
-    "name": "Moo Bison",
-    "contract": "0x7886484722747F66B53A27b2854eF4e6Cdd80881",
-    "oracle": "tokens",
-    "oracleId": "BISON",
     "tvl": 0
   },
   {
@@ -1973,6 +1957,22 @@
     "contract": "0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190",
     "oracle": "lps",
     "oracleId": "cakev2-xcv-busd",
+    "tvl": 0
+  },
+  {
+    "id": "bison-bison-bnb",
+    "name": "Moo Bison BISON-BNB",
+    "contract": "0x813EBFD51604E0066bFA4E0Bf6d2324eA8CebE60",
+    "oracle": "lps",
+    "oracleId": "bison-bison-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "bison-bison",
+    "name": "Moo Bison",
+    "contract": "0x7886484722747F66B53A27b2854eF4e6Cdd80881",
+    "oracle": "tokens",
+    "oracleId": "BISON",
     "tvl": 0
   },
   {
