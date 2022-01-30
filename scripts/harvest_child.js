@@ -281,10 +281,9 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
           message: `- Gas required **${
             (options.gasPrice * options.gasLimit) / 1e18
-          }** and Cowllector has **${ethers.utils.formatUnits(
-            balance,
-            'gwei'
-          )}** \n- Contract Address: ${strat.address} \n- Please feed me with more coins 🪙 🐮 \n`,
+          }** and Cowllector has **${ethers.utils.formatUnits(balance)}** \n- Contract Address: ${
+            strat.address
+          } \n- Please feed me with more coins 🪙 🐮 \n`,
         });
       } catch (error) {
         console.log(`Error trying to send message to broadcast: ${error.message}`);
