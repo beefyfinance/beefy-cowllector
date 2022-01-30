@@ -297,6 +297,15 @@
     "chainId": 56
   },
   {
+    "name": "banana-sushi-eth",
+    "address": "0xB6AB6BD4D12C20aeC43aebE82255CdEe3BA3D890",
+    "interval": 24,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56
+  },
+  {
     "name": "cakev2-cake-bnb",
     "address": "0x3feEEa242ad603DA0b81E2c039287AD26198B85a",
     "interval": 24,
@@ -5934,6 +5943,42 @@
     "name": "avax-bifi-maxi",
     "address": "0xca077eEC87e2621F5B09AFE47C42BAF88c6Af18c",
     "interval": 18,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wavax-xava",
+    "address": "0x4737a4d9112347937a9b03f449678Ba01A0AcEae",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wavax-cook",
+    "address": "0x1B85cc576e97Fd55369e05a424fE3b8dcAEE57B9",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wavax-dcau",
+    "address": "0x16eAD2Dc01946A7AD21017963f93c72EE102F58A",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "joe-wavax-hec",
+    "address": "0xE960198c5B6B2756e674965cA1718b7B8e2Ce2B9",
+    "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
