@@ -1,6 +1,6 @@
 <div align="center">
   <br>
-  <img alt="Open Sauced" src="https://www.beefy.finance/img/COW.svg" width="100px">
+  <img alt="Open Sauced" src="https://beefy.com/img/COW.svg" width="100px">
   <br>
   <h1>🧑‍🌾 Cowllector 🌾</h1>
   <strong>The path to your next Open Source cowtribution</strong>
