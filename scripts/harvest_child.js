@@ -450,8 +450,8 @@ const main = async () => {
               title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
               message: `- Total strats: ${strats.length}\n- Harvested: ${
                 report.harvesteds
-              }\n  + Failed: ${report.failed}\n  + success: ${
-                report.success
+              }\n  + Success: ${report.success}\n  + Failed: ${
+                report.failed
               }\n- Total gas used: ${ethers.utils.formatUnits(
                 report.gasUsed,
                 'gwei'
