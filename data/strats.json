@@ -2511,6 +2511,24 @@
     "chainId": 122
   },
   {
+    "name": "sushi-sushi-weth",
+    "address": "0x76913D8a779fA1185380dA76368a37f60812Fa17",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 122
+  },
+  {
+    "name": "sushi-wfuse-usdc",
+    "address": "0x6e4c4a1e3bc0bD95e912f2a997aCA658b74057C1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 122
+  },
+  {
     "name": "sushi-wfuse-weth",
     "address": "0x0073C4b8E39698631d8d3E61b487Ec620101BD4c",
     "interval": 1,
@@ -3924,8 +3942,8 @@
     "chainId": 250
   },
   {
-    "name": "scream-ftm",
-    "address": "0x6d8CA0589702F30cED94C0D5c5d33b9e40D05C31",
+    "name": "0xdao-xscream",
+    "address": "0x20273eB6D8ff3eE270E353dce599b453526B3E16",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3935,6 +3953,15 @@
   {
     "name": "0xdao-xboo",
     "address": "0x1Ce9640991f793800C5d278d105fd947E6D4C577",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "scream-ftm",
+    "address": "0x6d8CA0589702F30cED94C0D5c5d33b9e40D05C31",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
