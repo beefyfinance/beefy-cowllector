@@ -137,7 +137,8 @@ const shouldHarvest = async (strat, harvesterPK) => {
     if (strat.lastHarvest !== 0) {
       let now = Math.floor(new Date().getTime() / 1000);
       let secondsSinceHarvest = now - strat.lastHarvest;
-      if (!(secondsSinceHarvest >= strat.interval * 3600 + STRAT_INTERVALS_MARGIN_OF_ERROR)) {
+      let interval = CHAIN.harvestHourInterval || strat.interval;
+      if (!(secondsSinceHarvest >= interval * 3600 + STRAT_INTERVALS_MARGIN_OF_ERROR)) {
         strat.shouldHarvest = false;
         strat.notHarvestReason = 'lastHarvest is lower than interval';
         return strat;
