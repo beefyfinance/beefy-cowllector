@@ -10,6 +10,7 @@ let strats = require('../data/strats.json');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
 const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
+const GASLESS_CHAINS = ['celo', 'aurora'];
 
 require('../utils/logger')(CHAIN_ID);
 
@@ -333,8 +334,8 @@ const main = async () => {
 
     try {
       const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
-      // patch for CELO chain
-      if (CHAIN.id === 'celo') {
+      // patch for GASLESS chains
+      if (GASLESS_CHAINS.includes(CHAIN.id)) {
         const originalBlockFormatter = provider.formatter._block;
         provider.formatter._block = (value, format) => {
           return originalBlockFormatter(
