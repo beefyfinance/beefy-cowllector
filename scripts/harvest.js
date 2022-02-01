@@ -1,17 +1,12 @@
 const cp = require('child_process');
-const _ = require('lodash');
-
-const strats = require('../data/strats.json');
-const groups = _.groupBy(strats, 'chainId');
+const CHAINS = require('../data/chains');
 
 const main = async () => {
-  for (const chainId in groups) {
-    if (Object.hasOwnProperty.call(groups, chainId)) {
-      let child = cp.fork('./scripts/harvest_child.js', [chainId]);
-      child.on('message', msg => {
-        console.log(msg);
-      });
-    }
+  for (const CHAIN in CHAINS) {
+    let child = cp.fork('./scripts/harvest_child.js', [CHAIN]);
+    child.on('message', msg => {
+      console.log(msg);
+    });
   }
 };
 
