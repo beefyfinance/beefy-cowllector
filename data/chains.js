@@ -269,7 +269,7 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://explorer.fuse.io/',
     gas: {
-      limit: Number(process.env.FUSE_GAS_LIMIT) || 30e6,
+      limit: Number(process.env.FUSE_GAS_LIMIT) || 10e6,
       price: Number(process.env.FUSE_GAS_PRICE) || 1e9,
     },
   },
