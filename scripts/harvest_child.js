@@ -132,12 +132,12 @@ const addGasLimit = async (strats, provider) => {
  */
 const shouldHarvest = async (strat, harvesterPK) => {
   const STRAT_INTERVALS_MARGIN_OF_ERROR =
-    Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || 0.4;
+    Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || 1440;
   try {
     if (strat.lastHarvest !== 0) {
       let now = Math.floor(new Date().getTime() / 1000);
       let secondsSinceHarvest = now - strat.lastHarvest;
-      if (!(secondsSinceHarvest >= strat.interval * 3600 * (1 + STRAT_INTERVALS_MARGIN_OF_ERROR))) {
+      if (!(secondsSinceHarvest >= strat.interval * 3600 + STRAT_INTERVALS_MARGIN_OF_ERROR)) {
         strat.shouldHarvest = false;
         strat.notHarvestReason = 'lastHarvest is lower than interval';
         return strat;
