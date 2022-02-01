@@ -1,6 +1,7 @@
 require('dotenv').config();
 const ethers = require('ethers');
 const chains = require('../data/chains');
+const broadcast = require('../utils/broadcast');
 const harvestHelpers = require('../utils/harvestHelpers');
 const IBeefyFeeBatch = require('../abis/BeefyFeeBatch.json');
 
@@ -219,20 +220,8 @@ const main = async () => {
       console.log(error);
     }
   }
+  console.log('done');
   process.exit();
 };
 
 main();
-
-const harvestBeefyFees = async () => {
-  for (chain of Object.values(chains)) {
-    try {
-      let tx = await batcher.harvest({ gasLimit: 4000000 });
-      console.log(`Harvested chain ${chain.chainId}`);
-    } catch (e) {
-      console.log(`harvestBeefyFees failed ${chain.chainId}: ${e}`);
-    }
-  }
-};
-
-module.exports = harvestBeefyFees;
