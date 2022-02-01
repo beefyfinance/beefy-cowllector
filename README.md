@@ -26,19 +26,28 @@
   </a>
 </p>
 
-The bot to harvest all vaults and notify the BIFI rewards pool.
+# 🐮 About Cowllector
 
-## 🔄 Auto sync
+This is the bot that harvest all strategies from all Beefy's chains, also do another things like:
+
+- Notify the BIFI rewards pool
+- Harvest the Beefy fee batch from all Beefy´s chains to distribute it.
+
+**Cowllectors does NOT focus in to be profitable, so don't expect it to win some profit when it harvests. Cowllector harvest script was create it to bring resilience and consistency in all active vaults strategies.**
+
+Cowllectors runs harvest script every hour, but some chains are configurated to harvest only a few times per day. After a run of harvests in every chain, you can find the `harvest report` in our discord channel [#Harvester](https://discord.com/channels/755231190134554696/914666606641184768)
+
+# 🔄 Auto sync
 
 if you are a **Beefy Strategist**, you DON'T need anymore push or sync your strat here.
 
 This repo auto sync every 4 hours thanks to our beauty [Cowbot](https://github.com/beefybot).
 
-## 📖 Prerequisites
+# 📖 Prerequisites
 
 In order to run the project we need `node>=16.13`, `yarn>=1.22` installed on our development machines
 
-## 🖥️ Local development
+# 🖥️ Local development
 
 To install the application:
 
@@ -58,11 +67,11 @@ To start harvest one chain:
 node ./script/harvest_child.js <chain id>
 ```
 
-## 🔑 Enviroment
+# 🔑 Enviroment
 
 See [enviroment variable example](./.env.example) file for ENV required to run cowllector
 
-## 🤝 Contributing
+# 🤝 Contributing
 
 We encourage you to contribute to Cowllector!
 
