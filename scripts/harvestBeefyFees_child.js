@@ -8,6 +8,7 @@ const IBeefyFeeBatch = require('../abis/BeefyFeeBatch.json');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
 const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
+const GASLESS_CHAINS = ['celo', 'aurora'];
 
 const JSONRPC_ERRORS = {
   'code=INSUFFICIENT_FUNDS': 'INSUFFICIENT_FUNDS',
@@ -187,7 +188,8 @@ const main = async () => {
     try {
       const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
       // patch for CELO chain
-      if (CHAIN.id === 'celo') {
+      if (GASLESS_CHAINS.includes(CHAIN.id)) {
+        console.log('gaslesss');
         const originalBlockFormatter = provider.formatter._block;
         provider.formatter._block = (value, format) => {
           return originalBlockFormatter(
@@ -203,7 +205,7 @@ const main = async () => {
       let options = {};
       options.gasPrice = await getGasPrice(provider);
       options.gasLimit = 1e6;
-      console.log(`gasPrice: ${options.gasPrice} - gasLimit: ${options.gasLimit}`);
+      console.log(`gasPrice: ${options.gasPrice}`);
 
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
 
