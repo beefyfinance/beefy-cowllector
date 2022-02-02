@@ -6642,6 +6642,60 @@
     "chainId": 43114
   },
   {
+    "name": "trisolaris-near-tri",
+    "address": "0x5ef08a4555125fcafC10a0faEFb63562e06e68b8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
+    "name": "trisolaris-near-wbtc",
+    "address": "0x8B20EbE6B3b5BE888bA815c37724150D17083633",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
+    "name": "trisolaris-usdt-usdc",
+    "address": "0xD5e8D34dE3B1A6fd54e87B5d4a857CBB762d0C8A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
+    "name": "trisolaris-usdt-near",
+    "address": "0x016CB650b6C97dCe80e31f7E26fE4a1B7cFe18f4",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
+    "name": "trisolaris-usdc-near",
+    "address": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
+    "name": "trisolaris-near-weth",
+    "address": "0xBCbAF3ce95E479E03D4D4fB27EFE3f8f8179c1Fc",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
     "name": "one-bifi-maxi",
     "address": "0x5135C0af3080DF01ABF66491d5a1eD21fBEF3a7C",
     "interval": 1,
