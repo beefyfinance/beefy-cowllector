@@ -194,23 +194,31 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         if (CHAIN.id === 'aurora') {
           try {
             tx = await stratContract.harvest(options);
+            if (tx.status === 1)
+              console.log(
+                `${strat.name}:\tharvested step 1/3: Charges Fees - with tx: ${tx.transactionHash}`
+              );
           } catch (error) {
             console.log(`${strat.name}: ${error}`);
             return {
               contract: strat.address,
               status: 'failed',
-              message: `${strat.name}: fail in 1/3 harvest() - Charges Fees`,
+              message: `${strat.name}: fail in step 1/3: Charges Fees`,
               data: error.message,
             };
           }
           try {
             tx = await stratContract.harvest(options);
+            if (tx.status === 1)
+              console.log(
+                `${strat.name}:\tharvested step 2/3: Swaps to tokens needed step - with tx: ${tx.transactionHash}`
+              );
           } catch (error) {
             console.log(`${strat.name}: ${error}`);
             return {
               contract: strat.address,
               status: 'failed',
-              message: `${strat.name}: fail in 2/3 harvest() - swaps to tokens needed`,
+              message: `${strat.name}: fail in step 2/3: - Swaps to tokens needed`,
               data: error.message,
             };
           }
@@ -218,12 +226,12 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
             tx = await stratContract.harvest(options);
             if (tx.status === 1) {
               console.log(
-                `${strat.name}:\tharvested after tried ${tries} with tx: ${tx.transactionHash}`
+                `${strat.name}:\tharvested step 3/3: Swaps to tokens needed step - with tx: ${tx.transactionHash}`
               );
               return {
                 contract: strat.address,
                 status: 'success',
-                message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.transactionHash}`,
+                message: `${strat.name}: harvested after tried ${tries} - with tx: ${tx.transactionHash}`,
                 data: tx,
               };
             }
@@ -232,7 +240,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
             return {
               contract: strat.address,
               status: 'failed',
-              message: `${strat.name}: fail in 3/3 harvest() - Adds liquidity and deposits`,
+              message: `${strat.name}: fail in step 3/3 - Adds liquidity and deposits`,
               data: error.message,
             };
           }
