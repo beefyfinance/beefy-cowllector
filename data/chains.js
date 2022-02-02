@@ -296,31 +296,31 @@ const chains = {
       price: Number(process.env.METIS_GAS_PRICE) || 30e9,
     },
   },
-  // 1313161554: {
-  //   id: 'aurora',
-  //   chainId: 1313161554,
-  //   wnative: aurora.tokens.WNATIVE.address,
-  //   rewardPool: aurora.platforms.beefyfinance.rewardPool,
-  //   treasury: aurora.platforms.beefyfinance.treasury,
-  //   beefyFeeBatcher: aurora.platforms.beefyfinance.beefyFeeRecipient,
-  //   beefyFeeHarvestInterval: 2,
-  //   harvestHourInterval: parseInt(process.env.AURORA_HARVEST_HOUR_INTERVAL) || 1,
-  //   wnativeUnwrapInterval: 8,
-  //   wnativeMintoUnwrap: parseInt(process.env.AURORA_WNATIVE_MIN_TO_UNWRAP) || 1e17,
-  //   rpc:
-  //     process.env.aurora_RPC ||
-  //     'https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek',
-  //   appVaultsFilename: 'aurora_pools.js',
-  //   multicall: aurora.platforms.beefyfinance.multicall,
-  //   queryLimit: 1000,
-  //   queryInterval: 100,
-  //   blockTime: 1,
-  //   blockExplorer: 'https://explorer.mainnet.aurora.dev/',
-  // gas: {
-  //   limit: Number(process.env.AURORA_GAS_LIMIT) || 30e6,
-  //   price: Number(process.env.AURORA_GAS_PRICE) || 1e9,
-  // },
-  // },
+  1313161554: {
+    id: 'aurora',
+    chainId: 1313161554,
+    wnative: aurora.tokens.WNATIVE.address,
+    rewardPool: aurora.platforms.beefyfinance.rewardPool,
+    treasury: aurora.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: aurora.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 2,
+    harvestHourInterval: parseInt(process.env.AURORA_HARVEST_HOUR_INTERVAL) || 1,
+    wnativeUnwrapInterval: 8,
+    wnativeMintoUnwrap: parseInt(process.env.AURORA_WNATIVE_MIN_TO_UNWRAP) || 1e17,
+    rpc:
+      process.env.AURORA_RPC ||
+      'https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek',
+    appVaultsFilename: 'aurora_pools.js',
+    multicall: aurora.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 1,
+    blockExplorer: 'https://explorer.mainnet.aurora.dev/',
+    gas: {
+      limit: Number(process.env.AURORA_GAS_LIMIT) || 0,
+      price: Number(process.env.AURORA_GAS_PRICE) || 0,
+    },
+  },
 };
 
 module.exports = chains;

@@ -190,70 +190,118 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
       tries++;
       let tx;
       try {
-        tx = await stratContract.harvest(options);
-        if (TRICKY_CHAINS.includes(CHAIN.id)) {
-          let receipt = null;
-          while (receipt === null) {
-            try {
-              await harvestHelpers.sleep(500);
-              receipt = await provider.getTransactionReceipt(tx.hash);
-              if (receipt === null) continue;
-              console.log(`${strat.name}:\tharvested after tried ${tries} with tx: ${tx.hash}`);
+        // aurora patch
+        if (CHAIN.id === 'aurora') {
+          try {
+            tx = await stratContract.harvest(options);
+          } catch (error) {
+            console.log(`${strat.name}: ${error}`);
+            return {
+              contract: strat.address,
+              status: 'failed',
+              message: `${strat.name}: fail in 1/3 harvest() - Charges Fees`,
+              data: error.message,
+            };
+          }
+          try {
+            tx = await stratContract.harvest(options);
+          } catch (error) {
+            console.log(`${strat.name}: ${error}`);
+            return {
+              contract: strat.address,
+              status: 'failed',
+              message: `${strat.name}: fail in 2/3 harvest() - swaps to tokens needed`,
+              data: error.message,
+            };
+          }
+          try {
+            tx = await stratContract.harvest(options);
+            if (tx.status === 1) {
+              console.log(
+                `${strat.name}:\tharvested after tried ${tries} with tx: ${tx.transactionHash}`
+              );
               return {
                 contract: strat.address,
                 status: 'success',
-                message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.hash}`,
-                data: receipt,
-              };
-            } catch (error) {
-              for (const key of Object.keys(JSONRPC_ERRORS)) {
-                if (error.message.includes(key)) {
-                  console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
-                  try {
-                    let res = await broadcast.send({
-                      type: 'error',
-                      title: `Error trying to harvest ${strat.name}`,
-                      message: `- error code: ${JSONRPC_ERRORS[key]}\n- address: ${strat.address}`,
-                    });
-                  } catch (error) {
-                    console.log(`Error trying to send message to broadcast: ${error.message}`);
-                  }
-                  return {
-                    contract: strat.address,
-                    status: 'failed',
-                    message: `${strat.name}: ${JSONRPC_ERRORS[key]}`,
-                  };
-                }
-              }
-              try {
-                let res = await broadcast.send({
-                  type: 'error',
-                  title: `Error trying to harvest ${strat.name}`,
-                  message: `- error code: unknown\n- address: ${strat.address}\n- tx hash: ${tx.hash}`,
-                });
-              } catch (error) {
-                console.log(`Error trying to send message to broadcast: ${error.message}`);
-              }
-              return {
-                contract: strat.address,
-                status: 'failed',
-                message: `failed tx: ${tx.hash}`,
-                data: error.message,
+                message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.transactionHash}`,
+                data: tx,
               };
             }
-          }
-        } else {
-          tx = await tx.wait();
-          if (tx.status === 1) {
-            console.log(
-              `${strat.name}:\tharvested after tried ${tries} with tx: ${tx.transactionHash}`
-            );
+          } catch (error) {
+            console.log(`${strat.name}: ${error}`);
             return {
               contract: strat.address,
-              status: 'success',
-              message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.transactionHash}`,
-              data: tx,
+              status: 'failed',
+              message: `${strat.name}: fail in 3/3 harvest() - Adds liquidity and deposits`,
+              data: error.message,
             };
+          }
+        } else {
+          tx = await stratContract.harvest(options);
+          if (TRICKY_CHAINS.includes(CHAIN.id)) {
+            let receipt = null;
+            while (receipt === null) {
+              try {
+                await harvestHelpers.sleep(500);
+                receipt = await provider.getTransactionReceipt(tx.hash);
+                if (receipt === null) continue;
+                console.log(`${strat.name}:\tharvested after tried ${tries} with tx: ${tx.hash}`);
+                return {
+                  contract: strat.address,
+                  status: 'success',
+                  message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.hash}`,
+                  data: receipt,
+                };
+              } catch (error) {
+                for (const key of Object.keys(JSONRPC_ERRORS)) {
+                  if (error.message.includes(key)) {
+                    console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
+                    try {
+                      let res = await broadcast.send({
+                        type: 'error',
+                        title: `Error trying to harvest ${strat.name}`,
+                        message: `- error code: ${JSONRPC_ERRORS[key]}\n- address: ${strat.address}`,
+                      });
+                    } catch (error) {
+                      console.log(`Error trying to send message to broadcast: ${error.message}`);
+                    }
+                    return {
+                      contract: strat.address,
+                      status: 'failed',
+                      message: `${strat.name}: ${JSONRPC_ERRORS[key]}`,
+                    };
+                  }
+                }
+                try {
+                  let res = await broadcast.send({
+                    type: 'error',
+                    title: `Error trying to harvest ${strat.name}`,
+                    message: `- error code: unknown\n- address: ${strat.address}\n- tx hash: ${tx.hash}`,
+                  });
+                } catch (error) {
+                  console.log(`Error trying to send message to broadcast: ${error.message}`);
+                }
+                return {
+                  contract: strat.address,
+                  status: 'failed',
+                  message: `failed tx: ${tx.hash}`,
+                  data: error.message,
+                };
+              }
+            }
+          } else {
+            tx = await tx.wait();
+            if (tx.status === 1) {
+              console.log(
+                `${strat.name}:\tharvested after tried ${tries} with tx: ${tx.transactionHash}`
+              );
+              return {
+                contract: strat.address,
+                status: 'success',
+                message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.transactionHash}`,
+                data: tx,
+              };
+            }
           }
         }
       } catch (error) {
