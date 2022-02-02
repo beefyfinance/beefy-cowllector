@@ -18,7 +18,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1080699,
+    "gasLimit": 1082482,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -29,7 +29,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1052179,
+    "gasLimit": 1071679,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -40,7 +40,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1130849,
+    "gasLimit": 1152132,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -73,7 +73,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1052746,
+    "gasLimit": 1072246,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -84,7 +84,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1341275,
+    "gasLimit": 1318314,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -95,7 +95,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1165508,
+    "gasLimit": 1144224,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -106,7 +106,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1159840,
+    "gasLimit": 1138556,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -128,7 +128,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1057306,
+    "gasLimit": 1076793,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -161,7 +161,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1148275,
+    "gasLimit": 1146492,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -172,7 +172,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1285856,
+    "gasLimit": 1307139,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -183,7 +183,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1039433,
+    "gasLimit": 1056625,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -194,7 +194,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1014908,
+    "gasLimit": 1057475,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -227,7 +227,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1122596,
+    "gasLimit": 1124380,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -304,7 +304,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1091261,
+    "gasLimit": 1069978,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -337,7 +337,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1286023,
+    "gasLimit": 1247023,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -348,7 +348,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "gasLimit": 1250368,
+    "gasLimit": 1229085,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -6750,7 +6750,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "gasLimit": 5960386,
+    "gasLimit": 6036452,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -6761,7 +6761,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "gasLimit": 6721040,
+    "gasLimit": 6074485,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7399,8 +7399,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1020840,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "joe-wavax-dcau",
@@ -7410,8 +7410,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1028566,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "joe-wavax-hec",
@@ -7421,8 +7421,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1029212,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "png-wavax-frax",
@@ -7465,7 +7465,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1059783,
+    "gasLimit": 1085653,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7509,7 +7509,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1405443,
+    "gasLimit": 1352239,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7520,8 +7520,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1017533,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "joe-usdt-usdt.e",
@@ -7652,7 +7652,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1717599,
+    "gasLimit": 1352820,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7663,7 +7663,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 2300023,
+    "gasLimit": 2296383,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7718,7 +7718,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 2649998,
+    "gasLimit": 2655703,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7729,7 +7729,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 2206592,
+    "gasLimit": 1844011,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7740,7 +7740,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 2752360,
+    "gasLimit": 2709967,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7751,7 +7751,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 2687646,
+    "gasLimit": 2752269,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7762,7 +7762,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 2184461,
+    "gasLimit": 1844182,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7784,7 +7784,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1179825,
+    "gasLimit": 1157595,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7795,7 +7795,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1592559,
+    "gasLimit": 1918936,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7839,7 +7839,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "gasLimit": 1323925,
+    "gasLimit": 1327565,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -8235,8 +8235,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1046038,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "sushi-one-1ygg-1eth",
@@ -8246,7 +8246,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1147363,
+    "gasLimit": 1163035,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -8257,7 +8257,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1163041,
+    "gasLimit": 1163054,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -8268,7 +8268,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1162469,
+    "gasLimit": 1142969,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -8279,7 +8279,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1150536,
+    "gasLimit": 1145241,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -8301,8 +8301,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1144391,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "sushi-one-ust-1eth",
@@ -8323,7 +8323,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1131499,
+    "gasLimit": 1102843,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -8334,8 +8334,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1133098,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "sushi-one-1usdt-wone",
@@ -8367,8 +8367,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1024026,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "sushi-one-bscbusd-busd",
@@ -8411,7 +8411,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1006605,
+    "gasLimitStrategy": "eth_estimateGas"
   }
 ]
