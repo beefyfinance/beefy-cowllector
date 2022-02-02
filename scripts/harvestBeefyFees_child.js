@@ -149,6 +149,18 @@ const harvest = async (contractAddress, harvesterPK, provider, options, nonce = 
     }
 
     const batcher = new ethers.Contract(contractAddress, IBeefyFeeBatch, harvesterPK);
+
+    try {
+      await batcher.callStatic.harvest(options);
+    } catch (error) {
+      console.log(error);
+      return {
+        contract: contractAddress,
+        status: 'failed',
+        message: error.message,
+      };
+    }
+
     let tx = await tryTX(batcher);
     return tx;
   } catch (error) {
@@ -168,15 +180,8 @@ const main = async () => {
       return false;
     }
 
-    if (!harvestHelpers.isNewPeriodNaive(CHAIN.beefyFeeHarvestInterval)) {
-      console.log(
-        `Is not Harvest time for beefyFeeBatch [hour_interval=${CHAIN.beefyFeeHarvestInterval}]`
-      );
-      return false;
-    }
-
     console.log(
-      `Harvest time for beefyFeeBatch [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${CHAIN.blockExplorer}] [hour_interval=${CHAIN.beefyFeeHarvestInterval}]`
+      `Harvest time for beefyFeeBatch [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${CHAIN.blockExplorer}]`
     );
 
     try {
@@ -197,7 +202,7 @@ const main = async () => {
 
       let options = {};
       options.gasPrice = await getGasPrice(provider);
-      if (CHAIN.gas && CHAIN.gas.limit) options.gasLimit = CHAIN.gas.limit;
+      options.gasLimit = 1e6;
       console.log(`gasPrice: ${options.gasPrice} - gasLimit: ${options.gasLimit}`);
 
       const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
@@ -209,6 +214,18 @@ const main = async () => {
           let res = await broadcast.send({
             type: 'info',
             title: `BeefyFeeBatch harvest on ${CHAIN.id.toUpperCase()}`,
+            message: harvested.message,
+            platforms: ['discord'],
+          });
+        } catch (error) {
+          console.log(`Error trying to send message to broadcast: ${error.message}`);
+        }
+      }
+      if (harvested.status === 'failed') {
+        try {
+          let res = await broadcast.send({
+            type: 'error',
+            title: `BeefyFeeBatch NO harvest on ${CHAIN.id.toUpperCase()}`,
             message: harvested.message,
             platforms: ['discord'],
           });
