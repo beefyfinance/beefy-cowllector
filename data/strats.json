@@ -2511,8 +2511,26 @@
     "chainId": 56
   },
   {
-    "name": "fusefi-wfuse-usdc",
+    "name": "voltage-wfuse-usdc",
     "address": "0xC3821F0b56FA4F4794d5d760f94B812DE261361B",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 122
+  },
+  {
+    "name": "voltage-wfuse-ust",
+    "address": "0xe441aa3287857924e4aDA3c15612aE8dE29C684a",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 122
+  },
+  {
+    "name": "voltage-luna-ust",
+    "address": "0x19B2225981B96cCbf121b47451d2E4799B16f3eB",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -2556,7 +2574,7 @@
     "chainId": 122
   },
   {
-    "name": "fusefi-wfuse-weth",
+    "name": "voltage-wfuse-weth",
     "address": "0x29C4C22eC7dF7e936Cb3e6C4A7E5eAE751C7d86B",
     "interval": 1,
     "harvestSignature": "0x4641257d",
@@ -2565,7 +2583,7 @@
     "chainId": 122
   },
   {
-    "name": "fusefi-wfuse-g$",
+    "name": "voltage-wfuse-g$",
     "address": "0xf6fD90FE8f057a63F0368B0B551D5e52C7Ae821F",
     "interval": 1,
     "harvestSignature": "0x4641257d",
@@ -2574,7 +2592,7 @@
     "chainId": 122
   },
   {
-    "name": "fusefi-fusd-bnb",
+    "name": "voltage-fusd-bnb",
     "address": "0x32d272C7F753698BB6ecde56CC599411C57Fa93a",
     "interval": 1,
     "harvestSignature": "0x4641257d",
@@ -2583,7 +2601,7 @@
     "chainId": 122
   },
   {
-    "name": "fusefi-wfuse-busd",
+    "name": "voltage-wfuse-busd",
     "address": "0x8a198BCbF313A5565c64A7Ed61FaA413eB4E0931",
     "interval": 1,
     "harvestSignature": "0x4641257d",
@@ -2592,7 +2610,7 @@
     "chainId": 122
   },
   {
-    "name": "fusefi-wfuse-fusd",
+    "name": "voltage-wfuse-fusd",
     "address": "0xcBd801AAdd138560b15DBFE0D173ea4774E20b40",
     "interval": 1,
     "harvestSignature": "0x4641257d",
@@ -2601,7 +2619,7 @@
     "chainId": 122
   },
   {
-    "name": "fusefi-wbtc-weth",
+    "name": "voltage-wbtc-weth",
     "address": "0xF439B695bB28c9E9865170C1b3e98F5EB4cE9b48",
     "interval": 1,
     "harvestSignature": "0x4641257d",
@@ -2874,6 +2892,15 @@
     "name": "polygon-bifi-maxi",
     "address": "0xD126BA764D2fA052Fc14Ae012Aef590Bc6aE0C4f",
     "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 137
+  },
+  {
+    "name": "sushi-eth-mana",
+    "address": "0xBaBaC5560Aa4CA3C5290DfcC5C159EdC0a51c316",
+    "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
