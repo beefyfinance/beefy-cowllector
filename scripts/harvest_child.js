@@ -11,6 +11,7 @@ const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
 const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
 const GASLESS_CHAINS = ['celo', 'aurora'];
+const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 20;
 
 require('../utils/logger')(CHAIN_ID);
 
@@ -31,6 +32,7 @@ const getGasPrice = async provider => {
   try {
     if (CHAIN.gas.price) gas = CHAIN.gas.price;
     let gasPrice = await provider.getGasPrice();
+    gasPrice = (gasPrice * (100 + GAS_MARGIN)) / 100;
     if (gasPrice > gas) {
       gas = Number(gasPrice.toString()).toFixed();
     }
@@ -313,6 +315,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           }
         }
       } catch (error) {
+        if (tries < max) continue;
         for (const key of Object.keys(JSONRPC_ERRORS)) {
           if (error.message.includes(key)) {
             console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
