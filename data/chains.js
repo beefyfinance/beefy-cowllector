@@ -27,10 +27,8 @@ const chains = {
     treasury: bsc.platforms.beefyfinance.treasury,
     beefyFeeBatcher: bsc.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 4,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.BSC_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.BSC_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 8,
     wnativeMintoUnwrap: parseInt(process.env.BSC_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.BSC_RPC || 'https://bsc-dataseed2.defibit.io/',
@@ -54,10 +52,8 @@ const chains = {
     treasury: heco.platforms.beefyfinance.treasury,
     beefyFeeBatcher: heco.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 4,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.HECO_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.HECO_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 4,
     wnativeMintoUnwrap: parseInt(process.env.HECO_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
@@ -80,10 +76,8 @@ const chains = {
     treasury: avax.platforms.beefyfinance.treasury,
     beefyFeeBatcher: avax.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 8,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.AVAX_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.AVAX_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 8,
     wnativeMintoUnwrap: parseInt(process.env.AVAX_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
@@ -106,10 +100,8 @@ const chains = {
     treasury: polygon.platforms.beefyfinance.treasury,
     beefyFeeBatcher: polygon.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.POLYGON_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.POLYGON_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 4,
     wnativeMintoUnwrap: parseInt(process.env.POLYGON_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.POLYGON_RPC || 'https://polygon-rpc.com/',
@@ -132,10 +124,8 @@ const chains = {
     treasury: fantom.platforms.beefyfinance.treasury,
     beefyFeeBatcher: fantom.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.FANTOM_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.FANTOM_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 4,
     wnativeMintoUnwrap: parseInt(process.env.FANTOM_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.FANTOM_RPC || 'https://rpcapi.fantom.network',
@@ -158,10 +148,8 @@ const chains = {
     treasury: one.platforms.beefyfinance.treasury,
     beefyFeeBatcher: one.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.ONE_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.ONE_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 4,
     wnativeMintoUnwrap: parseInt(process.env.ONE_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.ONE_RPC || 'https://api.s0.t.hmny.io/',
@@ -184,10 +172,8 @@ const chains = {
     treasury: arbitrum.platforms.beefyfinance.treasury,
     beefyFeeBatcher: arbitrum.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 8,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.ARBITRUM_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.ARBITRUM_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 20,
     wnativeMintoUnwrap: parseInt(process.env.ARBITRUM_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
@@ -209,10 +195,8 @@ const chains = {
     treasury: celo.platforms.beefyfinance.treasury,
     beefyFeeBatcher: celo.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.CELO_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.CELO_HARVEST_HOUR_INTERVAL) || 1,
     wnative: null,
     wnativeUnwrapInterval: null,
     wnativeMintoUnwrap: parseInt(process.env.CELO_WNATIVE_MIN_TO_UNWRAP) || 1e17,
@@ -236,10 +220,8 @@ const chains = {
     treasury: moonriver.platforms.beefyfinance.treasury,
     beefyFeeBatcher: moonriver.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 2,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.MOONRIVER_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.MOONRIVER_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 6,
     wnativeMintoUnwrap: parseInt(process.env.MOONRIVER_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
@@ -262,10 +244,8 @@ const chains = {
     treasury: cronos.platforms.beefyfinance.treasury,
     beefyFeeBatcher: cronos.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 6,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.CRONOS_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.CRONOS_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 6,
     wnativeMintoUnwrap: parseInt(process.env.CRONOS_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
@@ -288,10 +268,8 @@ const chains = {
     treasury: fuse.platforms.beefyfinance.treasury,
     beefyFeeBatcher: fuse.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.FUSE_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.FUSE_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 6,
     wnativeMintoUnwrap: parseInt(process.env.FUSE_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.FUSE_RPC || 'https://rpc.fuse.io',
@@ -314,10 +292,8 @@ const chains = {
     treasury: metis.platforms.beefyfinance.treasury,
     beefyFeeBatcher: metis.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 4,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 6,
     wnativeMintoUnwrap: parseInt(process.env.METIS_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
@@ -340,10 +316,8 @@ const chains = {
     treasury: aurora.platforms.beefyfinance.treasury,
     beefyFeeBatcher: aurora.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 2,
-    harvestHourInterval:
-      parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) ||
-      parseInt(process.env.AURORA_HARVEST_HOUR_INTERVAL) ||
-      24,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.AURORA_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 8,
     wnativeMintoUnwrap: parseInt(process.env.AURORA_WNATIVE_MIN_TO_UNWRAP) || 1e17,
     rpc:

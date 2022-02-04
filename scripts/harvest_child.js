@@ -15,6 +15,8 @@ const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 20;
 
 require('../utils/logger')(CHAIN_ID);
 
+require('../utils/sentry.js')();
+
 const JSONRPC_ERRORS = {
   'code=INSUFFICIENT_FUNDS': 'INSUFFICIENT_FUNDS',
   'PancakeLibrary: INSUFFICIENT_INPUT_AMOUNT': 'PancakeLibrary: INSUFFICIENT_INPUT_AMOUNT',
@@ -140,7 +142,7 @@ const shouldHarvest = async (strat, harvesterPK) => {
     if (strat.lastHarvest !== 0) {
       let now = Math.floor(new Date().getTime() / 1000);
       let secondsSinceHarvest = now - strat.lastHarvest;
-      let interval = CHAIN.harvestHourInterval || strat.interval;
+      let interval = CHAIN.stratHarvestHourInterval || strat.interval;
       if (!(secondsSinceHarvest >= interval * 3600 + STRAT_INTERVALS_MARGIN_OF_ERROR)) {
         strat.shouldHarvest = false;
         strat.notHarvestReason = 'lastHarvest is lower than interval';
@@ -370,184 +372,190 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 };
 
 const main = async () => {
-  if (CHAIN && CHAIN.id) {
-    /**
-     * Check hour interval if harvest_child should run for this chain
-     * @dev on file data/chain.js you can find, for every chain, a prop harvestHourInterval that explain when hourly harvest should be run for it
-     */
-    let hour = new Date().getUTCHours();
-    if (hour % CHAIN.harvestHourInterval) {
-      console.log(
-        `Is not Harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
-          CHAIN.harvestHourInterval
-        }]`
-      );
-      return false;
-    }
-
-    console.log(
-      `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
-        CHAIN.blockExplorer
-      }] [hour_interval=${CHAIN.harvestHourInterval}]`
-    );
-
-    try {
-      const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
-      // patch for GASLESS chains
-      if (GASLESS_CHAINS.includes(CHAIN.id)) {
-        const originalBlockFormatter = provider.formatter._block;
-        provider.formatter._block = (value, format) => {
-          return originalBlockFormatter(
-            {
-              gasLimit: ethers.BigNumber.from(0),
-              ...value,
-            },
-            format
-          );
-        };
+  try {
+    if (CHAIN && CHAIN.id) {
+      /**
+       * Check hour interval if harvest_child should run for this chain
+       * @dev on file data/chain.js you can find, for every chain, a prop stratHarvestHourInterval that explain when hourly harvest should be run for it
+       */
+      let hour = new Date().getUTCHours();
+      if (hour % CHAIN.harvestHourInterval) {
+        console.log(
+          `Is not Harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
+            CHAIN.harvestHourInterval
+          }]`
+        );
+        return false;
       }
 
-      let gasPrice = await getGasPrice(provider);
-      console.log(`Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} GWEI`);
-      const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
-      const balance = await harvesterPK.getBalance();
-      const wNativeBalance = await getWnativeBalance(harvesterPK);
-
-      strats = await addGasLimit(strats, provider);
-      strats = strats.map(s => {
-        s.shouldHarvest = true;
-        s.notHarvestReason = '';
-        s.harvest = null;
-        return s;
-      });
-      strats = strats.map(s => {
-        if (s.depositsPaused || s.harvestPaused) {
-          s.shouldHarvest = false;
-          s.notHarvestReason = 'deposits or harvest paused';
-        }
-        return s;
-      });
-      strats = await harvestHelpers.multicall(CHAIN, strats, 'balanceOf');
-      strats = strats.map(s => {
-        if (s.balanceOf === 0) {
-          s.shouldHarvest = false;
-          s.notHarvestReason = 'balance is zero';
-        }
-        return s;
-      });
-      strats = await harvestHelpers.multicall(CHAIN, strats, 'lastHarvest');
-      strats = await Promise.allSettled(strats.map(strat => shouldHarvest(strat, harvesterPK)));
-      strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
-      console.table(strats, ['name', 'address', 'shouldHarvest', 'notHarvestReason']);
-
-      stratsToHarvest = strats.filter(s => s.shouldHarvest);
-      console.log(`Total Strat to harvest ${stratsToHarvest.length} of ${strats.length}`);
-
-      let totalGas =
-        stratsToHarvest
-          .filter(s => s.shouldHarvest)
-          .reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
       console.log(
-        `Total gas to use ${(totalGas * gasPrice) / 1e9} GWEI , current balance ${balance.div(
-          1e9
-        )} GWEI`
+        `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
+          CHAIN.blockExplorer
+        }] [hour_interval=${CHAIN.harvestHourInterval}]`
       );
 
-      let harvesteds = [];
-      for await (const strat of stratsToHarvest) {
-        try {
-          let options = {
-            gasPrice,
-            gasLimit: ethers.BigNumber.from(strat.gasLimit),
+      try {
+        const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
+        // patch for GASLESS chains
+        if (GASLESS_CHAINS.includes(CHAIN.id)) {
+          const originalBlockFormatter = provider.formatter._block;
+          provider.formatter._block = (value, format) => {
+            return originalBlockFormatter(
+              {
+                gasLimit: ethers.BigNumber.from(0),
+                ...value,
+              },
+              format
+            );
           };
-          let harvested = await harvest(strat, harvesterPK, provider, options);
-          harvesteds.push(harvested);
-        } catch (error) {
-          console.log(error.message);
         }
-        await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMintoUnwrap);
-      }
 
-      strats = strats.map(s => {
-        let harvested = harvesteds.find(h => h.contract === s.address);
-        if (harvested) s.harvest = harvested;
-        return s;
-      });
+        let gasPrice = await getGasPrice(provider);
+        console.log(`Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} GWEI`);
+        const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
+        const balance = await harvesterPK.getBalance();
+        const wNativeBalance = await getWnativeBalance(harvesterPK);
 
-      if (strats.length) {
-        let success = strats.filter(s => s.harvest && s.harvest.status === 'success');
-        let gasUsed = harvesteds.reduce((total, h) => {
-          if (h.data && h.data.gasUsed) return total.add(ethers.BigNumber.from(h.data.gasUsed));
-          return total;
-        }, ethers.BigNumber.from(0));
-        let report = {
-          strats,
-          gasUsed: gasUsed,
-          averageGasUsed: ethers.BigNumber.from(0),
-          harvesteds: harvesteds.length,
-          success: success.length,
-          failed: harvesteds.length - success.length,
-        };
-        if (gasUsed.gt(0)) {
-          report.averageGasUsed = gasUsed.div(ethers.BigNumber.from(success.length));
-        }
-        let currentWNativeBalance = await getWnativeBalance(harvesterPK);
-        let currentBalance = await harvesterPK.getBalance();
-        report.balance = currentWNativeBalance.add(currentBalance);
-        report.profit = currentBalance.add(currentWNativeBalance).sub(balance.add(wNativeBalance));
+        strats = await addGasLimit(strats, provider);
+        strats = strats.map(s => {
+          s.shouldHarvest = true;
+          s.notHarvestReason = '';
+          s.harvest = null;
+          return s;
+        });
+        strats = strats.map(s => {
+          if (s.depositsPaused || s.harvestPaused) {
+            s.shouldHarvest = false;
+            s.notHarvestReason = 'deposits or harvest paused';
+          }
+          return s;
+        });
+        strats = await harvestHelpers.multicall(CHAIN, strats, 'balanceOf');
+        strats = strats.map(s => {
+          if (s.balanceOf === 0) {
+            s.shouldHarvest = false;
+            s.notHarvestReason = 'balance is zero';
+          }
+          return s;
+        });
+        strats = await harvestHelpers.multicall(CHAIN, strats, 'lastHarvest');
+        strats = await Promise.allSettled(strats.map(strat => shouldHarvest(strat, harvesterPK)));
+        strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
+        console.table(strats, ['name', 'address', 'shouldHarvest', 'notHarvestReason']);
 
-        let now = new Date().toISOString();
-        try {
-          let input = {
-            apiKey: process.env.FLEEK_STORAGE_API_KEY,
-            apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
-            key: `cowllector-reports/${CHAIN.id}-${now}.json`,
-            data: JSON.stringify(report, null, 2),
-          };
-          let uploaded = await fleekStorage.upload(input);
+        stratsToHarvest = strats.filter(s => s.shouldHarvest);
+        console.log(`Total Strat to harvest ${stratsToHarvest.length} of ${strats.length}`);
+
+        let totalGas =
+          stratsToHarvest
+            .filter(s => s.shouldHarvest)
+            .reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
+        console.log(
+          `Total gas to use ${(totalGas * gasPrice) / 1e9} GWEI , current balance ${balance.div(
+            1e9
+          )} GWEI`
+        );
+
+        let harvesteds = [];
+        for await (const strat of stratsToHarvest) {
           try {
+            let options = {
+              gasPrice,
+              gasLimit: ethers.BigNumber.from(strat.gasLimit),
+            };
+            let harvested = await harvest(strat, harvesterPK, provider, options);
+            harvesteds.push(harvested);
+          } catch (error) {
+            console.log(error.message);
+          }
+          await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMintoUnwrap);
+        }
+
+        strats = strats.map(s => {
+          let harvested = harvesteds.find(h => h.contract === s.address);
+          if (harvested) s.harvest = harvested;
+          return s;
+        });
+
+        if (strats.length) {
+          let success = strats.filter(s => s.harvest && s.harvest.status === 'success');
+          let gasUsed = harvesteds.reduce((total, h) => {
+            if (h.data && h.data.gasUsed) return total.add(ethers.BigNumber.from(h.data.gasUsed));
+            return total;
+          }, ethers.BigNumber.from(0));
+          let report = {
+            strats,
+            gasUsed: gasUsed,
+            averageGasUsed: ethers.BigNumber.from(0),
+            harvesteds: harvesteds.length,
+            success: success.length,
+            failed: harvesteds.length - success.length,
+          };
+          if (gasUsed.gt(0)) {
+            report.averageGasUsed = gasUsed.div(ethers.BigNumber.from(success.length));
+          }
+          let currentWNativeBalance = await getWnativeBalance(harvesterPK);
+          let currentBalance = await harvesterPK.getBalance();
+          report.balance = currentWNativeBalance.add(currentBalance);
+          report.profit = currentBalance
+            .add(currentWNativeBalance)
+            .sub(balance.add(wNativeBalance));
+
+          let now = new Date().toISOString();
+          try {
+            let input = {
+              apiKey: process.env.FLEEK_STORAGE_API_KEY,
+              apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
+              key: `cowllector-reports/${CHAIN.id}-${now}.json`,
+              data: JSON.stringify(report, null, 2),
+            };
+            let uploaded = await fleekStorage.upload(input);
+            try {
+              let res = await broadcast.send({
+                type: 'info',
+                title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
+                message: `- Total strats: ${strats.length}\n- Harvested: ${
+                  report.harvesteds
+                }\n  + Success: ${report.success}\n  + Failed: ${
+                  report.failed
+                }\n- Total gas used: ${ethers.utils.formatUnits(
+                  report.gasUsed,
+                  'gwei'
+                )}\n  + Avg per strat: ${ethers.utils.formatUnits(
+                  report.averageGasUsed,
+                  'gwei'
+                )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
+                  report.balance
+                )}\n- Profit: ${ethers.utils.formatUnits(
+                  report.profit
+                )}\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n`,
+                platforms: ['discord'],
+              });
+            } catch (error) {
+              console.log(`Error trying to send message to broadcast: ${error.message}`);
+            }
+            console.log(
+              `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
+                uploaded.hash
+              }`
+            );
+          } catch (error) {
+            console.log(error);
             let res = await broadcast.send({
               type: 'info',
-              title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-              message: `- Total strats: ${strats.length}\n- Harvested: ${
-                report.harvesteds
-              }\n  + Success: ${report.success}\n  + Failed: ${
-                report.failed
-              }\n- Total gas used: ${ethers.utils.formatUnits(
-                report.gasUsed,
-                'gwei'
-              )}\n  + Avg per strat: ${ethers.utils.formatUnits(
-                report.averageGasUsed,
-                'gwei'
-              )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
-                report.balance
-              )}\n- Profit: ${ethers.utils.formatUnits(
-                report.profit
-              )}\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n`,
-              platforms: ['discord'],
+              title: `Error trying to upload report to ipfs.fleek.co - ${CHAIN.id.toUpperCase()}`,
+              message: '',
             });
-          } catch (error) {
-            console.log(`Error trying to send message to broadcast: ${error.message}`);
           }
-          console.log(
-            `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
-              uploaded.hash
-            }`
-          );
-        } catch (error) {
-          console.log(error);
-          let res = await broadcast.send({
-            type: 'info',
-            title: `Error trying to upload report to ipfs.fleek.co - ${CHAIN.id.toUpperCase()}`,
-            message: '',
-          });
         }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
+    console.log(`done`);
+  } catch (error) {
+    Sentry.captureException(e);
   }
-  console.log(`done`);
   process.exit();
 };
 

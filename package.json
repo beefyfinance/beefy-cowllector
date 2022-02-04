@@ -16,6 +16,8 @@
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.20",
     "@makerdao/multicall": "^0.12.0",
+    "@sentry/node": "^6.17.4",
+    "@sentry/tracing": "^6.17.4",
     "axios": "^0.25.0",
     "bignumber.js": "^9.0.1",
     "blockchain-addressbook": "^0.11.0",
