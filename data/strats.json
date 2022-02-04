@@ -3267,24 +3267,6 @@
     "chainId": 137
   },
   {
-    "name": "tetu-tetu-usdc",
-    "address": "0x46F54BeFa299a1DbaaDfD35Bb550628F674b5D96",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
-    "name": "tetu-matic-tetu",
-    "address": "0x15D81E03F6f062EB1f18ab9803a3120182b0ac23",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "mai-qi-matic",
     "address": "0x464893e1A23026de87fd487A25341553B0f9cf03",
     "interval": 6,
@@ -3978,8 +3960,8 @@
     "chainId": 250
   },
   {
-    "name": "beefy-binspirit",
-    "address": "0xfA9c8FCda731b92FC0B6aB0ABFF4CDeE1AC67B33",
+    "name": "spirit-binspirit-spirit",
+    "address": "0xBCB4c9107561a8c52b9C8f691C60e6A83C4499c3",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -3987,8 +3969,8 @@
     "chainId": 250
   },
   {
-    "name": "spirit-binspirit-spirit",
-    "address": "0xBCB4c9107561a8c52b9C8f691C60e6A83C4499c3",
+    "name": "beefy-binspirit",
+    "address": "0xfA9c8FCda731b92FC0B6aB0ABFF4CDeE1AC67B33",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
