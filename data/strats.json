@@ -3987,6 +3987,15 @@
     "chainId": 250
   },
   {
+    "name": "spirit-binspirit-spirit",
+    "address": "0xBCB4c9107561a8c52b9C8f691C60e6A83C4499c3",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "spirit-ftm-spirit",
     "address": "0x10bcb7145c08F04aA7cCa356FAEE0A5ac3cCa860",
     "interval": 1,
@@ -6685,6 +6694,24 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114
+  },
+  {
+    "name": "tri-aurora-tri",
+    "address": "0x5Bd44cA9A31bb95080234322c138e085e2CA3202",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
+    "name": "tri-aurora-weth",
+    "address": "0xAfe54A0e3AB5C19aeac473B326239a714823E71A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
   },
   {
     "name": "trisolaris-near-tri",
