@@ -1800,22 +1800,6 @@
     "tvl": 0
   },
   {
-    "id": "blizzard-xblzd-busd",
-    "name": "Moo Blizzard xBLZD-BUSD v2",
-    "contract": "0x17436A6D0ACb7f31D62C7484E5C77eC9A6122837",
-    "oracle": "lps",
-    "oracleId": "blizzard-xblzd-busd",
-    "tvl": 0
-  },
-  {
-    "id": "blizzard-xblzd",
-    "name": "Moo Blizzard xBLZDv2",
-    "contract": "0x47a27220Db5458DB4b238fefCBb8178232cBFa5D",
-    "oracle": "tokens",
-    "oracleId": "xBLZD",
-    "tvl": 0
-  },
-  {
     "id": "mdex-bsc-eth-usdt",
     "name": "Moo Mdex ETH-USDT",
     "contract": "0x2C74A61556AfF02Be19B3d7a746ba75A38210fd3",
@@ -1973,6 +1957,22 @@
     "contract": "0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190",
     "oracle": "lps",
     "oracleId": "cakev2-xcv-busd",
+    "tvl": 0
+  },
+  {
+    "id": "blizzard-xblzd-busd",
+    "name": "Moo Blizzard xBLZD-BUSD v2",
+    "contract": "0x17436A6D0ACb7f31D62C7484E5C77eC9A6122837",
+    "oracle": "lps",
+    "oracleId": "blizzard-xblzd-busd",
+    "tvl": 0
+  },
+  {
+    "id": "blizzard-xblzd",
+    "name": "Moo Blizzard xBLZDv2",
+    "contract": "0x47a27220Db5458DB4b238fefCBb8178232cBFa5D",
+    "oracle": "tokens",
+    "oracleId": "xBLZD",
     "tvl": 0
   },
   {

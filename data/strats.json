@@ -2313,24 +2313,6 @@
     "chainId": 56
   },
   {
-    "name": "blizzard-xblzd-busd",
-    "address": "0x831FfE1104D3214d42379768c0a97e8f951b5abF",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
-    "name": "blizzard-xblzd",
-    "address": "0x139f12DA92a1b7c80b160D3967e1f578D7921906",
-    "interval": 24,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 56
-  },
-  {
     "name": "mdex-bsc-eth-usdt",
     "address": "0x3A00616A14A5C6930c45d7D3E62A385Bd81B4e7D",
     "interval": 24,
@@ -3980,6 +3962,15 @@
   {
     "name": "spirit-ftm-spirit",
     "address": "0x10bcb7145c08F04aA7cCa356FAEE0A5ac3cCa860",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "beets-demeters-degree",
+    "address": "0xe3F9B82d899a0f74a8693619BE03413De373c05f",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -6030,6 +6021,24 @@
     "chainId": 43114
   },
   {
+    "name": "png-ust-wavax",
+    "address": "0x5B9Dfe69F95E04017e3A9cF62A3c49b4B442F7A3",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "png-ust-usdc",
+    "address": "0x5f69e5870f2C25cEA61622e932A46aDAbCFb3981",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
     "name": "grape-grape-mim",
     "address": "0x29D9E421e4e4a7f151C00f7BFF808a2B5f62f227",
     "interval": 6,
@@ -6676,6 +6685,24 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114
+  },
+  {
+    "name": "tri-atust-near",
+    "address": "0xD34A51815892368fE96D9730376b2CEdE99F83D8",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
+  },
+  {
+    "name": "tri-near-atluna",
+    "address": "0x278f3A75C1508a4521aE41EDc816b26ffE4E7271",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 1313161554
   },
   {
     "name": "tri-aurora-tri",
