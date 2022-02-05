@@ -15,21 +15,4 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
-const transaction = Sentry.startTransaction({
-  op: 'test',
-  name: 'My First Test Transaction',
-});
-
-const main = () => {
-  return setTimeout(() => {
-    try {
-      foo();
-    } catch (e) {
-      Sentry.captureException(e);
-    } finally {
-      transaction.finish();
-    }
-  }, 99);
-};
-
-module.exports = main;
+module.exports = Sentry;

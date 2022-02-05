@@ -1,6 +1,7 @@
 require('dotenv').config();
 const ethers = require('ethers');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
+const Sentry = require('../utils/sentry.js');
 const IStrategy = require('../abis/IStrategy.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
@@ -15,8 +16,6 @@ const GAS_THROTTLE_CHAIN = ['bsc', 'arbitrum'];
 const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 20;
 
 require('../utils/logger')(CHAIN_ID);
-
-require('../utils/sentry.js')();
 
 const JSONRPC_ERRORS = {
   'code=INSUFFICIENT_FUNDS': 'INSUFFICIENT_FUNDS',
@@ -40,7 +39,9 @@ const getGasPrice = async provider => {
       gas = Number(gasPrice.toString()).toFixed();
     }
     return gas;
-  } catch (error) {}
+  } catch (error) {
+    Sentry.captureException(error);
+  }
 
   try {
     if (CHAIN.gas.info) {
@@ -64,6 +65,7 @@ const getGasPrice = async provider => {
     console.log(`=> Gas Info API not recognized`);
     return gas;
   } catch (error) {
+    Sentry.captureException(error);
     console.log('=> Can not get Gas price from Block Explorer');
     return gas;
   }
@@ -76,9 +78,14 @@ const getGasPrice = async provider => {
  */
 const getWnativeBalance = async signer => {
   if (!CHAIN.wnative) return ethers.BigNumber.from(0);
-  let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, signer);
-  let wNativeBalance = await wNative.balanceOf(signer.address);
-  return wNativeBalance;
+  try {
+    let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, signer);
+    let wNativeBalance = await wNative.balanceOf(signer.address);
+    return wNativeBalance;
+  } catch (error) {
+    Sentry.captureException(error);
+    throw error;
+  }
 };
 
 const unwrap = async (signer, provider, options, minBalance = '0.1') => {
@@ -106,9 +113,11 @@ const unwrap = async (signer, provider, options, minBalance = '0.1') => {
         console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)} ethers`);
       }
     } catch (error) {
+      Sentry.captureException(error);
       console.log(error);
     }
   } catch (error) {
+    Sentry.captureException(error);
     console.log(error.message);
   }
 };
@@ -354,6 +363,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           } \n- Please feed me with more coins 🪙 🐮 \n`,
         });
       } catch (error) {
+        Sentry.captureException(error);
         console.log(`Error trying to send message to broadcast: ${error.message}`);
       }
       throw new Error(
@@ -367,6 +377,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     let tx = await tryTX(stratContract);
     return tx;
   } catch (error) {
+    Sentry.captureException(error);
     console.log(error.message);
     return {
       contract: strat.address,
@@ -465,7 +476,9 @@ const main = async () => {
         for await (const strat of stratsToHarvest) {
           try {
             await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMinToUnwrap);
-          } catch (error) {}
+          } catch (error) {
+            Sentry.captureException(error);
+          }
           try {
             let options = {
               gasPrice,
@@ -539,6 +552,7 @@ const main = async () => {
                 platforms: ['discord'],
               });
             } catch (error) {
+              Sentry.captureException(error);
               console.log(`Error trying to send message to broadcast: ${error.message}`);
             }
             console.log(
@@ -547,6 +561,7 @@ const main = async () => {
               }`
             );
           } catch (error) {
+            Sentry.captureException(error);
             console.log(error);
             let res = await broadcast.send({
               type: 'info',
@@ -556,12 +571,13 @@ const main = async () => {
           }
         }
       } catch (error) {
+        Sentry.captureException(error);
         console.log(error);
       }
     }
     console.log(`done`);
   } catch (error) {
-    Sentry.captureException(e);
+    Sentry.captureException(error);
   }
   process.exit();
 };
