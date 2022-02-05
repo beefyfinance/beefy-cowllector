@@ -40,7 +40,7 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'http://bscscan.com',
     gas: {
-      limit: Number(process.env.BSC_GAS_LIMIT) || 2e7,
+      limit: Number(process.env.BSC_GAS_LIMIT) || 2e6,
       price: Number(process.env.BSC_GAS_PRICE) || 5e9,
     },
   },
