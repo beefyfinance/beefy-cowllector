@@ -344,15 +344,15 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
-        // let res = await broadcast.send({
-        //   type: 'warning',
-        //   title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
-        //   message: `- Gas required **${
-        //     (options.gasPrice * options.gasLimit) / 1e18
-        //   }** and Cowllector has **${ethers.utils.formatUnits(balance)}** \n- Contract Address: ${
-        //     strat.address
-        //   } \n- Please feed me with more coins 🪙 🐮 \n`,
-        // });
+        let res = await broadcast.send({
+          type: 'warning',
+          title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
+          message: `- Gas required **${
+            (options.gasPrice * options.gasLimit) / 1e18
+          }** and Cowllector has **${ethers.utils.formatUnits(balance)}** \n- Contract Address: ${
+            strat.address
+          } \n- Please feed me with more coins 🪙 🐮 \n`,
+        });
       } catch (error) {
         console.log(`Error trying to send message to broadcast: ${error.message}`);
       }
