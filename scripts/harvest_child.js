@@ -81,11 +81,13 @@ const getWnativeBalance = async signer => {
   return wNativeBalance;
 };
 
-const unwrap = async (harvesterPK, provider, options, minBalance = 1e17) => {
+const unwrap = async (signer, provider, options, minBalance = '0.1') => {
   try {
     if (!CHAIN.wnative) return false;
-    let wNativeBalance = await getWnativeBalance(harvesterPK);
-    if (wNativeBalance < minBalance) return false;
+    minBalance = ethers.utils.parseEther(minBalance, 'ether');
+    let wNativeBalance = await getWnativeBalance(signer);
+    if (wNativeBalance.lte(minBalance)) return false;
+    let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, signer);
     let tx;
     try {
       tx = await wNative.withdraw(wNativeBalance, options);
@@ -93,17 +95,19 @@ const unwrap = async (harvesterPK, provider, options, minBalance = 1e17) => {
         let receipt = null;
         while (receipt === null) {
           try {
-            await harvestHelpers.sleep(500);
+            await harvestHelpers.sleep(250);
             receipt = await provider.getTransactionReceipt(tx.hash);
             if (receipt === null) continue;
-            console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)}`);
+            console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)} ethers`);
           } catch (error) {}
         }
       } else {
         tx = await tx.wait();
-        console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)}`);
+        console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)} ethers`);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -340,15 +344,15 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
-        let res = await broadcast.send({
-          type: 'warning',
-          title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
-          message: `- Gas required **${
-            (options.gasPrice * options.gasLimit) / 1e18
-          }** and Cowllector has **${ethers.utils.formatUnits(balance)}** \n- Contract Address: ${
-            strat.address
-          } \n- Please feed me with more coins 🪙 🐮 \n`,
-        });
+        // let res = await broadcast.send({
+        //   type: 'warning',
+        //   title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
+        //   message: `- Gas required **${
+        //     (options.gasPrice * options.gasLimit) / 1e18
+        //   }** and Cowllector has **${ethers.utils.formatUnits(balance)}** \n- Contract Address: ${
+        //     strat.address
+        //   } \n- Please feed me with more coins 🪙 🐮 \n`,
+        // });
       } catch (error) {
         console.log(`Error trying to send message to broadcast: ${error.message}`);
       }
@@ -460,6 +464,9 @@ const main = async () => {
         let harvesteds = [];
         for await (const strat of stratsToHarvest) {
           try {
+            await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMinToUnwrap);
+          } catch (error) {}
+          try {
             let options = {
               gasPrice,
               gasLimit: ethers.BigNumber.from(strat.gasLimit),
@@ -469,7 +476,6 @@ const main = async () => {
           } catch (error) {
             console.log(error.message);
           }
-          await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMintoUnwrap);
         }
 
         strats = strats.map(s => {
