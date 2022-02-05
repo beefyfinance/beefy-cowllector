@@ -90,15 +90,6 @@
     "chainId": 25
   },
   {
-    "name": "vvs-cro-bifi",
-    "address": "0x4dd1194c62D059ab1AE7515B6bEB79c3BC4CEaea",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 25
-  },
-  {
     "name": "vvs-cro-dai",
     "address": "0x632a66b1Ff24A830aCcbBa28AE557e284BaE0221",
     "interval": 1,
@@ -3393,15 +3384,6 @@
     "chainId": 137
   },
   {
-    "name": "quick-sol-matic",
-    "address": "0x0A866E75963d6EEc4EdA1e8E8b91F76228f2348e",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 137
-  },
-  {
     "name": "dinoswap-dino-eth",
     "address": "0xd85BAF8b9Ab657921c6D2700AA0e78928dC2922C",
     "interval": 6,
@@ -6401,15 +6383,6 @@
   {
     "name": "bankerjoe-link.e",
     "address": "0x6ea31CEFA0e508D9C484d22518A8a664bc630fB3",
-    "interval": 6,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 43114
-  },
-  {
-    "name": "bankerjoe-mim",
-    "address": "0x50d6e8216bb5D4018BA6ad6e7118716eF292A184",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
