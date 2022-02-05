@@ -33,15 +33,17 @@ This is the bot that harvest all strategies from all Beefy's chains, also do ano
 - Notify the BIFI rewards pool
 - Harvest the Beefy fee batch from all Beefy´s chains to distribute it.
 
-**Cowllectors does NOT focus in to be profitable, so don't expect it to win some profit when it harvests. Cowllector harvest script was create it to bring resilience and consistency in all active vaults strategies.**
+**Cowllectors does NOT focus in to be profitable, so don't expect it to win some profit when it harvests. Cowllector harvest script was create it to bring resilience and consistency in all active vaults strategies, giving at least ONE harvest every 24 hour to every strat in every chain**
 
-Cowllectors runs harvest script every hour, but some chains are configurated to harvest only a few times per day. After a run of harvests in every chain, you can find the `harvest report` in our discord channel [#Harvester](https://discord.com/channels/755231190134554696/914666606641184768)
+Cowllectors runs harvest every 4 hour at :30 (minutes) giving time [Cowbot](https://github.com/beefybot) to complete sync (so always harvest up to date with the last strats).
+
+After every run of harvests in every chain, you can find the `harvest report` in our discord channel [#Harvester](https://discord.com/channels/755231190134554696/914666606641184768)
 
 # 🔄 Auto sync
 
-if you are a **Beefy Strategist**, you DON'T need anymore push or sync your strat here.
+If you are a **Beefy Strategist**, you DON'T need anymore push or sync your strat here.
 
-This repo auto sync every 4 hours thanks to our beauty [Cowbot](https://github.com/beefybot).
+This repo auto sync every 4 hours (starting at 00:00 UTC). thanks to our beauty [Cowbot](https://github.com/beefybot).
 
 # 📖 Prerequisites
 
