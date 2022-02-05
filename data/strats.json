@@ -3960,6 +3960,42 @@
     "chainId": 250
   },
   {
+    "name": "spirit-ftm-frax",
+    "address": "0xbAedf8C3D38640fc33ee5bB93194025D534Aa456",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "spirit-ftm-mai",
+    "address": "0x2a964E14676861766727Dbbd7C655C3294C9aa35",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "spirit-ftm-gohm",
+    "address": "0x600C500684aca1c5aFc9582B74bb96c8E737C17e",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
+    "name": "2omb-2omb-2share",
+    "address": "0x2F02Fe612a9A723bC82842874A53e32E3a0F33f1",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250
+  },
+  {
     "name": "spirit-ftm-spirit",
     "address": "0x10bcb7145c08F04aA7cCa356FAEE0A5ac3cCa860",
     "interval": 1,
@@ -4313,15 +4349,6 @@
   {
     "name": "spirit-dai-usdc",
     "address": "0xBDFeDfCCc2729C114fe7F3E97e18E173E3cb526F",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250
-  },
-  {
-    "name": "spirit-yfi-ftm",
-    "address": "0x2f8983663ebc66236Eea075f75527698595a9626",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
@@ -4770,15 +4797,6 @@
     "chainId": 250
   },
   {
-    "name": "spirit-any-ftm",
-    "address": "0x61897e8D22651341D12632a244d5F4f7718b98c7",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250
-  },
-  {
     "name": "curve-ftm-tricrypto",
     "address": "0x64C60e7eAb8A0F9a36827908E1C47C2230a9c4D0",
     "interval": 1,
@@ -4898,15 +4916,6 @@
   {
     "name": "tomb-tomb-ftm",
     "address": "0x4b5f7De737531673B23ceB43D45ea3f1297e4C6d",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250
-  },
-  {
-    "name": "spirit-ftm-just",
-    "address": "0xE72201bfca2035fD90139B2f500a678d3D112C90",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
