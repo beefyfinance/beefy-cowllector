@@ -162,15 +162,12 @@ const shouldHarvest = async (strat, harvesterPK) => {
         strat.notHarvestReason = 'lastHarvest is lower than interval';
         return strat;
       }
-    } else if (strat.noHarvestEvent) {
-      let noHarvestEvent = harvestHelpers.isNewPeriodNaive(strat.interval);
-      if (!noHarvestEvent) {
-        strat.shouldHarvest = false;
-        strat.notHarvestReason = 'is not new period naive';
-        return strat;
-      }
     } else {
-      let isNewHarvestPeriod = await harvestHelpers.isNewHarvestPeriod(strat, harvesterPK);
+      let isNewHarvestPeriod = await harvestHelpers.isNewHarvestPeriod(
+        strat,
+        harvesterPK,
+        CHAIN.stratHarvestHourInterval
+      );
       if (!isNewHarvestPeriod) {
         strat.shouldHarvest = false;
         strat.notHarvestReason = 'is not new harvest period';
@@ -407,7 +404,7 @@ const main = async () => {
       console.log(
         `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
           CHAIN.blockExplorer
-        }] [hour_interval=${CHAIN.harvestHourInterval}]`
+        }] [hour_interval=${CHAIN.stratHarvestHourInterval}]`
       );
 
       try {

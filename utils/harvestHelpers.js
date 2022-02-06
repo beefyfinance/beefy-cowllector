@@ -16,12 +16,12 @@ const isNewPeriodNaive = interval => {
   return hour % interval === 0;
 };
 
-const isNewHarvestPeriod = async (strat, harvester) => {
+const isNewHarvestPeriod = async (strat, harvester, stratHarvestHourInterval) => {
   const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
   const filter = strategy.filters.StratHarvest(null);
   const currentBlock = await harvester.provider.getBlockNumber();
   const blockTime = chains[strat.chainId].blockTime;
-  const oldestPeriodBlock = currentBlock - (strat.interval * 3600) / blockTime;
+  const oldestPeriodBlock = currentBlock - (stratHarvestHourInterval * 3600) / blockTime;
 
   let logs = [];
   let interval = chains[strat.chainId].queryLimit;
