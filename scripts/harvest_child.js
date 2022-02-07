@@ -210,6 +210,17 @@ const shouldHarvest = async (strat, harvesterPK) => {
     }
 
     try {
+      const abi = ['function callReward() public pure returns(uint256)'];
+      const contract = new ethers.Contract(strat.address, abi, harvesterPK);
+      strat.callReward = await contract.callReward();
+      if (strat.callReward.lte(0)) {
+        strat.shouldHarvest = false;
+        strat.notHarvestReason = 'callReward is zero';
+        return strat;
+      }
+    } catch (error) {}
+
+    try {
       const abi = ['function output() public pure returns(address)'];
       const contract = new ethers.Contract(strat.address, abi, harvesterPK);
       strat.output = await contract.output();
@@ -228,7 +239,6 @@ const shouldHarvest = async (strat, harvesterPK) => {
         console.log(error.message);
       }
     }
-
     try {
       const contract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
       let callStaticPassed = await contract.callStatic.harvest();
