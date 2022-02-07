@@ -3,6 +3,7 @@ const ethers = require('ethers');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
 const Sentry = require('../utils/sentry.js');
 const IStrategy = require('../abis/IStrategy.json');
+const IERC20 = require('../abis/IERC20.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
 const broadcast = require('../utils/broadcast');
@@ -207,6 +208,27 @@ const shouldHarvest = async (strat, harvesterPK) => {
         return strat;
       }
     }
+
+    try {
+      const abi = ['function output() public'];
+      const contract = new ethers.Contract(strat.address, abi, harvesterPK);
+      strat.output = contract.output();
+    } catch (error) {}
+    if (strat.output) {
+      try {
+        const ERC20 = new ethers.Contract(strat.output, IERC20, harvesterPK);
+        const balance = await ERC20.balanceOf(strat.address);
+        if (balance && balance.lte(0)) {
+          strat.shouldHarvest = false;
+          strat.notHarvestReason = 'strat output is zero';
+          return strat;
+        }
+      } catch (error) {
+        Sentry.captureException(error);
+        console.log(error.message);
+      }
+    }
+
     try {
       const contract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
       let callStaticPassed = await contract.callStatic.harvest();
