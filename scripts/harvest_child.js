@@ -17,7 +17,7 @@ const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 20;
 
 require('../utils/logger')(CHAIN_ID);
 
-const JSONRPC_ERRORS = {
+const KNOWN_RPC_ERRORS = {
   'code=INSUFFICIENT_FUNDS': 'INSUFFICIENT_FUNDS',
   'PancakeLibrary: INSUFFICIENT_INPUT_AMOUNT': 'PancakeLibrary: INSUFFICIENT_INPUT_AMOUNT',
   'code=INSUFFICIENT_INPUT_AMOUNT': 'INSUFFICIENT_INPUT_AMOUNT',
@@ -211,10 +211,10 @@ const shouldHarvest = async (strat, harvesterPK) => {
       const contract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
       let callStaticPassed = await contract.callStatic.harvest();
     } catch (error) {
-      for (const key of Object.keys(JSONRPC_ERRORS)) {
+      for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
         if (error.message.includes(key)) {
           strat.shouldHarvest = false;
-          strat.notHarvestReason = `Strat did't passed callStatic: ${JSONRPC_ERRORS[key]}`;
+          strat.notHarvestReason = `Strat did't passed callStatic: ${KNOWN_RPC_ERRORS[key]}`;
           return strat;
         }
       }
@@ -309,14 +309,14 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   data: receipt,
                 };
               } catch (error) {
-                for (const key of Object.keys(JSONRPC_ERRORS)) {
+                for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
                   if (error.message.includes(key)) {
-                    console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
+                    console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[key]}`);
                     try {
                       let res = await broadcast.send({
                         type: 'error',
                         title: `Error trying to harvest ${strat.name}`,
-                        message: `- error code: ${JSONRPC_ERRORS[key]}\n- address: ${strat.address}`,
+                        message: `- error code: ${KNOWN_RPC_ERRORS[key]}\n- address: ${strat.address}`,
                       });
                     } catch (error) {
                       console.log(`Error trying to send message to broadcast: ${error.message}`);
@@ -324,7 +324,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                     return {
                       contract: strat.address,
                       status: 'failed',
-                      message: `${strat.name}: ${JSONRPC_ERRORS[key]}`,
+                      message: `${strat.name}: ${KNOWN_RPC_ERRORS[key]}`,
                     };
                   }
                 }
@@ -361,14 +361,13 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           }
         }
       } catch (error) {
-        if (tries < max) continue;
-        for (const key of Object.keys(JSONRPC_ERRORS)) {
+        for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
           if (error.message.includes(key)) {
-            console.log(`${strat.name}: ${JSONRPC_ERRORS[key]}`);
+            console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[key]}`);
             return {
               contract: strat.address,
               status: 'failed',
-              message: `${strat.name}: ${JSONRPC_ERRORS[key]}`,
+              message: `${strat.name}: ${KNOWN_RPC_ERRORS[key]}`,
               data: error.message,
             };
           }
