@@ -13,28 +13,6 @@ const strats = require('../data/strats.json');
 const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
 
-const fetchVaultTvl = async (vault, provider) => {
-  try {
-    const vaultContract = new ethers.Contract(vault.earnContractAddress, BeefyVaultABI, provider);
-    const vaultBalance = await vaultContract.balance();
-
-    const price = await fetchPrice.fetchPrice({ oracle: vault.oracle, id: vault.oracleId });
-    const normalizationFactor = 1e6;
-    const normalizedPrice = ethers.BigNumber.from(String(Math.round(price * normalizationFactor)));
-    const vaultBalanceInUsd = vaultBalance.mul(normalizedPrice.toString());
-    const result = vaultBalanceInUsd.div(normalizationFactor);
-
-    const vaultObjTvl = ethers.utils.formatEther(result);
-    vault.tvl = Number(vaultObjTvl).toFixed(0);
-
-    return vault;
-  } catch (error) {
-    console.log('error fetching price tvl:', vault.oracleId);
-    vault.tvl = 0;
-    return vault;
-  }
-};
-
 const main = async () => {
   let newStrats = [];
   let newDefistationVaults = [];
@@ -68,7 +46,9 @@ const main = async () => {
 
     const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
     const cacheIsReady = await fetchPrice.refreshCache();
-    const responses = await Promise.allSettled(vaults.map(v => fetchVaultTvl(v, provider)));
+    const responses = await Promise.allSettled(
+      vaults.map(v => fetchPrice.fetchVaultTvl(v, provider))
+    );
     vaults = responses.map(r => r.value);
     vaults = vaults.map(v => {
       v.chain = CHAIN.id;

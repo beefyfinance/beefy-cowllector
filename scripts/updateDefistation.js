@@ -1,42 +1,15 @@
-const { BigNumber, utils, ethers } = require('ethers');
-const axios = require('axios');
-
+const ethers = require('ethers');
 const fetchPrice = require('../utils/fetchPrice');
-
 const vaults = require('../data/defistation.json');
-const BeefyVault = require('../abis/BeefyVault.json');
+const CHAINS = require('../data/chains');
 
 const DEFISTATION_URL = 'https://api.defistation.io/dataProvider/tvl';
 
-const fetchVaultTvl = async ({ vault, harvester }) => {
-  try {
-    const vaultContract = new ethers.Contract(vault.contract, BeefyVault, harvester);
-    const vaultBalance = await vaultContract.balance();
-
-    const price = await fetchPrice({ oracle: vault.oracle, id: vault.oracleId });
-    const normalizationFactor = 1000000;
-    const normalizedPrice = BigNumber.from(Math.round(price * normalizationFactor));
-    const vaultBalanceInUsd = vaultBalance.mul(normalizedPrice.toString());
-    const result = vaultBalanceInUsd.div(normalizationFactor);
-
-    const vaultObjTvl = utils.formatEther(result);
-    vault.tvl = Number(vaultObjTvl).toFixed(2);
-
-    return vault.tvl;
-  } catch (err) {
-    console.log('error fetching price tvl:', vault.oracleId);
-    return 0;
-  }
-};
-
 const updateDefistation = async () => {
-  const provider = new ethers.providers.JsonRpcProvider(process.env.BSC_RPC);
-  const harvester = new ethers.Wallet(process.env.REWARDER_PK, provider);
-
-  let promises = [];
-  vaults.forEach(vault => promises.push(fetchVaultTvl({ vault, harvester })));
-  const values = await Promise.all(promises);
-  const totalTvl = values.reduce((acc, curr) => Number(acc) + Number(curr));
+  const provider = new ethers.providers.JsonRpcProvider(CHAINS[56].rpc);
+  const isCacheReady = await fetchPrice.refreshCache();
+  const values = await Promise.all(vaults.map(vault => fetchPrice.fetchVaultTvl(vault, provider)));
+  const totalTvl = values.reduce((acc, curr) => Number(acc) + Number(curr.tvl), 0);
 
   const data = {
     tvl: totalTvl,

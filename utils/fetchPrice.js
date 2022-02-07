@@ -1,4 +1,6 @@
+const ethers = require('ethers');
 const axios = require('axios');
+const BeefyVaultABI = require('../abis/BeefyVault.json');
 
 const endpoints = {
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
@@ -120,8 +122,32 @@ const fetchPrice = async ({ oracle, id }) => {
   return price;
 };
 
+const fetchVaultTvl = async (vault, provider) => {
+  try {
+    let vaultAddress = vault.contract || vault.earnContractAddress;
+    const vaultContract = new ethers.Contract(vaultAddress, BeefyVaultABI, provider);
+    const vaultBalance = await vaultContract.balance();
+
+    const price = await fetchPrice({ oracle: vault.oracle, id: vault.oracleId });
+    const normalizationFactor = 1e6;
+    const normalizedPrice = ethers.BigNumber.from(String(Math.round(price * normalizationFactor)));
+    const vaultBalanceInUsd = vaultBalance.mul(normalizedPrice.toString());
+    const result = vaultBalanceInUsd.div(normalizationFactor);
+
+    const vaultObjTvl = ethers.utils.formatEther(result);
+    vault.tvl = Number(vaultObjTvl).toFixed(0);
+
+    return vault;
+  } catch (error) {
+    console.log('error fetching price tvl:', vault.oracleId);
+    vault.tvl = 0;
+    return vault;
+  }
+};
+
 module.exports = {
   fetchPrice,
+  fetchVaultTvl,
   refreshCache,
   isCacheReady,
 };
