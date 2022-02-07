@@ -210,9 +210,9 @@ const shouldHarvest = async (strat, harvesterPK) => {
     }
 
     try {
-      const abi = ['function output() public'];
+      const abi = ['function output() public pure returns(address)'];
       const contract = new ethers.Contract(strat.address, abi, harvesterPK);
-      strat.output = contract.output();
+      strat.output = await contract.output();
     } catch (error) {}
     if (strat.output) {
       try {
