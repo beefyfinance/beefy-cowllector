@@ -122,6 +122,35 @@ const unwrap = async (signer, provider, options, minBalance = '0.1') => {
   }
 };
 
+const uploadToFleek = async report => {
+  let input = {
+    apiKey: process.env.FLEEK_STORAGE_API_KEY,
+    apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
+    key: `cowllector-reports/${CHAIN.id}-${new Date().toISOString()}.json`,
+    data: JSON.stringify(report, null, 2),
+  };
+
+  let tries = 0;
+  do {
+    try {
+      let uploaded = await fleekStorage.upload(input);
+      if (uploaded.hash) {
+        console.log(
+          `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
+            uploaded.hash
+          }`
+        );
+        return uploaded;
+      }
+      tries++;
+      console.log(`fail trying to upload to fleek storage, try n ${tries}/5`);
+    } catch (error) {
+      tries++;
+      console.log(`fail trying to upload to fleek storage, try n ${tries}/5`);
+    }
+  } while (tries < 5);
+};
+
 const addGasLimit = async (strats, provider) => {
   let gasLimits = require('../data/gasLimits.json');
   let filtered = gasLimits.filter(s => s.chainId === Number(CHAIN_ID));
@@ -518,16 +547,8 @@ const main = async () => {
           report.profit = currentBalance
             .add(currentWNativeBalance)
             .sub(balance.add(wNativeBalance));
-
-          let now = new Date().toISOString();
           try {
-            let input = {
-              apiKey: process.env.FLEEK_STORAGE_API_KEY,
-              apiSecret: process.env.FLEEK_STORAGE_API_SECRET,
-              key: `cowllector-reports/${CHAIN.id}-${now}.json`,
-              data: JSON.stringify(report, null, 2),
-            };
-            let uploaded = await fleekStorage.upload(input);
+            const uploaded = await uploadToFleek(report);
             try {
               let res = await broadcast.send({
                 type: 'info',
@@ -553,11 +574,6 @@ const main = async () => {
               Sentry.captureException(error);
               console.log(`Error trying to send message to broadcast: ${error.message}`);
             }
-            console.log(
-              `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
-                uploaded.hash
-              }`
-            );
           } catch (error) {
             Sentry.captureException(error);
             console.log(error);
