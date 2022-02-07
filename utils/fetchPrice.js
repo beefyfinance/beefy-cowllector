@@ -8,6 +8,28 @@ const endpoints = {
 
 const CACHE_TIMEOUT = 30 * 60 * 1000;
 const cache = {};
+let isCacheReady = false;
+
+const setCachePrices = async ({ oracle }) => {
+  if (oracle === 'coingecko') return true;
+  try {
+    const response = await axios.get(endpoints[oracle]);
+    const ids = Object.keys(response.data);
+    ids.map(id => addToCache({ oracle, id, price: response.data[id] }));
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+};
+
+const refreshCache = async () => {
+  isCacheReady = false;
+  const oracles = Object.keys(endpoints);
+  const response = await Promise.allSettled(oracles.map(oracle => setCachePrices({ oracle })));
+  isCacheReady = response.every(r => r.values);
+  return isCacheReady;
+};
 
 function isCached({ oracle, id }) {
   if (`${oracle}-${id}` in cache) {
@@ -22,6 +44,7 @@ function getCachedPrice({ oracle, id }) {
 
 function addToCache({ oracle, id, price }) {
   cache[`${oracle}-${id}`] = { price: price, t: Date.now() };
+  return true;
 }
 
 const fetchCoingecko = async id => {
@@ -79,7 +102,7 @@ const fetchPrice = async ({ oracle, id }) => {
     case 'tokens':
       price = await fetchToken(id);
       break;
-    
+
     case 'lps':
       price = await fetchLP(id, endpoints.lps);
       break;
@@ -92,4 +115,8 @@ const fetchPrice = async ({ oracle, id }) => {
   return price;
 };
 
-module.exports = fetchPrice;
+module.exports = {
+  fetchPrice,
+  refreshCache,
+  isCacheReady,
+};
