@@ -106,7 +106,9 @@ const unwrap = async (signer, provider, options, minBalance = '0.1') => {
             receipt = await provider.getTransactionReceipt(tx.hash);
             if (receipt === null) continue;
             console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)} ethers`);
-          } catch (error) {}
+          } catch (error) {
+            Sentry.captureException(error);
+          }
         }
       } else {
         tx = await tx.wait();
@@ -145,6 +147,7 @@ const uploadToFleek = async report => {
       tries++;
       console.log(`fail trying to upload to fleek storage, try n ${tries}/5`);
     } catch (error) {
+      Sentry.captureException(error);
       tries++;
       console.log(`fail trying to upload to fleek storage, try n ${tries}/5`);
     }
@@ -514,6 +517,7 @@ const main = async () => {
             let harvested = await harvest(strat, harvesterPK, provider, options);
             harvesteds.push(harvested);
           } catch (error) {
+            Sentry.captureException(error);
             console.log(error.message);
           }
         }
