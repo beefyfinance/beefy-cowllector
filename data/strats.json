@@ -2511,15 +2511,6 @@
     "chainId": 122
   },
   {
-    "name": "sushi-sushi-weth",
-    "address": "0x76913D8a779fA1185380dA76368a37f60812Fa17",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": true,
-    "harvestPaused": false,
-    "chainId": 122
-  },
-  {
     "name": "sushi-wfuse-usdc",
     "address": "0x6e4c4a1e3bc0bD95e912f2a997aCA658b74057C1",
     "interval": 1,
@@ -6005,6 +5996,15 @@
   {
     "name": "aave-wavax",
     "address": "0x7c9520E814d935B0Cc8028A9e17Eb590F41A0D8A",
+    "interval": 6,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 43114
+  },
+  {
+    "name": "png-mim-usdc.e",
+    "address": "0x06f77FA8AB2B26c9c0515d6FB41c31C158B2a40E",
     "interval": 6,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
