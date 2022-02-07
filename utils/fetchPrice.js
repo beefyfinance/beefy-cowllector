@@ -24,11 +24,16 @@ const setCachePrices = async ({ oracle }) => {
 };
 
 const refreshCache = async () => {
-  isCacheReady = false;
-  const oracles = Object.keys(endpoints);
-  const response = await Promise.allSettled(oracles.map(oracle => setCachePrices({ oracle })));
-  isCacheReady = response.every(r => r.values);
-  return isCacheReady;
+  let retry = 0;
+  do {
+    retry++;
+    isCacheReady = false;
+    const oracles = Object.keys(endpoints);
+    const responses = await Promise.allSettled(oracles.map(oracle => setCachePrices({ oracle })));
+    isCacheReady = responses.every(r => r.value);
+    if (isCacheReady) return isCacheReady;
+  } while (retry <= 5);
+  return false;
 };
 
 function isCached({ oracle, id }) {
