@@ -136,7 +136,7 @@ const chains = {
     blockTime: 10,
     blockExplorer: 'https://ftmscan.com',
     gas: {
-      limit: Number(process.env.FANTOM_GAS_LIMIT) || 15e6,
+      limit: Number(process.env.FANTOM_GAS_LIMIT) || 12e6,
       price: Number(process.env.FANTOM_GAS_PRICE) || 1e9,
     },
   },
