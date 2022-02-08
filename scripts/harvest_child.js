@@ -514,15 +514,15 @@ const main = async () => {
         stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
         stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
 
-        strats = stratsShouldHarvest.map(s => {
-          if (s.tvl < TVL_MINIMUM_TO_HARVEST) {
-            s.shouldHarvest = false;
-            s.notHarvestReason = `TVL is lower than min: ${TVL_MINIMUM_TO_HARVEST}`;
-          }
-          return s;
-        });
-        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+        // strats = stratsShouldHarvest.map(s => {
+        //   if (s.tvl < TVL_MINIMUM_TO_HARVEST) {
+        //     s.shouldHarvest = false;
+        //     s.notHarvestReason = `TVL is lower than min: ${TVL_MINIMUM_TO_HARVEST}`;
+        //   }
+        //   return s;
+        // });
+        // stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
+        // stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
 
         strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'balanceOf');
         strats = strats.map(s => {
