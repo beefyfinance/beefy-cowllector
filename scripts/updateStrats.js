@@ -1,43 +1,32 @@
 require('dotenv').config();
 
 const Web3 = require('web3');
+const ethers = require('ethers');
 const fs = require('fs');
 const path = require('path');
 const { MultiCall } = require('eth-multicall');
 
 const { getVaults } = require('../utils/getVaults');
-const chains = require('../data/chains');
+const fetchPrice = require('../utils/fetchPrice');
+const CHAINS = require('../data/chains');
 const strats = require('../data/strats.json');
 const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
-
-const defaultInterval = chain => {
-  switch (chain.id) {
-    case 'arbitrum':
-      return 24;
-    case 'bsc':
-      return 24;
-    case 'avax':
-      return 6;
-    default:
-      return 1;
-  }
-};
 
 const main = async () => {
   let newStrats = [];
   let newDefistationVaults = [];
 
-  for (const chain of Object.values(chains)) {
-    if (!chain.rpc) {
-      console.warn(`No RPC for ${chain.id}`);
+  for (const CHAIN of Object.values(CHAINS)) {
+    if (!CHAIN.rpc) {
+      console.warn(`No RPC for ${CHAIN.id}`);
       continue;
     }
 
-    let vaults = await getVaults(chain.appVaultsFilename);
+    let vaults = await getVaults(CHAIN.appVaultsFilename);
 
-    const web3 = new Web3(chain.rpc);
-    const multicall = new MultiCall(web3, chain.multicall);
+    const web3 = new Web3(CHAIN.rpc);
+    const multicall = new MultiCall(web3, CHAIN.multicall);
 
     const calls = vaults.map(vault => {
       const vaultContract = new web3.eth.Contract(BeefyVaultABI, vault.earnedTokenAddress);
@@ -53,7 +42,19 @@ const main = async () => {
       vaults[i].strategy = callResults[i].strategy;
     }
 
-    const knownStrategies = strats.filter(s => s.chainId === chain.chainId).map(s => s.address);
+    const knownStrategies = strats.filter(s => s.chainId === CHAIN.chainId).map(s => s.address);
+
+    const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
+    const cacheIsReady = await fetchPrice.refreshCache();
+    const responses = await Promise.allSettled(
+      vaults.map(v => fetchPrice.fetchVaultTvl(v, provider))
+    );
+    vaults = responses.map(r => r.value);
+    vaults = vaults.map(v => {
+      v.chain = CHAIN.id;
+      return v;
+    });
+    console.table(vaults, ['chain', 'id', 'tvl']);
 
     // Find if there are vaults that we should have but don't.
     for (vault of vaults) {
@@ -62,18 +63,18 @@ const main = async () => {
       if (['eol', 'refund'].includes(vault.status)) {
         if (isExistingStrategy)
           console.log(
-            `Strat ${vault.id} on ${chain.id} is in ${vault.status} status. Removing from the harvest schedule...`
+            `Strat ${vault.id} on ${CHAIN.id} is in ${vault.status} status. Removing from the harvest schedule...`
           );
         continue;
       }
 
       if (!isExistingStrategy)
         console.log(
-          `Found new ${vault.id} with address ${vault.earnedTokenAddress} in ${chain.appVaultsFilename}. Adding now...`
+          `Found new ${vault.id} with address ${vault.earnedTokenAddress} in ${CHAIN.appVaultsFilename}. Adding now...`
         );
 
       const stratData = strats.find(
-        s => s.chainId === chain.chainId && s.address === vault.strategy
+        s => s.chainId === CHAIN.chainId && s.address === vault.strategy
       );
       if (stratData && stratData.name != vault.id)
         console.log(`Renaming ${stratData.name} to ${vault.id}...`);
@@ -81,14 +82,15 @@ const main = async () => {
       newStrats.push({
         name: vault.id,
         address: vault.strategy,
-        interval: stratData?.interval || defaultInterval(chain),
+        interval: stratData?.interval || CHAIN.harvestHourInterval,
         harvestSignature: stratData?.harvestSignature || '0x4641257d',
         depositsPaused: !!vault.depositsPaused,
         harvestPaused: stratData?.harvestPaused || false,
-        chainId: chain.chainId,
+        chainId: CHAIN.chainId,
+        tvl: vault.tvl,
       });
 
-      if (chain.id === 'bsc')
+      if (CHAIN.id === 'bsc')
         newDefistationVaults.push({
           id: vault.id,
           name: vault.tokenName,
