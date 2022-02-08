@@ -1,4 +1,5 @@
 const ethers = require('ethers');
+const axios = require('axios');
 const fetchPrice = require('../utils/fetchPrice');
 const vaults = require('../data/defistation.json');
 const CHAINS = require('../data/chains');
@@ -17,6 +18,7 @@ const updateDefistation = async () => {
     test: false,
     data: vaults,
   };
+  console.log('Total Value Locked in BSC ', data.tvl);
 
   const auth = Buffer.from(`${process.env.DEFISTATION_ID}:${process.env.DEFISTATION_KEY}`).toString(
     'base64'
