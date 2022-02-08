@@ -8,6 +8,22 @@
     "tvl": 0
   },
   {
+    "id": "charge-static-busd",
+    "name": "Moo Charge STATIC-BUSD",
+    "contract": "0xaAe97E1B198406D691d75B5aA60Ac0b4e4b0E5CD",
+    "oracle": "lps",
+    "oracleId": "charge-static-busd",
+    "tvl": 0
+  },
+  {
+    "id": "charge-charge-busd",
+    "name": "Moo Charge CHARGE-BUSD",
+    "contract": "0xDf988851e4CbA99565A9949706ff75Fd7f3b1b7A",
+    "oracle": "lps",
+    "oracleId": "charge-charge-busd",
+    "tvl": 0
+  },
+  {
     "id": "baby-ftm-usdt",
     "name": "Moo Baby FTM-USDT",
     "contract": "0x45b37a28d6eFb45C257Fc15d9F08AA7D32568eE7",
@@ -149,22 +165,6 @@
     "contract": "0xBBEfaf1f7585EDc59180fDdc5bAf46b8A5D7A206",
     "oracle": "lps",
     "oracleId": "baby-usdt-milk",
-    "tvl": 0
-  },
-  {
-    "id": "charge-static-busd",
-    "name": "Moo Charge STATIC-BUSD",
-    "contract": "0xaAe97E1B198406D691d75B5aA60Ac0b4e4b0E5CD",
-    "oracle": "lps",
-    "oracleId": "charge-static-busd",
-    "tvl": 0
-  },
-  {
-    "id": "charge-charge-busd",
-    "name": "Moo Charge CHARGE-BUSD",
-    "contract": "0xDf988851e4CbA99565A9949706ff75Fd7f3b1b7A",
-    "oracle": "lps",
-    "oracleId": "charge-charge-busd",
     "tvl": 0
   },
   {
