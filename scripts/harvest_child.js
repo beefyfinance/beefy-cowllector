@@ -15,6 +15,7 @@ const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
 const GASLESS_CHAINS = ['celo', 'aurora'];
 const GAS_THROTTLE_CHAIN = ['bsc', 'arbitrum'];
 const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 20;
+const TVL_MINIMUM_TO_HARVEST = parseInt(process.env.TVL_MINIMUM_TO_HARVEST) || 10e3;
 
 require('../utils/logger')(CHAIN_ID);
 
@@ -500,6 +501,9 @@ const main = async () => {
           s.harvest = null;
           return s;
         });
+        let stratsFiltered = [];
+        let stratsShouldHarvest = [];
+
         strats = strats.map(s => {
           if (s.depositsPaused || s.harvestPaused) {
             s.shouldHarvest = false;
@@ -507,7 +511,20 @@ const main = async () => {
           }
           return s;
         });
-        strats = await harvestHelpers.multicall(CHAIN, strats, 'balanceOf');
+        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+
+        strats = stratsShouldHarvest.map(s => {
+          if (s.tvl < TVL_MINIMUM_TO_HARVEST) {
+            s.shouldHarvest = false;
+            s.notHarvestReason = `TVL is lower than min: ${TVL_MINIMUM_TO_HARVEST}`;
+          }
+          return s;
+        });
+        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+
+        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'balanceOf');
         strats = strats.map(s => {
           if (s.balanceOf === 0) {
             s.shouldHarvest = false;
@@ -515,18 +532,26 @@ const main = async () => {
           }
           return s;
         });
-        strats = await harvestHelpers.multicall(CHAIN, strats, 'lastHarvest');
-        strats = await Promise.allSettled(strats.map(strat => shouldHarvest(strat, harvesterPK)));
-        strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
-        console.table(strats, ['name', 'address', 'shouldHarvest', 'notHarvestReason']);
+        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
 
-        stratsToHarvest = strats.filter(s => s.shouldHarvest);
-        console.log(`Total Strat to harvest ${stratsToHarvest.length} of ${strats.length}`);
+        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'lastHarvest');
+        strats = await Promise.allSettled(
+          stratsShouldHarvest.map(strat => shouldHarvest(strat, harvesterPK))
+        );
+        strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
+        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+
+        console.table(
+          [...stratsFiltered, ...stratsShouldHarvest],
+          ['name', 'address', 'shouldHarvest', 'notHarvestReason']
+        );
+
+        console.log(`Total Strat to harvest ${stratsShouldHarvest.length} of ${strats.length}`);
 
         let totalGas =
-          stratsToHarvest
-            .filter(s => s.shouldHarvest)
-            .reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
+          stratsShouldHarvest.reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
         console.log(
           `Total gas to use ${(totalGas * gasPrice) / 1e9} GWEI , current balance ${balance.div(
             1e9
@@ -534,7 +559,7 @@ const main = async () => {
         );
 
         let harvesteds = [];
-        for await (const strat of stratsToHarvest) {
+        for await (const strat of stratsShouldHarvest) {
           try {
             await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMinToUnwrap);
           } catch (error) {
@@ -552,7 +577,7 @@ const main = async () => {
             console.log(error.message);
           }
         }
-
+        strats = [...stratsFiltered, ...stratsShouldHarvest];
         strats = strats.map(s => {
           let harvested = harvesteds.find(h => h.contract === s.address);
           if (harvested) s.harvest = harvested;
@@ -582,6 +607,7 @@ const main = async () => {
           report.profit = currentBalance
             .add(currentWNativeBalance)
             .sub(balance.add(wNativeBalance));
+
           try {
             const uploaded = await uploadToFleek(report);
             try {
