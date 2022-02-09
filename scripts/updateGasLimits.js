@@ -41,6 +41,7 @@ const main = async () => {
     JSON.stringify(gasLimits, null, 2)
   );
   console.log(`done - gasLimits updated`);
+  process.exit();
 };
 
 main();
