@@ -15,6 +15,7 @@ const {
   cronos,
   fuse,
   metis,
+  moonbeam,
 } = addressBook;
 
 const chains = {
@@ -332,6 +333,30 @@ const chains = {
     gas: {
       limit: Number(process.env.AURORA_GAS_LIMIT) || 0,
       price: Number(process.env.AURORA_GAS_PRICE) || 0,
+    },
+  },
+  1284: {
+    id: 'moonbeam',
+    chainId: 1284,
+    wnative: moonbeam.tokens.WNATIVE.address,
+    rewardPool: moonbeam.platforms.beefyfinance.rewardPool,
+    treasury: moonbeam.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: moonbeam.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL) || 1,
+    wnativeUnwrapInterval: 6,
+    wnativeMinToUnwrap: process.env.MOONBEAM_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    rpc: process.env.MOONBEAM_RPC || 'https://rpc.api.moonbeam.network',
+    appVaultsFilename: 'moonbeam_pools.js',
+    multicall: moonbeam.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 1,
+    blockExplorer: 'https://moonscan.io/',
+    gas: {
+      limit: Number(process.env.MOONBEAM_GAS_LIMIT) || 10e6,
+      price: Number(process.env.MOONBEAM_GAS_PRICE) || 100e9,
     },
   },
 };
