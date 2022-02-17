@@ -3587,136 +3587,6 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "546221"
-  },
-  {
-    "name": "beefy-beFTM",
-    "address": "0x2dc8683F752305659ff7F97A7CB4291B1c0Df37b",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250,
-    "tvl": "886679"
-  },
-  {
-    "name": "beefy-beFTM",
-    "address": "0x2dc8683F752305659ff7F97A7CB4291B1c0Df37b",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "1048678"
-  },
-  {
-    "name": "spirit-ftm-bifi",
-    "address": "0xcADC8887e232285D9d764F9f91D83383d624C193",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "2249377"
-  },
-  {
-    "name": "wigo-wigo-ftm",
-    "address": "0x9cF294C67B388E28C1EE5bd75ffa319D83d22722",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "91005"
-  },
-  {
-    "name": "wigo-usdc-wigo",
-    "address": "0x1125C7733b9468C9158D490E669d19610A09E6bA",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250,
-    "tvl": "25539"
-  },
-  {
-    "name": "wigo-solid-wigo",
-    "address": "0x6Ce8ea674BAE5B861e7665cAF93BAAC5069Bf4aC",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "67198"
-  },
-  {
-    "name": "wigo-tomb-ftm",
-    "address": "0x329A6B7715e100fAeEC74e828f60B6E7D40BFeBC",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "121469"
-  },
-  {
-    "name": "wigo-beets-ftm",
-    "address": "0xfc9AdA56D1Cd5B6D901A1F46825089430bb2c623",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "213255"
-  },
-  {
-    "name": "wigo-geist-ftm",
-    "address": "0xaa19b48F35880706984886b7763890330a6C944c",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "16489"
-  },
-  {
-    "name": "wigo-treeb-ftm",
-    "address": "0x935983116Dd2088f4A323BA097aC68f6ec8759f3",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "28543"
-  },
-  {
-    "name": "wigo-crv-ftm",
-    "address": "0x5a5af2FB4DADFAcEeb560ffD464e118c941a5eFf",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "33071"
-  },
-  {
-    "name": "wigo-dai-ftm",
-    "address": "0x1F580683322C0E9B7111620030d88111E359aB4e",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "210"
-  },
-  {
-    "name": "wigo-usdc-ftm",
-    "address": "0xA31184D2031ddFf2C2000B29B31593e82bCDa60C",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250,
     "tvl": "18293"
   },
   {
@@ -3795,7 +3665,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": false,
+    "harvestPaused": true,
     "chainId": 250,
     "tvl": "2612"
   },
@@ -3986,16 +3856,6 @@
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "14864"
-  },
-  {
-    "name": "boo-font-ftm",
-    "address": "0xB2AB7cB4ab00DF7582877f658ba2De3431130D27",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
     "chainId": 250,
     "tvl": 0
   },
