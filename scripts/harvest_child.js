@@ -221,6 +221,7 @@ const shouldHarvest = async (strat, harvesterPK) => {
       }
     } catch (error) {}
 
+/* AT: seems to be erroneously ommitting strats that need closer checking
     try {
       const abi = ['function output() public pure returns(address)'];
       const contract = new ethers.Contract(strat.address, abi, harvesterPK);
@@ -239,7 +240,7 @@ const shouldHarvest = async (strat, harvesterPK) => {
         Sentry.captureException(error);
         console.log(error.message);
       }
-    }
+    }  */
     try {
       const contract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
       let callStaticPassed = await contract.callStatic.harvest();
