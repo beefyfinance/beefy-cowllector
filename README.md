@@ -66,7 +66,7 @@ yarn harvest
 To start harvest one chain:
 
 ```shell
-node ./script/harvest_child.js <chain id>
+node ./scripts/harvest_child.js <chain id>
 ```
 
 # 🔑 Enviroment
