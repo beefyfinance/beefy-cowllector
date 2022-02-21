@@ -504,22 +504,6 @@
     "tvl": 0
   },
   {
-    "id": "annex-ann-busd",
-    "name": "Moo Annex ANN-BUSD",
-    "contract": "0x6D56c98Df063EF0CB7431AAf87BA6c2f2Fe24611",
-    "oracle": "lps",
-    "oracleId": "annex-ann-busd",
-    "tvl": 0
-  },
-  {
-    "id": "annex-ann",
-    "name": "Moo Annex ANN",
-    "contract": "0xB3e80cf1e9A0478F917Ec81f6B223C495CA20a27",
-    "oracle": "tokens",
-    "oracleId": "ANN",
-    "tvl": 0
-  },
-  {
     "id": "belt-4belt",
     "name": "Moo Belt 4BELT",
     "contract": "0xc1fcf50ccaCd1583BD9d3b41657056878C94e592",
@@ -1853,6 +1837,22 @@
     "contract": "0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190",
     "oracle": "lps",
     "oracleId": "cakev2-xcv-busd",
+    "tvl": 0
+  },
+  {
+    "id": "annex-ann-busd",
+    "name": "Moo Annex ANN-BUSD",
+    "contract": "0x6D56c98Df063EF0CB7431AAf87BA6c2f2Fe24611",
+    "oracle": "lps",
+    "oracleId": "annex-ann-busd",
+    "tvl": 0
+  },
+  {
+    "id": "annex-ann",
+    "name": "Moo Annex ANN",
+    "contract": "0xB3e80cf1e9A0478F917Ec81f6B223C495CA20a27",
+    "oracle": "tokens",
+    "oracleId": "ANN",
     "tvl": 0
   },
   {
