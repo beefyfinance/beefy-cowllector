@@ -327,19 +327,19 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
             };
           }
         } else {
-          tx = await stratContract.harvest(options);
+/**/      tx = await stratContract.harvest(options);
           if (TRICKY_CHAINS.includes(CHAIN.id)) {
             let receipt = null;
             while (receipt === null) {
               try {
                 await harvestHelpers.sleep(500);
-                receipt = await provider.getTransactionReceipt(tx.hash);
+/**/            receipt = await provider.getTransactionReceipt(tx.hash);
                 if (receipt === null) continue;
-                console.log(`${strat.name}:\tharvested after tried ${tries} with tx: ${tx.hash}`);
+/**/              console.log(`${strat.name}:\tharvested after tried ${tries} with tx: ${tx.hash}`);
                 return {
                   contract: strat.address,
                   status: 'success',
-                  message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.hash}`,
+/**/              message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.hash}`,
                   data: receipt,
                 };
               } catch (error) {
@@ -414,7 +414,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   try {
     // check if have minimum for gas harvest ( balance > gasPrice * gasLimit)
     let balance = await harvesterPK.getBalance();
-    if (balance < options.gasPrice * options.gasLimit) {
+/**/if (balance < options.gasPrice * options.gasLimit) {
       try {
         let res = await broadcast.send({
           type: 'warning',
@@ -435,7 +435,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         } and you has ${ethers.utils.formatUnits(balance)}`
       );
     }
-
+/**/
     const stratContract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
     let tx = await tryTX(stratContract);
     return tx;
@@ -515,15 +515,16 @@ const main = async () => {
         stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
         stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
 
-        // strats = stratsShouldHarvest.map(s => {
-        //   if (s.tvl < TVL_MINIMUM_TO_HARVEST) {
-        //     s.shouldHarvest = false;
-        //     s.notHarvestReason = `TVL is lower than min: ${TVL_MINIMUM_TO_HARVEST}`;
-        //   }
-        //   return s;
-        // });
-        // stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        // stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+				const i_TWO_WEEKS_AGO = new Date().getTime() / 1000 - 1209600;
+        strats = stratsShouldHarvest.map(s => {
+					if (s.tvl && s.tvl < TVL_MINIMUM_TO_HARVEST && s.createdAt < i_TWO_WEEKS_AGO) {
+						s.shouldHarvest = false;
+						s.notHarvestReason = `TVL is lower than min: ${TVL_MINIMUM_TO_HARVEST}`;
+					}
+					return s;
+         });
+        stratsFiltered = stratsFiltered.concat( strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
 
         strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'balanceOf');
         strats = strats.map(s => {

@@ -88,6 +88,7 @@ const main = async () => {
         harvestPaused: stratData?.harvestPaused || false,
         chainId: CHAIN.chainId,
         tvl: vault.tvl,
+				createdAt: vault.createdAt
       });
 
       if (CHAIN.id === 'bsc')
