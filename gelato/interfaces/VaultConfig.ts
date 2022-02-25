@@ -6,7 +6,6 @@ export interface VaultConfig {
   tokenDescription: string;
   tokenAddress: string;
   tokenDecimals: number;
-  tokenDescriptionUrl: string;
   earnedToken: string;
   earnedTokenAddress: string;
   earnContractAddress: string;
@@ -21,9 +20,21 @@ export interface VaultConfig {
   assets: string[];
   risks: string[];
   stratType: string;
-  depositFee: string;
   withdrawalFee: string;
-  retireReason: string;
-  addLiquidityUrl: string;
+  buyTokenUrl: string;
   createdAt: number;
+  strategy: string;
+  lastHarvest: number;
+  chain: string;
+  tokenDescriptionUrl: string;
+  addLiquidityUrl: string;
+  retireReason: string;
+  removeLiquidityUrl: string;
+  depositFee: string;
+  refund?: boolean;
+  refundContractAddress: string;
+  mintTokenUrl: string;
+  showWarning?: boolean;
+  warning: string;
+  callFee?: number;
 }
