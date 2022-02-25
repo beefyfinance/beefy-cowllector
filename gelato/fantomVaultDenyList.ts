@@ -55,16 +55,4 @@ export const vaultDenyList = new Set([
   'mooBooETH-FTM',
   'mooBooAAVE-FTM',
   'mooBooCRV-FTM',
-  // Need to investigate
-  "mooCurveG3CRV",
-  "mooBooFTM-MULTI",
-  "mooSpiritUSDC-DEI",
-  "mooSpiritFTM-DEUS",
-  "mooSpiritFTM-CRE8R",
-  "mooBeetMultichainMaxi",
-  "mooBeetTreebMeBro",
-  "mooBooMST-WFTM",
-  "mooSushiYFI-ETH",
-  "mooBooFONT-FTM",
-  "mooScreamFTM",
 ]);
