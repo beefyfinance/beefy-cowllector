@@ -15,7 +15,13 @@ export class GelatoClient {
     this._opsContract = new Contract(opsAddress_, OPS_ABI, this._gelatoAdmin) as IGelatoOps;
   }
 
-  public async computeTaskId(vault_: string) {
+  public async getGelatoAdminTaskIds(): Promise<string[]> {
+    const taskIds = await this._opsContract.getTaskIdsByUser(this._gelatoAdmin.address);
+    console.log(`Retrieved ${taskIds.length} task ids.`)
+    return taskIds;
+  }
+
+  public async computeTaskId(vault_: string): Promise<string> {
     const performSelector = await this._opsContract.getSelector("performUpkeep(address,uint256,uint256,uint256,uint256,bool)");
     const checkerSelector = (await this._opsContract.getSelector("checker(address)"));
     const replaced0x = `000000000000000000000000${vault_.toLowerCase().slice(2)}`
@@ -53,9 +59,10 @@ export class GelatoClient {
     );
   
     console.log(`Task id: ${id}`);
+    return id;
   }
 
-  public async createTasks(vaultMap: Record<string, string>) {
+  public async createTasks(vaultMap: Record<string, string>): Promise<void> {
     for (const key in vaultMap) {
       const vault = vaultMap[key];
       console.log(`Creating task for ${key}`);
