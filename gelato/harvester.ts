@@ -1,12 +1,13 @@
 import { Contract, ethers, Wallet } from 'ethers';
 import { BeefyAppClient } from './beefyAppClient';
+import HARVESTER_ABI from "./abis/Harvester.json"
 
 export class Harvester {
   private readonly _cowllector: Wallet;
   private readonly _beefyAppClient: BeefyAppClient;
   private readonly _chainName: string;
   private readonly _vaultHarvestList: Set<string>; // Should be the opposite of the gelatoDenyList.
-  private readonly _harvesterAddress: string;
+  private readonly _harvesterContract: Contract;
 
   constructor(
     cowllector_: Wallet,
@@ -18,7 +19,7 @@ export class Harvester {
     this._beefyAppClient = new BeefyAppClient();
     this._chainName = chainName_;
     this._vaultHarvestList = vaultHarvestList_;
-    this._harvesterAddress = harvesterAddress_;
+    this._harvesterContract = new Contract(harvesterAddress_, HARVESTER_ABI, this._cowllector);
   }
 
   public async runHarvest() {
