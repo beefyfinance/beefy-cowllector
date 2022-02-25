@@ -1,3 +1,4 @@
+const fetch = require("node-fetch")
 import { MULTICHAIN_ENDPOINTS } from "./constants";
 import { VaultConfig } from "./interfaces/VaultConfig";
 
