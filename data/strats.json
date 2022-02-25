@@ -4457,6 +4457,16 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
+    "tvl": 0
+  },
+  {
+    "name": "geist-dai",
+    "address": "0x1f533AD4232F52dA09CBDC3778DF8404A010A7Db",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 250,
     "tvl": "0"
   },
   {
