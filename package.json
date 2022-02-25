@@ -12,7 +12,7 @@
     "harvest": "node ./scheduler/harvest.js",
     "empty": "node ./scripts/emptyVaults.js",
     "exec:batch": "node ./scripts/timelock/runExecuteBatch.js",
-    "createTasks": "ts-node ./gelato/index.ts",
+    "syncTasksFantom": "ts-node ./gelato/syncTasks.ts",
     "harvestFantom": "ts-node ./gelato/harvestFantom.ts"
   },
   "dependencies": {
