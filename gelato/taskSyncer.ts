@@ -10,7 +10,7 @@ export class TaskSyncer {
   private readonly _vaultDenylist: Set<string>;
 
   constructor(gelatoAdmin_: Wallet, chainName_: string, harvesterAddress_: string, opsAddress_: string, vaultDenylist_: Set<string>) {
-    this._gelatoClient = new GelatoClient(gelatoAdmin_, harvesterAddress_, opsAddress_, true);
+    this._gelatoClient = new GelatoClient(gelatoAdmin_, harvesterAddress_, opsAddress_, false);
     this._chainName = chainName_;
     this._vaultDenylist = vaultDenylist_;
   }
