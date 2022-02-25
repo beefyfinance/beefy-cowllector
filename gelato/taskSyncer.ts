@@ -48,6 +48,7 @@ export class TaskSyncer {
         }
     }
 
+    console.log(`Missing tasks for ${Object.keys(vaultMapOfVaultsWithMissingTasks).length} vaults.`)
     return vaultMapOfVaultsWithMissingTasks;
   }
 
