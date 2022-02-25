@@ -22,5 +22,5 @@ export const syncFantomVaultHarvesterTasks = async () => {
     new Set(gelatoHarvesterDenyList)
   );
 
-  taskSyncer.syncVaultHarvesterTasks();
+  await taskSyncer.syncVaultHarvesterTasks();
 };
