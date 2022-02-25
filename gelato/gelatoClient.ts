@@ -62,9 +62,9 @@ export class GelatoClient {
     return id;
   }
 
-  public async createTasks(vaultMap: Record<string, string>): Promise<void> {
-    for (const key in vaultMap) {
-      const vault = vaultMap[key];
+  public async createTasks(vaultMap_: Record<string, string>): Promise<void> {
+    for (const key in vaultMap_) {
+      const vault = vaultMap_[key];
       this._log(`Creating task for ${key}`);
       try {
         await this._createTask(vault);
@@ -76,13 +76,13 @@ export class GelatoClient {
     }
   }
 
-  private async _createTask(vault: string) {
+  private async _createTask(vault_: string) {
 
     const performSelector = await this._opsContract.getSelector(
       'performUpkeep(address,uint256,uint256,uint256,uint256,bool)'
     );
     const checkerSelector = await this._opsContract.getSelector('checker(address)');
-    const replaced0x = `000000000000000000000000${vault.toLowerCase().slice(2)}`;
+    const replaced0x = `000000000000000000000000${vault_.toLowerCase().slice(2)}`;
     const resolverData = `${checkerSelector}${replaced0x}`;
 
     this._log('Create task data:');
@@ -101,9 +101,9 @@ export class GelatoClient {
     await txn.wait();
   }
 
-  private _log(_log: string) {
+  private _log(log_: string) {
     if (this._shouldLog) {
-      console.log(_log);
+      console.log(log_);
     }
   }
 }

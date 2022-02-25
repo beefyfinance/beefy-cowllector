@@ -5,8 +5,8 @@ export class BeefyAppClient {
 
     constructor() {}
 
-    public async fetchVaultsForChain(chainName: string): Promise<VaultConfig[]> {
-        const response = await fetch((MULTICHAIN_ENDPOINTS as any)[chainName]);
+    public async fetchVaultsForChain(chainName_: string): Promise<VaultConfig[]> {
+        const response = await fetch((MULTICHAIN_ENDPOINTS as any)[chainName_]);
         if (response.ok && response.body) {
             const data = await response.text();
             let vaultJs = '[' + data.substring(data.indexOf('\n') + 1);
