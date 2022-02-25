@@ -1,0 +1,270 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "uint256", "name": "blockNumber", "type": "uint256" },
+      { "indexed": true, "internalType": "address", "name": "vault", "type": "address" },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "checkUpkeepGasPrice",
+        "type": "uint256"
+      },
+      { "indexed": false, "internalType": "uint256", "name": "gasPrice", "type": "uint256" },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "gasUsedByPerformUpkeep",
+        "type": "uint256"
+      },
+      { "indexed": false, "internalType": "uint256", "name": "estimatedTxCost", "type": "uint256" },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "estimatedCallRewards",
+        "type": "uint256"
+      },
+      { "indexed": false, "internalType": "uint256", "name": "estimatedProfit", "type": "uint256" },
+      { "indexed": false, "internalType": "bool", "name": "isDailyHarvest", "type": "bool" },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "calculatedTxCost",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "calculatedCallRewards",
+        "type": "uint256"
+      },
+      { "indexed": false, "internalType": "uint256", "name": "calculatedProfit", "type": "uint256" }
+    ],
+    "name": "HarvestSummary",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "internalType": "address[]", "name": "users_", "type": "address[]" },
+      { "indexed": false, "internalType": "address", "name": "status_", "type": "address" }
+    ],
+    "name": "ManagersUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "internalType": "address", "name": "account", "type": "address" }
+    ],
+    "name": "Paused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "internalType": "address", "name": "account", "type": "address" }
+    ],
+    "name": "Unpaused",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "BEEFY_HARVESTER_OVERHEAD",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "GELATO_REGISTRY_GAS_OVERHEAD",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "HARVEST_GAS_PROFITABILITY_BUFFER",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "NATIVE",
+    "outputs": [{ "internalType": "contract IWrappedNative", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "RECEIVER",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TASK_TREASURY",
+    "outputs": [{ "internalType": "contract ITaskTreasuryFantom", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "gasPrice_", "type": "uint256" },
+      { "internalType": "contract IBeefyVault", "name": "vault_", "type": "address" }
+    ],
+    "name": "checkUpkeep",
+    "outputs": [
+      { "internalType": "bool", "name": "willHarvestVault_", "type": "bool" },
+      { "internalType": "uint256", "name": "estimatedTxCost_", "type": "uint256" },
+      { "internalType": "uint256", "name": "estimatedCallRewards_", "type": "uint256" },
+      { "internalType": "uint256", "name": "estimatedProfit_", "type": "uint256" },
+      { "internalType": "bool", "name": "isDailyHarvest_", "type": "bool" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "vault_", "type": "address" }],
+    "name": "checker",
+    "outputs": [
+      { "internalType": "bool", "name": "canExec_", "type": "bool" },
+      { "internalType": "bytes", "name": "execPayload_", "type": "bytes" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "depositFundsThreshold",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "gelatoRefunder",
+    "outputs": [{ "internalType": "contract IGelatoRefunder", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getUpkeepTxPremiumFactor",
+    "outputs": [{ "internalType": "uint256", "name": "upkeepTxPremiumFactor_", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "maxGasPrice",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paused",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "vault_", "type": "address" },
+      { "internalType": "uint256", "name": "checkerGasprice_", "type": "uint256" },
+      { "internalType": "uint256", "name": "estimatedTxCost_", "type": "uint256" },
+      { "internalType": "uint256", "name": "estimatedCallRewards_", "type": "uint256" },
+      { "internalType": "uint256", "name": "estimatedProfit_", "type": "uint256" },
+      { "internalType": "bool", "name": "isDailyHarvest_", "type": "bool" }
+    ],
+    "name": "performUpkeep",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "premium",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "revertWhenUnprofitable",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "depositFundsThreshold_", "type": "uint256" }],
+    "name": "setDepositFundsThreshold",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "contract IGelatoRefunder", "name": "refunder_", "type": "address" }
+    ],
+    "name": "setGelatoRefunder",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address[]", "name": "managers_", "type": "address[]" },
+      { "internalType": "bool", "name": "status_", "type": "bool" }
+    ],
+    "name": "setManagers",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gasPrice_", "type": "uint256" }],
+    "name": "setMaxGasPrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "premium_", "type": "uint256" }],
+    "name": "setPremium",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "bool", "name": "revertWhenUnprofitable_", "type": "bool" }],
+    "name": "setRevertWhenUnprofitable",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "togglePaused",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "token_", "type": "address" }],
+    "name": "withdrawToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
