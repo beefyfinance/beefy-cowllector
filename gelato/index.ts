@@ -1,8 +1,8 @@
-import { syncVaultHarvesterTasks } from "./syncVaultHarvesterTasks";
+import { syncFantomVaultHarvesterTasks } from "./syncFantomVaultHarvesterTasks";
 
 const run = async () => {
-    console.log('>>>>>', 'syncVaultHarvesterTasks()');
-    await syncVaultHarvesterTasks("fantom");
+    console.log('>>>>>', 'syncFantomVaultHarvesterTasks()');
+    await syncFantomVaultHarvesterTasks();
   };
   
 run();
