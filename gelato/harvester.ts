@@ -40,7 +40,7 @@ export class Harvester {
   }
 
   private async tryHarvest(vaultAddress_: string) {
-    const gasPrice = this._cowllector.provider.getGasPrice();
+    const gasPrice = await this._cowllector.provider.getGasPrice();
     const {
       willHarvestVault_,
       estimatedTxCost_,
