@@ -7,16 +7,18 @@ export class GelatoClient {
   private readonly _gelatoAdmin: Wallet;
   private readonly _harvesterAddress: string;
   private readonly _opsContract: Contract;
+  private readonly _shouldLog: boolean;
 
-  constructor(gelatoAdmin_: Wallet, harvesterAddress_: string, opsAddress_: string) {
+  constructor(gelatoAdmin_: Wallet, harvesterAddress_: string, opsAddress_: string, shouldLog: boolean) {
     this._gelatoAdmin = gelatoAdmin_;
     this._harvesterAddress = harvesterAddress_;
     this._opsContract = new Contract(opsAddress_, OPS_ABI, this._gelatoAdmin);
+    this._shouldLog = shouldLog;
   }
 
   public async getGelatoAdminTaskIds(): Promise<string[]> {
     const taskIds = await this._opsContract.getTaskIdsByUser(this._gelatoAdmin.address);
-    console.log(`Retrieved ${taskIds.length} task ids.`)
+    this._log(`Retrieved ${taskIds.length} task ids.`)
     return taskIds;
   }
 
@@ -27,26 +29,26 @@ export class GelatoClient {
     const resolverData = `${checkerSelector}${replaced0x}`
     const useTaskTreasuryFunds = true;
   
-    console.log(`Getting resolver hash for ${vault_}`);
+    this._log(`Getting resolver hash for ${vault_}`);
   
-    console.log("getResolverHash data:");
-    console.log(`resolver: ${this._harvesterAddress}`);
-    console.log(`resolverData: ${resolverData}`);
+    this._log("getResolverHash data:");
+    this._log(`resolver: ${this._harvesterAddress}`);
+    this._log(`resolverData: ${resolverData}`);
   
     const resolverHash = await this._opsContract.getResolverHash(
       this._harvesterAddress,
       resolverData
     )
   
-    console.log(`Getting taskId for vault: ${vault_}`);
+    this._log(`Getting taskId for vault: ${vault_}`);
   
-    console.log("getTaskId data:");
-    console.log(`taskCreator: ${this._gelatoAdmin.address}`)
-    console.log(`execAddress: ${this._harvesterAddress}`);
-    console.log(`selector: ${performSelector}`);
-    console.log(`useTaskTreasuryFunds: ${useTaskTreasuryFunds}`);
-    console.log(`feeToken: ${GelatoClient._feeTokenWhenNotPrepaidTask}`);
-    console.log(`resolverHash: ${resolverHash}`);
+    this._log("getTaskId data:");
+    this._log(`taskCreator: ${this._gelatoAdmin.address}`)
+    this._log(`execAddress: ${this._harvesterAddress}`);
+    this._log(`selector: ${performSelector}`);
+    this._log(`useTaskTreasuryFunds: ${useTaskTreasuryFunds}`);
+    this._log(`feeToken: ${GelatoClient._feeTokenWhenNotPrepaidTask}`);
+    this._log(`resolverHash: ${resolverHash}`);
   
     const id = await this._opsContract.getTaskId(
       this._gelatoAdmin.address,
@@ -57,25 +59,25 @@ export class GelatoClient {
       resolverHash
     );
   
-    console.log(`Task id: ${id}`);
+    this._log(`Task id: ${id}`);
     return id;
   }
 
   public async createTasks(vaultMap: Record<string, string>): Promise<void> {
     for (const key in vaultMap) {
       const vault = vaultMap[key];
-      console.log(`Creating task for ${key}`);
+      this._log(`Creating task for ${key}`);
       try {
-        await this.createTask(vault);
-        console.log('Task created');
+        await this._createTask(vault);
+        this._log('Task created');
       } catch (e) {
-        console.log(e);
-        console.log(`Failed for ${key}`);
+        this._log(e as string);
+        this._log(`Failed for ${key}`);
       }
     }
   }
 
-  private async createTask(vault: string) {
+  private async _createTask(vault: string) {
 
     const performSelector = await this._opsContract.getSelector(
       'performUpkeep(address,uint256,uint256,uint256,uint256,bool)'
@@ -84,11 +86,11 @@ export class GelatoClient {
     const replaced0x = `000000000000000000000000${vault.toLowerCase().slice(2)}`;
     const resolverData = `${checkerSelector}${replaced0x}`;
 
-    console.log('Create task data:');
-    console.log(`execAddress: ${this._harvesterAddress}`);
-    console.log(`execSelector: ${performSelector}`);
-    console.log(`resolverAddress: ${this._harvesterAddress}`);
-    console.log(`resolverData: ${resolverData}`);
+    this._log('Create task data:');
+    this._log(`execAddress: ${this._harvesterAddress}`);
+    this._log(`execSelector: ${performSelector}`);
+    this._log(`resolverAddress: ${this._harvesterAddress}`);
+    this._log(`resolverData: ${resolverData}`);
 
     const txn = await this._opsContract.createTask(
       this._harvesterAddress,
@@ -98,5 +100,11 @@ export class GelatoClient {
     );
 
     await txn.wait();
+  }
+
+  private _log(_log: string) {
+    if (this._shouldLog) {
+      console.log(_log);
+    }
   }
 }
