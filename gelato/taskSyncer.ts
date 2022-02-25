@@ -1,36 +1,34 @@
 const fetch = require("node-fetch")
 import { Wallet } from 'ethers';
+import { BeefyAppClient } from './beefyAppClient';
 import { GelatoClient } from './gelatoClient';
 import { VaultConfig } from './interfaces/VaultConfig';
 export class TaskSyncer {
   private readonly _gelatoClient: GelatoClient
-  private readonly _vaultsArrayJsEndpoint: string;
+  private readonly _beefyAppClient: BeefyAppClient;
+  private readonly _chainName: string;
   private readonly _vaultDenylist: Set<string>;
 
-  constructor(gelatoAdmin_: Wallet, vaultsArrayJsEndpoint_: string, harvesterAddress_: string, opsAddress_: string, vaultDenylist_: Set<string>) {
+  constructor(gelatoAdmin_: Wallet, chainName: string, harvesterAddress_: string, opsAddress_: string, vaultDenylist_: Set<string>) {
     this._gelatoClient = new GelatoClient(gelatoAdmin_, harvesterAddress_, opsAddress_, false);
-    this._vaultsArrayJsEndpoint = vaultsArrayJsEndpoint_;
+    this._chainName = chainName;
+    this._beefyAppClient = new BeefyAppClient();
     this._vaultDenylist = vaultDenylist_;
   }
 
   public async syncVaultHarvesterTasks() {
-    const response = await fetch(this._vaultsArrayJsEndpoint);
-    if (response.ok && response.body) {
-      const data = await response.text();
-      let vaultJs = '[' + data.substring(data.indexOf('\n') + 1);
-      const vaults: VaultConfig[] = eval(vaultJs);
+      // Get all prod vaults from <chainName>_pools.js
+      const prodVaults = await this._beefyAppClient.fetchVaultsForChain(this._chainName);
   
-      const activeVaultMap = this._filterForActiveVaults(vaults);
+      // Filter for only the vaults gelato should harvest.
+      const activeVaultMap = this._filterForActiveVaults(prodVaults);
   
       // Get all vaults with missing tasks.
       const vaultMapOfVaultsWithMissingTasks = await this._findVaultsWithMissingTask(activeVaultMap);
 
       // Create tasks for all missing vaults.
       this._gelatoClient.createTasks(vaultMapOfVaultsWithMissingTasks);
-    } else {
-      console.log('Fetching vaults failed');
-    }
-  };
+  }
   
   private async _findVaultsWithMissingTask(vaultMap: Record<string, string>): Promise<Record<string, string>> {
     const vaultMapOfVaultsWithMissingTasks: Record<string, string> = {}
@@ -63,5 +61,5 @@ export class TaskSyncer {
       }
     }
     return vaults;
-  };
+  }
 }
