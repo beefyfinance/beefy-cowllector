@@ -1,19 +1,22 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 import fs from 'fs';
 import { VaultConfig } from './interfaces/vault';
 
-const syncVaultHarvesterTasks = async () => {
+export const syncVaultHarvesterTasks = async () => {
   const response = await fetch(
     'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/fantom_pools.js'
   );
   if (response.ok && response.body) {
-    const fantomVaultsFileName = './vaults.js';
-    fs.writeFileSync(fantomVaultsFileName, response.body.read());
+    const fantomVaultsFileName = 'vaults.ts';
+    const relativePath = "./gelato/";
+    const writePath = `${relativePath}${fantomVaultsFileName}`;
+    const data = await response.text();
+    fs.writeFileSync(writePath, data);
 
-    const vaults = await import(fantomVaultsFileName);
-    const activeVaultMap = getActiveVaults(vaults);
+    const mod = await import(`./${fantomVaultsFileName}`);
+    const activeVaultMap = getActiveVaults(mod.fantomPools);
 
-    
+    console.log(JSON.stringify(activeVaultMap));
   } else {
     console.log('Fetching vaults failed');
   }
