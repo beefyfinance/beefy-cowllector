@@ -1,13 +1,14 @@
-import { Contract, ethers, Wallet } from 'ethers';
+import { Contract, ethers, Overrides, Wallet } from 'ethers';
 import { BeefyAppClient } from './beefyAppClient';
 import HARVESTER_ABI from './abis/Harvester.json';
+import { BeefySingleHarvesterGelato } from './typechain/BeefySingleHarvesterGelato';
 
 export class Harvester {
   private readonly _cowllector: Wallet;
   private readonly _beefyAppClient: BeefyAppClient;
   private readonly _chainName: string;
   private readonly _vaultHarvestList: Set<string>; // Should be the opposite of the gelatoDenyList.
-  private readonly _harvesterContract: Contract;
+  private readonly _harvesterContract: BeefySingleHarvesterGelato;
 
   constructor(
     cowllector_: Wallet,
@@ -23,7 +24,7 @@ export class Harvester {
       harvesterAddress_,
       HARVESTER_ABI,
       this._cowllector
-    );
+    ) as BeefySingleHarvesterGelato;
   }
 
   public async runHarvest() {
@@ -41,13 +42,16 @@ export class Harvester {
 
   private async tryHarvest(vaultAddress_: string) {
     const gasPrice = await this._cowllector.provider.getGasPrice();
+    const overrides: Overrides = {
+      gasPrice
+    }
     const {
       willHarvestVault_,
       estimatedTxCost_,
       estimatedCallRewards_,
       estimatedProfit_,
       isDailyHarvest_,
-    } = await this._harvesterContract.callStatic.checkUpkeep(gasPrice, vaultAddress_);
+    } = await this._harvesterContract.callStatic.checkUpkeep(gasPrice, vaultAddress_, overrides);
 
     if (willHarvestVault_) {
       const txn = await this._harvesterContract.performUpkeep(
@@ -56,7 +60,8 @@ export class Harvester {
         estimatedTxCost_,
         estimatedCallRewards_,
         estimatedProfit_,
-        isDailyHarvest_
+        isDailyHarvest_,
+        overrides
       );
 
       await txn.wait();
