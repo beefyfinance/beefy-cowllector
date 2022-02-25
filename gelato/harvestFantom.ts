@@ -6,7 +6,7 @@ import { TaskSyncer } from './taskSyncer';
 import { gelatoIncompatibleVaultList } from "./fantomVaultDenyList";
 import { Harvester } from './harvester';
 
-export const syncFantomVaultHarvesterTasks = async () => {
+const harvestFantom = async () => {
   const pk = process.env.GELATO_ADMIN_PK!;
   const provider = new ethers.providers.JsonRpcProvider('https://rpc.ftm.tools');
   const gelatoAdminWallet: Wallet = new Wallet(pk, provider);
@@ -22,3 +22,10 @@ export const syncFantomVaultHarvesterTasks = async () => {
 
   await harvester.runHarvest();
 };
+
+const run = async () => {
+    console.log('>>>>>', 'harvestFantom()');
+    await harvestFantom();
+  };
+  
+run();

@@ -32,7 +32,7 @@ export class Harvester {
     for (const vaultName in vaultMap) {
       const vaultAddress = vaultMap[vaultName];
       try {
-        await this.tryHarvest(vaultAddress);
+        await this.tryHarvest(vaultName, vaultAddress);
       } catch (e) {
         console.log(`Error for vault: ${vaultName}`);
         console.log(e);
@@ -40,31 +40,39 @@ export class Harvester {
     }
   }
 
-  private async tryHarvest(vaultAddress_: string) {
+  private async tryHarvest(vaultName: string, vaultAddress_: string) {
     const gasPrice = await this._cowllector.provider.getGasPrice();
     const overrides: Overrides = {
       gasPrice
     }
+
+    console.log(`Checking to harvest ${vaultName}: ${vaultAddress_}`)
     const {
       willHarvestVault_,
       estimatedTxCost_,
       estimatedCallRewards_,
       estimatedProfit_,
       isDailyHarvest_,
-    } = await this._harvesterContract.callStatic.checkUpkeep(gasPrice, vaultAddress_, overrides);
+    } = await this._harvesterContract.callStatic.checkUpkeep(gasPrice, vaultAddress_);
+
+    console.log(`willHarvestVault: ${willHarvestVault_}`);
+    console.log(`estimatedTxCost: ${estimatedTxCost_}`);
+    console.log(`estimatedCallRewards: ${estimatedCallRewards_}`);
+    console.log(`estimatedProfit: ${estimatedProfit_}`);
+    console.log(`isDailyHarvest: ${isDailyHarvest_}`);
 
     if (willHarvestVault_) {
-      const txn = await this._harvesterContract.performUpkeep(
-        vaultAddress_,
-        gasPrice,
-        estimatedTxCost_,
-        estimatedCallRewards_,
-        estimatedProfit_,
-        isDailyHarvest_,
-        overrides
-      );
+    //   const txn = await this._harvesterContract.performUpkeep(
+    //     vaultAddress_,
+    //     gasPrice,
+    //     estimatedTxCost_,
+    //     estimatedCallRewards_,
+    //     estimatedProfit_,
+    //     isDailyHarvest_,
+    //     overrides
+    //   );
 
-      await txn.wait();
+    //   await txn.wait();
     }
   }
 
