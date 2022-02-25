@@ -1,8 +1,6 @@
-import { Contract, ethers, Wallet } from 'ethers';
-import OPS_ABI from './abis/Ops.json';
+import { Wallet } from 'ethers';
 import { GelatoClient } from './gelatoClient';
 import { VaultConfig } from './interfaces/VaultConfig';
-
 export class TaskSyncer {
   private static readonly beefyVaultsApiUrl = "https://api.beefy.finance/vaults";
 
