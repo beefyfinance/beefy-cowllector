@@ -3,6 +3,7 @@ dotenv.config();
 
 import { ethers, Wallet } from 'ethers';
 import { TaskSyncer } from './taskSyncer';
+import { vaultDenyList } from "./fantomVaultDenyList";
 
 export const syncFantomVaultHarvesterTasks = async () => {
   const pk = process.env.GELATO_ADMIN_PK!;
