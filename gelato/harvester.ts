@@ -1,5 +1,5 @@
 import { Contract, ethers, Overrides, Wallet } from 'ethers';
-import { BeefyAppClient } from './beefyAppClient';
+import { BeefyAppClient } from './clients/beefyAppClient';
 import HARVESTER_ABI from './abis/Harvester.json';
 import { BeefySingleHarvesterGelato } from './typechain/BeefySingleHarvesterGelato';
 

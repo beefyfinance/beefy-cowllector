@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 import { Wallet } from 'ethers';
-import { BeefyAppClient } from './beefyAppClient';
-import { GelatoClient } from './gelatoClient';
+import { BeefyAppClient } from './clients/beefyAppClient';
+import { GelatoClient } from './clients/gelatoClient';
 import { VaultConfig } from './interfaces/VaultConfig';
 export class TaskSyncer {
   private readonly _gelatoClient: GelatoClient

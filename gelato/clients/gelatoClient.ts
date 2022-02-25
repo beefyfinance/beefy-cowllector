@@ -1,5 +1,5 @@
 import { Contract, ethers, Wallet } from 'ethers';
-import OPS_ABI from './abis/Ops.json';
+import OPS_ABI from '../abis/Ops.json';
 export class GelatoClient {
   private static readonly _feeTokenWhenNotPrepaidTask = "0x0000000000000000000000000000000000000000"; // When task is not prepaid, the contract just uses 0 address, since it uses any funds in the treasury.
 
