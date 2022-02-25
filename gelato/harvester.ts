@@ -8,7 +8,7 @@ export class Harvester {
   private readonly _beefyAppClient: BeefyAppClient;
   private readonly _chainName: string;
   private readonly _vaultHarvestList: Set<string>; // Should be the opposite of the gelatoDenyList.
-  private readonly _harvesterContract: BeefySingleHarvesterGelato;
+  private readonly _harvesterContract: Contract;
 
   constructor(
     cowllector_: Wallet,
@@ -24,7 +24,7 @@ export class Harvester {
       harvesterAddress_,
       HARVESTER_ABI,
       this._cowllector
-    ) as BeefySingleHarvesterGelato;
+    );
   }
 
   public async runHarvest() {
