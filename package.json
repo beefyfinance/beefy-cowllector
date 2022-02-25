@@ -12,7 +12,8 @@
     "harvest": "node ./scheduler/harvest.js",
     "empty": "node ./scripts/emptyVaults.js",
     "exec:batch": "node ./scripts/timelock/runExecuteBatch.js",
-    "createTasks": "ts-node ./gelato/index.ts"
+    "createTasks": "ts-node ./gelato/index.ts",
+    "harvestFantom": "ts-node ./gelato/harvestFantom.ts"
   },
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.20",
