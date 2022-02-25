@@ -31,4 +31,6 @@ export const syncFantomVaultHarvesterTasks = async () => {
     fantomOpsAddress,
     vaultDenyList
   );
+
+  taskSyncer.syncVaultHarvesterTasks();
 };
