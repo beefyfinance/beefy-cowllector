@@ -1,5 +1,4 @@
 import { Contract, ethers, Wallet } from 'ethers';
-import { IGelatoOps } from './typechain/IGelatoOps';
 import OPS_ABI from './abis/Ops.json';
 
 export class GelatoClient {
@@ -7,12 +6,12 @@ export class GelatoClient {
 
   private readonly _gelatoAdmin: Wallet;
   private readonly _harvesterAddress: string;
-  private readonly _opsContract: IGelatoOps;
+  private readonly _opsContract: Contract;
 
   constructor(gelatoAdmin_: Wallet, harvesterAddress_: string, opsAddress_: string) {
     this._gelatoAdmin = gelatoAdmin_;
     this._harvesterAddress = harvesterAddress_;
-    this._opsContract = new Contract(opsAddress_, OPS_ABI, this._gelatoAdmin) as IGelatoOps;
+    this._opsContract = new Contract(opsAddress_, OPS_ABI, this._gelatoAdmin);
   }
 
   public async getGelatoAdminTaskIds(): Promise<string[]> {
