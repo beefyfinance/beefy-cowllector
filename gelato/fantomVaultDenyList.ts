@@ -1,6 +1,9 @@
-export const vaultDenyList = new Set([
+export const neverHarvestList = [
   // BIFI maxi is permissioned.
   "mooFantomBIFI",
+]
+
+export const gelatoIncompatibleVaultList = [
   // Too much gas
   'mooGeistMIM',
   'mooGeistCRV',
@@ -55,4 +58,10 @@ export const vaultDenyList = new Set([
   'mooBooETH-FTM',
   'mooBooAAVE-FTM',
   'mooBooCRV-FTM',
-]);
+];
+
+
+export const gelatoHarvesterDenyList = [
+  ...neverHarvestList,
+  ...gelatoIncompatibleVaultList
+]
