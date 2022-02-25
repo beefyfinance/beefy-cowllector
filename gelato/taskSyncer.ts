@@ -3,25 +3,24 @@ import { Wallet } from 'ethers';
 import { GelatoClient } from './gelatoClient';
 import { VaultConfig } from './interfaces/VaultConfig';
 export class TaskSyncer {
-  private static readonly beefyVaultsApiUrl = "https://api.beefy.finance/vaults";
-
   private readonly _gelatoClient: GelatoClient
-  private readonly _chainName: string;
+  private readonly _vaultsArrayJsEndpoint: string;
   private readonly _vaultDenylist: Set<string>;
 
-  constructor(gelatoAdmin_: Wallet, chainName_: string, harvesterAddress_: string, opsAddress_: string, vaultDenylist_: Set<string>) {
+  constructor(gelatoAdmin_: Wallet, vaultsArrayJsEndpoint_: string, harvesterAddress_: string, opsAddress_: string, vaultDenylist_: Set<string>) {
     this._gelatoClient = new GelatoClient(gelatoAdmin_, harvesterAddress_, opsAddress_, false);
-    this._chainName = chainName_;
+    this._vaultsArrayJsEndpoint = vaultsArrayJsEndpoint_;
     this._vaultDenylist = vaultDenylist_;
   }
 
   public async syncVaultHarvesterTasks() {
-    const response = await fetch(TaskSyncer.beefyVaultsApiUrl);
+    const response = await fetch(this._vaultsArrayJsEndpoint);
     if (response.ok && response.body) {
-      const data: VaultConfig[] = await response.json();
+      const data = await response.text();
+      let vaultJs = '[' + data.substring(data.indexOf('\n') + 1);
+      const vaults: VaultConfig[] = eval(vaultJs);
   
-      const chainVaults = data.filter(vault => vault.chain === this._chainName)
-      const activeVaultMap = this._filterForActiveVaults(chainVaults);
+      const activeVaultMap = this._filterForActiveVaults(vaults);
   
       // Get all vaults with missing tasks.
       const vaultMapOfVaultsWithMissingTasks = await this._findVaultsWithMissingTask(activeVaultMap);

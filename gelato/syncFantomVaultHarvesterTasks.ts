@@ -12,10 +12,11 @@ export const syncFantomVaultHarvesterTasks = async () => {
 
   const fantomHarvesterAddress = '0x5e7F411EE92838275c96438B6A1A93acCC16364C';
   const fantomOpsAddress = '0x6EDe1597c05A0ca77031cBA43Ab887ccf24cd7e8';
+  const fantomBeefyAppVaultsJsEndpoint = 'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/fantom_pools.js'
 
   const taskSyncer = new TaskSyncer(
     gelatoAdminWallet,
-    'fantom',
+    fantomBeefyAppVaultsJsEndpoint,
     fantomHarvesterAddress,
     fantomOpsAddress,
     vaultDenyList
