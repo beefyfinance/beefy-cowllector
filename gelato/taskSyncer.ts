@@ -1,3 +1,4 @@
+const fetch = require("node-fetch")
 import { Wallet } from 'ethers';
 import { GelatoClient } from './gelatoClient';
 import { VaultConfig } from './interfaces/VaultConfig';
