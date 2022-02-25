@@ -1,4 +1,6 @@
-const vaultDenyList = new Set([
+export const vaultDenyList = new Set([
+  // BIFI maxi is permissioned.
+  "mooFantomBIFI",
   // Too much gas
   'mooGeistMIM',
   'mooGeistCRV',
@@ -53,4 +55,16 @@ const vaultDenyList = new Set([
   'mooBooETH-FTM',
   'mooBooAAVE-FTM',
   'mooBooCRV-FTM',
+  // Need to investigate
+  "mooCurveG3CRV",
+  "mooBooFTM-MULTI",
+  "mooSpiritUSDC-DEI",
+  "mooSpiritFTM-DEUS",
+  "mooSpiritFTM-CRE8R",
+  "mooBeetMultichainMaxi",
+  "mooBeetTreebMeBro",
+  "mooBooMST-WFTM",
+  "mooSushiYFI-ETH",
+  "mooBooFONT-FTM",
+  "mooScreamFTM",
 ]);
