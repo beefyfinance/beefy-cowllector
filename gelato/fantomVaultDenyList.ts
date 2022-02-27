@@ -33,6 +33,7 @@ export const vaultDenyList = new Set([
   'mooScreamDAI',
   'mooScreamETH',
   'mooScreamfUSDT',
+  'mooScreamFTM',
   'mooBooYFI-ETH',
   'mooCurve2Pool',
   'mooCurveRenBTC',
