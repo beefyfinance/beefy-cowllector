@@ -225,7 +225,7 @@ const chains = {
     harvestHourInterval: parseInt(process.env.MOONRIVER_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 6,
     wnativeMinToUnwrap: process.env.MOONRIVER_WNATIVE_MIN_TO_UNWRAP || '0.1',
-    rpc: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
+    rpc: process.env.MOONRIVER_RPC || 'https://moonriver.api.onfinality.io/public',
     appVaultsFilename: 'moonriver_pools.js',
     multicall: moonriver.platforms.beefyfinance.multicall,
     queryLimit: 1000,

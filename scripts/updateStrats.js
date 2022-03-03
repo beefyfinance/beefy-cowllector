@@ -18,6 +18,7 @@ const main = async () => {
   let newDefistationVaults = [];
 
   for (const CHAIN of Object.values(CHAINS)) {
+		console.log( `** Processing chain: ${CHAIN.id}`);
     if (!CHAIN.rpc) {
       console.warn(`No RPC for ${CHAIN.id}`);
       continue;

@@ -8,19 +8,19 @@
     "tvl": 0
   },
   {
+    "id": "cakev2-raca-busd",
+    "name": "Moo CakeV2 RACA-BUSD",
+    "contract": "0xF390114CBB24D1E258e87F274A7b840f11cb0Ac4",
+    "oracle": "lps",
+    "oracleId": "cakev2-raca-busd",
+    "tvl": 0
+  },
+  {
     "id": "baby-avax-usdt",
     "name": "Moo Baby AVAX-USDT",
     "contract": "0xC5BB189E9fb1Fb0Ce81a6F5B16Db4B6D30bC6dAB",
     "oracle": "lps",
     "oracleId": "baby-avax-usdt",
-    "tvl": 0
-  },
-  {
-    "id": "charge-static-busd",
-    "name": "Moo Charge STATIC-BUSD",
-    "contract": "0xaAe97E1B198406D691d75B5aA60Ac0b4e4b0E5CD",
-    "oracle": "lps",
-    "oracleId": "charge-static-busd",
     "tvl": 0
   },
   {
@@ -240,27 +240,11 @@
     "tvl": 0
   },
   {
-    "id": "blockmine-nugget-goldcoin",
-    "name": "Moo Mine NUGGET-GOLDCOIN",
-    "contract": "0xd3FC1C726E1FaF21bADc029382FD10EC6c9Bc9A8",
-    "oracle": "lps",
-    "oracleId": "blockmine-nugget-goldcoin",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-qi-wbnb",
     "name": "Moo CakeV2 QI-BNB",
     "contract": "0xcc3D722E518fF86b113Fa6aa4434fBAA0449a0e1",
     "oracle": "lps",
     "oracleId": "cakev2-qi-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-kart-wbnb",
-    "name": "Moo CakeV2 KART-BNB",
-    "contract": "0xC21Da6237db8e5870dEfde290aE62D07b58E16C5",
-    "oracle": "lps",
-    "oracleId": "cakev2-kart-wbnb",
     "tvl": 0
   },
   {
@@ -325,14 +309,6 @@
     "contract": "0x3CB18Ba59dD2eB47D4594D1a80a07a721e8a9B2A",
     "oracle": "lps",
     "oracleId": "cakev2-lazio-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-dkt-wbnb",
-    "name": "Moo CakeV2 DKT-BNB",
-    "contract": "0x16E60cF196653847325936FD1978435a12D580E3",
-    "oracle": "lps",
-    "oracleId": "cakev2-dkt-wbnb",
     "tvl": 0
   },
   {
@@ -448,46 +424,6 @@
     "tvl": 0
   },
   {
-    "id": "sing-sing-busd",
-    "name": "Moo Sing SING-BUSD",
-    "contract": "0x70E397fE8C402F2993EB2AC54C522f5AE9F33eDb",
-    "oracle": "lps",
-    "oracleId": "sing-sing-busd",
-    "tvl": 0
-  },
-  {
-    "id": "cafev2-brew-bnb",
-    "name": "Moo CafeSwap BREW-BNB",
-    "contract": "0x6D23D73B219B73560E871021D1E1AC382793727a",
-    "oracle": "lps",
-    "oracleId": "cafev2-brew-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "cafev2-brew-busd",
-    "name": "Moo CafeSwap BREW-BUSD",
-    "contract": "0xa7f299F51143e91a411805a4648434092788a111",
-    "oracle": "lps",
-    "oracleId": "cafev2-brew-busd",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-nft-wbnb",
-    "name": "Moo CakeV2 NFT-BNB",
-    "contract": "0xC7847f03d87C046630482c9b8e557B89ae0672Cc",
-    "oracle": "lps",
-    "oracleId": "cakev2-nft-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "banana-ong-bnb",
-    "name": "Moo Ape ONG-BNB",
-    "contract": "0xfea0827048B45818C53E3D0aCeC46A0041F095EA",
-    "oracle": "lps",
-    "oracleId": "banana-ong-bnb",
-    "tvl": 0
-  },
-  {
     "id": "pacoca-pacoca-bnb",
     "name": "Moo Pacoca PACOCA-BNB",
     "contract": "0x8d64F5EcabbAf5e73a4c2dA9b9f15AA89cD13e87",
@@ -520,22 +456,6 @@
     "tvl": 0
   },
   {
-    "id": "czf-czf-busd",
-    "name": "Moo CZF CZF-BUSD",
-    "contract": "0x3c7f71a03B61EE15658f22f7fa8bd103811297f3",
-    "oracle": "lps",
-    "oracleId": "czf-czf-busd",
-    "tvl": 0
-  },
-  {
-    "id": "long-long-wbnb",
-    "name": "Moo Long LONG-BNB",
-    "contract": "0xeF20Daca8d81652774c8b9830b7865CF782CefF5",
-    "oracle": "lps",
-    "oracleId": "long-long-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-pots-bnb",
     "name": "Moo Ape POTS-BNB",
     "contract": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
@@ -560,22 +480,6 @@
     "tvl": 0
   },
   {
-    "id": "auro-auro-busd",
-    "name": "Moo Viralata AURO-BUSD",
-    "contract": "0x02503B56D6c0861170E49d2E24cD6409660275BE",
-    "oracle": "lps",
-    "oracleId": "auro-auro-busd",
-    "tvl": 0
-  },
-  {
-    "id": "auro-auro-bnb",
-    "name": "Moo Viralata AURO-BNB",
-    "contract": "0x7cBab71cB057b2167976546b6874ce0f0d09F7FA",
-    "oracle": "lps",
-    "oracleId": "auro-auro-bnb",
-    "tvl": 0
-  },
-  {
     "id": "omnifarm-usdo-busd-ot",
     "name": "Moo OmnifarmOmnitrade BUSD-USDO",
     "contract": "0x73f9F03A7f639a1AC874445153c09f16cED9316b",
@@ -592,35 +496,11 @@
     "tvl": 0
   },
   {
-    "id": "omnifarm-usdo-popen",
-    "name": "Moo Omnifarm USDO-pOPEN",
-    "contract": "0xF09EB81f36E3e9De1339300d692f272Cc889A152",
-    "oracle": "lps",
-    "oracleId": "omnifarm-usdo-popen",
-    "tvl": 0
-  },
-  {
-    "id": "omnifarm-usdo-anymtlx",
-    "name": "Moo Omnifarm USDO-anyMTLX",
-    "contract": "0xDeD7c3dED606b3a97B206C2a2d9f724Eb43Aa738",
-    "oracle": "lps",
-    "oracleId": "omnifarm-usdo-anymtlx",
-    "tvl": 0
-  },
-  {
     "id": "omnifarm-fet-usdo",
     "name": "Moo Omnifarm USDO-FET",
     "contract": "0x88194Ca4c2372892C8E6eEaC7B33F713EECCd604",
     "oracle": "lps",
     "oracleId": "omnifarm-fet-usdo",
-    "tvl": 0
-  },
-  {
-    "id": "omnifarm-ocp-usdo",
-    "name": "Moo Omnifarm OCP-USDO",
-    "contract": "0xCB214C265e8Bc37B6d7df1601cB7dA35EC8F89c6",
-    "oracle": "lps",
-    "oracleId": "omnifarm-ocp-usdo",
     "tvl": 0
   },
   {
@@ -744,14 +624,6 @@
     "tvl": 0
   },
   {
-    "id": "banana-bnb-sista",
-    "name": "Moo Banana SISTA-BNB",
-    "contract": "0x7ba299C3681aFEE3d91f7d0685451A7c1C45Cd00",
-    "oracle": "lps",
-    "oracleId": "banana-bnb-sista",
-    "tvl": 0
-  },
-  {
     "id": "jetswap-btcb-bnb",
     "name": "Moo Jetswap BTCB-BNB",
     "contract": "0x1301Bfedaec0592e7915012A0f1AE2aCBaFbA4c3",
@@ -773,22 +645,6 @@
     "contract": "0x69DDD966e3FAaB30c09D7A2C40609Ea859F4107E",
     "oracle": "lps",
     "oracleId": "banana-axs-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "farmhero-pancake-hero-wbnb",
-    "name": "Moo FarmHeroPancake HERO-WBNB",
-    "contract": "0x1D8Ed2D5d2f5C0e8d9919532C2D47D97ae3447ad",
-    "oracle": "lps",
-    "oracleId": "farmhero-pancake-hero-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "farmhero-pancake-hero-busd",
-    "name": "Moo FarmHeroPancake HERO-BUSD",
-    "contract": "0x8D37dB34d1f69CD2591ba9EFFCFda568eCe4b16B",
-    "oracle": "lps",
-    "oracleId": "farmhero-pancake-hero-busd",
     "tvl": 0
   },
   {
@@ -821,14 +677,6 @@
     "contract": "0x97579c19A91c9e174D1DF4782739A2ec0971c0D8",
     "oracle": "lps",
     "oracleId": "cakev2-axs-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "ellipsis-usdn",
-    "name": "Moo Ellipsis USDN",
-    "contract": "0x1DB9162039F834F02f095395B334d514f894b696",
-    "oracle": "lps",
-    "oracleId": "ellipsis-usdn",
     "tvl": 0
   },
   {
@@ -936,22 +784,6 @@
     "tvl": 0
   },
   {
-    "id": "ica-zbtc",
-    "name": "Moo Icarus ZBTC",
-    "contract": "0xd98625cc5d60afBce022a70eEAFa9811F47d6d63",
-    "oracle": "tokens",
-    "oracleId": "ZBTC",
-    "tvl": 0
-  },
-  {
-    "id": "ica-zeth",
-    "name": "Moo Icarus ZETH",
-    "contract": "0xE1e15BaF9Adb643269b97baDB7fB5fEE4aDC0705",
-    "oracle": "tokens",
-    "oracleId": "ZETH",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-btcb-eth",
     "name": "Moo CakeV2 BTCB-ETH",
     "contract": "0xEf43E54Bb4221106953951238FC301a1f8939490",
@@ -981,14 +813,6 @@
     "contract": "0x00F204F524a433f45a6278c2C0E10F5292b3C5B9",
     "oracle": "lps",
     "oracleId": "tenfi-tenfi-busd",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-mbox-bnb",
-    "name": "Moo CakeV2 MBOX-BNB",
-    "contract": "0x2Dd2a81d1B44723f6106f621d0D64848fbdbCc77",
-    "oracle": "lps",
-    "oracleId": "cakev2-mbox-bnb",
     "tvl": 0
   },
   {
@@ -1024,43 +848,11 @@
     "tvl": 0
   },
   {
-    "id": "ellipsis-eps",
-    "name": "Moo Ellipsis EPS",
-    "contract": "0x0CDAf84f90F0BBFF225A82D7165967Fff93A7bea",
-    "oracle": "tokens",
-    "oracleId": "EPS",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-tusd-busd",
-    "name": "Moo CakeV2 TUSD-BUSD",
-    "contract": "0x62Cce60Bca43926e062ca2A4e2DcdAbEA5D2EAD2",
-    "oracle": "lps",
-    "oracleId": "cakev2-tusd-busd",
-    "tvl": 0
-  },
-  {
-    "id": "mdex-bsc-bnb-usdt",
-    "name": "Moo Mdex BNB-USDT",
-    "contract": "0x7638db36fc21E030D5F8158B27181c3b27418bE2",
-    "oracle": "lps",
-    "oracleId": "mdex-bsc-bnb-usdt",
-    "tvl": 0
-  },
-  {
     "id": "mdex-bsc-fil-usdt",
     "name": "Moo Mdex FIL-USDT",
     "contract": "0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622",
     "oracle": "lps",
     "oracleId": "mdex-bsc-fil-usdt",
-    "tvl": 0
-  },
-  {
-    "id": "jetswap-wings",
-    "name": "Moo Jetswap WINGS",
-    "contract": "0x5e784882E8D2ac69777713f0e71100741b8aC2F6",
-    "oracle": "tokens",
-    "oracleId": "WINGS",
     "tvl": 0
   },
   {
@@ -1160,14 +952,6 @@
     "tvl": 0
   },
   {
-    "id": "jetswap-wings-busd",
-    "name": "Moo Jetswap WINGS-BUSD",
-    "contract": "0xE16f790B414C235Ada8cBC419C5C1Ae61ff49A84",
-    "oracle": "lps",
-    "oracleId": "jetswap-wings-busd",
-    "tvl": 0
-  },
-  {
     "id": "jetswap-busd-bnb",
     "name": "Moo Jetswap BUSD-BNB",
     "contract": "0xDb207D797cA68112f5AA2677ee01301cF91c3c6E",
@@ -1248,14 +1032,6 @@
     "tvl": 0
   },
   {
-    "id": "goal-goal-busd",
-    "name": "Moo Goal GOAL-BUSD",
-    "contract": "0xF18784Ba03fA5017E1ae4D82c4a3e00F5E8fF16f",
-    "oracle": "lps",
-    "oracleId": "goal-goal-busd",
-    "tvl": 0
-  },
-  {
     "id": "banana-watch-bnb",
     "name": "Moo Ape WATCH-BNB",
     "contract": "0xc795E63738d6207dFE4450D280013aCFdb1Cc526",
@@ -1269,22 +1045,6 @@
     "contract": "0x9f670c6CdB8A6133016eC7C8552Dd42624FaC53F",
     "oracle": "lps",
     "oracleId": "banana-naut-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "zefiv2-zefi-bnb",
-    "name": "Moo Zefi ZEFI-BNB",
-    "contract": "0xB62eE36A03ab043Eb5b57E1eE88dEFbe9959d4C3",
-    "oracle": "lps",
-    "oracleId": "zefiv2-zefi-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "zefiv2-zefi-busd",
-    "name": "Moo ZefiV2 ZEFI-BUSD",
-    "contract": "0x6b57697eb320F40d5F386547DB3d468111fF0B92",
-    "oracle": "lps",
-    "oracleId": "zefiv2-zefi-busd",
     "tvl": 0
   },
   {
@@ -1328,30 +1088,6 @@
     "tvl": 0
   },
   {
-    "id": "swampv2-swamp-bnb",
-    "name": "Moo SwampV2 SWAMP-BNB",
-    "contract": "0xe77Ec021543985E914C54F81938039FF58e5B0b1",
-    "oracle": "lps",
-    "oracleId": "swampv2-swamp-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "swampv2-swamp-busd",
-    "name": "Moo SwampV2 SWAMP-BUSD",
-    "contract": "0xF5898cB211fAE8538253F08930e6b350cEe16444",
-    "oracle": "lps",
-    "oracleId": "swampv2-swamp-busd",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-bunny-bnb",
-    "name": "Moo CakeV2 BUNNY-BNB",
-    "contract": "0x5b1c50a1B0FfFB762b0431D6b0E1309a48Ac95a9",
-    "oracle": "lps",
-    "oracleId": "cakev2-bunny-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-xrp-bnb",
     "name": "Moo CakeV2 XRP-BNB",
     "contract": "0x1a39846045288d55f48Bc6AB2b77A03d93aB5e05",
@@ -1381,14 +1117,6 @@
     "contract": "0xDdfE5F59C735977d33f36f9B8D06E6A212CB9094",
     "oracle": "lps",
     "oracleId": "cakev2-eps-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-vai-busd",
-    "name": "Moo CakeV2 VAI-BUSD",
-    "contract": "0xf5eA38B6b9644224dA1aECbC1219e8543c0689b2",
-    "oracle": "lps",
-    "oracleId": "cakev2-vai-busd",
     "tvl": 0
   },
   {
@@ -1517,22 +1245,6 @@
     "contract": "0x6eb020663898c72F8E25958F5f7bcDC732279201",
     "oracle": "lps",
     "oracleId": "cakev2-dai-busd",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-sushi-eth",
-    "name": "Moo CakeV2 SUSHI-ETH",
-    "contract": "0x517b331B00dF201B660FfE74874Ed491D8047879",
-    "oracle": "lps",
-    "oracleId": "cakev2-sushi-eth",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-belt-bnb",
-    "name": "Moo CakeV2 BELT-BNB",
-    "contract": "0x3F0f1a8E2DCe5dA86Cad9b5914D8018c021E08b1",
-    "oracle": "lps",
-    "oracleId": "cakev2-belt-bnb",
     "tvl": 0
   },
   {
@@ -1720,35 +1432,11 @@
     "tvl": 0
   },
   {
-    "id": "space-space-bnb",
-    "name": "Moo Space SPACE-BNB",
-    "contract": "0xbC943C4C00E837e65Cf76BcD8Df8C365FB44Dd6f",
-    "oracle": "lps",
-    "oracleId": "space-space-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-alice-bnb",
     "name": "Moo CakeV2 ALICE-BNB",
     "contract": "0x0c65883778f16770F4d43f5524708e18BC62881b",
     "oracle": "lps",
     "oracleId": "cakev2-alice-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "salt-salt-busd",
-    "name": "Moo Salt Salt-BUSD",
-    "contract": "0x62ad4253FB38265Da05eb389ac547F1B2c09a689",
-    "oracle": "lps",
-    "oracleId": "salt-salt-busd",
-    "tvl": 0
-  },
-  {
-    "id": "salt-salt-bnb",
-    "name": "Moo Salt Salt-BNB",
-    "contract": "0x57e07d6958fd38AA2f46699744e322d3fB3db60f",
-    "oracle": "lps",
-    "oracleId": "salt-salt-bnb",
     "tvl": 0
   },
   {
@@ -1760,14 +1448,6 @@
     "tvl": 0
   },
   {
-    "id": "ramen-ramen-busd",
-    "name": "Moo Ramen Ramen-BUSD",
-    "contract": "0x605d96De6068f08489392a35E9DBE90201574bbC",
-    "oracle": "lps",
-    "oracleId": "ramen-ramen-busd",
-    "tvl": 0
-  },
-  {
     "id": "kebab-eth-btcb",
     "name": "Moo Kebab ETH-BTCB",
     "contract": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
@@ -1776,43 +1456,11 @@
     "tvl": 0
   },
   {
-    "id": "kebab-kebab-btc",
-    "name": "Moo Kebab KEBAB-BTCB",
-    "contract": "0x02a77B01BE5BB6a73b70E2b5615694F71a2c4F41",
-    "oracle": "lps",
-    "oracleId": "kebab-kebab-btc",
-    "tvl": 0
-  },
-  {
     "id": "kebab-bifi-busd",
     "name": "Moo Kebab BIFI-BUSD",
     "contract": "0x9c1630eA66310fA03D756FBd92B68a1f08c487b6",
     "oracle": "lps",
     "oracleId": "kebab-bifi-busd",
-    "tvl": 0
-  },
-  {
-    "id": "kebab-kebab",
-    "name": "Moo Kebab",
-    "contract": "0xE2231D4ca4921Cb35680bac714C9d40C8d217494",
-    "oracle": "tokens",
-    "oracleId": "KEBAB",
-    "tvl": 0
-  },
-  {
-    "id": "kebab-kebab-busd",
-    "name": "Moo Kebab KEBAB-BUSD",
-    "contract": "0xF0A7626eCcBee00aF144BB1f77CD187AF85BBf41",
-    "oracle": "lps",
-    "oracleId": "kebab-kebab-busd",
-    "tvl": 0
-  },
-  {
-    "id": "kebab-kebab-bnb",
-    "name": "Moo Kebab KEBAB-BNB",
-    "contract": "0x2Eb92E2882030B8e153370d208462D4dDf7041d2",
-    "oracle": "lps",
-    "oracleId": "kebab-kebab-bnb",
     "tvl": 0
   },
   {
@@ -1837,6 +1485,366 @@
     "contract": "0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190",
     "oracle": "lps",
     "oracleId": "cakev2-xcv-busd",
+    "tvl": 0
+  },
+  {
+    "id": "charge-static-busd",
+    "name": "Moo Charge STATIC-BUSD",
+    "contract": "0xaAe97E1B198406D691d75B5aA60Ac0b4e4b0E5CD",
+    "oracle": "lps",
+    "oracleId": "charge-static-busd",
+    "tvl": 0
+  },
+  {
+    "id": "blockmine-nugget-goldcoin",
+    "name": "Moo Mine NUGGET-GOLDCOIN",
+    "contract": "0xd3FC1C726E1FaF21bADc029382FD10EC6c9Bc9A8",
+    "oracle": "lps",
+    "oracleId": "blockmine-nugget-goldcoin",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-kart-wbnb",
+    "name": "Moo CakeV2 KART-BNB",
+    "contract": "0xC21Da6237db8e5870dEfde290aE62D07b58E16C5",
+    "oracle": "lps",
+    "oracleId": "cakev2-kart-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dkt-wbnb",
+    "name": "Moo CakeV2 DKT-BNB",
+    "contract": "0x16E60cF196653847325936FD1978435a12D580E3",
+    "oracle": "lps",
+    "oracleId": "cakev2-dkt-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "sing-sing-busd",
+    "name": "Moo Sing SING-BUSD",
+    "contract": "0x70E397fE8C402F2993EB2AC54C522f5AE9F33eDb",
+    "oracle": "lps",
+    "oracleId": "sing-sing-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cafev2-brew-bnb",
+    "name": "Moo CafeSwap BREW-BNB",
+    "contract": "0x6D23D73B219B73560E871021D1E1AC382793727a",
+    "oracle": "lps",
+    "oracleId": "cafev2-brew-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cafev2-brew-busd",
+    "name": "Moo CafeSwap BREW-BUSD",
+    "contract": "0xa7f299F51143e91a411805a4648434092788a111",
+    "oracle": "lps",
+    "oracleId": "cafev2-brew-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-nft-wbnb",
+    "name": "Moo CakeV2 NFT-BNB",
+    "contract": "0xC7847f03d87C046630482c9b8e557B89ae0672Cc",
+    "oracle": "lps",
+    "oracleId": "cakev2-nft-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "banana-ong-bnb",
+    "name": "Moo Ape ONG-BNB",
+    "contract": "0xfea0827048B45818C53E3D0aCeC46A0041F095EA",
+    "oracle": "lps",
+    "oracleId": "banana-ong-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "czf-czf-busd",
+    "name": "Moo CZF CZF-BUSD",
+    "contract": "0x3c7f71a03B61EE15658f22f7fa8bd103811297f3",
+    "oracle": "lps",
+    "oracleId": "czf-czf-busd",
+    "tvl": 0
+  },
+  {
+    "id": "long-long-wbnb",
+    "name": "Moo Long LONG-BNB",
+    "contract": "0xeF20Daca8d81652774c8b9830b7865CF782CefF5",
+    "oracle": "lps",
+    "oracleId": "long-long-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "auro-auro-busd",
+    "name": "Moo Viralata AURO-BUSD",
+    "contract": "0x02503B56D6c0861170E49d2E24cD6409660275BE",
+    "oracle": "lps",
+    "oracleId": "auro-auro-busd",
+    "tvl": 0
+  },
+  {
+    "id": "auro-auro-bnb",
+    "name": "Moo Viralata AURO-BNB",
+    "contract": "0x7cBab71cB057b2167976546b6874ce0f0d09F7FA",
+    "oracle": "lps",
+    "oracleId": "auro-auro-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "omnifarm-usdo-popen",
+    "name": "Moo Omnifarm USDO-pOPEN",
+    "contract": "0xF09EB81f36E3e9De1339300d692f272Cc889A152",
+    "oracle": "lps",
+    "oracleId": "omnifarm-usdo-popen",
+    "tvl": 0
+  },
+  {
+    "id": "omnifarm-usdo-anymtlx",
+    "name": "Moo Omnifarm USDO-anyMTLX",
+    "contract": "0xDeD7c3dED606b3a97B206C2a2d9f724Eb43Aa738",
+    "oracle": "lps",
+    "oracleId": "omnifarm-usdo-anymtlx",
+    "tvl": 0
+  },
+  {
+    "id": "omnifarm-ocp-usdo",
+    "name": "Moo Omnifarm OCP-USDO",
+    "contract": "0xCB214C265e8Bc37B6d7df1601cB7dA35EC8F89c6",
+    "oracle": "lps",
+    "oracleId": "omnifarm-ocp-usdo",
+    "tvl": 0
+  },
+  {
+    "id": "banana-bnb-sista",
+    "name": "Moo Banana SISTA-BNB",
+    "contract": "0x7ba299C3681aFEE3d91f7d0685451A7c1C45Cd00",
+    "oracle": "lps",
+    "oracleId": "banana-bnb-sista",
+    "tvl": 0
+  },
+  {
+    "id": "farmhero-pancake-hero-wbnb",
+    "name": "Moo FarmHeroPancake HERO-WBNB",
+    "contract": "0x1D8Ed2D5d2f5C0e8d9919532C2D47D97ae3447ad",
+    "oracle": "lps",
+    "oracleId": "farmhero-pancake-hero-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "farmhero-pancake-hero-busd",
+    "name": "Moo FarmHeroPancake HERO-BUSD",
+    "contract": "0x8D37dB34d1f69CD2591ba9EFFCFda568eCe4b16B",
+    "oracle": "lps",
+    "oracleId": "farmhero-pancake-hero-busd",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-usdn",
+    "name": "Moo Ellipsis USDN",
+    "contract": "0x1DB9162039F834F02f095395B334d514f894b696",
+    "oracle": "lps",
+    "oracleId": "ellipsis-usdn",
+    "tvl": 0
+  },
+  {
+    "id": "ica-zbtc",
+    "name": "Moo Icarus ZBTC",
+    "contract": "0xd98625cc5d60afBce022a70eEAFa9811F47d6d63",
+    "oracle": "tokens",
+    "oracleId": "ZBTC",
+    "tvl": 0
+  },
+  {
+    "id": "ica-zeth",
+    "name": "Moo Icarus ZETH",
+    "contract": "0xE1e15BaF9Adb643269b97baDB7fB5fEE4aDC0705",
+    "oracle": "tokens",
+    "oracleId": "ZETH",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-mbox-bnb",
+    "name": "Moo CakeV2 MBOX-BNB",
+    "contract": "0x2Dd2a81d1B44723f6106f621d0D64848fbdbCc77",
+    "oracle": "lps",
+    "oracleId": "cakev2-mbox-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-eps",
+    "name": "Moo Ellipsis EPS",
+    "contract": "0x0CDAf84f90F0BBFF225A82D7165967Fff93A7bea",
+    "oracle": "tokens",
+    "oracleId": "EPS",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-tusd-busd",
+    "name": "Moo CakeV2 TUSD-BUSD",
+    "contract": "0x62Cce60Bca43926e062ca2A4e2DcdAbEA5D2EAD2",
+    "oracle": "lps",
+    "oracleId": "cakev2-tusd-busd",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-bsc-bnb-usdt",
+    "name": "Moo Mdex BNB-USDT",
+    "contract": "0x7638db36fc21E030D5F8158B27181c3b27418bE2",
+    "oracle": "lps",
+    "oracleId": "mdex-bsc-bnb-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "jetswap-wings",
+    "name": "Moo Jetswap WINGS",
+    "contract": "0x5e784882E8D2ac69777713f0e71100741b8aC2F6",
+    "oracle": "tokens",
+    "oracleId": "WINGS",
+    "tvl": 0
+  },
+  {
+    "id": "jetswap-wings-busd",
+    "name": "Moo Jetswap WINGS-BUSD",
+    "contract": "0xE16f790B414C235Ada8cBC419C5C1Ae61ff49A84",
+    "oracle": "lps",
+    "oracleId": "jetswap-wings-busd",
+    "tvl": 0
+  },
+  {
+    "id": "goal-goal-busd",
+    "name": "Moo Goal GOAL-BUSD",
+    "contract": "0xF18784Ba03fA5017E1ae4D82c4a3e00F5E8fF16f",
+    "oracle": "lps",
+    "oracleId": "goal-goal-busd",
+    "tvl": 0
+  },
+  {
+    "id": "zefiv2-zefi-bnb",
+    "name": "Moo Zefi ZEFI-BNB",
+    "contract": "0xB62eE36A03ab043Eb5b57E1eE88dEFbe9959d4C3",
+    "oracle": "lps",
+    "oracleId": "zefiv2-zefi-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "zefiv2-zefi-busd",
+    "name": "Moo ZefiV2 ZEFI-BUSD",
+    "contract": "0x6b57697eb320F40d5F386547DB3d468111fF0B92",
+    "oracle": "lps",
+    "oracleId": "zefiv2-zefi-busd",
+    "tvl": 0
+  },
+  {
+    "id": "swampv2-swamp-bnb",
+    "name": "Moo SwampV2 SWAMP-BNB",
+    "contract": "0xe77Ec021543985E914C54F81938039FF58e5B0b1",
+    "oracle": "lps",
+    "oracleId": "swampv2-swamp-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "swampv2-swamp-busd",
+    "name": "Moo SwampV2 SWAMP-BUSD",
+    "contract": "0xF5898cB211fAE8538253F08930e6b350cEe16444",
+    "oracle": "lps",
+    "oracleId": "swampv2-swamp-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bunny-bnb",
+    "name": "Moo CakeV2 BUNNY-BNB",
+    "contract": "0x5b1c50a1B0FfFB762b0431D6b0E1309a48Ac95a9",
+    "oracle": "lps",
+    "oracleId": "cakev2-bunny-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-vai-busd",
+    "name": "Moo CakeV2 VAI-BUSD",
+    "contract": "0xf5eA38B6b9644224dA1aECbC1219e8543c0689b2",
+    "oracle": "lps",
+    "oracleId": "cakev2-vai-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-sushi-eth",
+    "name": "Moo CakeV2 SUSHI-ETH",
+    "contract": "0x517b331B00dF201B660FfE74874Ed491D8047879",
+    "oracle": "lps",
+    "oracleId": "cakev2-sushi-eth",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-belt-bnb",
+    "name": "Moo CakeV2 BELT-BNB",
+    "contract": "0x3F0f1a8E2DCe5dA86Cad9b5914D8018c021E08b1",
+    "oracle": "lps",
+    "oracleId": "cakev2-belt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "space-space-bnb",
+    "name": "Moo Space SPACE-BNB",
+    "contract": "0xbC943C4C00E837e65Cf76BcD8Df8C365FB44Dd6f",
+    "oracle": "lps",
+    "oracleId": "space-space-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "salt-salt-busd",
+    "name": "Moo Salt Salt-BUSD",
+    "contract": "0x62ad4253FB38265Da05eb389ac547F1B2c09a689",
+    "oracle": "lps",
+    "oracleId": "salt-salt-busd",
+    "tvl": 0
+  },
+  {
+    "id": "salt-salt-bnb",
+    "name": "Moo Salt Salt-BNB",
+    "contract": "0x57e07d6958fd38AA2f46699744e322d3fB3db60f",
+    "oracle": "lps",
+    "oracleId": "salt-salt-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "ramen-ramen-busd",
+    "name": "Moo Ramen Ramen-BUSD",
+    "contract": "0x605d96De6068f08489392a35E9DBE90201574bbC",
+    "oracle": "lps",
+    "oracleId": "ramen-ramen-busd",
+    "tvl": 0
+  },
+  {
+    "id": "kebab-kebab-btc",
+    "name": "Moo Kebab KEBAB-BTCB",
+    "contract": "0x02a77B01BE5BB6a73b70E2b5615694F71a2c4F41",
+    "oracle": "lps",
+    "oracleId": "kebab-kebab-btc",
+    "tvl": 0
+  },
+  {
+    "id": "kebab-kebab",
+    "name": "Moo Kebab",
+    "contract": "0xE2231D4ca4921Cb35680bac714C9d40C8d217494",
+    "oracle": "tokens",
+    "oracleId": "KEBAB",
+    "tvl": 0
+  },
+  {
+    "id": "kebab-kebab-busd",
+    "name": "Moo Kebab KEBAB-BUSD",
+    "contract": "0xF0A7626eCcBee00aF144BB1f77CD187AF85BBf41",
+    "oracle": "lps",
+    "oracleId": "kebab-kebab-busd",
+    "tvl": 0
+  },
+  {
+    "id": "kebab-kebab-bnb",
+    "name": "Moo Kebab KEBAB-BNB",
+    "contract": "0x2Eb92E2882030B8e153370d208462D4dDf7041d2",
+    "oracle": "lps",
+    "oracleId": "kebab-kebab-bnb",
     "tvl": 0
   },
   {
