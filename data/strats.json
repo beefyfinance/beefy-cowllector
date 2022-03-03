@@ -3615,7 +3615,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "2249377"
   },
@@ -3645,7 +3645,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "67198"
   },
@@ -3655,7 +3655,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "121469"
   },
@@ -3665,7 +3665,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "213255"
   },
@@ -3675,7 +3675,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "16489"
   },
@@ -3685,7 +3685,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "28543"
   },
@@ -3695,7 +3695,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "33071"
   },
@@ -3705,7 +3705,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "210"
   },
@@ -3725,7 +3725,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "12590"
   },
@@ -3735,7 +3735,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "51949"
   },
@@ -3745,7 +3745,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "3246150"
   },
@@ -3755,7 +3755,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "32048"
   },
@@ -3765,7 +3765,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "6"
   },
@@ -3775,7 +3775,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "144247"
   },
@@ -3785,7 +3785,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "8"
   },
@@ -3805,7 +3805,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": 0
   },
@@ -3815,7 +3815,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "2201981"
   },
@@ -3825,7 +3825,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": "48063"
   },
@@ -3835,7 +3835,7 @@
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 250,
     "tvl": 0
   },
@@ -4652,16 +4652,6 @@
   {
     "name": "geist-usdc",
     "address": "0x5a712EF5cF210B97eA20e54849409CB527D5f968",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250,
-    "tvl": 0
-  },
-  {
-    "name": "geist-dai",
-    "address": "0x1f533AD4232F52dA09CBDC3778DF8404A010A7Db",
     "interval": 1,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
