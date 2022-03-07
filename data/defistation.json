@@ -192,14 +192,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-quidd-wbnb",
-    "name": "Moo CakeV2 QUIDD-BNB",
-    "contract": "0x2Fc49fDA984333e618b4980eB97086Eb37D7C333",
-    "oracle": "lps",
-    "oracleId": "cakev2-quidd-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-wbnb-ceek",
     "name": "Moo Ape CEEK-BNB",
     "contract": "0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4",
@@ -477,30 +469,6 @@
     "contract": "0x6709b27eDeD9c594C4490c98ba8efb3EEb0DE9f4",
     "oracle": "lps",
     "oracleId": "cakev2-bp-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "omnifarm-usdo-busd-ot",
-    "name": "Moo OmnifarmOmnitrade BUSD-USDO",
-    "contract": "0x73f9F03A7f639a1AC874445153c09f16cED9316b",
-    "oracle": "lps",
-    "oracleId": "omnifarm-usdo-busd-ot",
-    "tvl": 0
-  },
-  {
-    "id": "omnifarm-usdo-wbnb",
-    "name": "Moo Omnifarm USDO-WBNB",
-    "contract": "0x95b7Ac779Dc476fa4Fe62B8c97F7f71913DFfB76",
-    "oracle": "lps",
-    "oracleId": "omnifarm-usdo-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "omnifarm-fet-usdo",
-    "name": "Moo Omnifarm USDO-FET",
-    "contract": "0x88194Ca4c2372892C8E6eEaC7B33F713EECCd604",
-    "oracle": "lps",
-    "oracleId": "omnifarm-fet-usdo",
     "tvl": 0
   },
   {
@@ -1288,14 +1256,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-dodo-bnb",
-    "name": "Moo CakeV2 DODO-BNB",
-    "contract": "0x5F92E5845661b31bB899d4121b5a20d6b87Fa2Ca",
-    "oracle": "lps",
-    "oracleId": "cakev2-dodo-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-tko-bnb",
     "name": "Moo CakeV2 TKO-BNB",
     "contract": "0xEEdDe64Af1dF1b1d023e326FD914AD5491B5c0eD",
@@ -1485,6 +1445,46 @@
     "contract": "0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190",
     "oracle": "lps",
     "oracleId": "cakev2-xcv-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-quidd-wbnb",
+    "name": "Moo CakeV2 QUIDD-BNB",
+    "contract": "0x2Fc49fDA984333e618b4980eB97086Eb37D7C333",
+    "oracle": "lps",
+    "oracleId": "cakev2-quidd-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "omnifarm-usdo-busd-ot",
+    "name": "Moo OmnifarmOmnitrade BUSD-USDO",
+    "contract": "0x73f9F03A7f639a1AC874445153c09f16cED9316b",
+    "oracle": "lps",
+    "oracleId": "omnifarm-usdo-busd-ot",
+    "tvl": 0
+  },
+  {
+    "id": "omnifarm-usdo-wbnb",
+    "name": "Moo Omnifarm USDO-WBNB",
+    "contract": "0x95b7Ac779Dc476fa4Fe62B8c97F7f71913DFfB76",
+    "oracle": "lps",
+    "oracleId": "omnifarm-usdo-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "omnifarm-fet-usdo",
+    "name": "Moo Omnifarm USDO-FET",
+    "contract": "0x88194Ca4c2372892C8E6eEaC7B33F713EECCd604",
+    "oracle": "lps",
+    "oracleId": "omnifarm-fet-usdo",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-dodo-bnb",
+    "name": "Moo CakeV2 DODO-BNB",
+    "contract": "0x5F92E5845661b31bB899d4121b5a20d6b87Fa2Ca",
+    "oracle": "lps",
+    "oracleId": "cakev2-dodo-bnb",
     "tvl": 0
   },
   {
