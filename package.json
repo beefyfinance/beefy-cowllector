@@ -12,7 +12,8 @@
     "harvest": "node ./scheduler/harvest.js",
     "empty": "node ./scripts/emptyVaults.js",
     "exec:batch": "node ./scripts/timelock/runExecuteBatch.js",
-    "createTasks": "ts-node ./gelato/index.ts"
+    "createTasks": "ts-node ./gelato/index.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.20",
@@ -32,8 +33,15 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
+    "prettier": "^2.5.1",
     "ts-node": "^10.5.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5"
+  },
+  "lint-staged": {
+    "*.js": "prettier --write",
+    "*.json": "prettier --write"
   }
 }
