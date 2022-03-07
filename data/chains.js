@@ -1,4 +1,4 @@
-require( 'dotenv').config();
+require('dotenv').config();
 const { addressBook } = require('blockchain-addressbook');
 
 const {
@@ -43,7 +43,7 @@ const chains = {
     gas: {
       limit: Number(process.env.BSC_GAS_LIMIT) || 2e6,
       price: Number(process.env.BSC_GAS_PRICE) || 5e9,
-			priceCap: Number( process.env.BSC_GAS_PRICE_CAP)
+      priceCap: Number(process.env.BSC_GAS_PRICE_CAP),
     },
   },
   128: {
@@ -68,7 +68,7 @@ const chains = {
     gas: {
       limit: Number(process.env.HECO_GAS_LIMIT) || 30e6,
       price: Number(process.env.HECO_GAS_PRICE) || 3e9,
-			priceCap: Number( process.env.HECO_GAS_PRICE_CAP)
+      priceCap: Number(process.env.HECO_GAS_PRICE_CAP),
     },
   },
   43114: {
@@ -91,9 +91,9 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cchain.explorer.avax.network',
     gas: {
-      limit: Number( process.env.AVAX_GAS_LIMIT) || 1e6,
-      price: Number( process.env.AVAX_GAS_PRICE) || 30e9,
-			priceCap: Number( process.env.AVAX_GAS_PRICE_CAP)
+      limit: Number(process.env.AVAX_GAS_LIMIT) || 1e6,
+      price: Number(process.env.AVAX_GAS_PRICE) || 30e9,
+      priceCap: Number(process.env.AVAX_GAS_PRICE_CAP),
     },
   },
   137: {
@@ -116,9 +116,9 @@ const chains = {
     blockTime: 2,
     blockExplorer: 'https://polygonscan.com',
     gas: {
-      limit: Number( process.env.POLYGON_GAS_LIMIT) || 2e6,
-      price: Number( process.env.POLYGON_GAS_PRICE) || 40e9,
-			priceCap: Number( process.env.POLYGON_GAS_PRICE_CAP)
+      limit: Number(process.env.POLYGON_GAS_LIMIT) || 2e6,
+      price: Number(process.env.POLYGON_GAS_PRICE) || 40e9,
+      priceCap: Number(process.env.POLYGON_GAS_PRICE_CAP),
     },
   },
   250: {
@@ -143,7 +143,7 @@ const chains = {
     gas: {
       limit: Number(process.env.FANTOM_GAS_LIMIT) || 95e5,
       price: Number(process.env.FANTOM_GAS_PRICE) || 1e9,
-			priceCap: Number( process.env.FANTOM_GAS_PRICE_CAP)
+      priceCap: Number(process.env.FANTOM_GAS_PRICE_CAP),
     },
   },
   1666600000: {
@@ -168,7 +168,7 @@ const chains = {
     gas: {
       limit: Number(process.env.ONE_GAS_LIMIT) || 1e6,
       price: Number(process.env.ONE_GAS_PRICE) || null,
-			priceCap: Number( process.env.ONE_GAS_PRICE_CAP)
+      priceCap: Number(process.env.ONE_GAS_PRICE_CAP),
     },
   },
   42161: {
@@ -193,7 +193,7 @@ const chains = {
     gas: {
       limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 30e6,
       price: Number(process.env.ARBITRUM_GAS_PRICE) || 5e9,
-			priceCap: Number( process.env.ARBITRUM_GAS_PRICE_CAP)
+      priceCap: Number(process.env.ARBITRUM_GAS_PRICE_CAP),
     },
   },
   42220: {
@@ -218,7 +218,7 @@ const chains = {
     gas: {
       limit: Number(process.env.CELO_GAS_LIMIT) || 5e6,
       price: Number(process.env.CELO_GAS_PRICE) || 5e8,
-			priceCap: Number( process.env.CELO_GAS_PRICE_CAP)
+      priceCap: Number(process.env.CELO_GAS_PRICE_CAP),
     },
   },
   1285: {
@@ -243,7 +243,7 @@ const chains = {
     gas: {
       limit: Number(process.env.MOONRIVER_GAS_LIMIT) || 5e6,
       price: Number(process.env.MOONRIVER_GAS_PRICE) || 1e9,
-			priceCap: Number( process.env.MOONRIVER_GAS_PRICE_CAP)
+      priceCap: Number(process.env.MOONRIVER_GAS_PRICE_CAP),
     },
   },
   25: {
@@ -268,7 +268,7 @@ const chains = {
     gas: {
       limit: Number(process.env.CRONOS_GAS_LIMIT) || 1e6,
       price: Number(process.env.CRONOS_GAS_PRICE) || 5e12,
-			priceCap: Number( process.env.CRONOS_GAS_PRICE_CAP)
+      priceCap: Number(process.env.CRONOS_GAS_PRICE_CAP),
     },
   },
   122: {
@@ -293,7 +293,7 @@ const chains = {
     gas: {
       limit: Number(process.env.FUSE_GAS_LIMIT) || 10e6,
       price: Number(process.env.FUSE_GAS_PRICE) || 1e9,
-			priceCap: Number( process.env.FUSE_GAS_PRICE_CAP)
+      priceCap: Number(process.env.FUSE_GAS_PRICE_CAP),
     },
   },
   1088: {
@@ -318,7 +318,7 @@ const chains = {
     gas: {
       limit: Number(process.env.METIS_GAS_LIMIT) || 10e6,
       price: Number(process.env.METIS_GAS_PRICE) || 30e9,
-			priceCap: Number( process.env.METIS_GAS_PRICE_CAP)
+      priceCap: Number(process.env.METIS_GAS_PRICE_CAP),
     },
   },
   1313161554: {
@@ -345,7 +345,7 @@ const chains = {
     gas: {
       limit: Number(process.env.AURORA_GAS_LIMIT) || 0,
       price: Number(process.env.AURORA_GAS_PRICE) || 0,
-			priceCap: Number( process.env.AURORA_GAS_PRICE_CAP)
+      priceCap: Number(process.env.AURORA_GAS_PRICE_CAP),
     },
   },
   1284: {
@@ -370,7 +370,7 @@ const chains = {
     gas: {
       limit: Number(process.env.MOONBEAM_GAS_LIMIT) || 10e6,
       price: Number(process.env.MOONBEAM_GAS_PRICE) || 100e9,
-			priceCap: Number( process.env.MOONBEAM_GAS_PRICE_CAP)
+      priceCap: Number(process.env.MOONBEAM_GAS_PRICE_CAP),
     },
   },
 };

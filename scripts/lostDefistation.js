@@ -1,7 +1,8 @@
 const axios = require('axios');
 
 const getVaults = async () => {
-  const vaultsEndpoint = 'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/bsc_pools.js';
+  const vaultsEndpoint =
+    'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/bsc_pools.js';
   try {
     const response = await axios.get(vaultsEndpoint);
     const data = response.data;
@@ -25,8 +26,8 @@ const main = async () => {
   const notInDefi = vaults
     .filter(vault => vault.status === 'active')
     .map(value => ({
-      'id': value.id,
-      'vault': value.earnedTokenAddress
+      id: value.id,
+      vault: value.earnedTokenAddress,
     }))
     .filter(value => !defiContracts.includes(value.vault));
 

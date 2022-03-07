@@ -32,7 +32,7 @@ const getVaultBalances = async (chain, vaults) => {
   vaults.forEach(vault => {
     const vaultContract = new web3.eth.Contract(BeefyVault, vault.earnedTokenAddress);
     balanceCalls.push({
-      balance: vaultContract.methods.totalSupply()
+      balance: vaultContract.methods.totalSupply(),
     });
   });
   const res = await multicall.all([balanceCalls]);
