@@ -79,7 +79,7 @@ We encourage you to contribute to Cowllector!
 
 We recommend to use [this commit convention](https://github.com/conventional-commits/conventionalcommits.org) that helps you write your commits in a way that is easy to understand and process by others.
 
-In case you want to contribute, please follow next steps:ç
+In case you want to contribute, please follow next steps:
 
 - fork this repo
 - create a new branch and named using conventional commit reference
