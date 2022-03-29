@@ -1,8 +1,8 @@
 [
   {
     "id": "bifi-maxi",
-    "name": "Moo BIFI",
-    "contract": "0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e",
+    "name": "MooBIFIV2",
+    "contract": "0x7828ff4ABA7aAb932D8407C78324B069D24284c9",
     "oracle": "tokens",
     "oracleId": "BIFI",
     "tvl": 0
@@ -1413,6 +1413,14 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "bifi-maxi",
+    "name": "Moo BIFI",
+    "contract": "0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e",
+    "oracle": "tokens",
+    "oracleId": "BIFI",
     "tvl": 0
   },
   {
