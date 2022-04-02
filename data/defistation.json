@@ -8,6 +8,22 @@
     "tvl": 0
   },
   {
+    "id": "stargate-bsc-busd",
+    "name": "Moo Stargate BUSD",
+    "contract": "0x220711F15D09bdDFD1f0ba0dfC905074Ea204C4E",
+    "oracle": "tokens",
+    "oracleId": "BUSD",
+    "tvl": 0
+  },
+  {
+    "id": "stargate-bsc-usdt",
+    "name": "Moo Stargate USDT",
+    "contract": "0x0383E88A19E5c387FeBafbF51E5bA642d2ad8bE0",
+    "oracle": "tokens",
+    "oracleId": "USDT",
+    "tvl": 0
+  },
+  {
     "id": "banana-ape-wbnb",
     "name": "Moo Ape APE-BNB",
     "contract": "0x4fdaF14fBAf0569Ea35050843bDa9288F7198602",
