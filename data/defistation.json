@@ -8,6 +8,22 @@
     "tvl": 0
   },
   {
+    "id": "emp-emp-eth",
+    "name": "Moo Emp EMP-ETH",
+    "contract": "0xC78d2624745775c8Da178CF8AEc0e7B734c344a0",
+    "oracle": "lps",
+    "oracleId": "emp-emp-eth",
+    "tvl": 0
+  },
+  {
+    "id": "emp-eshare-wbnb",
+    "name": "Moo Emp ESHARE-BNB",
+    "contract": "0x39E5C480bc28b77D8B5960Abc248A21C0cF4bE30",
+    "oracle": "lps",
+    "oracleId": "emp-eshare-wbnb",
+    "tvl": 0
+  },
+  {
     "id": "stargate-bsc-busd",
     "name": "Moo Stargate BUSD",
     "contract": "0x220711F15D09bdDFD1f0ba0dfC905074Ea204C4E",
@@ -157,14 +173,6 @@
     "contract": "0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1",
     "oracle": "lps",
     "oracleId": "banana-nfty-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-insur-wbnb",
-    "name": "Moo CakeV2 INSUR-BNB",
-    "contract": "0x4E6AB04823B5eFEEF3c51C6AbeE0F4B8306f7AcF",
-    "oracle": "lps",
-    "oracleId": "cakev2-insur-wbnb",
     "tvl": 0
   },
   {
@@ -1429,6 +1437,14 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-insur-wbnb",
+    "name": "Moo CakeV2 INSUR-BNB",
+    "contract": "0x4E6AB04823B5eFEEF3c51C6AbeE0F4B8306f7AcF",
+    "oracle": "lps",
+    "oracleId": "cakev2-insur-wbnb",
     "tvl": 0
   },
   {
