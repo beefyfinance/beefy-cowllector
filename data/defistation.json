@@ -1392,14 +1392,6 @@
     "tvl": 0
   },
   {
-    "id": "ellipsis-eps-bnb",
-    "name": "Moo Ellipsis EPS-BNB",
-    "contract": "0xD467af8C117AcaF7B2725a6d35Dc5A471A683055",
-    "oracle": "lps",
-    "oracleId": "ellipsis-eps-bnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-alice-bnb",
     "name": "Moo CakeV2 ALICE-BNB",
     "contract": "0x0c65883778f16770F4d43f5524708e18BC62881b",
@@ -1437,6 +1429,14 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-eps-bnb",
+    "name": "Moo Ellipsis EPS-BNB",
+    "contract": "0xD467af8C117AcaF7B2725a6d35Dc5A471A683055",
+    "oracle": "lps",
+    "oracleId": "ellipsis-eps-bnb",
     "tvl": 0
   },
   {
