@@ -13,7 +13,8 @@
     "empty": "node ./scripts/emptyVaults.js",
     "exec:batch": "node ./scripts/timelock/runExecuteBatch.js",
     "createTasks": "ts-node ./gelato/index.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "audit:timelocks": "node ./scripts/timelock/timelockAdminsAudit.js"
   },
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.20",
