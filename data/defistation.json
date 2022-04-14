@@ -344,14 +344,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-bmon-wbnb",
-    "name": "Moo CakeV2 BMON-WBNB",
-    "contract": "0xb6f1f0797F975FE72a19AfF84e216ea9BDf1C6Ca",
-    "oracle": "lps",
-    "oracleId": "cakev2-bmon-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "belt-beltbnb",
     "name": "Moo Belt BNB",
     "contract": "0xC34Ae91312A3c3F9420691922040a5DEe1698E52",
@@ -1429,6 +1421,14 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-bmon-wbnb",
+    "name": "Moo CakeV2 BMON-WBNB",
+    "contract": "0xb6f1f0797F975FE72a19AfF84e216ea9BDf1C6Ca",
+    "oracle": "lps",
+    "oracleId": "cakev2-bmon-wbnb",
     "tvl": 0
   },
   {
