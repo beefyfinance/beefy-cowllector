@@ -8,6 +8,62 @@
     "tvl": 0
   },
   {
+    "id": "biswap-usdt-busd",
+    "name": "Moo BiSwap USDT-BUSD",
+    "contract": "0x164fb78cAf2730eFD63380c2a645c32eBa1C52bc",
+    "oracle": "lps",
+    "oracleId": "biswap-usdt-busd",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-bsw",
+    "name": "Moo BiSwap BSW",
+    "contract": "0x0BE6B4CAC0D586f474AA4e059CDc05Bc54f61B03",
+    "oracle": "tokens",
+    "oracleId": "BSW",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-bsw-wbnb",
+    "name": "Moo BiSwap BSW-BNB",
+    "contract": "0xd4548D0b71D4f925aaA2be59E10c6B9248d1EF70",
+    "oracle": "lps",
+    "oracleId": "biswap-bsw-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-usdt-bsw",
+    "name": "Moo BiSwap USDT-BSW",
+    "contract": "0x216EEE15D1e3fAAD34181f66dd0B665f556a638d",
+    "oracle": "lps",
+    "oracleId": "biswap-usdt-bsw",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-eth-btcb",
+    "name": "Moo BiSwap ETH-BTCB",
+    "contract": "0xEeB87e7bAbF17cA97F0Eb897F24Bf475e0A9Aef7",
+    "oracle": "lps",
+    "oracleId": "biswap-eth-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-usdt-wbnb",
+    "name": "Moo BiSwap USDT-BNB",
+    "contract": "0xe2AD2c5702f6c9073f85b00E4743066E1D1035f8",
+    "oracle": "lps",
+    "oracleId": "biswap-usdt-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-wbnb-bifi",
+    "name": "Moo BiSwap BNB-BIFI",
+    "contract": "0xcb979E17c039001DAd363093CeFca7170f144816",
+    "oracle": "lps",
+    "oracleId": "biswap-wbnb-bifi",
+    "tvl": 0
+  },
+  {
     "id": "emp-emp-eth",
     "name": "Moo Emp EMP-ETH",
     "contract": "0xC78d2624745775c8Da178CF8AEc0e7B734c344a0",
