@@ -21,8 +21,6 @@ const adminRole = '0x5f58e3a2316349923ce3780f8d587db2d72378aed66a8261c916544fa68
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
-    if (chainName !== 'aurora') continue;
-
     console.log(`Reviewing chain ${chainName} timelock admins.`);
 
     const chainId = chainIdFromName(chainName);
@@ -83,7 +81,7 @@ const main = async () => {
             }
           } else {
             // Give all the params to schedule the tx:
-            console.log(`You should schedule a tx in timelock ${vaultOwner} on chain ${chainName}`);
+            console.log(`You should schedule a tx in timelock ${timelock} on chain ${chainName}`);
             console.log('Params');
             console.log(`Target: ${timelock}`);
             console.log(`Value: 0`);
@@ -97,108 +95,151 @@ const main = async () => {
       }
 
       // Check correct executors.
+      for (const member of executors) {
+        let hasRole = await timelockContract.hasRole(executorRole, member);
+        if (!hasRole) {
+          console.log(
+            `${member} is missing executor role in timelock ${timelock} on chain ${chainName}`
+          );
+
+          let data = timelockInterface.encodeFunctionData('grantRole', [executorRole, member]);
+
+          // Check if a tx is scheduled:
+          const operationHash = await timelockContract.hashOperation(
+            timelock,
+            0,
+            data,
+            ethers.constants.HashZero,
+            ethers.constants.HashZero
+          );
+
+          const isOperation = await timelockContract.isOperation(operationHash);
+          if (isOperation) {
+            const isOperationReady = await timelockContract.isOperationReady(operationHash);
+            if (isOperationReady) {
+              console.log(`You should execute a tx on timelock ${timelock} on chain ${chainName}.`);
+              console.log('Params');
+              console.log(`Target: ${timelock}`);
+              console.log(`Value: 0`);
+              console.log(`Data: ${data}`);
+              console.log(`Predecessor: ${ethers.constants.HashZero}`);
+              console.log(`Data: ${ethers.constants.HashZero}`);
+            } else {
+              console.log(
+                `Operation to add ${member} as executor for ${vaultOwner} on chain ${chainName} is not ready.`
+              );
+            }
+          } else {
+            // Give all the params to schedule the tx:
+            console.log(`You should schedule a tx in timelock ${timelock} on chain ${chainName}`);
+            console.log('Params');
+            console.log(`Target: ${timelock}`);
+            console.log(`Value: 0`);
+            console.log(`Data: ${data}`);
+            console.log(`Predecessor: ${ethers.constants.HashZero}`);
+            console.log(`Data: ${ethers.constants.HashZero}`);
+            console.log(`Min Delay: ${index === 0 ? 0 : 21600}`);
+          }
+          console.log('\n');
+        }
+      }
 
       // Check outdated proposers.
+      for (const member of outdatedAdmins) {
+        let hasRole = await timelockContract.hasRole(proposerRole, member);
+        if (hasRole) {
+          console.log(`${member} is still proposer in timelock ${timelock} on chain ${chainName}`);
+
+          let data = timelockInterface.encodeFunctionData('revokeRole', [proposerRole, member]);
+
+          // Check if a tx is scheduled:
+          const operationHash = await timelockContract.hashOperation(
+            timelock,
+            0,
+            data,
+            ethers.constants.HashZero,
+            ethers.constants.HashZero
+          );
+
+          const isOperation = await timelockContract.isOperation(operationHash);
+          if (isOperation) {
+            const isOperationReady = await timelockContract.isOperationReady(operationHash);
+            if (isOperationReady) {
+              console.log(`You should execute a tx on timelock ${timelock} on chain ${chainName}.`);
+              console.log('Params');
+              console.log(`Target: ${timelock}`);
+              console.log(`Value: 0`);
+              console.log(`Data: ${data}`);
+              console.log(`Predecessor: ${ethers.constants.HashZero}`);
+              console.log(`Data: ${ethers.constants.HashZero}`);
+            } else {
+              console.log(
+                `Operation to remove ${member} as proposer from ${vaultOwner} on chain ${chainName} is not ready.`
+              );
+            }
+          } else {
+            // Give all the params to schedule the tx:
+            console.log(`You should schedule a tx in timelock ${timelock} on chain ${chainName}`);
+            console.log('Params');
+            console.log(`Target: ${timelock}`);
+            console.log(`Value: 0`);
+            console.log(`Data: ${data}`);
+            console.log(`Predecessor: ${ethers.constants.HashZero}`);
+            console.log(`Data: ${ethers.constants.HashZero}`);
+            console.log(`Min Delay: ${index === 0 ? 0 : 21600}`);
+          }
+          console.log('\n');
+        }
+      }
 
       // Check outdated executors.
+      for (const member of outdatedAdmins) {
+        let hasRole = await timelockContract.hasRole(executorRole, member);
+        if (hasRole) {
+          console.log(`${member} is still executor in timelock ${timelock} on chain ${chainName}`);
+
+          let data = timelockInterface.encodeFunctionData('revokeRole', [executorRole, member]);
+
+          // Check if a tx is scheduled:
+          const operationHash = await timelockContract.hashOperation(
+            timelock,
+            0,
+            data,
+            ethers.constants.HashZero,
+            ethers.constants.HashZero
+          );
+
+          const isOperation = await timelockContract.isOperation(operationHash);
+          if (isOperation) {
+            const isOperationReady = await timelockContract.isOperationReady(operationHash);
+            if (isOperationReady) {
+              console.log(`You should execute a tx on timelock ${timelock} on chain ${chainName}.`);
+              console.log('Params');
+              console.log(`Target: ${timelock}`);
+              console.log(`Value: 0`);
+              console.log(`Data: ${data}`);
+              console.log(`Predecessor: ${ethers.constants.HashZero}`);
+              console.log(`Data: ${ethers.constants.HashZero}`);
+            } else {
+              console.log(
+                `Operation to remove ${member} as executor from ${vaultOwner} on chain ${chainName} is not ready.`
+              );
+            }
+          } else {
+            // Give all the params to schedule the tx:
+            console.log(`You should schedule a tx in timelock ${timelock} on chain ${chainName}`);
+            console.log('Params');
+            console.log(`Target: ${timelock}`);
+            console.log(`Value: 0`);
+            console.log(`Data: ${data}`);
+            console.log(`Predecessor: ${ethers.constants.HashZero}`);
+            console.log(`Data: ${ethers.constants.HashZero}`);
+            console.log(`Min Delay: ${index === 0 ? 0 : 21600}`);
+          }
+          console.log('\n');
+        }
+      }
     }
-
-    // for (const member of proposers) {
-    //   for (const timelock of [vaultOwner, strategyOwner]) {
-    //   }
-    //   let hasRole = await vaultOwnerContract.hasRole(proposerRole, member);
-    //   if (!hasRole) {
-    //     console.log(
-    //       `${member} is missing proposer role in vault owner timelock ${vaultOwner} in chain ${chainName}`
-    //     );
-
-    //     let data = timelockInterface.encodeFunctionData('grantRole', [proposerRole, member]);
-    //     console.log('data', data);
-
-    //     // Check if a tx is scheduled:
-    //     const operationHash = await vaultOwnerContract.hashOperation(
-    //       vaultOwner,
-    //       0,
-    //       data,
-    //       ethers.constants.HashZero,
-    //       ethers.constants.HashZero
-    //     );
-    //     console.log('operation hash', operationHash);
-
-    //     const isOperation = await vaultOwnerContract.isOperation(operationHash);
-    //     console.log('isOperation', isOperation);
-    //     if (isOperation) {
-    //       // Check if it's ready
-    //       const isOperationReady = await vaultOwnerContract.isOperationReady(operationHash);
-    //       if (isOperationReady) {
-    //       } else {
-    //         console.log(
-    //           `Operation to add ${member} as proposer for ${vaultOwner} on chain ${chainName} is not ready.`
-    //         );
-    //       }
-    //     } else {
-    //       // Give all the params to schedule the tx:
-    //       console.log(
-    //         `You should schedule a transaction on timelock ${vaultOwner} on chain ${chainName}`
-    //       );
-    //       console.log(
-    //         `Params are ${vaultOwner}, 0, ${data}, ${ethers.constants.HashZero}, ${ethers.constants.HashZero}, 0`
-    //       );
-    //     }
-    //   }
-    //   hasRole = await strategyOwnerContract.hasRole(proposerRole, member);
-    //   if (!hasRole) {
-    //     console.log(
-    //       `${member} is missing proposer role in strategy owner timelock ${strategyOwner} in chain ${chainName}`
-    //     );
-    //   }
-    // }
-
-    // for (const member of executors) {
-    //   let hasRole = await vaultOwnerContract.hasRole(executorRole, member);
-    //   if (!hasRole) {
-    //     console.log(
-    //       `${member} is missing executor role in vault owner timelock ${vaultOwner} in chain ${chainName}`
-    //     );
-    //   }
-    //   hasRole = await strategyOwnerContract.hasRole(executorRole, member);
-    //   if (!hasRole) {
-    //     console.log(
-    //       `${member} is missing executor role in strategy owner timelock ${strategyOwner} in chain ${chainName}`
-    //     );
-    //   }
-    // }
-
-    // // 2. Review that the outdated executors and proposers have lost access.
-    // for (const member of outdatedAdmins) {
-    //   let hasRole = await vaultOwnerContract.hasRole(proposerRole, member);
-    //   if (hasRole) {
-    //     console.log(
-    //       `${member} is still proposer in vault owner timelock ${vaultOwner} in chain ${chainName}`
-    //     );
-    //   }
-    //   hasRole = await strategyOwnerContract.hasRole(proposerRole, member);
-    //   if (hasRole) {
-    //     console.log(
-    //       `${member} is still proposer in strategy owner timelock ${strategyOwner} in chain ${chainName}`
-    //     );
-    //   }
-    // }
-
-    // for (const member of outdatedAdmins) {
-    //   let hasRole = await vaultOwnerContract.hasRole(executorRole, member);
-    //   if (hasRole) {
-    //     console.log(
-    //       `${member} is still executor in vault owner timelock ${vaultOwner} in chain ${chainName}`
-    //     );
-    //   }
-    //   hasRole = await strategyOwnerContract.hasRole(executorRole, member);
-    //   if (hasRole) {
-    //     console.log(
-    //       `${member} is still executor in strategy owner timelock ${strategyOwner} in chain ${chainName}`
-    //     );
-    //   }
-    // }
 
     console.log(`Chain ${chainName} done. \n`);
   }
