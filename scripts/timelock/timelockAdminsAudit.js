@@ -11,6 +11,8 @@ const oldUpgrader = '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf';
 
 const outdatedAdmins = [oldKeeper, oldNotifier, oldUpgrader];
 
+const timelockInterface = new ethers.utils.Interface(TimelockAbi);
+
 // Example timelock: https://snowtrace.io/address/0x37DC61A76113E7840d4A8F1c1B799cC9ac5Aa854
 
 const executorRole = '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63';
@@ -19,7 +21,7 @@ const adminRole = '0x5f58e3a2316349923ce3780f8d587db2d72378aed66a8261c916544fa68
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
-    if (chainName !== 'fantom') continue;
+    if (chainName !== 'aurora') continue;
 
     console.log(`Reviewing chain ${chainName} timelock admins.`);
 
@@ -40,8 +42,6 @@ const main = async () => {
     const vaultOwnerContract = new ethers.Contract(vaultOwner, TimelockAbi, provider);
     const strategyOwnerContract = new ethers.Contract(strategyOwner, TimelockAbi, provider);
 
-    console.log(vaultOwnerContract.getSighash('grantRole'));
-
     // 1. Review that the correct executors and proposers are active.
 
     const proposers = [launchpoolOwner];
@@ -53,18 +53,40 @@ const main = async () => {
         console.log(
           `${member} is missing proposer role in vault owner timelock ${vaultOwner} in chain ${chainName}`
         );
+
+        let data = timelockInterface.encodeFunctionData('grantRole', [proposerRole, member]);
+        console.log('data', data);
+
         // Check if a tx is scheduled:
         const operationHash = await vaultOwnerContract.hashOperation(
           vaultOwner,
-          value,
+          0,
           data,
           ethers.constants.HashZero,
           ethers.constants.HashZero
         );
+        console.log('operation hash', operationHash);
 
-        // If it's scheduled and ready, give all the params required to execute.
-
-        // Give all the params to schedule the tx:
+        const isOperation = await vaultOwnerContract.isOperation(operationHash);
+        console.log('isOperation', isOperation);
+        if (isOperation) {
+          // Check if it's ready
+          const isOperationReady = await vaultOwnerContract.isOperationReady(operationHash);
+          if (isOperationReady) {
+          } else {
+            console.log(
+              `Operation to add ${member} as proposer for ${vaultOwner} on chain ${chainName} is not ready.`
+            );
+          }
+        } else {
+          // Give all the params to schedule the tx:
+          console.log(
+            `You should schedule a transaction on timelock ${vaultOwner} on chain ${chainName}`
+          );
+          console.log(
+            `Params are ${vaultOwner}, 0, ${data}, ${ethers.constants.HashZero}, ${ethers.constants.HashZero}, 0`
+          );
+        }
       }
       hasRole = await strategyOwnerContract.hasRole(proposerRole, member);
       if (!hasRole) {
@@ -74,51 +96,51 @@ const main = async () => {
       }
     }
 
-    for (const member of executors) {
-      let hasRole = await vaultOwnerContract.hasRole(executorRole, member);
-      if (!hasRole) {
-        console.log(
-          `${member} is missing executor role in vault owner timelock ${vaultOwner} in chain ${chainName}`
-        );
-      }
-      hasRole = await strategyOwnerContract.hasRole(executorRole, member);
-      if (!hasRole) {
-        console.log(
-          `${member} is missing executor role in strategy owner timelock ${strategyOwner} in chain ${chainName}`
-        );
-      }
-    }
+    // for (const member of executors) {
+    //   let hasRole = await vaultOwnerContract.hasRole(executorRole, member);
+    //   if (!hasRole) {
+    //     console.log(
+    //       `${member} is missing executor role in vault owner timelock ${vaultOwner} in chain ${chainName}`
+    //     );
+    //   }
+    //   hasRole = await strategyOwnerContract.hasRole(executorRole, member);
+    //   if (!hasRole) {
+    //     console.log(
+    //       `${member} is missing executor role in strategy owner timelock ${strategyOwner} in chain ${chainName}`
+    //     );
+    //   }
+    // }
 
-    // 2. Review that the outdated executors and proposers have lost access.
-    for (const member of outdatedAdmins) {
-      let hasRole = await vaultOwnerContract.hasRole(proposerRole, member);
-      if (hasRole) {
-        console.log(
-          `${member} is still proposer in vault owner timelock ${vaultOwner} in chain ${chainName}`
-        );
-      }
-      hasRole = await strategyOwnerContract.hasRole(proposerRole, member);
-      if (hasRole) {
-        console.log(
-          `${member} is still proposer in strategy owner timelock ${strategyOwner} in chain ${chainName}`
-        );
-      }
-    }
+    // // 2. Review that the outdated executors and proposers have lost access.
+    // for (const member of outdatedAdmins) {
+    //   let hasRole = await vaultOwnerContract.hasRole(proposerRole, member);
+    //   if (hasRole) {
+    //     console.log(
+    //       `${member} is still proposer in vault owner timelock ${vaultOwner} in chain ${chainName}`
+    //     );
+    //   }
+    //   hasRole = await strategyOwnerContract.hasRole(proposerRole, member);
+    //   if (hasRole) {
+    //     console.log(
+    //       `${member} is still proposer in strategy owner timelock ${strategyOwner} in chain ${chainName}`
+    //     );
+    //   }
+    // }
 
-    for (const member of outdatedAdmins) {
-      let hasRole = await vaultOwnerContract.hasRole(executorRole, member);
-      if (hasRole) {
-        console.log(
-          `${member} is still executor in vault owner timelock ${vaultOwner} in chain ${chainName}`
-        );
-      }
-      hasRole = await strategyOwnerContract.hasRole(executorRole, member);
-      if (hasRole) {
-        console.log(
-          `${member} is still executor in strategy owner timelock ${strategyOwner} in chain ${chainName}`
-        );
-      }
-    }
+    // for (const member of outdatedAdmins) {
+    //   let hasRole = await vaultOwnerContract.hasRole(executorRole, member);
+    //   if (hasRole) {
+    //     console.log(
+    //       `${member} is still executor in vault owner timelock ${vaultOwner} in chain ${chainName}`
+    //     );
+    //   }
+    //   hasRole = await strategyOwnerContract.hasRole(executorRole, member);
+    //   if (hasRole) {
+    //     console.log(
+    //       `${member} is still executor in strategy owner timelock ${strategyOwner} in chain ${chainName}`
+    //     );
+    //   }
+    // }
 
     // 3. Create the relevant transactions for each one.
 
