@@ -13,11 +13,8 @@ const outdatedAdmins = [oldKeeper, oldNotifier, oldUpgrader];
 
 const timelockInterface = new ethers.utils.Interface(TimelockAbi);
 
-// Example timelock: https://snowtrace.io/address/0x37DC61A76113E7840d4A8F1c1B799cC9ac5Aa854
-
 const executorRole = '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63';
 const proposerRole = '0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1';
-const adminRole = '0x5f58e3a2316349923ce3780f8d587db2d72378aed66a8261c916544fa6846ca5';
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
