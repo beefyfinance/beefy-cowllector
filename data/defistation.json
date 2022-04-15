@@ -856,22 +856,6 @@
     "tvl": 0
   },
   {
-    "id": "panther-panther-busd",
-    "name": "Moo Panther PANTHER-BUSD",
-    "contract": "0x3f8664Bc085aCceb2bC311C0F56bAA44F9C17204",
-    "oracle": "lps",
-    "oracleId": "panther-panther-busd",
-    "tvl": 0
-  },
-  {
-    "id": "panther-panther-bnb",
-    "name": "Moo Panther PANTHER-BNB",
-    "contract": "0xF2E57C6156aE3bFD107AE6187D53dd621D508D02",
-    "oracle": "lps",
-    "oracleId": "panther-panther-bnb",
-    "tvl": 0
-  },
-  {
     "id": "mdex-bsc-fil-usdt",
     "name": "Moo Mdex FIL-USDT",
     "contract": "0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622",
@@ -1477,6 +1461,22 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "panther-panther-busd",
+    "name": "Moo Panther PANTHER-BUSD",
+    "contract": "0x3f8664Bc085aCceb2bC311C0F56bAA44F9C17204",
+    "oracle": "lps",
+    "oracleId": "panther-panther-busd",
+    "tvl": 0
+  },
+  {
+    "id": "panther-panther-bnb",
+    "name": "Moo Panther PANTHER-BNB",
+    "contract": "0xF2E57C6156aE3bFD107AE6187D53dd621D508D02",
+    "oracle": "lps",
+    "oracleId": "panther-panther-bnb",
     "tvl": 0
   },
   {
