@@ -16,6 +16,38 @@
     "tvl": 0
   },
   {
+    "id": "valas-valas-bnb",
+    "name": "Moo ValasVALAS-BNB",
+    "contract": "0x020007Da76C0cA9F36e405478AAFFB67512F06a7",
+    "oracle": "lps",
+    "oracleId": "valas-valas-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "valas-wbtc",
+    "name": "Moo Valas BTCB",
+    "contract": "0x6bCD9493dFA06D07003aB6920DacE6D4F854E162",
+    "oracle": "tokens",
+    "oracleId": "BTCB",
+    "tvl": 0
+  },
+  {
+    "id": "valas-eth",
+    "name": "Moo Valas ETH",
+    "contract": "0x725E14C3106EBf4778e01eA974e492f909029aE8",
+    "oracle": "tokens",
+    "oracleId": "ETH",
+    "tvl": 0
+  },
+  {
+    "id": "valas-busd",
+    "name": "Moo Valas BUSD",
+    "contract": "0xB78b6A0137ad8745784D3B23c16abeA8F527ff54",
+    "oracle": "tokens",
+    "oracleId": "BUSD",
+    "tvl": 0
+  },
+  {
     "id": "biswap-bsw",
     "name": "Moo BiSwap BSW",
     "contract": "0x0BE6B4CAC0D586f474AA4e059CDc05Bc54f61B03",
