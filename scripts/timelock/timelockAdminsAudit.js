@@ -22,6 +22,8 @@ const main = async () => {
     const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
     const { strategyOwner, vaultOwner, devMultisig, treasuryMultisig, keeper, launchpoolOwner } =
       chain.platforms.beefyfinance;
+    const proposers = [launchpoolOwner];
+    const executors = [launchpoolOwner, keeper];
 
     // Review if multisigs are missing.
     if (devMultisig === ethers.constants.AddressZero) {
@@ -31,10 +33,6 @@ const main = async () => {
     if (treasuryMultisig === ethers.constants.AddressZero) {
       console.log(`Treasury multisig missing on ${chainName}. Check for Gnosis Safe support.`);
     }
-
-    // Review that the required executors and proposers are active.
-    const proposers = [launchpoolOwner];
-    const executors = [launchpoolOwner, keeper];
 
     for (const [index, timelock] of [vaultOwner, strategyOwner].entries()) {
       const timelockContract = new ethers.Contract(timelock, TimelockAbi, provider);
@@ -81,11 +79,10 @@ const main = async () => {
         scheduleDataList
       );
 
-      console.log(executeDataList);
-      console.log(scheduleDataList);
-    }
+      printTxs(executeDataList, scheduleDataList, timelock, chainName, index);
 
-    console.log(`Chain ${chainName} done. \n`);
+      console.log(`Chain ${chainName} done. \n`);
+    }
   }
 };
 
@@ -121,6 +118,33 @@ const checkRole = async (timelock, admins, role, shouldHave, executeDataList, sc
   }
 
   return [executeDataList, scheduleDataList];
+};
+
+const printTxs = (executeList, scheduleList, timelock, chainName, timelockIndex) => {
+  if (executeList.length > 0) {
+    let targets = JSON.stringify(Array.from({ length: executeList.length }, () => timelock));
+    let values = JSON.stringify(Array.from({ length: executeList.length }, () => 0));
+
+    console.log(`Should execute some txs in timelock ${timelock} on ${chainName}`);
+    console.log(`Targets: ${targets}`);
+    console.log(`Values: ${values}`);
+    console.log(`Data: ${JSON.stringify(executeList)}`);
+    console.log(`Predecessor: ${ethers.constants.HashZero}`);
+    console.log(`Salt: ${ethers.constants.HashZero}`);
+  }
+
+  if (scheduleList.length > 0) {
+    let targets = JSON.stringify(Array.from({ length: scheduleList.length }, () => timelock));
+    let values = Array.from({ length: scheduleList.length }, () => 0);
+
+    console.log(`Should schedule some txs in timelock ${timelock} on ${chainName}`);
+    console.log(`Targets: ${targets}`);
+    console.log(`Values: ${values}`);
+    console.log(`Data: ${JSON.stringify(scheduleList)}`);
+    console.log(`Predecessor: ${ethers.constants.HashZero}`);
+    console.log(`Salt: ${ethers.constants.HashZero}`);
+    console.log(`Min Delay: ${timelockIndex === 0 ? 0 : 21600}`);
+  }
 };
 
 main();
