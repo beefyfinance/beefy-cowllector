@@ -5,13 +5,11 @@ const chains = require('../../data/chains');
 const chainIdFromName = require('../../utils/chainIdFromName');
 const TimelockAbi = require('../../abis/TimelockController.json');
 
-const oldKeeper = '0x10aee6B5594942433e7Fc2783598c979B030eF3D';
-const oldNotifier = '0xd529b1894491a0a26B18939274ae8ede93E81dbA';
-const oldUpgrader = '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf';
-
-const outdatedAdmins = [oldKeeper, oldNotifier, oldUpgrader];
-
-const timelockInterface = new ethers.utils.Interface(TimelockAbi);
+const outdatedAdmins = [
+  '0x10aee6B5594942433e7Fc2783598c979B030eF3D',
+  '0xd529b1894491a0a26B18939274ae8ede93E81dbA',
+  '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf',
+];
 
 const executorRole = '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63';
 const proposerRole = '0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1';
