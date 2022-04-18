@@ -48,6 +48,38 @@
     "tvl": 0
   },
   {
+    "id": "valas-usdt",
+    "name": "Moo Valas USDT",
+    "contract": "0x5cED4Dc963F607C82D2C2F22C2AB0a975adc4Bb9",
+    "oracle": "tokens",
+    "oracleId": "USDT",
+    "tvl": 0
+  },
+  {
+    "id": "valas-usdc",
+    "name": "Moo Valas USDC",
+    "contract": "0x517493d1Fb90aB0a3cE3a5084065B706e33e0fEA",
+    "oracle": "tokens",
+    "oracleId": "USDC",
+    "tvl": 0
+  },
+  {
+    "id": "valas-dai",
+    "name": "Moo Valas DAI",
+    "contract": "0xF66e8edf8A86b2b405fF23e73B72DAC01070c8B8",
+    "oracle": "tokens",
+    "oracleId": "DAI",
+    "tvl": 0
+  },
+  {
+    "id": "valas-tusd",
+    "name": "Moo Valas TUSD",
+    "contract": "0x9749b2D46f0caa661bD84D26264811DA968bC4Fc",
+    "oracle": "tokens",
+    "oracleId": "TUSD",
+    "tvl": 0
+  },
+  {
     "id": "biswap-bsw",
     "name": "Moo BiSwap BSW",
     "contract": "0x0BE6B4CAC0D586f474AA4e059CDc05Bc54f61B03",
@@ -229,14 +261,6 @@
     "contract": "0x834DdeE66c381811ce0233B4669ddC3b97fd08cd",
     "oracle": "lps",
     "oracleId": "cakev2-fuse-wbnb",
-    "tvl": 0
-  },
-  {
-    "id": "mdex-lac-busd",
-    "name": "Moo Mdex LAC-BUSD",
-    "contract": "0xa0a2609800F5FfA4b9FaF8286fD44070BeD6931C",
-    "oracle": "lps",
-    "oracleId": "mdex-lac-busd",
     "tvl": 0
   },
   {
@@ -1493,6 +1517,14 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "mdex-lac-busd",
+    "name": "Moo Mdex LAC-BUSD",
+    "contract": "0xa0a2609800F5FfA4b9FaF8286fD44070BeD6931C",
+    "oracle": "lps",
+    "oracleId": "mdex-lac-busd",
     "tvl": 0
   },
   {
