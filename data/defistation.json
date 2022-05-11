@@ -8,6 +8,78 @@
     "tvl": 0
   },
   {
+    "id": "biswap-usdt-btcb",
+    "name": "Moo BiSwap USDT-BTCB",
+    "contract": "0xa4113209bD56f534A24CADc3E3778B5D4B806180",
+    "oracle": "lps",
+    "oracleId": "biswap-usdt-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "ripae-pbnb-bnb",
+    "name": "Moo Ripae pBNB-BNB",
+    "contract": "0x8C6069624e746513Ac1B1d1434aABbEDA152f181",
+    "oracle": "lps",
+    "oracleId": "ripae-pbnb-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "ripae-pae-bnb",
+    "name": "Moo Ripae PAE-BNB",
+    "contract": "0x1592550E083286C35282E53732FDE11800A187E1",
+    "oracle": "lps",
+    "oracleId": "ripae-pae-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-btcb-wbnb",
+    "name": "Moo BiSwap BTCB-BNB",
+    "contract": "0x9A10Cc2024744681fBce1F93Aeee3fd7863B1A12",
+    "oracle": "lps",
+    "oracleId": "biswap-btcb-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-wbnb-busd",
+    "name": "Moo BiSwap BNB-BUSD",
+    "contract": "0x92d46fFaB61914fEF6f0F2e83289f5F38B54ae7c",
+    "oracle": "lps",
+    "oracleId": "biswap-wbnb-busd",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-eth-usdt",
+    "name": "Moo BiSwap ETH-USDT",
+    "contract": "0x2ea77B1d17C9e2a99a2C019abC8eA2f6A59A1044",
+    "oracle": "lps",
+    "oracleId": "biswap-eth-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-eth-wbnb",
+    "name": "Moo BiSwap ETH-BNB",
+    "contract": "0x48E60f935B9dbd3d1530fb66d443a8A6d934F963",
+    "oracle": "lps",
+    "oracleId": "biswap-eth-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-ust-busd",
+    "name": "Moo BiSwap UST-BUSD",
+    "contract": "0x2e2Cc6eFCf8B6193A32a92B33747C081FE44bf1d",
+    "oracle": "lps",
+    "oracleId": "biswap-ust-busd",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-cake-wbnb",
+    "name": "Moo BiSwap CAKE-BNB",
+    "contract": "0x323818ba51C7ff001cC1DAAFb6143a9AB7f292A9",
+    "oracle": "lps",
+    "oracleId": "biswap-cake-wbnb",
+    "tvl": 0
+  },
+  {
     "id": "biswap-usdt-busd",
     "name": "Moo BiSwap USDT-BUSD",
     "contract": "0x164fb78cAf2730eFD63380c2a645c32eBa1C52bc",

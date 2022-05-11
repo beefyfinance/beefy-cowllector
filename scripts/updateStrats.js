@@ -80,9 +80,9 @@ const main = async () => {
       if (stratData && stratData.name != vault.id)
         console.log(`Renaming ${stratData.name} to ${vault.id}...`);
 
-			//note the strategy-contract descriptor, possibly updated, carrying over any special 
-			//	handling notes from the last version of the descriptor
-			const O = {
+      //note the strategy-contract descriptor, possibly updated, carrying over any special
+      //	handling notes from the last version of the descriptor
+      const O = {
         name: vault.id,
         address: vault.strategy,
         interval: stratData?.interval || CHAIN.harvestHourInterval,
@@ -92,9 +92,9 @@ const main = async () => {
         chainId: CHAIN.chainId,
         tvl: vault.tvl,
       };
-			if (stratData.suppressCallRwrdCheck)
-				O.suppressCallRwrdCheck = stratData.suppressCallRwrdCheck;
-      latestStrats.push( O);
+      if (stratData?.suppressCallRwrdCheck)
+        O.suppressCallRwrdCheck = stratData.suppressCallRwrdCheck;
+      latestStrats.push(O);
 
       if (CHAIN.id === 'bsc')
         latestDefistationVaults.push({
@@ -125,8 +125,10 @@ const main = async () => {
   );
   latestDefistationVaults.push(...vaultDifference);
 
-  fs.writeFileSync(path.join(__dirname, '../data/strats.json'), JSON.stringify( 
-																															latestStrats, null, 2));
+  fs.writeFileSync(
+    path.join(__dirname, '../data/strats.json'),
+    JSON.stringify(latestStrats, null, 2)
+  );
 
   fs.writeFileSync(
     path.join(__dirname, '../data/defistation.json'),
