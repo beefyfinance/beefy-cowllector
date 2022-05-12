@@ -11,6 +11,8 @@ const outdatedAdmins = [
   '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf',
 ];
 
+const hwWhenNoMultisig = '0x3Eb7fB70C03eC4AEEC97C6C6C1B59B014600b7F7';
+
 const executorRole = '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63';
 const proposerRole = '0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1';
 
@@ -22,16 +24,16 @@ const main = async () => {
     const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
     const { strategyOwner, vaultOwner, devMultisig, treasuryMultisig, keeper, launchpoolOwner } =
       chain.platforms.beefyfinance;
+    const forbiddenAccounts = outdatedAdmins;
     const proposers = [launchpoolOwner];
     const executors = [launchpoolOwner, keeper];
 
-    // Review if multisigs are missing.
-    if (devMultisig === ethers.constants.AddressZero) {
-      console.log(`Dev multisig missing on ${chainName}. Check for Gnosis Safe support.`);
-    }
-
-    if (treasuryMultisig === ethers.constants.AddressZero) {
-      console.log(`Treasury multisig missing on ${chainName}. Check for Gnosis Safe support.`);
+    // Review if multisigs are present and add trusted hw as forbidden.
+    if (
+      devMultisig !== ethers.constants.AddressZero &&
+      treasuryMultisig !== ethers.constants.AddressZero
+    ) {
+      forbiddenAccounts.push(hwWhenNoMultisig);
     }
 
     for (const [index, timelock] of [vaultOwner, strategyOwner].entries()) {
