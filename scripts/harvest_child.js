@@ -157,7 +157,8 @@ const uploadToFleek = async report => {
       console.log(`fail trying to upload to fleek storage, try n ${tries}/5`);
     }
   } while (tries < 5);
-};
+}; //const uploadToFleek = async report =>
+
 
 const addGasLimit = async (strats, provider) => {
   let gasLimits = require('../data/gasLimits.json');
@@ -211,20 +212,23 @@ const shouldHarvest = async (strat, harvesterPK) => {
         strat.notHarvestReason = 'last StratHarvest log is lower than interval';
         return strat;
       }
-    }
+    } //if (strat.lastHarvest !== 0)
 
-    try {
-      const abi = ['function callReward() public pure returns(uint256)'];
-      const contract = new ethers.Contract(strat.address, abi, harvesterPK);
-      strat.callReward = await contract.callReward();
-      if (strat.callReward.lte(0)) {
-        strat.shouldHarvest = false;
-        strat.notHarvestReason = 'callReward is zero';
-        return strat;
-      }
-    } catch (error) {}
+		//unless the strategy is specially marked to skip the check, if the contract explicitly 
+		//	contains no rewards, short-circuit with a note that no harvest is necessary
+		if (!strat.suppressCallRwrdCheck)
+			try {
+				const abi = ['function callReward() public pure returns(uint256)'];
+				const contract = new ethers.Contract(strat.address, abi, harvesterPK);
+				strat.callReward = await contract.callReward();
+				if (strat.callReward.lte(0)) {
+					strat.shouldHarvest = false;
+					strat.notHarvestReason = 'callReward is zero';
+					return strat;
+				}
+			} catch (error) {}
 
-    /* AT: seems to be erroneously ommitting strats that need closer checking
+    /* AT: seems to be erroneously omitting strats that need closer checking
     try {
       const abi = ['function output() public pure returns(address)'];
       const contract = new ethers.Contract(strat.address, abi, harvesterPK);
@@ -265,7 +269,8 @@ const shouldHarvest = async (strat, harvesterPK) => {
     strat.notHarvestReason = `unexpected error in shouldHarvest(): ${error}`;
     return strat;
   }
-};
+}; //const shouldHarvest = async (strat, harvesterPK) =>
+
 
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   //nested function to carry out a slated harvest, retrying if necessary though not
@@ -469,6 +474,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   } //try
 }; //const harvest = async (
 
+
 const main = async () => {
   try {
     //if the caller gave us a chain to process that seems validly configured...
@@ -575,7 +581,6 @@ const main = async () => {
         strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
         stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
         stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
-
         console.table(
           [...stratsFiltered, ...stratsShouldHarvest],
           ['name', 'address', 'shouldHarvest', 'notHarvestReason']
@@ -593,6 +598,7 @@ const main = async () => {
           )} GWEI`
         );
 
+				//for each strategy tagged to be harvested...
         let harvesteds = [];
         for await (const strat of stratsShouldHarvest) {
           try {

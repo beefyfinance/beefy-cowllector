@@ -14,8 +14,8 @@ const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
 
 const main = async () => {
-  let newStrats = [];
-  let newDefistationVaults = [];
+  let latestStrats = [];
+  let latestDefistationVaults = [];
 
   for (const CHAIN of Object.values(CHAINS)) {
     console.log(`** Processing chain: ${CHAIN.id}`);
@@ -80,7 +80,9 @@ const main = async () => {
       if (stratData && stratData.name != vault.id)
         console.log(`Renaming ${stratData.name} to ${vault.id}...`);
 
-      newStrats.push({
+      //note the strategy-contract descriptor, possibly updated, carrying over any special
+      //	handling notes from the last version of the descriptor
+      const O = {
         name: vault.id,
         address: vault.strategy,
         interval: stratData?.interval || CHAIN.harvestHourInterval,
@@ -89,10 +91,13 @@ const main = async () => {
         harvestPaused: stratData?.harvestPaused || false,
         chainId: CHAIN.chainId,
         tvl: vault.tvl,
-      });
+      };
+      if (stratData?.suppressCallRwrdCheck)
+        O.suppressCallRwrdCheck = stratData.suppressCallRwrdCheck;
+      latestStrats.push(O);
 
       if (CHAIN.id === 'bsc')
-        newDefistationVaults.push({
+        latestDefistationVaults.push({
           id: vault.id,
           name: vault.tokenName,
           contract: vault.earnedTokenAddress,
@@ -100,12 +105,12 @@ const main = async () => {
           oracleId: vault.oracleId,
           tvl: 0,
         });
-    }
-  }
+    } //for (vault of vaults)
+  } //for (const CHAIN of Object.values(CHAINS))
 
   // Surface deleted strategies
   const stratDifference = strats.filter(
-    o => !newStrats.some(n => o.address === n.address && o.chainId === n.chainId)
+    o => !latestStrats.some(n => o.address === n.address && o.chainId === n.chainId)
   );
   if (stratDifference.length > 0) {
     console.log(
@@ -116,16 +121,19 @@ const main = async () => {
 
   // Preserve existing defistation list
   const vaultDifference = defistationVaults.filter(
-    o => !newDefistationVaults.some(n => o.contract === n.contract)
+    o => !latestDefistationVaults.some(n => o.contract === n.contract)
   );
-  newDefistationVaults.push(...vaultDifference);
+  latestDefistationVaults.push(...vaultDifference);
 
-  fs.writeFileSync(path.join(__dirname, '../data/strats.json'), JSON.stringify(newStrats, null, 2));
+  fs.writeFileSync(
+    path.join(__dirname, '../data/strats.json'),
+    JSON.stringify(latestStrats, null, 2)
+  );
 
   fs.writeFileSync(
     path.join(__dirname, '../data/defistation.json'),
-    JSON.stringify(newDefistationVaults, null, 2)
+    JSON.stringify(latestDefistationVaults, null, 2)
   );
-};
+}; //const main = async () =>
 
 main();

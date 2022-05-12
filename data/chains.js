@@ -357,7 +357,7 @@ const chains = {
     beefyFeeBatcher: moonbeam.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 12,
     stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
-    harvestHourInterval: parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL) || 1,
+    harvestHourInterval: parseInt(process.env.MOONBEAM_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 6,
     wnativeMinToUnwrap: process.env.MOONBEAM_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.MOONBEAM_RPC || 'https://rpc.api.moonbeam.network',
