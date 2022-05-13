@@ -25,8 +25,6 @@ const proposerRole = {
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
-    if (chainName !== 'aurora') continue;
-
     let attempts = 0;
     let MAX_ATTEMPTS = 3;
 
@@ -137,9 +135,13 @@ const revokeRole = async (timelock, accounts, role, dataList, updates) => {
 };
 
 const printTxs = async (dataList, timelock, chainName, scheduleDelay, updates) => {
-  if (updates.length === 0) return;
+  if (updates.length === 0) {
+    console.log(`No updates needed in timelock ${timelock.address} on ${chainName} \n`);
+    return;
+  }
 
   updates.forEach(update => console.log(update));
+  console.log('\n');
 
   const targets = Array.from({ length: dataList.length }, () => timelock.address);
   const values = Array.from({ length: dataList.length }, () => 0);
@@ -167,7 +169,7 @@ const printTxs = async (dataList, timelock, chainName, scheduleDelay, updates) =
       console.log(`Salt: ${salt}`);
       console.log('\n');
     } else {
-      console.log(`Operation for ${timelock.address} in ${chain} exists but is not ready.`);
+      console.log(`Operation for ${timelock.address} in ${chainName} exists but is not ready. \n`);
     }
   } else {
     console.log('\n');
