@@ -25,6 +25,8 @@ const proposerRole = {
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
+    if (chainName !== 'aurora') continue;
+
     let attempts = 0;
     let MAX_ATTEMPTS = 3;
 
@@ -101,7 +103,7 @@ const grantRole = async (timelock, accounts, role, dataList, updates) => {
 
     if (!hasRole) {
       newUpdates.push(
-        `Should grant ${role.name} role in timelock ${timelock.address} to ${account}`
+        `Should grant ${role.name} role to ${account} in timelock ${timelock.address}`
       );
 
       const timelockInterface = new ethers.utils.Interface(TimelockAbi);
@@ -122,7 +124,7 @@ const revokeRole = async (timelock, accounts, role, dataList, updates) => {
 
     if (hasRole) {
       newUpdates.push(
-        `Should revoke ${role.name} role in timelock ${timelock.address} from ${account}`
+        `Should revoke ${role.name} role from ${account} in timelock ${timelock.address}`
       );
 
       const timelockInterface = new ethers.utils.Interface(TimelockAbi);
@@ -159,7 +161,7 @@ const printTxs = async (dataList, timelock, chainName, scheduleDelay, updates) =
       console.log('\n');
       console.log(`Should execute batch tx in timelock ${timelock.address} on ${chainName}`);
       console.log(`Targets: ${JSON.stringify(targets)}`);
-      console.log(`Values: ${values}`);
+      console.log(`Values: ${JSON.stringify(values)}`);
       console.log(`Data: ${JSON.stringify(dataList)}`);
       console.log(`Predecessor: ${predecessor}`);
       console.log(`Salt: ${salt}`);
@@ -171,7 +173,7 @@ const printTxs = async (dataList, timelock, chainName, scheduleDelay, updates) =
     console.log('\n');
     console.log(`Should schedule batch tx in timelock ${timelock.address} on ${chainName}`);
     console.log(`Targets: ${JSON.stringify(targets)}`);
-    console.log(`Values: ${values}`);
+    console.log(`Values: ${JSON.stringify(values)}`);
     console.log(`Data: ${JSON.stringify(dataList)}`);
     console.log(`Predecessor: ${predecessor}`);
     console.log(`Salt: ${salt}`);
