@@ -32,12 +32,12 @@ const main = async () => {
       await auditChain(chainName, chain);
     } catch (e) {
       if (attempts < MAX_ATTEMPTS) {
-        console.log(`Can't audit ${chanName} due to ${e}. Trying again.`);
+        console.log(`Can't audit ${chainName} due to ${e}. Trying again.`);
         attempts++;
         await auditChain(chainName, chain);
       } else {
         console.log(
-          `Can't audit ${chanName} due to ${e}. Max attempts tried. Moving on to the next chain.`
+          `Can't audit ${chainName} due to ${e}. Max attempts tried. Moving on to the next chain.`
         );
       }
     }
@@ -45,7 +45,7 @@ const main = async () => {
 };
 
 const auditChain = async (chainName, chain) => {
-  console.log(`Reviewing chain ${chainName} timelock admins.`);
+  console.log(`===== Reviewing chain ${chainName} timelock admins. =====`);
 
   const chainId = chainIdFromName(chainName);
   const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
@@ -66,27 +66,43 @@ const auditChain = async (chainName, chain) => {
   for (const timelockAddress of [vaultOwner, strategyOwner]) {
     const timelock = new ethers.Contract(timelockAddress, TimelockAbi, provider);
     let dataList = [];
+    let updates = [];
     let scheduleDelay = timelockAddress === vaultOwner ? 0 : 21600;
 
-    dataList = await grantRole(timelock, proposers, proposerRole, dataList);
-    dataList = await grantRole(timelock, executors, executorRole, dataList);
-    dataList = await revokeRole(timelock, outdatedAccounts, proposerRole, dataList);
-    dataList = await revokeRole(timelock, outdatedAccounts, executorRole, dataList);
+    [dataList, updates] = await grantRole(timelock, proposers, proposerRole, dataList, updates);
+    [dataList, updates] = await grantRole(timelock, executors, executorRole, dataList, updates);
+    [dataList, updates] = await revokeRole(
+      timelock,
+      outdatedAccounts,
+      proposerRole,
+      dataList,
+      updates
+    );
+    [dataList, updates] = await revokeRole(
+      timelock,
+      outdatedAccounts,
+      executorRole,
+      dataList,
+      updates
+    );
 
-    await printTxs(dataList, timelock, chainName, scheduleDelay);
+    await printTxs(dataList, timelock, chainName, scheduleDelay, updates);
   }
 
   console.log(`Chain ${chainName} done. \n\n`);
 };
 
-const grantRole = async (timelock, accounts, role, dataList) => {
+const grantRole = async (timelock, accounts, role, dataList, updates) => {
   let newDataList = [...dataList];
+  let newUpdates = [...updates];
 
   for (const account of accounts) {
     let hasRole = await timelock.hasRole(role.hash, account);
 
     if (!hasRole) {
-      console.log(`Should grant ${role.name} role in timelock ${timelock.address} to ${account}`);
+      newUpdates.push(
+        `Should grant ${role.name} role in timelock ${timelock.address} to ${account}`
+      );
 
       const timelockInterface = new ethers.utils.Interface(TimelockAbi);
       let data = timelockInterface.encodeFunctionData('grantRole', [role.hash, account]);
@@ -94,17 +110,18 @@ const grantRole = async (timelock, accounts, role, dataList) => {
     }
   }
 
-  return newDataList;
+  return [newDataList, newUpdates];
 };
 
-const revokeRole = async (timelock, accounts, role, dataList) => {
+const revokeRole = async (timelock, accounts, role, dataList, updates) => {
   let newDataList = [...dataList];
+  let newUpdates = [...updates];
 
   for (const account of accounts) {
     let hasRole = await timelock.hasRole(role.hash, account);
 
     if (hasRole) {
-      console.log(
+      newUpdates.push(
         `Should revoke ${role.name} role in timelock ${timelock.address} from ${account}`
       );
 
@@ -114,11 +131,13 @@ const revokeRole = async (timelock, accounts, role, dataList) => {
     }
   }
 
-  return newDataList;
+  return [newDataList, newUpdates];
 };
 
-const printTxs = async (dataList, timelock, chainName, scheduleDelay) => {
-  if (dataList.length === 0) return;
+const printTxs = async (dataList, timelock, chainName, scheduleDelay, updates) => {
+  if (updates.length === 0) return;
+
+  updates.forEach(update => console.log(update));
 
   const targets = Array.from({ length: dataList.length }, () => timelock.address);
   const values = Array.from({ length: dataList.length }, () => 0);
