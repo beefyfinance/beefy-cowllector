@@ -13,18 +13,20 @@ const outdatedAdmins = [
 
 const hwWhenNoMultisig = '0x3Eb7fB70C03eC4AEEC97C6C6C1B59B014600b7F7';
 
-const executorRole = '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63';
-const proposerRole = '0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1';
+const EXECUTOR_ROLE = '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63';
+const PROPOSER_ROLE = '0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1';
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
+    if (chainName !== 'aurora') continue;
+
     console.log(`Reviewing chain ${chainName} timelock admins.`);
 
     const chainId = chainIdFromName(chainName);
     const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
     const { strategyOwner, vaultOwner, devMultisig, treasuryMultisig, keeper, launchpoolOwner } =
       chain.platforms.beefyfinance;
-    const forbiddenAccounts = outdatedAdmins;
+    const outdatedAccounts = outdatedAdmins;
     const proposers = [launchpoolOwner];
     const executors = [launchpoolOwner, keeper];
 
@@ -33,93 +35,54 @@ const main = async () => {
       devMultisig !== ethers.constants.AddressZero &&
       treasuryMultisig !== ethers.constants.AddressZero
     ) {
-      forbiddenAccounts.push(hwWhenNoMultisig);
+      outdatedAccounts.push(hwWhenNoMultisig);
     }
 
-    for (const [index, timelock] of [vaultOwner, strategyOwner].entries()) {
-      const timelockContract = new ethers.Contract(timelock, TimelockAbi, provider);
-      let executeDataList = [];
-      let scheduleDataList = [];
+    for (const [index, timelockAddress] of [vaultOwner, strategyOwner].entries()) {
+      const timelock = new ethers.Contract(timelockAddress, TimelockAbi, provider);
+      let dataList = [];
 
-      // Check correct proposers.
-      [executeDataList, scheduleDataList] = await checkRole(
-        timelockContract,
-        proposers,
-        proposerRole,
-        true,
-        executeDataList,
-        scheduleDataList
-      );
-
-      // Check correct executors.
-      [executeDataList, scheduleDataList] = await checkRole(
-        timelockContract,
-        executors,
-        executorRole,
-        true,
-        executeDataList,
-        scheduleDataList
-      );
-
-      // Check outdated proposers.
-      [executeDataList, scheduleDataList] = await checkRole(
-        timelockContract,
-        outdatedAdmins,
-        proposerRole,
-        false,
-        executeDataList,
-        scheduleDataList
-      );
-
-      // Check outdated executors.
-      [executeDataList, scheduleDataList] = await checkRole(
-        timelockContract,
-        outdatedAdmins,
-        executorRole,
-        false,
-        executeDataList,
-        scheduleDataList
-      );
+      dataList = await grantRole(timelock, proposers, PROPOSER_ROLE, dataList);
+      dataList = await grantRole(timelock, executors, EXECUTOR_ROLE, dataList);
+      dataList = await revokeRole(timelock, outdatedAccounts, PROPOSER_ROLE, dataList);
+      dataList = await revokeRole(timelock, outdatedAccounts, EXECUTOR_ROLE, dataList);
 
       printTxs(executeDataList, scheduleDataList, timelock, chainName, index);
-
-      console.log(`Chain ${chainName} done. \n`);
     }
+    console.log(`Chain ${chainName} done. \n`);
   }
 };
 
-const checkRole = async (timelock, admins, role, shouldHave, executeDataList, scheduleDataList) => {
-  for (const admin of admins) {
-    let hasRole = await timelock.hasRole(role, admin);
-    if (hasRole !== shouldHave) {
+const grantRole = async (timelock, accounts, role, dataList) => {
+  let newDataList = [...dataList];
+
+  for (const account of accounts) {
+    let hasRole = await timelock.hasRole(role, account);
+
+    if (!hasRole) {
       const timelockInterface = new ethers.utils.Interface(TimelockAbi);
-      let data = timelockInterface.encodeFunctionData(shouldHave ? 'grantRole' : 'revokeRole', [
-        role,
-        admin,
-      ]);
-
-      // Check if a tx is scheduled:
-      const operationHash = await timelock.hashOperation(
-        timelock.address,
-        0,
-        data,
-        ethers.constants.HashZero,
-        ethers.constants.HashZero
-      );
-
-      const isOperation = await timelock.isOperation(operationHash);
-      if (isOperation) {
-        const isOperationReady = await timelock.isOperationReady(operationHash);
-        if (isOperationReady) {
-          return [[...executeDataList, data], scheduleDataList];
-        }
-      } else {
-        return [executeDataList, [...scheduleDataList, data]];
-      }
+      let data = timelockInterface.encodeFunctionData('grantRole', [role, admin]);
+      newDataList.push(data);
     }
   }
 
-  return [executeDataList, scheduleDataList];
+  return newDataList;
+};
+
+const revokeRole = async (timelock, accounts, role, dataList) => {
+  let newDataList = [...dataList];
+
+  for (const account of accounts) {
+    let hasRole = await timelock.hasRole(role, account);
+
+    if (hasRole) {
+      const timelockInterface = new ethers.utils.Interface(TimelockAbi);
+      let data = timelockInterface.encodeFunctionData('revokeRole', [role, admin]);
+      newDataList.push(data);
+    }
+  }
+
+  return newDataList;
 };
 
 const printTxs = (executeList, scheduleList, timelock, chainName, timelockIndex) => {
@@ -150,3 +113,21 @@ const printTxs = (executeList, scheduleList, timelock, chainName, timelockIndex)
 };
 
 main();
+
+// // Check if a tx is scheduled:
+// const operationHash = await timelock.hashOperation(
+//   timelock.address,
+//   0,
+//   data,
+//   ethers.constants.HashZero,
+//   ethers.constants.HashZero
+// );
+// const isOperation = await timelock.isOperation(operationHash);
+// if (isOperation) {
+//   const isOperationReady = await timelock.isOperationReady(operationHash);
+//   if (isOperationReady) {
+//     return [[...executeDataList, data], scheduleDataList];
+//   }
+// } else {
+//   return [executeDataList, [...scheduleDataList, data]];
+// }
