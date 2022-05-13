@@ -13,7 +13,8 @@
     "empty": "node ./scripts/emptyVaults.js",
     "exec:batch": "node ./scripts/timelock/runExecuteBatch.js",
     "createTasks": "ts-node ./gelato/index.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "audit:timelocks": "node ./scripts/timelock/timelockAdminsAudit.js"
   },
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.20",
@@ -22,7 +23,7 @@
     "@sentry/tracing": "^6.17.4",
     "axios": "^0.25.0",
     "bignumber.js": "^9.0.1",
-    "blockchain-addressbook": "^0.14.2",
+    "blockchain-addressbook": "^0.26.4",
     "dotenv": "^16.0.0",
     "eth-multicall": "^1.3.13",
     "ethers": "^5.5.2",
