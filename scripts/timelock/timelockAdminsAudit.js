@@ -25,41 +25,58 @@ const proposerRole = {
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
-    if (chainName !== 'aurora') continue;
+    let attempts = 0;
+    let MAX_ATTEMPTS = 3;
 
-    console.log(`Reviewing chain ${chainName} timelock admins.`);
-
-    const chainId = chainIdFromName(chainName);
-    const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
-    const { strategyOwner, vaultOwner, devMultisig, treasuryMultisig, keeper, launchpoolOwner } =
-      chain.platforms.beefyfinance;
-    const outdatedAccounts = outdatedAdmins;
-    const proposers = [launchpoolOwner];
-    const executors = [launchpoolOwner, keeper];
-
-    // Review if multisigs are present and add trusted hw as outdated.
-    if (
-      devMultisig !== ethers.constants.AddressZero &&
-      treasuryMultisig !== ethers.constants.AddressZero
-    ) {
-      outdatedAccounts.push(hwWhenNoMultisig);
+    try {
+      await auditChain(chainName, chain);
+    } catch (e) {
+      if (attempts < MAX_ATTEMPTS) {
+        console.log(`Can't audit ${chanName} due to ${e}. Trying again.`);
+        attempts++;
+        await auditChain(chainName, chain);
+      } else {
+        console.log(
+          `Can't audit ${chanName} due to ${e}. Max attempts tried. Moving on to the next chain.`
+        );
+      }
     }
-
-    for (const timelockAddress of [vaultOwner, strategyOwner]) {
-      const timelock = new ethers.Contract(timelockAddress, TimelockAbi, provider);
-      let dataList = [];
-      let scheduleDelay = timelockAddress === vaultOwner ? 0 : 21600;
-
-      dataList = await grantRole(timelock, proposers, proposerRole, dataList);
-      dataList = await grantRole(timelock, executors, executorRole, dataList);
-      dataList = await revokeRole(timelock, outdatedAccounts, proposerRole, dataList);
-      dataList = await revokeRole(timelock, outdatedAccounts, executorRole, dataList);
-
-      await printTxs(dataList, timelock, chainName, scheduleDelay);
-    }
-
-    console.log(`Chain ${chainName} done. \n`);
   }
+};
+
+const auditChain = async (chainName, chain) => {
+  console.log(`Reviewing chain ${chainName} timelock admins.`);
+
+  const chainId = chainIdFromName(chainName);
+  const provider = new ethers.providers.JsonRpcProvider(chains[chainId].rpc);
+  const { strategyOwner, vaultOwner, devMultisig, treasuryMultisig, keeper, launchpoolOwner } =
+    chain.platforms.beefyfinance;
+  const outdatedAccounts = outdatedAdmins;
+  const proposers = [launchpoolOwner];
+  const executors = [launchpoolOwner, keeper];
+
+  // Review if multisigs are present and add trusted hw as outdated.
+  if (
+    devMultisig !== ethers.constants.AddressZero &&
+    treasuryMultisig !== ethers.constants.AddressZero
+  ) {
+    outdatedAccounts.push(hwWhenNoMultisig);
+  }
+
+  for (const timelockAddress of [vaultOwner, strategyOwner]) {
+    const timelock = new ethers.Contract(timelockAddress, TimelockAbi, provider);
+    let dataList = [];
+    let scheduleDelay = timelockAddress === vaultOwner ? 0 : 21600;
+
+    dataList = await grantRole(timelock, proposers, proposerRole, dataList);
+    dataList = await grantRole(timelock, executors, executorRole, dataList);
+    dataList = await revokeRole(timelock, outdatedAccounts, proposerRole, dataList);
+    dataList = await revokeRole(timelock, outdatedAccounts, executorRole, dataList);
+
+    await printTxs(dataList, timelock, chainName, scheduleDelay);
+  }
+
+  console.log(`Chain ${chainName} done. \n\n`);
 };
 
 const grantRole = async (timelock, accounts, role, dataList) => {
