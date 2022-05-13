@@ -13,8 +13,15 @@ const outdatedAdmins = [
 
 const hwWhenNoMultisig = '0x3Eb7fB70C03eC4AEEC97C6C6C1B59B014600b7F7';
 
-const EXECUTOR_ROLE = '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63';
-const PROPOSER_ROLE = '0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1';
+const executorRole = {
+  hash: '0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63',
+  name: 'executor',
+};
+
+const proposerRole = {
+  hash: '0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1',
+  name: 'proposer',
+};
 
 const main = async () => {
   for (const [chainName, chain] of Object.entries(addressBook)) {
@@ -30,7 +37,7 @@ const main = async () => {
     const proposers = [launchpoolOwner];
     const executors = [launchpoolOwner, keeper];
 
-    // Review if multisigs are present and add trusted hw as forbidden.
+    // Review if multisigs are present and add trusted hw as outdated.
     if (
       devMultisig !== ethers.constants.AddressZero &&
       treasuryMultisig !== ethers.constants.AddressZero
@@ -38,17 +45,19 @@ const main = async () => {
       outdatedAccounts.push(hwWhenNoMultisig);
     }
 
-    for (const [index, timelockAddress] of [vaultOwner, strategyOwner].entries()) {
+    for (const timelockAddress of [vaultOwner, strategyOwner]) {
       const timelock = new ethers.Contract(timelockAddress, TimelockAbi, provider);
       let dataList = [];
+      let scheduleDelay = timelockAddress === vaultOwner ? 0 : 21600;
 
-      dataList = await grantRole(timelock, proposers, PROPOSER_ROLE, dataList);
-      dataList = await grantRole(timelock, executors, EXECUTOR_ROLE, dataList);
-      dataList = await revokeRole(timelock, outdatedAccounts, PROPOSER_ROLE, dataList);
-      dataList = await revokeRole(timelock, outdatedAccounts, EXECUTOR_ROLE, dataList);
+      dataList = await grantRole(timelock, proposers, proposerRole, dataList);
+      dataList = await grantRole(timelock, executors, executorRole, dataList);
+      dataList = await revokeRole(timelock, outdatedAccounts, proposerRole, dataList);
+      dataList = await revokeRole(timelock, outdatedAccounts, executorRole, dataList);
 
-      printTxs(executeDataList, scheduleDataList, timelock, chainName, index);
+      await printTxs(dataList, timelock, chainName, scheduleDelay);
     }
+
     console.log(`Chain ${chainName} done. \n`);
   }
 };
@@ -57,11 +66,13 @@ const grantRole = async (timelock, accounts, role, dataList) => {
   let newDataList = [...dataList];
 
   for (const account of accounts) {
-    let hasRole = await timelock.hasRole(role, account);
+    let hasRole = await timelock.hasRole(role.hash, account);
 
     if (!hasRole) {
+      console.log(`Should grant ${role.name} role in timelock ${timelock.address} to ${account}`);
+
       const timelockInterface = new ethers.utils.Interface(TimelockAbi);
-      let data = timelockInterface.encodeFunctionData('grantRole', [role, admin]);
+      let data = timelockInterface.encodeFunctionData('grantRole', [role.hash, account]);
       newDataList.push(data);
     }
   }
@@ -73,11 +84,15 @@ const revokeRole = async (timelock, accounts, role, dataList) => {
   let newDataList = [...dataList];
 
   for (const account of accounts) {
-    let hasRole = await timelock.hasRole(role, account);
+    let hasRole = await timelock.hasRole(role.hash, account);
 
     if (hasRole) {
+      console.log(
+        `Should revoke ${role.name} role in timelock ${timelock.address} from ${account}`
+      );
+
       const timelockInterface = new ethers.utils.Interface(TimelockAbi);
-      let data = timelockInterface.encodeFunctionData('revokeRole', [role, admin]);
+      let data = timelockInterface.encodeFunctionData('revokeRole', [role.hash, account]);
       newDataList.push(data);
     }
   }
@@ -85,49 +100,48 @@ const revokeRole = async (timelock, accounts, role, dataList) => {
   return newDataList;
 };
 
-const printTxs = (executeList, scheduleList, timelock, chainName, timelockIndex) => {
-  if (executeList.length > 0) {
-    let targets = JSON.stringify(Array.from({ length: executeList.length }, () => timelock));
-    let values = JSON.stringify(Array.from({ length: executeList.length }, () => 0));
+const printTxs = async (dataList, timelock, chainName, scheduleDelay) => {
+  if (dataList.length === 0) return;
 
-    console.log(`Should execute some txs in timelock ${timelock} on ${chainName}`);
-    console.log(`Targets: ${targets}`);
+  const targets = Array.from({ length: dataList.length }, () => timelock.address);
+  const values = Array.from({ length: dataList.length }, () => 0);
+  const predecessor = ethers.constants.HashZero;
+  const salt = ethers.constants.HashZero;
+
+  const operationHash = await timelock.hashOperationBatch(
+    targets,
+    values,
+    dataList,
+    predecessor,
+    salt
+  );
+
+  const isOperation = await timelock.isOperation(operationHash);
+  if (isOperation) {
+    const isOperationReady = await timelock.isOperationReady(operationHash);
+    if (isOperationReady) {
+      console.log('\n');
+      console.log(`Should execute batch tx in timelock ${timelock.address} on ${chainName}`);
+      console.log(`Targets: ${JSON.stringify(targets)}`);
+      console.log(`Values: ${values}`);
+      console.log(`Data: ${JSON.stringify(dataList)}`);
+      console.log(`Predecessor: ${predecessor}`);
+      console.log(`Salt: ${salt}`);
+      console.log('\n');
+    } else {
+      console.log(`Operation for ${timelock.address} in ${chain} exists but is not ready.`);
+    }
+  } else {
+    console.log('\n');
+    console.log(`Should schedule batch tx in timelock ${timelock.address} on ${chainName}`);
+    console.log(`Targets: ${JSON.stringify(targets)}`);
     console.log(`Values: ${values}`);
-    console.log(`Data: ${JSON.stringify(executeList)}`);
-    console.log(`Predecessor: ${ethers.constants.HashZero}`);
-    console.log(`Salt: ${ethers.constants.HashZero}`);
-  }
-
-  if (scheduleList.length > 0) {
-    let targets = JSON.stringify(Array.from({ length: scheduleList.length }, () => timelock));
-    let values = Array.from({ length: scheduleList.length }, () => 0);
-
-    console.log(`Should schedule some txs in timelock ${timelock} on ${chainName}`);
-    console.log(`Targets: ${targets}`);
-    console.log(`Values: ${values}`);
-    console.log(`Data: ${JSON.stringify(scheduleList)}`);
-    console.log(`Predecessor: ${ethers.constants.HashZero}`);
-    console.log(`Salt: ${ethers.constants.HashZero}`);
-    console.log(`Min Delay: ${timelockIndex === 0 ? 0 : 21600}`);
+    console.log(`Data: ${JSON.stringify(dataList)}`);
+    console.log(`Predecessor: ${predecessor}`);
+    console.log(`Salt: ${salt}`);
+    console.log(`Min Delay: ${scheduleDelay}`);
+    console.log('\n');
   }
 };
 
 main();
-
-// // Check if a tx is scheduled:
-// const operationHash = await timelock.hashOperation(
-//   timelock.address,
-//   0,
-//   data,
-//   ethers.constants.HashZero,
-//   ethers.constants.HashZero
-// );
-// const isOperation = await timelock.isOperation(operationHash);
-// if (isOperation) {
-//   const isOperationReady = await timelock.isOperationReady(operationHash);
-//   if (isOperationReady) {
-//     return [[...executeDataList, data], scheduleDataList];
-//   }
-// } else {
-//   return [executeDataList, [...scheduleDataList, data]];
-// }
