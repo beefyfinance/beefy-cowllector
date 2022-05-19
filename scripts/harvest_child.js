@@ -159,7 +159,6 @@ const uploadToFleek = async report => {
   } while (tries < 5);
 }; //const uploadToFleek = async report =>
 
-
 const addGasLimit = async (strats, provider) => {
   let gasLimits = require('../data/gasLimits.json');
   let filtered = gasLimits.filter(s => s.chainId === Number(CHAIN_ID));
@@ -214,19 +213,19 @@ const shouldHarvest = async (strat, harvesterPK) => {
       }
     } //if (strat.lastHarvest !== 0)
 
-		//unless the strategy is specially marked to skip the check, if the contract explicitly 
-		//	contains no rewards, short-circuit with a note that no harvest is necessary
-		if (!strat.suppressCallRwrdCheck)
-			try {
-				const abi = ['function callReward() public pure returns(uint256)'];
-				const contract = new ethers.Contract(strat.address, abi, harvesterPK);
-				strat.callReward = await contract.callReward();
-				if (strat.callReward.lte(0)) {
-					strat.shouldHarvest = false;
-					strat.notHarvestReason = 'callReward is zero';
-					return strat;
-				}
-			} catch (error) {}
+    //unless the strategy is specially marked to skip the check, if the contract explicitly
+    //	contains no rewards, short-circuit with a note that no harvest is necessary
+    if (!strat.suppressCallRwrdCheck)
+      try {
+        const abi = ['function callReward() public pure returns(uint256)'];
+        const contract = new ethers.Contract(strat.address, abi, harvesterPK);
+        strat.callReward = await contract.callReward();
+        if (strat.callReward.lte(0)) {
+          strat.shouldHarvest = false;
+          strat.notHarvestReason = 'callReward is zero';
+          return strat;
+        }
+      } catch (error) {}
 
     /* AT: seems to be erroneously omitting strats that need closer checking
     try {
@@ -270,7 +269,6 @@ const shouldHarvest = async (strat, harvesterPK) => {
     return strat;
   }
 }; //const shouldHarvest = async (strat, harvesterPK) =>
-
 
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   //nested function to carry out a slated harvest, retrying if necessary though not
@@ -474,11 +472,11 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   } //try
 }; //const harvest = async (
 
-
 const main = async () => {
   try {
-    //if the caller gave us a chain to process that seems validly configured...
-    if (CHAIN && CHAIN.id) {
+    //if the caller gave us a chain to process that seems validly configured and not turned
+    //	off..
+    if (CHAIN && CHAIN.harvestHourInterval) {
       /**
        * Check hour interval if harvest_child should run for this chain
        * @dev on file data/chain.js you can find, for every chain, a prop stratHarvestHourInterval that explain when hourly harvest should be run for it
@@ -598,7 +596,7 @@ const main = async () => {
           )} GWEI`
         );
 
-				//for each strategy tagged to be harvested...
+        //for each strategy tagged to be harvested...
         let harvesteds = [];
         for await (const strat of stratsShouldHarvest) {
           try {
@@ -690,7 +688,7 @@ const main = async () => {
         Sentry.captureException(error);
         console.log(error);
       } //try
-    } //if (CHAIN && CHAIN.id)
+    } //if (CHAIN && CHAIN.harvestHourInterval)
     console.log(`done`);
   } catch (error) {
     Sentry.captureException(error);
