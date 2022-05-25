@@ -96,14 +96,6 @@
     "tvl": 0
   },
   {
-    "id": "biswap-ust-busd",
-    "name": "Moo BiSwap UST-BUSD",
-    "contract": "0x2e2Cc6eFCf8B6193A32a92B33747C081FE44bf1d",
-    "oracle": "lps",
-    "oracleId": "biswap-ust-busd",
-    "tvl": 0
-  },
-  {
     "id": "biswap-cake-wbnb",
     "name": "Moo BiSwap CAKE-BNB",
     "contract": "0x323818ba51C7ff001cC1DAAFb6143a9AB7f292A9",
@@ -413,14 +405,6 @@
     "contract": "0xb26642B6690E4c4c9A6dAd6115ac149c700C7dfE",
     "oracle": "lps",
     "oracleId": "cakev2-cake-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-ertha-wbnb",
-    "name": "Moo CakeV2 ERTHA-BNB",
-    "contract": "0x74aAA646a7ccCCE0e58a6C3137266a227F12b6F9",
-    "oracle": "lps",
-    "oracleId": "cakev2-ertha-wbnb",
     "tvl": 0
   },
   {
@@ -1589,6 +1573,22 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "biswap-ust-busd",
+    "name": "Moo BiSwap UST-BUSD",
+    "contract": "0x2e2Cc6eFCf8B6193A32a92B33747C081FE44bf1d",
+    "oracle": "lps",
+    "oracleId": "biswap-ust-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-ertha-wbnb",
+    "name": "Moo CakeV2 ERTHA-BNB",
+    "contract": "0x74aAA646a7ccCCE0e58a6C3137266a227F12b6F9",
+    "oracle": "lps",
+    "oracleId": "cakev2-ertha-wbnb",
     "tvl": 0
   },
   {
