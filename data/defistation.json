@@ -416,14 +416,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-fuse-wbnb",
-    "name": "Moo CakeV2 FUSE-BNB",
-    "contract": "0x834DdeE66c381811ce0233B4669ddC3b97fd08cd",
-    "oracle": "lps",
-    "oracleId": "cakev2-fuse-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "dibs-dibs-bnb",
     "name": "Moo Dibs DIBS-BNB",
     "contract": "0xd3bcD18c24F42a9928651BE0b7fF6C9Ab56B3B4a",
@@ -845,14 +837,6 @@
     "contract": "0x1301Bfedaec0592e7915012A0f1AE2aCBaFbA4c3",
     "oracle": "lps",
     "oracleId": "jetswap-btcb-bnb",
-    "tvl": 0
-  },
-  {
-    "id": "pera-pera-bnb",
-    "name": "Moo Pera PERA-BNB",
-    "contract": "0xE48888E2d11307c467AB364FeaD6d8C214210D2B",
-    "oracle": "lps",
-    "oracleId": "pera-pera-bnb",
     "tvl": 0
   },
   {
@@ -1581,6 +1565,22 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-fuse-wbnb",
+    "name": "Moo CakeV2 FUSE-BNB",
+    "contract": "0x834DdeE66c381811ce0233B4669ddC3b97fd08cd",
+    "oracle": "lps",
+    "oracleId": "cakev2-fuse-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "pera-pera-bnb",
+    "name": "Moo Pera PERA-BNB",
+    "contract": "0xE48888E2d11307c467AB364FeaD6d8C214210D2B",
+    "oracle": "lps",
+    "oracleId": "pera-pera-bnb",
     "tvl": 0
   },
   {
