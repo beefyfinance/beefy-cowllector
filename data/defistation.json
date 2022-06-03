@@ -520,14 +520,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-qi-wbnb",
-    "name": "Moo CakeV2 QI-BNB",
-    "contract": "0xcc3D722E518fF86b113Fa6aa4434fBAA0449a0e1",
-    "oracle": "lps",
-    "oracleId": "cakev2-qi-wbnb",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-xwg-usdc",
     "name": "Moo CakeV2 XWG-USDC",
     "contract": "0xe350a5908643076819Dcac25ed38102F8755D224",
@@ -1565,6 +1557,14 @@
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-qi-wbnb",
+    "name": "Moo CakeV2 QI-BNB",
+    "contract": "0xcc3D722E518fF86b113Fa6aa4434fBAA0449a0e1",
+    "oracle": "lps",
+    "oracleId": "cakev2-qi-wbnb",
     "tvl": 0
   },
   {
