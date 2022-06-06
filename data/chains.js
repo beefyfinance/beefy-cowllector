@@ -258,7 +258,7 @@ const chains = {
     harvestHourInterval: parseInt(process.env.CRONOS_HARVEST_HOUR_INTERVAL) || 1,
     wnativeUnwrapInterval: 6,
     wnativeMinToUnwrap: process.env.CRONOS_WNATIVE_MIN_TO_UNWRAP || '0.1',
-    rpc: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
+    rpc: process.env.CRONOS_RPC || 'https://evm.cronos.org',
     appVaultsFilename: 'cronos_pools.js',
     multicall: cronos.platforms.beefyfinance.multicall,
     queryLimit: 1000,
