@@ -16,6 +16,7 @@ const {
   fuse,
   metis,
   moonbeam,
+  emerald,
 } = addressBook;
 
 const chains = {
@@ -284,7 +285,7 @@ const chains = {
     queryLimit: 1000,
     queryInterval: 100,
     blockTime: 5,
-    blockExplorer: 'https://cronos.crypto.org/explorer/',
+    blockExplorer: 'https://cronoscan.com',
     gas: {
       limit: Number(process.env.CRONOS_GAS_LIMIT) || 1e6,
       price: Number(process.env.CRONOS_GAS_PRICE) || 5e12,
@@ -399,6 +400,34 @@ const chains = {
       limit: Number(process.env.MOONBEAM_GAS_LIMIT) || 10e6,
       price: Number(process.env.MOONBEAM_GAS_PRICE) || 100e9,
       priceCap: Number(process.env.MOONBEAM_GAS_PRICE_CAP),
+    },
+  },
+  42262: {
+    id: 'emerald',
+    chainId: 42262,
+    wnative: emerald.tokens.WNATIVE.address,
+    rewardPool: emerald.platforms.beefyfinance.rewardPool,
+    treasury: emerald.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: emerald.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: process.env.OASIS_HARVEST_HOUR_INTERVAL
+      ? parseInt(process.env.OASIS_HARVEST_HOUR_INTERVAL)
+      : 1,
+    wnativeUnwrapInterval: 6,
+    wnativeMinToUnwrap: process.env.OASIS_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    rpc: process.env.OASIS_RPC || 'https://emerald.oasis.dev',
+    appVaultsFilename: 'emerald_pools.js',
+    multicall: emerald.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 6,
+    blockExplorer: 'https://explorer.emerald.oasis.dev/',
+    gas: {
+      //TODO: verify/fix these values!
+      limit: Number(process.env.OASIS_GAS_LIMIT) || 10e6,
+      price: Number(process.env.OASIS_GAS_PRICE) || 100e9,
+      priceCap: Number(process.env.OASIS_GAS_PRICE_CAP),
     },
   },
 };

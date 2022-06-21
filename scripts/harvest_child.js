@@ -174,10 +174,18 @@ const addGasLimit = async (strats, provider) => {
   responses = responses.filter(s => s.status === 'fulfilled').map(s => s.value);
   filtered.push(...responses);
 
-  // get strats with gaslimit
+  //0xww: get strats with gaslimit
+  //AT: switch back to original strat objects instead of gasLimit objects
   strats = filtered.filter(g => strats.some(s => g.address === s.address));
+
+  //enforce the gas limit (sometimes an RPC estimates way too high, e.g. Oasis Emerald)
+  const i_LMT = CHAIN.gas.limit - 1;
+  strats.forEach(o => {
+    if (i_LMT < o.gasLimit) o.gasLimit = i_LMT;
+  });
+
   return strats;
-};
+}; //const addGasLimit = async (
 
 /**
  * Check if Strat should be harvest
@@ -217,7 +225,7 @@ const shouldHarvest = async (strat, harvesterPK) => {
     //	contains no rewards, short-circuit with a note that no harvest is necessary
     if (!strat.suppressCallRwrdCheck)
       try {
-        const abi = ['function callReward() public pure returns(uint256)'];
+        const abi = ['function callReward() public view returns(uint256)'];
         const contract = new ethers.Contract(strat.address, abi, harvesterPK);
         strat.callReward = await contract.callReward();
         if (strat.callReward.lte(0)) {
@@ -225,7 +233,9 @@ const shouldHarvest = async (strat, harvesterPK) => {
           strat.notHarvestReason = 'callReward is zero';
           return strat;
         }
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
 
     /* AT: seems to be erroneously omitting strats that need closer checking
     try {
@@ -423,7 +433,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           }
         } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
 
-        //An unexpected error condition has been encountered. If we've maxed out on
+        //An unexpected error condition has been encountered. If we haven't maxed out on
         //	retry attempts, fall through for another try, else short-circuit by raising
         //	this last error.
         if (tries === max) throw new Error(error);
