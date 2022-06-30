@@ -17,6 +17,7 @@ const {
   metis,
   moonbeam,
   emerald,
+  optimism,
 } = addressBook;
 
 const chains = {
@@ -424,10 +425,38 @@ const chains = {
     blockTime: 6,
     blockExplorer: 'https://explorer.emerald.oasis.dev/',
     gas: {
-      //TODO: verify/fix these values!
       limit: Number(process.env.OASIS_GAS_LIMIT) || 10e6,
       price: Number(process.env.OASIS_GAS_PRICE) || 100e9,
       priceCap: Number(process.env.OASIS_GAS_PRICE_CAP),
+    },
+  },
+  42262: {
+    id: 'optimism',
+    chainId: 10,
+    wnative: optimism.tokens.WNATIVE.address,
+    rewardPool: optimism.platforms.beefyfinance.rewardPool,
+    treasury: optimism.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: optimism.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    stratHarvestHourInterval: parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
+    harvestHourInterval: process.env.OPTIMISM_HARVEST_HOUR_INTERVAL
+      ? parseInt(process.env.OPTIMISM_HARVEST_HOUR_INTERVAL)
+      : 1,
+    wnativeUnwrapInterval: 6,
+    wnativeMinToUnwrap: process.env.OPTIMISM_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    rpc: process.env.OPTIMISM_RPC || 'https://mainnet.optimism.io',
+    appVaultsFilename: 'optimism_pools.js',
+    multicall: optimism.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 6,
+    blockExplorer: 'https://optimistic.etherscan.io/',
+    gas: {
+      //AT: To be clear "price" is the minimum price. I got the limit default via
+      //	https://www.npmjs.com/package/@eth-optimism/contracts/v/0.5.0
+      limit: Number(process.env.OPTIMISM_GAS_LIMIT) || 9e6,
+      price: Number(process.env.OPTIMISM_GAS_PRICE) || 1e6,
+      priceCap: Number(process.env.OPTIMISM_GAS_PRICE_CAP),
     },
   },
 };
