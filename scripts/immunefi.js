@@ -12,13 +12,13 @@ const BeefyVault = require('../abis/BeefyVault.json');
 
 const main = async () => {
   for (chain of Object.values(chains)) {
-    let vaults = await getVaults(chain.appVaultsFilename);
+    let vaults = await getVaults( chain.appVaultsFilename);
 
     const web3 = new Web3(chain.rpc);
     const multicall = new MultiCall(web3, chain.multicall);
 
-    const calls = vaults.map(vault => {
-      const vaultContract = new web3.eth.Contract(BeefyVault, vault.earnedTokenAddress);
+    const calls = vaults.map( vault => {
+      const vaultContract = new web3.eth.Contract( BeefyVault, vault.earnContractAddress);
       return {
         strategy: vaultContract.methods.strategy(),
       };
@@ -28,7 +28,7 @@ const main = async () => {
 
     for (let i = 0; i < vaults.length; i++) {
       vaults[i].strategy = strategyAddresses[i].strategy;
-      vaults[i].vault = vaults[i].earnedTokenAddress;
+      vaults[i].vault = vaults[i].earnContractAddress;
     }
 
     vaults = vaults.filter(vault => {

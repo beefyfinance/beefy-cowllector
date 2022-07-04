@@ -96,10 +96,10 @@ const getWnativeBalance = async signer => {
 const unwrap = async (signer, provider, options, minBalance = '0.1') => {
   try {
     if (!CHAIN.wnative) return false;
-    minBalance = ethers.utils.parseEther(minBalance, 'ether');
-    let wNativeBalance = await getWnativeBalance(signer);
-    if (wNativeBalance.lte(minBalance)) return false;
-    let wNative = new ethers.Contract(CHAIN.wnative, IWrappedNative, signer);
+    minBalance = ethers.utils.parseEther( minBalance, 'ether');
+    let wNativeBalance = await getWnativeBalance( signer);
+    if (wNativeBalance.lte( minBalance)) return false;
+    let wNative = new ethers.Contract(  CHAIN.wnative, IWrappedNative, signer);
     let tx;
     try {
       tx = await wNative.withdraw(wNativeBalance, options);
@@ -159,9 +159,10 @@ const uploadToFleek = async report => {
   } while (tries < 5);
 }; //const uploadToFleek = async report =>
 
+
 const addGasLimit = async (strats, provider) => {
   let gasLimits = require('../data/gasLimits.json');
-  let filtered = gasLimits.filter(s => s.chainId === Number(CHAIN_ID));
+  let filtered = gasLimits.filter( s => s.chainId === Number( CHAIN_ID));
 
   //check when gaslimit already exists and only strats that are not in gasLimits
   let gasLimitWanted = filtered.filter(s =>
@@ -188,17 +189,20 @@ const addGasLimit = async (strats, provider) => {
 }; //const addGasLimit = async (
 
 /**
- * Check if Strat should be harvest
- * @dev this func will always return a fulfilled promise, filter results based on strat.shouldHarvest Boolean
- * @description check if strats is in range of time that should be harvested and if harvest can be runned without problem
+ * Tell if the given strat should be harvested
+ * @dev Function sets the boolean strat.shouldHarvest which can be filtered on to send 
+ * 			only those strats to harvest which have passed all tests.
+ * @description Checks if strats is in range of time that should be harvested and if 
+ * 			harvest can be run without issue.
  * @param {object} strat
- * @returns strat
+ * @param private key
+ * @returns {object} strat
  */
 const shouldHarvest = async (strat, harvesterPK) => {
   const STRAT_INTERVALS_MARGIN_OF_ERROR =
-    Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || 1440;
-  let interval =
-    (CHAIN.stratHarvestHourInterval || strat.interval) * 3600 + STRAT_INTERVALS_MARGIN_OF_ERROR;
+														Number( process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || 1440;
+  let interval = (CHAIN.stratHarvestHourInterval || strat.interval) * 3600 + 
+																												STRAT_INTERVALS_MARGIN_OF_ERROR;
   try {
     if (strat.lastHarvest !== 0) {
       let now = Math.floor(new Date().getTime() / 1000);
@@ -209,11 +213,8 @@ const shouldHarvest = async (strat, harvesterPK) => {
         return strat;
       }
     } else {
-      let isNewHarvestPeriod = await harvestHelpers.isNewHarvestPeriod(
-        strat,
-        harvesterPK,
-        interval
-      );
+      let isNewHarvestPeriod = await harvestHelpers.isNewHarvestPeriod( strat, harvesterPK, 
+																																				interval);
       if (!isNewHarvestPeriod) {
         strat.shouldHarvest = false;
         strat.notHarvestReason = 'last StratHarvest log is lower than interval';
@@ -228,14 +229,14 @@ const shouldHarvest = async (strat, harvesterPK) => {
         const abi = ['function callReward() public view returns(uint256)'];
         const contract = new ethers.Contract(strat.address, abi, harvesterPK);
         strat.callReward = await contract.callReward();
-        if (strat.callReward.lte(0)) {
+        if (strat.callReward.lte( 0)) {
           strat.shouldHarvest = false;
           strat.notHarvestReason = 'callReward is zero';
           return strat;
         }
       } catch (error) {
-        console.log(error);
-      }
+        console.log( error);
+      } //try
 
     /* AT: seems to be erroneously omitting strats that need closer checking
     try {
@@ -261,29 +262,30 @@ const shouldHarvest = async (strat, harvesterPK) => {
       const contract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
       let callStaticPassed = await contract.callStatic.harvest();
     } catch (error) {
-      for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
-        if (error.message.includes(key)) {
+      for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
+        if (error.message.includes( key)) {
           strat.shouldHarvest = false;
-          strat.notHarvestReason = `Strat did't passed callStatic: ${KNOWN_RPC_ERRORS[key]}`;
+          strat.notHarvestReason = `Strat did't pass callStatic: ${KNOWN_RPC_ERRORS[key]}`;
           return strat;
         }
       }
       strat.shouldHarvest = false;
-      strat.notHarvestReason = `Strat did't passed callStatic: ${error}`;
+      strat.notHarvestReason = `Strat did't pass callStatic: ${error}`;
       return strat;
-    }
+    } //try
     return strat;
   } catch (error) {
     strat.shouldHarvest = false;
     strat.notHarvestReason = `unexpected error in shouldHarvest(): ${error}`;
     return strat;
-  }
+  } //try
 }; //const shouldHarvest = async (strat, harvesterPK) =>
+
 
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   //nested function to carry out a slated harvest, retrying if necessary though not
   //	excessively so
-  const tryTX = async (stratContract, max = 5) => {
+  const tryTX = async (stratContract, max = 2) => {
     if (nonce) options.nonce = nonce;
     let tries = 0;
     while (tries < max) {
@@ -310,9 +312,9 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           try {
             tx = await stratContract.harvest(options);
             if (tx.status === 1)
-              console.log(
-                `${strat.name}:\tharvested step 2/3: Swaps to tokens needed step - with tx: ${tx.transactionHash}`
-              );
+              console.log( `${strat.name
+													}:\tharvested step 2/3: Swaps to tokens needed step - with tx: ${
+													tx.transactionHash}`);
           } catch (error) {
             console.log(`${strat.name}: ${error}`);
             return {
@@ -344,9 +346,9 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               data: error.message,
             };
           } //try
-          //else on this chain unusual gymnastics aren't needed to execute a harvest, so...
+				//else on this chain unusual gymnastics aren't needed to execute a harvest, so...
         } else {
-          tx = await stratContract.harvest(options);
+          tx = await stratContract.harvest( options);
 
           //if this is a "tricky" chain... (TODO: improve on what this means)
           if (TRICKY_CHAINS.includes(CHAIN.id)) {
@@ -401,17 +403,17 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 };
               } //try
             } //while (receipt === null)
-            //else this is not a "tricky" chain, so...
+					//else this is not a "tricky" chain, so...
           } else {
             tx = await tx.wait();
             if (tx.status === 1) {
-              console.log(
-                `${strat.name}:\tharvested after tried ${tries} with tx: ${tx.transactionHash}`
-              );
+              console.log( `${strat.name}:\tharvested after tried ${tries} with tx: ${
+														tx.transactionHash}`);
               return {
                 contract: strat.address,
                 status: 'success',
-                message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.transactionHash}`,
+                message: `${strat.name}: harvested after tried ${tries} with tx: ${
+													tx.transactionHash}`,
                 data: tx,
               };
             } //if (tx.status === 1)
@@ -482,35 +484,33 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   } //try
 }; //const harvest = async (
 
+
 const main = async () => {
   try {
     //if the caller gave us a chain to process that seems validly configured and not turned
     //	off..
     if (CHAIN && CHAIN.harvestHourInterval) {
-      /**
-       * Check hour interval if harvest_child should run for this chain
-       * @dev on file data/chain.js you can find, for every chain, a prop stratHarvestHourInterval that explain when hourly harvest should be run for it
-       */
+      /** Check hour interval if harvest_child should run for this chain
+       * @dev on file data/chain.js you can find, for every chain, a prop 
+			 * stratHarvestHourInterval that explain when hourly harvest should be run for it */
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
-        console.log(
-          `Is not Harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
-            CHAIN.harvestHourInterval
-          }]`
-        );
+        console.log( `Is not Harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
+											CHAIN.harvestHourInterval }]`);
         return false;
       }
 
-      console.log(
-        `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
-          CHAIN.blockExplorer
-        }] [hour_interval=${CHAIN.stratHarvestHourInterval}]`
-      );
+      console.log( `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${
+										CHAIN.rpc}] [explorer=${ CHAIN.blockExplorer }] [hour_interval=${
+										CHAIN.stratHarvestHourInterval}]`);
 
       try {
         const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
-        // patch for GASLESS chains
-        if (GASLESS_CHAINS.includes(CHAIN.id)) {
+
+				//AT: TODO: we can get rid of this because we no longer have any "gasless" chains, 
+				//	I think
+        //0xww: patch for GASLESS chains
+        if (GASLESS_CHAINS.includes( CHAIN.id)) {
           const originalBlockFormatter = provider.formatter._block;
           provider.formatter._block = (value, format) => {
             return originalBlockFormatter(
@@ -524,25 +524,24 @@ const main = async () => {
         } //if (GASLESS_CHAINS.includes( CHAIN.id))
 
         let gasPrice = await getGasPrice(provider);
-        console.log(`Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} GWEI`);
+        console.log( `Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} gwei`);
 
         //if the chain's current price of gas exceeds the cap we've put on the chain,
         //	abort this harvest run
         if (CHAIN.gas.priceCap < gasPrice) {
-          console.log(
-            `Gas price on ${CHAIN.id.toUpperCase()} currently exceeds our cap of ${
-              CHAIN.gas.priceCap / 1e9
-            } GWEI. Aborting this run.`
-          );
+          console.log( `Gas price on ${CHAIN.id.toUpperCase()
+												} currently exceeds our cap of ${CHAIN.gas.priceCap / 1e9
+												} gwei. Aborting this run.`);
           return false;
         }
 
-        const harvesterPK = new ethers.Wallet(process.env.HARVESTER_PK, provider);
+        const harvesterPK = new ethers.Wallet( process.env.HARVESTER_PK, provider);
         const balance = await harvesterPK.getBalance();
         const wNativeBalance = await getWnativeBalance(harvesterPK);
 
-        strats = await addGasLimit(strats, provider);
-        strats = strats.map(s => {
+        strats = await addGasLimit( strats, provider);
+//AT: TODO: map seems pointless here, should just use a forEach..
+        strats = strats.map( s => {
           s.shouldHarvest = true;
           s.notHarvestReason = '';
           s.harvest = null;
@@ -550,16 +549,16 @@ const main = async () => {
         });
         let stratsFiltered = [];
         let stratsShouldHarvest = [];
-
-        strats = strats.map(s => {
+//AT: ditto, indeed, just combine this with the one above
+        strats = strats.map( s => {
           if (s.depositsPaused || s.harvestPaused) {
             s.shouldHarvest = false;
             s.notHarvestReason = 'deposits or harvest paused';
           }
           return s;
         });
-        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+        stratsFiltered = stratsFiltered.concat( strats.filter( s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
 
         // strats = stratsShouldHarvest.map(s => {
         //   if (s.tvl < TVL_MINIMUM_TO_HARVEST) {
@@ -571,46 +570,45 @@ const main = async () => {
         // stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
         // stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
 
-        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'balanceOf');
-        strats = strats.map(s => {
+        strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest, 'balanceOf');
+//AT: TODO: again, forEach
+        strats = strats.map( s => {
           if (s.balanceOf === 0) {
             s.shouldHarvest = false;
             s.notHarvestReason = 'balance is zero';
           }
           return s;
         });
-        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+        stratsFiltered = stratsFiltered.concat( strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
 
-        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'lastHarvest');
-        strats = await Promise.allSettled(
-          stratsShouldHarvest.map(strat => shouldHarvest(strat, harvesterPK))
-        );
-        strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
-        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+        strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest, 'lastHarvest');
+        strats = await Promise.allSettled( stratsShouldHarvest.map( strat => 
+																											shouldHarvest( strat, harvesterPK)));
+        strats = strats.filter( r => r.status === 'fulfilled').map( s => s.value);
+
+        stratsFiltered = stratsFiltered.concat( strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
         console.table(
           [...stratsFiltered, ...stratsShouldHarvest],
           ['name', 'address', 'shouldHarvest', 'notHarvestReason']
         );
 
-        console.log(`Total Strat to harvest ${stratsShouldHarvest.length} of ${strats.length}`);
+        console.log(`Total Strat to harvest ${stratsShouldHarvest.length} of ${
+																																				strats.length}`);
 
         //AT: my read of this is as a note of the maximum that may be spent on this round
         //	of harvesting on this chain
-        let totalGas =
-          stratsShouldHarvest.reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
-        console.log(
-          `Total gas to use ${(totalGas * gasPrice) / 1e9} GWEI , current balance ${balance.div(
-            1e9
-          )} GWEI`
-        );
+        let totalGas = stratsShouldHarvest.reduce( (total, s) => total + 
+																															Number( s.gasLimit), 0) / 1e9;
+        console.log( `Total gas to use ${(totalGas * gasPrice) / 
+											1e9} gwei. Current balance ${balance.div( 1e9)} gwei`);
 
         //for each strategy tagged to be harvested...
         let harvesteds = [];
         for await (const strat of stratsShouldHarvest) {
           try {
-            await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMinToUnwrap);
+            await unwrap( harvesterPK, provider, { gasPrice }, CHAIN.wnativeMinToUnwrap);
           } catch (error) {
             Sentry.captureException(error);
           }
