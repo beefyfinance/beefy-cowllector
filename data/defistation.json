@@ -200,14 +200,6 @@
     "tvl": 0
   },
   {
-    "id": "czf-czf-bnb",
-    "name": "Moo CZF CZF-BNB",
-    "contract": "0x98CADFb805fAc92eF70e3Ed900c76a487cDb26a1",
-    "oracle": "lps",
-    "oracleId": "czf-czf-bnb",
-    "tvl": 0
-  },
-  {
     "id": "banana-pots-bnb",
     "name": "Moo Ape POTS-BNB",
     "contract": "0xbFa24f7C2376c28407504Fb8512797dD8D316aBf",
@@ -824,14 +816,6 @@
     "tvl": 0
   },
   {
-    "id": "cakev2-ust-busd",
-    "name": "Moo CakeV2 UST-BUSD",
-    "contract": "0x76c8b991F99a77B270D5f6529855f3612891e70f",
-    "oracle": "lps",
-    "oracleId": "cakev2-ust-busd",
-    "tvl": 0
-  },
-  {
     "id": "cakev2-ramp-busd",
     "name": "Moo CakeV2 RAMP-BUSD",
     "contract": "0x37b67318d7746faD405AC139847b96718D37b8C4",
@@ -1024,35 +1008,11 @@
     "tvl": 0
   },
   {
-    "id": "kebab-eth-btcb",
-    "name": "Moo Kebab ETH-BTCB",
-    "contract": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
-    "oracle": "lps",
-    "oracleId": "kebab-eth-btcb",
-    "tvl": 0
-  },
-  {
-    "id": "kebab-bifi-busd",
-    "name": "Moo Kebab BIFI-BUSD",
-    "contract": "0x9c1630eA66310fA03D756FBd92B68a1f08c487b6",
-    "oracle": "lps",
-    "oracleId": "kebab-bifi-busd",
-    "tvl": 0
-  },
-  {
     "id": "venus-bnb",
     "name": "Moo Venus BNB",
     "contract": "0x6BE4741AB0aD233e4315a10bc783a7B923386b71",
     "oracle": "tokens",
     "oracleId": "WBNB",
-    "tvl": 0
-  },
-  {
-    "id": "banana-oasis-wbnb",
-    "name": "Moo Ape OASIS-BNB",
-    "contract": "0xb69fE74aeD526BBEe0fc47db72Ced2BDBF9747CF",
-    "oracle": "lps",
-    "oracleId": "banana-oasis-wbnb",
     "tvl": 0
   },
   {
@@ -1629,6 +1589,46 @@
     "contract": "0x1D78Ea6e3702FBB5CE3F46B4AB10A79110fe29c7",
     "oracle": "lps",
     "oracleId": "biswap-trx-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "czf-czf-bnb",
+    "name": "Moo CZF CZF-BNB",
+    "contract": "0x98CADFb805fAc92eF70e3Ed900c76a487cDb26a1",
+    "oracle": "lps",
+    "oracleId": "czf-czf-bnb",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-ust-busd",
+    "name": "Moo CakeV2 UST-BUSD",
+    "contract": "0x76c8b991F99a77B270D5f6529855f3612891e70f",
+    "oracle": "lps",
+    "oracleId": "cakev2-ust-busd",
+    "tvl": 0
+  },
+  {
+    "id": "kebab-eth-btcb",
+    "name": "Moo Kebab ETH-BTCB",
+    "contract": "0x70CBc8B3a74A857056a6acE7e994229A24D4ab94",
+    "oracle": "lps",
+    "oracleId": "kebab-eth-btcb",
+    "tvl": 0
+  },
+  {
+    "id": "kebab-bifi-busd",
+    "name": "Moo Kebab BIFI-BUSD",
+    "contract": "0x9c1630eA66310fA03D756FBd92B68a1f08c487b6",
+    "oracle": "lps",
+    "oracleId": "kebab-bifi-busd",
+    "tvl": 0
+  },
+  {
+    "id": "banana-oasis-wbnb",
+    "name": "Moo Ape OASIS-BNB",
+    "contract": "0xb69fE74aeD526BBEe0fc47db72Ced2BDBF9747CF",
+    "oracle": "lps",
+    "oracleId": "banana-oasis-wbnb",
     "tvl": 0
   },
   {
