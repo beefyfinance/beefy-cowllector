@@ -22,13 +22,13 @@ require('../utils/logger')(CHAIN_ID);
 const KNOWN_RPC_ERRORS = {
   'code=INSUFFICIENT_FUNDS': 'INSUFFICIENT_FUNDS',
   'PancakeLibrary: INSUFFICIENT_INPUT_AMOUNT': 'PancakeLibrary: INSUFFICIENT_INPUT_AMOUNT',
-  'code=INSUFFICIENT_INPUT_AMOUNT': 'INSUFFICIENT_INPUT_AMOUNT',
   INSUFFICIENT_INPUT_AMOUNT: 'INSUFFICIENT_INPUT_AMOUNT',
   'insufficient funds': 'INSUFFICIENT_FUNDS',
   'code=REPLACEMENT_UNDERPRICED': 'REPLACEMENT_UNDERPRICED',
   'code=GAS_LIMIT_REACHED': 'GAS_LIMIT_REACHED',
   'gas limit reached': 'GAS_LIMIT_REACHED',
   'code=SERVER_ERROR': 'SERVER_ERROR',
+	'code=CALL_EXCEPTION': 'CALL_EXCEPTION' //AT: probably gas-limit hit, so costly
 };
 
 const getGasPrice = async provider => {
@@ -420,25 +420,29 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           } //if (TRICKY_CHAINS.includes( CHAIN.id))
         } //if (CHAIN.id === 'aurora')
       } catch (error) {
-        //Some error has occurred. For each error that we consider "normal"...
-        for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
-          //if it is this error that occurred, make a note of it and short-circuit,
+//TODO: improve error reporting, adding (1) a facility to drill next level into the message 
+//	to tease out the real issue, like gas-limit hit on a CALL_EXCEPTION, and (2) 
+//	lay-person-readable error surfacing!
+        //Some error has occurred. For each error string that we've identified as 
+				//	indicating a known-stop condition, one where no retry should be attempted...
+        for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
+          //if this string matches what's occurred, make a note of it and short-circuit,
           //	returning information about the condition to the caller
-          if (error.message.includes(key)) {
-            console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[key]}`);
+          if (error.message.includes( key)) {
+            console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[ key]}`);
             return {
               contract: strat.address,
               status: 'failed',
-              message: `${strat.name}: ${KNOWN_RPC_ERRORS[key]}`,
+              message: `${strat.name}: ${KNOWN_RPC_ERRORS[ key]}`,
               data: error.message,
             };
           }
         } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
 
-        //An unexpected error condition has been encountered. If we haven't maxed out on
-        //	retry attempts, fall through for another try, else short-circuit by raising
-        //	this last error.
-        if (tries === max) throw new Error(error);
+        //An unusual error condition has been encountered. If we haven't maxed out on retry
+        //	attempts, fall through for another try, else short-circuit by raising this last 
+				//	error.
+        if (tries === max) throw new Error( error);
       } //try
     } //while (tries < max)
   }; //const tryTX = async (
