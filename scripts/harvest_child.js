@@ -31,6 +31,7 @@ const KNOWN_RPC_ERRORS = {
 	'code=CALL_EXCEPTION': 'CALL_EXCEPTION' //AT: probably gas-limit hit, so costly
 };
 
+
 const getGasPrice = async provider => {
   let gas = 0;
   //TODO: Rationale of this stanza needs precise explanation. Seems that the chain-specific
@@ -38,43 +39,47 @@ const getGasPrice = async provider => {
   //	gas price we'll harvest at, a price possibly a bit above the chain's standard minimum
   //	price (e.g. the Polygon default at 40 GWEI instead of chain's floor of 30 GWEI).
   try {
-    if (CHAIN.gas.price) gas = CHAIN.gas.price;
+    if (CHAIN.gas.price)
+			gas = CHAIN.gas.price;
     let gasPrice = await provider.getGasPrice();
-    if (GAS_MARGIN && !GAS_THROTTLE_CHAIN.includes(CHAIN.id)) gasPrice *= (100 + GAS_MARGIN) / 100;
-    if (gasPrice > gas) gas = Number(gasPrice.toString()).toFixed();
+    if (GAS_MARGIN && !GAS_THROTTLE_CHAIN.includes( CHAIN.id))
+			gasPrice *= (100 + GAS_MARGIN) / 100;
+    if (gasPrice > gas)
+			gas = Number( gasPrice.toString()).toFixed();
     return gas;
   } catch (error) {
-    Sentry.captureException(error);
+    Sentry.captureException( error);
   } //try
 
   try {
     //The standard method didn't work. So let's see if the chain supports another method...
     if (CHAIN.gas.info) {
       if (CHAIN.gas.info.type === 'rest') {
-        let res = await Axios.get(
-          `${CHAIN.gas.info.url}?module=proxy&action=eth_gasPrice&apikey=${CHAIN.gas.info.apikey}`
-        );
+        let res = await Axios.get( `${CHAIN.gas.info.url
+											}?module=proxy&action=eth_gasPrice&apikey=${CHAIN.gas.info.apikey}`);
         if (res.data && res.data.status !== '0' && res.data.result)
-          gas.gasPrice = parseInt(BigInt(res.data.result).toString());
+          gas = parseInt( BigInt( res.data.result).toString());
         return gas;
       }
       if (CHAIN.gas.info.type === 'rpc') {
         let data = { jsonrpc: '2.0', method: 'eth_gasPrice', id: 1 };
-        if (CHAIN.gas.info.method) data.method = CHAIN.gas.info.method;
-        let res = await Axios.post(`${CHAIN.gas.info.url}`, data);
+        if (CHAIN.gas.info.method)
+					data.method = CHAIN.gas.info.method;
+        let res = await Axios.post( `${CHAIN.gas.info.url}`, data);
         if (res.data && res.data.status !== '0' && res.data.result)
-          gas.gasPrice = parseInt(BigInt(res.data.result).toString());
+          gas = parseInt( BigInt( res.data.result).toString());
         return gas;
       }
     } //if (CHAIN.gas.info)
     console.log(`=> Gas Info API not recognized`);
     return gas;
   } catch (error) {
-    Sentry.captureException(error);
+    Sentry.captureException( error);
     console.log('=> Could not get Gas price from Block Explorer');
     return gas;
   } //try
 }; //const getGasPrice = async
+
 
 /**
  * Get wnative balance
@@ -195,10 +200,11 @@ const addGasLimit = async (strats, provider) => {
  * @description Checks if strats is in range of time that should be harvested and if 
  * 			harvest can be run without issue.
  * @param {object} strat
+ * @param 
  * @param private key
  * @returns {object} strat
  */
-const shouldHarvest = async (strat, harvesterPK) => {
+const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
   const STRAT_INTERVALS_MARGIN_OF_ERROR =
 														Number( process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || 1440;
   let interval = (CHAIN.stratHarvestHourInterval || strat.interval) * 3600 + 
@@ -227,7 +233,7 @@ const shouldHarvest = async (strat, harvesterPK) => {
     if (!strat.suppressCallRwrdCheck)
       try {
         const abi = ['function callReward() public view returns(uint256)'];
-        const contract = new ethers.Contract(strat.address, abi, harvesterPK);
+        const contract = new ethers.Contract( strat.address, abi, harvesterPK);
         strat.callReward = await contract.callReward();
         if (strat.callReward.lte( 0)) {
           strat.shouldHarvest = false;
@@ -259,19 +265,22 @@ const shouldHarvest = async (strat, harvesterPK) => {
       }
     }  */
     try {
-      const contract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
-      let callStaticPassed = await contract.callStatic.harvest();
+      const contract = new ethers.Contract( strat.address, IStrategy, harvesterPK);
+      let callStaticPassed = await contract.callStatic.harvest( {
+																				gasPrice,
+																				gasLimit: ethers.BigNumber.from( strat.gasLimit)
+																			});
     } catch (error) {
       for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
         if (error.message.includes( key)) {
           strat.shouldHarvest = false;
-          strat.notHarvestReason = `Strat did't pass callStatic: ${KNOWN_RPC_ERRORS[key]}`;
+          strat.notHarvestReason = `Strat did't pass callStatic: ${
+																																KNOWN_RPC_ERRORS[ key]}`;
           return strat;
         }
       }
       strat.shouldHarvest = false;
       strat.notHarvestReason = `Strat did't pass callStatic: ${error}`;
-      return strat;
     } //try
     return strat;
   } catch (error) {
@@ -527,11 +536,11 @@ const main = async () => {
           };
         } //if (GASLESS_CHAINS.includes( CHAIN.id))
 
-        let gasPrice = await getGasPrice(provider);
-        console.log( `Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} gwei`);
+        let gasPrice = await getGasPrice( provider);
+        console.log( `Gas Price: ${ethers.utils.formatUnits( gasPrice, 'gwei')} gwei`);
 
-        //if the chain's current price of gas exceeds the cap we've put on the chain,
-        //	abort this harvest run
+        //if the chain's current price of gas exceeds the cap we've put on the chain, abort 
+        //	this harvest run
         if (CHAIN.gas.priceCap < gasPrice) {
           console.log( `Gas price on ${CHAIN.id.toUpperCase()
 												} currently exceeds our cap of ${CHAIN.gas.priceCap / 1e9
@@ -588,10 +597,10 @@ const main = async () => {
 
         strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest, 'lastHarvest');
         strats = await Promise.allSettled( stratsShouldHarvest.map( strat => 
-																											shouldHarvest( strat, harvesterPK)));
+																							shouldHarvest( strat, gasPrice, harvesterPK)));
         strats = strats.filter( r => r.status === 'fulfilled').map( s => s.value);
 
-        stratsFiltered = stratsFiltered.concat( strats.filter(s => !s.shouldHarvest));
+        stratsFiltered = stratsFiltered.concat( strats.filter( s => !s.shouldHarvest));
         stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
         console.table(
           [...stratsFiltered, ...stratsShouldHarvest],
