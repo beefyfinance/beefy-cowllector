@@ -19,7 +19,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "7237",
+    "tvl": "7181",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -31,7 +31,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "8883",
+    "tvl": "9273",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -43,7 +43,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "42519",
+    "tvl": "42571",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -55,7 +55,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "174886",
+    "tvl": "174337",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -67,7 +67,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "5855",
+    "tvl": "5953",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -91,7 +91,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "80594",
+    "tvl": "80610",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -103,7 +103,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "422674",
+    "tvl": "424437",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -127,7 +127,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "15215",
+    "tvl": "15111",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -139,7 +139,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "63117",
+    "tvl": "92720",
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -151,7 +151,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "31003",
+    "tvl": "30917",
     "suppressCallRwrdCheck": true,
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
@@ -164,7 +164,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "603485",
+    "tvl": "610624",
     "suppressCallRwrdCheck": true,
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
@@ -177,7 +177,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "33227",
+    "tvl": "33097",
     "suppressCallRwrdCheck": true,
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
@@ -190,7 +190,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "8483",
+    "tvl": "33252",
     "suppressCallRwrdCheck": true,
     "gasLimit": 9000000,
     "gasLimitStrategy": "default chain config"
@@ -215,7 +215,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "560505",
+    "tvl": "561223",
     "suppressCallRwrdCheck": true,
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
@@ -228,7 +228,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "854489",
+    "tvl": "858231",
     "suppressCallRwrdCheck": true,
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
@@ -241,9 +241,9 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1499940",
+    "tvl": "1509098",
     "suppressCallRwrdCheck": true,
-    "gasLimit": 1057873,
+    "gasLimit": 1077373,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -254,7 +254,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1997005",
+    "tvl": "2008978",
     "suppressCallRwrdCheck": true,
     "gasLimit": 1052179,
     "gasLimitStrategy": "eth_estimateGas"
@@ -267,10 +267,10 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "160808",
+    "tvl": "164044",
     "suppressCallRwrdCheck": true,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1079061,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "vvs-vvs-usdt",
@@ -280,7 +280,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "469192",
+    "tvl": "469737",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -305,7 +305,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "10778",
+    "tvl": "10812",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -317,7 +317,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "5928",
+    "tvl": "5951",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -329,7 +329,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "6829",
+    "tvl": "6846",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -341,7 +341,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "10436",
+    "tvl": "10452",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -377,7 +377,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1194438",
+    "tvl": "1189855",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -389,10 +389,10 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "754514",
+    "tvl": "756447",
     "suppressCallRwrdCheck": true,
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "gasLimit": 1056625,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "vvs-cro-usdc",
@@ -402,9 +402,9 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "442715",
+    "tvl": "444376",
     "suppressCallRwrdCheck": true,
-    "gasLimit": 1076975,
+    "gasLimit": 1057475,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -415,7 +415,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "11652",
+    "tvl": "11668",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -427,7 +427,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "3833",
+    "tvl": "3838",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -451,7 +451,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "64800",
+    "tvl": "65152",
     "suppressCallRwrdCheck": true,
     "gasLimit": 1072246,
     "gasLimitStrategy": "eth_estimateGas"
@@ -464,7 +464,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1971",
+    "tvl": "1985",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -476,7 +476,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "6838",
+    "tvl": "6863",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -488,7 +488,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1150288",
+    "tvl": "1168152",
     "suppressCallRwrdCheck": true,
     "gasLimit": 1051922,
     "gasLimitStrategy": "eth_estimateGas"
@@ -501,7 +501,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "9015",
+    "tvl": "9061",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -513,7 +513,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "10432",
+    "tvl": "10467",
     "gasLimit": 1101699,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -525,9 +525,9 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "79893",
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "tvl": "68296",
+    "gasLimit": 1099224,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "dark-sky-cro",
@@ -537,7 +537,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "98379",
+    "tvl": "95673",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -562,8 +562,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1223",
-    "gasLimit": 1086224,
+    "tvl": "1225",
+    "gasLimit": 1086237,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -574,7 +574,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "77684",
+    "tvl": "79026",
     "gasLimit": 1540857,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -598,7 +598,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4255029",
+    "tvl": "4226013",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -622,7 +622,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "9278",
+    "tvl": "9271",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -634,7 +634,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "63797",
+    "tvl": "63855",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -646,7 +646,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "68972",
+    "tvl": "68934",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -658,7 +658,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "71075",
+    "tvl": "70538",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -670,7 +670,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "248281",
+    "tvl": "247219",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -682,7 +682,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "324982",
+    "tvl": "326972",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -694,7 +694,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "204413",
+    "tvl": "205455",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -706,7 +706,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "3849305",
+    "tvl": "3832358",
     "gasLimit": 2428045,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -718,7 +718,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "294523",
+    "tvl": "293735",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -730,7 +730,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4690573",
+    "tvl": "4683524",
     "gasLimit": 2358057,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -742,7 +742,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1010432",
+    "tvl": "1009246",
     "gasLimit": 2446701,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -754,7 +754,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "132748",
+    "tvl": "133108",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -778,7 +778,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "62082",
+    "tvl": "61743",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -790,7 +790,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "5564",
+    "tvl": "5584",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -802,7 +802,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "162258",
+    "tvl": "162334",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -814,7 +814,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "69437",
+    "tvl": "69380",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -826,7 +826,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8896",
+    "tvl": "8839",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -838,7 +838,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "148781",
+    "tvl": "148332",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -850,7 +850,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "77589",
+    "tvl": "77297",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -862,7 +862,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "23997",
+    "tvl": "23957",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -874,7 +874,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "48491",
+    "tvl": "48073",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -886,7 +886,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2219860",
+    "tvl": "2219862",
     "gasLimit": 4040913,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -898,7 +898,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "100243",
+    "tvl": "99739",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -910,7 +910,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "9296",
+    "tvl": "9275",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -922,7 +922,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2484384",
+    "tvl": "2483957",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -934,7 +934,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "28064",
+    "tvl": "27970",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -946,7 +946,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "29305",
+    "tvl": "29327",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -958,7 +958,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "50565",
+    "tvl": "50473",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -970,7 +970,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "631560",
+    "tvl": "630832",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -982,7 +982,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "817284",
+    "tvl": "816707",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -994,7 +994,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "13488",
+    "tvl": "13477",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1006,7 +1006,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "38998",
+    "tvl": "38965",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1018,7 +1018,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "501353",
+    "tvl": "499882",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1030,7 +1030,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "51883",
+    "tvl": "51826",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1042,7 +1042,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "18539",
+    "tvl": "18612",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1054,7 +1054,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "5722",
+    "tvl": "5712",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1066,7 +1066,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "12200",
+    "tvl": "12164",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1078,7 +1078,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "18167",
+    "tvl": "18186",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1090,7 +1090,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "68295",
+    "tvl": "68630",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1102,7 +1102,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "14379",
+    "tvl": "14395",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1114,7 +1114,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "179188",
+    "tvl": "178986",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1126,7 +1126,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "12218",
+    "tvl": "12213",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1138,7 +1138,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "6142",
+    "tvl": "6107",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1150,7 +1150,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "86459",
+    "tvl": "86366",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1162,7 +1162,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "29354",
+    "tvl": "29406",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1174,7 +1174,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "102365",
+    "tvl": "101508",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1186,7 +1186,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "112411",
+    "tvl": "112089",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1198,7 +1198,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "57634",
+    "tvl": "57565",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1210,7 +1210,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "694512",
+    "tvl": "694516",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1222,7 +1222,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "106218",
+    "tvl": "106209",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1234,7 +1234,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "7902",
+    "tvl": "7869",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1246,7 +1246,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "248181",
+    "tvl": "247488",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1258,7 +1258,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "331855",
+    "tvl": "331672",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1270,7 +1270,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "7241",
+    "tvl": "7231",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1282,7 +1282,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "6266",
+    "tvl": "6296",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1294,7 +1294,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "198867",
+    "tvl": "198190",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1306,7 +1306,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "98381",
+    "tvl": "99332",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1318,7 +1318,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "402992",
+    "tvl": "404047",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1330,7 +1330,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "26055",
+    "tvl": "26062",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1342,7 +1342,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "237993",
+    "tvl": "238066",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1354,7 +1354,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "50941",
+    "tvl": "50473",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1366,7 +1366,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "87745",
+    "tvl": "87329",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1378,7 +1378,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "105039",
+    "tvl": "104784",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1390,7 +1390,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "698832",
+    "tvl": "698759",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1402,7 +1402,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "34229",
+    "tvl": "34180",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1414,7 +1414,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "142196",
+    "tvl": "142300",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1426,7 +1426,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "42770",
+    "tvl": "42714",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1438,7 +1438,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "35348",
+    "tvl": "35398",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1450,7 +1450,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "13727",
+    "tvl": "13716",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1462,7 +1462,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8017",
+    "tvl": "8012",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1474,7 +1474,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "31099",
+    "tvl": "31117",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1486,7 +1486,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "105772",
+    "tvl": "104467",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1498,7 +1498,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "356711",
+    "tvl": "356421",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1510,7 +1510,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "178434",
+    "tvl": "178043",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1522,7 +1522,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "12176",
+    "tvl": "12182",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1534,7 +1534,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "167455",
+    "tvl": "168830",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1546,7 +1546,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "321819",
+    "tvl": "322052",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1558,7 +1558,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "358451",
+    "tvl": "357811",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1570,7 +1570,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "805395",
+    "tvl": "802060",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1582,7 +1582,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "71437",
+    "tvl": "71332",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1606,7 +1606,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "108326",
+    "tvl": "108111",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1618,7 +1618,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "763291",
+    "tvl": "761626",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1630,7 +1630,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "42907",
+    "tvl": "42841",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1642,7 +1642,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "16763",
+    "tvl": "16691",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1654,7 +1654,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "59172",
+    "tvl": "58777",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1666,7 +1666,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "139782",
+    "tvl": "140246",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1678,7 +1678,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "82511",
+    "tvl": "82443",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1690,7 +1690,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "60393",
+    "tvl": "60287",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1702,7 +1702,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "839653",
+    "tvl": "839659",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1714,7 +1714,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "21151",
+    "tvl": "21181",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1726,7 +1726,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "164686",
+    "tvl": "164443",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1738,7 +1738,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "130311",
+    "tvl": "129935",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1750,7 +1750,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "19890",
+    "tvl": "19723",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1762,7 +1762,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "60651",
+    "tvl": "60841",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1774,7 +1774,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "187145",
+    "tvl": "187013",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1786,7 +1786,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1019228",
+    "tvl": "1018500",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1798,7 +1798,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1164252",
+    "tvl": "1162768",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1810,7 +1810,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "455672",
+    "tvl": "454334",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1822,7 +1822,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "26888",
+    "tvl": "26764",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1834,7 +1834,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "12954",
+    "tvl": "12928",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1846,7 +1846,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2207539",
+    "tvl": "2207541",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1858,7 +1858,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "82344",
+    "tvl": "62429",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1870,7 +1870,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4949",
+    "tvl": "4963",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1882,7 +1882,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "107867",
+    "tvl": "112603",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1894,7 +1894,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4276",
+    "tvl": "4266",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1906,7 +1906,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "192489",
+    "tvl": "184899",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1918,7 +1918,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "318287",
+    "tvl": "318437",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1930,7 +1930,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "37314",
+    "tvl": "37213",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1942,7 +1942,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "17584",
+    "tvl": "17531",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1954,7 +1954,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "5619",
+    "tvl": "5601",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1966,7 +1966,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "356597",
+    "tvl": "356011",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1978,7 +1978,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "45092",
+    "tvl": "45074",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -1990,7 +1990,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "83649",
+    "tvl": "83794",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2002,7 +2002,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "29058",
+    "tvl": "29024",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2014,7 +2014,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "19042",
+    "tvl": "19031",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2026,7 +2026,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10699",
+    "tvl": "10676",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2038,7 +2038,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "126696",
+    "tvl": "126343",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2062,7 +2062,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "23869",
+    "tvl": "23808",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2074,7 +2074,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "29307",
+    "tvl": "29290",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2086,7 +2086,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "259830",
+    "tvl": "260473",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2098,7 +2098,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "82808",
+    "tvl": "83379",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2110,7 +2110,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1375906",
+    "tvl": "1378046",
     "gasLimit": 5260537,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -2122,7 +2122,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "142037",
+    "tvl": "142001",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2134,7 +2134,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10770",
+    "tvl": "10723",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2146,7 +2146,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1841682",
+    "tvl": "1844548",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2158,7 +2158,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "93124",
+    "tvl": "92791",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2170,7 +2170,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "24380",
+    "tvl": "24675",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2182,7 +2182,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "220973",
+    "tvl": "219820",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2194,7 +2194,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "153991",
+    "tvl": "141443",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2206,7 +2206,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "18485",
+    "tvl": "18549",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2218,7 +2218,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "3386",
+    "tvl": "3387",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2230,7 +2230,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "174473",
+    "tvl": "174879",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2242,7 +2242,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "315661",
+    "tvl": "315326",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2254,7 +2254,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "16401",
+    "tvl": "16222",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2266,7 +2266,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "148746",
+    "tvl": "148296",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2278,7 +2278,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "17116",
+    "tvl": "16991",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2290,7 +2290,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "36488",
+    "tvl": "36411",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2326,7 +2326,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "873018",
+    "tvl": "872776",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2338,7 +2338,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "796724",
+    "tvl": "792088",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2350,7 +2350,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1466417",
+    "tvl": "1466422",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2362,7 +2362,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "14039",
+    "tvl": "13842",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2374,7 +2374,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "46715",
+    "tvl": "46245",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2386,7 +2386,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "25260",
+    "tvl": "25025",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2398,7 +2398,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "888981",
+    "tvl": "886494",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2410,7 +2410,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "38197",
+    "tvl": "38170",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2422,7 +2422,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "36866",
+    "tvl": "36966",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2434,7 +2434,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8876",
+    "tvl": "8856",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2446,8 +2446,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "218850",
-    "gasLimit": 3662029,
+    "tvl": "219167",
+    "gasLimit": 3791000,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2458,8 +2458,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "195501",
-    "gasLimit": 2363400,
+    "tvl": "196638",
+    "gasLimit": 2492370,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2470,8 +2470,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "274165",
-    "gasLimit": 3646216,
+    "tvl": "274164",
+    "gasLimit": 3780647,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2483,7 +2483,7 @@
     "harvestPaused": false,
     "chainId": 56,
     "tvl": "50689",
-    "gasLimit": 2342230,
+    "gasLimit": 2471201,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2494,8 +2494,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "228986",
-    "gasLimit": 3741060,
+    "tvl": "228984",
+    "gasLimit": 3870031,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2506,8 +2506,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "550277",
-    "gasLimit": 3744469,
+    "tvl": "549372",
+    "gasLimit": 3878899,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2518,8 +2518,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10998",
-    "gasLimit": 2476315,
+    "tvl": "10997",
+    "gasLimit": 2605285,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2530,7 +2530,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8334",
+    "tvl": "8669",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2542,7 +2542,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "283102",
+    "tvl": "282819",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2554,7 +2554,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "3604",
+    "tvl": "3605",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2566,7 +2566,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "208674",
+    "tvl": "208378",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2578,7 +2578,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "971663",
+    "tvl": "967532",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2590,7 +2590,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "3645",
+    "tvl": "3640",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2602,7 +2602,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "6338",
+    "tvl": "6296",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2614,7 +2614,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10196",
+    "tvl": "10175",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2626,7 +2626,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "16474",
+    "tvl": "16438",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2638,7 +2638,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1864",
+    "tvl": "1859",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2650,7 +2650,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "16119",
+    "tvl": "16107",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2662,7 +2662,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "9205",
+    "tvl": "9200",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2674,7 +2674,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "60005",
+    "tvl": "59947",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2686,7 +2686,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "6697",
+    "tvl": "6691",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2698,7 +2698,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "226199",
+    "tvl": "224670",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2710,7 +2710,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "110031",
+    "tvl": "107775",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2722,7 +2722,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "12519",
+    "tvl": "12515",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2735,7 +2735,7 @@
     "harvestPaused": false,
     "chainId": 56,
     "tvl": "2976",
-    "gasLimit": 2190310,
+    "gasLimit": 2481228,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -2758,7 +2758,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "45666",
+    "tvl": "45667",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2770,7 +2770,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "137668",
+    "tvl": "137563",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2782,7 +2782,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10989",
+    "tvl": "10990",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2794,7 +2794,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "219577",
+    "tvl": "219504",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2806,7 +2806,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "241786",
+    "tvl": "241486",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2818,7 +2818,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "817",
+    "tvl": "820",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2830,7 +2830,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2777",
+    "tvl": "2779",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2854,7 +2854,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "91569",
+    "tvl": "91957",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2866,7 +2866,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "765",
+    "tvl": "762",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2890,7 +2890,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "302",
+    "tvl": "303",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2902,7 +2902,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "94523",
+    "tvl": "95157",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2914,7 +2914,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "492",
+    "tvl": "489",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2926,7 +2926,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "11593",
+    "tvl": "11562",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2950,7 +2950,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "77",
+    "tvl": "76",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2962,7 +2962,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "5472",
+    "tvl": "5400",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2974,7 +2974,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "32908",
+    "tvl": "33026",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2986,7 +2986,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "318331",
+    "tvl": "316896",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -2998,7 +2998,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "19610",
+    "tvl": "19226",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3010,7 +3010,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "3877",
+    "tvl": "3894",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3022,7 +3022,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "112331",
+    "tvl": "111567",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3034,7 +3034,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "94354",
+    "tvl": "95577",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3046,7 +3046,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "318622",
+    "tvl": "324165",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3058,7 +3058,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "91163",
+    "tvl": "92190",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3070,7 +3070,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "80564",
+    "tvl": "80928",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3082,7 +3082,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "35385",
+    "tvl": "35544",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3094,7 +3094,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "85789",
+    "tvl": "85921",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3106,7 +3106,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "26287",
+    "tvl": "26515",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3118,7 +3118,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "21345",
+    "tvl": "21495",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3130,7 +3130,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "18676",
+    "tvl": "18512",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3142,7 +3142,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "11360",
+    "tvl": "11502",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3154,7 +3154,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "1195",
+    "tvl": "1113",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3166,7 +3166,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "101029",
+    "tvl": "90890",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3178,7 +3178,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "4782",
+    "tvl": "4825",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3190,7 +3190,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "125",
+    "tvl": "124",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3202,7 +3202,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "1294",
+    "tvl": "1301",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3214,7 +3214,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "1165",
+    "tvl": "1189",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3226,7 +3226,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "4270",
+    "tvl": "4290",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3250,7 +3250,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "682",
+    "tvl": "685",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3262,7 +3262,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "699",
+    "tvl": "700",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3286,7 +3286,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "84844",
+    "tvl": "86619",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3298,7 +3298,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "196087",
+    "tvl": "197295",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3322,7 +3322,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "2195",
+    "tvl": "2214",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3334,7 +3334,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "20937",
+    "tvl": "20959",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3346,7 +3346,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "3004",
+    "tvl": "3024",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3358,7 +3358,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "2509",
+    "tvl": "2536",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3370,7 +3370,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "828",
+    "tvl": "831",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3382,7 +3382,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1837123",
+    "tvl": "1824582",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3394,7 +3394,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "648",
+    "tvl": "651",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3406,7 +3406,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "213647",
+    "tvl": "214918",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3430,7 +3430,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1179820",
+    "tvl": "1202223",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3442,7 +3442,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "2261826",
+    "tvl": "2261835",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3454,7 +3454,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "359911",
+    "tvl": "364356",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3466,7 +3466,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "70891",
+    "tvl": "71296",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3478,7 +3478,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "4266362",
+    "tvl": "4260552",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3490,7 +3490,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "389103",
+    "tvl": "390613",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3502,8 +3502,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "7502981",
-    "gasLimit": 2026453,
+    "tvl": "7501777",
+    "gasLimit": 2026081,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -3514,7 +3514,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "642835",
+    "tvl": "645821",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3526,7 +3526,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "148193",
+    "tvl": "148182",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3538,7 +3538,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "223582",
+    "tvl": "223564",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3550,7 +3550,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "129163",
+    "tvl": "129717",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3562,7 +3562,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "13089",
+    "tvl": "13022",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3574,7 +3574,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1269438",
+    "tvl": "1269503",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3586,7 +3586,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "31052",
+    "tvl": "32944",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3598,7 +3598,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "119469",
+    "tvl": "119470",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3610,7 +3610,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "8487048",
+    "tvl": "8491740",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3622,7 +3622,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "85595",
+    "tvl": "85593",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3634,7 +3634,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "19721",
+    "tvl": "19759",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3646,7 +3646,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "69761",
+    "tvl": "69669",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3658,7 +3658,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "139842",
+    "tvl": "140264",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3670,7 +3670,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "219227",
+    "tvl": "219885",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3682,7 +3682,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1171790",
+    "tvl": "1175196",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3694,7 +3694,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "248742",
+    "tvl": "249309",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3706,7 +3706,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "172514",
+    "tvl": "172828",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3718,7 +3718,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "398368",
+    "tvl": "398371",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3730,7 +3730,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "298931",
+    "tvl": "298911",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3742,7 +3742,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "509369",
+    "tvl": "509327",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3754,7 +3754,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "44547",
+    "tvl": "44594",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3778,7 +3778,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "67966",
+    "tvl": "68035",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3790,7 +3790,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1801392",
+    "tvl": "1806987",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3802,7 +3802,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "293303",
+    "tvl": "295239",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3826,7 +3826,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "58045",
+    "tvl": "58161",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3838,7 +3838,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "43583",
+    "tvl": "44296",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3850,7 +3850,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "36654",
+    "tvl": "36652",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3862,7 +3862,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "118431",
+    "tvl": "118424",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3874,7 +3874,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "226525",
+    "tvl": "227183",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3886,7 +3886,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "722929",
+    "tvl": "723156",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3898,7 +3898,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "652775",
+    "tvl": "650227",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3910,7 +3910,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "5915",
+    "tvl": "5914",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3922,7 +3922,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "726203",
+    "tvl": "728379",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3934,7 +3934,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "6393721",
+    "tvl": "6374334",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3946,7 +3946,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1371435",
+    "tvl": "1372549",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3958,7 +3958,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "34157",
+    "tvl": "34281",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3970,7 +3970,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "27693",
+    "tvl": "27677",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -3982,7 +3982,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "11388",
+    "tvl": "11374",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4006,7 +4006,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "626468",
+    "tvl": "628359",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4018,7 +4018,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "43286",
+    "tvl": "43213",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4030,7 +4030,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "525223",
+    "tvl": "524082",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4042,7 +4042,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "213396",
+    "tvl": "213381",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4054,7 +4054,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "113781",
+    "tvl": "113317",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4066,7 +4066,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "4260577",
+    "tvl": "4295512",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4078,7 +4078,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "212718",
+    "tvl": "213070",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4090,7 +4090,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1431460",
+    "tvl": "1440043",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4102,7 +4102,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "70029",
+    "tvl": "70222",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4114,7 +4114,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "6704",
+    "tvl": "6736",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4126,7 +4126,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "107368",
+    "tvl": "108455",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4138,7 +4138,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "2241",
+    "tvl": "5083",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4150,7 +4150,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "529913",
+    "tvl": "531210",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4162,7 +4162,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "741955",
+    "tvl": "742166",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4198,7 +4198,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "367732",
+    "tvl": "368266",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4210,7 +4210,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "69011",
+    "tvl": "67526",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4222,7 +4222,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "10131",
+    "tvl": "10180",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4234,7 +4234,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "19992",
+    "tvl": "29397",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4246,7 +4246,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "126651",
+    "tvl": "127751",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4258,7 +4258,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "2548699",
+    "tvl": "2550697",
     "gasLimit": 2000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4270,7 +4270,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "5337084",
+    "tvl": "5300870",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4282,7 +4282,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "2708680",
+    "tvl": "2733001",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4306,7 +4306,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "39917",
+    "tvl": "40194",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4318,7 +4318,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "15166",
+    "tvl": "15188",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4330,7 +4330,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "59269",
+    "tvl": "59644",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4342,7 +4342,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "3520004",
+    "tvl": "3520047",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4354,7 +4354,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "360941",
+    "tvl": "361496",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4366,7 +4366,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "293954",
+    "tvl": "295872",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4378,7 +4378,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "197779",
+    "tvl": "197819",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4390,7 +4390,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "11228",
+    "tvl": "11334",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4402,7 +4402,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "63087",
+    "tvl": "63024",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4414,7 +4414,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "54567",
+    "tvl": "54523",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4426,7 +4426,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "15329",
+    "tvl": "15254",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4438,7 +4438,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "131862",
+    "tvl": "132980",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4450,7 +4450,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "211159",
+    "tvl": "211477",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4462,7 +4462,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "199991",
+    "tvl": "200995",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4474,7 +4474,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "911585",
+    "tvl": "917568",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4486,7 +4486,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "62968",
+    "tvl": "62548",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4498,7 +4498,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "17592",
+    "tvl": "17481",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4510,7 +4510,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "2595725",
+    "tvl": "2598886",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4522,7 +4522,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "168762",
+    "tvl": "170097",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4534,7 +4534,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "13563",
+    "tvl": "13597",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4546,7 +4546,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "4177086",
+    "tvl": "4175033",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4558,7 +4558,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "127041",
+    "tvl": "128017",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4570,7 +4570,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "11991",
+    "tvl": "12117",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4582,7 +4582,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "15316",
+    "tvl": "15314",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4594,7 +4594,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "24549",
+    "tvl": "24678",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4606,7 +4606,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "221920",
+    "tvl": "225200",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4618,7 +4618,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "2152575",
+    "tvl": "2170641",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4630,7 +4630,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "386050",
+    "tvl": "390562",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4642,7 +4642,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "192871",
+    "tvl": "194023",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4654,7 +4654,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "157421",
+    "tvl": "159227",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4702,7 +4702,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "549045",
+    "tvl": "552237",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4726,7 +4726,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "46139",
+    "tvl": "46081",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4738,7 +4738,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "526823",
+    "tvl": "526707",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4750,7 +4750,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "59803",
+    "tvl": "60032",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4762,7 +4762,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "622119",
+    "tvl": "639510",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4774,7 +4774,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "195111",
+    "tvl": "196980",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4786,7 +4786,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "17578",
+    "tvl": "17702",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4798,7 +4798,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "3274",
+    "tvl": "3296",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4810,7 +4810,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "745006",
+    "tvl": "747792",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4822,7 +4822,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "9782",
+    "tvl": "9839",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4834,7 +4834,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "83854",
+    "tvl": "84177",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4846,7 +4846,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "484069",
+    "tvl": "485861",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4858,7 +4858,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "116728",
+    "tvl": "117419",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4870,7 +4870,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "313034",
+    "tvl": "314207",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4882,7 +4882,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "535252",
+    "tvl": "537246",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4894,7 +4894,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "493313",
+    "tvl": "495166",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4906,7 +4906,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "142050",
+    "tvl": "142987",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4918,7 +4918,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "1270894",
+    "tvl": "1271191",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4930,7 +4930,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "28442",
+    "tvl": "28511",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4954,7 +4954,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "989568",
+    "tvl": "989527",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4966,7 +4966,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "150987",
+    "tvl": "151494",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4978,7 +4978,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "27017",
+    "tvl": "27025",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -4990,7 +4990,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "3950",
+    "tvl": "3980",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5002,7 +5002,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "45760",
+    "tvl": "46437",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5014,7 +5014,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "236665",
+    "tvl": "237958",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5038,7 +5038,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "796953",
+    "tvl": "800336",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5062,7 +5062,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "52964",
+    "tvl": "53272",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5086,7 +5086,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "1506856",
+    "tvl": "1506886",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5098,7 +5098,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "31524",
+    "tvl": "31216",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5122,7 +5122,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "141898",
+    "tvl": "142948",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5134,7 +5134,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "414674",
+    "tvl": "414679",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5146,7 +5146,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "2441",
+    "tvl": "2456",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5158,7 +5158,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "46785",
+    "tvl": "46873",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5170,7 +5170,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "404814",
+    "tvl": "404778",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5182,7 +5182,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "320059",
+    "tvl": "320073",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5194,7 +5194,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "506135",
+    "tvl": "504465",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5206,7 +5206,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "7463",
+    "tvl": "7520",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5218,7 +5218,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "8756",
+    "tvl": "8828",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5230,7 +5230,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "115080",
+    "tvl": "115296",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5242,7 +5242,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "26417",
+    "tvl": "26516",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5254,7 +5254,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "135061",
+    "tvl": "135563",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5266,7 +5266,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "152494",
+    "tvl": "153058",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5278,7 +5278,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "89555",
+    "tvl": "89549",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5290,7 +5290,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "68741",
+    "tvl": "68511",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5302,7 +5302,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "305080",
+    "tvl": "305017",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5314,7 +5314,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "11061",
+    "tvl": "11135",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5326,7 +5326,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "293020",
+    "tvl": "300509",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5338,7 +5338,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "10675",
+    "tvl": "10783",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5350,7 +5350,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "24845",
+    "tvl": "25330",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5362,7 +5362,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "4722",
+    "tvl": "4723",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5374,7 +5374,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "1731",
+    "tvl": "1745",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5386,7 +5386,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "42713",
+    "tvl": "42863",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5398,7 +5398,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "83669",
+    "tvl": "84006",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5410,7 +5410,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "30515",
+    "tvl": "30748",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5422,7 +5422,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "446563",
+    "tvl": "452670",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5434,7 +5434,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "130008",
+    "tvl": "130393",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5446,7 +5446,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "6729",
+    "tvl": "6774",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5458,7 +5458,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "10542",
+    "tvl": "10599",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5470,7 +5470,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "25470",
+    "tvl": "25703",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5482,7 +5482,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "53699",
+    "tvl": "54012",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5494,7 +5494,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "254",
+    "tvl": "256",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5506,7 +5506,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "27626",
+    "tvl": "27811",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5518,7 +5518,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "14319",
+    "tvl": "14361",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5530,7 +5530,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "5343",
+    "tvl": "5372",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5542,7 +5542,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "22809",
+    "tvl": "23050",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5554,7 +5554,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "49062",
+    "tvl": "49252",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5566,7 +5566,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "29937",
+    "tvl": "30052",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5578,7 +5578,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "43941",
+    "tvl": "44109",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5590,7 +5590,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "399441",
+    "tvl": "398971",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5626,7 +5626,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "46843",
+    "tvl": "46830",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5638,7 +5638,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "351686",
+    "tvl": "355074",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5650,7 +5650,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "596958",
+    "tvl": "590811",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5662,7 +5662,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "124",
+    "tvl": "125",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5674,7 +5674,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "262556",
+    "tvl": "265112",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5686,7 +5686,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "111161",
+    "tvl": "111726",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5698,7 +5698,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "154",
+    "tvl": "155",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5710,7 +5710,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "896",
+    "tvl": "901",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5722,7 +5722,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "13340",
+    "tvl": "13549",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5734,7 +5734,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "2007",
+    "tvl": "2071",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5746,7 +5746,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "66092",
+    "tvl": "66732",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5758,7 +5758,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "129476",
+    "tvl": "129759",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5770,7 +5770,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "72147",
+    "tvl": "72448",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5782,7 +5782,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "7876",
+    "tvl": "8234",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5794,7 +5794,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "441338",
+    "tvl": "442964",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5818,7 +5818,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "100786",
+    "tvl": "101427",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5830,7 +5830,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1741",
+    "tvl": "1754",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5842,7 +5842,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "783903",
+    "tvl": "789467",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5854,7 +5854,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "66237",
+    "tvl": "66632",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5866,7 +5866,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "164",
+    "tvl": "165",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5878,7 +5878,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "5300",
+    "tvl": "5343",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5890,7 +5890,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "660706",
+    "tvl": "665789",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5902,7 +5902,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "15797243",
+    "tvl": "15798149",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5914,7 +5914,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1456399",
+    "tvl": "1461217",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5926,7 +5926,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "9641",
+    "tvl": "9716",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5938,7 +5938,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1299",
+    "tvl": "1304",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5950,7 +5950,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "74144",
+    "tvl": "74601",
     "gasLimit": 9500000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5962,7 +5962,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "76598",
+    "tvl": "77329",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5974,7 +5974,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "540886",
+    "tvl": "544223",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5986,7 +5986,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "102575",
+    "tvl": "102963",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -5998,7 +5998,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "41545",
+    "tvl": "41647",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6022,7 +6022,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "7147",
+    "tvl": "7098",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6034,7 +6034,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "81776",
+    "tvl": "82692",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6046,7 +6046,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "24439",
+    "tvl": "24533",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6058,7 +6058,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "143973",
+    "tvl": "144513",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6070,7 +6070,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "159220",
+    "tvl": "160427",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6082,7 +6082,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "51371",
+    "tvl": "51372",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6094,7 +6094,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "33798",
+    "tvl": "34039",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6118,7 +6118,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "2970",
+    "tvl": "2992",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6130,7 +6130,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "4855",
+    "tvl": "4891",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6142,7 +6142,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "20609",
+    "tvl": "20685",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6154,7 +6154,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "27227",
+    "tvl": "27891",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6190,7 +6190,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "228251",
+    "tvl": "230534",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6202,7 +6202,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "16811",
+    "tvl": "16984",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6214,7 +6214,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "18387",
+    "tvl": "18516",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6226,7 +6226,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "27704",
+    "tvl": "27846",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6238,7 +6238,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "43735",
+    "tvl": "44303",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6250,7 +6250,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "12653",
+    "tvl": "12632",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6262,7 +6262,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "307554",
+    "tvl": "307361",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6274,7 +6274,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "600497",
+    "tvl": "596497",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6286,7 +6286,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "12448",
+    "tvl": "12561",
     "suppressCallRwrdCheck": true,
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
@@ -6299,7 +6299,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "11006",
+    "tvl": "11068",
     "suppressCallRwrdCheck": true,
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
@@ -6312,7 +6312,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "131128",
+    "tvl": "132297",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6324,7 +6324,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "15961",
+    "tvl": "15934",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6336,7 +6336,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "48996",
+    "tvl": "49272",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6348,7 +6348,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "42977",
+    "tvl": "38231",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6360,7 +6360,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "56369",
+    "tvl": "56600",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6372,7 +6372,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "63296",
+    "tvl": "63284",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6384,7 +6384,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "32082",
+    "tvl": "32226",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6396,7 +6396,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "37479",
+    "tvl": "36895",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6408,7 +6408,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "702040",
+    "tvl": "709645",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6420,7 +6420,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "334195",
+    "tvl": "337387",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6432,7 +6432,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "487372",
+    "tvl": "491100",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6444,7 +6444,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "68909",
+    "tvl": "68828",
     "gasLimit": 10000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6456,7 +6456,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "9301",
+    "tvl": "9278",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6468,7 +6468,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "137484",
+    "tvl": "137018",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6480,7 +6480,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "129981",
+    "tvl": "129228",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6492,7 +6492,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "24963",
+    "tvl": "24756",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6504,7 +6504,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "55809",
+    "tvl": "55505",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6516,7 +6516,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "5042",
+    "tvl": "5014",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6528,7 +6528,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "10264",
+    "tvl": "10214",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6540,7 +6540,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "2616",
+    "tvl": "2602",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6552,7 +6552,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "14356",
+    "tvl": "14278",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6564,7 +6564,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "34637",
+    "tvl": "34591",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6576,7 +6576,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "64232",
+    "tvl": "64145",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6600,7 +6600,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "22980",
+    "tvl": "22917",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6612,7 +6612,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "572889",
+    "tvl": "562837",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6624,7 +6624,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "96161",
+    "tvl": "96053",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6636,7 +6636,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "50459",
+    "tvl": "50294",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6648,7 +6648,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "927862",
+    "tvl": "938009",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6660,7 +6660,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "7162",
+    "tvl": "10711",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6672,7 +6672,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "4446821",
+    "tvl": "4447231",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6684,7 +6684,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "122496",
+    "tvl": "122942",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6696,7 +6696,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "316996",
+    "tvl": "318415",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6708,7 +6708,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "1198003",
+    "tvl": "1202438",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6720,7 +6720,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "5394424",
+    "tvl": "5420728",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6732,7 +6732,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "10601647",
+    "tvl": "10602760",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6744,7 +6744,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "3535075",
+    "tvl": "3559340",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6756,7 +6756,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "59414",
+    "tvl": "59826",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6768,7 +6768,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "10257",
+    "tvl": "10333",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6780,7 +6780,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "173271",
+    "tvl": "173893",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6792,7 +6792,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "911302",
+    "tvl": "907087",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6804,7 +6804,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "1371856",
+    "tvl": "1398093",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6816,7 +6816,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "487136",
+    "tvl": "491114",
     "gasLimit": 30000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6828,7 +6828,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "2696",
+    "tvl": "2682",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6840,7 +6840,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "1153",
+    "tvl": "1156",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6852,7 +6852,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "36684",
+    "tvl": "36481",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6864,7 +6864,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "54200",
+    "tvl": "54457",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6876,7 +6876,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "9406",
+    "tvl": "9430",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6888,7 +6888,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "17751",
+    "tvl": "17759",
     "gasLimit": 5000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6900,7 +6900,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "1474",
+    "tvl": "1480",
     "gasLimit": 13001300,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -6912,7 +6912,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "6494",
+    "tvl": "6521",
     "gasLimit": 13001300,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -6924,7 +6924,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "505",
+    "tvl": "507",
     "gasLimit": 13001300,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -6936,7 +6936,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "42587",
+    "tvl": "43889",
     "gasLimit": 13001300,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -6948,7 +6948,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "149982",
+    "tvl": "150605",
     "gasLimit": 13001300,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -6972,7 +6972,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "1064509",
+    "tvl": "1054982",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -6984,8 +6984,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "218771",
-    "gasLimit": 1171641,
+    "tvl": "220459",
+    "gasLimit": 1175281,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -6996,7 +6996,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "4779448",
+    "tvl": "4779462",
     "gasLimit": 1418864,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7008,8 +7008,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "2088611",
-    "gasLimit": 1808575,
+    "tvl": "2096633",
+    "gasLimit": 1807572,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7020,7 +7020,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "621540",
+    "tvl": "620209",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7032,9 +7032,9 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "203640",
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "tvl": "204756",
+    "gasLimit": 1018329,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "joe-weth.e-wavax",
@@ -7044,8 +7044,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "1261189",
-    "gasLimit": 1050307,
+    "tvl": "1276613",
+    "gasLimit": 1028077,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7056,7 +7056,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "8618",
+    "tvl": "8613",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7068,7 +7068,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "113994",
+    "tvl": "113972",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7080,7 +7080,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "69071",
+    "tvl": "70087",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7092,7 +7092,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "4512392",
+    "tvl": "4512302",
     "gasLimit": 1216413,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7104,7 +7104,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "302239",
+    "tvl": "305809",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7116,8 +7116,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "2290282",
-    "gasLimit": 1286403,
+    "tvl": "2290383",
+    "gasLimit": 1343895,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7128,7 +7128,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "26730",
+    "tvl": "26546",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7140,7 +7140,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "5474",
+    "tvl": "5547",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7152,7 +7152,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "92967",
+    "tvl": "91950",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7164,8 +7164,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "175728",
-    "gasLimit": 1182431,
+    "tvl": "175649",
+    "gasLimit": 1186071,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7176,7 +7176,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "19832",
+    "tvl": "19849",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7188,7 +7188,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "6555",
+    "tvl": "6729",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7200,7 +7200,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "977978",
+    "tvl": "962591",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7212,7 +7212,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "236028",
+    "tvl": "237448",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7224,7 +7224,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "28860",
+    "tvl": "29073",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7236,7 +7236,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "11815",
+    "tvl": "11972",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7248,8 +7248,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "415835",
-    "gasLimit": 1087309,
+    "tvl": "420008",
+    "gasLimit": 1065079,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7260,7 +7260,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "2354849",
+    "tvl": "2367608",
     "gasLimit": 1310533,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7272,7 +7272,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "449837",
+    "tvl": "463435",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7284,7 +7284,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "175036",
+    "tvl": "177435",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7296,7 +7296,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "3005",
+    "tvl": "3000",
     "gasLimit": 1210820,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7308,8 +7308,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "724372",
-    "gasLimit": 1085630,
+    "tvl": "729125",
+    "gasLimit": 1063400,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7320,7 +7320,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "357138",
+    "tvl": "349728",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7332,7 +7332,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "482947",
+    "tvl": "494003",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7344,7 +7344,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "73976",
+    "tvl": "76064",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7356,7 +7356,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "16650",
+    "tvl": "17332",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7368,7 +7368,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "5270",
+    "tvl": "5343",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7380,7 +7380,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "86875",
+    "tvl": "87868",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7416,8 +7416,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "78553",
-    "gasLimit": 1861926,
+    "tvl": "79820",
+    "gasLimit": 1773006,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7428,8 +7428,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "675697",
-    "gasLimit": 1042463,
+    "tvl": "680432",
+    "gasLimit": 1046103,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7440,7 +7440,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "80031",
+    "tvl": "81814",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7452,7 +7452,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "11744",
+    "tvl": "11900",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7464,7 +7464,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "5017450",
+    "tvl": "4994006",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7476,7 +7476,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "194196",
+    "tvl": "194650",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7512,7 +7512,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "101672",
+    "tvl": "102668",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7536,7 +7536,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "8104",
+    "tvl": "8376",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7548,7 +7548,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "4733",
+    "tvl": "4954",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7560,7 +7560,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "3878",
+    "tvl": "3856",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7572,7 +7572,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "64781",
+    "tvl": "65190",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7584,7 +7584,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "111381",
+    "tvl": "111754",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7608,7 +7608,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "155455",
+    "tvl": "155939",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7620,7 +7620,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "43025",
+    "tvl": "43242",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7632,7 +7632,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "27503",
+    "tvl": "27552",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7644,7 +7644,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "15830",
+    "tvl": "15899",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7656,7 +7656,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "38745",
+    "tvl": "38479",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7668,7 +7668,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "25485",
+    "tvl": "25629",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7692,7 +7692,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "771",
+    "tvl": "765",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7728,7 +7728,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "132681",
+    "tvl": "133567",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7740,7 +7740,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "844",
+    "tvl": "846",
     "gasLimit": 8738567,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7752,8 +7752,8 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "28175",
-    "gasLimit": 1134798,
+    "tvl": "28895",
+    "gasLimit": 1120642,
     "gasLimitStrategy": "eth_estimateGas"
   },
   {
@@ -7764,7 +7764,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "6999",
+    "tvl": "7015",
     "gasLimit": 1112464,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7776,9 +7776,9 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "12043",
-    "gasLimit": 1000000,
-    "gasLimitStrategy": "default chain config"
+    "tvl": "12046",
+    "gasLimit": 1005755,
+    "gasLimitStrategy": "eth_estimateGas"
   },
   {
     "name": "sushi-one-busd-one",
@@ -7788,7 +7788,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "13502",
+    "tvl": "13446",
     "gasLimit": 1003393,
     "gasLimitStrategy": "eth_estimateGas"
   },
@@ -7800,7 +7800,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "22993",
+    "tvl": "23108",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7812,7 +7812,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "42283",
+    "tvl": "42110",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7824,7 +7824,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "7074",
+    "tvl": "7038",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   },
@@ -7836,7 +7836,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "55207",
+    "tvl": "52162",
     "gasLimit": 1000000,
     "gasLimitStrategy": "default chain config"
   }
