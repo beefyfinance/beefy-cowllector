@@ -28,14 +28,14 @@
 
 # 🐮 About Cowllector
 
-This is the bot that harvest all strategies from all Beefy's chains, also do another things like:
+This is the bot that harvest all strategies from all Beefy's chains, and also does other things like:
 
 - Notify the BIFI rewards pool
 - Harvest the Beefy fee batch from all Beefy´s chains to distribute it.
 
-**Cowllectors does NOT focus in to be profitable, so don't expect it to win some profit when it harvests. Cowllector harvest script was create it to bring resilience and consistency in all active vaults strategies, giving at least ONE harvest every 24 hour to every strat in every chain**
+**Cowllectors does NOT focus on being profitable, so don't expect it to win some profit when it harvests. Cowllector harvest script was createed to bring resilience and consistency in all active vaults strategies, giving at least ONE harvest every 24 hours to every strat in every chain**
 
-Cowllectors runs harvest every 4 hour at :30 (minutes) giving time [Cowbot](https://github.com/beefybot) to complete sync (so always harvest up to date with the last strats).
+Cowllectors runs harvest every 4 hours at :30 (minutes) giving time [Cowbot](https://github.com/beefybot) to complete sync (so it always harvests up to date with the last strats).
 
 After every run of harvests in every chain, you can find the `harvest report` in our discord channel [#Harvester](https://discord.com/channels/755231190134554696/914666606641184768)
 
@@ -43,7 +43,7 @@ After every run of harvests in every chain, you can find the `harvest report` in
 
 If you are a **Beefy Strategist**, you DON'T need anymore push or sync your strat here.
 
-This repo auto sync every 4 hours (starting at 00:00 UTC). thanks to our beauty [Cowbot](https://github.com/beefybot).
+This repo auto syncs every 4 hours (starting at 00:00 UTC). thanks to our beauty [Cowbot](https://github.com/beefybot).
 
 # 📖 Prerequisites
 
@@ -57,13 +57,13 @@ To install the application:
 yarn
 ```
 
-To start harvest all chains in parallel:
+To start harvest of all chains in parallel:
 
 ```shell
 yarn harvest
 ```
 
-To start harvest one chain:
+To start harvest of one chain:
 
 ```shell
 node ./scripts/harvest_child.js <chain id>
@@ -90,7 +90,7 @@ In case you want to contribute, please follow next steps:ç
 ## 🍕 Community
 
 - Got Questions? Join the conversation in our [Discord](https://discord.gg/yq8wfHd).
-- Want to up to date with Beefy? Follow us in [Twitter](https://twitter.com/beefyfinance).
+- Want to be up to date with Beefy? Follow us on [Twitter](https://twitter.com/beefyfinance).
 - We also have community chat in [Telegram](https://t.me/beefyfinance).
 - Announcement channel in [Telegram](https://t.me/bifinews).
 
