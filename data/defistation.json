@@ -8,6 +8,22 @@
     "tvl": 0
   },
   {
+    "id": "baby-usdc-wbnb",
+    "name": "Moo Baby USDC-BNB",
+    "contract": "0xD5f6E840b963386Ddfa773CA7B60f779eF2F4e3f",
+    "oracle": "lps",
+    "oracleId": "baby-usdc-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "baby-wbnb-busd",
+    "name": "Moo Baby BNB-BUSD",
+    "contract": "0xBe63A1958dB92D66aB63471e949d059E6A2e47D6",
+    "oracle": "lps",
+    "oracleId": "baby-wbnb-busd",
+    "tvl": 0
+  },
+  {
     "id": "biswap-sand-usdt",
     "name": "Moo SAND-USDT",
     "contract": "0x558F0e2B14D87120A3bbEd6414a17b997c0655Bc",
