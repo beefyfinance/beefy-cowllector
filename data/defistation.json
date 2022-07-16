@@ -960,6 +960,14 @@
     "tvl": 0
   },
   {
+    "id": "cakev2-dar-wbnb",
+    "name": "Moo CakeV2 DAR-BNB",
+    "contract": "0x9f3371AA6F7b48485Cb9eb3D6A79ea9298565410",
+    "oracle": "lps",
+    "oracleId": "cakev2-dar-wbnb",
+    "tvl": 0
+  },
+  {
     "id": "banana-frax-busd",
     "name": "Moo Ape FRAX-BUSD",
     "contract": "0xfa9Dac01A3648e05Ef801DD4d2c6506499204B15",
@@ -1677,14 +1685,6 @@
     "contract": "0xe350a5908643076819Dcac25ed38102F8755D224",
     "oracle": "lps",
     "oracleId": "cakev2-xwg-usdc",
-    "tvl": 0
-  },
-  {
-    "id": "cakev2-dar-wbnb",
-    "name": "Moo CakeV2 DAR-BNB",
-    "contract": "0x9f3371AA6F7b48485Cb9eb3D6A79ea9298565410",
-    "oracle": "lps",
-    "oracleId": "cakev2-dar-wbnb",
     "tvl": 0
   },
   {

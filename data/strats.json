@@ -1,5 +1,95 @@
 [
   {
+    "name": "velodrome-susd-dai",
+    "address": "0x1078Fa50278C01eB490CCa661Aac6c5AF99Dd190",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "10"
+  },
+  {
+    "name": "velodrome-aleth-weth",
+    "address": "0x0a2289a7eE8A1f2A6B0E2320f47D8d0ff143f436",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "11"
+  },
+  {
+    "name": "velodrome-usdc-dola",
+    "address": "0x739c33C453f6449810B2997a320E5Ea0B79Fa438",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "24"
+  },
+  {
+    "name": "velodrome-usdc-alusd",
+    "address": "0x9FE2921Fe00E48B88bdE16102627E750924b96bb",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "4"
+  },
+  {
+    "name": "velodrome-velo-op",
+    "address": "0xd4A31a5ca49c2dACf21149f58B5aFE85F3218D55",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "2"
+  },
+  {
+    "name": "velodrome-weth-dola",
+    "address": "0xA4404D27caE102C00AB95654F70252c82B22260d",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "3"
+  },
+  {
+    "name": "velodrome-op-dai",
+    "address": "0x3142D9195171f08f659f7A0CF3c3cc75C0EBB756",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "1"
+  },
+  {
+    "name": "velodrome-hnd-usdc",
+    "address": "0xcCa4B9dEbfE7EA2221A8238499D66Ee5f3623122",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "8"
+  },
+  {
+    "name": "velodrome-weth-snx",
+    "address": "0x6B2CFabf0703D807784D11eEE07759559EDeFF6A",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 10,
+    "tvl": "7"
+  },
+  {
     "name": "velodrome-wbtc-usdc",
     "address": "0xe95a759946b0f9a21ef08dA65b782Ab6b26D2764",
     "interval": 1,
@@ -7,7 +97,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "3796"
+    "tvl": "3814"
   },
   {
     "name": "velodrome-usdc-perp",
@@ -17,7 +107,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "71057"
+    "tvl": "70862"
   },
   {
     "name": "velodrome-lyra-usdc",
@@ -37,7 +127,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "2682"
+    "tvl": "3718"
   },
   {
     "name": "velodrome-frax-fxs",
@@ -47,7 +137,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "3168"
+    "tvl": "3212"
   },
   {
     "name": "stargate-op-usdc",
@@ -67,7 +157,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "46555"
+    "tvl": "45945"
   },
   {
     "name": "velodrome-velo-weth",
@@ -77,7 +167,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "63"
+    "tvl": "54"
   },
   {
     "name": "velodrome-weth-op",
@@ -87,7 +177,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "10773"
+    "tvl": "11196"
   },
   {
     "name": "velodrome-weth-usdc",
@@ -97,7 +187,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "59633"
+    "tvl": "63277"
   },
   {
     "name": "velodrome-usdc-lusd",
@@ -107,7 +197,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "331630"
+    "tvl": "333433"
   },
   {
     "name": "velodrome-frax-usdc",
@@ -117,7 +207,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "671767"
+    "tvl": "657074"
   },
   {
     "name": "velodrome-weth-seth",
@@ -127,7 +217,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "358613"
+    "tvl": "381264"
   },
   {
     "name": "velodrome-usdc-dai",
@@ -137,7 +227,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "252790"
+    "tvl": "800739"
   },
   {
     "name": "velodrome-usdc-mai",
@@ -147,7 +237,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "1394970"
+    "tvl": "1654686"
   },
   {
     "name": "velodrome-usdc-susd",
@@ -157,7 +247,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "1341926"
+    "tvl": "1691156"
   },
   {
     "name": "curve-op-f-susd",
@@ -167,7 +257,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "125116"
+    "tvl": "125202"
   },
   {
     "name": "velodrome-op-usdc",
@@ -177,7 +267,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "39380"
+    "tvl": "39952"
   },
   {
     "name": "velodrome-velo-usdc",
@@ -187,7 +277,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "386564"
+    "tvl": "295223"
   },
   {
     "name": "beets-happy-road",
@@ -197,7 +287,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "61466",
+    "tvl": "63602",
     "suppressCallRwrdCheck": true
   },
   {
@@ -208,7 +298,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "172986",
+    "tvl": "188342",
     "suppressCallRwrdCheck": true
   },
   {
@@ -219,7 +309,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "30604",
+    "tvl": "31513",
     "suppressCallRwrdCheck": true
   },
   {
@@ -230,7 +320,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 10,
-    "tvl": "39747",
+    "tvl": "43559",
     "suppressCallRwrdCheck": true
   },
   {
@@ -241,7 +331,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "16110"
+    "tvl": "16115"
   },
   {
     "name": "vvs-vvs-usdc",
@@ -251,7 +341,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "555859",
+    "tvl": "557685",
     "suppressCallRwrdCheck": true
   },
   {
@@ -262,7 +352,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "875407",
+    "tvl": "882997",
     "suppressCallRwrdCheck": true
   },
   {
@@ -273,7 +363,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1541384",
+    "tvl": "1573230",
     "suppressCallRwrdCheck": true
   },
   {
@@ -284,7 +374,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1993526",
+    "tvl": "2004158",
     "suppressCallRwrdCheck": true
   },
   {
@@ -295,7 +385,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "161412",
+    "tvl": "162570",
     "suppressCallRwrdCheck": true
   },
   {
@@ -306,7 +396,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "460904"
+    "tvl": "462350"
   },
   {
     "name": "vvs-usdt-usdc",
@@ -327,7 +417,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "9537"
+    "tvl": "9722"
   },
   {
     "name": "crona-cro-crona",
@@ -337,7 +427,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "5662"
+    "tvl": "5686"
   },
   {
     "name": "crona-cro-usdc",
@@ -347,7 +437,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "6807"
+    "tvl": "6838"
   },
   {
     "name": "crona-cro-usdt",
@@ -357,7 +447,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "10392"
+    "tvl": "10439"
   },
   {
     "name": "crona-usdt-busd",
@@ -387,7 +477,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1166648"
+    "tvl": "1192649"
   },
   {
     "name": "vvs-cro-usdt",
@@ -397,7 +487,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "743205",
+    "tvl": "746646",
     "suppressCallRwrdCheck": true
   },
   {
@@ -408,7 +498,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "447304",
+    "tvl": "448060",
     "suppressCallRwrdCheck": true
   },
   {
@@ -419,7 +509,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "11188"
+    "tvl": "11185"
   },
   {
     "name": "crona-usdt-crona",
@@ -429,7 +519,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "3682"
+    "tvl": "3681"
   },
   {
     "name": "crona-usdc-dai",
@@ -449,7 +539,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "63918",
+    "tvl": "64838",
     "suppressCallRwrdCheck": true
   },
   {
@@ -460,7 +550,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "2006"
+    "tvl": "2045"
   },
   {
     "name": "crona-usdc-eth",
@@ -470,7 +560,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "7048"
+    "tvl": "7171"
   },
   {
     "name": "vvs-cro-atom",
@@ -480,7 +570,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "1195761",
+    "tvl": "1198408",
     "suppressCallRwrdCheck": true
   },
   {
@@ -491,7 +581,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "9021"
+    "tvl": "9102"
   },
   {
     "name": "vvs-tonic-cro",
@@ -501,7 +591,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "9606"
+    "tvl": "9610"
   },
   {
     "name": "dark-dark-cro",
@@ -511,7 +601,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "68003"
+    "tvl": "68488"
   },
   {
     "name": "dark-sky-cro",
@@ -521,7 +611,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "92502"
+    "tvl": "93760"
   },
   {
     "name": "vvs-ape-cro",
@@ -531,7 +621,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "5000"
+    "tvl": "6309"
   },
   {
     "name": "vvs-fer-vvs",
@@ -541,7 +631,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "38594"
+    "tvl": "38622"
   },
   {
     "name": "vvs-tusd-usdc",
@@ -561,7 +651,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "192011"
+    "tvl": "212895"
   },
   {
     "name": "ripae-scro-cro",
@@ -571,7 +661,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 25,
-    "tvl": "170152"
+    "tvl": "180440"
   },
   {
     "name": "bifi-maxi",
@@ -581,7 +671,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4049013"
+    "tvl": "4136317"
   },
   {
     "name": "baby-usdc-wbnb",
@@ -591,7 +681,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1644"
+    "tvl": "1675"
   },
   {
     "name": "baby-wbnb-busd",
@@ -601,7 +691,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1"
+    "tvl": "18"
   },
   {
     "name": "biswap-sand-usdt",
@@ -611,7 +701,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "478"
+    "tvl": "481"
   },
   {
     "name": "baby-avax-wbnb",
@@ -621,7 +711,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "9063"
+    "tvl": "9495"
   },
   {
     "name": "baby-ftm-wbnb",
@@ -631,7 +721,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "64251"
+    "tvl": "66220"
   },
   {
     "name": "banana-nfty-wbnb",
@@ -641,7 +731,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "65736"
+    "tvl": "67666"
   },
   {
     "name": "banana-bnb-stars",
@@ -651,7 +741,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "73968"
+    "tvl": "75308"
   },
   {
     "name": "banana-wbnb-ceek",
@@ -661,7 +751,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "236335"
+    "tvl": "240869"
   },
   {
     "name": "banana-banana-bnb",
@@ -671,7 +761,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 56,
-    "tvl": "322864"
+    "tvl": "333898"
   },
   {
     "name": "nfty-nfty",
@@ -681,7 +771,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "187951"
+    "tvl": "197258"
   },
   {
     "name": "belt-beltbtc",
@@ -691,7 +781,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "3678961"
+    "tvl": "3730894"
   },
   {
     "name": "banana-bananav2",
@@ -701,7 +791,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "302721"
+    "tvl": "314187"
   },
   {
     "name": "belt-beltbnb",
@@ -711,7 +801,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4587560"
+    "tvl": "4764027"
   },
   {
     "name": "belt-belteth",
@@ -721,7 +811,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1030585"
+    "tvl": "1107457"
   },
   {
     "name": "banana-bifi-bnb",
@@ -731,7 +821,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "116154"
+    "tvl": "118550"
   },
   {
     "name": "wsg-wsg",
@@ -751,7 +841,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "58300"
+    "tvl": "59787"
   },
   {
     "name": "mdex-bsc-bifi-usdt",
@@ -761,7 +851,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4903"
+    "tvl": "4911"
   },
   {
     "name": "banana-fil-wbnb",
@@ -771,7 +861,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "155757"
+    "tvl": "159858"
   },
   {
     "name": "banana-wbnb-dep",
@@ -781,7 +871,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "67892"
+    "tvl": "69811"
   },
   {
     "name": "baby-baby",
@@ -791,7 +881,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8440"
+    "tvl": "8679"
   },
   {
     "name": "baby-baby-usdt",
@@ -801,7 +891,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "149996"
+    "tvl": "151037"
   },
   {
     "name": "baby-baby-bnb",
@@ -811,7 +901,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "77916"
+    "tvl": "80003"
   },
   {
     "name": "pacoca-pacoca-bnb",
@@ -821,7 +911,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "23726"
+    "tvl": "24587"
   },
   {
     "name": "pacoca-pacoca",
@@ -831,7 +921,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "51003"
+    "tvl": "53156"
   },
   {
     "name": "belt-4belt",
@@ -841,7 +931,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2189902"
+    "tvl": "2189913"
   },
   {
     "name": "banana-pots-bnb",
@@ -851,7 +941,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "93369"
+    "tvl": "96047"
   },
   {
     "name": "mdex-usdt-btcb",
@@ -861,7 +951,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "9098"
+    "tvl": "9163"
   },
   {
     "name": "cakev2-cake-bnb",
@@ -871,7 +961,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2451378"
+    "tvl": "2539671"
   },
   {
     "name": "banana-ont-bnb",
@@ -881,7 +971,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "27123"
+    "tvl": "27655"
   },
   {
     "name": "yel-yel",
@@ -891,7 +981,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "28198"
+    "tvl": "29445"
   },
   {
     "name": "yel-yel-wbnb",
@@ -901,7 +991,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "49742"
+    "tvl": "51692"
   },
   {
     "name": "banana-eth-bnb",
@@ -911,7 +1001,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "630470"
+    "tvl": "666092"
   },
   {
     "name": "banana-busd-bnb",
@@ -921,7 +1011,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "769257"
+    "tvl": "783998"
   },
   {
     "name": "banana-sxp-bnb",
@@ -931,7 +1021,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "13052"
+    "tvl": "13350"
   },
   {
     "name": "banana-cake-bnb",
@@ -941,7 +1031,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "36254"
+    "tvl": "37534"
   },
   {
     "name": "banana-btcb-bnb",
@@ -951,7 +1041,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "482071"
+    "tvl": "494744"
   },
   {
     "name": "banana-cyt-bnb",
@@ -961,7 +1051,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "52234"
+    "tvl": "54006"
   },
   {
     "name": "jetswap-btcb-bnb",
@@ -971,7 +1061,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "9578"
+    "tvl": "9829"
   },
   {
     "name": "banana-axs-bnb",
@@ -981,7 +1071,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "17438"
+    "tvl": "17943"
   },
   {
     "name": "cakev2-c98-wbnb",
@@ -991,7 +1081,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "65402"
+    "tvl": "67347"
   },
   {
     "name": "mdex-bsc-mdx",
@@ -1001,7 +1091,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "14327"
+    "tvl": "14489"
   },
   {
     "name": "ooe-ooe-bnb",
@@ -1011,7 +1101,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "180721"
+    "tvl": "186217"
   },
   {
     "name": "ooe-ooe-busd",
@@ -1021,7 +1111,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "12155"
+    "tvl": "12269"
   },
   {
     "name": "banana-yfi-bnb",
@@ -1031,7 +1121,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "5920"
+    "tvl": "6145"
   },
   {
     "name": "cakev2-chess-usdc",
@@ -1041,7 +1131,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "89976"
+    "tvl": "89869"
   },
   {
     "name": "banana-sfp-bnb",
@@ -1051,7 +1141,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "27211"
+    "tvl": "27893"
   },
   {
     "name": "banana-xvs-bnb",
@@ -1061,7 +1151,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "100735"
+    "tvl": "103339"
   },
   {
     "name": "banana-twt-bnb",
@@ -1071,7 +1161,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "112802"
+    "tvl": "115897"
   },
   {
     "name": "cakev2-one-wbnb",
@@ -1081,7 +1171,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "57415"
+    "tvl": "59040"
   },
   {
     "name": "cakev2-usdt-usdc",
@@ -1091,7 +1181,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "594024"
+    "tvl": "594025"
   },
   {
     "name": "cakev2-cake-usdt",
@@ -1101,7 +1191,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "107381"
+    "tvl": "108952"
   },
   {
     "name": "cakev2-btcb-eth",
@@ -1111,7 +1201,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "246693"
+    "tvl": "257543"
   },
   {
     "name": "cakev2-eth-usdc",
@@ -1121,7 +1211,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "334501"
+    "tvl": "346808"
   },
   {
     "name": "banana-celr-bnb",
@@ -1131,7 +1221,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "199493"
+    "tvl": "205061"
   },
   {
     "name": "banana-shib-bnb",
@@ -1141,7 +1231,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "92742"
+    "tvl": "97274"
   },
   {
     "name": "cakev2-bifi-bnb",
@@ -1151,7 +1241,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "402587"
+    "tvl": "410899"
   },
   {
     "name": "banana-sushi-bnb",
@@ -1161,7 +1251,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "26076"
+    "tvl": "27173"
   },
   {
     "name": "banana-dot-bnb",
@@ -1171,7 +1261,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "230256"
+    "tvl": "240831"
   },
   {
     "name": "banana-xrp-bnb",
@@ -1181,7 +1271,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "50500"
+    "tvl": "52044"
   },
   {
     "name": "banana-snx-bnb",
@@ -1191,7 +1281,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "92092"
+    "tvl": "95110"
   },
   {
     "name": "banana-ltc-bnb",
@@ -1201,7 +1291,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "105033"
+    "tvl": "108663"
   },
   {
     "name": "cakev2-cake-busd",
@@ -1211,7 +1301,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "696839"
+    "tvl": "708996"
   },
   {
     "name": "cakev2-chr-busd",
@@ -1221,7 +1311,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "33280"
+    "tvl": "33672"
   },
   {
     "name": "banana-near-bnb",
@@ -1231,7 +1321,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "137199"
+    "tvl": "142401"
   },
   {
     "name": "banana-coti-bnb",
@@ -1241,7 +1331,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "44436"
+    "tvl": "45544"
   },
   {
     "name": "banana-zec-bnb",
@@ -1251,7 +1341,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "35713"
+    "tvl": "36819"
   },
   {
     "name": "jetswap-wings-bnb",
@@ -1261,7 +1351,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "13993"
+    "tvl": "14456"
   },
   {
     "name": "jetswap-busd-bnb",
@@ -1271,7 +1361,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "7990"
+    "tvl": "8144"
   },
   {
     "name": "cakev2-hotcross-bnb",
@@ -1281,7 +1371,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "25617"
+    "tvl": "26290"
   },
   {
     "name": "cakev2-doge-bnb",
@@ -1291,7 +1381,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "98836"
+    "tvl": "101449"
   },
   {
     "name": "banana-avax-bnb",
@@ -1301,7 +1391,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "358293"
+    "tvl": "375387"
   },
   {
     "name": "banana-ftm-bnb",
@@ -1311,7 +1401,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "167235"
+    "tvl": "172533"
   },
   {
     "name": "banana-comp-bnb",
@@ -1321,7 +1411,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "13388"
+    "tvl": "13670"
   },
   {
     "name": "banana-aave-bnb",
@@ -1331,7 +1421,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "192296"
+    "tvl": "193693"
   },
   {
     "name": "banana-link-bnb",
@@ -1341,7 +1431,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "316973"
+    "tvl": "327618"
   },
   {
     "name": "banana-ada-bnb",
@@ -1351,7 +1441,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "338705"
+    "tvl": "348117"
   },
   {
     "name": "banana-matic-bnb",
@@ -1361,7 +1451,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "875970"
+    "tvl": "901581"
   },
   {
     "name": "banana-watch-bnb",
@@ -1371,7 +1461,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "68370"
+    "tvl": "69002"
   },
   {
     "name": "banana-busd-usdc",
@@ -1381,7 +1471,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "485158"
+    "tvl": "485160"
   },
   {
     "name": "banana-doge-bnb",
@@ -1391,7 +1481,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "101573"
+    "tvl": "104258"
   },
   {
     "name": "cakev2-btcb-busd",
@@ -1401,7 +1491,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "765889"
+    "tvl": "771326"
   },
   {
     "name": "beltv2-belt-bnb",
@@ -1411,7 +1501,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "42035"
+    "tvl": "43604"
   },
   {
     "name": "cakev2-xrp-bnb",
@@ -1421,7 +1511,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "51948"
+    "tvl": "53537"
   },
   {
     "name": "cakev2-uni-bnb",
@@ -1431,7 +1521,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "157509"
+    "tvl": "161216"
   },
   {
     "name": "cakev2-sxp-bnb",
@@ -1441,7 +1531,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "79918"
+    "tvl": "81752"
   },
   {
     "name": "cakev2-eps-bnb",
@@ -1451,7 +1541,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "60169"
+    "tvl": "62064"
   },
   {
     "name": "cakev2-usdt-busd",
@@ -1461,7 +1551,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "797911"
+    "tvl": "797920"
   },
   {
     "name": "cakev2-alpha-bnb",
@@ -1471,7 +1561,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "14183"
+    "tvl": "14613"
   },
   {
     "name": "cakev2-inj-bnb",
@@ -1481,7 +1571,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "166116"
+    "tvl": "168474"
   },
   {
     "name": "cakev2-twt-bnb",
@@ -1491,7 +1581,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "131399"
+    "tvl": "135005"
   },
   {
     "name": "cakev2-xvs-bnb",
@@ -1501,7 +1591,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "19574"
+    "tvl": "20080"
   },
   {
     "name": "cakev2-link-bnb",
@@ -1511,7 +1601,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "58287"
+    "tvl": "60246"
   },
   {
     "name": "cakev2-usdt-bnb",
@@ -1521,7 +1611,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "184090"
+    "tvl": "187617"
   },
   {
     "name": "cakev2-busd-bnb",
@@ -1531,7 +1621,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1018974"
+    "tvl": "1035374"
   },
   {
     "name": "cakev2-eth-bnb",
@@ -1541,7 +1631,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1208289"
+    "tvl": "1276612"
   },
   {
     "name": "cakev2-btcb-bnb",
@@ -1551,7 +1641,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "444006"
+    "tvl": "455660"
   },
   {
     "name": "cakev2-ramp-busd",
@@ -1561,7 +1651,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "52224"
+    "tvl": "52087"
   },
   {
     "name": "cakev2-usdc-busd",
@@ -1571,7 +1661,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2206885"
+    "tvl": "2206900"
   },
   {
     "name": "cakev2-dai-busd",
@@ -1591,7 +1681,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "85965"
+    "tvl": "87871"
   },
   {
     "name": "cakev2-ada-bnb",
@@ -1601,7 +1691,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "164942"
+    "tvl": "169528"
   },
   {
     "name": "cakev2-dot-bnb",
@@ -1611,7 +1701,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "306154"
+    "tvl": "320214"
   },
   {
     "name": "cakev2-tko-bnb",
@@ -1621,7 +1711,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "36748"
+    "tvl": "37584"
   },
   {
     "name": "cakev2-tlm-bnb",
@@ -1631,7 +1721,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "16807"
+    "tvl": "17141"
   },
   {
     "name": "mdex-bsc-mdx-bnb",
@@ -1641,7 +1731,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "5567"
+    "tvl": "5699"
   },
   {
     "name": "banana-ada-eth",
@@ -1651,7 +1741,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "348818"
+    "tvl": "364710"
   },
   {
     "name": "banana-iota-bnb",
@@ -1661,7 +1751,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "42184"
+    "tvl": "43058"
   },
   {
     "name": "banana-bat-bnb",
@@ -1671,7 +1761,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "78959"
+    "tvl": "81048"
   },
   {
     "name": "auto-eth-beth",
@@ -1681,7 +1771,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "21041"
+    "tvl": "22718"
   },
   {
     "name": "auto-eth-usdt",
@@ -1691,7 +1781,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "18876"
+    "tvl": "19571"
   },
   {
     "name": "auto-btcb-usdt",
@@ -1701,7 +1791,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10472"
+    "tvl": "10546"
   },
   {
     "name": "auto-btcb-eth",
@@ -1711,7 +1801,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "124709"
+    "tvl": "130202"
   },
   {
     "name": "auto-usdt-busd",
@@ -1731,7 +1821,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8929"
+    "tvl": "8970"
   },
   {
     "name": "mdex-bsc-eth-usdt",
@@ -1741,7 +1831,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "29587"
+    "tvl": "30676"
   },
   {
     "name": "cakev2-alice-bnb",
@@ -1751,7 +1841,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "250244"
+    "tvl": "257001"
   },
   {
     "name": "banana-banana-busd",
@@ -1761,7 +1851,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "84268"
+    "tvl": "85520"
   },
   {
     "name": "venus-bnb",
@@ -1771,7 +1861,17 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1315747"
+    "tvl": "1375615"
+  },
+  {
+    "name": "cakev2-dar-wbnb",
+    "address": "0x53A4F695085E5C91972A0E2579f9A9C4e7C9376c",
+    "interval": 1,
+    "harvestSignature": "0x4641257d",
+    "depositsPaused": false,
+    "harvestPaused": false,
+    "chainId": 56,
+    "tvl": "6790"
   },
   {
     "name": "banana-frax-busd",
@@ -1781,7 +1881,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "137699"
+    "tvl": "137691"
   },
   {
     "name": "banana-wbnb-fxs",
@@ -1791,7 +1891,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10787"
+    "tvl": "11189"
   },
   {
     "name": "betu-betu",
@@ -1801,7 +1901,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1922644"
+    "tvl": "1967115"
   },
   {
     "name": "baby-usdt-milk",
@@ -1811,7 +1911,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "22391"
+    "tvl": "22546"
   },
   {
     "name": "dibs-dibs-bnb",
@@ -1821,7 +1921,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "208663"
+    "tvl": "216776"
   },
   {
     "name": "dibs-dshare-bnb",
@@ -1831,7 +1931,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "134241"
+    "tvl": "139635"
   },
   {
     "name": "cakev2-thg-wbnb",
@@ -1841,7 +1941,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "19278"
+    "tvl": "20237"
   },
   {
     "name": "banana-sushi-eth",
@@ -1851,7 +1951,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "3574"
+    "tvl": "3788"
   },
   {
     "name": "baby-ftm-usdt",
@@ -1861,7 +1961,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "148465"
+    "tvl": "150166"
   },
   {
     "name": "baby-avax-usdt",
@@ -1871,7 +1971,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "315060"
+    "tvl": "323947"
   },
   {
     "name": "cakev2-raca-busd",
@@ -1881,7 +1981,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "23219"
+    "tvl": "24089"
   },
   {
     "name": "banana-ape-wbnb",
@@ -1891,7 +1991,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "142189"
+    "tvl": "147799"
   },
   {
     "name": "cakev2-bsw-wbnb",
@@ -1901,7 +2001,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "16094"
+    "tvl": "16494"
   },
   {
     "name": "cakev2-gmt-usdc",
@@ -1911,7 +2011,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "34649"
+    "tvl": "34858"
   },
   {
     "name": "stargate-bsc-busd",
@@ -1941,7 +2041,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "897243"
+    "tvl": "962501"
   },
   {
     "name": "emp-eshare-wbnb",
@@ -1951,7 +2051,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "693346"
+    "tvl": "710846"
   },
   {
     "name": "biswap-usdt-busd",
@@ -1961,7 +2061,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1369124"
+    "tvl": "1369130"
   },
   {
     "name": "biswap-bsw",
@@ -1971,7 +2071,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "25618"
+    "tvl": "26215"
   },
   {
     "name": "biswap-bsw-wbnb",
@@ -1981,7 +2081,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "44632"
+    "tvl": "45677"
   },
   {
     "name": "biswap-usdt-bsw",
@@ -1991,7 +2091,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "24113"
+    "tvl": "24615"
   },
   {
     "name": "biswap-eth-btcb",
@@ -2001,7 +2101,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "869372"
+    "tvl": "907579"
   },
   {
     "name": "biswap-usdt-wbnb",
@@ -2011,7 +2111,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "38121"
+    "tvl": "38849"
   },
   {
     "name": "biswap-wbnb-bifi",
@@ -2021,7 +2121,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "35916"
+    "tvl": "36658"
   },
   {
     "name": "valas-valas-bnb",
@@ -2031,7 +2131,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8170"
+    "tvl": "8481"
   },
   {
     "name": "valas-wbtc",
@@ -2041,7 +2141,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "199931"
+    "tvl": "203150"
   },
   {
     "name": "valas-eth",
@@ -2051,7 +2151,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "192518"
+    "tvl": "210872"
   },
   {
     "name": "valas-busd",
@@ -2061,7 +2161,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "335650"
+    "tvl": "339648"
   },
   {
     "name": "valas-usdt",
@@ -2081,7 +2181,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "120673"
+    "tvl": "117673"
   },
   {
     "name": "valas-dai",
@@ -2101,7 +2201,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "10859"
+    "tvl": "10858"
   },
   {
     "name": "bomb-bshare-wbnb",
@@ -2111,7 +2211,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "16468"
+    "tvl": "16494"
   },
   {
     "name": "bomb-bomb-btcb",
@@ -2121,7 +2221,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "239033"
+    "tvl": "241610"
   },
   {
     "name": "bomb-busm-busd",
@@ -2131,7 +2231,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "4175"
+    "tvl": "4176"
   },
   {
     "name": "cakev2-wbnb-abnbc",
@@ -2141,7 +2241,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "206872"
+    "tvl": "214787"
   },
   {
     "name": "cakev2-wbnb-ceek",
@@ -2151,7 +2251,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "934330"
+    "tvl": "952319"
   },
   {
     "name": "cakev2-pex-wbnb",
@@ -2161,7 +2261,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "45"
+    "tvl": "47"
   },
   {
     "name": "cakev2-wbnb-froyo",
@@ -2171,7 +2271,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "6372"
+    "tvl": "6622"
   },
   {
     "name": "cakev2-cake-froyo",
@@ -2181,7 +2281,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "9745"
+    "tvl": "10085"
   },
   {
     "name": "biswap-usdt-btcb",
@@ -2191,7 +2291,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "19172"
+    "tvl": "19308"
   },
   {
     "name": "biswap-btcb-wbnb",
@@ -2201,7 +2301,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1922"
+    "tvl": "1972"
   },
   {
     "name": "biswap-wbnb-busd",
@@ -2211,7 +2311,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "15970"
+    "tvl": "16275"
   },
   {
     "name": "biswap-eth-usdt",
@@ -2221,7 +2321,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "13375"
+    "tvl": "13866"
   },
   {
     "name": "biswap-eth-wbnb",
@@ -2231,7 +2331,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "59361"
+    "tvl": "62712"
   },
   {
     "name": "biswap-cake-wbnb",
@@ -2241,7 +2341,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "5929"
+    "tvl": "6139"
   },
   {
     "name": "ripae-pbnb-bnb",
@@ -2251,7 +2351,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "174010"
+    "tvl": "182102"
   },
   {
     "name": "ripae-pae-bnb",
@@ -2261,7 +2361,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "98271"
+    "tvl": "104540"
   },
   {
     "name": "cakev2-gal-bnb",
@@ -2271,7 +2371,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "11665"
+    "tvl": "12098"
   },
   {
     "name": "ellipsis-usdd",
@@ -2291,7 +2391,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2197656"
+    "tvl": "2197658"
   },
   {
     "name": "banana-usdt-busd",
@@ -2301,7 +2401,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "54524"
+    "tvl": "54525"
   },
   {
     "name": "baby-bnb-usdt",
@@ -2311,7 +2411,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "140484"
+    "tvl": "143167"
   },
   {
     "name": "biswap-usdt-usdc",
@@ -2331,7 +2431,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "221226"
+    "tvl": "225705"
   },
   {
     "name": "biswap-ada-wbnb",
@@ -2341,7 +2441,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "235620"
+    "tvl": "242171"
   },
   {
     "name": "biswap-wbnb-link",
@@ -2351,7 +2451,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "808"
+    "tvl": "835"
   },
   {
     "name": "biswap-dot-wbnb",
@@ -2361,7 +2461,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "3151"
+    "tvl": "3296"
   },
   {
     "name": "biswap-dai-usdt",
@@ -2381,7 +2481,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "102860"
+    "tvl": "105276"
   },
   {
     "name": "biswap-xrp-wbnb",
@@ -2391,7 +2491,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "8655"
+    "tvl": "8920"
   },
   {
     "name": "biswap-doge-wbnb",
@@ -2411,7 +2511,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "293"
+    "tvl": "295"
   },
   {
     "name": "biswap-sol-wbnb",
@@ -2421,7 +2521,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "127311"
+    "tvl": "132744"
   },
   {
     "name": "biswap-wbnb-matic",
@@ -2431,7 +2531,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "1423"
+    "tvl": "1466"
   },
   {
     "name": "biswap-twt-wbnb",
@@ -2441,7 +2541,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "2512"
+    "tvl": "2581"
   },
   {
     "name": "biswap-ltc-usdt",
@@ -2451,7 +2551,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "276"
+    "tvl": "281"
   },
   {
     "name": "biswap-wbnb-xvs",
@@ -2461,7 +2561,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "76"
+    "tvl": "77"
   },
   {
     "name": "biswap-pae-wbnb",
@@ -2471,7 +2571,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "446"
+    "tvl": "474"
   },
   {
     "name": "biswap-trx-wbnb",
@@ -2481,7 +2581,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 56,
-    "tvl": "32844"
+    "tvl": "32464"
   },
   {
     "name": "fuse-fuse",
@@ -2491,7 +2591,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "351839"
+    "tvl": "359692"
   },
   {
     "name": "sushi-fuse-wfuse-weth",
@@ -2501,7 +2601,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "15801"
+    "tvl": "16352"
   },
   {
     "name": "sushi-fuse-wfuse-usdc",
@@ -2511,7 +2611,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "3847"
+    "tvl": "3856"
   },
   {
     "name": "fuse-bifi-maxi",
@@ -2521,7 +2621,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "108977"
+    "tvl": "111399"
   },
   {
     "name": "voltagev2-fusd-bnb",
@@ -2531,7 +2631,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "95884"
+    "tvl": "94844"
   },
   {
     "name": "voltagev2-wbtc-weth",
@@ -2541,7 +2641,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "334714"
+    "tvl": "349791"
   },
   {
     "name": "voltagev2-wfuse-weth",
@@ -2551,7 +2651,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "70788"
+    "tvl": "73263"
   },
   {
     "name": "voltagev2-wfuse-busd",
@@ -2561,7 +2661,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "81943"
+    "tvl": "82116"
   },
   {
     "name": "voltagev2-wfuse-usdc",
@@ -2571,7 +2671,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "35123"
+    "tvl": "35196"
   },
   {
     "name": "voltagev2-wfuse-fusd",
@@ -2581,7 +2681,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "87584"
+    "tvl": "85954"
   },
   {
     "name": "voltagev2-wfuse-volt",
@@ -2591,7 +2691,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "28409"
+    "tvl": "28292"
   },
   {
     "name": "voltagev2-fusd-volt",
@@ -2601,7 +2701,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "23166"
+    "tvl": "22625"
   },
   {
     "name": "voltagev2-volt-bnb",
@@ -2611,7 +2711,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "19302"
+    "tvl": "20186"
   },
   {
     "name": "voltagev2-wfuse-gdollar",
@@ -2621,7 +2721,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "11734"
+    "tvl": "11649"
   },
   {
     "name": "voltagev2-xvolt",
@@ -2631,7 +2731,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "1280"
+    "tvl": "1291"
   },
   {
     "name": "sushi-fuse-usdc-usdt",
@@ -2641,7 +2741,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "87866"
+    "tvl": "87867"
   },
   {
     "name": "voltagev2-wfuse-ageur",
@@ -2651,7 +2751,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 122,
-    "tvl": "4962"
+    "tvl": "4977"
   },
   {
     "name": "heco-bifi-maxi",
@@ -2661,7 +2761,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "119"
+    "tvl": "121"
   },
   {
     "name": "lendhub-eth",
@@ -2671,7 +2771,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "1303"
+    "tvl": "1413"
   },
   {
     "name": "mdex-shib-usdt",
@@ -2681,7 +2781,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "1170"
+    "tvl": "1167"
   },
   {
     "name": "mdex-bifi-usdt",
@@ -2691,7 +2791,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "4186"
+    "tvl": "4182"
   },
   {
     "name": "mdex-husd-usdt",
@@ -2711,7 +2811,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "676"
+    "tvl": "686"
   },
   {
     "name": "mdex-hfil-usdt",
@@ -2721,7 +2821,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "681"
+    "tvl": "682"
   },
   {
     "name": "mdex-hpt-usdt",
@@ -2741,7 +2841,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "98688"
+    "tvl": "97114"
   },
   {
     "name": "mdex-snx-usdt",
@@ -2751,7 +2851,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "211094"
+    "tvl": "211409"
   },
   {
     "name": "mdex-link-usdt",
@@ -2761,7 +2861,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "841"
+    "tvl": "847"
   },
   {
     "name": "mdex-bal-usdt",
@@ -2771,7 +2871,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "2216"
+    "tvl": "2251"
   },
   {
     "name": "mdex-yfi-usdt",
@@ -2781,7 +2881,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "20579"
+    "tvl": "20645"
   },
   {
     "name": "mdex-mdx-usdt",
@@ -2791,7 +2891,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "3036"
+    "tvl": "3038"
   },
   {
     "name": "mdex-mdx-wht",
@@ -2801,7 +2901,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "2549"
+    "tvl": "2575"
   },
   {
     "name": "mdex-wht-usdt",
@@ -2811,7 +2911,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 128,
-    "tvl": "834"
+    "tvl": "842"
   },
   {
     "name": "polygon-bifi-maxi",
@@ -2821,7 +2921,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1783638"
+    "tvl": "1794193"
   },
   {
     "name": "curve-matic-stmatic",
@@ -2831,7 +2931,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "2804120"
+    "tvl": "3245408"
   },
   {
     "name": "balancer-matic-usdc-eth-bal",
@@ -2841,7 +2941,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "302"
+    "tvl": "314"
   },
   {
     "name": "balancer-usdc-link-eth-bal-aave",
@@ -2851,7 +2951,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "63367"
+    "tvl": "66878"
   },
   {
     "name": "balancer-link-eth-bal-aave",
@@ -2861,7 +2961,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "110"
+    "tvl": "114"
   },
   {
     "name": "solace-polygon-solace",
@@ -2871,7 +2971,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "253"
+    "tvl": "256"
   },
   {
     "name": "balancer-matic-maticx",
@@ -2881,7 +2981,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "8698"
+    "tvl": "6048"
   },
   {
     "name": "balancer-matic-stmatic",
@@ -2891,7 +2991,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "886"
+    "tvl": "906"
   },
   {
     "name": "mai-curve-mai-3pool",
@@ -2901,7 +3001,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1815186"
+    "tvl": "1820684"
   },
   {
     "name": "curve-am3crv",
@@ -2911,7 +3011,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "2129252"
+    "tvl": "2129276"
   },
   {
     "name": "quick-quick",
@@ -2921,7 +3021,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "421934"
+    "tvl": "417156"
   },
   {
     "name": "sushi-poly-usdc-bifi",
@@ -2931,7 +3031,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "69566"
+    "tvl": "69692"
   },
   {
     "name": "curve-poly-ren",
@@ -2941,7 +3041,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "3449019"
+    "tvl": "3498938"
   },
   {
     "name": "ape-banana-matic",
@@ -2951,7 +3051,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "425206"
+    "tvl": "434865"
   },
   {
     "name": "curve-poly-atricrypto3",
@@ -2961,7 +3061,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "6046267"
+    "tvl": "6222552"
   },
   {
     "name": "mai-qi-matic",
@@ -2971,7 +3071,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "726474"
+    "tvl": "743245"
   },
   {
     "name": "quick-mai-usdt",
@@ -2981,7 +3081,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "142923"
+    "tvl": "142936"
   },
   {
     "name": "quick-dai-mai",
@@ -2991,7 +3091,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "223422"
+    "tvl": "223441"
   },
   {
     "name": "quick-usdt-matic",
@@ -3001,7 +3101,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "143599"
+    "tvl": "173878"
   },
   {
     "name": "ape-watch-matic",
@@ -3011,7 +3111,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "13879"
+    "tvl": "13766"
   },
   {
     "name": "ape-usdc-dai",
@@ -3021,7 +3121,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1243144"
+    "tvl": "1243211"
   },
   {
     "name": "sushi-poly-avax-weth",
@@ -3031,7 +3131,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "32687"
+    "tvl": "34837"
   },
   {
     "name": "jetswap-poly-usdc-usdt",
@@ -3051,7 +3151,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "8812034"
+    "tvl": "8810704"
   },
   {
     "name": "telxchange-quick-wmatic-tel",
@@ -3061,7 +3161,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "92912"
+    "tvl": "95463"
   },
   {
     "name": "telxchange-quick-aave-tel",
@@ -3071,7 +3171,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "22612"
+    "tvl": "22689"
   },
   {
     "name": "telxchange-quick-wbtc-tel",
@@ -3081,7 +3181,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "67654"
+    "tvl": "68929"
   },
   {
     "name": "ape-matic-usdt",
@@ -3091,7 +3191,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "152334"
+    "tvl": "154146"
   },
   {
     "name": "ape-matic-dai",
@@ -3101,7 +3201,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "235386"
+    "tvl": "237647"
   },
   {
     "name": "ape-eth-matic",
@@ -3111,7 +3211,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1262455"
+    "tvl": "1324079"
   },
   {
     "name": "ape-btc-matic",
@@ -3121,7 +3221,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "253722"
+    "tvl": "258996"
   },
   {
     "name": "ape-bnb-matic",
@@ -3131,7 +3231,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "189701"
+    "tvl": "195025"
   },
   {
     "name": "quick-usdc-dai",
@@ -3141,7 +3241,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "284697"
+    "tvl": "284713"
   },
   {
     "name": "quick-usdc-eth",
@@ -3151,7 +3251,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "304546"
+    "tvl": "315800"
   },
   {
     "name": "quick-dai-eth",
@@ -3161,7 +3261,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "513997"
+    "tvl": "532948"
   },
   {
     "name": "sushi-poly-grt-eth",
@@ -3171,7 +3271,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "45062"
+    "tvl": "47828"
   },
   {
     "name": "sushi-poly-usdc-dai",
@@ -3191,7 +3291,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "65897"
+    "tvl": "66379"
   },
   {
     "name": "quick-matic-usdc",
@@ -3201,7 +3301,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1903345"
+    "tvl": "1926722"
   },
   {
     "name": "sushi-poly-crv-eth",
@@ -3211,7 +3311,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "386641"
+    "tvl": "412065"
   },
   {
     "name": "sushi-poly-usdc-usdt",
@@ -3221,7 +3321,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "95592"
+    "tvl": "95593"
   },
   {
     "name": "sushi-poly-link-eth",
@@ -3231,7 +3331,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "57874"
+    "tvl": "60807"
   },
   {
     "name": "sushi-poly-aave-eth",
@@ -3241,7 +3341,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "53197"
+    "tvl": "54751"
   },
   {
     "name": "sushi-poly-eth-usdt",
@@ -3251,7 +3351,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "37006"
+    "tvl": "33185"
   },
   {
     "name": "sushi-poly-usdc-eth",
@@ -3261,7 +3361,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "122336"
+    "tvl": "127052"
   },
   {
     "name": "sushi-poly-matic-eth",
@@ -3271,7 +3371,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "251310"
+    "tvl": "263646"
   },
   {
     "name": "quick-usdc-usdt",
@@ -3281,7 +3381,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "726046"
+    "tvl": "744651"
   },
   {
     "name": "quick-eth-btc",
@@ -3291,7 +3391,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "665674"
+    "tvl": "695087"
   },
   {
     "name": "quick-eth-usdt",
@@ -3301,7 +3401,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "5870"
+    "tvl": "7143"
   },
   {
     "name": "quick-eth-matic",
@@ -3311,7 +3411,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "824998"
+    "tvl": "865590"
   },
   {
     "name": "curve-poly-eurt",
@@ -3321,7 +3421,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "5654043"
+    "tvl": "5705313"
   },
   {
     "name": "jarvis-4eur",
@@ -3331,7 +3431,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1236952"
+    "tvl": "1234162"
   },
   {
     "name": "sushi-poly-eth-gohm",
@@ -3341,7 +3441,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "34873"
+    "tvl": "37074"
   },
   {
     "name": "sushi-poly-eth2x-eth",
@@ -3351,7 +3451,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "27845"
+    "tvl": "30787"
   },
   {
     "name": "sushi-poly-fxs-frax",
@@ -3361,7 +3461,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "16731"
+    "tvl": "17049"
   },
   {
     "name": "sushi-poly-usdc-bct",
@@ -3371,7 +3471,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "50438"
+    "tvl": "50370"
   },
   {
     "name": "jarvis-2cad",
@@ -3381,7 +3481,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "750280"
+    "tvl": "799786"
   },
   {
     "name": "sushi-poly-eth-mana",
@@ -3391,7 +3491,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "40068"
+    "tvl": "41976"
   },
   {
     "name": "jarvis-2sgd",
@@ -3401,7 +3501,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "325926"
+    "tvl": "327274"
   },
   {
     "name": "sushi-poly-eth-dai",
@@ -3411,7 +3511,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "230911"
+    "tvl": "239408"
   },
   {
     "name": "sushi-poly-btc-eth",
@@ -3421,7 +3521,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "74496"
+    "tvl": "77618"
   },
   {
     "name": "quick-stmatic-matic",
@@ -3431,7 +3531,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "4747369"
+    "tvl": "4848384"
   },
   {
     "name": "beefy-beqi",
@@ -3441,7 +3541,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "296291"
+    "tvl": "298224"
   },
   {
     "name": "quick-wmatic-maticx",
@@ -3451,7 +3551,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "1717296"
+    "tvl": "1753531"
   },
   {
     "name": "quick-eth-newquick",
@@ -3461,7 +3561,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "81739"
+    "tvl": "85099"
   },
   {
     "name": "quick-usdc-newquick",
@@ -3471,7 +3571,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "7349"
+    "tvl": "7360"
   },
   {
     "name": "quick-newquick",
@@ -3481,7 +3581,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "122068"
+    "tvl": "119975"
   },
   {
     "name": "jarvis-2nzd",
@@ -3491,7 +3591,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "20942"
+    "tvl": "20857"
   },
   {
     "name": "jarvis-2jpy2",
@@ -3501,7 +3601,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "329686"
+    "tvl": "331693"
   },
   {
     "name": "jarvis-2eur",
@@ -3511,7 +3611,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "430103"
+    "tvl": "430146"
   },
   {
     "name": "quick-weth-tel",
@@ -3521,7 +3621,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "21"
+    "tvl": "23"
   },
   {
     "name": "quick-usdc-tel",
@@ -3541,7 +3641,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "316219"
+    "tvl": "323932"
   },
   {
     "name": "ripae-pae-matic",
@@ -3551,7 +3651,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "39672"
+    "tvl": "44610"
   },
   {
     "name": "quick-matic-ldo",
@@ -3561,7 +3661,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "26237"
+    "tvl": "35735"
   },
   {
     "name": "quick-lcd-matic",
@@ -3571,7 +3671,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "22017"
+    "tvl": "22219"
   },
   {
     "name": "quick-newquick-matic",
@@ -3581,7 +3681,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "189883"
+    "tvl": "192348"
   },
   {
     "name": "quick-tusd-usdc",
@@ -3591,7 +3691,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "2978589"
+    "tvl": "2978652"
   },
   {
     "name": "quick-matic-pae",
@@ -3601,7 +3701,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 137,
-    "tvl": "47370"
+    "tvl": "37676"
   },
   {
     "name": "fantom-bifi-maxi",
@@ -3611,7 +3711,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "5122230"
+    "tvl": "5232648"
   },
   {
     "name": "beefy-beFTM",
@@ -3621,7 +3721,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "2562768"
+    "tvl": "2661343"
   },
   {
     "name": "solace-ftm-solace",
@@ -3641,7 +3741,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "45964"
+    "tvl": "47709"
   },
   {
     "name": "beets-song-ice-fire",
@@ -3651,7 +3751,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "15124"
+    "tvl": "15418"
   },
   {
     "name": "beets-tubular-bells",
@@ -3661,7 +3761,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "59079"
+    "tvl": "60740"
   },
   {
     "name": "curve-ftm-geist",
@@ -3671,7 +3771,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "3496042"
+    "tvl": "3561184"
   },
   {
     "name": "beets-late-quartet",
@@ -3681,7 +3781,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "344701"
+    "tvl": "354222"
   },
   {
     "name": "scream-dola",
@@ -3691,7 +3791,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "295344"
+    "tvl": "293072"
   },
   {
     "name": "beets-guqin-qi-2",
@@ -3701,7 +3801,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "183455"
+    "tvl": "183482"
   },
   {
     "name": "beets-sound-of-moosic",
@@ -3711,7 +3811,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "10706"
+    "tvl": "10878"
   },
   {
     "name": "beets-e-major",
@@ -3721,7 +3821,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "63680"
+    "tvl": "66334"
   },
   {
     "name": "beets-b-major",
@@ -3731,7 +3831,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "53883"
+    "tvl": "53733"
   },
   {
     "name": "beets-ziggy-mim",
@@ -3741,7 +3841,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "15052"
+    "tvl": "15054"
   },
   {
     "name": "beets-fidelio-duetto",
@@ -3751,7 +3851,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "118814"
+    "tvl": "121944"
   },
   {
     "name": "beets-grand-orchestra",
@@ -3761,7 +3861,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "204586"
+    "tvl": "211752"
   },
   {
     "name": "beets-fantom-of-opera",
@@ -3771,7 +3871,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "192194"
+    "tvl": "194167"
   },
   {
     "name": "scream-frax",
@@ -3781,7 +3881,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "913974"
+    "tvl": "915959"
   },
   {
     "name": "scream-mim",
@@ -3791,7 +3891,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "62915"
+    "tvl": "62755"
   },
   {
     "name": "spirit-wmemo-mim",
@@ -3801,7 +3901,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "16748"
+    "tvl": "16779"
   },
   {
     "name": "spell-ftm-mim-crv",
@@ -3811,7 +3911,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "2776039"
+    "tvl": "2749355"
   },
   {
     "name": "geist-geist-ftm",
@@ -3821,7 +3921,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "144662"
+    "tvl": "148869"
   },
   {
     "name": "boo-wftm-spell",
@@ -3831,7 +3931,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "13425"
+    "tvl": "13589"
   },
   {
     "name": "curve-ftm-tricrypto",
@@ -3841,7 +3941,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "4159312"
+    "tvl": "4281047"
   },
   {
     "name": "spirit-ftm-usdc",
@@ -3851,7 +3951,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "128252"
+    "tvl": "129984"
   },
   {
     "name": "spirit-crv-ftm",
@@ -3861,7 +3961,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "11948"
+    "tvl": "12519"
   },
   {
     "name": "jetswap-fantom-btc-usdc",
@@ -3871,7 +3971,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "15074"
+    "tvl": "15196"
   },
   {
     "name": "boo-wftm-treeb",
@@ -3881,7 +3981,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "23261"
+    "tvl": "23919"
   },
   {
     "name": "scream-crv",
@@ -3891,7 +3991,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "235802"
+    "tvl": "251453"
   },
   {
     "name": "scream-link",
@@ -3901,7 +4001,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "2111617"
+    "tvl": "2182574"
   },
   {
     "name": "boo-boo",
@@ -3911,7 +4011,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "369629"
+    "tvl": "392429"
   },
   {
     "name": "steakhouse-scream-ftm",
@@ -3921,7 +4021,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "177082"
+    "tvl": "181175"
   },
   {
     "name": "scream-ftm",
@@ -3931,7 +4031,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "142390"
+    "tvl": "147974"
   },
   {
     "name": "scream-usdc",
@@ -3971,7 +4071,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "511579"
+    "tvl": "554640"
   },
   {
     "name": "scream-fusdt",
@@ -3991,7 +4091,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "56779"
+    "tvl": "59367"
   },
   {
     "name": "curve-ftm-ren",
@@ -4001,7 +4101,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "511394"
+    "tvl": "543086"
   },
   {
     "name": "boo-mim-ftm",
@@ -4011,7 +4111,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "67459"
+    "tvl": "68232"
   },
   {
     "name": "boo-boo-ftm",
@@ -4021,7 +4121,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "621549"
+    "tvl": "637823"
   },
   {
     "name": "boo-bifi-ftm",
@@ -4031,17 +4131,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "181390"
-  },
-  {
-    "name": "boo-ftm-ice",
-    "address": "0x8F35521cf1B9145E2C5231B8B3E1c3AEadDc4027",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250,
-    "tvl": "16717"
+    "tvl": "183720"
   },
   {
     "name": "boo-ftm-sushi",
@@ -4051,7 +4141,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "15368"
+    "tvl": "15901"
   },
   {
     "name": "boo-ftm-usdc",
@@ -4061,17 +4151,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1138338"
-  },
-  {
-    "name": "boo-any-ftm",
-    "address": "0x8EA5Da4115150219cC73e2Df2d8aBc533a39A50C",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": false,
-    "chainId": 250,
-    "tvl": "9158"
+    "tvl": "1151393"
   },
   {
     "name": "boo-dai-ftm",
@@ -4081,7 +4161,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "136919"
+    "tvl": "138527"
   },
   {
     "name": "boo-bnb-ftm",
@@ -4091,7 +4171,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "466167"
+    "tvl": "480046"
   },
   {
     "name": "boo-link-ftm",
@@ -4101,7 +4181,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "260243"
+    "tvl": "266942"
   },
   {
     "name": "boo-usdt-ftm",
@@ -4111,7 +4191,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "306488"
+    "tvl": "310060"
   },
   {
     "name": "boo-btc-ftm",
@@ -4121,7 +4201,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "511250"
+    "tvl": "521224"
   },
   {
     "name": "boo-eth-ftm",
@@ -4131,7 +4211,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "656289"
+    "tvl": "688288"
   },
   {
     "name": "boo-crv-ftm",
@@ -4141,7 +4221,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "154706"
+    "tvl": "161288"
   },
   {
     "name": "boo-usdc-mai",
@@ -4151,7 +4231,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1239963"
+    "tvl": "1320095"
   },
   {
     "name": "beets-baron-von-binance",
@@ -4161,7 +4241,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "27843"
+    "tvl": "28533"
   },
   {
     "name": "boo-usdc-tusd",
@@ -4171,7 +4251,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "325985"
+    "tvl": "432051"
   },
   {
     "name": "scream-tusd",
@@ -4181,7 +4261,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "993492"
+    "tvl": "993366"
   },
   {
     "name": "beets-solana-sonata",
@@ -4191,7 +4271,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "144626"
+    "tvl": "148805"
   },
   {
     "name": "boo-wftm-wshec",
@@ -4201,7 +4281,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "25398"
+    "tvl": "25752"
   },
   {
     "name": "boo-wftm-yoshi",
@@ -4211,7 +4291,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "5195"
+    "tvl": "5330"
   },
   {
     "name": "geist-crv",
@@ -4221,7 +4301,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "49618"
+    "tvl": "52924"
   },
   {
     "name": "boo-wftm-avax",
@@ -4231,7 +4311,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "241674"
+    "tvl": "251112"
   },
   {
     "name": "boo-wftm-woo",
@@ -4241,7 +4321,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "33410"
+    "tvl": "33899"
   },
   {
     "name": "geist-ftm",
@@ -4251,7 +4331,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1985784"
+    "tvl": "2065304"
   },
   {
     "name": "geist-wbtc",
@@ -4271,7 +4351,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "53019"
+    "tvl": "57482"
   },
   {
     "name": "geist-usdc",
@@ -4291,7 +4371,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "1542506"
+    "tvl": "1542532"
   },
   {
     "name": "geist-mim",
@@ -4301,7 +4381,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "35834"
+    "tvl": "35744"
   },
   {
     "name": "scream-spell",
@@ -4311,7 +4391,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "55705"
+    "tvl": "56539"
   },
   {
     "name": "boo-wftm-matic",
@@ -4321,7 +4401,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "209167"
+    "tvl": "213826"
   },
   {
     "name": "beets-steady-beets-2",
@@ -4331,7 +4411,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "414915"
+    "tvl": "414925"
   },
   {
     "name": "beets-two-became-one",
@@ -4341,7 +4421,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "2499"
+    "tvl": "2522"
   },
   {
     "name": "beets-dante-symphony",
@@ -4351,7 +4431,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "40031"
+    "tvl": "41588"
   },
   {
     "name": "spirit-fusdt-usdc",
@@ -4361,7 +4441,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "390349"
+    "tvl": "390348"
   },
   {
     "name": "spirit-frax-usdc",
@@ -4371,7 +4451,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "341978"
+    "tvl": "342302"
   },
   {
     "name": "spirit-mim-usdc",
@@ -4381,7 +4461,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "585749"
+    "tvl": "587145"
   },
   {
     "name": "boo-wftm-brush",
@@ -4391,7 +4471,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "6770"
+    "tvl": "6940"
   },
   {
     "name": "boo-wftm-beets",
@@ -4401,7 +4481,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "8969"
+    "tvl": "9194"
   },
   {
     "name": "boo-btc-eth",
@@ -4411,7 +4491,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "169987"
+    "tvl": "177650"
   },
   {
     "name": "sushi-ftm-usdc-wftm",
@@ -4421,7 +4501,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "29578"
+    "tvl": "29974"
   },
   {
     "name": "sushi-ftm-wftm-eth",
@@ -4431,7 +4511,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "141705"
+    "tvl": "148859"
   },
   {
     "name": "sushi-ftm-fusdt-wftm",
@@ -4441,7 +4521,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "59834"
+    "tvl": "60631"
   },
   {
     "name": "sushi-ftm-eth-dai",
@@ -4451,7 +4531,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "88794"
+    "tvl": "92060"
   },
   {
     "name": "sushi-ftm-usdc-mim",
@@ -4461,7 +4541,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "71711"
+    "tvl": "71879"
   },
   {
     "name": "sushi-ftm-btc-eth",
@@ -4471,7 +4551,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "302487"
+    "tvl": "316119"
   },
   {
     "name": "sushi-ftm-wftm-sushi",
@@ -4481,7 +4561,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "11770"
+    "tvl": "12198"
   },
   {
     "name": "beefy-binspirit",
@@ -4491,7 +4571,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "286318"
+    "tvl": "299470"
   },
   {
     "name": "spirit-ftm-spirit",
@@ -4501,7 +4581,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "9619"
+    "tvl": "9907"
   },
   {
     "name": "spirit-binspirit-spirit",
@@ -4511,7 +4591,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "23015"
+    "tvl": "23790"
   },
   {
     "name": "spirit-ftm-wshec",
@@ -4521,7 +4601,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "4794"
+    "tvl": "4874"
   },
   {
     "name": "spirit-ftm-jewel",
@@ -4531,7 +4611,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "1794"
+    "tvl": "1894"
   },
   {
     "name": "spirit-ftm-frax",
@@ -4541,7 +4621,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "41316"
+    "tvl": "41906"
   },
   {
     "name": "spirit-ftm-mai",
@@ -4551,7 +4631,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "80398"
+    "tvl": "81475"
   },
   {
     "name": "spirit-ftm-gohm",
@@ -4561,7 +4641,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "31606"
+    "tvl": "32849"
   },
   {
     "name": "ripae-pftm-ftm",
@@ -4571,7 +4651,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "385787"
+    "tvl": "389191"
   },
   {
     "name": "ripae-pae-ftm",
@@ -4581,7 +4661,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "128879"
+    "tvl": "136654"
   },
   {
     "name": "spirit-ftm-deus",
@@ -4591,7 +4671,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "10330"
+    "tvl": "10827"
   },
   {
     "name": "spirit-ftm-cre8r",
@@ -4601,7 +4681,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "26912"
+    "tvl": "27720"
   },
   {
     "name": "boo-ftm-multi",
@@ -4611,17 +4691,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "93686"
-  },
-  {
-    "name": "boo-kae-wftm",
-    "address": "0x620BAbf9A83CBF596D29a12f08d057ef35e995F1",
-    "interval": 1,
-    "harvestSignature": "0x4641257d",
-    "depositsPaused": false,
-    "harvestPaused": true,
-    "chainId": 250,
-    "tvl": "212"
+    "tvl": "95052"
   },
   {
     "name": "wigo-wigo-ftm",
@@ -4631,7 +4701,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "25436"
+    "tvl": "26004"
   },
   {
     "name": "wigo-usdc-wigo",
@@ -4641,7 +4711,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "13737"
+    "tvl": "13862"
   },
   {
     "name": "wigo-treeb-ftm",
@@ -4651,7 +4721,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "5062"
+    "tvl": "5225"
   },
   {
     "name": "wigo-crv-ftm",
@@ -4661,7 +4731,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "22290"
+    "tvl": "23276"
   },
   {
     "name": "wigo-dai-ftm",
@@ -4671,7 +4741,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "47418"
+    "tvl": "48053"
   },
   {
     "name": "wigo-usdc-ftm",
@@ -4681,7 +4751,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "29337"
+    "tvl": "29731"
   },
   {
     "name": "wigo-eth-ftm",
@@ -4691,7 +4761,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "41389"
+    "tvl": "43479"
   },
   {
     "name": "wigo-eth-btc",
@@ -4701,7 +4771,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "375736"
+    "tvl": "392674"
   },
   {
     "name": "wigo-usdc-dai",
@@ -4731,7 +4801,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "45391"
+    "tvl": "45434"
   },
   {
     "name": "based-based-tomb",
@@ -4741,7 +4811,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "330713"
+    "tvl": "337486"
   },
   {
     "name": "based-bshare-ftm",
@@ -4751,7 +4821,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "452612"
+    "tvl": "466785"
   },
   {
     "name": "spirit-ftm-atlas",
@@ -4761,7 +4831,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "111"
+    "tvl": "114"
   },
   {
     "name": "spirit-ftm-bifi",
@@ -4771,7 +4841,7 @@
     "depositsPaused": false,
     "harvestPaused": true,
     "chainId": 250,
-    "tvl": "256613"
+    "tvl": "260477"
   },
   {
     "name": "spirit-ftm-beftm",
@@ -4781,7 +4851,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "101599"
+    "tvl": "104668"
   },
   {
     "name": "spirit-hnd-ftm",
@@ -4791,7 +4861,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "154"
+    "tvl": "156"
   },
   {
     "name": "spirit-ftm-treeb",
@@ -4801,7 +4871,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "856"
+    "tvl": "883"
   },
   {
     "name": "spirit-ust-ftm",
@@ -4811,7 +4881,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "12642"
+    "tvl": "12854"
   },
   {
     "name": "wigo-wigo",
@@ -4821,7 +4891,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1793"
+    "tvl": "1827"
   },
   {
     "name": "based-tomb-based",
@@ -4831,7 +4901,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "63508"
+    "tvl": "64810"
   },
   {
     "name": "boo-wftm-ape",
@@ -4841,7 +4911,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "220763"
+    "tvl": "228419"
   },
   {
     "name": "boo-usdc-boo",
@@ -4851,7 +4921,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "76014"
+    "tvl": "76931"
   },
   {
     "name": "based-based-bshare",
@@ -4861,7 +4931,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "7194"
+    "tvl": "7385"
   },
   {
     "name": "boo-wftm-beftm",
@@ -4871,7 +4941,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "418711"
+    "tvl": "429150"
   },
   {
     "name": "stargate-fantom-usdc",
@@ -4891,7 +4961,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "115041"
+    "tvl": "117704"
   },
   {
     "name": "curve-ftm-f-ftml",
@@ -4901,7 +4971,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1620"
+    "tvl": "1656"
   },
   {
     "name": "boo-wftm-deus",
@@ -4911,7 +4981,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "55453"
+    "tvl": "58380"
   },
   {
     "name": "spirit-orkan-ftm",
@@ -4921,7 +4991,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "4638"
+    "tvl": "4764"
   },
   {
     "name": "boo-wftm-sftmx",
@@ -4931,7 +5001,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "613550"
+    "tvl": "630231"
   },
   {
     "name": "hector-tor-crv",
@@ -4941,7 +5011,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "15020707"
+    "tvl": "15021575"
   },
   {
     "name": "boo-wftm-tor",
@@ -4951,7 +5021,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1408323"
+    "tvl": "1427607"
   },
   {
     "name": "spirit-sftmx-ftm",
@@ -4961,7 +5031,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "9104"
+    "tvl": "9337"
   },
   {
     "name": "spirit-wftm-midas",
@@ -4971,7 +5041,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "1215"
+    "tvl": "1233"
   },
   {
     "name": "based-based-usdc",
@@ -4981,7 +5051,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "71634"
+    "tvl": "72260"
   },
   {
     "name": "boo-wftm-galcx",
@@ -4991,7 +5061,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 250,
-    "tvl": "840"
+    "tvl": "867"
   },
   {
     "name": "netswap-nett-metis",
@@ -5001,7 +5071,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "79705"
+    "tvl": "82085"
   },
   {
     "name": "netswap-weth-metis",
@@ -5011,7 +5081,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "446275"
+    "tvl": "465085"
   },
   {
     "name": "netswap-metis-m.usdc",
@@ -5021,7 +5091,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "106935"
+    "tvl": "107805"
   },
   {
     "name": "netswap-weth-m.usdc",
@@ -5031,7 +5101,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "42201"
+    "tvl": "43597"
   },
   {
     "name": "netswap-m.usdt-m.usdc",
@@ -5041,7 +5111,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "215358"
+    "tvl": "215360"
   },
   {
     "name": "metis-bifi-maxi",
@@ -5051,7 +5121,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "6794"
+    "tvl": "6945"
   },
   {
     "name": "tethys-tethys-metis",
@@ -5061,7 +5131,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "87134"
+    "tvl": "88854"
   },
   {
     "name": "tethys-metis-m.usdc",
@@ -5071,7 +5141,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "140799"
+    "tvl": "141945"
   },
   {
     "name": "tethys-weth-metis",
@@ -5081,7 +5151,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "168622"
+    "tvl": "176217"
   },
   {
     "name": "tethys-m.usdc-m.usdt",
@@ -5101,7 +5171,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1088,
-    "tvl": "57325"
+    "tvl": "57862"
   },
   {
     "name": "stellaswap-well-wglmr",
@@ -5111,7 +5181,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "59010"
+    "tvl": "62178"
   },
   {
     "name": "stellaswap-mai4pool",
@@ -5121,7 +5191,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "153815"
+    "tvl": "144023"
   },
   {
     "name": "stellaswap-base4pool",
@@ -5141,7 +5211,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "187887"
+    "tvl": "191453"
   },
   {
     "name": "beamswap-wglmr-xcdot",
@@ -5151,7 +5221,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "14576"
+    "tvl": "15036"
   },
   {
     "name": "beamswap-usdcmad-wglmr",
@@ -5161,7 +5231,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "10965"
+    "tvl": "11074"
   },
   {
     "name": "beamswap-usdc-wglmr",
@@ -5171,7 +5241,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "25818"
+    "tvl": "26156"
   },
   {
     "name": "beamswap-wglmr-glint",
@@ -5181,7 +5251,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "41074"
+    "tvl": "42239"
   },
   {
     "name": "beamswap-busd-bnb",
@@ -5191,7 +5261,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "12609"
+    "tvl": "12839"
   },
   {
     "name": "beamswap-usdc-eth",
@@ -5201,7 +5271,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "309926"
+    "tvl": "321317"
   },
   {
     "name": "moonbeam-bifi-maxi",
@@ -5211,7 +5281,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "565100"
+    "tvl": "577692"
   },
   {
     "name": "solarflare-wglmr-flare",
@@ -5221,7 +5291,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "11523",
+    "tvl": "11792",
     "suppressCallRwrdCheck": true
   },
   {
@@ -5232,7 +5302,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "10444",
+    "tvl": "10584",
     "suppressCallRwrdCheck": true
   },
   {
@@ -5243,7 +5313,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "110066"
+    "tvl": "112409"
   },
   {
     "name": "stellaswap-usdc-bnb",
@@ -5253,7 +5323,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "15923"
+    "tvl": "16214"
   },
   {
     "name": "stellaswap-busd-wglmr",
@@ -5263,7 +5333,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "47587"
+    "tvl": "48035"
   },
   {
     "name": "stellaswap-wglmr-ftm",
@@ -5273,7 +5343,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "35388"
+    "tvl": "36339"
   },
   {
     "name": "stellaswap-avax-wglmr",
@@ -5283,7 +5353,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "59828"
+    "tvl": "62142"
   },
   {
     "name": "stellaswap-matic-wglmr",
@@ -5293,7 +5363,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "67016"
+    "tvl": "68548"
   },
   {
     "name": "stellaswap-atom-wglmr",
@@ -5303,7 +5373,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "30671"
+    "tvl": "31285"
   },
   {
     "name": "stella-xstella",
@@ -5313,7 +5383,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "30799"
+    "tvl": "31452"
   },
   {
     "name": "stellaswap-wglmr-xcdot",
@@ -5323,7 +5393,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "658235"
+    "tvl": "682848"
   },
   {
     "name": "stellaswap-weth-wglmr",
@@ -5333,7 +5403,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "337660"
+    "tvl": "352917"
   },
   {
     "name": "stellaswap-usdcmad-wglmr",
@@ -5343,7 +5413,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "540254"
+    "tvl": "544980"
   },
   {
     "name": "stellaswap-dualETH",
@@ -5353,7 +5423,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1284,
-    "tvl": "38886"
+    "tvl": "41786"
   },
   {
     "name": "solarbeam-solar-wmovr",
@@ -5363,7 +5433,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "11161"
+    "tvl": "11305"
   },
   {
     "name": "solarbeam-wmovr-usdc",
@@ -5373,7 +5443,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "189232"
+    "tvl": "191136"
   },
   {
     "name": "movr-bifi-maxi",
@@ -5383,7 +5453,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "127434"
+    "tvl": "130267"
   },
   {
     "name": "solarbeam-wbtc-wmovr",
@@ -5393,7 +5463,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "24368"
+    "tvl": "24534"
   },
   {
     "name": "solarbeam-eth-wmovr",
@@ -5403,7 +5473,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "60215"
+    "tvl": "61621"
   },
   {
     "name": "finn-wmovr-finn",
@@ -5413,7 +5483,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "5412"
+    "tvl": "5497"
   },
   {
     "name": "finn-wmovr-usdt",
@@ -5423,7 +5493,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "10835"
+    "tvl": "10918"
   },
   {
     "name": "finn-eth-wmovr",
@@ -5433,7 +5503,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "2827"
+    "tvl": "2910"
   },
   {
     "name": "finn-usdc-usdt",
@@ -5443,7 +5513,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "14212"
+    "tvl": "14140"
   },
   {
     "name": "sushi-mr-frax-usdc",
@@ -5453,7 +5523,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "34710"
+    "tvl": "34739"
   },
   {
     "name": "sushi-mr-eth-wmovr",
@@ -5463,7 +5533,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "70163"
+    "tvl": "71734"
   },
   {
     "name": "sushi-mr-usdt-usdc",
@@ -5483,7 +5553,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "23083"
+    "tvl": "23028"
   },
   {
     "name": "solarbeam-frax-3pool",
@@ -5503,7 +5573,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "98943"
+    "tvl": "100395"
   },
   {
     "name": "solarbeam-wmovr-xcksm",
@@ -5513,7 +5583,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1285,
-    "tvl": "50090"
+    "tvl": "51166"
   },
   {
     "name": "solarbeam-3pool",
@@ -5553,7 +5623,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "47343"
+    "tvl": "50240"
   },
   {
     "name": "spell-mim-crv",
@@ -5563,7 +5633,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "4889729"
+    "tvl": "4937948"
   },
   {
     "name": "sushi-arb-spell-weth",
@@ -5573,7 +5643,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "120105"
+    "tvl": "124589"
   },
   {
     "name": "sushi-arb-weth-mim",
@@ -5583,7 +5653,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "330561"
+    "tvl": "344522"
   },
   {
     "name": "sushi-arb-eth-usdc",
@@ -5593,7 +5663,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "1165168"
+    "tvl": "1208239"
   },
   {
     "name": "curve-arb-tricrypto",
@@ -5603,7 +5673,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "4139192"
+    "tvl": "4261486"
   },
   {
     "name": "curve-arb-2pool",
@@ -5613,7 +5683,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "10230648"
+    "tvl": "10231033"
   },
   {
     "name": "curve-arb-ren",
@@ -5623,7 +5693,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "3408047"
+    "tvl": "3465603"
   },
   {
     "name": "sushi-arb-wbtc-weth",
@@ -5633,7 +5703,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "60689"
+    "tvl": "63370"
   },
   {
     "name": "sushi-arb-sushi-eth",
@@ -5643,7 +5713,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "10584"
+    "tvl": "11223"
   },
   {
     "name": "sushi-arb-weth-usdt",
@@ -5653,7 +5723,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "174588"
+    "tvl": "181088"
   },
   {
     "name": "arbi-bifi-maxi",
@@ -5663,7 +5733,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "910478"
+    "tvl": "934321"
   },
   {
     "name": "sushi-arb-magic-weth",
@@ -5673,7 +5743,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "1496753"
+    "tvl": "1602908"
   },
   {
     "name": "sushi-arb-weth-gohm",
@@ -5683,7 +5753,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42161,
-    "tvl": "556350"
+    "tvl": "575300"
   },
   {
     "name": "celo-bifi-maxi",
@@ -5693,7 +5763,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "2642"
+    "tvl": "2657"
   },
   {
     "name": "sushi-celo-weth-daiv2",
@@ -5703,7 +5773,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "1194"
+    "tvl": "1209"
   },
   {
     "name": "sushi-celo-cusd-usdc",
@@ -5713,7 +5783,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "36524"
+    "tvl": "36527"
   },
   {
     "name": "sushi-celo-wethv2-celo",
@@ -5723,7 +5793,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "55566"
+    "tvl": "56451"
   },
   {
     "name": "sushi-celo-wethv2-cusd",
@@ -5733,7 +5803,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "9753"
+    "tvl": "9879"
   },
   {
     "name": "sushi-celo-cusd-ceurv2",
@@ -5743,7 +5813,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42220,
-    "tvl": "17714"
+    "tvl": "17703"
   },
   {
     "name": "yuzu-ceusdc-yuzu",
@@ -5753,7 +5823,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "5193"
+    "tvl": "5169"
   },
   {
     "name": "yuzu-wrose-weth",
@@ -5763,7 +5833,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "7571"
+    "tvl": "7677"
   },
   {
     "name": "yuzu-usdt-yuzu",
@@ -5773,7 +5843,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "522"
+    "tvl": "520"
   },
   {
     "name": "yuzu-wrose-yuzu",
@@ -5783,7 +5853,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "41316"
+    "tvl": "41176"
   },
   {
     "name": "yuzu-wrose-usdt",
@@ -5793,7 +5863,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 42262,
-    "tvl": "155774"
+    "tvl": "155997"
   },
   {
     "name": "yuzu-ceusdc-usdt",
@@ -5813,7 +5883,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "965260"
+    "tvl": "986716"
   },
   {
     "name": "joe-btc.b-wavax",
@@ -5823,7 +5893,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "141443"
+    "tvl": "146039"
   },
   {
     "name": "curve-avax-av3crv",
@@ -5833,7 +5903,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "4704320"
+    "tvl": "4704352"
   },
   {
     "name": "curve-avax-atricrypto",
@@ -5843,7 +5913,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "2107964"
+    "tvl": "2163953"
   },
   {
     "name": "joe-joe",
@@ -5853,7 +5923,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "628257"
+    "tvl": "664498"
   },
   {
     "name": "joe-joe-wavax",
@@ -5863,7 +5933,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "204616"
+    "tvl": "214574"
   },
   {
     "name": "joe-weth.e-wavax",
@@ -5873,7 +5943,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "1371757"
+    "tvl": "1452908"
   },
   {
     "name": "olive-dai.e-usdt.e",
@@ -5883,7 +5953,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "5074"
+    "tvl": "5052"
   },
   {
     "name": "olive-busd.e-usdt.e",
@@ -5893,7 +5963,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "111434"
+    "tvl": "112147"
   },
   {
     "name": "mai-qi-wavax",
@@ -5903,7 +5973,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "75390"
+    "tvl": "77833"
   },
   {
     "name": "joe-usdc.e-usdc",
@@ -5913,7 +5983,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "4331751"
+    "tvl": "4326794"
   },
   {
     "name": "joe-ptp-wavax",
@@ -5923,7 +5993,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "280627"
+    "tvl": "294417"
   },
   {
     "name": "mai-avax-mai-crv",
@@ -5933,7 +6003,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "2301112"
+    "tvl": "2301221"
   },
   {
     "name": "png-png",
@@ -5943,7 +6013,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "25455"
+    "tvl": "26581"
   },
   {
     "name": "joe-usdt-usdt.e",
@@ -5953,7 +6023,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "178885"
+    "tvl": "178690"
   },
   {
     "name": "png-link.e-wavax",
@@ -5963,7 +6033,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "18939"
+    "tvl": "19666"
   },
   {
     "name": "png-jewel-wavax",
@@ -5973,7 +6043,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "6684"
+    "tvl": "7329"
   },
   {
     "name": "grape-grape-mim",
@@ -5983,7 +6053,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "837098"
+    "tvl": "835284"
   },
   {
     "name": "grape-wine-mim",
@@ -5993,7 +6063,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "199594"
+    "tvl": "198215"
   },
   {
     "name": "png-usdc.e-wavax",
@@ -6003,7 +6073,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "60066"
+    "tvl": "61600"
   },
   {
     "name": "joe-wavax-savax",
@@ -6013,7 +6083,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "385205"
+    "tvl": "406790"
   },
   {
     "name": "curve-avax-ren",
@@ -6023,7 +6093,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "1426523"
+    "tvl": "1440519"
   },
   {
     "name": "ripae-pavax-wavax",
@@ -6033,7 +6103,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "356767"
+    "tvl": "383195"
   },
   {
     "name": "ripae-pae-wavax",
@@ -6043,7 +6113,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "174761"
+    "tvl": "188991"
   },
   {
     "name": "joe-joe-usdc",
@@ -6053,7 +6123,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "3068"
+    "tvl": "3125"
   },
   {
     "name": "joe-wavax-usdc",
@@ -6063,7 +6133,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "605658"
+    "tvl": "617339"
   },
   {
     "name": "png-usdc.e-usdc",
@@ -6073,7 +6143,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "350325"
+    "tvl": "349915"
   },
   {
     "name": "png-wavax-usdc",
@@ -6083,7 +6153,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "609021"
+    "tvl": "650315"
   },
   {
     "name": "joe-wavax-ecd",
@@ -6093,7 +6163,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "16189"
+    "tvl": "17061"
   },
   {
     "name": "joe-fly-wavax",
@@ -6103,7 +6173,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "6471"
+    "tvl": "6800"
   },
   {
     "name": "png-wavax-ncash",
@@ -6113,7 +6183,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "80081"
+    "tvl": "82829"
   },
   {
     "name": "stargate-avax-usdc",
@@ -6143,7 +6213,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "80059"
+    "tvl": "84677"
   },
   {
     "name": "joe-usdt-wavax",
@@ -6153,7 +6223,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "1064606"
+    "tvl": "1084653"
   },
   {
     "name": "joe-yeti-wavax",
@@ -6163,7 +6233,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "79429"
+    "tvl": "82140"
   },
   {
     "name": "png-wavax-lost",
@@ -6173,7 +6243,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "11681"
+    "tvl": "11874"
   },
   {
     "name": "aavev3-avax",
@@ -6183,7 +6253,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "4766422"
+    "tvl": "5112552"
   },
   {
     "name": "aavev3-dai.e",
@@ -6193,7 +6263,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "201543"
+    "tvl": "194443"
   },
   {
     "name": "aavev3-usdc",
@@ -6223,7 +6293,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "102497"
+    "tvl": "110273"
   },
   {
     "name": "aavev3-wbtc.e",
@@ -6243,7 +6313,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "7660"
+    "tvl": "8297"
   },
   {
     "name": "aavev3-link.e",
@@ -6253,7 +6323,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "332"
+    "tvl": "342"
   },
   {
     "name": "aavev3-savax",
@@ -6263,7 +6333,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 43114,
-    "tvl": "11271"
+    "tvl": "12124"
   },
   {
     "name": "trisolaris-near-tri",
@@ -6273,7 +6343,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "60566"
+    "tvl": "62181"
   },
   {
     "name": "trisolaris-near-wbtc",
@@ -6283,7 +6353,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "107387"
+    "tvl": "109940"
   },
   {
     "name": "trisolaris-usdt-usdc",
@@ -6293,7 +6363,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "58880"
+    "tvl": "58884"
   },
   {
     "name": "trisolaris-near-weth",
@@ -6303,7 +6373,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "152212"
+    "tvl": "160395"
   },
   {
     "name": "tri-aurora-tri",
@@ -6313,7 +6383,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "42169"
+    "tvl": "43418"
   },
   {
     "name": "tri-aurora-weth",
@@ -6323,7 +6393,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "27152"
+    "tvl": "28639"
   },
   {
     "name": "solace-solace",
@@ -6333,7 +6403,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "15169"
+    "tvl": "15877"
   },
   {
     "name": "aurora-bifi-maxi",
@@ -6343,7 +6413,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "36840"
+    "tvl": "37659"
   },
   {
     "name": "tri-near-flx",
@@ -6353,7 +6423,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "23705"
+    "tvl": "24264"
   },
   {
     "name": "rose-mai-3pool",
@@ -6363,7 +6433,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "10106"
+    "tvl": "10108"
   },
   {
     "name": "tri-bstn-near",
@@ -6373,7 +6443,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "685"
+    "tvl": "707"
   },
   {
     "name": "tri-linear-near",
@@ -6383,7 +6453,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "8074"
+    "tvl": "8076"
   },
   {
     "name": "tri-stnear-near",
@@ -6393,7 +6463,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "14381"
+    "tvl": "16438"
   },
   {
     "name": "tri-aurora-near",
@@ -6403,7 +6473,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "130520"
+    "tvl": "154876"
   },
   {
     "name": "tri-tri-usdt",
@@ -6413,7 +6483,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1313161554,
-    "tvl": "812"
+    "tvl": "820"
   },
   {
     "name": "sushi-one-1wbtc-1eth",
@@ -6423,7 +6493,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "34877"
+    "tvl": "35322"
   },
   {
     "name": "sushi-one-1usdt-1usdc",
@@ -6433,7 +6503,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "5493"
+    "tvl": "5496"
   },
   {
     "name": "sushi-one-1usdt-wone",
@@ -6443,7 +6513,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "10829"
+    "tvl": "10844"
   },
   {
     "name": "sushi-one-busd-one",
@@ -6453,7 +6523,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "11771"
+    "tvl": "11801"
   },
   {
     "name": "sushi-one-eth-one",
@@ -6463,7 +6533,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "21455"
+    "tvl": "21614"
   },
   {
     "name": "sushi-one-usdc-one",
@@ -6473,7 +6543,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "36362"
+    "tvl": "36421"
   },
   {
     "name": "one-bifi-maxi",
@@ -6483,7 +6553,7 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "9182"
+    "tvl": "9432"
   },
   {
     "name": "sushi-one-wone-1btc",
@@ -6493,6 +6563,6 @@
     "depositsPaused": false,
     "harvestPaused": false,
     "chainId": 1666600000,
-    "tvl": "38802"
+    "tvl": "40268"
   }
 ]
