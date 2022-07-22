@@ -656,10 +656,10 @@
   {
     "name": "banana-banana-bnb",
     "address": "0x17566271FEBF4E7e0E72a7D1E3eF2E915d642cCe",
-    "interval": 24,
+    "interval": 10,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
-    "harvestPaused": true,
+    "harvestPaused": false,
     "chainId": 56,
     "tvl": "367802"
   },
@@ -1756,7 +1756,7 @@
   {
     "name": "venus-bnb",
     "address": "0xFA3CcB086Bf371A2Ff33Db8521Be47c5B4b9d10E",
-    "interval": 24,
+    "interval": 20,
     "harvestSignature": "0x4641257d",
     "depositsPaused": false,
     "harvestPaused": false,
