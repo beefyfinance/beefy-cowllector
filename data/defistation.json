@@ -8,6 +8,62 @@
     "tvl": 0
   },
   {
+    "id": "cakev2-mix-busd",
+    "name": "Moo CakeV2 MIX-BUSD",
+    "contract": "0xE53AE3414baC8aE74826e4eceFDDc8c0B1ecc6BB",
+    "oracle": "lps",
+    "oracleId": "cakev2-mix-busd",
+    "tvl": 0
+  },
+  {
+    "id": "cakev2-ole-busd",
+    "name": "Moo CakeV2 OLE-BUSD",
+    "contract": "0xa2f5e0A3756FD510C9DADe97e7f5985560d98D78",
+    "oracle": "lps",
+    "oracleId": "cakev2-ole-busd",
+    "tvl": 0
+  },
+  {
+    "id": "baby-usdt-busd",
+    "name": "Moo Baby BUSD-USDT",
+    "contract": "0xC1E5c015a603e890A0B175aaBd8A329006Cf0c91",
+    "oracle": "lps",
+    "oracleId": "baby-usdt-busd",
+    "tvl": 0
+  },
+  {
+    "id": "baby-near-usdt",
+    "name": "Moo Baby NEAR-USDT",
+    "contract": "0xE79087b9217b7d5004c6fCadba63c52d0C52A7bA",
+    "oracle": "lps",
+    "oracleId": "baby-near-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "baby-usdt-sol",
+    "name": "Moo Baby USDT-SOL",
+    "contract": "0xbE5A11C0f247f4E17d758b3dfaa4185A000F4e6b",
+    "oracle": "lps",
+    "oracleId": "baby-usdt-sol",
+    "tvl": 0
+  },
+  {
+    "id": "baby-atom-usdt",
+    "name": "Moo Baby ATOM-USDT",
+    "contract": "0x40e3Df8CD034bD8DE37F72af1CdF7E0D40321f0A",
+    "oracle": "lps",
+    "oracleId": "baby-atom-usdt",
+    "tvl": 0
+  },
+  {
+    "id": "baby-usdt-usdc",
+    "name": "Moo Baby USDT-USDC",
+    "contract": "0x8e893142C29491d239c5B9D18Ee0307f6532FD87",
+    "oracle": "lps",
+    "oracleId": "baby-usdt-usdc",
+    "tvl": 0
+  },
+  {
     "id": "baby-usdc-wbnb",
     "name": "Moo Baby USDC-BNB",
     "contract": "0xD5f6E840b963386Ddfa773CA7B60f779eF2F4e3f",
