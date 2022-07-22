@@ -13,6 +13,7 @@ const strats = require('../data/strats.json');
 const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
 
+
 const main = async () => {
   let latestStrats = [];
   let latestDefistationVaults = [];
@@ -31,7 +32,7 @@ const main = async () => {
 
     const calls = vaults.map( vault => {
       const vaultContract = new web3.eth.Contract( BeefyVaultABI, 
-																										vault.earnContractAddress);
+                                                    vault.earnContractAddress);
       return {
         name: vaultContract.methods.name(),
         strategy: vaultContract.methods.strategy(),
@@ -45,7 +46,7 @@ const main = async () => {
     }
 
     const knownStrategies = strats.filter( s => s.chainId === CHAIN.chainId).map( s => 
-																																						s.address);
+                                                                            s.address);
 
     const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
     const cacheIsReady = await fetchPrice.refreshCache();
@@ -82,9 +83,9 @@ const main = async () => {
       if (stratData && stratData.name != vault.id)
         console.log(`Renaming ${stratData.name} to ${vault.id}...`);
 
-			//note our strategy-contract descriptor, possibly updated, carrying over any special 
-			//	handling notes from the prior version of the descriptor
-			const O = {
+      //note our strategy-contract descriptor, possibly updated, carrying over any special 
+      //  handling notes from the prior version of the descriptor
+      const O = {
         name: vault.id,
         address: vault.strategy,
         interval: stratData?.interval || CHAIN.harvestHourInterval,
@@ -94,8 +95,8 @@ const main = async () => {
         chainId: CHAIN.chainId,
         tvl: vault.tvl,
       };
-			if (stratData?.suppressCallRwrdCheck)
-				O.suppressCallRwrdCheck = stratData.suppressCallRwrdCheck;
+      if (stratData?.suppressCallRwrdCheck)
+        O.suppressCallRwrdCheck = stratData.suppressCallRwrdCheck;
       latestStrats.push( O);
 
       if (CHAIN.id === 'bsc')
@@ -112,14 +113,11 @@ const main = async () => {
 
   // Surface deleted strategies
   const stratDifference = strats.filter(
-    o => !latestStrats.some(n => o.address === n.address && o.chainId === n.chainId)
+    o => !latestStrats.some( n => o.address === n.address && o.chainId === n.chainId)
   );
-  if (stratDifference.length > 0) {
-    console.log(
-      `Removing strats which are not represented in the beefy-app:`,
-      stratDifference.map(s => s.name).join(', ')
-    );
-  }
+  if (stratDifference.length)
+    console.log( `Removing strats which are not represented in the beefy-app:`,
+                  stratDifference.map( s => s.name).join( ', '));
 
   // Preserve existing defistation list
   const vaultDifference = defistationVaults.filter(
@@ -127,13 +125,14 @@ const main = async () => {
   );
   latestDefistationVaults.push(...vaultDifference);
 
-  fs.writeFileSync(path.join(__dirname, '../data/strats.json'), JSON.stringify( 
-																															latestStrats, null, 2));
+  fs.writeFileSync( path.join( __dirname, '../data/strats.json'), JSON.stringify( 
+                                                              latestStrats, null, 2));
 
   fs.writeFileSync(
     path.join(__dirname, '../data/defistation.json'),
     JSON.stringify(latestDefistationVaults, null, 2)
   );
 }; //const main = async () =>
+
 
 main();

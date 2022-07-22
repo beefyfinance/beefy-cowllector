@@ -28,24 +28,24 @@ const KNOWN_RPC_ERRORS = {
   'code=GAS_LIMIT_REACHED': 'GAS_LIMIT_REACHED',
   'gas limit reached': 'GAS_LIMIT_REACHED',
   'code=SERVER_ERROR': 'SERVER_ERROR',
-	'code=CALL_EXCEPTION': 'CALL_EXCEPTION' //AT: probably gas-limit hit, so costly
+  'code=CALL_EXCEPTION': 'CALL_EXCEPTION' //AT: probably gas-limit hit, so costly
 };
 
 
 const getGasPrice = async provider => {
   let gas = 0;
   //TODO: Rationale of this stanza needs precise explanation. Seems that the chain-specific
-  //	gas price set in the environment or the default in the chain-data file is a _minimum_
-  //	gas price we'll harvest at, a price possibly a bit above the chain's standard minimum
-  //	price (e.g. the Polygon default at 40 GWEI instead of chain's floor of 30 GWEI).
+  //  gas price set in the environment or the default in the chain-data file is a _minimum_
+  //  gas price we'll harvest at, a price possibly a bit above the chain's standard minimum
+  //  price (e.g. the Polygon default at 40 GWEI instead of chain's floor of 30 GWEI).
   try {
     if (CHAIN.gas.price)
-			gas = CHAIN.gas.price;
+      gas = CHAIN.gas.price;
     let gasPrice = await provider.getGasPrice();
     if (GAS_MARGIN && !GAS_THROTTLE_CHAIN.includes( CHAIN.id))
-			gasPrice *= (100 + GAS_MARGIN) / 100;
+      gasPrice *= (100 + GAS_MARGIN) / 100;
     if (gasPrice > gas)
-			gas = Number( gasPrice.toString()).toFixed();
+      gas = Number( gasPrice.toString()).toFixed();
     return gas;
   } catch (error) {
     Sentry.captureException( error);
@@ -56,7 +56,7 @@ const getGasPrice = async provider => {
     if (CHAIN.gas.info) {
       if (CHAIN.gas.info.type === 'rest') {
         let res = await Axios.get( `${CHAIN.gas.info.url
-											}?module=proxy&action=eth_gasPrice&apikey=${CHAIN.gas.info.apikey}`);
+                      }?module=proxy&action=eth_gasPrice&apikey=${CHAIN.gas.info.apikey}`);
         if (res.data && res.data.status !== '0' && res.data.result)
           gas = parseInt( BigInt( res.data.result).toString());
         return gas;
@@ -64,7 +64,7 @@ const getGasPrice = async provider => {
       if (CHAIN.gas.info.type === 'rpc') {
         let data = { jsonrpc: '2.0', method: 'eth_gasPrice', id: 1 };
         if (CHAIN.gas.info.method)
-					data.method = CHAIN.gas.info.method;
+          data.method = CHAIN.gas.info.method;
         let res = await Axios.post( `${CHAIN.gas.info.url}`, data);
         if (res.data && res.data.status !== '0' && res.data.result)
           gas = parseInt( BigInt( res.data.result).toString());
@@ -193,43 +193,57 @@ const addGasLimit = async (strats, provider) => {
   return strats;
 }; //const addGasLimit = async (
 
+
 /**
  * Tell if the given strat should be harvested
  * @dev Function sets the boolean strat.shouldHarvest which can be filtered on to send 
- * 			only those strats to harvest which have passed all tests.
+ *      only those strats to harvest which have passed all tests.
  * @description Checks if strats is in range of time that should be harvested and if 
- * 			harvest can be run without issue.
+ *      harvest can be run without issue.
  * @param {object} strat
  * @param 
  * @param private key
- * @returns {object} strat
+ * @returns {object} Promise whose value is the updated strat object
  */
 const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
-  const STRAT_INTERVALS_MARGIN_OF_ERROR =
-														Number( process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || 1440;
-  let interval = (CHAIN.stratHarvestHourInterval || strat.interval) * 3600 + 
-																												STRAT_INTERVALS_MARGIN_OF_ERROR;
+  const i_24_MINS = 1440, STRAT_INTERVALS_MARGIN_OF_ERROR = Number( 
+                              process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || i_24_MINS;
+
+  //Compute the maximum seconds allowed before a new harvest should be initiated, measured 
+  //  from the strat's last-harvest event. If the strat has a special interval specified 
+  //  that falls between this and the next run, evaluate that it should be executed during
+  //  this run, as not exceeding the desired interval can be important, like to deny a 
+  //  frontrunning bot the illicit gains it seeks.
+  let interval = Math.min( parseInt( process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 
+                                                                      24, strat.interval), 
+      i;
+  if (strat.interval == interval && interval > CHAIN.harvestHourInterval * (i = 
+                                            ~~(interval / CHAIN.harvestHourInterval)) && 
+                                            interval < CHAIN.harvestHourInterval * (i + 1))
+    interval = CHAIN.harvestHourInterval * i;
+  interval = interval * 3600 - STRAT_INTERVALS_MARGIN_OF_ERROR;
+
   try {
-    if (strat.lastHarvest !== 0) {
-      let now = Math.floor(new Date().getTime() / 1000);
+    if (strat.lastHarvest) {
+      let now = Math.floor( new Date().getTime() / 1000);
       let secondsSinceHarvest = now - strat.lastHarvest;
-      if (!(secondsSinceHarvest >= interval)) {
+      if (secondsSinceHarvest < interval) {
         strat.shouldHarvest = false;
-        strat.notHarvestReason = 'lastHarvest is lower than interval';
+        strat.notHarvestReason = 'lastHarvest precedes operative interval';
         return strat;
       }
     } else {
       let isNewHarvestPeriod = await harvestHelpers.isNewHarvestPeriod( strat, harvesterPK, 
-																																				interval);
+                                                                        interval);
       if (!isNewHarvestPeriod) {
         strat.shouldHarvest = false;
-        strat.notHarvestReason = 'last StratHarvest log is lower than interval';
+        strat.notHarvestReason = 'last StratHarvest log precedes operative interval';
         return strat;
       }
-    } //if (strat.lastHarvest !== 0)
+    } //if (strat.lastHarvest)
 
     //unless the strategy is specially marked to skip the check, if the contract explicitly
-    //	contains no rewards, short-circuit with a note that no harvest is necessary
+    //  contains no rewards, short-circuit with a note that no harvest is necessary
     if (!strat.suppressCallRwrdCheck)
       try {
         const abi = ['function callReward() public view returns(uint256)'];
@@ -241,7 +255,8 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
           return strat;
         }
       } catch (error) {
-        console.log( error);
+        console.log( `callReward failure on ${strat.name} / ${strat.address} --> ${
+                                                                                  error}`);
       } //try
 
     /* AT: seems to be erroneously omitting strats that need closer checking
@@ -257,7 +272,6 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
         if (balance && balance.lte(0)) {
           strat.shouldHarvest = false;
           strat.notHarvestReason = 'strat output is zero';
-          return strat;
         }
       } catch (error) {
         Sentry.captureException(error);
@@ -267,38 +281,37 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
     try {
       const contract = new ethers.Contract( strat.address, IStrategy, harvesterPK);
       let callStaticPassed = await contract.callStatic.harvest( {
-																				gasPrice,
-																				gasLimit: ethers.BigNumber.from( strat.gasLimit)
-																			});
+                                        gasPrice,
+                                        gasLimit: ethers.BigNumber.from( strat.gasLimit)
+                                      });
     } catch (error) {
       for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
         if (error.message.includes( key)) {
           strat.shouldHarvest = false;
-          strat.notHarvestReason = `Strat did't pass callStatic: ${
-																																KNOWN_RPC_ERRORS[ key]}`;
+          strat.notHarvestReason = `Strat failed callStatic with a tagged condition --> ${
+                                                                  KNOWN_RPC_ERRORS[ key]}`;
           return strat;
         }
       }
       strat.shouldHarvest = false;
-      strat.notHarvestReason = `Strat did't pass callStatic: ${error}`;
+      strat.notHarvestReason = `Strat failed callStatic unusually --> ${error}`;
     } //try
-    return strat;
   } catch (error) {
     strat.shouldHarvest = false;
     strat.notHarvestReason = `unexpected error in shouldHarvest(): ${error}`;
-    return strat;
   } //try
+
+  return strat;
 }; //const shouldHarvest = async (strat, harvesterPK) =>
 
 
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   //nested function to carry out a slated harvest, retrying if necessary though not
-  //	excessively so
+  //  excessively so
   const tryTX = async (stratContract, max = 2) => {
     if (nonce) options.nonce = nonce;
     let tries = 0;
-    while (tries < max) {
-      tries++;
+    while (tries++ < max) {
       let tx;
       try {
         //if we're working on the transaction-length limited Aurora chain...
@@ -306,9 +319,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           try {
             tx = await stratContract.harvest(options);
             if (tx.status === 1)
-              console.log(
-                `${strat.name}:\tharvested step 1/3: Charges Fees - with tx: ${tx.transactionHash}`
-              );
+              console.log( `${strat.name}:\tharvested step 1/3: Charges Fees - with tx: ${
+                                                                    tx.transactionHash}`);
           } catch (error) {
             console.log(`${strat.name}: ${error}`);
             return {
@@ -322,8 +334,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
             tx = await stratContract.harvest(options);
             if (tx.status === 1)
               console.log( `${strat.name
-													}:\tharvested step 2/3: Swaps to tokens needed step - with tx: ${
-													tx.transactionHash}`);
+                          }:\tharvested step 2/3: Swaps to tokens needed step - with tx: ${
+                          tx.transactionHash}`);
           } catch (error) {
             console.log(`${strat.name}: ${error}`);
             return {
@@ -342,7 +354,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               return {
                 contract: strat.address,
                 status: 'success',
-                message: `${strat.name}: harvested after tried ${tries} - with tx: ${tx.transactionHash}`,
+                message: `${strat.name}: harvested after try ${tries} - with tx: ${tx.transactionHash}`,
                 data: tx,
               };
             } //if (tx.status === 1)
@@ -355,7 +367,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               data: error.message,
             };
           } //try
-				//else on this chain unusual gymnastics aren't needed to execute a harvest, so...
+        //else on this chain unusual gymnastics aren't needed to execute a harvest, so...
         } else {
           tx = await stratContract.harvest( options);
 
@@ -368,41 +380,47 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 receipt = await provider.getTransactionReceipt(tx.hash);
                 //TODO: no concern about an infinite loop here?
                 if (receipt === null) continue;
-                console.log(`${strat.name}:\tharvested after tried ${tries} with tx: ${tx.hash}`);
+                console.log( `${strat.name}:\tharvested after try ${tries} with tx: ${
+                                                                                tx.hash}`);
                 return {
                   contract: strat.address,
                   status: 'success',
-                  message: `${strat.name}: harvested after tried ${tries} with tx: ${tx.hash}`,
+                  message: `${strat.name}: harvested after try ${tries} with tx: ${
+                                                                                tx.hash}`,
                   data: receipt,
                 };
               } catch (error) {
-                for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
-                  if (error.message.includes(key)) {
-                    console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[key]}`);
+                for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
+                  if (error.message.includes( key)) {
+                    console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[ key]}`);
                     try {
                       let res = await broadcast.send({
                         type: 'error',
                         title: `Error trying to harvest ${strat.name}`,
-                        message: `- error code: ${KNOWN_RPC_ERRORS[key]}\n- address: ${strat.address}`,
+                        message: `- error code: ${KNOWN_RPC_ERRORS[ 
+                                  key]}\n- address: ${strat.address}`,
                       });
                     } catch (error) {
-                      console.log(`Error trying to send message to broadcast: ${error.message}`);
+                      console.log( `Error trying to send message to broadcast: ${
+                                      error.message}`);
                     }
                     return {
                       contract: strat.address,
                       status: 'failed',
-                      message: `${strat.name}: ${KNOWN_RPC_ERRORS[key]}`,
+                      message: `${strat.name}: ${KNOWN_RPC_ERRORS[ key]}`,
                     };
-                  }
+                  } //if (error.message.includes( key))
                 } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
                 try {
                   let res = await broadcast.send({
                     type: 'error',
                     title: `Error trying to harvest ${strat.name}`,
-                    message: `- error code: unknown\n- address: ${strat.address}\n- tx hash: ${tx.hash}`,
+                    message: `- error code: unknown\n- address: ${
+                                strat.address}\n- tx hash: ${tx.hash}`,
                   });
                 } catch (error) {
-                  console.log(`Error trying to send message to broadcast: ${error.message}`);
+                  console.log( `Error trying to send message to broadcast: ${
+                                error.message}`);
                 }
                 return {
                   contract: strat.address,
@@ -412,17 +430,17 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 };
               } //try
             } //while (receipt === null)
-					//else this is not a "tricky" chain, so...
+          //else this is not a "tricky" chain, so...
           } else {
             tx = await tx.wait();
             if (tx.status === 1) {
-              console.log( `${strat.name}:\tharvested after tried ${tries} with tx: ${
-														tx.transactionHash}`);
+              console.log( `${strat.name}:\tharvested after try ${tries} with tx: ${
+                            tx.transactionHash}`);
               return {
                 contract: strat.address,
                 status: 'success',
-                message: `${strat.name}: harvested after tried ${tries} with tx: ${
-													tx.transactionHash}`,
+                message: `${strat.name}: harvested after try ${tries} with tx: ${
+                          tx.transactionHash}`,
                 data: tx,
               };
             } //if (tx.status === 1)
@@ -430,15 +448,17 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         } //if (CHAIN.id === 'aurora')
       } catch (error) {
 //TODO: improve error reporting, adding (1) a facility to drill next level into the message 
-//	to tease out the real issue, like gas-limit hit on a CALL_EXCEPTION, and (2) 
-//	lay-person-readable error surfacing!
-        //Some error has occurred. For each error string that we've identified as 
-				//	indicating a known-stop condition, one where no retry should be attempted...
+//  to tease out the real issue (use regex?), like gas-limit hit on a CALL_EXCEPTION, and 
+//  (2) //  lay-person-readable error surfacing!
+        //Some error has occurred in this context of sending a harvest transaction. For 
+        //  each error string that we've identified as indicating a known-stop condition, 
+        //  one where no retry should be attempted...
         for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
           //if this string matches what's occurred, make a note of it and short-circuit,
-          //	returning information about the condition to the caller
+          //  returning information about the condition to the caller
           if (error.message.includes( key)) {
-            console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[ key]}`);
+            const S = `${strat.name}: ${KNOWN_RPC_ERRORS[ key]}`;
+            console.log( S);
             return {
               contract: strat.address,
               status: 'failed',
@@ -449,8 +469,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
 
         //An unusual error condition has been encountered. If we haven't maxed out on retry
-        //	attempts, fall through for another try, else short-circuit by raising this last 
-				//	error.
+        //  attempts, fall through for another try, else short-circuit by raising this last 
+        //  error.
         if (tries === max) throw new Error( error);
       } //try
     } //while (tries < max)
@@ -458,33 +478,31 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 
   try {
     //if our wallet hasn't enough gas to reliably attempt a harvest, inform our overseers
-    //	and raise an error condition
+    //  and raise an error condition
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
-        let res = await broadcast.send({
-          type: 'warning',
-          title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
-          message: `- Gas required **${
-            (options.gasPrice * options.gasLimit) / 1e18
-          }** and Cowllector has **${ethers.utils.formatUnits(balance)}** \n- Contract Address: ${
-            strat.address
-          } \n- Please feed me with more coins 🪙 🐮 \n`,
+        let res = await broadcast.send( {
+            type: 'warning',
+            title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${
+                      CHAIN.id.toUpperCase()}`,
+            message: `- Gas required **${(options.gasPrice * options.gasLimit) / 1e18
+                      }** and Cowllector has **${ethers.utils.formatUnits( 
+                      balance)}** \n- Contract Address: ${strat.address
+                      }\n- Please give gas 🪙 🐮\n`
         });
       } catch (error) {
         Sentry.captureException(error);
         console.log(`Error trying to send message to broadcast: ${error.message}`);
       }
-      throw new Error(
-        `${strat.name}: INSUFFICIENT_FUNDS - gas required ${
-          (options.gasPrice * options.gasLimit) / 1e18
-        } and wallet holds only ${ethers.utils.formatUnits(balance)}`
-      );
+      throw new Error( `${strat.name}: INSUFFICIENT_FUNDS - gas required ${
+                        (options.gasPrice * options.gasLimit) / 1e18
+                        } and wallet holds only ${ethers.utils.formatUnits(balance)}`);
     } //if (balance < options.gasPrice *
 
     //attempt the harvest operation and return the result
-    const stratContract = new ethers.Contract(strat.address, IStrategy, harvesterPK);
-    let tx = await tryTX(stratContract);
+    const stratContract = new ethers.Contract( strat.address, IStrategy, harvesterPK);
+    let tx = await tryTX( stratContract);
     return tx;
   } catch (error) {
     Sentry.captureException(error);
@@ -501,38 +519,31 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 const main = async () => {
   try {
     //if the caller gave us a chain to process that seems validly configured and not turned
-    //	off..
+    //  off..
     if (CHAIN && CHAIN.harvestHourInterval) {
-      /** Check hour interval if harvest_child should run for this chain
-       * @dev on file data/chain.js you can find, for every chain, a prop 
-			 * stratHarvestHourInterval that explain when hourly harvest should be run for it */
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
         console.log( `Is not Harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
-											CHAIN.harvestHourInterval }]`);
+                      CHAIN.harvestHourInterval }]`);
         return false;
       }
 
       console.log( `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${
-										CHAIN.rpc}] [explorer=${ CHAIN.blockExplorer }] [hour_interval=${
-										CHAIN.stratHarvestHourInterval}]`);
+                    CHAIN.rpc}] [explorer=${ CHAIN.blockExplorer }]`);
 
       try {
-        const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
+        const provider = new ethers.providers.JsonRpcProvider( CHAIN.rpc);
 
-				//AT: TODO: we can get rid of this because we no longer have any "gasless" chains, 
-				//	I think
+        //AT: TODO: we can get rid of this because we no longer have any "gasless" chains, 
+        //  I think
         //0xww: patch for GASLESS chains
         if (GASLESS_CHAINS.includes( CHAIN.id)) {
           const originalBlockFormatter = provider.formatter._block;
           provider.formatter._block = (value, format) => {
-            return originalBlockFormatter(
-              {
-                gasLimit: ethers.BigNumber.from(0),
-                ...value,
-              },
-              format
-            );
+            return originalBlockFormatter( {
+                                gasLimit: ethers.BigNumber.from(0),
+                                ...value,
+                              }, format);
           };
         } //if (GASLESS_CHAINS.includes( CHAIN.id))
 
@@ -540,11 +551,11 @@ const main = async () => {
         console.log( `Gas Price: ${ethers.utils.formatUnits( gasPrice, 'gwei')} gwei`);
 
         //if the chain's current price of gas exceeds the cap we've put on the chain, abort 
-        //	this harvest run
+        //  this harvest run
         if (CHAIN.gas.priceCap < gasPrice) {
           console.log( `Gas price on ${CHAIN.id.toUpperCase()
-												} currently exceeds our cap of ${CHAIN.gas.priceCap / 1e9
-												} gwei. Aborting this run.`);
+                        } currently exceeds our cap of ${CHAIN.gas.priceCap / 1e9
+                        } gwei. Aborting this run.`);
           return false;
         }
 
@@ -597,7 +608,7 @@ const main = async () => {
 
         strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest, 'lastHarvest');
         strats = await Promise.allSettled( stratsShouldHarvest.map( strat => 
-																							shouldHarvest( strat, gasPrice, harvesterPK)));
+                                            shouldHarvest( strat, gasPrice, harvesterPK)));
         strats = strats.filter( r => r.status === 'fulfilled').map( s => s.value);
 
         stratsFiltered = stratsFiltered.concat( strats.filter( s => !s.shouldHarvest));
@@ -608,14 +619,14 @@ const main = async () => {
         );
 
         console.log(`Total Strat to harvest ${stratsShouldHarvest.length} of ${
-																																				strats.length}`);
+                                                                        strats.length}`);
 
         //AT: my read of this is as a note of the maximum that may be spent on this round
-        //	of harvesting on this chain
+        //  of harvesting on this chain
         let totalGas = stratsShouldHarvest.reduce( (total, s) => total + 
-																															Number( s.gasLimit), 0) / 1e9;
+                                                            Number( s.gasLimit), 0) / 1e9;
         console.log( `Total gas to use ${(totalGas * gasPrice) / 
-											1e9} gwei. Current balance ${balance.div( 1e9)} gwei`);
+                      1e9} gwei. Current balance ${balance.div( 1e9)} gwei`);
 
         //for each strategy tagged to be harvested...
         let harvesteds = [];
@@ -628,18 +639,18 @@ const main = async () => {
           try {
             let options = {
               gasPrice,
-              gasLimit: ethers.BigNumber.from(strat.gasLimit),
+              gasLimit: ethers.BigNumber.from( strat.gasLimit),
             };
-            let harvested = await harvest(strat, harvesterPK, provider, options);
-            harvesteds.push(harvested);
+            let harvested = await harvest( strat, harvesterPK, provider, options);
+            harvesteds.push( harvested);
           } catch (error) {
-            Sentry.captureException(error);
-            console.log(error.message);
+            Sentry.captureException( error);
+            console.log( error.message);
           }
         } //for await (const strat of stratsShouldHarvest)
         strats = [...stratsFiltered, ...stratsShouldHarvest];
-        strats = strats.map(s => {
-          let harvested = harvesteds.find(h => h.contract === s.address);
+        strats = strats.map( s => {
+          let harvested = harvesteds.find( h => h.contract === s.address);
           if (harvested) s.harvest = harvested;
           return s;
         });
@@ -716,5 +727,6 @@ const main = async () => {
   } //try
   process.exit();
 }; //const main = async
+
 
 main();

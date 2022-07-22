@@ -24,21 +24,21 @@ const isNewPeriodNaive = interval => {
  * @returns boolean
  */
 const isNewHarvestPeriod = async (strat, harvester, harvestInterval) => {
-  const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
+  const strategy = new ethers.Contract( strat.address, IStrategy, harvester);
   const filter = strategy.filters.StratHarvest(null);
   const currentBlock = await harvester.provider.getBlockNumber();
-  const blockTime = chains[strat.chainId].blockTime;
+  const blockTime = chains[ strat.chainId].blockTime;
   const oldestPeriodBlock = currentBlock - harvestInterval / blockTime;
 
   let logs = [];
-  let interval = chains[strat.chainId].queryLimit;
+  let interval = chains[ strat.chainId].queryLimit;
   let from = currentBlock - interval;
   let to = currentBlock;
 
   while (!logs.length) {
-    if (to <= oldestPeriodBlock) return true;
+    if (from <= oldestPeriodBlock) return true;
 
-    logs = await strategy.queryFilter(filter, from, to);
+    logs = await strategy.queryFilter( filter, from, to);
 
     from -= interval;
     to -= interval;
@@ -91,8 +91,9 @@ const hasStakers = async strategy => {
  * @param {object} strat - Object with strat key struct - see strats.json
  * @param {number} chainId - Chain Id - see chains.js
  * @param {object} provider - Ethers Provider Instance
- * @param {string} [topic='StratHarvest(address)'] - Log Event topic to estimate gas average - default is 'StratHarvest(address)'
- * @returns strat with gasLimit key inside
+ * @param {string} [topic='StratHarvest(address)'] - Log Event topic to estimate gas 
+ * 		average - default is 'StratHarvest(address)'
+ * @returns Promise object whose value is the strat object with added gasLimit property
  */
 const estimateGas = async (strat, chainId, provider, topic = null) => {
   topic = topic || ethers.utils.id('StratHarvest(address)'); // 0x577a37fdb49a88d66684922c6f913df5239b4f214b2b97c53ef8e3bbb2034cb5
@@ -124,7 +125,8 @@ const estimateGas = async (strat, chainId, provider, topic = null) => {
       gasLimitWithLog = parseInt(gasLimitWithLog / txs.length);
       if (Number.isNaN(gasLimitWithLog)) throw new Error('no txs to get average of gas');
 
-      strat.gasLimit = parseInt((gasLimitWithLog * 130) / 100); // Add a 30% of estimated gas
+			//0xww: Add on an extra 30% of estimated gas
+      strat.gasLimit = parseInt((gasLimitWithLog * 130) / 100); 
       strat.gasLimitStrategy = "average of last tx's logs";
     }
   } catch (error) {
@@ -137,7 +139,9 @@ const estimateGas = async (strat, chainId, provider, topic = null) => {
       to: strat.address,
       data: strat.harvestSignature,
     });
-    let gasLimitWithEstimateGas = parseInt((limit * 130) / 100); // Add a 30% of estimated gas
+		
+		//0xww: Add on an extra 30% of estimated gas
+    let gasLimitWithEstimateGas = parseInt((limit * 130) / 100);
     if (gasLimitWithEstimateGas > strat.gasLimit) {
       strat.gasLimit = gasLimitWithEstimateGas;
       strat.gasLimitStrategy = 'eth_estimateGas';
@@ -146,10 +150,10 @@ const estimateGas = async (strat, chainId, provider, topic = null) => {
     // console.error(error);
   }
 
+	// Estimage Gas setting chain default gas
   try {
-    // Estimage Gas setting chain default gas
-    if (chains[chainId] && chains[chainId].gas && chains[chainId].gas.limit) {
-      let gasLimitDefaultConfig = parseInt(chains[chainId].gas.limit);
+    if (chains[ chainId] && chains[ chainId].gas && chains[ chainId].gas.limit) {
+      let gasLimitDefaultConfig = parseInt( chains[ chainId].gas.limit);
       if (gasLimitDefaultConfig > strat.gasLimit) {
         strat.gasLimit = gasLimitDefaultConfig;
         strat.gasLimitStrategy = 'default chain config';
