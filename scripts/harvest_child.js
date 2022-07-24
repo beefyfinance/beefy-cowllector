@@ -255,6 +255,12 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
           return strat;
         }
       } catch (error) {
+        if (error.message.includes( 'INSUFFICIENT_INPUT_AMOUNT')) {
+          strat.shouldHarvest = false;
+          strat.notHarvestReason = 
+                                'callReward likely zero, INSUFFICIENT_INPUT_AMOUNT thrown';
+          return strat;
+        }
         console.log( `callReward failure on ${strat.name} / ${strat.address} --> ${
                                                                                   error}`);
       } //try
@@ -281,9 +287,9 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
     try {
       const contract = new ethers.Contract( strat.address, IStrategy, harvesterPK);
       let callStaticPassed = await contract.callStatic.harvest( {
-                                        gasPrice,
-                                        gasLimit: ethers.BigNumber.from( strat.gasLimit)
-                                      });
+                                          gasPrice,
+                                          gasLimit: ethers.BigNumber.from( strat.gasLimit)
+                                        });
     } catch (error) {
       for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
         if (error.message.includes( key)) {
@@ -394,12 +400,12 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   if (error.message.includes( key)) {
                     console.log(`${strat.name}: ${KNOWN_RPC_ERRORS[ key]}`);
                     try {
-                      let res = await broadcast.send({
-                        type: 'error',
-                        title: `Error trying to harvest ${strat.name}`,
-                        message: `- error code: ${KNOWN_RPC_ERRORS[ 
-                                  key]}\n- address: ${strat.address}`,
-                      });
+                      let res = await broadcast.send( {
+                                          type: 'error',
+                                          title: `Error trying to harvest ${strat.name}`,
+                                          message: `- error code: ${KNOWN_RPC_ERRORS[ 
+                                                    key]}\n- address: ${strat.address}`
+                                        });
                     } catch (error) {
                       console.log( `Error trying to send message to broadcast: ${
                                       error.message}`);
@@ -471,7 +477,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         //An unusual error condition has been encountered. If we haven't maxed out on retry
         //  attempts, fall through for another try, else short-circuit by raising this last 
         //  error.
-        if (tries === max) throw new Error( error);
+        if (tries === max)
+          throw new Error( error);
       } //try
     } //while (tries < max)
   }; //const tryTX = async (
@@ -483,14 +490,14 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     if (balance < options.gasPrice * options.gasLimit) {
       try {
         let res = await broadcast.send( {
-            type: 'warning',
-            title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${
-                      CHAIN.id.toUpperCase()}`,
-            message: `- Gas required **${(options.gasPrice * options.gasLimit) / 1e18
-                      }** and Cowllector has **${ethers.utils.formatUnits( 
-                      balance)}** \n- Contract Address: ${strat.address
-                      }\n- Please give gas 🪙 🐮\n`
-        });
+                type: 'warning',
+                title: `INSUFFICIENT_FUNDS to harvest ${strat.name.toUpperCase()} in ${
+                          CHAIN.id.toUpperCase()}`,
+                message: `- Gas required **${(options.gasPrice * options.gasLimit) / 1e18
+                          }** and Cowllector has **${ethers.utils.formatUnits( 
+                          balance)}** \n- Contract Address: ${strat.address
+                          }\n- Please give gas 🪙 🐮\n`
+            });
       } catch (error) {
         Sentry.captureException(error);
         console.log(`Error trying to send message to broadcast: ${error.message}`);
@@ -657,10 +664,11 @@ const main = async () => {
 
         if (strats.length) {
           let success = strats.filter(s => s.harvest && s.harvest.status === 'success');
-          let gasUsed = harvesteds.reduce((total, h) => {
-            if (h.data && h.data.gasUsed) return total.add(ethers.BigNumber.from(h.data.gasUsed));
-            return total;
-          }, ethers.BigNumber.from(0));
+          let gasUsed = harvesteds.reduce( (total, h) => {
+                              if (h.data && h.data.gasUsed)
+                                total = total.add( ethers.BigNumber.from( h.data.gasUsed));
+                              return total;
+                            }, ethers.BigNumber.from(0));
           let report = {
             strats,
             gasUsed: gasUsed,
@@ -680,7 +688,7 @@ const main = async () => {
             .sub(balance.add(wNativeBalance));
 
           try {
-            const uploaded = await uploadToFleek(report);
+            const uploaded = await uploadToFleek( report);
             try {
               let res = await broadcast.send({
                 type: 'info',
@@ -707,18 +715,19 @@ const main = async () => {
               console.log(`Error trying to send message to broadcast: ${error.message}`);
             }
           } catch (error) {
-            Sentry.captureException(error);
-            console.log(error);
-            let res = await broadcast.send({
-              type: 'info',
-              title: `Error trying to upload report to ipfs.fleek.co - ${CHAIN.id.toUpperCase()}`,
-              message: '',
-            });
-          }
+            Sentry.captureException( error);
+            console.log( error);
+            let res = await broadcast.send( {
+                                type: 'info',
+                                title: `Error trying to upload report to ipfs.fleek.co - ${
+                                                                  CHAIN.id.toUpperCase()}`,
+                                message: ''
+                              });
+          } //try
         } //if (strats.length)
       } catch (error) {
-        Sentry.captureException(error);
-        console.log(error);
+        Sentry.captureException( error);
+        console.log( error);
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
     console.log(`done`);
