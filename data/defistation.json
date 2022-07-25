@@ -184,14 +184,6 @@
     "tvl": 0
   },
   {
-    "id": "wsg-wsg",
-    "name": "Moo WSG",
-    "contract": "0xf6581Be77F4933FDcf92C9E0D49e7f85e5360705",
-    "oracle": "tokens",
-    "oracleId": "WSG",
-    "tvl": 0
-  },
-  {
     "id": "wsg-wsg-bnb",
     "name": "Moo Wsg WSG-BNB",
     "contract": "0xc408b3f112deE85eeA36bCdf8A65c2C6DD86966a",
@@ -1589,6 +1581,46 @@
     "contract": "0x1D78Ea6e3702FBB5CE3F46B4AB10A79110fe29c7",
     "oracle": "lps",
     "oracleId": "biswap-trx-wbnb",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-mai",
+    "name": "Moo Ellipsis MAI",
+    "contract": "0xc1beA7B6b749D1f3A812F39afeB8795a97402dfF",
+    "oracle": "lps",
+    "oracleId": "ellipsis-mai",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-valdai3eps",
+    "name": "Moo Ellipsis valdai3eps",
+    "contract": "0x047d08f4eFB9a0BC166447A12326d39A5167138f",
+    "oracle": "lps",
+    "oracleId": "ellipsis-valdai3eps",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-val3eps",
+    "name": "Moo Ellipsis val3eps",
+    "contract": "0xad357578E1243EE744f491C1f557f743a2745b49",
+    "oracle": "lps",
+    "oracleId": "ellipsis-val3eps",
+    "tvl": 0
+  },
+  {
+    "id": "ellipsis-2brl",
+    "name": "Moo Ellipsis 2BRL",
+    "contract": "0xf867cD98F3762D899F5F26FF5Dd62A5C566A3E0C",
+    "oracle": "lps",
+    "oracleId": "ellipsis-2brl",
+    "tvl": 0
+  },
+  {
+    "id": "wsg-wsg",
+    "name": "Moo WSG",
+    "contract": "0xf6581Be77F4933FDcf92C9E0D49e7f85e5360705",
+    "oracle": "tokens",
+    "oracleId": "WSG",
     "tvl": 0
   },
   {
