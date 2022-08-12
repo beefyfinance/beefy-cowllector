@@ -2,7 +2,8 @@
 .envrc
 tmp
 node_modules/
-.idea
+.ts-node
 *.log
-.*.sw[m-p]
+.*.sw[m-z]
+.idea
 proposal.md
