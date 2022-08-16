@@ -8,41 +8,22 @@ gas-limits to harvest vaults managed by Cowllector.
 
 At the end of a run, a JSON log of the significant changes made by the sync is written to 
 `data\stratsSync.json`.
-
-** AllTrades' Proposed Hungarian Notation ** (i.e. prefixes to token names)
-Capitalization denotes "constant," i.e. its reference is intended not to be changed within 
-the scope of its use. *Intended* is the operative word here; whether the compiler or 
-runtime enforces the intent is irrelevant.
-
-m, at the start of a prefix = module scope; omitted if preceded by the "function" keyword
-f = function
-p = Promise, followed by the type of the value of a fulfilled Promise
-o = object
-I = interface if not set off from the token name by an underscore
-i = integer
-b = boolean
-s = string
-_ = private member if the first character (class, interface)
-e = set, followed by the type of each element of the set
-a = array, followed by the type of each element of the array
-x = any or unknown (using TypeScript terminology)
-v = void
 ********/
 
-import mFPo_fetch, {type Response} from 'node-fetch'; //pull in of type Response needed due
+import FETCH, {type Response} from 'node-fetch'; //pull in of type Response needed due
                                                       //  to clash with WebWorker's version
-import {ethers as mO_ETHERS} from 'ethers';
-import mO_FS from 'fs';
-import mO_PTH from 'path';
+import {ethers as ETHERS} from 'ethers';
+import FS from 'fs';
+import PATH from 'path';
 import type {IVault, IStratToHrvst, IChain, IChains} from '../interfaces';
-import {estimateGas as mFPO_estimateGas} from '../utils/harvestHelpers';
+import {estimateGas} from '../utils/harvestHelpers';
 
-const mI_NOT_FND = -1;
+const NOT_FOUND = -1;
 
-const mFb_SettledPromiseRjctd = (O: PromiseSettledResult< unknown>) : 
-                                    O is PromiseRejectedResult => 'rejected' === O.status;
-const mFb_SettledPromiseFilld = <T> (O: PromiseSettledResult< T>) : 
-                              O is PromiseFulfilledResult< T> => 'fulfilled' === O.status;
+const SettledPromiseRejected = (result: PromiseSettledResult< unknown>) : 
+                              result is PromiseRejectedResult => 'rejected' === result.status;
+const SettledPromiseFilld = <type> (result: PromiseSettledResult< type>) : 
+                      result is PromiseFulfilledResult< type> => 'fulfilled' === result.status;
 
 type HitType = 'added' | 'removed, inactive' | 'removed, decomissioned' | 
                 'on-chain-harvest switch' | 'strategy update';
@@ -51,165 +32,165 @@ interface  Hit  {
   type: HitType | HitType[];
 }
 class Hits  {
-  readonly O_hits: Record< string, Hit> = {};
-  add( S_ID: string, 
-        S_TYP: Readonly< HitType>) : void {
-    if (!S_ID)
+  readonly hits: Record< string, Hit> = {};
+  add( id: string, 
+        type: Readonly< HitType>) : void {
+    if (!id)
       return;
-    const O = this.O_hits[ S_ID];
-    if (!O)
-      this.O_hits[ S_ID] = {id: S_ID, type: S_TYP};
-    else if (!Array.isArray( O.type))
-      O.type = [O.type, S_TYP];
+    const hit = this.hits[ id];
+    if (!hit)
+      this.hits[ id] = {id: id, type: type};
+    else if (!Array.isArray( hit.type))
+      hit.type = [hit.type, type];
     else
-      O.type.push( S_TYP);
+      hit.type.push( type);
   } //add(
 } //class Hits
 
 
-class ChainStratsMgr  {
-  private _i_added: number = 0;
-  private _i_rmvd: number = 0;
+class ChainStratManager  {
+  private added: number = 0;
+  private removed: number = 0;
 
-  readonly ES_DENY_OCH: ReadonlySet< string> | null = null; 
-  readonly Ao_notOch: IStratToHrvst[] = [];
+  readonly denyOnChainHarvest: ReadonlySet< string> | null = null; 
+  readonly notOnChainHarvest: IStratToHrvst[] = [];
 
 
-  constructor( private readonly _O_CHN: IChain, 
-                private readonly _AO_VLTS: readonly IVault[], 
-                private readonly _Es_encountered: Set< string>, 
-                private readonly _O_hits: Hits) {
+  constructor( private readonly chain: IChain, 
+                private readonly vaults: readonly IVault[], 
+                private readonly encountered: Set< string>, 
+                private readonly hits: Hits) {
     //if this is a chain on which we use an on-chain harvesting (OCH) service, load up for 
     //  downstream use the list of vaults on the chain for which no on-chain harvesting 
     //  should be done
-    if (this._O_CHN.hasOnChainHarvesting)
-      this.ES_DENY_OCH = <ReadonlySet< string>> require( `../gelato/${this._O_CHN.id
+    if (this.chain.hasOnChainHarvesting)
+      this.denyOnChainHarvest = <ReadonlySet< string>> require( `../gelato/${this.chain.id
                                                         }VaultDenyList.ts`).vaultDenyList;
   } //constructor(
 
 
-  b_SyncVaults( Ao_stratsToHrvst: IStratToHrvst[]) : boolean  {
+  SyncVaults( stratsToHarvest: IStratToHrvst[]) : boolean  {
     //for each current vault...
-    let b_dirty = false;
-    this._AO_VLTS.forEach( (O_VLT: IVault) => {
+    let dirty = false;
+    this.vaults.forEach( (vault: IVault) => {
       //if the vault does not reside on the target chain, loop for the next vault
-      if (this._O_CHN.id !== O_VLT.chain)
+      if (this.chain.id !== vault.chain)
         return; 
 
       //if this vault was unknown at the time of our last run...
-      const I_IDX = Ao_stratsToHrvst.findIndex( (O: IStratToHrvst) => O_VLT.strategy === 
-                                                        O?.strategy && O_VLT.id === O.id) 
-      let o_strt = mI_NOT_FND != I_IDX ? Ao_stratsToHrvst[ I_IDX] : null;
-      if (!o_strt)  {
+      const index = stratsToHarvest.findIndex( (O: IStratToHrvst) => vault.strategy === 
+                                                        O?.strategy && vault.id === O.id) 
+      let strat = NOT_FOUND != index ? stratsToHarvest[ index] : null;
+      if (!strat)  {
         //if the vault is inactive (paused or ended), loop for the next vault
-        if (['eol', 'paused'].includes( O_VLT.status))
+        if (['eol', 'paused'].includes( vault.status))
            return;
 
         //add it to our list of active vaults, and note the addition in our log of changes 
         //  made
-        Ao_stratsToHrvst.push( o_strt = { id: O_VLT.id,
-                                          chain: O_VLT.chain, 
-                                          earnContractAddress: O_VLT.earnContractAddress,
-                                          earnedToken: O_VLT.earnedToken,
-                                          strategy: O_VLT.strategy,
-                                          lastHarvest: O_VLT.lastHarvest});
-        this._i_added++;
-        b_dirty = true;
-        this._Es_encountered.add( O_VLT.id);
-        this._O_hits.add( O_VLT.id, 'added');
+        stratsToHarvest.push( strat = { id: vault.id,
+                                          chain: vault.chain, 
+                                          earnContractAddress: vault.earnContractAddress,
+                                          earnedToken: vault.earnedToken,
+                                          strategy: vault.strategy,
+                                          lastHarvest: vault.lastHarvest});
+        this.added++;
+        dirty = true;
+        this.encountered.add( vault.id);
+        this.hits.add( vault.id, 'added');
       //else if the vault has gone inactive...
-      }else if (['eol', 'paused'].includes( O_VLT.status))  {
+      }else if (['eol', 'paused'].includes( vault.status))  {
         //remove it from our list of active vaults, note this in our log of changes made, 
         //  and loop for the next vault
-        delete Ao_stratsToHrvst[ I_IDX];
-        this._i_rmvd++;
-        b_dirty = true;
-        this._O_hits.add( O_VLT.id, 'removed, inactive');
+        delete stratsToHarvest[ index];
+        this.removed++;
+        dirty = true;
+        this.hits.add( vault.id, 'removed, inactive');
         return;
       //else add this vault to a list of still-present vaults encountered
       }else
-        this._Es_encountered.add( O_VLT.id);
+        this.encountered.add( vault.id);
 
       //if this is a chain on which we use an on-chain harvesting (OCH) service, determine 
       //  whether the vault is excluded from being handled that way
-      const B_OCH = this._O_CHN.hasOnChainHarvesting && !this.ES_DENY_OCH?.has( 
-                                                                        O_VLT.earnedToken);
+      const onChainHarvest = this.chain.hasOnChainHarvesting && !this.denyOnChainHarvest?.has( 
+                                                                        vault.earnedToken);
 
       //if the operative OCH status is not reflected on our current vault descriptor...
-      if (B_OCH ? o_strt?.noOnChainHrvst : this._O_CHN.hasOnChainHarvesting && 
-                                                                !o_strt?.noOnChainHrvst)  {
+      if (onChainHarvest ? strat?.noOnChainHrvst : this.chain.hasOnChainHarvesting && 
+                                                                !strat?.noOnChainHrvst)  {
         //if the vault is not new...
-        if (mI_NOT_FND != I_IDX)  {
+        if (NOT_FOUND != index)  {
           //reflect the OCH status onto the current strat descriptor and note the switch in 
           //  our log of changes made
-          o_strt.noOnChainHrvst = !B_OCH;
-          b_dirty = true;
-          this._O_hits.add( O_VLT.id, 'on-chain-harvest switch');
+          strat.noOnChainHrvst = !onChainHarvest;
+          dirty = true;
+          this.hits.add( vault.id, 'on-chain-harvest switch');
         //else relect the OCH status onto the new strat descriptor
         }else
-          o_strt.noOnChainHrvst = !B_OCH;
-      } //if (B_OCH ? o_strt?.noOnChainHrvst :
+          strat.noOnChainHrvst = !onChainHarvest;
+      } //if (onChainHarvest ? strat?.noOnChainHrvst :
  
       //if the vault is not handled by an OCH, add the vault to a list of non-OCH vaults 
       //  active on this chain (as our consumer  may be interested downstream)
-      if (!B_OCH)
-        this.Ao_notOch.push( o_strt);
+      if (!onChainHarvest)
+        this.notOnChainHarvest.push( strat);
 
       //if the vault is new, loop for the next vault
-      if (mI_NOT_FND == I_IDX)
+      if (NOT_FOUND == index)
         return;
    
       //if the strategy contract changed, note the change in our log of changes made and 
       //  reflect the strategy contract onto our vault descriptor
-      if (o_strt.strategy !== O_VLT.strategy) { 
-        o_strt.strategy = O_VLT.strategy;
-        b_dirty = true;
-        this._O_hits.add( O_VLT.id, 'strategy update');
-        console.log( `    Strategy upgrade applied to vault: ${o_strt.id}`);
+      if (strat.strategy !== vault.strategy) { 
+        strat.strategy = vault.strategy;
+        dirty = true;
+        this.hits.add( vault.id, 'strategy update');
+        console.log( `    Strategy upgrade applied to vault: ${strat.id}`);
       }
 
       //if the last-harvest timestamp has updated, reflect that onto our vault descriptor
-      if (o_strt.lastHarvest < O_VLT.lastHarvest) {
-        o_strt.lastHarvest = O_VLT.lastHarvest;
-        b_dirty = true;
+      if (strat.lastHarvest < vault.lastHarvest) {
+        strat.lastHarvest = vault.lastHarvest;
+        dirty = true;
       }
-    }); //AO_VLTS.forEach( (O_VLT: IVault) =
+    }); //vaults.forEach( (vault: IVault) =
 
-    return b_dirty;
+    return dirty;
   } //SyncVaults(
 
 
-  o_stratsChanged() : Readonly< {added: number, removed: number}> {
-    return {added: this._i_added, removed: this._i_rmvd};
+  stratsChanged() : Readonly< {added: number, removed: number}> {
+    return {added: this.added, removed: this.removed};
   }
 
 
-  async Pb_AddGasLimits( Ao_strats: IStratToHrvst[]) : Promise< boolean>  {
-    const O_PROVIDR = new mO_ETHERS.providers.JsonRpcProvider( this._O_CHN.rpc), 
-          APR = <readonly PromiseSettledResult< unknown>[]> await Promise.allSettled( 
-                                    Ao_strats.map( (O: IStratToHrvst) => 
-                                    mFPO_estimateGas( O, this._O_CHN.chainId, O_PROVIDR)));
+  async AddGasLimits( strats: IStratToHrvst[]) : Promise< boolean>  {
+    const provider = new ETHERS.providers.JsonRpcProvider( this.chain.rpc), 
+          results = <readonly PromiseSettledResult< unknown>[]> await Promise.allSettled( 
+                                    strats.map( (O: IStratToHrvst) => 
+                                    estimateGas( O, this.chain.chainId, provider)));
 
-    return !!APR.find( mFb_SettledPromiseFilld);
-  } //async Pb_AddGasLimits( Ao_strats:
-} //class ChainStratsMgr
+    return !!results.find( SettledPromiseFilld);
+  } //async AddGasLimits( strats:
+} //class ChainStratManager
 
 
-async function mFPv_main() : Promise< void> {
-  let AO_VLTS: ReadonlyArray< IVault> = [], 
-      Ao_stratsToHrvst: IStratToHrvst[] = [];
+async function main() : Promise< void> {
+  let vaults: ReadonlyArray< IVault> = [], 
+      stratsToHarvest: IStratToHrvst[] = [];
 
   //load up current vaults from Beefy's online source
-  const S_URL_VLTS = `https://api.beefy.finance/vaults`;
+  const urlVaults = `https://api.beefy.finance/vaults`;
   try {
-    const O_RESP = await <Promise< Response>> mFPo_fetch( S_URL_VLTS);
-    if (!( O_RESP.ok && O_RESP.body)) {
+    const response = await <Promise< Response>> FETCH( urlVaults);
+    if (!( response.ok && response.body)) {
       console.log( 'Fetching vaults failed');
       return;
     }
-    AO_VLTS = await <Promise< ReadonlyArray< IVault>>> O_RESP.json();
-  } catch (X: unknown)  {
-    console.log( X);
+    vaults = await <Promise< ReadonlyArray< IVault>>> response.json();
+  } catch (error: unknown)  {
+    console.log( error);
     return;
   }
 
@@ -217,74 +198,74 @@ async function mFPv_main() : Promise< void> {
   //  out-of-date) which should be present (TODO, convert to a map-like object for 
   //  efficient downstream lookups and removal handling)
   try {
-    Ao_stratsToHrvst = <IStratToHrvst[]> require( '../data/stratsToHrvst.json');
-  } catch (X: unknown)  {
-    if (!( (( X_: unknown): X_ is NodeJS.ErrnoException => 
-                                              !!(<NodeJS.ErrnoException> X_).code)( X) && 
-                                              'MODULE_NOT_FOUND' === X.code)) {
-      console.log( X);
+    stratsToHarvest = <IStratToHrvst[]> require( '../data/stratsToHrvst.json');
+  } catch (error: unknown)  {
+    if (!( (( testError: unknown): testError is NodeJS.ErrnoException => 
+                                  !!(< NodeJS.ErrnoException> testError).code)( error) && 
+                                  'MODULE_NOT_FOUND' === error.code)) {
+      console.log( error);
       return;
     }
   } //try
 
-  const O_hits = new Hits(), 
-        Es_encountered: Set< string> = new Set();
-  let b_dirty = false;
+  const hits = new Hits(), 
+        encountered: Set< string> = new Set();
+  let dirty = false;
 
   //running in parallel for efficiency, for each chain we support...
-/*Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (O_CHN: IChain) =>  {*/  await Promise.all( Object.values( <Readonly< IChains>> require( 
-                                      '../data/chains.js')).map( async (O_CHN: IChain) => {
+/*Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {*/  await Promise.all( Object.values( <Readonly< IChains>> require( 
+                                      '../data/chains.js')).map( async (chain: IChain) => {
     //synchronize our configuration of strategies on this chain to match up with the 
     //  current actual state of vaults and strategies at Beefy
-    const O_STRT_MGR = new ChainStratsMgr( O_CHN, AO_VLTS, Es_encountered, O_hits);
-    if (O_STRT_MGR.b_SyncVaults( Ao_stratsToHrvst))
-      b_dirty = true;
-    const {added: I_ADDED, removed: I_RMVD} = O_STRT_MGR.o_stratsChanged();
-    if (I_ADDED || I_RMVD)
-      console.log( `Strats on ${O_CHN.id.toUpperCase()}: ${I_ADDED } added, ${I_RMVD
+    const stratManager = new ChainStratManager( chain, vaults, encountered, hits);
+    if (stratManager.SyncVaults( stratsToHarvest))
+      dirty = true;
+    const {added, removed} = stratManager.stratsChanged();
+    if (added || removed)
+      console.log( `Strats on ${chain.id.toUpperCase()}: ${added } added, ${removed
                                                                               } removed`);
     else
-      console.log( `No strats added or removed from ${O_CHN.id.toUpperCase()}`);
+      console.log( `No strats added or removed from ${chain.id.toUpperCase()}`);
 
     //if any vault on the chain is to be handled by our homegrown bot, estimate the gas 
     //  required to execute a harvest on each vault to be handled by our homegrown bot, 
     //  reflecting the result onto each's vault descriptor
-/*if(false)*/   if (O_STRT_MGR.Ao_notOch.length)  {
+/*if(false)*/   if (stratManager.notOnChainHarvest.length)  {
       console.log( `  Updating gas-limit values on Cowllector-managed ${
-                                                      O_CHN.id.toUpperCase()} strats...`);
-/**/  if (await O_STRT_MGR.Pb_AddGasLimits( O_STRT_MGR.Ao_notOch))
-/**/    b_dirty = true;
-      console.log( `    Finished gas-limit updates on ${O_CHN.id.toUpperCase()}`);
+                                                      chain.id.toUpperCase()} strats...`);
+/**/  if (await stratManager.AddGasLimits( stratManager.notOnChainHarvest))
+/**/    dirty = true;
+      console.log( `    Finished gas-limit updates on ${chain.id.toUpperCase()}`);
     }
   })); //await Promise.all( Object.values( <Readonly< IChains>>
 //debugger;
   //for each active vault at the time of the last run which remains in that list...
-  Ao_stratsToHrvst.forEach( (O_STRT, I) => {
+  stratsToHarvest.forEach( (strat, index) => {
     //if the vault was noted upstream as new or still active, loop for the next vault
-    if (Es_encountered.has( O_STRT.id))
+    if (encountered.has( strat.id))
       return;
 
     //remove the vault from our running active-vault list, and note the removal in our log 
     //  of changes made
-    delete Ao_stratsToHrvst[ I];
-    O_hits.add( O_STRT.id, 'removed, decomissioned');
-  }); //Ao_stratsToHrvst.forEach( O_STRT
+    delete stratsToHarvest[ index];
+    hits.add( strat.id, 'removed, decomissioned');
+  }); //stratsToHarvest.forEach( strat
 
   //if any significant changes occurred during this sync, persist our log of them to help 
   //  our overseers keep an eye on things
-  const I = Object.keys( O_hits.O_hits).length;
-  if (I)  {
-    mO_FS.writeFileSync( mO_PTH.join( __dirname, '../data/stratsSync.json'),
-                                  JSON.stringify( Object.values( O_hits.O_hits), null, 2));
-    console.log( `\nLog of ${I} significant changes written to data/stratsSync.json`);
+  const index = Object.keys( hits.hits).length;
+  if (index)  {
+    FS.writeFileSync(PATH.join( __dirname, '../data/stratsSync.json'),
+                                  JSON.stringify( Object.values( hits.hits), null, 2));
+    console.log( `\nLog of ${index} significant changes written to data/stratsSync.json`);
   }
   
   //if any changes occurred over this sync, persist our running list of active vaults, 
   //  including their properties of downstream interest
-  if (b_dirty)
-    mO_FS.writeFileSync( mO_PTH.join( __dirname, '../data/stratsToHrvst.json'),
-                              JSON.stringify( Ao_stratsToHrvst.filter( X => X), null, 2));
-} //function async mFPv_main(
+  if (dirty)
+    FS.writeFileSync( PATH.join( __dirname, '../data/stratsToHrvst.json'),
+                      JSON.stringify( stratsToHarvest.filter( strat => strat), null, 2));
+} //function async main(
 
 
-mFPv_main();
+main();
