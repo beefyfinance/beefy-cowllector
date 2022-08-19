@@ -1,27 +1,38 @@
 import { Contract, ethers, Wallet } from 'ethers';
 import OPS_ABI from './abis/Ops.json';
+
+
 export class GelatoClient {
-  private static readonly _feeTokenWhenNotPrepaidTask = "0x0000000000000000000000000000000000000000"; // When task is not prepaid, the contract just uses 0 address, since it uses any funds in the treasury.
+  //when task is not prepaid, the contract uses the null  address, signifying to use any 
+  //  funds in the treasury
+  private static readonly _feeTokenWhenNotPrepaidTask = 
+                                            "0x0000000000000000000000000000000000000000";
 
   private readonly _gelatoAdmin: Wallet;
   private readonly _harvesterAddress: string;
   private readonly _opsContract: Contract;
   private readonly _shouldLog: boolean;
 
-  constructor(gelatoAdmin_: Wallet, harvesterAddress_: string, opsAddress_: string, shouldLog: boolean) {
+
+  constructor( gelatoAdmin_: Wallet, 
+                harvesterAddress_: string, 
+                opsAddress_: string, 
+                shouldLog: boolean) {
     this._gelatoAdmin = gelatoAdmin_;
     this._harvesterAddress = harvesterAddress_;
     this._opsContract = new Contract(opsAddress_, OPS_ABI, this._gelatoAdmin);
     this._shouldLog = shouldLog;
   }
 
-  public async getGelatoAdminTaskIds(): Promise<string[]> {
+
+  public async getGelatoAdminTaskIds() : Promise< string[]> {
     const taskIds = await this._opsContract.getTaskIdsByUser(this._gelatoAdmin.address);
     this._log(`Retrieved ${taskIds.length} task ids.`)
     return taskIds;
   }
 
-  public async computeTaskId(vault_: string): Promise<string> {
+
+  public async computeTaskId( vault_: string) : Promise< string> {
     const performSelector = await this._opsContract.getSelector("performUpkeep(address,uint256,uint256,uint256,uint256,bool)");
     const checkerSelector = (await this._opsContract.getSelector("checker(address)"));
     const replaced0x = `000000000000000000000000${vault_.toLowerCase().slice(2)}`
@@ -106,4 +117,4 @@ export class GelatoClient {
       console.log(_log);
     }
   }
-}
+} //class GelatoClient 

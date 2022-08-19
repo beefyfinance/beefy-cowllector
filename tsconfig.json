@@ -1,12 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "ES2020",
     "module": "commonjs",
     "strict": true,
-    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
     "outDir": "dist",
+    "sourceMap": false,
+    "inlineSources": false,
     "declaration": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowJs": true
   },
-  "include": ["./gelato"]
+  "ts-node": {
+    "compilerHost": true,
+    "emit": true
+  },
+  "include": ["scripts/**/*", "gelato/**/*"]
 }
