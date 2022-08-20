@@ -8,10 +8,12 @@ gas-limits to harvest vaults managed by Cowllector.
 
 At the end of a run, a JSON log of the significant changes made by the sync is written to 
 `data\stratsSync.json`.
+
+Node run command: node --loader ts-node/esm scripts/syncStrats.ts
 ********/
 
-import FETCH, {type Response} from 'node-fetch'; //pull in of type Response needed due
-                                                      //  to clash with WebWorker's version
+import FETCH, {type Response} from 'node-fetch'; //pull in of type Response needed due to 
+                                                 //  clash with WebWorker's version
 import {ethers as ETHERS} from 'ethers';
 import FS from 'fs';
 import PATH from 'path';

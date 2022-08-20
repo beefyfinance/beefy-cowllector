@@ -16,6 +16,7 @@ const isNewPeriodNaive = interval => {
   return hour % interval === 0;
 };
 
+
 /**
  * Check if is new harvest period
  * @param {Object} strat
@@ -23,15 +24,16 @@ const isNewPeriodNaive = interval => {
  * @param {Number} harvesInterval seconds interval between harvest
  * @returns boolean
  */
-const isNewHarvestPeriod = async (strat, harvester, harvestInterval) => {
-  const strategy = new ethers.Contract(strat.address, IStrategy, harvester);
+const isNewHarvestPeriod = async (strat, harvester, harvestInterval, chainId) => {
+  const strategy = new ethers.Contract( strat.strategy || strat.address, IStrategy, 
+                                                                                harvester);
   const filter = strategy.filters.StratHarvest(null);
   const currentBlock = await harvester.provider.getBlockNumber();
-  const blockTime = chains[strat.chainId].blockTime;
+  const blockTime = chains[ chainId || strat.chainId].blockTime;
   const oldestPeriodBlock = currentBlock - harvestInterval / blockTime;
 
   let logs = [];
-  let interval = chains[strat.chainId].queryLimit;
+  let interval = chains[ chainId || strat.chainId].queryLimit;
   let from = currentBlock - interval;
   let to = currentBlock;
 
@@ -45,14 +47,15 @@ const isNewHarvestPeriod = async (strat, harvester, harvestInterval) => {
   }
 
   return false;
-};
+}; //const isNewHarvestPeriod = async (
+
 
 /**
  * Multicall contract methods
  * @description Works with only view methods. Function will return the same array of
  *      contracts passed in with an extra property giving the results of the method called.
  * @param {object} chain object, see chains.js
- * @param {array} ethers contract to be called
+ * @param {array} strategy descriptors
  * @param {string} method to call
  * @param {json} the ABI (Aplication Binary Interface)
  * @returns {array} ehters contracts
@@ -61,23 +64,25 @@ const multicall = async (chain, contracts, method = 'balanceOf', ABI = IStrategy
   const web3 = new Web3(chain.rpc);
   const multicall = new MultiCall(web3, chain.multicall);
 
-  const calls = contracts.map(c => {
-    const contract = new web3.eth.Contract(ABI, c.address);
+  const calls = contracts.map( c => {
+    const contract = new web3.eth.Contract( ABI, c.strategy || c.address);
     return {
-      [method]: contract.methods[method](),
+      [method]: contract.methods[ method](),
     };
   });
   const [callResults] = await multicall.all([calls]);
-  for (let i = 0; i < contracts.length; i++) {
-    contracts[i][method] = callResults[i][method] || 0;
+  for ( let i = 0; i < contracts.length; i++) {
+    contracts[ i][ method] = callResults[ i][ method] || contracts[ i][ method] || 0;
   }
   return contracts;
 }; //const multicall = async (
+
 
 const hasStakers = async strategy => {
   const balance = await strategy.balanceOf();
   return balance.gt(0) ? true : false;
 };
+
 
 /**
  * Estimate Gas Limit
@@ -100,7 +105,7 @@ const estimateGas = async (strat, chainId, provider, topic = null) => {
   // Estimate Gas using gas used in event logs
   try {
     let filter = {
-      address: strat?.strategy || strat.address,
+      address: strat.strategy || strat.address,
       toBlock: 'latest',
       fromBlock: -1e5,
       topics: [topic],
@@ -132,8 +137,8 @@ const estimateGas = async (strat, chainId, provider, topic = null) => {
   // Estimage Gas using eth_estimateGas
   try {
     let limit = await provider.estimateGas({
-      to: strat?.strategy || strat.address,
-      data: strat?.harvestSignature || '0x4641257d',
+      to: strat.strategy || strat.address,
+      data: strat.harvestSignature || '0x4641257d',
     });
 
     //0xww: Add on an extra 30% of estimated gas
@@ -160,7 +165,7 @@ const estimateGas = async (strat, chainId, provider, topic = null) => {
   }
   if (strat.gasLimit) return strat;
 
-  throw new Error(`Cannot estimate gas of contract ${strat.address}`);
+  throw new Error(`Cannot estimate gas of contract ${strat.strategy || strat.address}`);
 };
 
 module.exports = {
