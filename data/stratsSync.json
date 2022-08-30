@@ -1,142 +1,186 @@
 [
   {
-    "id": "velodrome-weth-hop",
+    "id": "velodrome-susd-lusd",
     "type": "added"
   },
   {
-    "id": "beefy-bevelo",
+    "id": "velodrome-lusd-mai",
     "type": "added"
   },
   {
-    "id": "velodrome-wsteth-weth",
+    "id": "banana-hec-wbnb",
     "type": "added"
   },
   {
-    "id": "vvs-usdc-busd",
+    "id": "banana-tor-busd",
     "type": "added"
   },
   {
-    "id": "ferro-2fer",
+    "id": "cone-usdt-usdc",
     "type": "added"
   },
   {
-    "id": "ferro-3fer",
+    "id": "cone-usdc-busd",
     "type": "added"
   },
   {
-    "id": "biswap-etc-bnb",
+    "id": "cone-wbnb-busd",
     "type": "added"
   },
   {
-    "id": "cakev2-pstake-busd",
+    "id": "cone-tusd-busd",
+    "type": "added"
+  },
+  {
+    "id": "cone-mai-busd",
+    "type": "added"
+  },
+  {
+    "id": "cone-wbnb-qi",
+    "type": "added"
+  },
+  {
+    "id": "cone-mai-wbnb",
+    "type": "added"
+  },
+  {
+    "id": "cone-wbnb-bifi",
+    "type": "added"
+  },
+  {
+    "id": "cakev2-wbnb-abnbc",
+    "type": "added"
+  },
+  {
+    "id": "balancer-wbtc-usdc-eth",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-fusdt-wftm",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-wftm-btc",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-usdc-wftm",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-usdc-frax",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-usdc-dai",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-usdc-fusdt",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-wftm-spirit",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-binspirit-spirit",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-wftm-bifi",
+    "type": "added"
+  },
+  {
+    "id": "spirit-wftm-comb",
     "type": "removed, inactive"
   },
   {
-    "id": "banana-pots-bnb",
+    "id": "spirit-wmemo-mim",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-sxp-bnb",
+    "id": "spirit-crv-ftm",
     "type": "removed, inactive"
   },
   {
-    "id": "emp-eshare-wbnb",
+    "id": "spirit-ftm-spirit",
     "type": "removed, inactive"
   },
   {
-    "id": "bomb-bshare-wbnb",
+    "id": "spirit-ftm-wshec",
     "type": "removed, inactive"
   },
   {
-    "id": "mai-curve-mai-3pool",
+    "id": "spirit-ftm-jewel",
     "type": "removed, inactive"
   },
   {
-    "id": "boo-deus-wftm",
-    "type": "added"
+    "id": "spirit-ftm-frax",
+    "type": "removed, inactive"
   },
   {
-    "id": "mai-curve-ftm-mai",
-    "type": "added"
+    "id": "spirit-ftm-mai",
+    "type": "removed, inactive"
   },
   {
-    "id": "beets-another-dei-another-dollar",
-    "type": "added"
+    "id": "spirit-ftm-gohm",
+    "type": "removed, inactive"
   },
   {
-    "id": "stellaswap-wstdot-xcdot",
-    "type": "added"
+    "id": "spirit-ftm-deus",
+    "type": "removed, inactive"
   },
   {
-    "id": "stellaswap-4pool",
-    "type": "added"
+    "id": "spirit-ftm-cre8r",
+    "type": "removed, inactive"
   },
   {
-    "id": "stellaswap-wbtcwh-wglmr",
-    "type": "added"
+    "id": "spirit-ftm-bifi",
+    "type": "removed, inactive"
   },
   {
-    "id": "stellaswap-ethwh-wglmr",
-    "type": "added"
+    "id": "spirit-ftm-beftm",
+    "type": "removed, inactive"
   },
   {
-    "id": "stellaswap-usdcwh-wglmr",
-    "type": "added"
+    "id": "spirit-hnd-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ftm-treeb",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ust-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-orkan-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-sftmx-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-wftm-midas",
+    "type": "removed, inactive"
   },
   {
     "id": "stellaswap-frax-wglmr",
+    "type": "added"
+  },
+  {
+    "id": "stellaswap-wglmr-mai",
+    "type": "added"
+  },
+  {
+    "id": "joe-wavax-ecd",
     "type": "removed, inactive"
   },
   {
-    "id": "stellaswap-usdc-bnb",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "stellaswap-busd-wglmr",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "stellaswap-wglmr-ftm",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "gmx-arb-glp",
-    "type": "added"
-  },
-  {
-    "id": "gmx-arb-gmx",
-    "type": "added"
-  },
-  {
-    "id": "balancer-wsteth-eth",
-    "type": "added"
-  },
-  {
-    "id": "balancer-wsteth-usdc",
-    "type": "added"
-  },
-  {
-    "id": "balancer-magic-usdc",
-    "type": "added"
-  },
-  {
-    "id": "joe-cai-wavax",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "sicle-wavax-usdc",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "mai-avax-mai-crv",
-    "type": "added"
-  },
-  {
-    "id": "gmx-avax-glp",
-    "type": "added"
-  },
-  {
-    "id": "gmx-avax-gmx",
-    "type": "added"
+    "id": "vvs-mtd-vvs",
+    "type": "removed, decomissioned"
   }
 ]
