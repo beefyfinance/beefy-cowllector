@@ -1,11 +1,8 @@
-import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
-//  needed due to clash with WebWorker's version
-import { NonceManage } from '../utility/NonceManage';
-import type { GelatoClient } from './gelatoClient';
-import type { IChainHarvester, IStratToHarvest } from './interfaces';
-import { getKey, redisDisconnect } from '../utility/redisHelper';
-import { logger } from '../utility/Logger';
-import BROADCAST from '../utils/broadcast';
+import FETCH, {type Response} from 'node-fetch'; //pull in of type Response needed due to 
+                                                 //  clash with WebWorker's version
+import { Wallet } from 'ethers';
+import { GelatoClient } from './gelatoClient';
+import type { IChainOch, IStratToHrvst } from './interfaces';
 
 type VaultRecord = Record<IStratToHarvest['earnedToken'], IStratToHarvest['earnContractAddress']>;
 
@@ -32,127 +29,109 @@ const REDIS_KEY = 'STRATS_TO_HARVEST';
 const _logger = logger.getLogger('TaskSync');
 
 export class TaskSyncer {
-  private static _stratsToHarvest: ReadonlyArray<IStratToHarvest>;
-  static {
+  private readonly _gelatoClient: GelatoClient;
+
+  constructor( gelatoAdmin_: Readonly< Wallet>, 
+                private readonly _chain: Readonly< IChainOch >) {
+    this._gelatoClient = new GelatoClient( gelatoAdmin_, _chain, false);
+  }
+
+
+  public async syncVaultHarvesterTasks() : Promise< void> {
+    let stratsToHarvest: ReadonlyArray< IStratToHrvst>;
+
     try {
-      getKey(REDIS_KEY).then(
-        (value: Readonly<Record<string, IStratToHarvest>>): ReadonlyArray<IStratToHarvest> => {
-          redisDisconnect();
-          return (this._stratsToHarvest = Object.values(value));
-        }
-      );
-    } catch (error: unknown) {
-      _logger.error(<any>error);
-      throw error;
+      stratsToHarvest = <ReadonlyArray< IStratToHrvst>> require( 
+                                                            '../data/stratsToHrvst.json');
+    } catch (error: unknown)  {
+      console.log( error);
+      return;
     }
   }
 
-  private _hits = new Hits();
+    const vaultsOnChain: Readonly< Record< string, IStratToHrvst>> = 
+                                                  stratsToHarvest.reduce( (map, strat) => {
+                        if (strat.chain !== this._chain.id || map[ strat.earnedToken])  {
+                          if (strat.chain === this._chain.id)
+                            console.log( `Duplicate ${strat.chain.toUpperCase()
+                                                    } vault-token: ${strat.earnedToken}`);
+                        }else
+                          map[ strat.earnedToken] = strat;
+                        return map;
+                      }, {} as Record< string, IStratToHrvst>), 
+            vaultsActive: Readonly< Record< IStratToHrvst[ 'earnedToken'], 
+                                            IStratToHrvst[ 'earnContractAddress']>> = 
+                                                  this._filterForOchVaults( vaultsOnChain);
 
-  constructor(
-    readonly gelatoAdmin_: NonceManage,
-    private readonly _chain: Readonly<IChainHarvester>,
-    private readonly _gelatoClient: GelatoClient
-  ) {}
+    const [vaultsMissingTask, taskIds]: Readonly< [Record< 
+                                            IStratToHrvst[ 'earnedToken'], 
+                                            IStratToHrvst[ 'earnContractAddress']> | null, 
+                                                    Record< string, boolean>]> = 
+                                          await this._vaultsWithMissingTask( vaultsActive);
 
-  public async syncVaultHarvesterTasks(): Promise<void> {
-    const vaultsOnChain: Readonly<Record<string, IStratToHarvest>> =
-        TaskSyncer._stratsToHarvest.reduce((map, strat) => {
-          if (strat.chain !== this._chain.id || map[strat.earnedToken]) {
-            if (strat.chain === this._chain.id)
-              _logger.warn(
-                `Duplicate ${strat.chain.toUpperCase()} vault-token: ${strat.earnedToken}`
-              );
-          } else map[strat.earnedToken] = strat;
-          return map;
-        }, {} as Record<string, IStratToHarvest>),
-      vaultsActive: Readonly<VaultRecord> = this._filterForOchVaults(vaultsOnChain);
+    //create a Gelato task for any missing vault
+    if (vaultsMissingTask)
+      this._gelatoClient.createTasks( vaultsMissingTask);
 
-    const [vaultsMissingTask, taskIds]: Readonly<[VaultRecord | null, Record<string, boolean>]> =
-      await this._vaultsWithMissingTask(vaultsActive);
-
-    let promiseCreated: Promise<Record<string, string>> | undefined,
-      promiseDeleted: typeof promiseCreated;
-
-    if (vaultsMissingTask) promiseCreated = this._gelatoClient.createTasks(vaultsMissingTask);
-
-    if (taskIds) {
-      const tasksToDelete: ReadonlySet<string> = Object.entries(taskIds).reduce((set, taskId) => {
-        if (!taskId[1]) set.add(taskId[0]);
-        return set;
-      }, new Set<string>());
-      if (tasksToDelete.size) promiseDeleted = this._gelatoClient.deleteTasks(tasksToDelete);
-    }
-
-    const report = { created: 0, deleted: 0 };
-    if (promiseCreated) {
-      const tasksCreated = await promiseCreated,
-        keys = Object.keys(tasksCreated);
-      keys.forEach(key => this._hits.add(key, 'created OCH task', `taskId: ${tasksCreated[key]}`));
-      report.created = keys.length;
-    }
-    if (promiseDeleted) {
-      const tasksDeleted = await promiseDeleted,
-        keys = Object.keys(tasksDeleted);
-      //TODO:keys.forEach( key => this._hits.add( key, `deleted OCH task: ${
-      //                                                      tasksDeleted[ key]}`));
-      report.deleted = keys.length;
-    }
-
-    try {
-      await BROADCAST.send({
-        type: 'info',
-        title: `On-chain-harvester sync on ${this._chain.id.toUpperCase()}`,
-        message:
-          `+ OCH tasks created: ${report.created}\n+ OCH tasks deleted: ${report.deleted}` +
-          (promiseCreated || promiseDeleted
-            ? `\n\`\`\`json\n${JSON.stringify(Object.values(this._hits.hits), null, 2)}\n\`\`\``
-            : ''),
-      });
-    } catch (error: unknown) {
-      //TODO; figure out TS to get rid of the 'any' cast, probably type-guard
-      _logger.error(`Error broadcasting report : ${(<any>error).message}`);
+    //if any Gelato task has become superfluous, delete it
+    if (taskIds)  {
+      const tasksToDelete: ReadonlySet< string> = Object.entries( 
+                                                        taskIds).reduce( (set, taskId) => {
+                                            if (!taskId[ 1])
+                                              set.add( taskId[ 0]);
+                                            return set;
+                                          }, new Set< string>());
+      if (tasksToDelete.size)
+        this._gelatoClient.deleteTasks( tasksToDelete);
     }
   } //public async syncVaultHarvesterTasks(
 
-  private async _vaultsWithMissingTask(
-    vaults: Readonly<VaultRecord>
-  ): Promise<[VaultRecord | null, Record<string, boolean>]> {
-    const vaultsWithMissingTask: Record<string, string> = {},
-      taskIds: Record<string, boolean> = (await this._gelatoClient.getGelatoAdminTaskIds()).reduce(
-        (map, taskId) => {
-          map[taskId] = false;
-          return map;
-        },
-        {} as Record<string, boolean>
-      );
-
+  
+  private async _vaultsWithMissingTask( vaults: Readonly< Record< 
+                                                IStratToHrvst[ 'earnedToken'], 
+                                                IStratToHrvst[ 'earnContractAddress']>>) : 
+                                    Promise< [Record< IStratToHrvst[ 'earnedToken'], 
+                                              IStratToHrvst[ 'earnContractAddress']> | null, 
+                                                  Record< string, boolean>]> {
+    const vaultsWithMissingTask: Record< string, string> = {}, 
+          taskIds: Record< string, boolean> = 
+                                (await this._gelatoClient.getGelatoAdminTaskIds()).reduce( 
+                                                                        (map, taskId) =>  {
+                                                  map[ taskId] = false;
+                                                  return map;
+                                                }, {} as Record< string, boolean>);
+  
     let dirty: boolean = false;
 
-    await Promise.all(
-      Object.keys(vaults).map(async (vaultName: string) => {
-        const vaultAddress: string = vaults[vaultName];
-        const taskId: string = await this._gelatoClient.computeTaskId(vaultAddress);
-        if (undefined == taskIds[taskId]) {
-          _logger.info(`Missing Gelato task for ${vaultName}`);
-          vaultsWithMissingTask[vaultName] = vaultAddress;
-          dirty = true;
-        } else taskIds[taskId] = true;
-      })
-    ); //await Promise.all( Object.keys( vaults).map(
+/*let vaultName = Object.entries( vaults)[ 0][ 0];*//*(Object.keys( vaults).forEach( async (vaultName: string) => {*/
+    await Promise.all( Object.keys( vaults).map( async (vaultName: string) => {
+      const vaultAddress: string = vaults[ vaultName];
+      const taskId: string = await this._gelatoClient.computeTaskId( vaultAddress);
+      if (undefined == taskIds[ taskId]) {
+        console.log( `Missing task for ${vaultName}`);
+        vaultsWithMissingTask[ vaultName] = vaultAddress;
+        dirty = true;
+      }else
+        taskIds[ taskId] = true;
+     }));
 
     if (dirty)
-      _logger.info(`\nMissing task for ${Object.keys(vaultsWithMissingTask).length} vaults.\n`);
+      console.log( `\nMissing task for ${Object.keys( vaultsWithMissingTask).length
+                                                                            } vaults.\n`);
     return [dirty ? vaultsWithMissingTask : null, taskIds];
   } //private async _vaultsWithMissingTask(
 
-  private _filterForOchVaults(vaults: Readonly<Record<string, IStratToHarvest>>): VaultRecord {
-    const vaultsOch: VaultRecord = {};
+
+  private _filterForOchVaults( vaults: Readonly< Record< string, IStratToHrvst>>) : 
+                                Record< IStratToHrvst[ 'earnedToken'], 
+                                        IStratToHrvst[ 'earnContractAddress']> {
+    const vaultsOch: Record< string, string> = {};
     for (const vault in vaults) {
-      if (vaults[vault].noOnChainHarvest) continue;
-      vaultsOch[vaults[vault].earnedToken] = vaults[vault].earnContractAddress;
+      if (vaults[ vault].noOnChainHrvst)
+        continue;
+      vaultsOch[ vaults[ vault].earnedToken] = vaults[ vault].earnContractAddress;
     }
 
     return vaultsOch;
-  } //private _filterForOchVaults(
-} //class TaskSyncer
+  } //private _filterForOchVaults( 
+} //export class TaskSyncer 
