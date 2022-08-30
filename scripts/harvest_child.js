@@ -562,7 +562,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 const main = async () => {
   try {
     //if the caller gave us a chain to process that seems validly configured and not turned
-    //  off..
+    //  off.. (TODO: invert this long-block conditional to short-circuit instead)
     if (CHAIN && CHAIN.harvestHourInterval) {
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
