@@ -1,378 +1,182 @@
 [
   {
-    "id": "velodrome-wsteth-weth",
+    "id": "velodrome-susd-lusd",
     "type": "added"
   },
   {
-    "id": "beets-lido-shuffle",
+    "id": "velodrome-lusd-mai",
     "type": "added"
   },
   {
-    "id": "beets-yellow-submarine",
+    "id": "banana-hec-wbnb",
     "type": "added"
   },
   {
-    "id": "beets-its-mai-life",
+    "id": "banana-tor-busd",
     "type": "added"
   },
   {
-    "id": "velodrome-usdc-mim",
+    "id": "cone-usdt-usdc",
     "type": "added"
   },
   {
-    "id": "velodrome-weth-bifi",
+    "id": "cone-usdc-busd",
     "type": "added"
   },
   {
-    "id": "velodrome-usd+-lusd",
+    "id": "cone-wbnb-busd",
     "type": "added"
   },
   {
-    "id": "velodrome-bond-weth",
+    "id": "cone-tusd-busd",
     "type": "added"
   },
   {
-    "id": "velodrome-sonne-usdc",
+    "id": "cone-mai-busd",
     "type": "added"
   },
   {
-    "id": "velodrome-jeur-ageur",
+    "id": "cone-wbnb-qi",
     "type": "added"
   },
   {
-    "id": "velodrome-op-bifi",
+    "id": "cone-mai-wbnb",
     "type": "added"
   },
   {
-    "id": "velodrome-frax-op",
+    "id": "cone-wbnb-bifi",
     "type": "added"
   },
   {
-    "id": "velodrome-usdc-tusd",
+    "id": "cakev2-wbnb-abnbc",
     "type": "added"
   },
   {
-    "id": "velodrome-usdp-usdc",
+    "id": "balancer-wbtc-usdc-eth",
     "type": "added"
   },
   {
-    "id": "vvs-usdc-busd",
+    "id": "spiritV2-fusdt-wftm",
     "type": "added"
   },
   {
-    "id": "biswap-bat-bnb",
+    "id": "spiritV2-wftm-btc",
     "type": "added"
   },
   {
-    "id": "cone-wbnb-usd+",
+    "id": "spiritV2-usdc-wftm",
     "type": "added"
   },
   {
-    "id": "cone-usd+-busd",
+    "id": "spiritV2-usdc-frax",
     "type": "added"
   },
   {
-    "id": "biswap-etc-bnb",
+    "id": "spiritV2-usdc-dai",
     "type": "added"
   },
   {
-    "id": "cakev2-hay-busd",
+    "id": "spiritV2-usdc-fusdt",
     "type": "added"
   },
   {
-    "id": "cakev2-busd-hoop",
+    "id": "spiritV2-wftm-spirit",
     "type": "added"
   },
   {
-    "id": "banana-sfp-bnb",
+    "id": "spiritV2-binspirit-spirit",
+    "type": "added"
+  },
+  {
+    "id": "spiritV2-wftm-bifi",
+    "type": "added"
+  },
+  {
+    "id": "spirit-wftm-comb",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-one-wbnb",
+    "id": "spirit-wmemo-mim",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-bifi-bnb",
+    "id": "spirit-crv-ftm",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-hotcross-bnb",
+    "id": "spirit-ftm-spirit",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-ramp-busd",
+    "id": "spirit-ftm-wshec",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-tko-bnb",
+    "id": "spirit-ftm-jewel",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-tlm-bnb",
+    "id": "spirit-ftm-frax",
     "type": "removed, inactive"
   },
   {
-    "id": "cakev2-bsw-wbnb",
+    "id": "spirit-ftm-mai",
     "type": "removed, inactive"
   },
   {
-    "id": "ellipsis-bnb-bnbx-crypto",
+    "id": "spirit-ftm-gohm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ftm-deus",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ftm-cre8r",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ftm-bifi",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ftm-beftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-hnd-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ftm-treeb",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-ust-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-orkan-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-sftmx-ftm",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "spirit-wftm-midas",
+    "type": "removed, inactive"
+  },
+  {
+    "id": "stellaswap-frax-wglmr",
     "type": "added"
   },
   {
-    "id": "ellipsis-3brl",
+    "id": "stellaswap-wglmr-mai",
     "type": "added"
   },
   {
-    "id": "ellipsis-busd-jchf",
-    "type": "added"
-  },
-  {
-    "id": "sushi-fuse-wfuse-weth",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "sushi-fuse-wfuse-usdc",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "sushi-fuse-usdc-usdt",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "dystopia-usd+-usdc",
-    "type": "added"
-  },
-  {
-    "id": "dystopia-wmatic-bifi",
-    "type": "added"
-  },
-  {
-    "id": "dystopia-usd+-stmatic",
-    "type": "added"
-  },
-  {
-    "id": "dystopia-wmatic-usd+",
-    "type": "added"
-  },
-  {
-    "id": "balancer-matic-maticx",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "balancer-matic-maticx-v2",
-    "type": "added"
-  },
-  {
-    "id": "balancer-matic-stmatic-v2",
-    "type": "added"
-  },
-  {
-    "id": "balancer-matic-stmatic",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-mai-usdt",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-dai-mai",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-usdt-matic",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-usdc-eth",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-dai-eth",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-btc-usdc",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-matic-usdc",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-usdc-usdt",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-eth-btc",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-eth-usdt",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-eth-matic",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "jarvis-2cad",
-    "type": "strategy update"
-  },
-  {
-    "id": "jarvis-2sgd",
-    "type": "strategy update"
-  },
-  {
-    "id": "quick-stmatic-matic",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-wmatic-maticx",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-eth-newquick",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-usdc-newquick",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "jarvis-2nzd",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "jarvis-2jpy2",
-    "type": "strategy update"
-  },
-  {
-    "id": "jarvis-2eur",
-    "type": "strategy update"
-  },
-  {
-    "id": "quick-matic-ldo",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-newquick-matic",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "quick-matic-pae",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "jarvis-2eurt",
-    "type": "strategy update"
-  },
-  {
-    "id": "jarvis-2eurp",
-    "type": "strategy update"
-  },
-  {
-    "id": "jarvis-2eure",
-    "type": "added"
-  },
-  {
-    "id": "mai-curve-ftm-mai",
-    "type": "added"
-  },
-  {
-    "id": "beets-another-dei-another-dollar",
-    "type": "added"
-  },
-  {
-    "id": "spiritV2-wftm-comb",
-    "type": "added"
-  },
-  {
-    "id": "spiritV2-wftm-sftmx",
-    "type": "added"
-  },
-  {
-    "id": "spiritV2-usdc-busd",
-    "type": "added"
-  },
-  {
-    "id": "spell-ftm-mim-crv",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "beets-dante-symphony",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "wigo-usdc-fusdt",
-    "type": "removed, inactive"
-  },
-  {
-    "id": "hermes-m.dai-m.usdc",
-    "type": "added"
-  },
-  {
-    "id": "hermes-m.usdt-m.usdc",
-    "type": "added"
-  },
-  {
-    "id": "hermes-hermes-metis",
-    "type": "added"
-  },
-  {
-    "id": "hermes-metis-m.usdc",
-    "type": "added"
-  },
-  {
-    "id": "hermes-maia-m.usdc",
-    "type": "added"
-  },
-  {
-    "id": "hermes-weth-metis",
-    "type": "added"
-  },
-  {
-    "id": "hermes-weth-m.usdc",
-    "type": "added"
-  },
-  {
-    "id": "hermes-hum-metis",
-    "type": "added"
-  },
-  {
-    "id": "stargate-arb-eth",
-    "type": "added"
-  },
-  {
-    "id": "balancer-wsteth-eth",
-    "type": "added"
-  },
-  {
-    "id": "balancer-wsteth-usdc",
-    "type": "added"
-  },
-  {
-    "id": "balancer-magic-usdc",
-    "type": "added"
-  },
-  {
-    "id": "stargate-arb-usdc",
-    "type": "added"
-  },
-  {
-    "id": "stargate-arb-usdt",
-    "type": "added"
-  },
-  {
-    "id": "joe-busd-wavax",
-    "type": "added"
-  },
-  {
-    "id": "joe-cai-wavax",
-    "type": "added"
-  },
-  {
-    "id": "aavev3-wbtc.e",
+    "id": "joe-wavax-ecd",
     "type": "removed, inactive"
   },
   {
