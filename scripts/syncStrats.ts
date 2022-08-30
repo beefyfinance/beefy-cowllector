@@ -13,12 +13,11 @@ written to `data\stratsSync.json`.
 Rrun command: yarn ts-node --transpile-only scripts/syncStrats.ts
 ********/
 
-import FETCH, { type Response } from 'node-fetch'; //pull in of type Response 
-                               //  needed due to clash with WebWorker's version
+import FETCH, { type Response } from 'node-fetch'; //pull in of type Response needed due to 
+                                                 //  clash with WebWorker's version
 import { ethers as ETHERS } from 'ethers';
 import FS from 'fs';
 import PATH from 'path';
-import { settledPromiseFilled } from '../utility/baseNode';
 import type { IVault, IStratToHrvst, IChain, IChains } from './interfaces';
 import { estimateGas } from '../utils/harvestHelpers';
 import BROADCAST from '../utils/broadcast';
@@ -226,8 +225,8 @@ async function main(): Promise<void> {
 /*if(false)*/   if (stratManager.notOnChainHarvest.length)  {
       console.log( `  Updating gas-limit values on Cowllector-managed ${
                                                       chain.id.toUpperCase()} strats...`);
-/**/  if (await stratManager.addGasLimits( stratManager.notOnChainHarvest))
-/**/    dirty = true;
+/**/  if (await stratManager.AddGasLimits( stratManager.notOnChainHarvest))
+/**/  dirty = true;
       console.log( `    Finished gas-limit updates on ${chain.id.toUpperCase()}`);
     }
   })); //await Promise.all( Object.values( <Readonly< IChains>>
