@@ -13,15 +13,12 @@ written to `data\stratsSync.json`.
 Run command: yarn ts-node --transpile-only scripts/syncStrats.ts
 ********/
 
-import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
-//  needed due to clash with WebWorker's version
+import FETCH, { type Response } from 'node-fetch'; //pull in of type Response needed due to 
+                                                 //  clash with WebWorker's version
 import { ethers as ETHERS } from 'ethers';
 import FS from 'fs';
 import PATH from 'path';
-import { settledPromiseFilled } from '../utility/baseNode';
-import type { IVault, IStratToHarvest, IChain, IChains } from './interfaces';
-import { setKey, getKey } from '../utility/redisHelper';
-import { logger } from '../utility/Logger';
+import type { IVault, IStratToHrvst, IChain, IChains } from './interfaces';
 import { estimateGas } from '../utils/harvestHelpers';
 import BROADCAST from '../utils/broadcast';
 
@@ -199,32 +196,33 @@ async function main(): Promise<void> {
     encountered: Set<string> = new Set();
   let dirty = false;
 
-  //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {
-  await Promise.all(
-    Object.values(<Readonly<IChains>>require('../data/chains.js')).map(async (chain: IChain) => {
-      const stratManager = new ChainStratManager(chain, vaults, encountered, hits);
-      if (stratManager.syncVaults(stratsToHarvest)) dirty = true;
-      const { added, removed } = stratManager.stratsChanged();
-      if (added || removed)
-        logger.info(`Strats on ${chain.id.toUpperCase()}: ${added} added, 
-										${removed} removed`);
-      else logger.info(`No strats added or removed from ${chain.id.toUpperCase()}`);
-      //if (false)
-      if (stratManager.notOnChainHarvest.length) {
-        logger.info(
-          `  Updating gas-limit values on Cowllector-managed ${chain.id.toUpperCase()} strats...`
-        );
-        if (await stratManager.addGasLimits(stratManager.notOnChainHarvest)) dirty = true;
-        logger.info(`    Finished gas-limit updates on ${chain.id.toUpperCase()}`);
-      }
-    })
-  ); //await Promise.all( Object.values( <Readonly< IChains>>
-  //debugger;
-  stratsToHarvest.forEach((strat, index) => {
-    if (encountered.has(strat.id)) return;
+/*Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {*/  await Promise.all( Object.values( <Readonly< IChains>> require( 
+                                      '../data/chains.js')).map( async (chain: IChain) => {
+    const stratManager = new ChainStratManager( chain, vaults, encountered, hits);
+    if (stratManager.SyncVaults( stratsToHarvest))
+      dirty = true;
+    const {added, removed} = stratManager.stratsChanged();
+    if (added || removed)
+      console.log( `Strats on ${chain.id.toUpperCase()}: ${added } added, ${removed
+                                                                              } removed`);
+    else
+      console.log( `No strats added or removed from ${chain.id.toUpperCase()}`);
 
-    delete stratsToHarvest[index];
-    hits.add(strat.id, 'removed, decomissioned');
+/*if(false)*/   if (stratManager.notOnChainHarvest.length)  {
+      console.log( `  Updating gas-limit values on Cowllector-managed ${
+                                                      chain.id.toUpperCase()} strats...`);
+/**/  if (await stratManager.AddGasLimits( stratManager.notOnChainHarvest))
+/**/  dirty = true;
+      console.log( `    Finished gas-limit updates on ${chain.id.toUpperCase()}`);
+    }
+  })); //await Promise.all( Object.values( <Readonly< IChains>>
+//debugger;
+  stratsToHarvest.forEach( (strat, index) => {
+    if (encountered.has( strat.id))
+      return;
+
+    delete stratsToHarvest[ index];
+    hits.add( strat.id, 'removed, decomissioned');
   }); //stratsToHarvest.forEach( strat
 
   const index = Object.keys(hits.hits).length;
