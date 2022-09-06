@@ -136,11 +136,13 @@ const chains = {
     beefyFeeBatcher: fantom.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
     hasOnChainHarvesting: true,
+    ochHarvester: '0x5e7F411EE92838275c96438B6A1A93acCC16364C',
+    ochOperations: '0x6EDe1597c05A0ca77031cBA43Ab887ccf24cd7e8',
     harvestHourInterval: process.env.FANTOM_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.FANTOM_HARVEST_HOUR_INTERVAL)
       : 24,
     wnativeUnwrapInterval: 4,
-    wnativeMinToUnwrap: process.env.FANTOM_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    wnativeMinToUnwrap: process.env.FANTOM_WNATIVE_MIN_TO_UNWRAP || '1',
     rpc: process.env.FANTOM_RPC || 'https://rpcapi.fantom.network',
     appVaultsFilename: 'fantom.json',
     multicall: fantom.platforms.beefyfinance.multicall,
@@ -192,7 +194,7 @@ const chains = {
       ? parseInt(process.env.ARBITRUM_HARVEST_HOUR_INTERVAL)
       : 24,
     wnativeUnwrapInterval: 20,
-    wnativeMinToUnwrap: process.env.ARBITRUM_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    wnativeMinToUnwrap: process.env.ARBITRUM_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
     appVaultsFilename: 'arbitrum.json',
     multicall: arbitrum.platforms.beefyfinance.multicall,
@@ -201,8 +203,8 @@ const chains = {
     blockTime: 2.8,
     blockExplorer: 'http://arbiscan.com',
     gas: {
-      limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 30e6,
-      price: Number(process.env.ARBITRUM_GAS_PRICE) || 5e9,
+      limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 5e9,
+      price: Number(process.env.ARBITRUM_GAS_PRICE) || 1e10,
       priceCap: Number(process.env.ARBITRUM_GAS_PRICE_CAP),
     },
   },
@@ -322,7 +324,7 @@ const chains = {
       ? parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL)
       : 24,
     wnativeUnwrapInterval: 6,
-    wnativeMinToUnwrap: process.env.METIS_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    wnativeMinToUnwrap: process.env.METIS_WNATIVE_MIN_TO_UNWRAP || '0.05',
     rpc: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
     appVaultsFilename: 'metis.json',
     multicall: metis.platforms.beefyfinance.multicall,
@@ -348,7 +350,7 @@ const chains = {
       ? parseInt(process.env.AURORA_HARVEST_HOUR_INTERVAL)
       : 24,
     wnativeUnwrapInterval: 8,
-    wnativeMinToUnwrap: process.env.AURORA_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    wnativeMinToUnwrap: process.env.AURORA_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc:
       process.env.AURORA_RPC ||
       'https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek',
@@ -428,7 +430,7 @@ const chains = {
       ? parseInt(process.env.OPTIMISM_HARVEST_HOUR_INTERVAL)
       : 24,
     wnativeUnwrapInterval: 6,
-    wnativeMinToUnwrap: process.env.OPTIMISM_WNATIVE_MIN_TO_UNWRAP || '0.1',
+    wnativeMinToUnwrap: process.env.OPTIMISM_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc: process.env.OPTIMISM_RPC || 'https://mainnet.optimism.io',
     appVaultsFilename: 'optimism.json',
     multicall: optimism.platforms.beefyfinance.multicall,
