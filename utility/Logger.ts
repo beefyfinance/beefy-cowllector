@@ -12,7 +12,7 @@ import { logger } from '../yourpath/logger'
 you may adjust the default configuration, like setting a default logging level, 
 e.g. static call of 
 Logger.setDefaultLevel( Logger.levels.WARN) 
-to decrease verbosity from the default of  
+to decrease verbosity from the default: 
 Logger.levels.INFO
 + Wherever a specialized, separately configurable logger is desired, it can be 
 obtained via a call against the main logger instance: 
@@ -23,7 +23,7 @@ const _logger = logger.getLogger( 'YourName');
 + You may specify the verbosity of a specialized logger in advance, like in 
 your entry-point module, from the main logging instance, like so: 
 logger.setLevel( 'yourSublogName', Logger.levels.DEBUG)
-This way, your main module may centrally manage the logging over the system.
+This way, the main module may centrally manage the logging over the system.
 **/
 import loglevel from "loglevel";
 import * as Sentry from "@sentry/node";
@@ -125,7 +125,7 @@ export class Logger implements ILogger  {
     if (loglevel.levels.ERROR <= level) {
 //TODO: figure out the TS to get rid of the ugly "any" cast
       (<any> this.sentryLogger)[ Logger.levelNames[ level].toLowerCase()]( 
-                        `${_log.name }, ${Logger.levelNames[ level]}: ${msg}`);
+                        `${_log.name }, ${ Logger.levelNames[ level]}: ${msg}`);
       return;
     }
 
