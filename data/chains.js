@@ -96,7 +96,7 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cchain.explorer.avax.network',
     gas: {
-      limit: Number(process.env.AVAX_GAS_LIMIT) || 1e6,
+      limit: Number(process.env.AVAX_GAS_LIMIT) || 2e6,
       price: Number(process.env.AVAX_GAS_PRICE) || 30e9,
       priceCap: Number(process.env.AVAX_GAS_PRICE_CAP),
     },
