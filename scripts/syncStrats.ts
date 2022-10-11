@@ -172,7 +172,7 @@ async function main() : Promise< void> {
   //(TODO, convert to a map-like object for efficient downstream lookups and removal 
   // handling)
   try {
-    stratsToHarvest = <IStratToHrvst[]> require( '../data/stratsToHrvst.json');
+    stratsToHarvest = <IStratToHrvst[]> require( '../data/stratsToHarvest.json');
   } catch (error: unknown)  {
     if (!( (( testError: unknown): testError is NodeJS.ErrnoException => 
                                   !!(< NodeJS.ErrnoException> testError).code)( error) && 
@@ -223,7 +223,7 @@ async function main() : Promise< void> {
   }
   
   if (dirty)
-    FS.writeFileSync( PATH.join( __dirname, '../data/stratsToHrvst.json'),
+    FS.writeFileSync( PATH.join( __dirname, '../data/stratsToHarvest.json'),
                       JSON.stringify( stratsToHarvest.filter( strat => strat), null, 2));
 } //function async main(
 
