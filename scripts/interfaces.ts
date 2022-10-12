@@ -32,7 +32,7 @@ export interface IStratToHarvest {
   gasLimitStrategy?: string;
   suppressCallRewardCheck?: boolean;
   interval?: number;
-} //interface IStratToHarvest 
+} //interface IStratToHarvest
 
 export interface IChain {
   readonly id: string;
