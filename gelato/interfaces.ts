@@ -1,8 +1,9 @@
-import { IStratToHrvst, IChain as _IChain, IChains } from '../scripts/interfaces';
-export { IStratToHrvst, IChains };
+import { IStratToHarvest, IChain as _IChain, IChains } from 
+																												'../scripts/interfaces';
+export { IStratToHarvest, IChains };
 
 /*
-export interface IStratToHrvst {
+export interface IStratToHarvest {
   id: string;
   chain: string;
   earnContractAddress: string; //i.e. the vault's contract address
@@ -11,14 +12,14 @@ export interface IStratToHrvst {
   lastHarvest: number;
   noOnChainHrvst?: boolean;
   interval?: number;
-} //interface IStratToHrvst 
+} //interface IStratToHarvest 
 */
 export interface IChain extends _IChain {
-  readonly ochHarvester?: string;
-  readonly ochOperations?: string;
+  readonly addressHarvester?: string;
+  readonly addressHarvesterOperations?: string;
 }
 
-export interface IChainOch extends IChain {
-  readonly ochHarvester: string;
-  readonly ochOperations: string;
+export interface IChainHarvester extends IChain {
+  readonly addressHarvester: string;
+  readonly addressHarvesterOperations: string;
 }
