@@ -3,7 +3,7 @@ import { GelatoOpsSDK } from '@gelatonetwork/ops-sdk';
 import { settledPromiseFilled } from '../utility/baseNode';
 import { NonceManage } from '../utility/NonceManage';
 import { logger } from '../utility/Logger';
-import { type IChainOch } from './interfaces';
+import { type IChainHarvester } from './interfaces';
 import OPS_ABI from './abis/Ops.json';
 
 const _logger = logger.getLogger('GelatoClient');
@@ -21,10 +21,10 @@ export class GelatoClient {
   private _gasPrice: BigNumber = BigNumber.from( 0);
 
   constructor( private readonly _gelatoAdmin: NonceManage, 
-                private readonly _chain: Readonly< IChainOch>, 
+                private readonly _chain: Readonly< IChainHarvester>, 
                 private readonly _shouldLog: boolean) {
-    this._opsContract = new Contract( _chain.ochOperations, OPS_ABI, 
-                                                                  _gelatoAdmin);
+    this._opsContract = new Contract( _chain.addressHarvesterOperations, 
+																												 OPS_ABI, _gelatoAdmin);
     this._gelato = new GelatoOpsSDK( _chain.chainId, _gelatoAdmin);
     _gelatoAdmin.provider?.getGasPrice().then( (value: BigNumber) : void => {
                               if (value)  {
@@ -56,18 +56,18 @@ export class GelatoClient {
     if (this._shouldLog)  {
       _logger.trace(`Getting resolver hash for ${vault_}`);
       _logger.trace("getResolverHash data:");
-      _logger.trace(`resolver: ${this._chain.ochHarvester}`);
+      _logger.trace(`resolver: ${this._chain.addressHarvester}`);
       _logger.trace(`resolverData: ${resolverData}`);
     }
   
     const resolverHash = await this._opsContract.getResolverHash( 
-                                       this._chain.ochHarvester, resolverData);
+																		 this._chain.addressHarvester, resolverData);
   
     if (this._shouldLog)  {
       _logger.trace(`Getting taskId for vault: ${vault_}`);
       _logger.trace("getTaskId data:");
       _logger.trace(`taskCreator: ${this._gelatoAdmin.getAddress()}`)
-      _logger.trace(`execAddress: ${this._chain.ochHarvester}`);
+      _logger.trace(`execAddress: ${this._chain.addressHarvester}`);
       _logger.trace(`selector: ${performSelector}`);
       _logger.trace(`useTaskTreasuryFunds: ${useTaskTreasuryFunds}`);
       _logger.trace(`feeToken: ${GelatoClient._feeTokenWhenNotPrepaidTask}`);
@@ -76,7 +76,7 @@ export class GelatoClient {
   
     const id = await this._opsContract.getTaskId( 
                                       this._gelatoAdmin.getAddress(),
-                                      this._chain.ochHarvester, 
+                                      this._chain.addressHarvester, 
                                       performSelector, useTaskTreasuryFunds, 
                                       GelatoClient._feeTokenWhenNotPrepaidTask, 
                                       resolverHash);
@@ -131,22 +131,22 @@ export class GelatoClient {
 
     if (this._shouldLog)  {
       _logger.trace( 'Create task data:');
-      _logger.trace( `execAddress: ${this._chain.ochHarvester}`);
+      _logger.trace( `execAddress: ${this._chain.addressHarvester}`);
       _logger.trace( `execSelector: ${performSelector}`);
-      _logger.trace( `resolverAddress: ${this._chain.ochHarvester}`);
+      _logger.trace( `resolverAddress: ${this._chain.addressHarvester}`);
       _logger.trace( `resolverData: ${resolverData}`);
     }
     _logger.debug( `About to callStatic for ${vault}, checkerSelector ${
                                                             checkerSelector}`);
     const taskId: string = (await this._opsContract.callStatic.createTask(
-                                      this._chain.ochHarvester, performSelector,
-                                      this._chain.ochHarvester, resolverData, 
-                                      {gasPrice: this._gasPrice})).toString();
+																	this._chain.addressHarvester, performSelector,
+																	this._chain.addressHarvester, resolverData, 
+																	{gasPrice: this._gasPrice})).toString();
     _logger.debug( `About to createTask for ${vault}\n  --> taskId ${taskId}`);
     const txn: ContractTransaction = await this._opsContract.createTask(
-                                      this._chain.ochHarvester, performSelector,
-                                      this._chain.ochHarvester, resolverData, 
-                                      {gasPrice: this._gasPrice});
+																	this._chain.addressHarvester, performSelector,
+																	this._chain.addressHarvester, resolverData, 
+																	{gasPrice: this._gasPrice});
     _logger.debug( `About to wait on createTask for ${vault}`);
     await txn.wait();
     return taskId;
