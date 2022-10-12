@@ -184,7 +184,7 @@ const addGasLimit = async (strats, provider) => {
   //AT: in conformance with the new way of syncing strats, to stop harvesting strats
   //  handled by an on-chain harvester, this filter
   strats = strats.filter(
-    strat => CHAIN.id === strat.chain && (!CHAIN.hasOnChainHarvesting || strat.noOnChainHrvst)
+    strat => CHAIN.id === strat.chain && (!CHAIN.hasOnChainHarvesting || strat.noOnChainHarvest)
   );
 
   //enforce the gas limit (sometimes an RPC estimates way too high, e.g. Oasis Emerald)

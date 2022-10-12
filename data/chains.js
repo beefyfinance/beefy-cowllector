@@ -136,8 +136,8 @@ const chains = {
     beefyFeeBatcher: fantom.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
     hasOnChainHarvesting: true,
-    ochHarvester: '0x5e7F411EE92838275c96438B6A1A93acCC16364C',
-    ochOperations: '0x6EDe1597c05A0ca77031cBA43Ab887ccf24cd7e8',
+    addressHarvester: '0x5e7F411EE92838275c96438B6A1A93acCC16364C',
+    addressHarvesterOperations: '0x6EDe1597c05A0ca77031cBA43Ab887ccf24cd7e8',
     harvestHourInterval: process.env.FANTOM_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.FANTOM_HARVEST_HOUR_INTERVAL)
       : 24,

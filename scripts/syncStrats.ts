@@ -10,23 +10,30 @@ vaults managed by Cowllector.
 At the end of a run, a JSON log of the significant changes made by the sync is 
 written to `data\stratsSync.json`.
 
-Rrun command: yarn ts-node --transpile-only scripts/syncStrats.ts
+Run command: yarn ts-node --transpile-only scripts/syncStrats.ts
 ********/
 
-import FETCH, { type Response } from 'node-fetch'; //pull in of type Response 
-                               //  needed due to clash with WebWorker's version
+import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
+//  needed due to clash with WebWorker's version
 import { ethers as ETHERS } from 'ethers';
 import FS from 'fs';
 import PATH from 'path';
 import { settledPromiseFilled } from '../utility/baseNode';
-import type { IVault, IStratToHrvst, IChain, IChains } from './interfaces';
+import type { IVault, IStratToHarvest, IChain, IChains } from './interfaces';
+import { setKey, getKey } from '../utility/redisHelper';
+import { logger } from '../utility/Logger';
 import { estimateGas } from '../utils/harvestHelpers';
 
 const NOT_FOUND = -1;
+const REDIS_KEY = 'STRATS_TO_HARVEST';
 
-type HitType = 'added' | 'removed, inactive' | 'removed, decomissioned' | 
-                'on-chain-harvest switch' | 'strategy update';
-interface  Hit  {
+type HitType =
+  | 'added'
+  | 'removed, inactive'
+  | 'removed, decomissioned'
+  | 'on-chain-harvest switch'
+  | 'strategy update';
+interface Hit {
   readonly id: string;
   type: HitType | HitType[];
 }
@@ -46,7 +53,7 @@ class ChainStratManager {
   private removed: number = 0;
 
   readonly denyOnChainHarvest: ReadonlySet<string> | null = null;
-  readonly notOnChainHarvest: IStratToHrvst[] = [];
+  readonly notOnChainHarvest: IStratToHarvest[] = [];
 
   constructor(
     private readonly chain: IChain,
@@ -55,32 +62,32 @@ class ChainStratManager {
     private readonly hits: Hits
   ) {
     if (this.chain.hasOnChainHarvesting)
-      this.denyOnChainHarvest = <ReadonlySet< string>> require( 
-                                             `../gelato/${this.chain.id
-                                             }VaultDenyList.ts`).vaultDenyList;
+      this.denyOnChainHarvest = <ReadonlySet<string>>(
+        require(`../gelato/${this.chain.id}VaultDenyList.ts`).vaultDenyList
+      );
   }
 
-
-  syncVaults( stratsToHarvest: IStratToHrvst[]) : boolean  {
+  syncVaults(stratsToHarvest: IStratToHarvest[]): boolean {
     let dirty = false;
-    this.vaults.forEach( (vault: IVault) => {
-      if (this.chain.id !== vault.chain)
-        return; 
+    this.vaults.forEach((vault: IVault) => {
+      if (this.chain.id !== vault.chain) return;
 
       //if this vault was unknown at the time of our last run...
-      const index = stratsToHarvest.findIndex( (strat: IStratToHrvst) => 
-                                                      vault.id === strat?.id); 
-      let strat = NOT_FOUND != index ? stratsToHarvest[ index] : null;
-      if (!strat)  {
-        if (['eol', 'paused'].includes( vault.status))
-           return;
+      const index = stratsToHarvest.findIndex((strat: IStratToHarvest) => vault.id === strat?.id);
+      let strat = NOT_FOUND != index ? stratsToHarvest[index] : null;
+      if (!strat) {
+        if (['eol', 'paused'].includes(vault.status)) return;
 
-        stratsToHarvest.push( strat = { id: vault.id,
-                                chain: vault.chain, 
-                                earnContractAddress: vault.earnContractAddress,
-                                earnedToken: vault.earnedToken,
-                                strategy: vault.strategy,
-                                lastHarvest: vault.lastHarvest});
+        stratsToHarvest.push(
+          (strat = {
+            id: vault.id,
+            chain: vault.chain,
+            earnContractAddress: vault.earnContractAddress,
+            earnedToken: vault.earnedToken,
+            strategy: vault.strategy,
+            lastHarvest: vault.lastHarvest,
+          })
+        );
         this.added++;
         dirty = true;
         this.encountered.add(vault.id);
@@ -91,14 +98,14 @@ class ChainStratManager {
         dirty = true;
         this.hits.add(vault.id, 'removed, inactive');
         return;
-      }else {
-        this.encountered.add( vault.id);
+      } else {
+        this.encountered.add(vault.id);
 
-        if (vault.strategy !== strat.strategy)  {
+        if (vault.strategy !== strat.strategy) {
           strat.strategy = vault.strategy;
           dirty = true;
-          this.hits.add( vault.id, 'strategy update');
-          console.log( `    Strategy upgrade applied to vault: ${strat.id}`);
+          this.hits.add(vault.id, 'strategy update');
+          logger.info(`    Strategy upgrade applied to vault: ${strat.id}`);
         }
 
         if (strat.lastHarvest < vault.lastHarvest) {
@@ -107,21 +114,22 @@ class ChainStratManager {
         }
       } //if (!strat)
 
-      const onChainHarvest = this.chain.hasOnChainHarvesting && 
-                              !this.denyOnChainHarvest?.has( vault.earnedToken);
+      const onChainHarvest =
+        this.chain.hasOnChainHarvesting && !this.denyOnChainHarvest?.has(vault.earnedToken);
 
-      if (onChainHarvest ? strat?.noOnChainHrvst : 
-                                            this.chain.hasOnChainHarvesting && 
-                                            !strat?.noOnChainHrvst)  {
-        strat.noOnChainHrvst = !onChainHarvest;
-        if (NOT_FOUND != index)  {
+      if (
+        onChainHarvest
+          ? strat?.noOnChainHarvest
+          : this.chain.hasOnChainHarvesting && !strat?.noOnChainHarvest
+      ) {
+        strat.noOnChainHarvest = !onChainHarvest;
+        if (NOT_FOUND != index) {
           dirty = true;
-          this.hits.add( vault.id, 'on-chain-harvest switch');
+          this.hits.add(vault.id, 'on-chain-harvest switch');
         }
-      } //if (onChainHarvest ? strat?.noOnChainHrvst :
- 
-      if (!onChainHarvest)
-        this.notOnChainHarvest.push( strat);
+      } //if (onChainHarvest ? strat?.noOnChainHarvest :
+
+      if (!onChainHarvest) this.notOnChainHarvest.push(strat);
     }); //vaults.forEach( (vault: IVault) =
 
     return dirty;
@@ -131,52 +139,57 @@ class ChainStratManager {
     return { added: this.added, removed: this.removed };
   }
 
-  async AddGasLimits(strats: IStratToHrvst[]): Promise<boolean> {
+  async addGasLimits(strats: IStratToHarvest[]): Promise<boolean> {
     const provider = new ETHERS.providers.JsonRpcProvider(this.chain.rpc),
-      results = <readonly PromiseSettledResult<unknown>[]>(
-        await Promise.allSettled(
-          strats.map((strat: IStratToHrvst) => estimateGas(strat, this.chain.chainId, provider))
+      results: Readonly<PromiseSettledResult<unknown>[]> = await Promise.allSettled(
+        strats.map(
+          (strat): Readonly<Promise<unknown>> => estimateGas(strat, this.chain.chainId, provider)
         )
       );
 
-  async addGasLimits( strats: IStratToHrvst[]) : Promise< boolean>  {
-    const provider = new ETHERS.providers.JsonRpcProvider( this.chain.rpc), 
-          results: Readonly< PromiseSettledResult< unknown>[]> = 
-                    await Promise.allSettled( strats.map( (strat) : 
-                                                Readonly< Promise< unknown>> => 
-                            estimateGas( strat, this.chain.chainId, provider)));
-
-    return !!results.find( settledPromiseFilled);
+    return !!results.find(settledPromiseFilled);
   } //async addGasLimits( strats:
 } //class ChainStratManager
 
 async function main(): Promise<void> {
   let vaults: ReadonlyArray<IVault> = [],
-    stratsToHarvest: IStratToHrvst[] = [];
+    stratsToHarvest: IStratToHarvest[] = [];
 
+  //load up current vaults from Beefy's online source
   const urlVaults = `https://api.beefy.finance/vaults`;
   try {
     const response = await (<Promise<Response>>FETCH(urlVaults));
     if (!(response.ok && response.body)) {
-      console.log('Fetching vaults failed');
+      logger.error('Fetching vaults failed');
       return;
     }
-    vaults = await (<Promise<ReadonlyArray<IVault>>>response.json());
+    vaults = await (<Promise<typeof vaults>>response.json());
   } catch (error: unknown) {
-    console.log(error);
+    logger.error(error);
     return;
   }
 
-  //(TODO, convert to a map-like object for efficient downstream lookups and 
+  //load up current strategy-harvesting configuration data (possibly changed
+  //	since our last run)
+
+  //load up the list of strategies to be harvested as of our last run (and now
+  //	possibly out of date)
+
+  //reflect the current strategy-harvesting configuration data into the list of
+  //	strategies to be harvested, noting if any change resulted
+
+  //(TODO: convert to a map-like object for efficient downstream lookups and
   //  removal handling)
   try {
-    stratsToHarvest = <IStratToHrvst[]> require( 
-                                                '../data/stratsToHarvest.json');
-  } catch (error: unknown)  {
-    if (!( (( testError: unknown): testError is NodeJS.ErrnoException => 
-                                !!(< NodeJS.ErrnoException> testError).code)( 
-                                error) && 'MODULE_NOT_FOUND' === error.code)) {
-      console.log( error);
+    stratsToHarvest = <IStratToHarvest[]>require('../data/stratsToHarvest.json');
+  } catch (error: unknown) {
+    if (
+      !(
+        ((testError: unknown): testError is NodeJS.ErrnoException =>
+          !!(<NodeJS.ErrnoException>testError).code)(error) && 'MODULE_NOT_FOUND' === error.code
+      )
+    ) {
+      logger.error(error);
       return;
     }
   } //try
@@ -185,48 +198,52 @@ async function main(): Promise<void> {
     encountered: Set<string> = new Set();
   let dirty = false;
 
-/*Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {*/  await Promise.all( Object.values( <Readonly< IChains>> require( 
-                                      '../data/chains.js')).map( async (chain: IChain) => {
-    const stratManager = new ChainStratManager( chain, vaults, encountered, hits);
-    if (stratManager.syncVaults( stratsToHarvest))
-      dirty = true;
-    const {added, removed} = stratManager.stratsChanged();
-    if (added || removed)
-      console.log( `Strats on ${chain.id.toUpperCase()}: ${added } added, ${removed
-                                                                              } removed`);
-    else
-      console.log( `No strats added or removed from ${chain.id.toUpperCase()}`);
+  //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {
+  await Promise.all(
+    Object.values(<Readonly<IChains>>require('../data/chains.js')).map(async (chain: IChain) => {
+      const stratManager = new ChainStratManager(chain, vaults, encountered, hits);
+      if (stratManager.syncVaults(stratsToHarvest)) dirty = true;
+      const { added, removed } = stratManager.stratsChanged();
+      if (added || removed)
+        logger.info(`Strats on ${chain.id.toUpperCase()}: ${added} added, 
+										${removed} removed`);
+      else logger.info(`No strats added or removed from ${chain.id.toUpperCase()}`);
+      //if (false)
+      if (stratManager.notOnChainHarvest.length) {
+        logger.info(
+          `  Updating gas-limit values on Cowllector-managed ${chain.id.toUpperCase()} strats...`
+        );
+        if (await stratManager.addGasLimits(stratManager.notOnChainHarvest)) dirty = true;
+        logger.info(`    Finished gas-limit updates on ${chain.id.toUpperCase()}`);
+      }
+    })
+  ); //await Promise.all( Object.values( <Readonly< IChains>>
+  //debugger;
+  stratsToHarvest.forEach((strat, index) => {
+    if (encountered.has(strat.id)) return;
 
-/*if(false)*/   if (stratManager.notOnChainHarvest.length)  {
-      console.log( `  Updating gas-limit values on Cowllector-managed ${
-                                                      chain.id.toUpperCase()} strats...`);
-/**/  if (await stratManager.addGasLimits( stratManager.notOnChainHarvest))
-/**/    dirty = true;
-      console.log( `    Finished gas-limit updates on ${chain.id.toUpperCase()}`);
-    }
-  })); //await Promise.all( Object.values( <Readonly< IChains>>
-//debugger;
-  stratsToHarvest.forEach( (strat, index) => {
-    if (encountered.has( strat.id))
-      return;
-
-    delete stratsToHarvest[ index];
-    hits.add( strat.id, 'removed, decomissioned');
+    delete stratsToHarvest[index];
+    hits.add(strat.id, 'removed, decomissioned');
   }); //stratsToHarvest.forEach( strat
 
-  const index = Object.keys( hits.hits).length;
-  if (index)  {
-    FS.writeFileSync(PATH.join( __dirname, '../data/stratsSync.json'),
-                          JSON.stringify( Object.values( hits.hits), null, 2));
-    console.log( `\nLog of ${index
-                        } significant changes written to data/stratsSync.json`);
-  }else
-    console.log( '\nNo significant changes discovered.');
-  
+  const index = Object.keys(hits.hits).length;
+  if (index) {
+    FS.writeFileSync(
+      PATH.join(__dirname, '../data/stratsSync.json'),
+      JSON.stringify(Object.values(hits.hits), null, 2)
+    );
+    logger.info(`\nLog of ${index} significant changes written to data/stratsSync.json`);
+  } else logger.info('\nNo significant changes discovered.');
+
   if (dirty)
-    FS.writeFileSync( PATH.join( __dirname, '../data/stratsToHarvest.json'),
-                        JSON.stringify( stratsToHarvest.filter( 
-                        (strat: IStratToHrvst) : boolean => !!strat), null, 2));
+    FS.writeFileSync(
+      PATH.join(__dirname, '../data/stratsToHarvest.json'),
+      JSON.stringify(
+        stratsToHarvest.filter((strat: IStratToHarvest): boolean => !!strat),
+        null,
+        2
+      )
+    );
 } //function async main(
 
 main();
