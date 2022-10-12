@@ -2,12 +2,12 @@ import FETCH, {type Response} from 'node-fetch'; //pull in of type Response
                                 //  needed due to clash with WebWorker's version
 import { NonceManage } from '../utility/NonceManage';
 import { GelatoClient } from './gelatoClient';
-import type { IChainOch, IStratToHrvst } from './interfaces';
+import type { IChainHarvester, IStratToHarvest } from './interfaces';
 import { logger } from '../utility/Logger';
 import BROADCAST from '../utils/broadcast';
 
-type VaultRecord = Record< IStratToHrvst[ 'earnedToken'], 
-                            IStratToHrvst[ 'earnContractAddress']>;
+type VaultRecord = Record< IStratToHarvest[ 'earnedToken'], 
+                            IStratToHarvest[ 'earnContractAddress']>;
 type HitType = 'created OCH task' | 'deleted OCH task' | 'named OCH task';
 interface  Hit  {
   readonly id: string;
@@ -39,16 +39,16 @@ export class TaskSyncer {
   private _hits = new Hits();
 
   constructor( readonly gelatoAdmin_: NonceManage, 
-                private readonly _chain: Readonly< IChainOch >) {
+                private readonly _chain: Readonly< IChainHarvester >) {
     this._gelatoClient = new GelatoClient( gelatoAdmin_, _chain, false);
   }
 
 
   public async syncVaultHarvesterTasks() : Promise< void> {
-    let stratsToHarvest: ReadonlyArray< IStratToHrvst>;
+    let stratsToHarvest: ReadonlyArray< IStratToHarvest>;
 
     try {
-      stratsToHarvest = <ReadonlyArray< IStratToHrvst>> require( 
+      stratsToHarvest = <ReadonlyArray< IStratToHarvest>> require( 
                                                 '../data/stratsToHarvest.json');
     } catch (error: unknown)  {
       _logger.error( <any> error);
@@ -56,8 +56,8 @@ export class TaskSyncer {
     }
   }
 
-    const vaultsOnChain: Readonly< Record< string, IStratToHrvst>> = 
-                        stratsToHarvest.reduce( (map, strat: IStratToHrvst) => {
+    const vaultsOnChain: Readonly< Record< string, IStratToHarvest>> = 
+                        stratsToHarvest.reduce( (map, strat: IStratToHarvest) => {
                   if (strat.chain !== this._chain.id || map[ 
                                                           strat.earnedToken])  {
                     if (strat.chain === this._chain.id)
@@ -66,7 +66,7 @@ export class TaskSyncer {
                     }else
                       map[ strat.earnedToken] = strat;
                     return map;
-                  }, {} as Record< string, IStratToHrvst>), 
+                  }, {} as Record< string, IStratToHarvest>), 
             vaultsActive: Readonly< VaultRecord> = this._filterForOchVaults( 
                                                                 vaultsOnChain);
 
@@ -159,10 +159,11 @@ export class TaskSyncer {
 
 
   private _filterForOchVaults( vaults: Readonly< Record< string, 
-                                                IStratToHrvst>>) : VaultRecord {
+                                                IStratToHarvest>>) : 
+																VaultRecord {
     const vaultsOch: VaultRecord = {};
     for (const vault in vaults) {
-      if (vaults[ vault].noOnChainHrvst)
+      if (vaults[ vault].noOnChainHarvest)
         continue;
       vaultsOch[ vaults[ vault].earnedToken] = vaults[ 
                                                     vault].earnContractAddress;

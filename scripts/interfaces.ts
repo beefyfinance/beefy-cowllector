@@ -27,18 +27,12 @@ export interface IStratToHarvest {
   earnedToken: string;
   strategy: string;
   lastHarvest: number;
+  noOnChainHarvest?: boolean;
   gasLimit?: number;
   gasLimitStrategy?: string;
-  noOnChainHarvest?: boolean;
   suppressCallRewardCheck?: boolean;
   interval?: number;
-} //interface IStratToHarvest
-
-export interface IStratExtendedProperties {
-  readonly id: string;
-  readonly suppressCallRewardCheck?: boolean;
-  readonly interval?: number;
-}
+} //interface IStratToHarvest 
 
 export interface IChain {
   readonly id: string;
