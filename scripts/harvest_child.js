@@ -184,7 +184,7 @@ const addGasLimit = async (strats, provider) => {
   //AT: in conformance with the new way of syncing strats, to stop harvesting strats
   //  handled by an on-chain harvester, this filter
   strats = strats.filter(
-    strat => CHAIN.id === strat.chain && (!CHAIN.hasOnChainHarvesting || strat.noOnChainHrvst)
+    strat => CHAIN.id === strat.chain && (!CHAIN.hasOnChainHarvesting || strat.noOnChainHarvest)
   );
 
   //enforce the gas limit (sometimes an RPC estimates way too high, e.g. Oasis Emerald)
@@ -562,7 +562,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 const main = async () => {
   try {
     //if the caller gave us a chain to process that seems validly configured and not turned
-    //  off..
+    //  off.. (TODO: invert this long-block conditional to short-circuit instead)
     if (CHAIN && CHAIN.harvestHourInterval) {
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
