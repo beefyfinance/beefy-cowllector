@@ -1,4 +1,4 @@
-export interface IVault  {
+export interface IVault {
   readonly id: string;
   readonly name: string;
   readonly token: string;
@@ -32,7 +32,7 @@ export interface IStratToHarvest {
   gasLimitStrategy?: string;
   suppressCallRewardCheck?: boolean;
   interval?: number;
-} //interface IStratToHarvest 
+} //interface IStratToHarvest
 
 export interface IChain {
   readonly id: string;
@@ -41,6 +41,6 @@ export interface IChain {
   readonly hasOnChainHarvesting?: boolean;
 } //interface IChain
 
-export interface IChains  {
+export interface IChains {
   readonly [chain: number]: IChain;
 } //interface IChains
