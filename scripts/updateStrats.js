@@ -13,6 +13,7 @@ const strats = require('../data/strats.json');
 const defistationVaults = require('../data/defistation.json');
 const BeefyVaultABI = require('../abis/BeefyVault.json');
 
+
 const main = async () => {
   let latestStrats = [];
   let latestDefistationVaults = [];
@@ -24,13 +25,14 @@ const main = async () => {
       continue;
     }
 
-    let vaults = await getVaults(CHAIN.appVaultsFilename);
+    let vaults = await getVaults( CHAIN.appVaultsFilename);
 
     const web3 = new Web3(CHAIN.rpc);
     const multicall = new MultiCall(web3, CHAIN.multicall);
 
-    const calls = vaults.map(vault => {
-      const vaultContract = new web3.eth.Contract(BeefyVaultABI, vault.earnContractAddress);
+    const calls = vaults.map( vault => {
+      const vaultContract = new web3.eth.Contract( BeefyVaultABI, 
+                                                    vault.earnContractAddress);
       return {
         name: vaultContract.methods.name(),
         strategy: vaultContract.methods.strategy(),
@@ -43,25 +45,26 @@ const main = async () => {
       vaults[i].strategy = callResults[i].strategy;
     }
 
-    const knownStrategies = strats.filter(s => s.chainId === CHAIN.chainId).map(s => s.address);
+    const knownStrategies = strats.filter( s => s.chainId === CHAIN.chainId).map( s => 
+                                                                            s.address);
 
     const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
     const cacheIsReady = await fetchPrice.refreshCache();
     const responses = await Promise.allSettled(
-      vaults.map(v => fetchPrice.fetchVaultTvl(v, provider))
+      vaults.map( v => fetchPrice.fetchVaultTvl( v, provider))
     );
-    vaults = responses.map(r => r.value);
-    vaults = vaults.map(v => {
+    vaults = responses.map( r => r.value);
+    vaults = vaults.map( v => {
       v.chain = CHAIN.id;
       return v;
     });
-    console.table(vaults, ['chain', 'id', 'tvl']);
+    console.table( vaults, ['chain', 'id', 'tvl']);
 
     //if there are strategies that have so far gone unnoticed, take note of them now...
     for (vault of vaults) {
-      const isExistingStrategy = knownStrategies.includes(vault.strategy);
+      const isExistingStrategy = knownStrategies.includes( vault.strategy);
 
-      if (['eol', 'refund'].includes(vault.status)) {
+      if (['eol', 'refund'].includes( vault.status)) {
         if (isExistingStrategy)
           console.log(
             `Strat ${vault.id} on ${CHAIN.id} is in ${vault.status} status. Removing from the harvest schedule...`
@@ -80,7 +83,7 @@ const main = async () => {
       if (stratData && stratData.name != vault.id)
         console.log(`Renaming ${stratData.name} to ${vault.id}...`);
 
-      //note our strategy-contract descriptor, possibly updated, carrying over any special
+      //note our strategy-contract descriptor, possibly updated, carrying over any special 
       //  handling notes from the prior version of the descriptor
       const O = {
         name: vault.id,
@@ -94,7 +97,7 @@ const main = async () => {
       };
       if (stratData?.suppressCallRwrdCheck)
         O.suppressCallRwrdCheck = stratData.suppressCallRwrdCheck;
-      latestStrats.push(O);
+      latestStrats.push( O);
 
       if (CHAIN.id === 'bsc')
         latestDefistationVaults.push({
@@ -110,13 +113,11 @@ const main = async () => {
 
   // Surface deleted strategies
   const stratDifference = strats.filter(
-    o => !latestStrats.some(n => o.address === n.address && o.chainId === n.chainId)
+    o => !latestStrats.some( n => o.address === n.address && o.chainId === n.chainId)
   );
   if (stratDifference.length)
-    console.log(
-      `Removing strats which are not represented in the beefy-app:`,
-      stratDifference.map(s => s.name).join(', ')
-    );
+    console.log( `Removing strats which are not represented in the beefy-app:`,
+                  stratDifference.map( s => s.name).join( ', '));
 
   // Preserve existing defistation list
   const vaultDifference = defistationVaults.filter(
@@ -124,15 +125,14 @@ const main = async () => {
   );
   latestDefistationVaults.push(...vaultDifference);
 
-  fs.writeFileSync(
-    path.join(__dirname, '../data/strats.json'),
-    JSON.stringify(latestStrats, null, 2)
-  );
+  fs.writeFileSync( path.join( __dirname, '../data/strats.json'), JSON.stringify( 
+                                                              latestStrats, null, 2));
 
   fs.writeFileSync(
     path.join(__dirname, '../data/defistation.json'),
     JSON.stringify(latestDefistationVaults, null, 2)
   );
 }; //const main = async () =>
+
 
 main();
