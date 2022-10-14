@@ -1,6 +1,6 @@
 export const vaultDenyList = new Set([
   // BIFI maxi is permissioned.
-  "mooFantomBIFI",
+  'mooFantomBIFI',
   // Too much gas
   'mooGeistMIM',
   'mooGeistCRV',
