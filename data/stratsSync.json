@@ -1,5 +1,9 @@
 [
   {
+    "id": "velodrome-wsteth-weth",
+    "type": "added"
+  },
+  {
     "id": "beets-lido-shuffle",
     "type": "added"
   },
@@ -52,6 +56,10 @@
     "type": "added"
   },
   {
+    "id": "vvs-usdc-busd",
+    "type": "added"
+  },
+  {
     "id": "biswap-bat-bnb",
     "type": "added"
   },
@@ -64,16 +72,16 @@
     "type": "added"
   },
   {
+    "id": "biswap-etc-bnb",
+    "type": "added"
+  },
+  {
     "id": "cakev2-hay-busd",
     "type": "added"
   },
   {
     "id": "cakev2-busd-hoop",
     "type": "added"
-  },
-  {
-    "id": "banana-axs-bnb",
-    "type": "removed, inactive"
   },
   {
     "id": "banana-sfp-bnb",
@@ -209,11 +217,11 @@
   },
   {
     "id": "jarvis-2cad",
-    "type": "added"
+    "type": "strategy update"
   },
   {
     "id": "jarvis-2sgd",
-    "type": "added"
+    "type": "strategy update"
   },
   {
     "id": "quick-stmatic-matic",
@@ -237,11 +245,11 @@
   },
   {
     "id": "jarvis-2jpy2",
-    "type": "added"
+    "type": "strategy update"
   },
   {
     "id": "jarvis-2eur",
-    "type": "added"
+    "type": "strategy update"
   },
   {
     "id": "quick-matic-ldo",
@@ -257,14 +265,22 @@
   },
   {
     "id": "jarvis-2eurt",
-    "type": "added"
+    "type": "strategy update"
   },
   {
     "id": "jarvis-2eurp",
-    "type": "added"
+    "type": "strategy update"
   },
   {
     "id": "jarvis-2eure",
+    "type": "added"
+  },
+  {
+    "id": "mai-curve-ftm-mai",
+    "type": "added"
+  },
+  {
+    "id": "beets-another-dei-another-dollar",
     "type": "added"
   },
   {
@@ -325,6 +341,18 @@
   },
   {
     "id": "stargate-arb-eth",
+    "type": "added"
+  },
+  {
+    "id": "balancer-wsteth-eth",
+    "type": "added"
+  },
+  {
+    "id": "balancer-wsteth-usdc",
+    "type": "added"
+  },
+  {
+    "id": "balancer-magic-usdc",
     "type": "added"
   },
   {
