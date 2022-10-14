@@ -160,7 +160,9 @@
     "type": "event"
   },
   {
-    "inputs": [{ "internalType": "bytes32", "name": "_taskId", "type": "bytes32" }],
+    "inputs": [
+      { "internalType": "bytes32", "name": "_taskId", "type": "bytes32" }
+    ],
     "name": "cancelTask",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -178,7 +180,9 @@
       { "internalType": "bytes", "name": "_resolverData", "type": "bytes" }
     ],
     "name": "createTask",
-    "outputs": [{ "internalType": "bytes32", "name": "task", "type": "bytes32" }],
+    "outputs": [
+      { "internalType": "bytes32", "name": "task", "type": "bytes32" }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -195,7 +199,9 @@
       { "internalType": "address", "name": "_feeToken", "type": "address" }
     ],
     "name": "createTaskNoPrepayment",
-    "outputs": [{ "internalType": "bytes32", "name": "task", "type": "bytes32" }],
+    "outputs": [
+      { "internalType": "bytes32", "name": "task", "type": "bytes32" }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -215,7 +221,9 @@
       { "internalType": "bool", "name": "_useTreasury", "type": "bool" }
     ],
     "name": "createTimedTask",
-    "outputs": [{ "internalType": "bytes32", "name": "task", "type": "bytes32" }],
+    "outputs": [
+      { "internalType": "bytes32", "name": "task", "type": "bytes32" }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -263,7 +271,9 @@
   {
     "inputs": [],
     "name": "gelato",
-    "outputs": [{ "internalType": "address payable", "name": "", "type": "address" }],
+    "outputs": [
+      { "internalType": "address payable", "name": "", "type": "address" }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -317,9 +327,13 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "_taskCreator", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "_taskCreator", "type": "address" }
+    ],
     "name": "getTaskIdsByUser",
-    "outputs": [{ "internalType": "bytes32[]", "name": "", "type": "bytes32[]" }],
+    "outputs": [
+      { "internalType": "bytes32[]", "name": "", "type": "bytes32[]" }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
