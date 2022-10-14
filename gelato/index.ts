@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { ethers, Wallet } from 'ethers';
 import { NonceManage } from '../utility/NonceManage';
+import { GelatoClient } from './gelatoClient';
 import { TaskSyncer } from './taskSyncer';
 import { IChain, IChainHarvester, IChains } from './interfaces';
 import { logger, Logger } from '../utility/Logger';
@@ -34,8 +35,12 @@ const run = async (): Promise<void> => {
           new Wallet(pk, new ethers.providers.JsonRpcProvider(chain.rpc))
         );
 
-        logger.info(`>>>>> on-chain harvester sync: ${chain.id.toUpperCase()}`);
-        new TaskSyncer(gelatoAdminWallet, chain).syncVaultHarvesterTasks();
+        logger.info(`>>> on-chain harvester sync: ${chain.id.toUpperCase()}`);
+        new TaskSyncer(
+          gelatoAdminWallet,
+          chain,
+          await new GelatoClient(gelatoAdminWallet, chain)
+        ).syncVaultHarvesterTasks();
       }
     )
   ); //await Promise.all( Object.values( <Readonly< IChains>>

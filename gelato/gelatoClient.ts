@@ -14,23 +14,32 @@ export class GelatoClient {
   private static readonly _feeTokenWhenNotPrepaidTask =
     '0x0000000000000000000000000000000000000000';
 
-  private readonly _opsContract: Contract;
   private readonly _gelato: GelatoOpsSDK;
+  private readonly _opsContract: Contract;
+  private _selectorPerform: string = '';
+  private _selectorChecker: string = '';
   private _gasPrice: BigNumber = BigNumber.from(0);
 
   constructor(
     private readonly _gelatoAdmin: NonceManage,
     private readonly _chain: Readonly<IChainHarvester>,
-    private readonly _shouldLog: boolean
+    private readonly _shouldLog: boolean = false
   ) {
-    this._opsContract = new Contract(_chain.addressHarvesterOperations, OPS_ABI, _gelatoAdmin);
     this._gelato = new GelatoOpsSDK(_chain.chainId, _gelatoAdmin);
-    _gelatoAdmin.provider?.getGasPrice().then((value: BigNumber): void => {
-      if (value) {
-        _logger.info(`gas price = ${value.div(1e9)}`);
-        this._gasPrice = value;
+    const operations = new Contract(_chain.addressHarvesterOperations, OPS_ABI, _gelatoAdmin);
+    this._opsContract = operations;
+    return <GelatoClient>(<unknown>(async (): Promise<GelatoClient> => {
+      this._selectorPerform = await operations.getSelector(
+        'performUpkeep(address,uint256,uint256,uint256,uint256,bool)'
+      );
+      this._selectorChecker = await operations.getSelector('checker(address)');
+      if (_gelatoAdmin.provider) {
+        const price = await _gelatoAdmin.provider.getGasPrice();
+        _logger.info(`  gas price = ${price.div(1e9)}`);
+        this._gasPrice = price;
       }
-    });
+      return this;
+    })());
   } //constructor(
 
   public async getGelatoAdminTaskIds(): Promise<ReadonlyArray<string>> {
@@ -42,12 +51,8 @@ export class GelatoClient {
   }
 
   public async computeTaskId(vault_: string): Promise<string> {
-    const performSelector = await this._opsContract.getSelector(
-      'performUpkeep(address,uint256,uint256,uint256,uint256,bool)'
-    );
-    const checkerSelector = await this._opsContract.getSelector('checker(address)');
     const replaced0x = `000000000000000000000000${vault_.toLowerCase().slice(2)}`;
-    const resolverData = `${checkerSelector}${replaced0x}`;
+    const resolverData = `${this._selectorChecker}${replaced0x}`;
     const useTaskTreasuryFunds = true;
 
     if (this._shouldLog) {
@@ -67,7 +72,7 @@ export class GelatoClient {
       _logger.trace('getTaskId data:');
       _logger.trace(`taskCreator: ${this._gelatoAdmin.getAddress()}`);
       _logger.trace(`execAddress: ${this._chain.addressHarvester}`);
-      _logger.trace(`selector: ${performSelector}`);
+      _logger.trace(`selector: ${this._selectorPerform}`);
       _logger.trace(`useTaskTreasuryFunds: ${useTaskTreasuryFunds}`);
       _logger.trace(`feeToken: ${GelatoClient._feeTokenWhenNotPrepaidTask}`);
       _logger.trace(`resolverHash: ${resolverHash}`);
@@ -76,7 +81,7 @@ export class GelatoClient {
     const id = await this._opsContract.getTaskId(
       this._gelatoAdmin.getAddress(),
       this._chain.addressHarvester,
-      performSelector,
+      this._selectorPerform,
       useTaskTreasuryFunds,
       GelatoClient._feeTokenWhenNotPrepaidTask,
       resolverHash
@@ -120,27 +125,21 @@ export class GelatoClient {
   } //public async createTasks(
 
   private async _createTask(vault: string): Promise<string> {
-    _logger.debug(`About to performSelector for ${vault}`);
-    const performSelector: string = await this._opsContract.getSelector(
-      'performUpkeep(address,uint256,uint256,uint256,uint256,bool)'
-    );
-    _logger.debug(`About to checkerSelector for ${vault}`);
-    const checkerSelector: string = await this._opsContract.getSelector('checker(address)');
     const replaced0x: string = `000000000000000000000000${vault.toLowerCase().slice(2)}`;
-    const resolverData: string = `${checkerSelector}${replaced0x}`;
+    const resolverData: string = `${this._selectorChecker}${replaced0x}`;
 
     if (this._shouldLog) {
       _logger.trace('Create task data:');
       _logger.trace(`execAddress: ${this._chain.addressHarvester}`);
-      _logger.trace(`execSelector: ${performSelector}`);
+      _logger.trace(`execSelector: ${this._selectorPerform}`);
       _logger.trace(`resolverAddress: ${this._chain.addressHarvester}`);
       _logger.trace(`resolverData: ${resolverData}`);
     }
-    _logger.debug(`About to callStatic for ${vault}, checkerSelector ${checkerSelector}`);
+    _logger.debug(`About to callStatic for ${vault}, checkerSelector ${this._selectorChecker}`);
     const taskId: string = (
       await this._opsContract.callStatic.createTask(
         this._chain.addressHarvester,
-        performSelector,
+        this._selectorPerform,
         this._chain.addressHarvester,
         resolverData,
         { gasPrice: this._gasPrice }
@@ -149,7 +148,7 @@ export class GelatoClient {
     _logger.debug(`About to createTask for ${vault}\n  --> taskId ${taskId}`);
     const txn: ContractTransaction = await this._opsContract.createTask(
       this._chain.addressHarvester,
-      performSelector,
+      this._selectorPerform,
       this._chain.addressHarvester,
       resolverData,
       { gasPrice: this._gasPrice }

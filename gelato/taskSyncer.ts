@@ -1,7 +1,7 @@
 import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
 //  needed due to clash with WebWorker's version
 import { NonceManage } from '../utility/NonceManage';
-import { GelatoClient } from './gelatoClient';
+import type { GelatoClient } from './gelatoClient';
 import type { IChainHarvester, IStratToHarvest } from './interfaces';
 import { logger } from '../utility/Logger';
 import BROADCAST from '../utils/broadcast';
@@ -29,15 +29,13 @@ class Hits {
 const _logger = logger.getLogger('TaskSync');
 
 export class TaskSyncer {
-  private readonly _gelatoClient: GelatoClient;
   private _hits = new Hits();
 
   constructor(
     readonly gelatoAdmin_: NonceManage,
-    private readonly _chain: Readonly<IChainHarvester>
-  ) {
-    this._gelatoClient = new GelatoClient(gelatoAdmin_, _chain, false);
-  }
+    private readonly _chain: Readonly<IChainHarvester>,
+    private readonly _gelatoClient: GelatoClient
+  ) {}
 
   public async syncVaultHarvesterTasks(): Promise<void> {
     let stratsToHarvest: ReadonlyArray<IStratToHarvest>;

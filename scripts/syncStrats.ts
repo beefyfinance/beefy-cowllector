@@ -18,7 +18,7 @@ import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
 import { ethers as ETHERS } from 'ethers';
 import FS from 'fs';
 import PATH from 'path';
-import { settledPromiseFilled } from '../utility/baseNode';
+import { settledPromiseFilled, nodeJsError } from '../utility/baseNode';
 import type { IVault, IStratToHarvest, IChain, IChains } from './interfaces';
 import { setKey, getKey } from '../utility/redisHelper';
 import { logger } from '../utility/Logger';
@@ -165,7 +165,7 @@ async function main(): Promise<void> {
     }
     vaults = await (<Promise<typeof vaults>>response.json());
   } catch (error: unknown) {
-    logger.error(error);
+    logger.error(<any>error);
     return;
   }
 
@@ -183,24 +183,26 @@ async function main(): Promise<void> {
   try {
     stratsToHarvest = <IStratToHarvest[]>require('../data/stratsToHarvest.json');
   } catch (error: unknown) {
-    if (
-      !(
-        ((testError: unknown): testError is NodeJS.ErrnoException =>
-          !!(<NodeJS.ErrnoException>testError).code)(error) && 'MODULE_NOT_FOUND' === error.code
-      )
-    ) {
-      logger.error(error);
-      return;
-    }
-  } //try
+    logger.error(
+      `${
+        nodeJsError(error) && 'MODULE_NOT_FOUND' === error.code
+          ? 'stratsToHarvest.json not found'
+          : 'unexpected error'
+      }: ${error}`
+    );
+    return;
+  }
 
   const hits = new Hits(),
     encountered: Set<string> = new Set();
   let dirty = false;
 
+  //running in parallel for efficiency, for each chain we support...
   //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {
   await Promise.all(
     Object.values(<Readonly<IChains>>require('../data/chains.js')).map(async (chain: IChain) => {
+      //update our configuration of strategies on this chain to match up
+      //	with the latest actual state of vaults and strategies deployed at Beefy
       const stratManager = new ChainStratManager(chain, vaults, encountered, hits);
       if (stratManager.syncVaults(stratsToHarvest)) dirty = true;
       const { added, removed } = stratManager.stratsChanged();
@@ -219,13 +221,21 @@ async function main(): Promise<void> {
     })
   ); //await Promise.all( Object.values( <Readonly< IChains>>
   //debugger;
+  //for each active vault at the time of the last run which remains in that
+  //	list...
   stratsToHarvest.forEach((strat, index) => {
+    //if the vault was noted upstream as new or still active, loop for the next
+    //	vault
     if (encountered.has(strat.id)) return;
 
+    //remove the vault from our running active-vault list, and note the removal
+    //	in our log of changes made
     delete stratsToHarvest[index];
     hits.add(strat.id, 'removed, decomissioned');
   }); //stratsToHarvest.forEach( strat
 
+  //if any significant changes occurred during this sync, persist our log of
+  //	them to help our overseers keep an eye on things
   const index = Object.keys(hits.hits).length;
   if (index) {
     FS.writeFileSync(
@@ -235,6 +245,8 @@ async function main(): Promise<void> {
     logger.info(`\nLog of ${index} significant changes written to data/stratsSync.json`);
   } else logger.info('\nNo significant changes discovered.');
 
+  //if any changes occurred over this sync, persist our running list of active
+  //	vaults, including their properties of downstream interest
   if (dirty)
     FS.writeFileSync(
       PATH.join(__dirname, '../data/stratsToHarvest.json'),
