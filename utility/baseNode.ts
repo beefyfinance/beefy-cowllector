@@ -4,6 +4,10 @@ export const settledPromiseRejected = (result: PromiseSettledResult< unknown>) :
 export const settledPromiseFilled = <T> (result: PromiseSettledResult< T>) : 
 																				result is PromiseFulfilledResult< T> => 
 																									'fulfilled' === result.status;
+export function nodeJsError( testError: unknown) : 
+															testError is NodeJS.ErrnoException	{
+	return !!(< NodeJS.ErrnoException> testError).code;
+}
 
 export const swapKeyValues = <T extends Record< string, string | number>> 
 																						(obj: T, numeric?: boolean) : 
