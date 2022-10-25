@@ -1,12 +1,12 @@
 /**
 Singleton class to facilitate flexible and coherent console logging within a 
-multi-faceted service, building  on the common "loglevel" NPM package. Provides 
-additionally and alongside a rules-based backending of the console logging 
+multi-faceted service, building on the common "loglevel" NPM package. Provides 
+additionally and alongside a rules-based back-ending of the console logging 
 with the Sentry service to facilitate remote monitoring (WIP).
 
 Usage: 
-+ Wherever you need logging, import the singleton main loglevel instance by the 
-import: 
++ In whatever module you need logging, import the singleton main loglevel 
+	instance by the import: 
 import { logger } from '../yourpath/logger'
 + In the application entry-point module, also import the main `Logger` class so 
 you may adjust the default configuration, like setting a default logging level, 

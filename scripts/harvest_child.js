@@ -1,6 +1,7 @@
 require('dotenv').config();
 const ethers = require('ethers');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
+const redis = require('../utility/redisHelper');
 const Sentry = require('../utils/sentry.js');
 const IStrategy = require('../abis/IStrategy.json');
 const IERC20 = require('../abis/ERC20.json');
@@ -8,7 +9,7 @@ const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
 const broadcast = require('../utils/broadcast');
 const chains = require('../data/chains');
-let strats = require('../data/stratsToHarvest.json');
+//let strats = require('../data/stratsToHarvest.json');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
 const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
@@ -18,6 +19,9 @@ const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 5;
 const TVL_MINIMUM_TO_HARVEST = parseInt(process.env.TVL_MINIMUM_TO_HARVEST) || 10e3;
 
 require('../utils/logger')(CHAIN_ID);
+
+const REDIS_KEY = 'STRATS_TO_HARVEST';
+let strats;
 
 const KNOWN_RPC_ERRORS = {
   'code=INSUFFICIENT_FUNDS': 'INSUFFICIENT_FUNDS',
@@ -48,7 +52,6 @@ const getGasPrice = async provider => {
   } //try
 
   try {
-    //The standard method didn't work. So let's see if the chain supports another method...
     if (CHAIN.gas.info) {
       if (CHAIN.gas.info.type === 'rest') {
         let res = await Axios.get(
@@ -212,11 +215,6 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
     STRAT_INTERVALS_MARGIN_OF_ERROR =
       Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || i_24_MINS;
 
-  //Compute the maximum seconds allowed before a new harvest should be initiated, measured
-  //  from the strat's last-harvest event. If the strat has a special interval specified
-  //  that falls between this and the next run, evaluate that it should be executed during
-  //  this run, as not exceeding the desired interval can be important, like to deny a
-  //  frontrunning bot the illicit gains it seeks.
   let interval = Math.min(
       parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
       strat?.interval || 24
@@ -236,7 +234,7 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
       let secondsSinceHarvest = now - strat.lastHarvest;
       if (secondsSinceHarvest < interval) {
         strat.shouldHarvest = false;
-        strat.notHarvestReason = 'lastHarvest precedes operative interval';
+        strat.notHarvestReason = 'lastHarvest within operative interval';
         return strat;
       }
     } else {
@@ -248,13 +246,11 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
       );
       if (!isNewHarvestPeriod) {
         strat.shouldHarvest = false;
-        strat.notHarvestReason = 'last StratHarvest log precedes operative interval';
+        strat.notHarvestReason = 'last StratHarvest log within operative interval';
         return strat;
       }
     } //if (strat.lastHarvest)
 
-    //unless the strategy is specially marked to skip the check, if the contract explicitly
-    //  contains no rewards, short-circuit with a note that no harvest is necessary
     if (!strat.suppressCallRwrdCheck)
       try {
         const abi = ['function callReward() public view returns(uint256)'];
@@ -323,15 +319,12 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
 }; //const shouldHarvest = async (strat, harvesterPK) =>
 
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
-  //nested function to carry out a slated harvest, retrying if necessary though not
-  //  excessively so
   const tryTX = async (stratContract, max = 2) => {
     if (nonce) options.nonce = nonce;
     let tries = 0;
     while (tries++ < max) {
       let tx;
       try {
-        //if we're working on the transaction-length limited Aurora chain...
         if (CHAIN.id === 'aurora') {
           try {
             tx = await stratContract.harvest(options);
@@ -397,7 +390,6 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               data: error.message,
             };
           } //try
-          //else on this chain unusual gymnastics aren't needed to execute a harvest, so...
         } else {
           tx = await stratContract.harvest(options);
 
@@ -462,7 +454,6 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 };
               } //try
             } //while (receipt === null)
-            //else this is not a "tricky" chain, so...
           } else {
             tx = await tx.wait();
             if (tx.status === 1) {
@@ -486,12 +477,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         //TODO: improve error reporting, adding (1) a facility to drill next level into the message
         //  to tease out the real issue (use regex?), like gas-limit hit on a CALL_EXCEPTION, and
         //  (2) //  lay-person-readable error surfacing!
-        //Some error has occurred in this context of sending a harvest transaction. For
-        //  each error string that we've identified as indicating a known-stop condition,
-        //  one where no retry should be attempted...
         for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
-          //if this string matches what's occurred, make a note of it and short-circuit,
-          //  returning information about the condition to the caller
           if (error.message.includes(key)) {
             const S = `${strat.id || strat.name}: ${KNOWN_RPC_ERRORS[key]}`;
             console.log(S);
@@ -504,17 +490,12 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           }
         } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
 
-        //An unusual error condition has been encountered. If we haven't maxed out on retry
-        //  attempts, fall through for another try, else short-circuit by raising this last
-        //  error.
         if (tries === max) throw new Error(error);
       } //try
     } //while (tries < max)
   }; //const tryTX = async (
 
   try {
-    //if our wallet hasn't enough gas to reliably attempt a harvest, inform our overseers
-    //  and raise an error condition
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
@@ -540,7 +521,6 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
       );
     } //if (balance < options.gasPrice *
 
-    //attempt the harvest operation and return the result
     const stratContract = new ethers.Contract(
       strat.strategy || strat.address,
       IStrategy,
@@ -561,8 +541,11 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 
 const main = async () => {
   try {
-    //if the caller gave us a chain to process that seems validly configured and not turned
-    //  off.. (TODO: invert this long-block conditional to short-circuit instead)
+    let strats = await redis.getKey(REDIS_KEY);
+    await redis.redisDisconnect();
+    if (!strats) throw new Error('Strategy data failed to load from Redis');
+    strats = Object.values(strats);
+
     if (CHAIN && CHAIN.harvestHourInterval) {
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
@@ -602,8 +585,6 @@ const main = async () => {
         let gasPrice = await getGasPrice(provider);
         console.log(`Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} gwei`);
 
-        //if the chain's current price of gas exceeds the cap we've put on the chain, abort
-        //  this harvest run
         if (CHAIN.gas.priceCap < gasPrice) {
           console.log(
             `Gas price on ${CHAIN.id.toUpperCase()} currently exceeds our cap of ${
@@ -792,12 +773,13 @@ const main = async () => {
         } //if (strats.length)
       } catch (error) {
         Sentry.captureException(error);
-        console.log(error);
+        console.error(error);
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
     console.log(`done`);
   } catch (error) {
     Sentry.captureException(error);
+    console.error(error);
   } //try
   process.exit();
 }; //const main = async

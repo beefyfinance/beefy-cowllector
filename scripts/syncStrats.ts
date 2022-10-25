@@ -1,10 +1,10 @@
 /******
-Script synchronizes which vaults should be operated on for harvesting based 
+Script synchronizes which vaults should be operated on for harvesting, based 
 upon the list of voults currently in play at Beefy. In doing so, the script 
 differentiates between which of the vaults should be harvested by Beefy's 
-homegrown bot ("Cowllector") and on-chain servicers Beefy also employs to do 
-this task (e.g. Gelato). The script also does any preparatory work required 
-prior to any on-chain operations, like updating expected gas-limits to harvest 
+homegrown bot ("Cowllector") or by on-chain servicers Beefy also employs to do 
+the task (e.g. Gelato). The script also does any preparatory work required 
+prior to any bot operations, like updating expected gas-limits to harvest 
 vaults managed by Cowllector.
 
 At the end of a run, a JSON log of the significant changes made by the sync is 
@@ -18,11 +18,18 @@ import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
 import { ethers as ETHERS } from 'ethers';
 import FS from 'fs';
 import PATH from 'path';
-import { settledPromiseFilled, nodeJsError } from '../utility/baseNode';
-import type { IVault, IStratToHarvest, IChain, IChains } from './interfaces';
-import { setKey, getKey } from '../utility/redisHelper';
+import { settledPromiseFilled, nodeJsError, type OptionalMutable } from '../utility/baseNode';
+import type {
+  IVault,
+  IStratExtendedProperties,
+  IStratToHarvest,
+  IChain,
+  IChains,
+} from './interfaces';
+import { setKey, getKey, redisDisconnect } from '../utility/redisHelper';
 import { logger } from '../utility/Logger';
 import { estimateGas } from '../utils/harvestHelpers';
+import BROADCAST from '../utils/broadcast';
 
 const NOT_FOUND = -1;
 const REDIS_KEY = 'STRATS_TO_HARVEST';
@@ -32,7 +39,8 @@ type HitType =
   | 'removed, inactive'
   | 'removed, decomissioned'
   | 'on-chain-harvest switch'
-  | 'strategy update';
+  | 'strategy update'
+  | 'extended-properties update';
 interface Hit {
   readonly id: string;
   type: HitType | HitType[];
@@ -49,8 +57,32 @@ class Hits {
 } //class Hits
 
 class ChainStratManager {
-  private added: number = 0;
-  private removed: number = 0;
+  private static _extendedStratProperties: Readonly<
+    Record<string, Omit<IStratExtendedProperties, 'id'>>
+  >;
+  static {
+    try {
+      this._extendedStratProperties = (<OptionalMutable<IStratExtendedProperties, 'id'>[]>(
+        require('../data/stratsExtendedProperties.json')
+      )).reduce((map, strat) => {
+        const id = (<Required<Pick<typeof strat, 'id'>>>strat).id;
+        delete strat.id;
+        map[id] = strat;
+        return map;
+      }, {} as Record<string, Omit<IStratExtendedProperties, 'id'>>);
+    } catch (error: unknown) {
+      throw new Error(
+        `${
+          nodeJsError(error) && 'MODULE_NOT_FOUND' === error.code
+            ? 'stratsExtendedProperties.json not found'
+            : 'unexpected error'
+        }: ${error}`
+      );
+    }
+  } //static
+
+  private _added: number = 0;
+  private _removed: number = 0;
 
   readonly denyOnChainHarvest: ReadonlySet<string> | null = null;
   readonly notOnChainHarvest: IStratToHarvest[] = [];
@@ -67,34 +99,31 @@ class ChainStratManager {
       );
   }
 
-  syncVaults(stratsToHarvest: IStratToHarvest[]): boolean {
+  syncVaults(stratsToHarvest: Record<string, IStratToHarvest>): boolean {
     let dirty = false;
     this.vaults.forEach((vault: IVault) => {
       if (this.chain.id !== vault.chain) return;
 
-      //if this vault was unknown at the time of our last run...
-      const index = stratsToHarvest.findIndex((strat: IStratToHarvest) => vault.id === strat?.id);
-      let strat = NOT_FOUND != index ? stratsToHarvest[index] : null;
-      if (!strat) {
+      let strat = stratsToHarvest[vault.id];
+      const newStrat = !strat;
+      if (newStrat) {
         if (['eol', 'paused'].includes(vault.status)) return;
 
-        stratsToHarvest.push(
-          (strat = {
-            id: vault.id,
-            chain: vault.chain,
-            earnContractAddress: vault.earnContractAddress,
-            earnedToken: vault.earnedToken,
-            strategy: vault.strategy,
-            lastHarvest: vault.lastHarvest,
-          })
-        );
-        this.added++;
+        stratsToHarvest[vault.id] = strat = {
+          id: vault.id,
+          chain: vault.chain,
+          earnContractAddress: vault.earnContractAddress,
+          earnedToken: vault.earnedToken,
+          strategy: vault.strategy,
+          lastHarvest: vault.lastHarvest,
+        }; //);
+        this._added++;
         dirty = true;
         this.encountered.add(vault.id);
         this.hits.add(vault.id, 'added');
       } else if (['eol', 'paused'].includes(vault.status)) {
-        delete stratsToHarvest[index];
-        this.removed++;
+        delete stratsToHarvest[vault.id];
+        this._removed++;
         dirty = true;
         this.hits.add(vault.id, 'removed, inactive');
         return;
@@ -112,7 +141,7 @@ class ChainStratManager {
           strat.lastHarvest = vault.lastHarvest;
           dirty = true;
         }
-      } //if (!strat)
+      } //if (newStrat)
 
       const onChainHarvest =
         this.chain.hasOnChainHarvesting && !this.denyOnChainHarvest?.has(vault.earnedToken);
@@ -123,20 +152,35 @@ class ChainStratManager {
           : this.chain.hasOnChainHarvesting && !strat?.noOnChainHarvest
       ) {
         strat.noOnChainHarvest = !onChainHarvest;
-        if (NOT_FOUND != index) {
+        if (!newStrat) {
           dirty = true;
+          logger.info(`  OCH flag toggled on ${vault.id}`);
           this.hits.add(vault.id, 'on-chain-harvest switch');
         }
       } //if (onChainHarvest ? strat?.noOnChainHarvest :
 
       if (!onChainHarvest) this.notOnChainHarvest.push(strat);
+
+      const extendedProperties = ChainStratManager._extendedStratProperties[vault.id];
+      if (
+        extendedProperties &&
+        (newStrat ||
+          Object.entries(extendedProperties).some(([key, value]) => (<any>strat)[key] !== value))
+      ) {
+        Object.assign(strat, extendedProperties);
+        dirty = true;
+        if (!newStrat) {
+          logger.info(`  Updated extended properties of strat ${vault.id}`);
+          this.hits.add(vault.id, 'extended-properties update');
+        }
+      }
     }); //vaults.forEach( (vault: IVault) =
 
     return dirty;
   } //syncVaults(
 
   stratsChanged(): Readonly<{ added: number; removed: number }> {
-    return { added: this.added, removed: this.removed };
+    return { added: this._added, removed: this._removed };
   }
 
   async addGasLimits(strats: IStratToHarvest[]): Promise<boolean> {
@@ -153,9 +197,9 @@ class ChainStratManager {
 
 async function main(): Promise<void> {
   let vaults: ReadonlyArray<IVault> = [],
-    stratsToHarvest: IStratToHarvest[] = [];
+    stratsExtendedProperties: Record<string, IStratExtendedProperties>,
+    stratsToHarvest: Record<string, IStratToHarvest>;
 
-  //load up current vaults from Beefy's online source
   const urlVaults = `https://api.beefy.finance/vaults`;
   try {
     const response = await (<Promise<Response>>FETCH(urlVaults));
@@ -169,46 +213,20 @@ async function main(): Promise<void> {
     return;
   }
 
-  //load up current strategy-harvesting configuration data (possibly changed
-  //	since our last run)
-
-  //load up the list of strategies to be harvested as of our last run (and now
-  //	possibly out of date)
-
-  //reflect the current strategy-harvesting configuration data into the list of
-  //	strategies to be harvested, noting if any change resulted
-
-  //(TODO: convert to a map-like object for efficient downstream lookups and
-  //  removal handling)
-  try {
-    stratsToHarvest = <IStratToHarvest[]>require('../data/stratsToHarvest.json');
-  } catch (error: unknown) {
-    logger.error(
-      `${
-        nodeJsError(error) && 'MODULE_NOT_FOUND' === error.code
-          ? 'stratsToHarvest.json not found'
-          : 'unexpected error'
-      }: ${error}`
-    );
-    return;
-  }
+  stratsToHarvest = (await (<Record<string, IStratToHarvest>>(<unknown>getKey(REDIS_KEY)))) || {};
 
   const hits = new Hits(),
     encountered: Set<string> = new Set();
   let dirty = false;
 
-  //running in parallel for efficiency, for each chain we support...
   //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {
   await Promise.all(
     Object.values(<Readonly<IChains>>require('../data/chains.js')).map(async (chain: IChain) => {
-      //update our configuration of strategies on this chain to match up
-      //	with the latest actual state of vaults and strategies deployed at Beefy
       const stratManager = new ChainStratManager(chain, vaults, encountered, hits);
       if (stratManager.syncVaults(stratsToHarvest)) dirty = true;
       const { added, removed } = stratManager.stratsChanged();
       if (added || removed)
-        logger.info(`Strats on ${chain.id.toUpperCase()}: ${added} added, 
-										${removed} removed`);
+        logger.info(`Strats on ${chain.id.toUpperCase()}: ${added} added, ${removed} removed`);
       else logger.info(`No strats added or removed from ${chain.id.toUpperCase()}`);
       //if (false)
       if (stratManager.notOnChainHarvest.length) {
@@ -221,41 +239,30 @@ async function main(): Promise<void> {
     })
   ); //await Promise.all( Object.values( <Readonly< IChains>>
   //debugger;
-  //for each active vault at the time of the last run which remains in that
-  //	list...
-  stratsToHarvest.forEach((strat, index) => {
-    //if the vault was noted upstream as new or still active, loop for the next
-    //	vault
-    if (encountered.has(strat.id)) return;
+  for (const stratId in stratsToHarvest) {
+    if (encountered.has(stratId)) continue;
 
-    //remove the vault from our running active-vault list, and note the removal
-    //	in our log of changes made
-    delete stratsToHarvest[index];
-    hits.add(strat.id, 'removed, decomissioned');
-  }); //stratsToHarvest.forEach( strat
+    delete stratsToHarvest[stratId];
+    hits.add(stratId, 'removed, decomissioned');
+  } //for (const stratId in stratsToHarvest)
 
-  //if any significant changes occurred during this sync, persist our log of
-  //	them to help our overseers keep an eye on things
-  const index = Object.keys(hits.hits).length;
-  if (index) {
-    FS.writeFileSync(
-      PATH.join(__dirname, '../data/stratsSync.json'),
-      JSON.stringify(Object.values(hits.hits), null, 2)
-    );
-    logger.info(`\nLog of ${index} significant changes written to data/stratsSync.json`);
+  const count = Object.keys(hits.hits).length;
+  if (count) {
+    await BROADCAST.send({
+      type: 'info',
+      title: `Strat-harvest sync`,
+      message: `${
+        count < 50
+          ? `\n\`\`\`json\n${JSON.stringify(Object.values(hits.hits), null, 2)}\n\`\`\``
+          : '50+ changes: see link'
+      }`,
+    });
+    logger.info(`\nLog of ${count} significant changes written to logging channel`);
   } else logger.info('\nNo significant changes discovered.');
 
-  //if any changes occurred over this sync, persist our running list of active
-  //	vaults, including their properties of downstream interest
-  if (dirty)
-    FS.writeFileSync(
-      PATH.join(__dirname, '../data/stratsToHarvest.json'),
-      JSON.stringify(
-        stratsToHarvest.filter((strat: IStratToHarvest): boolean => !!strat),
-        null,
-        2
-      )
-    );
+  if (dirty) setKey(REDIS_KEY, stratsToHarvest);
+
+  await redisDisconnect();
 } //function async main(
 
 main();

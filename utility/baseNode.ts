@@ -1,9 +1,14 @@
+export type Optional<T, Keys extends keyof T> = Omit<T, Keys> & Partial<Pick<T, Keys>>;
+export type OptionalMutable<T, Keys extends keyof T> = Omit<T, Keys> &
+  Partial<Pick<{ -readonly [key in Keys]: T[key] }, Keys>>;
+
 export const settledPromiseRejected = (
   result: PromiseSettledResult<unknown>
 ): result is PromiseRejectedResult => 'rejected' === result.status;
 export const settledPromiseFilled = <T>(
   result: PromiseSettledResult<T>
 ): result is PromiseFulfilledResult<T> => 'fulfilled' === result.status;
+
 export function nodeJsError(testError: unknown): testError is NodeJS.ErrnoException {
   return !!(<NodeJS.ErrnoException>testError).code;
 }

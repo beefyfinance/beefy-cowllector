@@ -94,7 +94,6 @@ export class GelatoClient {
   public async createTasks(
     vaults: Readonly<Record<string, string>>
   ): Promise<Record<string, string>> {
-    //  for (const key in vaults) {
     const results: PromiseSettledResult<[string, string]>[] = await Promise.allSettled(
       Object.keys(vaults).map(async key => {
         const vault: string = vaults[key];
@@ -160,7 +159,6 @@ export class GelatoClient {
 
   public async deleteTasks(taskIds: ReadonlySet<string>): Promise<Record<string, string>> {
     let i = 0;
-    //  for (const taskId of taskIds)
     const results: PromiseSettledResult<[string, string]>[] = await Promise.allSettled(
       Array.from(taskIds).map(async (taskId: string) => {
         try {

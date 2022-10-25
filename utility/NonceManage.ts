@@ -1,4 +1,5 @@
 import { ethers } from 'ethers';
+import type { TransactionResponse, TransactionRequest } from '@ethersproject/providers';
 import { NonceManager } from '@ethersproject/experimental';
 import { logger } from '../utility/Logger';
 
@@ -15,9 +16,9 @@ export class NonceManage extends NonceManager {
   }
 
   async sendTransaction(
-    txn: ethers.utils.Deferrable<ethers.providers.TransactionRequest>
-  ): Promise<ethers.providers.TransactionResponse> {
-    _logger.debug(`super send with ${this._pending} pending`);
+    txn: ethers.utils.Deferrable<TransactionRequest>
+  ): Promise<TransactionResponse> {
+    _logger.debug(`subclass send with ${this._pending} pending`);
 
     if (this._pending >= this._threshold) {
       const waiter: number = ++this._waited;
@@ -36,10 +37,12 @@ export class NonceManage extends NonceManager {
     } else ++this._pending;
 
     _logger.debug(`sendTransaction into ethers`);
-    return super.sendTransaction(txn).then((txnResponse: ethers.providers.TransactionResponse) => {
-      _logger.debug(`txn sent to node, decrementing pending to ${this._pending - 1}`);
-      --this._pending;
-      return txnResponse;
-    });
+    return super
+      .sendTransaction(txn)
+      .then((txnResponse: TransactionResponse): TransactionResponse => {
+        _logger.debug(`txn sent to RPC node, decrementing pending to ${this._pending - 1}`);
+        --this._pending;
+        return txnResponse;
+      });
   } //async sendTransaction(
 } //class MyNonceMgr

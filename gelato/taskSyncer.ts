@@ -3,10 +3,12 @@ import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
 import { NonceManage } from '../utility/NonceManage';
 import type { GelatoClient } from './gelatoClient';
 import type { IChainHarvester, IStratToHarvest } from './interfaces';
+import { getKey, redisDisconnect } from '../utility/redisHelper';
 import { logger } from '../utility/Logger';
 import BROADCAST from '../utils/broadcast';
 
 type VaultRecord = Record<IStratToHarvest['earnedToken'], IStratToHarvest['earnContractAddress']>;
+
 type HitType = 'created OCH task' | 'deleted OCH task' | 'named OCH task';
 interface Hit {
   readonly id: string;
@@ -26,9 +28,25 @@ class Hits {
   } //add(
 } //class Hits
 
+const REDIS_KEY = 'STRATS_TO_HARVEST';
 const _logger = logger.getLogger('TaskSync');
 
 export class TaskSyncer {
+  private static _stratsToHarvest: ReadonlyArray<IStratToHarvest>;
+  static {
+    try {
+      getKey(REDIS_KEY).then(
+        (value: Readonly<Record<string, IStratToHarvest>>): ReadonlyArray<IStratToHarvest> => {
+          redisDisconnect();
+          return (this._stratsToHarvest = Object.values(value));
+        }
+      );
+    } catch (error: unknown) {
+      _logger.error(<any>error);
+      throw error;
+    }
+  }
+
   private _hits = new Hits();
 
   constructor(
@@ -38,17 +56,8 @@ export class TaskSyncer {
   ) {}
 
   public async syncVaultHarvesterTasks(): Promise<void> {
-    let stratsToHarvest: ReadonlyArray<IStratToHarvest>;
-
-    try {
-      stratsToHarvest = <ReadonlyArray<IStratToHarvest>>require('../data/stratsToHarvest.json');
-    } catch (error: unknown) {
-      _logger.error(<any>error);
-      return;
-    }
-
-    const vaultsOnChain: Readonly<Record<string, IStratToHarvest>> = stratsToHarvest.reduce(
-        (map, strat: IStratToHarvest) => {
+    const vaultsOnChain: Readonly<Record<string, IStratToHarvest>> =
+        TaskSyncer._stratsToHarvest.reduce((map, strat) => {
           if (strat.chain !== this._chain.id || map[strat.earnedToken]) {
             if (strat.chain === this._chain.id)
               _logger.warn(
@@ -56,9 +65,7 @@ export class TaskSyncer {
               );
           } else map[strat.earnedToken] = strat;
           return map;
-        },
-        {} as Record<string, IStratToHarvest>
-      ),
+        }, {} as Record<string, IStratToHarvest>),
       vaultsActive: Readonly<VaultRecord> = this._filterForOchVaults(vaultsOnChain);
 
     const [vaultsMissingTask, taskIds]: Readonly<[VaultRecord | null, Record<string, boolean>]> =
@@ -67,11 +74,8 @@ export class TaskSyncer {
     let promiseCreated: Promise<Record<string, string>> | undefined,
       promiseDeleted: typeof promiseCreated;
 
-    //create an OCH task for any missing vault
     if (vaultsMissingTask) promiseCreated = this._gelatoClient.createTasks(vaultsMissingTask);
 
-    //if any OCH task has become superfluous, delete it ("cancel" it, in
-    //  Gelato parlance)
     if (taskIds) {
       const tasksToDelete: ReadonlySet<string> = Object.entries(taskIds).reduce((set, taskId) => {
         if (!taskId[1]) set.add(taskId[0]);
@@ -90,7 +94,7 @@ export class TaskSyncer {
     if (promiseDeleted) {
       const tasksDeleted = await promiseDeleted,
         keys = Object.keys(tasksDeleted);
-      //    keys.forEach( key => this._hits.add( key, `deleted OCH task: ${
+      //TODO:keys.forEach( key => this._hits.add( key, `deleted OCH task: ${
       //                                                      tasksDeleted[ key]}`));
       report.deleted = keys.length;
     }
@@ -125,7 +129,6 @@ export class TaskSyncer {
 
     let dirty: boolean = false;
 
-    /*let vaultName = Object.entries( vaults)[ 0][ 0];*/ /*(Object.keys( vaults).forEach( async (vaultName: string) => {*/
     await Promise.all(
       Object.keys(vaults).map(async (vaultName: string) => {
         const vaultAddress: string = vaults[vaultName];

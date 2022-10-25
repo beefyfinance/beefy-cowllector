@@ -3,7 +3,7 @@ import { ethers, Wallet } from 'ethers';
 import { NonceManage } from '../utility/NonceManage';
 import { GelatoClient } from './gelatoClient';
 import { TaskSyncer } from './taskSyncer';
-import { IChain, IChainHarvester, IChains } from './interfaces';
+import type { IChain, IChainHarvester, IChains } from './interfaces';
 import { logger, Logger } from '../utility/Logger';
 
 //logger.setLevel( 'NonceManage', Logger.levels.DEBUG);
@@ -21,7 +21,6 @@ function chainIsOnChainHarvestingType(test: IChainHarvester | IChain): test is I
 const run = async (): Promise<void> => {
   const pk = process.env.GELATO_ADMIN_PK!;
 
-  //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain | IChainHarvester) =>  {
   await Promise.all(
     Object.values(<Readonly<IChains>>require('../data/chains.js')).map(
       async (chain: IChain | IChainHarvester) => {
