@@ -1,4 +1,4 @@
-export interface IVault  {
+export interface IVault {
   readonly id: string;
   readonly name: string;
   readonly token: string;
@@ -32,12 +32,12 @@ export interface IStratToHarvest {
   noOnChainHarvest?: boolean;
   suppressCallRewardCheck?: boolean;
   interval?: number;
-} //interface IStratToHarvest 
+} //interface IStratToHarvest
 
-export interface IStratExtendedProperties	{
+export interface IStratExtendedProperties {
   readonly id: string;
-	readonly suppressCallRewardCheck?: boolean;
-	readonly interval?: number;
+  readonly suppressCallRewardCheck?: boolean;
+  readonly interval?: number;
 }
 
 export interface IChain {
@@ -47,6 +47,6 @@ export interface IChain {
   readonly hasOnChainHarvesting?: boolean;
 } //interface IChain
 
-export interface IChains  {
+export interface IChains {
   readonly [chain: number]: IChain;
 } //interface IChains
