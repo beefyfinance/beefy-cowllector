@@ -186,9 +186,8 @@ const addGasLimit = async (strats, provider) => {
 */
   //AT: in conformance with the new way of syncing strats, to stop harvesting strats
   //  handled by an on-chain harvester, this filter
-  strats = strats.filter(
-    strat => CHAIN.id === strat.chain && (!CHAIN.hasOnChainHarvesting || strat.noOnChainHarvest)
-  );
+  strats = strats.filter( strat => CHAIN.id === strat.chain && 
+														(!CHAIN.hasOnChainHarvesting || strat.noOnChainHarvest));
 
   //enforce the gas limit (sometimes an RPC estimates way too high, e.g. Oasis Emerald)
   const max = CHAIN.gas.limit - 1;
@@ -541,6 +540,12 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 
 const main = async () => {
   try {
+		let strats = await redis.getKey( REDIS_KEY);
+		await redis.redisDisconnect();
+		if (!strats)
+			throw new Error( 'Strategy data failed to load from Redis');
+		strats = Object.values( strats);
+
     //if the caller gave us a chain to process that seems validly configured and not turned
     //  off.. (TODO: invert this long-block conditional to short-circuit instead)
     if (CHAIN && CHAIN.harvestHourInterval) {
@@ -770,13 +775,13 @@ const main = async () => {
         } //if (strats.length)
       } catch (error) {
         Sentry.captureException(error);
-        console.error(error);
+        console.error( error);
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
     console.log(`done`);
   } catch (error) {
     Sentry.captureException(error);
-    console.error(error);
+		console.error( error);
   } //try
   process.exit();
 }; //const main = async
