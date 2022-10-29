@@ -1,6 +1,7 @@
 require('dotenv').config();
 const ethers = require('ethers');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
+const redis = require('../utility/redisHelper');
 const Sentry = require('../utils/sentry.js');
 const IStrategy = require('../abis/IStrategy.json');
 const IERC20 = require('../abis/ERC20.json');
@@ -8,7 +9,6 @@ const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
 const broadcast = require('../utils/broadcast');
 const chains = require('../data/chains');
-let strats = require('../data/stratsToHarvest.json');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
 const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
@@ -18,6 +18,9 @@ const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 5;
 const TVL_MINIMUM_TO_HARVEST = parseInt(process.env.TVL_MINIMUM_TO_HARVEST) || 10e3;
 
 require('../utils/logger')(CHAIN_ID);
+
+const REDIS_KEY = 'STRATS_TO_HARVEST';
+let strats;
 
 const KNOWN_RPC_ERRORS = {
   'code=INSUFFICIENT_FUNDS': 'INSUFFICIENT_FUNDS',
@@ -236,7 +239,7 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
       let secondsSinceHarvest = now - strat.lastHarvest;
       if (secondsSinceHarvest < interval) {
         strat.shouldHarvest = false;
-        strat.notHarvestReason = 'lastHarvest precedes operative interval';
+        strat.notHarvestReason = 'lastHarvest within operative interval';
         return strat;
       }
     } else {
@@ -248,7 +251,7 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
       );
       if (!isNewHarvestPeriod) {
         strat.shouldHarvest = false;
-        strat.notHarvestReason = 'last StratHarvest log precedes operative interval';
+        strat.notHarvestReason = 'last StratHarvest log within operative interval';
         return strat;
       }
     } //if (strat.lastHarvest)
@@ -567,18 +570,23 @@ const main = async () => {
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
         console.log(
-          `It's not harvest time for ${CHAIN.id.toUpperCase()} [hour_interval=${
+          `Not yet time to harvest on ${CHAIN.id.toUpperCase()} [hour_interval=${
             CHAIN.harvestHourInterval
           }]`
         );
+        await redis.redisDisconnect();
         return false;
       }
-
       console.log(
-        `Harvest time for ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
+        `Harvesting on ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
           CHAIN.blockExplorer
         }]`
       );
+
+      let strats = await redis.getKey(REDIS_KEY);
+      await redis.redisDisconnect();
+      if (!strats) throw new Error('Strategy data failed to load from Redis');
+      strats = Object.values(strats);
 
       try {
         const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
@@ -792,14 +800,16 @@ const main = async () => {
         } //if (strats.length)
       } catch (error) {
         Sentry.captureException(error);
-        console.log(error);
+        console.error(error);
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
+
     console.log(`done`);
   } catch (error) {
     Sentry.captureException(error);
+    console.error(error);
   } //try
+
   process.exit();
 }; //const main = async
-
 main();

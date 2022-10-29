@@ -9,6 +9,7 @@
     "sourceMap": false,
     "inlineSources": false,
     "declaration": true,
+    "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowJs": true
@@ -17,5 +18,6 @@
     "compilerHost": true,
     "emit": true
   },
-  "include": ["scripts/**/*", "gelato/**/*"]
+  "include": ["scripts/**/*", "gelato/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
