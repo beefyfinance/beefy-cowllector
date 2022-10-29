@@ -186,8 +186,9 @@ const addGasLimit = async (strats, provider) => {
 */
   //AT: in conformance with the new way of syncing strats, to stop harvesting strats
   //  handled by an on-chain harvester, this filter
-  strats = strats.filter( strat => CHAIN.id === strat.chain && 
-														(!CHAIN.hasOnChainHarvesting || strat.noOnChainHarvest));
+  strats = strats.filter(
+    strat => CHAIN.id === strat.chain && (!CHAIN.hasOnChainHarvesting || strat.noOnChainHarvest)
+  );
 
   //enforce the gas limit (sometimes an RPC estimates way too high, e.g. Oasis Emerald)
   const max = CHAIN.gas.limit - 1;
@@ -568,22 +569,27 @@ const main = async () => {
     if (CHAIN && CHAIN.harvestHourInterval) {
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
-        console.log( `Not yet time to harvest on ${CHAIN.id.toUpperCase()
-													} [hour_interval=${CHAIN.harvestHourInterval}]`);
-				await redis.redisDisconnect();
+        console.log(
+          `Not yet time to harvest on ${CHAIN.id.toUpperCase()} [hour_interval=${
+            CHAIN.harvestHourInterval
+          }]`
+        );
+        await redis.redisDisconnect();
         return false;
       }
-      console.log( `Harvesting on ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID
-											}] [rpc=${CHAIN.rpc}] [explorer=${CHAIN.blockExplorer}]`);
+      console.log(
+        `Harvesting on ${CHAIN.id.toUpperCase()} [id=${CHAIN_ID}] [rpc=${CHAIN.rpc}] [explorer=${
+          CHAIN.blockExplorer
+        }]`
+      );
 
-			let strats = await redis.getKey( REDIS_KEY);
-			await redis.redisDisconnect();
-			if (!strats)
-				throw new Error( 'Strategy data failed to load from Redis');
-			strats = Object.values( strats);
+      let strats = await redis.getKey(REDIS_KEY);
+      await redis.redisDisconnect();
+      if (!strats) throw new Error('Strategy data failed to load from Redis');
+      strats = Object.values(strats);
 
       try {
-        const provider = new ethers.providers.JsonRpcProvider( CHAIN.rpc);
+        const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
 
         //AT: TODO: we can get rid of this because we no longer have any "gasless" chains,
         //  I think
@@ -794,14 +800,14 @@ const main = async () => {
         } //if (strats.length)
       } catch (error) {
         Sentry.captureException(error);
-        console.error( error);
+        console.error(error);
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
 
     console.log(`done`);
   } catch (error) {
-    Sentry.captureException( error);
-		console.error( error);
+    Sentry.captureException(error);
+    console.error(error);
   } //try
 
   process.exit();
