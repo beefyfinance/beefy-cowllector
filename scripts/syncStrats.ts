@@ -62,6 +62,8 @@ class ChainStratManager {
   >;
   static {
     try {
+      //load up current individual-strategy harvest-configuration data
+      //	(possibly changed since our last run)
       this._extendedStratProperties = (<OptionalMutable<IStratExtendedProperties, 'id'>[]>(
         require('../data/stratsExtendedProperties.json')
       )).reduce((map, strat) => {
@@ -104,6 +106,7 @@ class ChainStratManager {
     this.vaults.forEach((vault: IVault) => {
       if (this.chain.id !== vault.chain) return;
 
+      //if this vault was unknown at the time of our last run...
       let strat = stratsToHarvest[vault.id];
       const newStrat = !strat;
       if (newStrat) {
@@ -161,6 +164,9 @@ class ChainStratManager {
 
       if (!onChainHarvest) this.notOnChainHarvest.push(strat);
 
+      //if the strategy has been tagged with extended properties not yet
+      //	reflected on the main descriptor of the strategy, do it now and note
+      //	that change has occurred
       const extendedProperties = ChainStratManager._extendedStratProperties[vault.id];
       if (
         extendedProperties &&
@@ -196,32 +202,50 @@ class ChainStratManager {
 } //class ChainStratManager
 
 async function main(): Promise<void> {
+  const interval = process.env.INTERVAL_SYNC_STRATS
+    ? parseInt(process.env.INTERVAL_SYNC_STRATS)
+    : 12;
+  if ((new Date().getUTCHours() - 1) % interval) {
+    logger.info(`Not yet time to synchronize stategy info. [interval = ${interval} hours]`);
+    await redisDisconnect();
+    return;
+  }
+  logger.info('Synchronizing strategy info to current state.');
+
   let vaults: ReadonlyArray<IVault> = [],
     stratsExtendedProperties: Record<string, IStratExtendedProperties>,
     stratsToHarvest: Record<string, IStratToHarvest>;
 
+  //load up current vaults from Beefy's online source
   const urlVaults = `https://api.beefy.finance/vaults`;
   try {
     const response = await (<Promise<Response>>FETCH(urlVaults));
     if (!(response.ok && response.body)) {
       logger.error('Fetching vaults failed');
+      await redisDisconnect();
       return;
     }
     vaults = await (<Promise<typeof vaults>>response.json());
   } catch (error: unknown) {
     logger.error(<any>error);
+    await redisDisconnect();
     return;
   }
 
+  //load up the list of strategies to be harvested as of our last run (and now
+  //	possibly out of date), indexed by vault-ID
   stratsToHarvest = (await (<Record<string, IStratToHarvest>>(<unknown>getKey(REDIS_KEY)))) || {};
 
   const hits = new Hits(),
     encountered: Set<string> = new Set();
   let dirty = false;
 
+  //running in parallel for efficiency, for each chain we support...
   //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain) =>  {
   await Promise.all(
     Object.values(<Readonly<IChains>>require('../data/chains.js')).map(async (chain: IChain) => {
+      //update our configuration of strategies on this chain to match up with the
+      //	latest actual state of vaults and strategies deployed at Beefy
       const stratManager = new ChainStratManager(chain, vaults, encountered, hits);
       if (stratManager.syncVaults(stratsToHarvest)) dirty = true;
       const { added, removed } = stratManager.stratsChanged();
@@ -239,30 +263,46 @@ async function main(): Promise<void> {
     })
   ); //await Promise.all( Object.values( <Readonly< IChains>>
   //debugger;
+  //for each active vault at the time of the last run...
   for (const stratId in stratsToHarvest) {
+    //if the vault was noted upstream as new or still active, loop for the next
+    //	vault
     if (encountered.has(stratId)) continue;
 
+    //remove the vault from our running active-vault list, and note the removal
+    //	in our log of changes made
     delete stratsToHarvest[stratId];
     hits.add(stratId, 'removed, decomissioned');
   } //for (const stratId in stratsToHarvest)
 
+  //if any changes occurred over this sync, persist our running list of active
+  //	vaults, including their properties of downstream interest
+  if (dirty) setKey(REDIS_KEY, stratsToHarvest);
+
+  //if any significant changes occurred during this sync, persist our log of
+  //	them to help our overseers keep an eye on things
   const count = Object.keys(hits.hits).length;
   if (count) {
-    await BROADCAST.send({
-      type: 'info',
-      title: `Strat-harvest sync`,
-      message: `${
-        count < 50
-          ? `\n\`\`\`json\n${JSON.stringify(Object.values(hits.hits), null, 2)}\n\`\`\``
-          : '50+ changes: see link'
-      }`,
-    });
-    logger.info(`\nLog of ${count} significant changes written to logging channel`);
+    try {
+      await BROADCAST.send({
+        type: 'info',
+        title: `Strat-harvest sync`,
+        message: `${
+          count < 50
+            ? `\n\`\`\`json\n${JSON.stringify(Object.values(hits.hits), null, 2)}\n\`\`\``
+            : '50+ changes: see link'
+        }`,
+      });
+      logger.info(`\nLog of ${count} significant changes written to logging channel`);
+    } catch (error: unknown) {
+      logger.info(
+        `\n${count} significant changes registered, but error\n  encountered with looging channel.`
+      );
+      logger.error('Discord broadcast failed: ' + (<any>error).message);
+      logger.error(`* Intended Content **\n${JSON.stringify(Object.values(hits.hits), null, 2)}`);
+    } //try
   } else logger.info('\nNo significant changes discovered.');
-
-  if (dirty) setKey(REDIS_KEY, stratsToHarvest);
 
   await redisDisconnect();
 } //function async main(
-
 main();

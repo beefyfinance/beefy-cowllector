@@ -1,4 +1,5 @@
-import { Contract, BigNumber, type ContractTransaction } from 'ethers';
+import { ethers, Contract, BigNumber, type ContractTransaction } from 'ethers';
+//import {keccak256, toUtf8Bytes} from '@ethersproject/utils';
 import { GelatoOpsSDK } from '@gelatonetwork/ops-sdk';
 import { settledPromiseFilled } from '../utility/baseNode';
 import { NonceManage } from '../utility/NonceManage';
@@ -28,11 +29,18 @@ export class GelatoClient {
     this._gelato = new GelatoOpsSDK(_chain.chainId, _gelatoAdmin);
     const operations = new Contract(_chain.addressHarvesterOperations, OPS_ABI, _gelatoAdmin);
     this._opsContract = operations;
+    //	this._selectorPerform = keccak256( toUtf8Bytes(
+    this._selectorPerform = ethers.utils
+      .id('performUpkeep(address,uint256,uint256,uint256,uint256,bool)')
+      .slice(0, 10);
+    //	this._selectorChecker = keccak256( toUtf8Bytes( 'checker(address)')).slice(
+    //																																			0, 10);
+    this._selectorChecker = ethers.utils.id('checker(address)').slice(0, 10);
     return <GelatoClient>(<unknown>(async (): Promise<GelatoClient> => {
-      this._selectorPerform = await operations.getSelector(
-        'performUpkeep(address,uint256,uint256,uint256,uint256,bool)'
-      );
-      this._selectorChecker = await operations.getSelector('checker(address)');
+      //					this._selectorPerform = await operations.getSelector(
+      //							'performUpkeep(address,uint256,uint256,uint256,uint256,bool)');
+      //					this._selectorChecker = await operations.getSelector(
+      //																												 'checker(address)');
       if (_gelatoAdmin.provider) {
         const price = await _gelatoAdmin.provider.getGasPrice();
         _logger.info(`  gas price = ${price.div(1e9)}`);
@@ -62,9 +70,13 @@ export class GelatoClient {
       _logger.trace(`resolverData: ${resolverData}`);
     }
 
-    const resolverHash = await this._opsContract.getResolverHash(
-      this._chain.addressHarvester,
-      resolverData
+    //  const resolverHash = await this._opsContract.getResolverHash(
+    //																 this._chain.addressHarvester, resolverData);
+    const resolverHash = ethers.utils.keccak256(
+      ethers.utils.defaultAbiCoder.encode(
+        ['address', 'bytes'],
+        [this._chain.addressHarvester, resolverData]
+      )
     );
 
     if (this._shouldLog) {
@@ -78,7 +90,7 @@ export class GelatoClient {
       _logger.trace(`resolverHash: ${resolverHash}`);
     }
 
-    const id = await this._opsContract.getTaskId(
+    const id = await this._opsContract['getTaskId(address,address,bytes4,bool,address,bytes32)'](
       this._gelatoAdmin.getAddress(),
       this._chain.addressHarvester,
       this._selectorPerform,
@@ -94,6 +106,7 @@ export class GelatoClient {
   public async createTasks(
     vaults: Readonly<Record<string, string>>
   ): Promise<Record<string, string>> {
+    //  for (const key in vaults) {
     const results: PromiseSettledResult<[string, string]>[] = await Promise.allSettled(
       Object.keys(vaults).map(async key => {
         const vault: string = vaults[key];
@@ -159,6 +172,7 @@ export class GelatoClient {
 
   public async deleteTasks(taskIds: ReadonlySet<string>): Promise<Record<string, string>> {
     let i = 0;
+    //  for (const taskId of taskIds)
     const results: PromiseSettledResult<[string, string]>[] = await Promise.allSettled(
       Array.from(taskIds).map(async (taskId: string) => {
         try {

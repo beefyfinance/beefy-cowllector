@@ -9,8 +9,10 @@ const initRedis = async (): Promise<ReturnType<typeof REDIS.createClient>> => {
   const client = REDIS.createClient({
     url: process.env.REDISCLOUD_URL || 'redis://localhost:6379',
   });
-  client.on('connect', () => console.log('Connected to redis'));
-  client.on('error', (err: unknown) => console.log('Failed to connect to redis: ', err));
+  client.on('ready', () => console.log('Redis ready'));
+  client.on('end', () => console.log('Redis closed'));
+  client.on('error', (err: unknown) => console.log('Redis error: ', err));
+
   await client.connect();
   // await loadCachedValues();
   return client;
@@ -41,7 +43,9 @@ export const getKey = async (key: string): Promise<any> => {
 };
 
 export async function redisDisconnect(): Promise<void> {
-  if (!redisClient || redisClient instanceof Promise) return;
+  if (!redisClient) return;
+  if (redisClient instanceof Promise && !(redisClient = await redisClient)) return;
+
   await redisClient.quit();
   redisClient = undefined;
 }

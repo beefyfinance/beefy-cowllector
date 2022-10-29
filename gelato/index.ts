@@ -19,8 +19,18 @@ function chainIsOnChainHarvestingType(test: IChainHarvester | IChain): test is I
 }
 
 const run = async (): Promise<void> => {
+  const interval = process.env.INTERVAL_SYNC_GELATO
+    ? parseInt(process.env.INTERVAL_SYNC_GELATO)
+    : 12;
+  if ((new Date().getUTCHours() - 2) % interval) {
+    logger.info(`Not yet time to synchronize Gelato tasks. [interval = ${interval} hours]`);
+    return;
+  }
+  logger.info('Synchronizing Gelato tasks');
+
   const pk = process.env.GELATO_ADMIN_PK!;
 
+  //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain | IChainHarvester) =>  {
   await Promise.all(
     Object.values(<Readonly<IChains>>require('../data/chains.js')).map(
       async (chain: IChain | IChainHarvester) => {
@@ -44,5 +54,4 @@ const run = async (): Promise<void> => {
     )
   ); //await Promise.all( Object.values( <Readonly< IChains>>
 }; //const run = async (): Promise< void>
-
 run();

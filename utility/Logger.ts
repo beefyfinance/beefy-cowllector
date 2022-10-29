@@ -17,8 +17,9 @@ Logger.levels.INFO
 + Wherever a specialized, separately configurable logger is desired, it can be 
 obtained via a call against the main logger instance: 
 logger.getLogger( 'YourName')
-In practice, I tend to just make this call right after the import section, at 
-module scope, so the logger can be used freely throughout the module: 
+In practice, I tend to just make this call right after the import section of a 
+module of insterest, at module scope, so the logger can be used freely 
+throughout: 
 const _logger = logger.getLogger( 'YourName');
 + You may specify the verbosity of a specialized logger in advance, like in 
 your entry-point module, from the main logging instance, like so: 
@@ -114,13 +115,14 @@ export class Logger implements ILogger {
   }
 
   private sentry(_log: Readonly<ILogger>, level: loglevel.LogLevelNumbers, msg: string) {
-    if (loglevel.levels.ERROR <= level) {
-      //TODO: figure out the TS to get rid of the ugly "any" cast
-      (<any>this.sentryLogger)[Logger.levelNames[level].toLowerCase()](
-        `${_log.name}, ${Logger.levelNames[level]}: ${msg}`
-      );
-      return;
-    }
+    if (false)
+      if (loglevel.levels.ERROR <= level) {
+        //TODO: figure out the TS to get rid of the ugly "any" cast
+        (<any>this.sentryLogger)[Logger.levelNames[level].toLowerCase()](
+          `${_log.name}, ${Logger.levelNames[level]}: ${msg}`
+        );
+        return;
+      }
 
     //if the situation matches a rule set for Sentry output, send the message
     //  to Sentry

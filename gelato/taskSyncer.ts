@@ -43,9 +43,10 @@ export class TaskSyncer {
       );
     } catch (error: unknown) {
       _logger.error(<any>error);
+      redisDisconnect();
       throw error;
     }
-  }
+  } //static
 
   private _hits = new Hits();
 
@@ -74,8 +75,11 @@ export class TaskSyncer {
     let promiseCreated: Promise<Record<string, string>> | undefined,
       promiseDeleted: typeof promiseCreated;
 
+    //create an OCH task for any missing vault
     if (vaultsMissingTask) promiseCreated = this._gelatoClient.createTasks(vaultsMissingTask);
 
+    //if any OCH task has become superfluous, delete it ("cancel" it, in
+    //  Gelato parlance)
     if (taskIds) {
       const tasksToDelete: ReadonlySet<string> = Object.entries(taskIds).reduce((set, taskId) => {
         if (!taskId[1]) set.add(taskId[0]);
@@ -112,6 +116,9 @@ export class TaskSyncer {
     } catch (error: unknown) {
       //TODO; figure out TS to get rid of the 'any' cast, probably type-guard
       _logger.error(`Error broadcasting report : ${(<any>error).message}`);
+      _logger.error(
+        `* Intended Content **\n${JSON.stringify(Object.values(this._hits.hits), null, 2)}`
+      );
     }
   } //public async syncVaultHarvesterTasks(
 
@@ -129,6 +136,7 @@ export class TaskSyncer {
 
     let dirty: boolean = false;
 
+    /*let vaultName = Object.entries( vaults)[ 0][ 0];*/ /*(Object.keys( vaults).forEach( async (vaultName: string) => {*/
     await Promise.all(
       Object.keys(vaults).map(async (vaultName: string) => {
         const vaultAddress: string = vaults[vaultName];
