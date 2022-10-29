@@ -1,12 +1,12 @@
-import { IStratToHrvst, IChain as _IChain, IChains } from '../scripts/interfaces';
-export { IStratToHrvst, IChains };
+import {IStratToHarvest, IChain as _IChain, IChains} from '../scripts/interfaces';
+export {IStratToHarvest, IChains};
 
 export interface IChain extends _IChain {
-  readonly ochHarvester?: string;
-  readonly ochOperations?: string;
+  readonly addressHarvester?: string;
+  readonly addressHarvesterOperations?: string;
 }
 
-export interface IChainOch extends IChain {
-  readonly ochHarvester: string;
-  readonly ochOperations: string;
+export interface IChainHarvester extends IChain {
+  readonly addressHarvester: string;
+  readonly addressHarvesterOperations: string;
 }
