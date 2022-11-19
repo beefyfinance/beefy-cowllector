@@ -72,7 +72,7 @@ export class TaskSyncer {
     const [vaultsMissingTask, taskIds]: Readonly<[VaultRecord | null, Record<string, boolean>]> =
       await this._vaultsWithMissingTask(vaultsActive);
 
-    let promiseCreated: Promise<Record<string, string>> | undefined,
+    let promiseCreated: Promise<Record<string, string> | null> | undefined,
       promiseDeleted: typeof promiseCreated;
 
     //create an OCH task for any missing vault
@@ -89,35 +89,37 @@ export class TaskSyncer {
     }
 
     const report = { created: 0, deleted: 0 };
-    if (promiseCreated) {
-      const tasksCreated = await promiseCreated,
-        keys = Object.keys(tasksCreated);
+    const tasksCreated = await promiseCreated;
+    if (tasksCreated) {
+      const keys = Object.keys(tasksCreated);
       keys.forEach(key => this._hits.add(key, 'created OCH task', `taskId: ${tasksCreated[key]}`));
       report.created = keys.length;
     }
-    if (promiseDeleted) {
-      const tasksDeleted = await promiseDeleted,
-        keys = Object.keys(tasksDeleted);
+    const tasksDeleted = await promiseDeleted;
+    if (tasksDeleted) {
+      const keys = Object.keys(tasksDeleted);
       //TODO:keys.forEach( key => this._hits.add( key, `deleted OCH task: ${
       //                                                      tasksDeleted[ key]}`));
       report.deleted = keys.length;
     }
 
+    _logger.info(`Tasks created: ${report.created}  Tasks deleted: ${report.deleted}`);
     try {
       await BROADCAST.send({
         type: 'info',
         title: `On-chain-harvester sync on ${this._chain.id.toUpperCase()}`,
         message:
           `+ OCH tasks created: ${report.created}\n+ OCH tasks deleted: ${report.deleted}` +
-          (promiseCreated || promiseDeleted
+          (tasksCreated || tasksDeleted
             ? `\n\`\`\`json\n${JSON.stringify(Object.values(this._hits.hits), null, 2)}\n\`\`\``
             : ''),
       });
     } catch (error: unknown) {
       //TODO; figure out TS to get rid of the 'any' cast, probably type-guard
-      _logger.error(`Error broadcasting report : ${(<any>error).message}`);
       _logger.error(
-        `* Intended Content **\n${JSON.stringify(Object.values(this._hits.hits), null, 2)}`
+        `Error broadcasting report : ${
+          (<any>error).message
+        }\n* Intended Content **\n${JSON.stringify(Object.values(this._hits.hits), null, 2)}`
       );
     }
   } //public async syncVaultHarvesterTasks(
@@ -125,15 +127,13 @@ export class TaskSyncer {
   private async _vaultsWithMissingTask(
     vaults: Readonly<VaultRecord>
   ): Promise<[VaultRecord | null, Record<string, boolean>]> {
-    const vaultsWithMissingTask: Record<string, string> = {},
-      taskIds: Record<string, boolean> = (await this._gelatoClient.getGelatoAdminTaskIds()).reduce(
-        (map, taskId) => {
-          map[taskId] = false;
-          return map;
-        },
-        {} as Record<string, boolean>
-      );
-
+    const taskIds: Record<string, boolean> = (
+        await this._gelatoClient.getGelatoAdminTaskIds()
+      ).reduce((map, taskId) => {
+        map[taskId] = false;
+        return map;
+      }, {} as Record<string, boolean>),
+      vaultsWithMissingTask: Record<string, string> = {};
     let dirty: boolean = false;
 
     /*let vaultName = Object.entries( vaults)[ 0][ 0];*/ /*(Object.keys( vaults).forEach( async (vaultName: string) => {*/
@@ -143,6 +143,7 @@ export class TaskSyncer {
         const taskId: string = await this._gelatoClient.computeTaskId(vaultAddress);
         if (undefined == taskIds[taskId]) {
           _logger.info(`Missing Gelato task for ${vaultName}`);
+          _logger.debug(`  --> computed taskId ${taskId}`);
           vaultsWithMissingTask[vaultName] = vaultAddress;
           dirty = true;
         } else taskIds[taskId] = true;

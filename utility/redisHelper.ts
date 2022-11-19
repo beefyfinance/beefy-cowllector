@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import * as REDIS from 'redis';
 
 let redisClient:

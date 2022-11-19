@@ -6,8 +6,10 @@ import { TaskSyncer } from './taskSyncer';
 import type { IChain, IChainHarvester, IChains } from './interfaces';
 import { logger, Logger } from '../utility/Logger';
 
+logger.initializeSentry({ dsn: process.env.SENTRY_DSN_GELATO_SYNC, tracesSampleRate: 1.0 });
 //logger.setLevel( 'NonceManage', Logger.levels.DEBUG);
 //logger.setLevel( 'GelatoClient', Logger.levels.DEBUG);
+//logger.setLevel( 'TaskSync', Logger.levels.DEBUG);
 
 function chainIsOnChainHarvestingType(test: IChainHarvester | IChain): test is IChainHarvester {
   return (

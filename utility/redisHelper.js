@@ -42,6 +42,7 @@ var __importStar =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 exports.redisDisconnect = exports.getKey = exports.setKey = void 0;
+require('dotenv/config');
 const REDIS = __importStar(require('redis'));
 let redisClient;
 const initRedis = async () => {

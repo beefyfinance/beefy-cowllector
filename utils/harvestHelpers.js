@@ -16,7 +16,6 @@ const isNewPeriodNaive = interval => {
   return hour % interval === 0;
 };
 
-
 /**
  * Check if is new harvest period
  * @param {Object} strat
@@ -25,15 +24,14 @@ const isNewPeriodNaive = interval => {
  * @returns boolean
  */
 const isNewHarvestPeriod = async (strat, harvester, harvestInterval, chainId) => {
-  const strategy = new ethers.Contract( strat.strategy || strat.address, IStrategy, 
-                                                                                harvester);
+  const strategy = new ethers.Contract(strat.strategy || strat.address, IStrategy, harvester);
   const filter = strategy.filters.StratHarvest(null);
   const currentBlock = await harvester.provider.getBlockNumber();
-  const blockTime = chains[ chainId || strat.chainId].blockTime;
+  const blockTime = chains[chainId || strat.chainId].blockTime;
   const oldestPeriodBlock = currentBlock - harvestInterval / blockTime;
 
   let logs = [];
-  let interval = chains[ chainId || strat.chainId].queryLimit;
+  let interval = chains[chainId || strat.chainId].queryLimit;
   let from = currentBlock - interval;
   let to = currentBlock;
 
@@ -49,7 +47,6 @@ const isNewHarvestPeriod = async (strat, harvester, harvestInterval, chainId) =>
   return false;
 }; //const isNewHarvestPeriod = async (
 
-
 /**
  * Multicall contract methods
  * @description Works with only view methods. Function will return the same array of
@@ -64,25 +61,23 @@ const multicall = async (chain, contracts, method = 'balanceOf', ABI = IStrategy
   const web3 = new Web3(chain.rpc);
   const multicall = new MultiCall(web3, chain.multicall);
 
-  const calls = contracts.map( c => {
-    const contract = new web3.eth.Contract( ABI, c.strategy || c.address);
+  const calls = contracts.map(c => {
+    const contract = new web3.eth.Contract(ABI, c.strategy || c.address);
     return {
-      [method]: contract.methods[ method](),
+      [method]: contract.methods[method](),
     };
   });
   const [callResults] = await multicall.all([calls]);
-  for ( let i = 0; i < contracts.length; i++) {
-    contracts[ i][ method] = callResults[ i][ method] || contracts[ i][ method] || 0;
+  for (let i = 0; i < contracts.length; i++) {
+    contracts[i][method] = callResults[i][method] || contracts[i][method] || 0;
   }
   return contracts;
 }; //const multicall = async (
-
 
 const hasStakers = async strategy => {
   const balance = await strategy.balanceOf();
   return balance.gt(0) ? true : false;
 };
-
 
 /**
  * Estimate Gas Limit

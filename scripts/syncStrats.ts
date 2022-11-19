@@ -13,6 +13,7 @@ written to `data\stratsSync.json`.
 Run command: yarn ts-node --transpile-only scripts/syncStrats.ts
 ********/
 
+import 'dotenv/config';
 import FETCH, { type Response } from 'node-fetch'; //pull in of type Response
 //  needed due to clash with WebWorker's version
 import { ethers as ETHERS } from 'ethers';
@@ -55,6 +56,12 @@ class Hits {
     else hit.type.push(type);
   } //add(
 } //class Hits
+
+logger.initializeSentry({
+  dsn: process.env.SENTRY_DSN_STRAT_SYNC,
+  tracesSampleRate: 1.0 /*, debug: true*/,
+});
+//logger.setLevel( Logger.levels.DEBUG);
 
 class ChainStratManager {
   private static _extendedStratProperties: Readonly<
