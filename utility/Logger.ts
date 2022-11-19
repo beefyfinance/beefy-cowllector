@@ -32,7 +32,6 @@ import loglevel from 'loglevel';
 import * as Sentry from '@sentry/node';
 //import {RewriteFrames} from '@sentry/integrations';
 import type {NodeOptions} from '@sentry/node/types/types';
-//import * as Tracing from '@sentry/tracing';
 import LoglevelSentryPlugin from '@toruslabs/loglevel-sentry';
 import {swapKeyValues} from '../utility/baseNode';
 
@@ -87,15 +86,8 @@ export class Logger implements ILogger  {
   }
 
 	public initializeSentry( initializer: Readonly< NodeOptions>) :  void	{
-//	const rewriteFrames: typeof initializer.integrations = [new RewriteFrames( 
-//																									{root: global.__dirname})];
-		Sentry.init( initializer);//{integrations: initializer.integrations ? 
-														/*rewriteFrames.concat( initializer.integrations)*/ 
-/*														 <typeof initializer.integrations> 
-														 [rewriteFrames[0], ...<any> 
-														initializer.integrations] : rewriteFrames, 
-														...initializer});
-*/	this._sentryLogger = true;
+		Sentry.init( initializer);
+		this._sentryLogger = true;
 	}
 
   public get name() {
@@ -104,43 +96,49 @@ export class Logger implements ILogger  {
 
   public info( msg: string) : void  {
     Logger._mainLog.info( msg);
-    this.sentry( this, loglevel.levels.INFO, msg);
+    this.sentry( loglevel.levels.INFO, msg);
   }
 
   public warn( msg: string) : void  {
     Logger._mainLog.warn( msg);
-    this.sentry( this, loglevel.levels.WARN, msg);
+    this.sentry( loglevel.levels.WARN, msg);
   }
 
   public error( msg: string) : void {
     Logger._mainLog.error( msg);
-    this.sentry( this, loglevel.levels.ERROR, msg);
+    this.sentry( loglevel.levels.ERROR, msg);
   }
 
   public debug( msg: string) : void {
     Logger._mainLog.debug( msg);
-    this.sentry( this, loglevel.levels.DEBUG, msg);
+    this.sentry( loglevel.levels.DEBUG, msg);
   }
 
   public trace( msg: string) : void {
     Logger._mainLog.trace( msg);
-    this.sentry( this, loglevel.levels.TRACE, msg);
+    this.sentry( loglevel.levels.TRACE, msg);
   }
+
 
   public get sentryLogger() : ILogger | null {
 		if (!this._sentryLogger)
 			return null;
+
+		//if not yet completed, set up the Sentry logger, restricting its output to 
+		//	Sentry alone (nothing redundant to console) and with a default of 
+		//	emitting only errors (or worse)
     if ('boolean' == typeof this._sentryLogger)  {
-      (new LoglevelSentryPlugin( Sentry)).install( this._sentryLogger = 
-																<NamedLog> loglevel.getLogger( 'Beefy Sentry'));
+			this._sentryLogger = <NamedLog> loglevel.getLogger( 'Beefy Sentry');
+			this._sentryLogger.methodFactory = () => () => void(0);
+      (new LoglevelSentryPlugin( Sentry)).install( this._sentryLogger);
       this._sentryLogger.setLevel( loglevel.levels.ERROR);
     }
+
     return this._sentryLogger;
-  }
+  } //get sentryLogger() : ILogger | null
 
 
-  private sentry( _log: Readonly< ILogger>, 
-                  level: loglevel.LogLevelNumbers, 
+  private sentry( level: loglevel.LogLevelNumbers, 
                   msg: string) : void  {
 		if (!this.sentryLogger)
 			return;
@@ -148,8 +146,7 @@ export class Logger implements ILogger  {
     if (loglevel.levels.ERROR <= level) {
 //TODO: figure out the TS to get rid of the ugly "any" cast
       (<any> this.sentryLogger)[ Logger.levelNames[ level].toLowerCase()]( 
-																				`${this.name ? this.name + ', ' : ''}${
-																				Logger.levelNames[ level]}: ${msg}`);
+																				`${Logger.levelNames[ level]}: ${msg}`);
       return;
     }
 
@@ -185,29 +182,40 @@ export class Logger implements ILogger  {
     }
 
     public info( msg: string) : void  {
-      this._logger.info( `${this.name}: ${msg}`);
-      this.parent.sentry( this, loglevel.levels.INFO, msg);
+			const niceifiedMessage = this.niceifyOutput( msg);
+      this._logger.info( niceifiedMessage);
+      this.parent.sentry( loglevel.levels.INFO, niceifiedMessage);
     }
 
     public warn( msg: string) : void  {
-      this._logger.warn( `${this.name}: ${msg}`);
-      this.parent.sentry( this, loglevel.levels.WARN, msg);
+			const niceifiedMessage = this.niceifyOutput( msg);
+      this._logger.warn( niceifiedMessage);
+      this.parent.sentry( loglevel.levels.WARN, niceifiedMessage);
     }
 
     public error( msg: string) : void {
-      this._logger.error( `${this.name}: ${msg}`);
-      this.parent.sentry( this, loglevel.levels.ERROR, msg);
+			const niceifiedMessage = this.niceifyOutput( msg);
+      this._logger.error( niceifiedMessage);
+      this.parent.sentry( loglevel.levels.ERROR, niceifiedMessage);
     }
 
     public debug( msg: string) : void {
-      this._logger.debug( `${this.name}: ${msg}`);
-      this.parent.sentry( this, loglevel.levels.DEBUG, msg);
+			const niceifiedMessage = this.niceifyOutput( msg);
+      this._logger.debug( niceifiedMessage);
+      this.parent.sentry( loglevel.levels.DEBUG, niceifiedMessage);
     }
 
     public trace( msg: string) : void {
-      this._logger.trace( `${this.name}: ${msg}`);
-      this.parent.sentry( this, loglevel.levels.TRACE, msg);
+			const niceifiedMessage = this.niceifyOutput( msg);
+      this._logger.trace( niceifiedMessage);
+      this.parent.sentry( loglevel.levels.TRACE, niceifiedMessage);
     }
+
+		private niceifyOutput( message: string) : string	{
+			const indexPrecedingWhitespace = message.search( /\S|$/);
+			return `${message.slice( 0, indexPrecedingWhitespace)}${this.name }: ${
+																		message.slice( indexPrecedingWhitespace)}`;
+		}
   } //static SubLogger = class implements ILogger
 } //class Logger
 
