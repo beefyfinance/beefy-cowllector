@@ -1,5 +1,5 @@
-import { IStratToHarvest, IChain as _IChain, IChains } from '../scripts/interfaces';
-export { IStratToHarvest, IChains };
+import {IStratToHarvest, IChain as _IChain, IChains} from '../scripts/interfaces';
+export {IStratToHarvest, IChains};
 
 export interface IChain extends _IChain {
   readonly addressHarvester?: string;
