@@ -7,7 +7,8 @@ const IStrategy = require('../abis/IStrategy.json');
 const IERC20 = require('../abis/ERC20.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
-const broadcast = require('../utils/broadcast');
+//const broadcast = require('../utils/broadcast');
+const discordPoster = require('../utils/discordPost');
 const chains = require('../data/chains');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
@@ -215,10 +216,11 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
     STRAT_INTERVALS_MARGIN_OF_ERROR =
       Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || i_24_MINS;
 
-  //Compute the maximum seconds allowed before a new harvest should be initiated, measured
-  //  from the strat's last-harvest event. If the strat has a special interval specified
-  //  that falls between this and the next run, evaluate that it should be executed during
-  //  this run, as not exceeding the desired interval can be important, like to deny a
+  //Compute the maximum seconds allowed before a new harvest should be
+  //	initiated, measured from the strat's last-harvest event. If the strat
+  //	has a special interval specified that falls between this and the next
+  //	run, evaluate that it should be executed during this run, as not
+  //	exceeding the desired interval can be important, like to deny a
   //  frontrunning bot the illicit gains it seeks.
   let interval = Math.min(
       parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
@@ -429,7 +431,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   if (error.message.includes(key)) {
                     console.log(`${strat.id || strat.name}: ${KNOWN_RPC_ERRORS[key]}`);
                     try {
-                      let res = await broadcast.send({
+                      let res = await discordPoster.sendMessage({
                         type: 'error',
                         title: `Error trying to harvest ${strat.id || strat.name}`,
                         message: `- error code: ${KNOWN_RPC_ERRORS[key]}\n- address: ${
@@ -447,7 +449,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   } //if (error.message.includes( key))
                 } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
                 try {
-                  let res = await broadcast.send({
+                  let res = await discordPoster.sendMessage({
                     type: 'error',
                     title: `Error trying to harvest ${strat.id || strat.name}`,
                     message: `- error code: unknown\n- address: ${
@@ -510,7 +512,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         //An unusual error condition has been encountered. If we haven't maxed out on retry
         //  attempts, fall through for another try, else short-circuit by raising this last
         //  error.
-        if (tries === max) throw new Error(error);
+        if (tries === max)
+          throw new Error(`Error occurred against ${strat.id || strat.name}: ${error}`);
       } //try
     } //while (tries < max)
   }; //const tryTX = async (
@@ -521,7 +524,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
-        let res = await broadcast.send({
+        let res = await discordPoster.sendMessage({
           type: 'warning',
           title: `INSUFFICIENT_FUNDS to harvest ${(
             strat.id || strat.name
@@ -625,15 +628,17 @@ const main = async () => {
         const balance = await harvesterPK.getBalance();
         const wNativeBalance = await getWnativeBalance(harvesterPK);
 
-        //AT: 0xww was here having another go to add in missing gas limits; unclear why he
-        //  felt it needed. Before I redeveloped the approach, this was replacing the
-        //  original strat objects with their counterpart gasLimit objects. Now I just use
-        //  the parts of filtering out other-chain strats and any to be harvested instead
-        //  by an on-chain harvester, and to enforce a configured  gas-limit maximum.
+        //AT: 0xww was here having another go to add in missing gas limits;
+        //	unclear why he felt it needed. Before I redeveloped the approach,
+        //	this was replacing the original strat objects with their
+        //	counterpart gasLimit objects. Now I just use the parts of filtering
+        //	out other-chain strats and those to be harvested instead by an
+        //	on-chain harvester, and the enforcement of a configured gas-limit
+        //	maximum.
         strats = await addGasLimit(strats, provider);
         //AT: TODO: map seems pointless here, should just use a forEach..
         strats = strats.map(s => {
-          s.shouldHarvest = true;
+          s.shouldHarvest = undefined == s.interval || s.interval >= 1;
           s.notHarvestReason = '';
           s.harvest = null;
           return s;
@@ -674,8 +679,9 @@ const main = async () => {
         stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
         stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
 
-        //TODO: semi-redundant call as the strat descriptors should already have the
-        //  latest-harvest information, so best to remove this once system is solidified
+        //TODO: semi-redundant call as the strat descriptors should already
+        //	have the latest-harvest information, so best to remove this once
+        //	system is solidified
         strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'lastHarvest');
 
         strats = await Promise.allSettled(
@@ -764,7 +770,7 @@ const main = async () => {
           try {
             const uploaded = await uploadToFleek(report);
             try {
-              let res = await broadcast.send({
+              let res = await discordPoster.sendMessage({
                 type: 'info',
                 title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
                 message: `- Total strats: ${strats.length}\n- Harvested: ${
@@ -779,10 +785,9 @@ const main = async () => {
                   'gwei'
                 )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
                   report.balance
-                )}\n- Profit: ${ethers.utils.formatUnits(
-                  report.profit
-                )}\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n`,
-                platforms: ['discord'],
+                )}\n- Profit: ${ethers.utils.formatUnits(report.profit)}\nIPFS link: ${
+                  uploaded ? `https://ipfs.fleek.co/ipfs/${uploaded.hash}` : 'failed'
+                }\n`,
               });
             } catch (error) {
               Sentry.captureException(error);
@@ -791,7 +796,7 @@ const main = async () => {
           } catch (error) {
             Sentry.captureException(error);
             console.log(error);
-            let res = await broadcast.send({
+            let res = await discordPoster.sendMessage({
               type: 'info',
               title: `Error trying to upload report to ipfs.fleek.co - ${CHAIN.id.toUpperCase()}`,
               message: '',

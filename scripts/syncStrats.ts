@@ -30,7 +30,7 @@ import type {
 import { setKey, getKey, redisDisconnect } from '../utility/redisHelper';
 import { logger } from '../utility/Logger';
 import { estimateGas } from '../utils/harvestHelpers';
-import BROADCAST from '../utils/broadcast';
+import { sendMessage as postToDiscord } from '../utils/discordPost';
 
 const NOT_FOUND = -1;
 const REDIS_KEY = 'STRATS_TO_HARVEST';
@@ -286,29 +286,29 @@ async function main(): Promise<void> {
   //	vaults, including their properties of downstream interest
   if (dirty) setKey(REDIS_KEY, stratsToHarvest);
 
-  //if any significant changes occurred during this sync, persist our log of
-  //	them to help our overseers keep an eye on things
+  //report any significant changes occurred during this sync, or the lack therof
   const count = Object.keys(hits.hits).length;
-  if (count) {
-    try {
-      await BROADCAST.send({
-        type: 'info',
-        title: `Strat-harvest sync`,
-        message: `${
-          count < 50
-            ? `\n\`\`\`json\n${JSON.stringify(Object.values(hits.hits), null, 2)}\n\`\`\``
-            : '50+ changes: see link'
-        }`,
-      });
-      logger.info(`\nLog of ${count} significant changes written to logging channel`);
-    } catch (error: unknown) {
-      logger.info(
-        `\n${count} significant changes registered, but error\n  encountered with looging channel.`
-      );
-      logger.error('Discord broadcast failed: ' + (<any>error).message);
-      logger.error(`* Intended Content **\n${JSON.stringify(Object.values(hits.hits), null, 2)}`);
-    } //try
-  } else logger.info('\nNo significant changes discovered.');
+  try {
+    await postToDiscord({
+      type: 'info',
+      title: `Strat-harvest sync`,
+      message:
+        count < 50
+          ? `\n${
+              count
+                ? `\`\`\`json\n${JSON.stringify(Object.values(hits.hits), null, 2)}\n\`\`\``
+                : `No significant changes.`
+            }`
+          : '50+ significant changes: see link',
+    });
+    logger.info(`\nLog of ${count} significant changes written to logging channel`);
+  } catch (error: unknown) {
+    logger.info(
+      `\n${count} significant changes registered, but error\n  encountered with looging channel.`
+    );
+    logger.error('Discord broadcast failed: ' + (<any>error).message);
+    logger.error(`* Intended Content **\n${JSON.stringify(Object.values(hits.hits), null, 2)}`);
+  } //try
 
   await redisDisconnect();
 } //function async main(
