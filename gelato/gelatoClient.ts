@@ -5,6 +5,7 @@ import { GelatoOpsSDK } from '@gelatonetwork/ops-sdk';
 import { settledPromiseFilled } from '../utility/baseNode';
 import { NonceManage } from '../utility/NonceManage';
 import { logger } from '../utility/Logger';
+import type { VaultRecord } from './taskSyncer.ts';
 import { type IChainHarvester } from './interfaces';
 import OPS_ABI from './abis/Ops.json';
 
@@ -110,26 +111,24 @@ export class GelatoClient {
     return id;
   } //public async computeTaskId(
 
-  public async createTasks(
-    vaults: Readonly<Record<string, string>>
-  ): Promise<Record<string, string> | null> {
+  public async createTasks(vaults: Readonly<VaultRecord>): Promise<Record<string, string> | null> {
     //  for (const key in vaults) {
     const results: PromiseSettledResult<[string, string]>[] = await Promise.allSettled(
-      Object.keys(vaults).map(async key => {
-        const vault: string = vaults[key];
+      Object.keys(vaults).map(async name => {
+        const vault: string = vaults[name];
         _logger.debug(
-          `Creating task for ${key} on ${this._chain.id.toUpperCase()}\n  --> ${vault}`
+          `Creating task for ${name} on ${this._chain.id.toUpperCase()}\n  --> ${vault}`
         );
         try {
           const taskId: string = await this._createTask(vault);
           _logger.info(
-            `Gelato ${this._chain.id.toUpperCase()} task created for ${key}\n  taskId = ${taskId}`
+            `Gelato ${this._chain.id.toUpperCase()} task created for ${name}\n  taskId = ${taskId}`
           );
-          await this._gelato.renameTask(taskId, key);
-          return [key, taskId];
+          await this._gelato.renameTask(taskId, name);
+          return [name, taskId];
         } catch (e: unknown) {
           _logger.error(
-            `Failed to fully form Gelato task for ${key} on ${this._chain.id.toUpperCase()}\n${(<
+            `Failed to fully form Gelato task for ${name} on ${this._chain.id.toUpperCase()}\n${(<
               any
             >e).toString()}`
           );
@@ -190,10 +189,14 @@ export class GelatoClient {
 
   public async deleteTasks(taskIds: ReadonlySet<string>): Promise<Record<string, string> | null> {
     let i = 0;
+    //for each task to be deleted...
     //  for (const taskId of taskIds)
     const results: PromiseSettledResult<[string, string]>[] = await Promise.allSettled(
       Array.from(taskIds).map(async (taskId: string) => {
         try {
+          //retrieve the name of the task
+
+          //delete the task
           _logger.debug(`Deleting taskId ${taskId}`);
           const { tx: txn }: { tx: ContractTransaction } = await this._gelato.cancelTask(taskId, {
             gasPrice: this._gasPrice,

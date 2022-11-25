@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import * as REDIS from 'redis';
+import { logger } from '../utility/Logger';
 
+const _logger = logger.getLogger('RedisClient');
 let redisClient:
   | ReturnType<typeof REDIS.createClient>
   | Promise<ReturnType<typeof REDIS.createClient>>
@@ -10,9 +12,9 @@ const initRedis = async (): Promise<ReturnType<typeof REDIS.createClient>> => {
   const client = REDIS.createClient({
     url: process.env.REDISCLOUD_URL || 'redis://localhost:6379',
   });
-  client.on('ready', () => console.log('Redis ready'));
-  client.on('end', () => console.log('Redis closed'));
-  client.on('error', (err: unknown) => console.log('Redis error: ', err));
+  client.on('ready', () => _logger.info('Redis ready'));
+  client.on('end', () => _logger.info('Redis closed'));
+  client.on('error', (err: unknown) => _logger.error('Redis error: ', err));
 
   await client.connect();
   // await loadCachedValues();
@@ -27,7 +29,7 @@ export const setKey = async (key: string, value: any): Promise<void> => {
   try {
     await redisClient.set(key, JSON.stringify(value));
   } catch (err: unknown) {
-    console.log(`Failed storing value for Redis key "${key}": `, err);
+    _logger.error(`Failed storing value for Redis key "${key}": `, err);
   }
 };
 
@@ -39,7 +41,7 @@ export const getKey = async (key: string): Promise<any> => {
     let value: string | null = await redisClient.get(key);
     return value ? JSON.parse(value) : null;
   } catch (err: unknown) {
-    console.log(`Failed getting value for Redis key "${key}": `, err);
+    _logger.error(`Failed getting value for Redis key "${key}": `, err);
   }
 };
 

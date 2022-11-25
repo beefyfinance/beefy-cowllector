@@ -5,9 +5,12 @@ import type { GelatoClient } from './gelatoClient';
 import type { IChainHarvester, IStratToHarvest } from './interfaces';
 import { getKey, redisDisconnect } from '../utility/redisHelper';
 import { logger } from '../utility/Logger';
-import BROADCAST from '../utils/broadcast';
+import { sendMessage as postToDiscord } from '../utils/discordPost';
 
-type VaultRecord = Record<IStratToHarvest['earnedToken'], IStratToHarvest['earnContractAddress']>;
+export type VaultRecord = Record<
+  IStratToHarvest['earnedToken'],
+  IStratToHarvest['earnContractAddress']
+>;
 
 type HitType = 'created OCH task' | 'deleted OCH task' | 'named OCH task';
 interface Hit {
@@ -69,22 +72,28 @@ export class TaskSyncer {
         }, {} as Record<string, IStratToHarvest>),
       vaultsActive: Readonly<VaultRecord> = this._filterForOchVaults(vaultsOnChain);
 
-    const [vaultsMissingTask, taskIds]: Readonly<[VaultRecord | null, Record<string, boolean>]> =
-      await this._vaultsWithMissingTask(vaultsActive);
+    //Get the list of eligible vaults which have no Gelato-task counterpart,
+    //	noting alongside the list of vaults with active Gelato tasks.
+    const [vaultsMissingTask, existingTaskIds]: Readonly<
+      [VaultRecord | null, Record<string, boolean>]
+    > = await this._vaultsWithMissingTask(vaultsActive);
 
     let promiseCreated: Promise<Record<string, string> | null> | undefined,
       promiseDeleted: typeof promiseCreated;
 
-    //create an OCH task for any missing vault
+    //create a Gelato task for any eligible vault not yet covered
     if (vaultsMissingTask) promiseCreated = this._gelatoClient.createTasks(vaultsMissingTask);
 
-    //if any OCH task has become superfluous, delete it ("cancel" it, in
+    //if any Gelato task has become superfluous, delete it ("cancel" it, in
     //  Gelato parlance)
-    if (taskIds) {
-      const tasksToDelete: ReadonlySet<string> = Object.entries(taskIds).reduce((set, taskId) => {
-        if (!taskId[1]) set.add(taskId[0]);
-        return set;
-      }, new Set<string>());
+    if (existingTaskIds) {
+      const tasksToDelete: ReadonlySet<string> = Object.entries(existingTaskIds).reduce(
+        (set, taskId) => {
+          if (!taskId[1]) set.add(taskId[0]);
+          return set;
+        },
+        new Set<string>()
+      );
       if (tasksToDelete.size) promiseDeleted = this._gelatoClient.deleteTasks(tasksToDelete);
     }
 
@@ -105,7 +114,7 @@ export class TaskSyncer {
 
     _logger.info(`Tasks created: ${report.created}  Tasks deleted: ${report.deleted}`);
     try {
-      await BROADCAST.send({
+      await postToDiscord({
         type: 'info',
         title: `On-chain-harvester sync on ${this._chain.id.toUpperCase()}`,
         message:
@@ -127,6 +136,7 @@ export class TaskSyncer {
   private async _vaultsWithMissingTask(
     vaults: Readonly<VaultRecord>
   ): Promise<[VaultRecord | null, Record<string, boolean>]> {
+    //note the tasks currently active on Gelato
     const taskIds: Record<string, boolean> = (
         await this._gelatoClient.getGelatoAdminTaskIds()
       ).reduce((map, taskId) => {
@@ -136,16 +146,20 @@ export class TaskSyncer {
       vaultsWithMissingTask: Record<string, string> = {};
     let dirty: boolean = false;
 
+    //for each OCH-eligible vault on this chain...
     /*let vaultName = Object.entries( vaults)[ 0][ 0];*/ /*(Object.keys( vaults).forEach( async (vaultName: string) => {*/
     await Promise.all(
       Object.keys(vaults).map(async (vaultName: string) => {
+        //if the vault has no counterpart active Gelato task...
         const vaultAddress: string = vaults[vaultName];
         const taskId: string = await this._gelatoClient.computeTaskId(vaultAddress);
         if (undefined == taskIds[taskId]) {
+          //take note of it, and note that one such has been found
           _logger.info(`Missing Gelato task for ${vaultName}`);
           _logger.debug(`  --> computed taskId ${taskId}`);
           vaultsWithMissingTask[vaultName] = vaultAddress;
           dirty = true;
+          //else note that the vault is indeed being covered by Gelato
         } else taskIds[taskId] = true;
       })
     ); //await Promise.all( Object.keys( vaults).map(

@@ -7,7 +7,8 @@ const IStrategy = require('../abis/IStrategy.json');
 const IERC20 = require('../abis/ERC20.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
-const broadcast = require('../utils/broadcast');
+//const broadcast = require('../utils/broadcast');
+const discordPoster = require('../utils/discordPost');
 const chains = require('../data/chains');
 const CHAIN_ID = parseInt(process.argv[2]);
 const CHAIN = chains[CHAIN_ID];
@@ -430,7 +431,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   if (error.message.includes(key)) {
                     console.log(`${strat.id || strat.name}: ${KNOWN_RPC_ERRORS[key]}`);
                     try {
-                      let res = await broadcast.send({
+                      let res = await discordPoster.sendMessage({
                         type: 'error',
                         title: `Error trying to harvest ${strat.id || strat.name}`,
                         message: `- error code: ${KNOWN_RPC_ERRORS[key]}\n- address: ${
@@ -448,7 +449,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   } //if (error.message.includes( key))
                 } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
                 try {
-                  let res = await broadcast.send({
+                  let res = await discordPoster.sendMessage({
                     type: 'error',
                     title: `Error trying to harvest ${strat.id || strat.name}`,
                     message: `- error code: unknown\n- address: ${
@@ -523,7 +524,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
-        let res = await broadcast.send({
+        let res = await discordPoster.sendMessage({
           type: 'warning',
           title: `INSUFFICIENT_FUNDS to harvest ${(
             strat.id || strat.name
@@ -769,7 +770,7 @@ const main = async () => {
           try {
             const uploaded = await uploadToFleek(report);
             try {
-              let res = await broadcast.send({
+              let res = await discordPoster.sendMessage({
                 type: 'info',
                 title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
                 message: `- Total strats: ${strats.length}\n- Harvested: ${
@@ -784,10 +785,9 @@ const main = async () => {
                   'gwei'
                 )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
                   report.balance
-                )}\n- Profit: ${ethers.utils.formatUnits(
-                  report.profit
-                )}\nIPFS link: https://ipfs.fleek.co/ipfs/${uploaded.hash}\n`,
-                platforms: ['discord'],
+                )}\n- Profit: ${ethers.utils.formatUnits(report.profit)}\nIPFS link: ${
+                  uploaded ? `https://ipfs.fleek.co/ipfs/${uploaded.hash}` : 'failed'
+                }\n`,
               });
             } catch (error) {
               Sentry.captureException(error);
@@ -796,7 +796,7 @@ const main = async () => {
           } catch (error) {
             Sentry.captureException(error);
             console.log(error);
-            let res = await broadcast.send({
+            let res = await discordPoster.sendMessage({
               type: 'info',
               title: `Error trying to upload report to ipfs.fleek.co - ${CHAIN.id.toUpperCase()}`,
               message: '',
