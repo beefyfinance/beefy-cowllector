@@ -56,4 +56,7 @@ export const vaultDenyList = new Set([
   'mooBooETH-FTM',
   'mooBooAAVE-FTM',
   'mooBooCRV-FTM',
+  //unknown (AT)
+  'mooCurveG3CRV',
+  'mooCurveF-FTML',
 ]);
