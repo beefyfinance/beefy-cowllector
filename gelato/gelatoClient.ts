@@ -1,11 +1,11 @@
 import {ethers, Contract, BigNumber, type ContractTransaction} from 'ethers';
 import type {JsonFragment} from '@ethersproject/abi';
 //import {keccak256, toUtf8Bytes} from '@ethersproject/utils';
-import {GelatoOpsSDK} from '@gelatonetwork/ops-sdk';
+import {GelatoOpsSDK, type Task} from '@gelatonetwork/ops-sdk';
 import {settledPromiseFilled} from '../utility/baseNode';
 import {NonceManage} from '../utility/NonceManage';
 import {logger} from '../utility/Logger';
-import type {VaultRecord} from './taskSyncer.ts';
+import type {VaultRecord} from './taskSyncer';
 import {type IChainHarvester} from './interfaces';
 import OPS_ABI from './abis/Ops.json';
 
@@ -191,35 +191,47 @@ export class GelatoClient {
   } //private async _createTask(
 
 
-  public async deleteTasks( taskIds: ReadonlySet< string>) : 
+  public async deleteTasks( taskIdSet: ReadonlySet< string>) : 
                             Promise< Record< string, string> | null>	{
-let i = 0;
+		const taskIds: string[] = Array.from( taskIdSet);
+		let tasks: ReadonlyArray< Task>;
+
+		try	{
+			//fetch the names of the tasks to be deleted
+			tasks = await this._gelato.getTaskNames( taskIds); 
+		} catch (e: unknown)	{
+			_logger.error( 
+									`Failed to fetch the names of the Gelato tasks to delete on ${
+									this._chain.id.toUpperCase()}\n n -> ERROR: ${<any> e}`);
+			throw( e);
+		}
+
 		//for each task to be deleted...
 //  for (const taskId of taskIds)
     const results: PromiseSettledResult< [string, string]>[] = 
-                                      await Promise.allSettled( Array.from( 
-                                      taskIds).map( async (taskId: string) => {
-          try {
-						//retrieve the name of the task
-
-						//delete the task
-						_logger.debug( `Deleting taskId ${taskId}`);
-            const {tx: txn}: {tx: ContractTransaction} = 
+																					await Promise.allSettled( taskIds.map( 
+																					async (taskId: string, index) => {
+						const name: string = tasks[ index].name;
+						try {
+							//delete the task
+							_logger.debug( `Deleting taskId ${name}`);
+							const {tx: txn}: {tx: ContractTransaction} = 
                                             await this._gelato.cancelTask( 
                                             taskId, {gasPrice: this._gasPrice});
-            _logger.debug( `About to wait on deleteTask for ${taskId}`);
-            await txn.wait();
-            _logger.info( `Gelato task deleted on ${
-                        this._chain.id.toUpperCase() }\n  taskId = ${ taskId}`);
-          } catch (e: unknown) {
-            _logger.error( <any> e);
-            _logger.error( `Failed to delete Gelato task on ${
-                        this._chain.id.toUpperCase()}\n  taskId = ${ taskId}`);
-            throw( e);
-          }
-const key: string = 'mooTokenTODO_' + i++;
-          return [key, taskId];
-        })); //await Promise.allSettled(
+							_logger.debug( `About to wait on deleteTask for ${name}`);
+							await txn.wait();
+							_logger.info( `Gelato task deleted on ${
+																			this._chain.id.toUpperCase()}: ${name}`);
+						} catch (e: unknown) {
+							_logger.error( `Failed to delete Gelato task on ${
+																				this._chain.id.toUpperCase()}: ${name || 
+																				taskId}\n -> ERROR: ${<any> e}`);
+							throw( e);
+						}
+
+						//note the deletion
+						return [name, taskId];
+					})); //await Promise.allSettled( taskIds.map( 
 		_logger.debug( '-> All deleteTask attempts settled.');
 
 		const filled = results.reduce( (map, 

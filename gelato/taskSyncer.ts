@@ -106,17 +106,17 @@ export class TaskSyncer {
     const report = {created: 0, deleted: 0};
 		const tasksCreated = await promiseCreated; 
     if (tasksCreated) {
-      const keys = Object.keys( tasksCreated);
-      keys.forEach( key => this._hits.add( key, 'created OCH task', 
-                                             `taskId: ${tasksCreated[ key]}`));
-      report.created = keys.length;
+      const names = Object.keys( tasksCreated);
+      names.forEach( name => this._hits.add( name, 'created OCH task', 
+                                             `taskId: ${tasksCreated[ name]}`));
+      report.created = names.length;
     }
 		const tasksDeleted = await promiseDeleted; 
     if (tasksDeleted) {
-      const keys = Object.keys( tasksDeleted);
-//TODO:keys.forEach( key => this._hits.add( key, `deleted OCH task: ${
-//                                                      tasksDeleted[ key]}`));
-      report.deleted = keys.length;
+      const names = Object.keys( tasksDeleted);
+			names.forEach( name => this._hits.add( name, 'deleted OCH task', 
+                                             `taskId: ${tasksDeleted[ name]}`));
+      report.deleted = names.length;
     }
 
 		_logger.info( `Tasks created: ${report.created}  Tasks deleted: ${

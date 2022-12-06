@@ -281,7 +281,7 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cronoscan.com',
     gas: {
-      limit: Number(process.env.CRONOS_GAS_LIMIT) || 1.5e6,
+      limit: Number(process.env.CRONOS_GAS_LIMIT) || 1.8e6,
       price: Number(process.env.CRONOS_GAS_PRICE) || 5e12,
       priceCap: Number(process.env.CRONOS_GAS_PRICE_CAP),
     },

@@ -13,7 +13,8 @@ const initRedis = async () :
 																										 'redis://localhost:6379'});
 	client.on( 'ready', () => _logger.info( 'Redis ready'));
 	client.on( 'end', () => _logger.info( 'Redis closed'));
-  client.on( 'error', (err: unknown) => _logger.error( 'Redis error: ', err));
+  client.on( 'error', (error: unknown) => _logger.error( `Redis error: ${
+																																			error}`));
   
   await client.connect();
   // await loadCachedValues();
@@ -31,8 +32,8 @@ export const setKey = async (key: string, value: any) : Promise< void> => {
 
   try {
     await redisClient.set( key, JSON.stringify( value));
-  } catch (err: unknown) {
-    _logger.error( `Failed storing value for Redis key "${key}": `, err);
+  } catch (error: unknown) {
+    _logger.error( `Failed storing value for Redis key "${key}": ${error}`);
   }
 };
 
@@ -46,8 +47,8 @@ export const getKey = async (key: string) : Promise< any> => {
   try {
     let value: string | null = await redisClient.get( key);
     return value ? JSON.parse( value) : null;
-  } catch (err: unknown) {
-    _logger.error( `Failed getting value for Redis key "${key}": `, err);
+  } catch (error: unknown) {
+    _logger.error( `Failed getting value for Redis key "${key}": ${error}`);
   }
 };
 

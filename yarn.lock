@@ -461,10 +461,10 @@
     multiformats "^9.4.7"
     s3-streaming-upload "^0.3.4"
 
-"@gelatonetwork/ops-sdk@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@gelatonetwork/ops-sdk/-/ops-sdk-1.1.2.tgz#4cdd75022a223905e0c9edddbe94e485a4a42c99"
-  integrity sha512-9WAm7y3S4lajlzz/2SK91TL+y4LkD2C9Ktt6kLtDhLlhAK2wpr8DXLmBY+I13ipXVC23kwQ0g9KFwPhuxae25w==
+"@gelatonetwork/ops-sdk@^2":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@gelatonetwork/ops-sdk/-/ops-sdk-2.0.6.tgz#e49a87732a6facce299c93b3f35c4dbc81b7ec3f"
+  integrity sha512-GR7EJmhxe3hOdRdfIB+S0wZFA5GEkI4fFWYtBHehwmeAu5ZbdUBlBuqVTOv5vhBLtvmUEel2vsfBqJMyTlVXeg==
   dependencies:
     axios "^0.24.0"
     ethers "^5.5.2"
