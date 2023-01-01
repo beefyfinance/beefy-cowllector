@@ -7,7 +7,6 @@ const IStrategy = require('../abis/IStrategy.json');
 const IERC20 = require('../abis/ERC20.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
-//const broadcast = require('../utils/broadcast');
 const discordPoster = require('../utils/discordPost');
 const chains = require('../data/chains');
 const CHAIN_ID = parseInt(process.argv[2]);
@@ -149,20 +148,20 @@ const uploadToFleek = async report => {
       let uploaded = await fleekStorage.upload(input);
       if (uploaded.hash) {
         console.log(
-          `New harvest report for ${CHAIN.id.toUpperCase()} => https://ipfs.fleek.co/ipfs/${
+          `New harvest report for ${CHAIN.id.toUpperCase()} => https://dweb.link/ipfs/${
             uploaded.hash
           }`
         );
         return uploaded;
       }
       tries++;
-      console.log(`fail trying to upload to fleek storage, try n ${tries}/5`);
+      console.log(`failed trying to upload to IPFS storage, try n ${tries}/5`);
     } catch (error) {
       Sentry.captureException(error);
       tries++;
-      console.log(`fail trying to upload to fleek storage, try n ${tries}/5`);
+      console.log(`failed trying to upload to IPFS storage, try n ${tries}/5`);
     }
-  } while (tries < 5);
+  } while (tries < 3);
 }; //const uploadToFleek = async report =>
 
 const addGasLimit = async (strats, provider) => {
@@ -212,9 +211,9 @@ const addGasLimit = async (strats, provider) => {
  * @returns {object} Promise whose value is the updated strat object
  */
 const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
-  const i_24_MINS = 1440,
+  const _24_MINS = 1440,
     STRAT_INTERVALS_MARGIN_OF_ERROR =
-      Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || i_24_MINS;
+      Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || _24_MINS;
 
   //Compute the maximum seconds allowed before a new harvest should be
   //	initiated, measured from the strat's last-harvest event. If the strat
@@ -258,8 +257,9 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
       }
     } //if (strat.lastHarvest)
 
-    //unless the strategy is specially marked to skip the check, if the contract explicitly
-    //  contains no rewards, short-circuit with a note that no harvest is necessary
+    //unless the strategy is specially marked to skip the check, if the
+    //	contract explicitly contains no rewards, short-circuit with a note that
+    //	no harvest is necessary
     if (!strat.suppressCallRwrdCheck)
       try {
         const abi = ['function callReward() public view returns(uint256)'];
@@ -276,11 +276,11 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
           strat.notHarvestReason = 'callReward likely zero, INSUFFICIENT_INPUT_AMOUNT thrown';
           return strat;
         }
-        console.log(
-          `callReward failure on ${strat.id || strat.name} / ${
-            strat.strategy || strat.address
-          } --> ${error}`
-        );
+        const message = `callReward failure on ${strat.id || strat.name} / ${
+          strat.strategy || strat.address
+        } --> ${error}`;
+        console.log(message);
+        Sentry.captureException(message);
       } //try
 
     /* AT: seems to be erroneously omitting strats that need closer checking
@@ -309,14 +309,13 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
         gasLimit: ethers.BigNumber.from(strat.gasLimit),
       });
     } catch (error) {
+      strat.shouldHarvest = false;
       for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
         if (error.message.includes(key)) {
-          strat.shouldHarvest = false;
           strat.notHarvestReason = `Strat failed callStatic with a tagged condition --> ${KNOWN_RPC_ERRORS[key]}`;
           return strat;
         }
       }
-      strat.shouldHarvest = false;
       strat.notHarvestReason = `Strat failed callStatic unusually --> ${error}`;
     } //try
   } catch (error) {
@@ -325,11 +324,11 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
   } //try
 
   return strat;
-}; //const shouldHarvest = async (strat, harvesterPK) =>
+}; //const shouldHarvest = async (strat,
 
 const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
-  //nested function to carry out a slated harvest, retrying if necessary though not
-  //  excessively so
+  //nested function to carry out a slated harvest, retrying if necessary though
+  //	not excessively so
   const tryTX = async (stratContract, max = 2) => {
     if (nonce) options.nonce = nonce;
     let tries = 0;
@@ -386,7 +385,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               );
               return {
                 contract: strat.strategy || strat.address,
-                status: 'success',
+                status: ' success',
                 message: `${strat.id || strat.name}: harvested after try ${tries} - with tx: ${
                   tx.transactionHash
                 }`,
@@ -402,7 +401,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               data: error.message,
             };
           } //try
-          //else on this chain unusual gymnastics aren't needed to execute a harvest, so...
+          //else on this chain unusual gymnastics aren't needed to execute a
+          //	harvest, so...
         } else {
           tx = await stratContract.harvest(options);
 
@@ -488,15 +488,18 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           } //if (TRICKY_CHAINS.includes( CHAIN.id))
         } //if (CHAIN.id === 'aurora')
       } catch (error) {
-        //TODO: improve error reporting, adding (1) a facility to drill next level into the message
-        //  to tease out the real issue (use regex?), like gas-limit hit on a CALL_EXCEPTION, and
-        //  (2) //  lay-person-readable error surfacing!
-        //Some error has occurred in this context of sending a harvest transaction. For
-        //  each error string that we've identified as indicating a known-stop condition,
-        //  one where no retry should be attempted...
+        //TODO: improve error reporting, adding (1) a facility to drill next
+        //	level into the message to tease out the real issue (use regex?),
+        //	like gas-limit hit on a CALL_EXCEPTION, and (2) lay-person-readable
+        //	error surfacing!
+        //Some error has occurred in this context of sending a harvest
+        //	transaction. For each error string that we've identified as
+        //	indicating a known-stop condition, one where no retry should be
+        //	attempted...
         for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
-          //if this string matches what's occurred, make a note of it and short-circuit,
-          //  returning information about the condition to the caller
+          //if this string matches what's occurred, make a note of it and
+          //	short-circuit, returning information about the condition to the
+          //	caller
           if (error.message.includes(key)) {
             const S = `${strat.id || strat.name}: ${KNOWN_RPC_ERRORS[key]}`;
             console.log(S);
@@ -519,8 +522,8 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
   }; //const tryTX = async (
 
   try {
-    //if our wallet hasn't enough gas to reliably attempt a harvest, inform our overseers
-    //  and raise an error condition
+    //if our wallet hasn't enough gas to reliably attempt a harvest, inform our
+    //	overseers and raise an error condition
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
       try {
@@ -537,7 +540,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
         });
       } catch (error) {
         Sentry.captureException(error);
-        console.log(`Error trying to send message to broadcast: ${error.message}`);
+        console.log(`Error trying to send message to Discord channel: ${error.message}`);
       }
       throw new Error(
         `${strat.id || strat.name}: INSUFFICIENT_FUNDS - gas required ${
@@ -567,8 +570,9 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
 
 const main = async () => {
   try {
-    //if the caller gave us a chain to process that seems validly configured and not turned
-    //  off.. (TODO: invert this long-block conditional to short-circuit instead)
+    //if the caller gave us a chain to process that seems validly configured
+    //	and not turned off.. (TODO: invert this long-block conditional to
+    //	short-circuit instead)
     if (CHAIN && CHAIN.harvestHourInterval) {
       let hour = new Date().getUTCHours();
       if (hour % CHAIN.harvestHourInterval) {
@@ -594,27 +598,20 @@ const main = async () => {
       try {
         const provider = new ethers.providers.JsonRpcProvider(CHAIN.rpc);
 
-        //AT: TODO: we can get rid of this because we no longer have any "gasless" chains,
-        //  I think
+        //AT: TODO: we can get rid of this because we no longer have any
+        //	"gasless" chains, I think
         //0xww: patch for GASLESS chains
         if (GASLESS_CHAINS.includes(CHAIN.id)) {
           const originalBlockFormatter = provider.formatter._block;
-          provider.formatter._block = (value, format) => {
-            return originalBlockFormatter(
-              {
-                gasLimit: ethers.BigNumber.from(0),
-                ...value,
-              },
-              format
-            );
-          };
+          provider.formatter._block = (value, format) =>
+            originalBlockFormatter({ gasLimit: ethers.BigNumber.from(0), ...value }, format);
         } //if (GASLESS_CHAINS.includes( CHAIN.id))
 
         let gasPrice = await getGasPrice(provider);
         console.log(`Gas Price: ${ethers.utils.formatUnits(gasPrice, 'gwei')} gwei`);
 
-        //if the chain's current price of gas exceeds the cap we've put on the chain, abort
-        //  this harvest run
+        //if the chain's current price of gas exceeds the cap we've put on the
+        //	chain, abort this harvest run
         if (CHAIN.gas.priceCap < gasPrice) {
           console.log(
             `Gas price on ${CHAIN.id.toUpperCase()} currently exceeds our cap of ${
@@ -643,8 +640,11 @@ const main = async () => {
           s.harvest = null;
           return s;
         });
+
         let stratsFiltered = [];
         let stratsShouldHarvest = [];
+        let callStaticFails = 0;
+
         /*//AT: ditto, indeed, just combine this with the one above
         strats = strats.map( s => {
           if (s.depositsPaused || s.harvestPaused) {
@@ -653,43 +653,57 @@ const main = async () => {
           }
           return s;
         });
-        stratsFiltered = stratsFiltered.concat( strats.filter( s => !s.shouldHarvest));
-        stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
-*/
+*/ stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
+        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+
         // strats = stratsShouldHarvest.map(s => {
         //   if (s.tvl < TVL_MINIMUM_TO_HARVEST) {
         //     s.shouldHarvest = false;
-        //     s.notHarvestReason = `TVL is lower than min: ${TVL_MINIMUM_TO_HARVEST}`;
+        //     s.notHarvestReason = `TVL is lower than min: ${
+        //     																				TVL_MINIMUM_TO_HARVEST}`;
         //   }
         //   return s;
         // });
-        // stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        // stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+        // stratsFiltered = stratsFiltered.concat( strats.filter( s =>
+        // 																									!s.shouldHarvest));
+        // stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
 
-        //      strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest, 'balanceOf');
-        strats = await harvestHelpers.multicall(CHAIN, strats, 'balanceOf');
+        //strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest,
+        //																												'balanceOf');
+        stratsShouldHarvest = await harvestHelpers.multicall(
+          CHAIN,
+          stratsShouldHarvest,
+          'balanceOf'
+        );
         //AT: TODO: again, forEach
-        strats = strats.map(s => {
-          if (s.balanceOf === 0) {
-            s.shouldHarvest = false;
-            s.notHarvestReason = 'balance is zero';
+        stratsShouldHarvest = stratsShouldHarvest.map(strat => {
+          if (strat.balanceOf === 0) {
+            strat.shouldHarvest = false;
+            strat.notHarvestReason = 'balance is zero';
           }
-          return s;
+          return strat;
         });
         stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+        stratsShouldHarvest = stratsShouldHarvest.filter(s => s.shouldHarvest);
 
         //TODO: semi-redundant call as the strat descriptors should already
         //	have the latest-harvest information, so best to remove this once
         //	system is solidified
-        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'lastHarvest');
+        //      strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest,
+        //																															'lastHarvest');
 
         strats = await Promise.allSettled(
           stratsShouldHarvest.map(strat => shouldHarvest(strat, gasPrice, harvesterPK))
         );
-        strats = strats.filter(r => r.status === 'fulfilled').map(s => s.value);
+        strats = strats.filter(result => result.status === 'fulfilled').map(result => result.value);
 
-        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
+        stratsFiltered = stratsFiltered.concat(
+          strats.filter(strat => {
+            if (strat.shouldHarvest) return false;
+            callStaticFails += strat.notHarvestReason.includes('callStatic');
+            return true;
+          })
+        );
         stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
         console.table(
           [...stratsFiltered, ...stratsShouldHarvest],
@@ -703,8 +717,8 @@ const main = async () => {
 
         console.log(`Strats to harvest: ${stratsShouldHarvest.length} of ${strats.length}`);
 
-        //AT: my read of this is as a note of the maximum that may be spent on this round
-        //  of harvesting on this chain
+        //AT: my read of this is as a note of the maximum that may be spent on
+        //	this round of harvesting on this chain
         let totalGas =
           stratsShouldHarvest.reduce((total, s) => total + Number(s.gasLimit), 0) / 1e9;
         console.log(
@@ -714,10 +728,10 @@ const main = async () => {
         );
 
         //for each strategy tagged to be harvested...
-        let harvesteds = [];
-        //TODO: AT: Investigation tells me that the await in the 'for await' here is superfluous.
-        //  Probably 0xww was intending parallel operation like Promise.all( array.map) would
-        //  give..?
+        let harvestAttempts = [];
+        //TODO: AT: Investigation tells me that the await in the 'for await'
+        //	here is superfluous. Probably 0xww was intending parallel operation
+        //	like Promise.all( array.map) would give..?
         for await (const strat of stratsShouldHarvest) {
           try {
             await unwrap(harvesterPK, provider, { gasPrice }, CHAIN.wnativeMinToUnwrap);
@@ -725,27 +739,26 @@ const main = async () => {
             Sentry.captureException(error);
           }
           try {
-            let options = {
-              gasPrice,
-              gasLimit: ethers.BigNumber.from(strat.gasLimit),
-            };
+            let options = { gasPrice, gasLimit: ethers.BigNumber.from(strat.gasLimit) };
             let harvested = await harvest(strat, harvesterPK, provider, options);
-            harvesteds.push(harvested);
+            harvestAttempts.push(harvested);
           } catch (error) {
             Sentry.captureException(error);
             console.log(error.message);
           }
         } //for await (const strat of stratsShouldHarvest)
         strats = [...stratsFiltered, ...stratsShouldHarvest];
-        strats = strats.map(s => {
-          let harvested = harvesteds.find(h => h.contract === (s.strategy || s.address));
-          if (harvested) s.harvest = harvested;
-          return s;
+        strats = strats.map(strat => {
+          let harvested = harvestAttempts.find(
+            h => h.contract === (strat.strategy || strat.address)
+          );
+          if (harvested) strat.harvest = harvested;
+          return strat;
         });
 
         if (strats.length) {
           let success = strats.filter(s => s.harvest && s.harvest.status === 'success');
-          let gasUsed = harvesteds.reduce((total, h) => {
+          let gasUsed = harvestAttempts.reduce((total, h) => {
             if (h.data && h.data.gasUsed) total = total.add(ethers.BigNumber.from(h.data.gasUsed));
             return total;
           }, ethers.BigNumber.from(0));
@@ -753,9 +766,9 @@ const main = async () => {
             strats,
             gasUsed: gasUsed,
             averageGasUsed: ethers.BigNumber.from(0),
-            harvesteds: harvesteds.length,
+            harvesteds: harvestAttempts.length + callStaticFails,
             success: success.length,
-            failed: harvesteds.length - success.length,
+            failed: harvestAttempts.length - success.length + callStaticFails,
           };
           if (gasUsed.gt(0)) {
             report.averageGasUsed = gasUsed.div(ethers.BigNumber.from(success.length));
@@ -773,10 +786,10 @@ const main = async () => {
               let res = await discordPoster.sendMessage({
                 type: 'info',
                 title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-                message: `- Total strats: ${strats.length}\n- Harvested: ${
+                message: `- Total strats: ${strats.length}\n- Found to harvest: ${
                   report.harvesteds
-                }\n  + Success: ${report.success}\n  + Failed: ${
-                  report.failed
+                }\n  + Successes: ${report.success}\n  + ${report.failed ? '**' : ''}Failures: ${
+                  report.failed + (report.failed ? '**' : '')
                 }\n- Total gas used: ${ethers.utils.formatUnits(
                   report.gasUsed,
                   'gwei'
@@ -786,7 +799,8 @@ const main = async () => {
                 )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
                   report.balance
                 )}\n- Profit: ${ethers.utils.formatUnits(report.profit)}\nIPFS link: ${
-                  uploaded ? `https://ipfs.fleek.co/ipfs/${uploaded.hash}` : 'failed'
+                  //										uploaded ? `https://ipfs.fleek.co/ipfs/${uploaded.hash}` :
+                  uploaded ? `https://dweb.link/ipfs/${uploaded.hash}` : 'failed'
                 }\n`,
               });
             } catch (error) {
@@ -798,7 +812,7 @@ const main = async () => {
             console.log(error);
             let res = await discordPoster.sendMessage({
               type: 'info',
-              title: `Error trying to upload report to ipfs.fleek.co - ${CHAIN.id.toUpperCase()}`,
+              title: `Error trying to upload report to IPFS - ${CHAIN.id.toUpperCase()}`,
               message: '',
             });
           } //try
