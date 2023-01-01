@@ -379,7 +379,7 @@ const harvest = async (strat,
 							}:\tharvested step 3/3: Swaps to tokens needed step - with tx: ${
 							tx.transactionHash}`);
               return {contract: strat.strategy || strat.address,
-											status: ' success',
+											status: 'success',
 											message: `${strat.id || strat.name
 																}: harvested after try ${tries} - with tx: ${
 																tx.transactionHash}`,
