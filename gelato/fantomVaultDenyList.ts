@@ -11,10 +11,7 @@ export const vaultDenyList = new Set( [
   'mooGeistUSDC',
   'mooGeistDAI',
   'mooGeistGEIST-WFTM',
-  // PAUSED
-  'mooBeetWAGMIIndex',
-  'mooBeetMagicTouchDaniele',
-  // Not compatible
+  // Not compatible [e.g. no harvest(CallFeeRecipient)]
   'mooCurveTriCrypto',
   'mooJetSwapWINGS-FTM',
   'mooJetSwapWINGS-USDC',
@@ -56,7 +53,6 @@ export const vaultDenyList = new Set( [
   'mooBooETH-FTM',
   'mooBooAAVE-FTM',
   'mooBooCRV-FTM',
-	//unknown (AT)
 	'mooCurveG3CRV',
 	'mooCurveF-FTML'
 ]);

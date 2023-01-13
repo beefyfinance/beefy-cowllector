@@ -65,7 +65,8 @@ export class GelatoClient {
 		return <GelatoClient> <unknown> (async () : Promise< GelatoClient> => {
 						if (_gelatoAdmin.provider)	{
 							const price = await _gelatoAdmin.provider.getGasPrice();
-							_logger.info( `  gas price = ${price.div( 1e9)}`);
+							_logger.info( `  ${this._chain.id.toUpperCase()} - gas price = ${
+														price.div( 1e9)}`);
 							this._gasPrice = price;
 						}
 						return this;
@@ -73,12 +74,17 @@ export class GelatoClient {
   } //constructor(
 
 
-  public async getGelatoAdminTaskIds() : Promise< ReadonlyArray< string>> {
-    const taskIds = <ReadonlyArray< string>> 
+  public async taskInfo() : Promise< Readonly< Record< string, string>>> {
+/*  const taskIds = <ReadonlyArray< string>> 
                                       await this._opsContract.getTaskIdsByUser( 
-                                      this._gelatoAdmin.getAddress());
-    _logger.info( `Retrieved ${taskIds.length} Gelato task ids.`)
-    return taskIds;
+                                      this._gelatoAdmin.getAddress());*/
+		const tasks: ReadonlyArray< Task> = await this._gelato.getActiveTasks();
+    _logger.info( `${this._chain.id.toUpperCase()} - Retrieved ${ tasks.length
+																													} Task IDs.`);
+    return tasks.reduce( (map, task) => {
+															map[ task.taskId] = task.name;
+															return map;
+														}, {} as Record< string, string>);
   }
 
 
@@ -132,25 +138,25 @@ export class GelatoClient {
                                 this._chain.id.toUpperCase()}\n  --> ${vault}`);
           try {
             const taskId: string = await this._createTask( vault);
-            _logger.info( `Gelato ${this._chain.id.toUpperCase()
-														} task created for ${name}\n  taskId = ${taskId}`);
+            _logger.info( `${this._chain.id.toUpperCase()
+													} - task created for ${name}\n  taskId = ${taskId}`);
             await this._gelato.renameTask( taskId, name);
             return [name, taskId];
-          } catch (e: unknown) {
-            _logger.error( `Failed to fully form Gelato task for ${name} on ${
-																									this._chain.id.toUpperCase()
-																									}\n${(<any> e).toString()}`);
-            throw( e);
+          } catch (error: unknown) {
+            _logger.error( `Failed to fully form task for ${name} on ${
+																							this._chain.id.toUpperCase()}\n${
+																							(<any> error).toString()}`);
+            throw error;
           }
         })); //await Promise.allSettled(
 		_logger.debug( '-> All createTask attempts settled.');
 
 		const filled = results.reduce( (map,  
                           result: PromiseSettledResult< [string, string]>) => {
-											if (settledPromiseFilled( result))
-												map[ result.value[ 0]] = result.value[ 1];
-											return map;
-										}, {} as Record< string, string>);
+																		if (settledPromiseFilled( result))
+																			map[ result.value[ 0]] = result.value[ 1];
+																		return map;
+																	}, {} as Record< string, string>);
     return Object.keys( filled).length ? filled : null;
   } //public async createTasks(
 
@@ -191,55 +197,76 @@ export class GelatoClient {
   } //private async _createTask(
 
 
-  public async deleteTasks( taskIdSet: ReadonlySet< string>) : 
+  public async deleteTasks( tasks: ReadonlySet< Task>) : 
                             Promise< Record< string, string> | null>	{
-		const taskIds: string[] = Array.from( taskIdSet);
-		let tasks: ReadonlyArray< Task>;
-
-		try	{
-			//fetch the names of the tasks to be deleted
-			tasks = await this._gelato.getTaskNames( taskIds); 
-		} catch (e: unknown)	{
-			_logger.error( 
-									`Failed to fetch the names of the Gelato tasks to delete on ${
-									this._chain.id.toUpperCase()}\n n -> ERROR: ${<any> e}`);
-			throw( e);
-		}
-
 		//for each task to be deleted...
-//  for (const taskId of taskIds)
+//  for (const task of tasks)
     const results: PromiseSettledResult< [string, string]>[] = 
-																					await Promise.allSettled( taskIds.map( 
-																					async (taskId: string, index) => {
-						const name: string = tasks[ index].name;
+																			await Promise.allSettled( Array.from( 
+																			tasks).map( async (task: Task, index) => {
 						try {
 							//delete the task
-							_logger.debug( `Deleting taskId ${name}`);
+							_logger.debug( `Deleting taskId ${task.name}`);
 							const {tx: txn}: {tx: ContractTransaction} = 
-                                            await this._gelato.cancelTask( 
-                                            taskId, {gasPrice: this._gasPrice});
-							_logger.debug( `About to wait on deleteTask for ${name}`);
+																			await this._gelato.cancelTask( 
+																			task.taskId, {gasPrice: this._gasPrice});
+							_logger.debug( `About to wait on deleteTask for ${task.name}`);
 							await txn.wait();
-							_logger.info( `Gelato task deleted on ${
-																			this._chain.id.toUpperCase()}: ${name}`);
-						} catch (e: unknown) {
-							_logger.error( `Failed to delete Gelato task on ${
-																				this._chain.id.toUpperCase()}: ${name || 
-																				taskId}\n -> ERROR: ${<any> e}`);
-							throw( e);
+							_logger.info( `${this._chain.id.toUpperCase()
+															} - task deleted: ${task.name}`);
+						} catch (error: unknown) {
+							_logger.error( `Failed to delete task on ${
+																			this._chain.id.toUpperCase()}: ${task.name
+																			}\n -> ERROR: ${<any> error}`);
+							throw error;
 						}
 
 						//note the deletion
-						return [name, taskId];
-					})); //await Promise.allSettled( taskIds.map( 
+						return [task.name, task.taskId];
+					})); //await Promise.allSettled( Array.from( tasks
 		_logger.debug( '-> All deleteTask attempts settled.');
 
 		const filled = results.reduce( (map, 
                           result: PromiseSettledResult< [string, string]>) => {
-											if (settledPromiseFilled( result))
-												map[ result.value[ 0]] = result.value[ 1];
-											return map;
-										}, {} as Record< string, string>);
+																		if (settledPromiseFilled( result))
+																			map[ result.value[ 0]] = result.value[ 1];
+																		return map;
+																	}, {} as Record< string, string>);
     return Object.keys( filled).length ? filled : null;
   } //public async deleteTasks( 
+
+
+  public async renameTasks( tasks: ReadonlySet< Task>) : 
+                            Promise< Record< string, string> | null>	{
+		//for each task to be renamed...
+//  for (const task of tasks)
+    const results: PromiseSettledResult< [string, string]>[] = 
+																			await Promise.allSettled( Array.from( 
+																			tasks).map( async (task: Task, index) => {
+						try {
+							//rename the task
+							_logger.debug( `Renaming taskId ${task.name}`);
+							await this._gelato.renameTask( task.taskId, task.name);
+							_logger.info( `${this._chain.id.toUpperCase() } - task renamed: ${
+														task.name}`);
+						} catch (error: unknown) {
+							_logger.error( `Failed to rename task on ${
+																			this._chain.id.toUpperCase()}: ${task.name
+																			}\n -> ERROR: ${<any> error}`);
+							throw error;
+						}
+
+						//note the renaming
+						return [task.name, task.taskId];
+					})); //await Promise.allSettled( Array.from( tasks
+		_logger.debug( '-> All renameTask attempts settled.');
+
+		const filled = results.reduce( (map, 
+                          result: PromiseSettledResult< [string, string]>) => {
+																		if (settledPromiseFilled( result))
+																			map[ result.value[ 0]] = result.value[ 1];
+																		return map;
+																	}, {} as Record< string, string>);
+    return Object.keys( filled).length ? filled : null;
+	} //public async renameTasks(
 } //class GelatoClient

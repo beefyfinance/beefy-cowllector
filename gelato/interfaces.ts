@@ -1,4 +1,5 @@
-import {IStratToHarvest, IChain as _IChain, IChains} from '../scripts/interfaces';
+import {IStratToHarvest, IChain as _IChain, IChains} from 
+																												'../scripts/interfaces';
 export {IStratToHarvest, IChains};
 
 export interface IChain extends _IChain {

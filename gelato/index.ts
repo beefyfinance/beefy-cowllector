@@ -14,8 +14,8 @@ logger.initializeSentry( {dsn: process.env.SENTRY_DSN_GELATO_SYNC,
 //logger.setLevel( 'TaskSync', Logger.levels.DEBUG);
 
 
-function chainIsOnChainHarvestingType( test: IChainHarvester | IChain) : 
-																				test is IChainHarvester	{
+function chainIsOnChainHarvesting( test: IChainHarvester | IChain) : 
+																		test is IChainHarvester	{
 	return 'string' === typeof test.addressHarvester && 
 																	!!test.addressHarvester.length && 'string' ===
 																	typeof test.addressHarvesterOperations && 
@@ -35,13 +35,13 @@ const run = async () : Promise< void> => {
 
   const pk = process.env.GELATO_ADMIN_PK!;
 
-  //Object.values( <Readonly< IChains>> require( '../data/chains.js')).forEach( (chain: IChain | IChainHarvester) =>  {
-  await Promise.all( Object.values( <Readonly< IChains>> require( 
+	await Promise.allSettled( Object.values( <Readonly< IChains>> require( 
 																		'../data/chains.js')).map( 
 																		async (chain: IChain | IChainHarvester) => {
-    if (!chain.hasOnChainHarvesting)
+	  if (!chain.hasOnChainHarvesting || process.argv[ 2] && chain.chainId != 
+																										parseInt( process.argv[ 2]))
       return;
-    if (!chainIsOnChainHarvestingType( chain))  {
+    if (!chainIsOnChainHarvesting( chain))  {
       logger.error( `On-chain harvesting misconfigured for ${
                                                       chain.id.toUpperCase()}`);
       return;
@@ -54,6 +54,6 @@ const run = async () : Promise< void> => {
     logger.info( `>>> on-chain harvester sync: ${chain.id.toUpperCase()}`);
     (new TaskSyncer( gelatoAdminWallet, chain, await new GelatoClient( 
 													gelatoAdminWallet, chain))).syncVaultHarvesterTasks();
-  })); //await Promise.all( Object.values( <Readonly< IChains>>
+  })); //await Promise.allSettled( Object.values( <Readonly< IChains>>
 }; //const run = async (): Promise< void>
 run();
