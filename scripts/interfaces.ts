@@ -17,6 +17,7 @@ export interface IVault {
   readonly retireReason?: 'upgrade' | 'rewards';
   readonly strategyTypeId: string;
   readonly strategy: string;
+  readonly createdAt: number;
   readonly lastHarvest: number;
 } //interface IVault
 
@@ -26,6 +27,7 @@ export interface IStratToHarvest {
   earnContractAddress: string; //i.e. the vault's contract address
   earnedToken: string;
   strategy: string;
+  createdAt: number;
   lastHarvest: number;
   gasLimit?: number;
   gasLimitStrategy?: string;

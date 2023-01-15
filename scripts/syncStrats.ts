@@ -102,6 +102,9 @@ class ChainStratManager {
     private readonly encountered: Set<string>,
     private readonly hits: Hits
   ) {
+    //if this is a chain on which we use an on-chain harvesting (OCH) service,
+    //	load up for downstream use the list of vaults on the chain for which no
+    //	on-chain harvesting should be done
     if (this.chain.hasOnChainHarvesting)
       this.denyOnChainHarvest = <ReadonlySet<string>>(
         require(`../gelato/${this.chain.id}VaultDenyList.ts`).vaultDenyList
@@ -109,35 +112,47 @@ class ChainStratManager {
   }
 
   syncVaults(stratsToHarvest: Record<string, IStratToHarvest>): boolean {
+    //for each current vault...
     let dirty = false;
     this.vaults.forEach((vault: IVault) => {
+      //if the vault does not reside on the target chain, loop for the next
+      //	vault
       if (this.chain.id !== vault.chain) return;
 
       //if this vault was unknown at the time of our last run...
       let strat = stratsToHarvest[vault.id];
       const newStrat = !strat;
       if (newStrat) {
+        //if the vault is inactive (paused or ended), loop for the next vault
         if (['eol', 'paused'].includes(vault.status)) return;
 
+        //add it to our list of active vaults, and note the addition in our log
+        //	of changes made
         stratsToHarvest[vault.id] = strat = {
           id: vault.id,
           chain: vault.chain,
           earnContractAddress: vault.earnContractAddress,
           earnedToken: vault.earnedToken,
           strategy: vault.strategy,
+          createdAt: vault.createdAt,
           lastHarvest: vault.lastHarvest,
-        }; //);
+        };
         this._added++;
         dirty = true;
         this.encountered.add(vault.id);
         this.hits.add(vault.id, 'added');
+        //else if the vault has gone inactive...
       } else if (['eol', 'paused'].includes(vault.status)) {
+        //remove it from our list of active vaults, note this in our log of
+        //	changes made, and loop for the next vault
         delete stratsToHarvest[vault.id];
         this._removed++;
         dirty = true;
         this.hits.add(vault.id, 'removed, inactive');
         return;
+        //else vet this vault for changes of interest to us...
       } else {
+        //add this vault to a list of still-present vaults encountered
         this.encountered.add(vault.id);
 
         if (vault.strategy !== strat.strategy) {
@@ -153,15 +168,23 @@ class ChainStratManager {
         }
       } //if (newStrat)
 
+      //if this is a chain on which we use an on-chain harvesting (OCH) service,
+      //	determine whether the vault is excluded from being handled that way
       const onChainHarvest =
         this.chain.hasOnChainHarvesting && !this.denyOnChainHarvest?.has(vault.earnedToken);
 
+      //if the operative OCH status is not reflected on our current vault
+      //	descriptor...
       if (
         onChainHarvest
           ? strat?.noOnChainHarvest
           : this.chain.hasOnChainHarvesting && !strat?.noOnChainHarvest
       ) {
+        //relect the OCH status onto the new strat descriptor
         strat.noOnChainHarvest = !onChainHarvest;
+
+        //if the vault is not new, reflect the OCH status onto the current
+        //	strat descriptor and note the switch in our log of changes made
         if (!newStrat) {
           dirty = true;
           logger.info(`  OCH flag toggled on ${vault.id}`);
@@ -169,6 +192,9 @@ class ChainStratManager {
         }
       } //if (onChainHarvest ? strat?.noOnChainHarvest :
 
+      //if the vault is not handled by an OCH, add the vault to a list of
+      //	non-OCH vaults active on this chain (as our consumer  may be
+      //	interested downstream)
       if (!onChainHarvest) this.notOnChainHarvest.push(strat);
 
       //if the strategy has been tagged with extended properties not yet

@@ -1,10 +1,11 @@
 require('dotenv').config();
+const FETCH = require('node-fetch');
 const ethers = require('ethers');
 const fleekStorage = require('@fleekhq/fleek-storage-js');
 const redis = require('../utility/redisHelper');
 const Sentry = require('../utils/sentry.js');
 const IStrategy = require('../abis/IStrategy.json');
-const IERC20 = require('../abis/ERC20.json');
+//const IERC20 = require('../abis/ERC20.json');
 const IWrappedNative = require('../abis/WrappedNative.json');
 const harvestHelpers = require('../utils/harvestHelpers');
 const discordPoster = require('../utils/discordPost');
@@ -15,7 +16,8 @@ const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
 const GASLESS_CHAINS = ['celo', 'aurora'];
 const GAS_THROTTLE_CHAIN = ['bsc', 'arbitrum'];
 const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 5;
-const TVL_MINIMUM_TO_HARVEST = parseInt(process.env.TVL_MINIMUM_TO_HARVEST) || 10e3;
+const TVL_MINIMUM_TO_HARVEST =
+  Number(process.env[`${CHAIN.id.toUpperCase()}_TVL_MINIMUM_TO_HARVEST`]) || 100;
 
 require('../utils/logger')(CHAIN_ID);
 
@@ -625,6 +627,14 @@ const main = async () => {
         const balance = await harvesterPK.getBalance();
         const wNativeBalance = await getWnativeBalance(harvesterPK);
 
+        //load up current TVL amounts from Beefy's online source
+        const response = await FETCH(`https://api.beefy.finance/tvl`);
+        if (!(response.ok && response.body)) {
+          logger.error('Fetching TVLs failed');
+          return false;
+        }
+        const tvl = (await response.json())[CHAIN_ID];
+
         //AT: 0xww was here having another go to add in missing gas limits;
         //	unclear why he felt it needed. Before I redeveloped the approach,
         //	this was replacing the original strat objects with their
@@ -645,36 +655,21 @@ const main = async () => {
         let stratsShouldHarvest = [];
         let callStaticFails = 0;
 
-        /*//AT: ditto, indeed, just combine this with the one above
-        strats = strats.map( s => {
-          if (s.depositsPaused || s.harvestPaused) {
-            s.shouldHarvest = false;
-            s.notHarvestReason = 'deposits or harvest paused';
+        stratsFiltered = stratsFiltered.concat(strats.filter(strat => !strat.shouldHarvest));
+        stratsShouldHarvest = strats.filter(strat => strat.shouldHarvest);
+
+        const _2weeksAgo = new Date().getTime() / 1000 - 1209600;
+        strats = stratsShouldHarvest.map(strat => {
+          const tvl_ = tvl[strat.id || strat.name];
+          if (tvl_ && tvl_ < TVL_MINIMUM_TO_HARVEST && strat.createdAt < _2weeksAgo) {
+            strat.shouldHarvest = false;
+            strat.notHarvestReason = `TVL is lower than minimum: ${TVL_MINIMUM_TO_HARVEST}`;
           }
-          return s;
+          return strat;
         });
-*/ stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        stratsShouldHarvest = strats.filter(s => s.shouldHarvest);
+        stratsFiltered = stratsFiltered.concat(strats.filter(strat => !strat.shouldHarvest));
+        stratsShouldHarvest = strats.filter(strat => strat.shouldHarvest);
 
-        // strats = stratsShouldHarvest.map(s => {
-        //   if (s.tvl < TVL_MINIMUM_TO_HARVEST) {
-        //     s.shouldHarvest = false;
-        //     s.notHarvestReason = `TVL is lower than min: ${
-        //     																				TVL_MINIMUM_TO_HARVEST}`;
-        //   }
-        //   return s;
-        // });
-        // stratsFiltered = stratsFiltered.concat( strats.filter( s =>
-        // 																									!s.shouldHarvest));
-        // stratsShouldHarvest = strats.filter( s => s.shouldHarvest);
-
-        //strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest,
-        //																												'balanceOf');
-        stratsShouldHarvest = await harvestHelpers.multicall(
-          CHAIN,
-          stratsShouldHarvest,
-          'balanceOf'
-        );
         //AT: TODO: again, forEach
         stratsShouldHarvest = stratsShouldHarvest.map(strat => {
           if (strat.balanceOf === 0) {
@@ -683,14 +678,10 @@ const main = async () => {
           }
           return strat;
         });
-        stratsFiltered = stratsFiltered.concat(strats.filter(s => !s.shouldHarvest));
-        stratsShouldHarvest = stratsShouldHarvest.filter(s => s.shouldHarvest);
+        stratsFiltered = stratsFiltered.concat(strats.filter(strat => !strat.shouldHarvest));
+        stratsShouldHarvest = stratsShouldHarvest.filter(strat => strat.shouldHarvest);
 
-        //TODO: semi-redundant call as the strat descriptors should already
-        //	have the latest-harvest information, so best to remove this once
-        //	system is solidified
-        //      strats = await harvestHelpers.multicall( CHAIN, stratsShouldHarvest,
-        //																															'lastHarvest');
+        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'lastHarvest');
 
         strats = await Promise.allSettled(
           stratsShouldHarvest.map(strat => shouldHarvest(strat, gasPrice, harvesterPK))
