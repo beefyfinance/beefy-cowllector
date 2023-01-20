@@ -43,7 +43,7 @@ const chains = {
     blockTime: 3,
     blockExplorer: 'http://bscscan.com',
     gas: {
-      limit: Number(process.env.BSC_GAS_LIMIT) || 2e6,
+      limit: Number(process.env.BSC_GAS_LIMIT) || 2.33e6,
       price: Number(process.env.BSC_GAS_PRICE) || 5e9,
       priceCap: Number(process.env.BSC_GAS_PRICE_CAP),
     },
@@ -149,7 +149,7 @@ const chains = {
     blockTime: 10,
     blockExplorer: 'https://ftmscan.com',
     gas: {
-      limit: Number(process.env.FANTOM_GAS_LIMIT) || 95e5,
+      limit: Number(process.env.FANTOM_GAS_LIMIT) || 9.5e6,
       price: Number(process.env.FANTOM_GAS_PRICE) || 1e9,
       priceCap: Number(process.env.FANTOM_GAS_PRICE_CAP),
     },
@@ -199,8 +199,8 @@ const chains = {
     blockTime: 2.8,
     blockExplorer: 'https://arbiscan.com',
     gas: {
-      limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 5e9,
-      price: Number(process.env.ARBITRUM_GAS_PRICE) || 1e10,
+      limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 2.33e6,
+      price: Number(process.env.ARBITRUM_GAS_PRICE) || 1e8,
       priceCap: Number(process.env.ARBITRUM_GAS_PRICE_CAP),
     },
   },
@@ -274,7 +274,7 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://cronoscan.com',
     gas: {
-      limit: Number(process.env.CRONOS_GAS_LIMIT) || 1.8e6,
+      limit: Number(process.env.CRONOS_GAS_LIMIT) || 2e6,
       price: Number(process.env.CRONOS_GAS_PRICE) || 5e12,
       priceCap: Number(process.env.CRONOS_GAS_PRICE_CAP),
     },
@@ -426,8 +426,8 @@ const chains = {
     blockTime: 6,
     blockExplorer: 'https://optimistic.etherscan.io/',
     gas: {
-      //AT: To be clear, "price" is the minimum price. I got the limit default via
-      //  https://www.npmjs.com/package/@eth-optimism/contracts/v/0.5.0
+      //AT: To be clear, "price" is the minimum price. I got the limit default
+      //	via https://www.npmjs.com/package/@eth-optimism/contracts/v/0.5.0
       limit: Number(process.env.OPTIMISM_GAS_LIMIT) || 9e6,
       price: Number(process.env.OPTIMISM_GAS_PRICE) || 1e6,
       priceCap: Number(process.env.OPTIMISM_GAS_PRICE_CAP),

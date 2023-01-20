@@ -38,10 +38,11 @@ const KNOWN_RPC_ERRORS = {
 
 const getGasPrice = async provider => {
   let gas = 0;
-  //TODO: Rationale of this stanza needs precise explanation. Seems that the chain-specific
-  //  gas price set in the environment or the default in the chain-data file is a _minimum_
-  //  gas price we'll harvest at, a price possibly a bit above the chain's standard minimum
-  //  price (e.g. the Polygon default at 40 GWEI instead of chain's floor of 30 GWEI).
+  //TODO: Rationale of this stanza needs precise explanation. Seems that the
+  //	chain-specific gas price set in the environment or the default in the
+  //	chain-data file is a _minimum_ gas price we'll harvest at, a price
+  //	possibly a bit above the chain's standard minimum price (e.g. the Polygon
+  //	default at 40 GWEI instead of chain's floor of 30 GWEI).
   try {
     if (CHAIN.gas.price) gas = CHAIN.gas.price;
     let gasPrice = await provider.getGasPrice();
@@ -122,6 +123,7 @@ const unwrap = async (signer, provider, options, minBalance = '0.1') => {
             Sentry.captureException(error);
           }
         }
+        //AT: else this is not a "tricky" chain, so...
       } else {
         tx = await tx.wait();
         console.log(`unwrapped ${ethers.utils.formatUnits(wNativeBalance)} ethers`);
@@ -134,7 +136,7 @@ const unwrap = async (signer, provider, options, minBalance = '0.1') => {
     Sentry.captureException(error);
     console.log(error.message);
   }
-};
+}; //const unwrap = async
 
 const uploadToFleek = async report => {
   let input = {
@@ -388,9 +390,9 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
               return {
                 contract: strat.strategy || strat.address,
                 status: 'success',
-                message: `${strat.id || strat.name}: harvested after try ${tries} - with tx: ${
-                  tx.transactionHash
-                }`,
+                message: `${
+                  strat.id || strat.name
+                }: harvested on Aurora after try ${tries} - with tx: ${tx.transactionHash}`,
                 data: tx,
               };
             } //if (tx.status === 1)
@@ -514,9 +516,9 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
           }
         } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
 
-        //An unusual error condition has been encountered. If we haven't maxed out on retry
-        //  attempts, fall through for another try, else short-circuit by raising this last
-        //  error.
+        //An unusual error condition has been encountered. If we haven't maxed
+        //	out on retry attempts, fall through for another try, else
+        //	short-circuit by raising this last error.
         if (tries === max)
           throw new Error(`Error occurred against ${strat.id || strat.name}: ${error}`);
       } //try
@@ -558,15 +560,17 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
       harvesterPK
     );
     let tx = await tryTX(stratContract);
+    if (!tx)
+      tx = {
+        contract: strat.strategy || strat.address,
+        status: 'failed',
+        message: 'no response to harvest request received',
+      };
     return tx;
   } catch (error) {
     Sentry.captureException(error);
     console.log(error.message);
-    return {
-      contract: strat.strategy || strat.address,
-      status: 'failed',
-      message: error.message,
-    };
+    return { contract: strat.strategy || strat.address, status: 'failed', message: error.message };
   } //try
 }; //const harvest = async (
 
@@ -655,7 +659,7 @@ const main = async () => {
         let stratsShouldHarvest = [];
         let callStaticFails = 0;
 
-        stratsFiltered = stratsFiltered.concat(strats.filter(strat => !strat.shouldHarvest));
+        stratsFiltered = strats.filter(strat => !strat.shouldHarvest);
         stratsShouldHarvest = strats.filter(strat => strat.shouldHarvest);
 
         const _2weeksAgo = new Date().getTime() / 1000 - 1209600;
@@ -671,7 +675,8 @@ const main = async () => {
         stratsShouldHarvest = strats.filter(strat => strat.shouldHarvest);
 
         //AT: TODO: again, forEach
-        stratsShouldHarvest = stratsShouldHarvest.map(strat => {
+        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'balanceOf');
+        strats = strats.map(strat => {
           if (strat.balanceOf === 0) {
             strat.shouldHarvest = false;
             strat.notHarvestReason = 'balance is zero';
@@ -679,9 +684,13 @@ const main = async () => {
           return strat;
         });
         stratsFiltered = stratsFiltered.concat(strats.filter(strat => !strat.shouldHarvest));
-        stratsShouldHarvest = stratsShouldHarvest.filter(strat => strat.shouldHarvest);
+        stratsShouldHarvest = strats.filter(strat => strat.shouldHarvest);
 
-        strats = await harvestHelpers.multicall(CHAIN, stratsShouldHarvest, 'lastHarvest');
+        stratsShouldHarvest = await harvestHelpers.multicall(
+          CHAIN,
+          stratsShouldHarvest,
+          'lastHarvest'
+        );
 
         strats = await Promise.allSettled(
           stratsShouldHarvest.map(strat => shouldHarvest(strat, gasPrice, harvesterPK))
@@ -732,13 +741,17 @@ const main = async () => {
           try {
             let options = { gasPrice, gasLimit: ethers.BigNumber.from(strat.gasLimit) };
             let harvested = await harvest(strat, harvesterPK, provider, options);
-            harvestAttempts.push(harvested);
+            harvestAttempts.push(harvested); //AT: looks like every strat gets a response object (not a copy of a normal strat object) and pushed in here
           } catch (error) {
+            //AT: flow analysis suggests no errors can be thrown by harvest()
             Sentry.captureException(error);
             console.log(error.message);
           }
         } //for await (const strat of stratsShouldHarvest)
+
         strats = [...stratsFiltered, ...stratsShouldHarvest];
+
+        //AT: tie each harvest-response object into its base strat descriptor
         strats = strats.map(strat => {
           let harvested = harvestAttempts.find(
             h => h.contract === (strat.strategy || strat.address)
@@ -748,7 +761,7 @@ const main = async () => {
         });
 
         if (strats.length) {
-          let success = strats.filter(s => s.harvest && s.harvest.status === 'success');
+          let success = strats.filter(strat => strat.harvest?.status === 'success');
           let gasUsed = harvestAttempts.reduce((total, h) => {
             if (h.data && h.data.gasUsed) total = total.add(ethers.BigNumber.from(h.data.gasUsed));
             return total;
@@ -774,7 +787,7 @@ const main = async () => {
           try {
             const uploaded = await uploadToFleek(report);
             try {
-              let res = await discordPoster.sendMessage({
+              await discordPoster.sendMessage({
                 type: 'info',
                 title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
                 message: `- Total strats: ${strats.length}\n- Found to harvest: ${
@@ -790,7 +803,6 @@ const main = async () => {
                 )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
                   report.balance
                 )}\n- Profit: ${ethers.utils.formatUnits(report.profit)}\nIPFS link: ${
-                  //										uploaded ? `https://ipfs.fleek.co/ipfs/${uploaded.hash}` :
                   uploaded ? `https://dweb.link/ipfs/${uploaded.hash}` : 'failed'
                 }\n`,
               });
@@ -801,8 +813,8 @@ const main = async () => {
           } catch (error) {
             Sentry.captureException(error);
             console.log(error);
-            let res = await discordPoster.sendMessage({
-              type: 'info',
+            await discordPoster.sendMessage({
+              type: 'error',
               title: `Error trying to upload report to IPFS - ${CHAIN.id.toUpperCase()}`,
               message: '',
             });
@@ -811,6 +823,16 @@ const main = async () => {
       } catch (error) {
         Sentry.captureException(error);
         console.error(error);
+        try {
+          let res = await discordPoster.sendMessage({
+            type: 'error',
+            title: `Harvest run failed for ${CHAIN.id.toUpperCase()}`,
+            message: '',
+          });
+        } catch (error) {
+          Sentry.captureException(error);
+          console.log(`Error trying to send message to broadcast: ${error.message}`);
+        }
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
 
