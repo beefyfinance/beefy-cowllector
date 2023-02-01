@@ -75,9 +75,6 @@ export class GelatoClient {
 
 
   public async taskInfo() : Promise< Readonly< Record< string, string>>> {
-/*  const taskIds = <ReadonlyArray< string>> 
-                                      await this._opsContract.getTaskIdsByUser( 
-                                      this._gelatoAdmin.getAddress());*/
 		const tasks: ReadonlyArray< Task> = await this._gelato.getActiveTasks();
     _logger.info( `${this._chain.id.toUpperCase()} - Retrieved ${ tasks.length
 																													} Task IDs.`);
@@ -129,12 +126,14 @@ export class GelatoClient {
 
   public async createTasks( vaults: Readonly< VaultRecord>) : 
                             Promise< Record< string, string> | null>	{
+//const max = 2; let count: number = 0;
 //  for (const key in vaults) {
     const results: PromiseSettledResult< [string, string]>[] = 
                                         await Promise.allSettled( Object.keys( 
                                         vaults).map( async name => {
           const vault: string = vaults[ name];
-          _logger.debug( `Creating task for ${name} on ${
+//if (++count > max) throw new Error( `won't create task for ${vault}`);
+/*_logger.info( */_logger.debug(/* */`Creating task for ${name} on ${
                                 this._chain.id.toUpperCase()}\n  --> ${vault}`);
           try {
             const taskId: string = await this._createTask( vault);
