@@ -414,7 +414,7 @@ const chains = {
     treasury: optimism.platforms.beefyfinance.treasury,
     beefyFeeBatcher: optimism.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 12,
-    hasOnChainHarvesting: true,
+    hasOnChainHarvesting: false,
     addressHarvester: '0xC181FDE612a22DD5013E87461b9c6D9791339E82',
     addressHarvesterOperations: '0x340759c8346A1E6Ed92035FB8B6ec57cE1D82c2c',
     harvestHourInterval: process.env.OPTIMISM_HARVEST_HOUR_INTERVAL ? 

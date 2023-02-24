@@ -4,7 +4,8 @@ tmp
 node_modules/
 .ts-node
 *.log
-.*.sw[m-z]
+.*.sw[i-z]
 .idea
 proposal.md
 utility/redisHelper.d.ts
+dump.rdb
