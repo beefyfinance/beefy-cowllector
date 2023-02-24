@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { addressBook } = require('blockchain-addressbook');
+const {addressBook} = require( 'blockchain-addressbook');
 
 const {
   aurora,
@@ -18,6 +18,8 @@ const {
   moonbeam,
   emerald,
   optimism,
+	kava,
+	canto
 } = addressBook;
 
 const chains = {
@@ -33,7 +35,7 @@ const chains = {
     harvestHourInterval: process.env.BSC_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.BSC_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 8,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.BSC_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.BSC_RPC || 'https://bsc-dataseed2.defibit.io/',
     multicall: bsc.platforms.beefyfinance.multicall,
@@ -87,18 +89,18 @@ const chains = {
     harvestHourInterval: process.env.AVAX_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.AVAX_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 8,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.AVAX_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
     multicall: avax.platforms.beefyfinance.multicall,
     queryLimit: 512,
     queryInterval: 100,
-    blockTime: 5,
+    blockTime: 2,
     blockExplorer: 'https://snowtrace.io',
-    gas: {
-      limit: Number(process.env.AVAX_GAS_LIMIT) || 2.33e6,
-      price: Number(process.env.AVAX_GAS_PRICE) || 35e9,
-      priceCap: Number(process.env.AVAX_GAS_PRICE_CAP),
+    gas:	{
+      limit: Number( process.env.AVAX_GAS_LIMIT) || 2.33e6,
+      price: Number( process.env.AVAX_GAS_PRICE) || 35e9,
+      priceCap: Number( process.env.AVAX_GAS_PRICE_CAP),
     },
   },
   137: {
@@ -190,7 +192,7 @@ const chains = {
     harvestHourInterval: process.env.ARBITRUM_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.ARBITRUM_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 20,
+    wnativeUnwrapInterval: 8,
     wnativeMinToUnwrap: process.env.ARBITRUM_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
     multicall: arbitrum.platforms.beefyfinance.multicall,
@@ -207,6 +209,7 @@ const chains = {
   42220: {
     id: 'celo',
     chainId: 42220,
+    wnative: celo.tokens.WNATIVE.address,
     rewardPool: celo.platforms.beefyfinance.rewardPool,
     treasury: celo.platforms.beefyfinance.treasury,
     beefyFeeBatcher: celo.platforms.beefyfinance.beefyFeeRecipient,
@@ -214,8 +217,7 @@ const chains = {
     harvestHourInterval: process.env.CELO_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.CELO_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnative: null,
-    wnativeUnwrapInterval: null,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.CELO_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.CELO_RPC || 'https://forno.celo.org',
     multicall: celo.platforms.beefyfinance.multicall,
@@ -240,7 +242,7 @@ const chains = {
     harvestHourInterval: process.env.MOONRIVER_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.MOONRIVER_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 6,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.MOONRIVER_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.MOONRIVER_RPC || 'https://moonriver.api.onfinality.io/public',
     multicall: moonriver.platforms.beefyfinance.multicall,
@@ -265,7 +267,7 @@ const chains = {
     harvestHourInterval: process.env.CRONOS_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.CRONOS_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 6,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.CRONOS_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.CRONOS_RPC || 'https://evm.cronos.org',
     multicall: cronos.platforms.beefyfinance.multicall,
@@ -290,7 +292,7 @@ const chains = {
     harvestHourInterval: process.env.FUSE_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.FUSE_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 6,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.FUSE_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.FUSE_RPC || 'https://rpc.fuse.io',
     multicall: fuse.platforms.beefyfinance.multicall,
@@ -315,7 +317,7 @@ const chains = {
     harvestHourInterval: process.env.METIS_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 6,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.METIS_WNATIVE_MIN_TO_UNWRAP || '0.05',
     rpc: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
     multicall: metis.platforms.beefyfinance.multicall,
@@ -340,7 +342,7 @@ const chains = {
     harvestHourInterval: process.env.AURORA_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.AURORA_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 8,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.AURORA_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc:
       process.env.AURORA_RPC ||
@@ -367,7 +369,7 @@ const chains = {
     harvestHourInterval: process.env.MOONBEAM_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.MOONBEAM_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 6,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.MOONBEAM_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.MOONBEAM_RPC || 'https://rpc.api.moonbeam.network',
     multicall: moonbeam.platforms.beefyfinance.multicall,
@@ -392,7 +394,7 @@ const chains = {
     harvestHourInterval: process.env.OASIS_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.OASIS_HARVEST_HOUR_INTERVAL)
       : 24,
-    wnativeUnwrapInterval: 6,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.OASIS_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.OASIS_RPC || 'https://emerald.oasis.dev',
     multicall: emerald.platforms.beefyfinance.multicall,
@@ -419,22 +421,47 @@ const chains = {
     addressHarvesterOperations: '0x340759c8346A1E6Ed92035FB8B6ec57cE1D82c2c',
     harvestHourInterval: process.env.OPTIMISM_HARVEST_HOUR_INTERVAL ? 
 										parseInt( process.env.OPTIMISM_HARVEST_HOUR_INTERVAL) : 24,
-    wnativeUnwrapInterval: 6,
+    wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.OPTIMISM_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc: process.env.OPTIMISM_RPC || 'https://mainnet.optimism.io',
     multicall: optimism.platforms.beefyfinance.multicall,
     queryLimit: 1000,
     queryInterval: 100,
-    blockTime: 6,
+    blockTime: 2,
     blockExplorer: 'https://optimistic.etherscan.io/',
     gas: {
       //AT: To be clear, "price" is the minimum price. I got the limit default 
 			//	via https://www.npmjs.com/package/@eth-optimism/contracts/v/0.5.0
-      limit: Number(process.env.OPTIMISM_GAS_LIMIT) || 9e6,
-      price: Number(process.env.OPTIMISM_GAS_PRICE) || 1e6,
-      priceCap: Number(process.env.OPTIMISM_GAS_PRICE_CAP),
+      limit: Number( process.env.OPTIMISM_GAS_LIMIT) || 9e6,
+      price: Number( process.env.OPTIMISM_GAS_PRICE) || 1e6,
+      priceCap: Number( process.env.OPTIMISM_GAS_PRICE_CAP),
     },
   },
+  7700: {
+    id: 'canto',
+    chainId: 7700,
+    wnative: canto.tokens.WNATIVE.address,
+    rewardPool: canto.platforms.beefyfinance.rewardPool,
+    treasury: canto.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: canto.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    hasOnChainHarvesting: false,
+    harvestHourInterval: process.env.CANTO_HARVEST_HOUR_INTERVAL ? 
+												parseInt( process.env.CANTO_HARVEST_HOUR_INTERVAL) : 24,
+    wnativeUnwrapInterval: 4,
+    wnativeMinToUnwrap: process.env.CANTO_WNATIVE_MIN_TO_UNWRAP || '0.5',
+    rpc: process.env.CANTO_RPC || 'https://canto.gravitychain.io',
+    multicall: canto.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 6,						//observed
+    blockExplorer: 'https://evm.explorer.canto.io/',
+    gas:	{
+      limit: Number( process.env.CANTO_GAS_LIMIT) || 9e6,
+      price: Number( process.env.CANTO_GAS_PRICE) || 1001e9, //observed minimum
+      priceCap: Number( process.env.CANTO_GAS_PRICE_CAP),
+    }
+  }
 };
 
 module.exports = chains;

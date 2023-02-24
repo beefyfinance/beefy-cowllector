@@ -314,7 +314,8 @@ async function main() : Promise< void> {
   //report any significant changes occurred during this sync, or the lack therof
   const count = Object.keys( hits.hits).length;
 	try	{
-		await postToDiscord( {type: 'info', title: `Strat-harvest sync`,
+		if (process.env.REDISCLOUD_URL)		//avoid Discord spam during testing
+			await postToDiscord( {type: 'info', title: `Strat-harvest sync`,
 													message: count < 50 ? `\n${count ? `\`\`\`json\n${
 																JSON.stringify( Object.values( hits.hits), null,
 																2)}\n\`\`\`` : `No significant changes.`}` : 
