@@ -54,7 +54,8 @@ const getGasPrice = async provider => {
   } //try
 
   try {
-    //The standard method didn't work. So let's see if the chain supports another method...
+    //The standard method didn't work. So let's see if the chain supports
+    //	another method...
     if (CHAIN.gas.info) {
       if (CHAIN.gas.info.type === 'rest') {
         let res = await Axios.get(
@@ -172,29 +173,31 @@ const addGasLimit = async (strats, provider) => {
   /*let gasLimits = require('../data/gasLimits.json');
   let filtered = gasLimits.filter( s => s.chainId === Number( CHAIN_ID));
 
-  //0xww: check when gaslimit already exists and only strats that are not in gasLimits
-  //AT: get a list of only those strats which have no gas-limit characteristic yet (how 
-  //  would this ever happen?)
-  let gasLimitWanted = filtered.filter( s =>
-    strats.every( strat => s.address.toLowerCase() !== strat.address.toLowerCase())
-  );
+  //0xww: check when gaslimit already exists and only strats that are not in 
+	//	gasLimits
+  //AT: get a list of only those strats which have no gas-limit characteristic 
+	//	yet (how would this ever happen?)
+  let gasLimitWanted = filtered.filter( s => strats.every( strat => 
+											s.address.toLowerCase() !== strat.address.toLowerCase()));
 
-  let responses = await Promise.allSettled(
-    gasLimitWanted.map( strat => harvestHelpers.estimateGas(strat, CHAIN_ID, provider))
-  );
-  responses = responses.filter( s => s.status === 'fulfilled').map( s => s.value);
+  let responses = await Promise.allSettled( gasLimitWanted.map( strat => 
+																									harvestHelpers.estimateGas( 
+																									strat, CHAIN_ID, provider)));
+  responses = responses.filter( s => s.status === 'fulfilled').map( s => 
+																																			s.value);
   filtered.push( ...responses);
 
   //0xww: get strats with gaslimit
   strats = filtered.filter( g => strats.some( s => g.address === s.address));
 */
-  //AT: in conformance with the new way of syncing strats, to stop harvesting strats
-  //  handled by an on-chain harvester, this filter
+  //AT: in conformance with the new way of syncing strats, to stop harvesting
+  //	strats handled by an on-chain harvester, this filter
   strats = strats.filter(
     strat => CHAIN.id === strat.chain && (!CHAIN.hasOnChainHarvesting || strat.noOnChainHarvest)
   );
 
-  //enforce the gas limit (sometimes an RPC estimates way too high, e.g. Oasis Emerald)
+  //enforce the gas limit (sometimes an RPC estimates way too high, e.g. Oasis
+  //	Emerald)
   const max = CHAIN.gas.limit - 1;
   strats.forEach(strat => {
     if (max < strat.gasLimit) strat.gasLimit = max;
@@ -220,11 +223,11 @@ const shouldHarvest = async (strat, gasPrice, harvesterPK) => {
       Number(process.env.STRAT_INTERVALS_MARGIN_OF_ERROR) || _24_MINS;
 
   //Compute the maximum seconds allowed before a new harvest should be
-  //	initiated, measured from the strat's last-harvest event. If the strat
-  //	has a special interval specified that falls between this and the next
-  //	run, evaluate that it should be executed during this run, as not
-  //	exceeding the desired interval can be important, like to deny a
-  //  frontrunning bot the illicit gains it seeks.
+  //	initiated, measured from the strat's last-harvest event. If the strat has
+  //	a special interval specified that falls between this and the next run,
+  //	evaluate that it should be executed during this run, as not exceeding the
+  //	desired interval can be important, like to deny a frontrunning bot the
+  //	illicit gains it seeks.
   let interval = Math.min(
       parseInt(process.env.GLOBAL_MINIMUM_HARVEST_HOUR_INTERVAL) || 24,
       strat?.interval || 24
@@ -646,7 +649,8 @@ const main = async () => {
         //	out other-chain strats and those to be harvested instead by an
         //	on-chain harvester, and the enforcement of a configured gas-limit
         //	maximum.
-        strats = await addGasLimit(strats, provider);
+        strats = await addGasLimit(strats, provider); //unintuitively, call
+        //	also filters list to this chain only
         //AT: TODO: map seems pointless here, should just use a forEach..
         strats = strats.map(s => {
           s.shouldHarvest = undefined == s.interval || s.interval >= 1;
@@ -785,31 +789,35 @@ const main = async () => {
             .sub(balance.add(wNativeBalance));
 
           try {
-            const uploaded = await uploadToFleek(report);
-            try {
-              await discordPoster.sendMessage({
-                type: 'info',
-                title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
-                message: `- Total strats: ${strats.length}\n- Found to harvest: ${
-                  report.harvesteds
-                }\n  + Successes: ${report.success}\n  + ${report.failed ? '**' : ''}Failures: ${
-                  report.failed + (report.failed ? '**' : '')
-                }\n- Total gas used: ${ethers.utils.formatUnits(
-                  report.gasUsed,
-                  'gwei'
-                )}\n  + Avg per strat: ${ethers.utils.formatUnits(
-                  report.averageGasUsed,
-                  'gwei'
-                )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
-                  report.balance
-                )}\n- Profit: ${ethers.utils.formatUnits(report.profit)}\nIPFS link: ${
-                  uploaded ? `https://dweb.link/ipfs/${uploaded.hash}` : 'failed'
-                }\n`,
-              });
-            } catch (error) {
-              Sentry.captureException(error);
-              console.log(`Error trying to send message to broadcast: ${error.message}`);
-            }
+            const message = `- Total strats: ${strats.length}\n- Found to harvest: ${
+              report.harvesteds
+            }\n  + Successes: ${report.success}\n  + ${report.failed ? '**' : ''}Failures: ${
+              report.failed + (report.failed ? '**' : '')
+            }\n- Total gas used: ${ethers.utils.formatUnits(
+              report.gasUsed,
+              'gwei'
+            )}\n  + Avg per strat: ${ethers.utils.formatUnits(
+              report.averageGasUsed,
+              'gwei'
+            )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
+              report.balance
+            )}\n- Profit: ${ethers.utils.formatUnits(report.profit)}`;
+            if (process.env.REDIS_CLOUD_URL)
+              //avoid Discord spam when testing
+              try {
+                const uploaded = await uploadToFleek(report);
+                await discordPoster.sendMessage({
+                  type: 'info',
+                  title: `New harvest report for ${CHAIN.id.toUpperCase()}`,
+                  message: `${message}\nIPFS link: ${
+                    uploaded ? `https://dweb.link/ipfs/${uploaded.hash}` : 'failed'
+                  }`,
+                });
+              } catch (error) {
+                Sentry.captureException(error);
+                console.log(`Error trying to send message to broadcast: ${error.message}`);
+              }
+            else console.log(message);
           } catch (error) {
             Sentry.captureException(error);
             console.log(error);
