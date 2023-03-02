@@ -34,7 +34,7 @@ const chains = {
     beefyFeeHarvestInterval: 4,
     harvestHourInterval: process.env.BSC_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.BSC_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.BSC_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.BSC_RPC || 'https://bsc-dataseed2.defibit.io/',
@@ -60,7 +60,7 @@ const chains = {
     beefyFeeHarvestInterval: 4,
     harvestHourInterval: process.env.HECO_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.HECO_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.HECO_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
@@ -88,7 +88,7 @@ const chains = {
     addressHarvesterOperations: '0x8aB6aDbC1fec4F18617C9B889F5cE7F28401B8dB',
     harvestHourInterval: process.env.AVAX_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.AVAX_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.AVAX_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
@@ -113,7 +113,7 @@ const chains = {
     beefyFeeHarvestInterval: 1,
     harvestHourInterval: process.env.POLYGON_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.POLYGON_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.POLYGON_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.POLYGON_RPC || 'https://polygon-rpc.com/',
@@ -141,7 +141,7 @@ const chains = {
     addressHarvesterOperations: '0x6EDe1597c05A0ca77031cBA43Ab887ccf24cd7e8',
     harvestHourInterval: process.env.FANTOM_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.FANTOM_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.FANTOM_WNATIVE_MIN_TO_UNWRAP || '1',
     rpc: process.env.FANTOM_RPC || 'https://rpcapi.fantom.network',
@@ -166,7 +166,7 @@ const chains = {
     beefyFeeHarvestInterval: 1,
     harvestHourInterval: process.env.ONE_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.ONE_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.ONE_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.ONE_RPC || 'https://api.s0.t.hmny.io/',
@@ -191,7 +191,7 @@ const chains = {
     beefyFeeHarvestInterval: 8,
     harvestHourInterval: process.env.ARBITRUM_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.ARBITRUM_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 8,
     wnativeMinToUnwrap: process.env.ARBITRUM_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
@@ -216,7 +216,7 @@ const chains = {
     beefyFeeHarvestInterval: 1,
     harvestHourInterval: process.env.CELO_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.CELO_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.CELO_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.CELO_RPC || 'https://forno.celo.org',
@@ -241,7 +241,7 @@ const chains = {
     beefyFeeHarvestInterval: 2,
     harvestHourInterval: process.env.MOONRIVER_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.MOONRIVER_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.MOONRIVER_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.MOONRIVER_RPC || 'https://moonriver.api.onfinality.io/public',
@@ -266,7 +266,7 @@ const chains = {
     beefyFeeHarvestInterval: 6,
     harvestHourInterval: process.env.CRONOS_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.CRONOS_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.CRONOS_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.CRONOS_RPC || 'https://evm.cronos.org',
@@ -291,7 +291,7 @@ const chains = {
     beefyFeeHarvestInterval: 1,
     harvestHourInterval: process.env.FUSE_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.FUSE_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.FUSE_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.FUSE_RPC || 'https://rpc.fuse.io',
@@ -316,7 +316,7 @@ const chains = {
     beefyFeeHarvestInterval: 4,
     harvestHourInterval: process.env.METIS_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.METIS_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.METIS_WNATIVE_MIN_TO_UNWRAP || '0.05',
     rpc: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
@@ -341,7 +341,7 @@ const chains = {
     beefyFeeHarvestInterval: 2,
     harvestHourInterval: process.env.AURORA_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.AURORA_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.AURORA_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc:
@@ -368,7 +368,7 @@ const chains = {
     beefyFeeHarvestInterval: 12,
     harvestHourInterval: process.env.MOONBEAM_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.MOONBEAM_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.MOONBEAM_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.MOONBEAM_RPC || 'https://rpc.api.moonbeam.network',
@@ -378,10 +378,10 @@ const chains = {
     blockTime: 1,
     blockExplorer: 'https://moonscan.io/',
     gas: {
-      limit: Number(process.env.MOONBEAM_GAS_LIMIT) || 2.33e6,
-      price: Number(process.env.MOONBEAM_GAS_PRICE) || 100e9,
-      priceCap: Number(process.env.MOONBEAM_GAS_PRICE_CAP),
-    },
+      limit: Number( process.env.MOONBEAM_GAS_LIMIT) || 2.33e6,
+      price: Number( process.env.MOONBEAM_GAS_PRICE) || 100e9,
+      priceCap: Number( process.env.MOONBEAM_GAS_PRICE_CAP),
+    }
   },
   42262: {
     id: 'emerald',
@@ -393,7 +393,7 @@ const chains = {
     beefyFeeHarvestInterval: 12,
     harvestHourInterval: process.env.OASIS_HARVEST_HOUR_INTERVAL
       ? parseInt(process.env.OASIS_HARVEST_HOUR_INTERVAL)
-      : 24,
+      : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.OASIS_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.OASIS_RPC || 'https://emerald.oasis.dev',
@@ -420,7 +420,7 @@ const chains = {
     addressHarvester: '0xC181FDE612a22DD5013E87461b9c6D9791339E82',
     addressHarvesterOperations: '0x340759c8346A1E6Ed92035FB8B6ec57cE1D82c2c',
     harvestHourInterval: process.env.OPTIMISM_HARVEST_HOUR_INTERVAL ? 
-										parseInt( process.env.OPTIMISM_HARVEST_HOUR_INTERVAL) : 24,
+										parseInt( process.env.OPTIMISM_HARVEST_HOUR_INTERVAL) : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.OPTIMISM_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc: process.env.OPTIMISM_RPC || 'https://mainnet.optimism.io',
@@ -435,7 +435,7 @@ const chains = {
       limit: Number( process.env.OPTIMISM_GAS_LIMIT) || 9e6,
       price: Number( process.env.OPTIMISM_GAS_PRICE) || 1e6,
       priceCap: Number( process.env.OPTIMISM_GAS_PRICE_CAP),
-    },
+    }
   },
   7700: {
     id: 'canto',
@@ -447,7 +447,7 @@ const chains = {
     beefyFeeHarvestInterval: 12,
     hasOnChainHarvesting: false,
     harvestHourInterval: process.env.CANTO_HARVEST_HOUR_INTERVAL ? 
-												parseInt( process.env.CANTO_HARVEST_HOUR_INTERVAL) : 24,
+												parseInt( process.env.CANTO_HARVEST_HOUR_INTERVAL) : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.CANTO_WNATIVE_MIN_TO_UNWRAP || '0.5',
     rpc: process.env.CANTO_RPC || 'https://canto.gravitychain.io',
@@ -457,9 +457,34 @@ const chains = {
     blockTime: 6,						//observed
     blockExplorer: 'https://evm.explorer.canto.io/',
     gas:	{
-      limit: Number( process.env.CANTO_GAS_LIMIT) || 9e6,
+      limit: Number( process.env.CANTO_GAS_LIMIT) || 2.33e6,
       price: Number( process.env.CANTO_GAS_PRICE) || 1001e9, //observed minimum
       priceCap: Number( process.env.CANTO_GAS_PRICE_CAP),
+    } 
+  }, 
+  2222: {
+    id: 'kava',
+    chainId: 2222,
+    wnative: kava.tokens.WNATIVE.address,
+    rewardPool: kava.platforms.beefyfinance.rewardPool,
+    treasury: kava.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: kava.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    hasOnChainHarvesting: false,
+    harvestHourInterval: process.env.KAVA_HARVEST_HOUR_INTERVAL ? 
+												parseInt( process.env.KAVA_HARVEST_HOUR_INTERVAL) : 4,
+    wnativeUnwrapInterval: 4,
+    wnativeMinToUnwrap: process.env.KAVA_WNATIVE_MIN_TO_UNWRAP || '0.5',
+    rpc: process.env.KAVA_RPC || 'https://evm.kava.io',
+    multicall: kava.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 6,						//observed
+    blockExplorer: 'https://explorer.kava.io/',
+    gas:	{
+      limit: Number( process.env.KAVA_GAS_LIMIT) || 2.33e6,
+      price: Number( process.env.KAVA_GAS_PRICE) || 1e9, //observed minimum
+      priceCap: Number( process.env.KAVA_GAS_PRICE_CAP),
     }
   }
 };

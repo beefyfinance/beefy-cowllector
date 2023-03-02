@@ -314,12 +314,14 @@ async function main() : Promise< void> {
   //report any significant changes occurred during this sync, or the lack therof
   const count = Object.keys( hits.hits).length;
 	try	{
+		const message = count < 50 ? `\n${count ? `\`\`\`json\n${ JSON.stringify( 
+							Object.values( hits.hits), null, 2)}\n\`\`\`` : 
+							`No significant changes.`}` : '50+ significant changes: see link';
 		if (process.env.REDISCLOUD_URL)		//avoid Discord spam during testing
 			await postToDiscord( {type: 'info', title: `Strat-harvest sync`,
-													message: count < 50 ? `\n${count ? `\`\`\`json\n${
-																JSON.stringify( Object.values( hits.hits), null,
-																2)}\n\`\`\`` : `No significant changes.`}` : 
-																'50+ significant changes: see link'});
+														message});
+		else
+			logger.info( message);
 		logger.info( `\nLog of ${count
 														} significant changes written to logging channel`);
 	} catch (error: unknown)	{

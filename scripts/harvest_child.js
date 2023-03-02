@@ -1,16 +1,16 @@
 require('dotenv').config();
 const FETCH = require( 'node-fetch');
-const ethers = require('ethers');
+const ethers = require( 'ethers');
 const fleekStorage = require( '@fleekhq/fleek-storage-js');
-const redis = require('../utility/redisHelper');
-const Sentry = require('../utils/sentry.js');
-const IStrategy = require('../abis/IStrategy.json');
+const redis = require( '../utility/redisHelper');
+const Sentry = require( '../utils/sentry.js');
+const IStrategy = require( '../abis/IStrategy.json');
 //const IERC20 = require('../abis/ERC20.json');
-const IWrappedNative = require('../abis/WrappedNative.json');
-const harvestHelpers = require('../utils/harvestHelpers');
+const IWrappedNative = require( '../abis/WrappedNative.json');
+const harvestHelpers = require( '../utils/harvestHelpers');
 const discordPoster = require( '../utils/discordPost');
-const chains = require('../data/chains');
-const CHAIN_ID = parseInt( process.argv[2]);
+const chains = require( '../data/chains');
+const CHAIN_ID = parseInt( process.argv[ 2]);
 const CHAIN = chains[ CHAIN_ID];
 const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
 const GASLESS_CHAINS = ['celo', 'aurora'];
@@ -541,8 +541,8 @@ const harvest = async (strat,
       }
       throw new Error(
         `${strat.id || strat.name}: INSUFFICIENT_FUNDS - gas required ${
-          (options.gasPrice * options.gasLimit) / 1e18
-        } and wallet holds only ${ethers.utils.formatUnits(balance)}`
+          options.gasPrice * options.gasLimit / 1e18
+        } and wallet holds only ${ethers.utils.formatUnits( balance)}`
       );
     } //if (balance < options.gasPrice *
 
@@ -818,7 +818,7 @@ const main = async () => {
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
 
-    console.log(`done`);
+    console.log( `done`);
   } catch (error) {
     Sentry.captureException( error);
 		console.error( error);
