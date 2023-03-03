@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.redisDisconnect = exports.getKey = exports.setKey = void 0;
+exports.reconnect = exports.redisDisconnect = exports.getKey = exports.setKey = void 0;
 require("dotenv/config");
 const REDIS = __importStar(require("redis"));
 const Logger_1 = require("../utility/Logger");
@@ -76,3 +76,9 @@ async function redisDisconnect() {
     redisClient = undefined;
 }
 exports.redisDisconnect = redisDisconnect;
+async function reconnect() {
+    if (redisClient)
+        return;
+    redisClient = initRedis();
+}
+exports.reconnect = reconnect;
