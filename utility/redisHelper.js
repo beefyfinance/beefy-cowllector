@@ -44,16 +44,17 @@ Object.defineProperty(exports, '__esModule', { value: true });
 exports.redisDisconnect = exports.getKey = exports.setKey = void 0;
 require('dotenv/config');
 const REDIS = __importStar(require('redis'));
+const Logger_1 = require('../utility/Logger');
+const _logger = Logger_1.logger.getLogger('RedisClient');
 let redisClient;
 const initRedis = async () => {
   const client = REDIS.createClient({
     url: process.env.REDISCLOUD_URL || 'redis://localhost:6379',
   });
-  client.on('ready', () => console.log('Redis ready'));
-  client.on('end', () => console.log('Redis closed'));
-  client.on('error', err => console.log('Redis error: ', err));
+  client.on('ready', () => _logger.info('Redis ready'));
+  client.on('end', () => _logger.info('Redis closed'));
+  client.on('error', error => _logger.error(`Redis error: ${error}`));
   await client.connect();
-  // await loadCachedValues();
   return client;
 }; //const initRedis = async () : typeof EDIS.createClient
 if (!redisClient) redisClient = initRedis();
@@ -62,8 +63,8 @@ const setKey = async (key, value) => {
   if (redisClient instanceof Promise && !(redisClient = await redisClient)) return;
   try {
     await redisClient.set(key, JSON.stringify(value));
-  } catch (err) {
-    console.log(`Failed storing value for Redis key "${key}": `, err);
+  } catch (error) {
+    _logger.error(`Failed storing value for Redis key "${key}": ${error}`);
   }
 };
 exports.setKey = setKey;
@@ -73,8 +74,8 @@ const getKey = async key => {
   try {
     let value = await redisClient.get(key);
     return value ? JSON.parse(value) : null;
-  } catch (err) {
-    console.log(`Failed getting value for Redis key "${key}": `, err);
+  } catch (error) {
+    _logger.error(`Failed getting value for Redis key "${key}": ${error}`);
   }
 };
 exports.getKey = getKey;

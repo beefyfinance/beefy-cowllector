@@ -17,7 +17,6 @@ const initRedis = async (): Promise<ReturnType<typeof REDIS.createClient>> => {
   client.on('error', (error: unknown) => _logger.error(`Redis error: ${error}`));
 
   await client.connect();
-  // await loadCachedValues();
   return client;
 }; //const initRedis = async () : typeof EDIS.createClient
 if (!redisClient) redisClient = initRedis();

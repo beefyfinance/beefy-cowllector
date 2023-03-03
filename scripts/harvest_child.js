@@ -802,7 +802,7 @@ const main = async () => {
             )}\n- Cowllector Balance: ${ethers.utils.formatUnits(
               report.balance
             )}\n- Profit: ${ethers.utils.formatUnits(report.profit)}`;
-            if (process.env.REDIS_CLOUD_URL)
+            if (process.env.REDISCLOUD_URL)
               //avoid Discord spam when testing
               try {
                 const uploaded = await uploadToFleek(report);
