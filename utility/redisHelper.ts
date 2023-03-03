@@ -17,7 +17,6 @@ const initRedis = async () :
 																																			error}`));
   
   await client.connect();
-  // await loadCachedValues();
   return client;
 }; //const initRedis = async () : typeof EDIS.createClient
 if (!redisClient)

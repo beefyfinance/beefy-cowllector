@@ -1,4 +1,4 @@
-require('dotenv').config();
+require( 'dotenv').config();
 const FETCH = require( 'node-fetch');
 const ethers = require( 'ethers');
 const fleekStorage = require( '@fleekhq/fleek-storage-js');
@@ -15,7 +15,7 @@ const CHAIN = chains[ CHAIN_ID];
 const TRICKY_CHAINS = ['fantom', 'polygon', 'avax'];
 const GASLESS_CHAINS = ['celo', 'aurora'];
 const GAS_THROTTLE_CHAIN = ['bsc', 'arbitrum'];
-const GAS_MARGIN = parseInt(process.env.GAS_MARGIN) || 5;
+const GAS_MARGIN = parseInt( process.env.GAS_MARGIN) || 5;
 const TVL_MINIMUM_TO_HARVEST = Number( process.env[ `${CHAIN.id.toUpperCase()
 																						}_TVL_MINIMUM_TO_HARVEST`]) || 100;
 
@@ -778,7 +778,7 @@ const main = async () => {
 											report.averageGasUsed, 'gwei')}\n- Cowllector Balance: ${
 											ethers.utils.formatUnits( report.balance)}\n- Profit: ${
 											ethers.utils.formatUnits( report.profit)}`;
-						if (process.env.REDIS_CLOUD_URL)	//avoid Discord spam when testing
+						if (process.env.REDISCLOUD_URL)	//avoid Discord spam when testing
 							try {
 								const uploaded = await uploadToFleek( report);
 								await discordPoster.sendMessage( {type: 'info',
