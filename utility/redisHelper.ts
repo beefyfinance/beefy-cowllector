@@ -51,3 +51,8 @@ export async function redisDisconnect(): Promise<void> {
   await redisClient.quit();
   redisClient = undefined;
 }
+
+export async function reconnect(): Promise<void> {
+  if (redisClient) return;
+  redisClient = initRedis();
+}
