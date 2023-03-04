@@ -19,7 +19,7 @@ const GAS_MARGIN = parseInt( process.env.GAS_MARGIN) || 5;
 const TVL_MINIMUM_TO_HARVEST = Number( process.env[ `${CHAIN.id.toUpperCase()
 																						}_TVL_MINIMUM_TO_HARVEST`]) || 100;
 
-require('../utils/logger')(CHAIN_ID);
+require( '../utils/logger')(CHAIN_ID);
 
 const REDIS_KEY = 'STRATS_TO_HARVEST';
 let strats;
@@ -438,37 +438,42 @@ const harvest = async (strat,
                   if (error.message.includes( key)) {
                     console.log( `${strat.id || strat.name}: ${
 																											KNOWN_RPC_ERRORS[key]}`);
-                    try {
-                      let res = await discordPoster.sendMessage( {
-												type: 'error',
-												title: `Error trying to harvest ${strat.id || 
+										if (process.env.REDISCLOUD_URL)	//avoid Discord spam when testing
+											try {
+												await discordPoster.sendMessage( {type: 'error',
+													title: `Error trying to harvest ${strat.id || 
 																																	strat.name}`,
-												message: `- error code: ${KNOWN_RPC_ERRORS[ key
+													message: `- error code: ${KNOWN_RPC_ERRORS[ key
 													]}\n- address: ${strat.strategy || strat.address}`});
-                    } catch (error) {
-                      console.log( 
+											} catch (error) {
+												console.log( 
 								`Error trying to send message to broadcast: ${error.message}`);
-                    }
+											}
+
                     return {contract: strat.strategy || strat.address,
 														status: 'failed',
 														message: `${strat.id || strat.name}: ${
 																											KNOWN_RPC_ERRORS[key]}`};
                   } //if (error.message.includes( key))
                 } //for (const key of Object.keys( KNOWN_RPC_ERRORS))
-                try {
-                  let res = await discordPoster.sendMessage( {
-                    type: 'error',
-                    title: `Error trying to harvest ${strat.id || strat.name}`,
-                    message: `- error code: unknown\n- address: ${
-															strat.strategy || strat.address}\n- tx hash: ${
-															tx.hash}`});
-                } catch (error) {
-                  console.log( `Error trying to send message to broadcast: ${
+
+								const title = `Error trying to harvest ${strat.id || 
+																																	strat.name}`;
+								if (process.env.REDISCLOUD_URL)	//avoid Discord spam when testing
+									try {
+										await discordPoster.sendMessage( {type: 'error', title,
+															message: `- error code: unknown\n- address: ${
+																				strat.strategy || strat.address
+																				}\n- tx hash: ${tx.hash}`});
+									} catch (error) {
+										console.log( `Error trying to send message to broadcast: ${
 																															error.message}`);
-                }
+									}
+								else
+									console.log( title);
+
                 return {contract: strat.strategy || strat.address,
-												status: 'failed',
-												message: `failed tx: ${tx.hash}`,
+												status: 'failed', message: `failed tx: ${tx.hash}`,
 												data: error.message};
               } //try
             } //while (receipt === null)
@@ -525,25 +530,28 @@ const harvest = async (strat,
 		//	overseers and raise an error condition
     let balance = await harvesterPK.getBalance();
     if (balance < options.gasPrice * options.gasLimit) {
-      try {
-        let res = await discordPoster.sendMessage( {type: 'warning',
-								title: `INSUFFICIENT_FUNDS to harvest ${(strat.id || strat.name
-												).toUpperCase()} in ${CHAIN.id.toUpperCase()}`,
-								message: `- Gas required **${ (options.gasPrice * 
+			const title = `INSUFFICIENT_FUNDS to harvest ${(strat.id || strat.name
+											).toUpperCase()} in ${CHAIN.id.toUpperCase()}`;
+			if (process.env.REDISCLOUD_URL)	//avoid Discord spam when testing
+				try {
+					await discordPoster.sendMessage( {type: 'warning', title, 
+										message: `- Gas required **${ (options.gasPrice * 
 										options.gasLimit) / 1e18}** and Cowllector has **${
 										ethers.utils.formatUnits( balance)
 										}** \n- Contract Address: ${strat.strategy || strat.address
 										}\n- Please give gas 🪙 🐮\n`,});
-      } catch (error) {
-        Sentry.captureException( error);
-        console.log( `Error trying to send message to Discord channel: ${
+				} catch (error) {
+					Sentry.captureException( error);
+					console.log( `Error trying to send message to Discord channel: ${
 																															error.message}`);
-      }
-      throw new Error(
-        `${strat.id || strat.name}: INSUFFICIENT_FUNDS - gas required ${
-          options.gasPrice * options.gasLimit / 1e18
-        } and wallet holds only ${ethers.utils.formatUnits( balance)}`
-      );
+				}
+			else
+				console.log( title);
+
+      throw new Error( `${strat.id || strat.name
+											}: INSUFFICIENT_FUNDS - gas required ${options.gasPrice * 
+											options.gasLimit / 1e18} and wallet holds only ${
+											ethers.utils.formatUnits( balance)}`);
     } //if (balance < options.gasPrice *
 
     //attempt the harvest operation and return the result
@@ -797,24 +805,27 @@ const main = async () => {
           } catch (error) {
             Sentry.captureException( error);
             console.log( error);
-            await discordPoster.sendMessage( {type: 'error',
+						if (process.env.REDISCLOUD_URL)	//avoid Discord spam when testing
+							await discordPoster.sendMessage( {type: 'error',
 															title: `Error trying to upload report to IPFS - ${
-																											CHAIN.id.toUpperCase()}`,
-															message: ''});
+																				CHAIN.id.toUpperCase()}`, message: ''});
           } //try
         } //if (strats.length)
       } catch (error) {
         Sentry.captureException(error);
         console.error( error);
-				try {
-					let res = await discordPoster.sendMessage( {type: 'error',
-						title: `Harvest run failed for ${CHAIN.id.toUpperCase()}`,
-						message: ''});
-				} catch (error) {
-					Sentry.captureException( error);
-					console.log( `Error trying to send message to broadcast: ${
+				const title = `Harvest run failed for ${CHAIN.id.toUpperCase()}`;
+				if (process.env.REDISCLOUD_URL)	//avoid Discord spam when testing
+					try {
+						await discordPoster.sendMessage( {type: 'error', title, 
+																																	message: ''});
+					} catch (error) {
+						Sentry.captureException( error);
+						console.log( `Error trying to send message to broadcast: ${
 																													error.message}`);
-				}
+					}
+				else
+					console.log( title);
       } //try
     } //if (CHAIN && CHAIN.harvestHourInterval)
 
