@@ -36,26 +36,30 @@ const KNOWN_RPC_ERRORS = {
   'code=CALL_EXCEPTION': 'CALL_EXCEPTION', //AT: probably gas-limit hit, so costly
 };
 
+
 const getGasPrice = async provider => {
-  let gas = 0;
+  let gas = CHAIN.gas.priceOverride;
+
   //TODO: Rationale of this stanza needs precise explanation. Seems that the 
 	//	chain-specific gas price set in the environment or the default in the 
 	//	chain-data file is a _minimum_ gas price we'll harvest at, a price 
 	//	possibly a bit above the chain's standard minimum price (e.g. the Polygon 
 	//	default at 40 GWEI instead of chain's floor of 30 GWEI).
   try {
-    if (CHAIN.gas.price)
+		if (!gas)	{
 			gas = CHAIN.gas.price;
-    let gasPrice = await provider.getGasPrice();
-    if (GAS_MARGIN && !GAS_THROTTLE_CHAIN.includes( CHAIN.id))
-			gasPrice *= (100 + GAS_MARGIN) / 100;
-    if (gasPrice > gas)
-			gas = Number( gasPrice.toString()).toFixed();
+			let gasPrice = await provider.getGasPrice();
+			if (GAS_MARGIN && !GAS_THROTTLE_CHAIN.includes( CHAIN.id))
+				gasPrice *= (100 + GAS_MARGIN) / 100;
+			if (gasPrice > gas)
+				gas = Number( gasPrice.toString()).toFixed();
+		}
     return gas;
   } catch (error) {
     Sentry.captureException( error);
   } //try
 
+	//AT: based on chains JSON, this block is obsolete (no 'info' property)
   try {
     //The standard method didn't work. So let's see if the chain supports 
 		//	another method...
@@ -79,12 +83,12 @@ const getGasPrice = async provider => {
       }
     } //if (CHAIN.gas.info)
     console.log( `=> Gas Info API not recognized`);
-    return gas;
   } catch (error) {
     Sentry.captureException( error);
     console.log( '=> Could not get Gas price from Block Explorer');
-    return gas;
   } //try
+
+	return gas;
 }; //const getGasPrice = async
 
 
@@ -353,7 +357,8 @@ const harvest = async (strat,
 	//	not excessively so
   const tryTX = async (stratContract, 
 												max = 2) => {
-    if (nonce) options.nonce = nonce;
+    if (nonce)
+			options.nonce = nonce;
     let tries = 0;
     while (tries++ < max) {
       let tx;
@@ -401,7 +406,7 @@ const harvest = async (strat,
 											message: `${strat.id || strat.name
 																}: harvested on Aurora after try ${tries
 																} - with tx: ${tx.transactionHash}`,
-											data: tx};
+											data: 'excised to save space'};
             } //if (tx.status === 1)
           } catch (error) {
             console.log( `${strat.id || strat.name}: ${error}`);
@@ -432,7 +437,7 @@ const harvest = async (strat,
 										status: 'success',
 										message: `${strat.id || strat.name}: harvested after try ${
 															tries} with tx: ${tx.hash}`,
-										data: receipt};
+										data: 'excised to save space'};
               } catch (error) {
                 for (const key of Object.keys( KNOWN_RPC_ERRORS)) {
                   if (error.message.includes( key)) {
@@ -487,7 +492,7 @@ const harvest = async (strat,
 										status: 'success',
 										message: `${strat.id || strat.name}: harvested after try ${
 															tries} with tx: ${tx.transactionHash}`,
-										data: tx};
+										data: 'excised to save space'};
             } //if (tx.status === 1)
           } //if (TRICKY_CHAINS.includes( CHAIN.id))
         } //if (CHAIN.id === 'aurora')
@@ -559,15 +564,13 @@ const harvest = async (strat,
 																												IStrategy, harvesterPK);
     let tx = await tryTX( stratContract);
 		if (!tx)
-			tx = {contract: strat.strategy || strat.address,
-							status: 'failed',
-							message: 'no response to harvest request received'};
+			tx = {contract: strat.strategy || strat.address, status: 'failed',
+						message: 'no response to harvest request received'};
     return tx;
   } catch (error) {
-    Sentry.captureException(error);
-    console.log(error.message);
-    return {contract: strat.strategy || strat.address,
-						status: 'failed',
+    Sentry.captureException( error);
+    console.log( error.message);
+    return {contract: strat.strategy || strat.address, status: 'failed',
 						message: error.message};
   } //try
 }; //const harvest = async (
