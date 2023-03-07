@@ -37,22 +37,27 @@ const KNOWN_RPC_ERRORS = {
 };
 
 const getGasPrice = async provider => {
-  let gas = 0;
+  let gas = CHAIN.gas.priceOverride;
+
   //TODO: Rationale of this stanza needs precise explanation. Seems that the
   //	chain-specific gas price set in the environment or the default in the
   //	chain-data file is a _minimum_ gas price we'll harvest at, a price
   //	possibly a bit above the chain's standard minimum price (e.g. the Polygon
   //	default at 40 GWEI instead of chain's floor of 30 GWEI).
   try {
-    if (CHAIN.gas.price) gas = CHAIN.gas.price;
-    let gasPrice = await provider.getGasPrice();
-    if (GAS_MARGIN && !GAS_THROTTLE_CHAIN.includes(CHAIN.id)) gasPrice *= (100 + GAS_MARGIN) / 100;
-    if (gasPrice > gas) gas = Number(gasPrice.toString()).toFixed();
+    if (!gas) {
+      gas = CHAIN.gas.price;
+      let gasPrice = await provider.getGasPrice();
+      if (GAS_MARGIN && !GAS_THROTTLE_CHAIN.includes(CHAIN.id))
+        gasPrice *= (100 + GAS_MARGIN) / 100;
+      if (gasPrice > gas) gas = Number(gasPrice.toString()).toFixed();
+    }
     return gas;
   } catch (error) {
     Sentry.captureException(error);
   } //try
 
+  //AT: based on chains JSON, this block is obsolete (no 'info' property)
   try {
     //The standard method didn't work. So let's see if the chain supports
     //	another method...
@@ -75,12 +80,12 @@ const getGasPrice = async provider => {
       }
     } //if (CHAIN.gas.info)
     console.log(`=> Gas Info API not recognized`);
-    return gas;
   } catch (error) {
     Sentry.captureException(error);
     console.log('=> Could not get Gas price from Block Explorer');
-    return gas;
   } //try
+
+  return gas;
 }; //const getGasPrice = async
 
 /**
@@ -396,7 +401,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 message: `${
                   strat.id || strat.name
                 }: harvested on Aurora after try ${tries} - with tx: ${tx.transactionHash}`,
-                data: tx,
+                data: 'excised to save space',
               };
             } //if (tx.status === 1)
           } catch (error) {
@@ -431,7 +436,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                   message: `${strat.id || strat.name}: harvested after try ${tries} with tx: ${
                     tx.hash
                   }`,
-                  data: receipt,
+                  data: 'excised to save space',
                 };
               } catch (error) {
                 for (const key of Object.keys(KNOWN_RPC_ERRORS)) {
@@ -498,7 +503,7 @@ const harvest = async (strat, harvesterPK, provider, options, nonce = null) => {
                 message: `${strat.id || strat.name}: harvested after try ${tries} with tx: ${
                   tx.transactionHash
                 }`,
-                data: tx,
+                data: 'excised to save space',
               };
             } //if (tx.status === 1)
           } //if (TRICKY_CHAINS.includes( CHAIN.id))

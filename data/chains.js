@@ -47,6 +47,7 @@ const chains = {
     gas: {
       limit: Number(process.env.BSC_GAS_LIMIT) || 2.33e6,
       price: Number(process.env.BSC_GAS_PRICE) || 5e9,
+      priceOverride: Number(process.env.BSC_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.BSC_GAS_PRICE_CAP),
     },
   },
@@ -72,6 +73,7 @@ const chains = {
     gas: {
       limit: Number(process.env.HECO_GAS_LIMIT) || 30e6,
       price: Number(process.env.HECO_GAS_PRICE) || 3e9,
+      priceOverride: Number(process.env.HECO_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.HECO_GAS_PRICE_CAP),
     },
   },
@@ -100,6 +102,7 @@ const chains = {
     gas: {
       limit: Number(process.env.AVAX_GAS_LIMIT) || 2.33e6,
       price: Number(process.env.AVAX_GAS_PRICE) || 35e9,
+      priceOverride: Number(process.env.AVAX_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.AVAX_GAS_PRICE_CAP),
     },
   },
@@ -125,6 +128,7 @@ const chains = {
     gas: {
       limit: Number(process.env.POLYGON_GAS_LIMIT) || 2e6,
       price: Number(process.env.POLYGON_GAS_PRICE) || 40e9,
+      priceOverride: Number(process.env.POLYGON_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.POLYGON_GAS_PRICE_CAP),
     },
   },
@@ -153,6 +157,7 @@ const chains = {
     gas: {
       limit: Number(process.env.FANTOM_GAS_LIMIT) || 9.5e6,
       price: Number(process.env.FANTOM_GAS_PRICE) || 1e9,
+      priceOverride: Number(process.env.FANTOM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.FANTOM_GAS_PRICE_CAP),
     },
   },
@@ -178,6 +183,7 @@ const chains = {
     gas: {
       limit: Number(process.env.ONE_GAS_LIMIT) || 1e6,
       price: Number(process.env.ONE_GAS_PRICE) || null,
+      priceOverride: Number(process.env.ONE_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.ONE_GAS_PRICE_CAP),
     },
   },
@@ -203,6 +209,7 @@ const chains = {
     gas: {
       limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 2.33e6,
       price: Number(process.env.ARBITRUM_GAS_PRICE) || 1e8,
+      priceOverride: Number(process.env.ARBITRUM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.ARBITRUM_GAS_PRICE_CAP),
     },
   },
@@ -228,6 +235,7 @@ const chains = {
     gas: {
       limit: Number(process.env.CELO_GAS_LIMIT) || 5e6,
       price: Number(process.env.CELO_GAS_PRICE) || 5e8,
+      priceOverride: Number(process.env.CELO_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.CELO_GAS_PRICE_CAP),
     },
   },
@@ -253,6 +261,7 @@ const chains = {
     gas: {
       limit: Number(process.env.MOONRIVER_GAS_LIMIT) || 5e6,
       price: Number(process.env.MOONRIVER_GAS_PRICE) || 1e9,
+      priceOverride: Number(process.env.MOONRIVER_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.MOONRIVER_GAS_PRICE_CAP),
     },
   },
@@ -278,6 +287,7 @@ const chains = {
     gas: {
       limit: Number(process.env.CRONOS_GAS_LIMIT) || 2e6,
       price: Number(process.env.CRONOS_GAS_PRICE) || 5e12,
+      priceOverride: Number(process.env.CRONOS_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.CRONOS_GAS_PRICE_CAP),
     },
   },
@@ -303,6 +313,7 @@ const chains = {
     gas: {
       limit: Number(process.env.FUSE_GAS_LIMIT) || 10e6,
       price: Number(process.env.FUSE_GAS_PRICE) || 1e9,
+      priceOverride: Number(process.env.FUSE_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.FUSE_GAS_PRICE_CAP),
     },
   },
@@ -328,6 +339,7 @@ const chains = {
     gas: {
       limit: Number(process.env.METIS_GAS_LIMIT) || 10e6,
       price: Number(process.env.METIS_GAS_PRICE) || 30e9,
+      priceOverride: Number(process.env.METIS_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.METIS_GAS_PRICE_CAP),
     },
   },
@@ -355,6 +367,7 @@ const chains = {
     gas: {
       limit: Number(process.env.AURORA_GAS_LIMIT) || 0,
       price: Number(process.env.AURORA_GAS_PRICE) || 0,
+      priceOverride: Number(process.env.AURORA_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.AURORA_GAS_PRICE_CAP),
     },
   },
@@ -380,6 +393,7 @@ const chains = {
     gas: {
       limit: Number(process.env.MOONBEAM_GAS_LIMIT) || 2.33e6,
       price: Number(process.env.MOONBEAM_GAS_PRICE) || 100e9,
+      priceOverride: Number(process.env.MOONBEAM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.MOONBEAM_GAS_PRICE_CAP),
     },
   },
@@ -405,6 +419,7 @@ const chains = {
     gas: {
       limit: Number(process.env.OASIS_GAS_LIMIT) || 10e6,
       price: Number(process.env.OASIS_GAS_PRICE) || 100e9,
+      priceOverride: Number(process.env.OASIS_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.OASIS_GAS_PRICE_CAP),
     },
   },
@@ -435,6 +450,7 @@ const chains = {
       //	via https://www.npmjs.com/package/@eth-optimism/contracts/v/0.5.0
       limit: Number(process.env.OPTIMISM_GAS_LIMIT) || 9e6,
       price: Number(process.env.OPTIMISM_GAS_PRICE) || 1e6,
+      priceOverride: Number(process.env.OPTIMISM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.OPTIMISM_GAS_PRICE_CAP),
     },
   },
@@ -461,6 +477,7 @@ const chains = {
     gas: {
       limit: Number(process.env.CANTO_GAS_LIMIT) || 2.33e6,
       price: Number(process.env.CANTO_GAS_PRICE) || 1001e9, //observed minimum
+      priceOverride: Number(process.env.CANTO_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.CANTO_GAS_PRICE_CAP),
     },
   },
@@ -487,6 +504,7 @@ const chains = {
     gas: {
       limit: Number(process.env.KAVA_GAS_LIMIT) || 2.33e6,
       price: Number(process.env.KAVA_GAS_PRICE) || 1e9, //observed minimum
+      priceOverride: Number(process.env.KAVA_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.KAVA_GAS_PRICE_CAP),
     },
   },
