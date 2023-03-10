@@ -815,7 +815,7 @@ const main = async () => {
           } //try
         } //if (strats.length)
       } catch (error) {
-        Sentry.captureException(error);
+        Sentry.captureException( error);
         console.error( error);
 				const title = `Harvest run failed for ${CHAIN.id.toUpperCase()}`;
 				if (process.env.REDISCLOUD_URL)	//avoid Discord spam when testing

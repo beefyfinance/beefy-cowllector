@@ -466,12 +466,12 @@ const chains = {
 												parseInt( process.env.CANTO_HARVEST_HOUR_INTERVAL) : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.CANTO_WNATIVE_MIN_TO_UNWRAP || '0.5',
-    rpc: process.env.CANTO_RPC || 'https://canto.gravitychain.io',
+    rpc: process.env.CANTO_RPC || 'https://mainnode.plexnode.org:8545',
     multicall: canto.platforms.beefyfinance.multicall,
     queryLimit: 1000,
     queryInterval: 100,
     blockTime: 6,						//observed
-    blockExplorer: 'https://evm.explorer.canto.io/',
+    blockExplorer: 'https://tuber.build/',
     gas:	{
       limit: Number( process.env.CANTO_GAS_LIMIT) || 2.33e6,
       price: Number( process.env.CANTO_GAS_PRICE) || 1001e9, //observed minimum
