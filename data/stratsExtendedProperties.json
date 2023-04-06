@@ -1,5 +1,13 @@
 [
   {
+    "id": "fantom-bifi-maxi",
+    "suppressCallRwrdCheck": true
+  },
+  {
+    "id": "stellaswap-stella-wglmr",
+    "suppressCallRwrdCheck": true
+  },
+  {
     "id": "canto-note-usdt",
     "suppressCallRwrdCheck": true
   },
@@ -157,7 +165,7 @@
   },
   {
     "id": "ape-eth-matic",
-		"interval": 4,
+    "interval": 4,
     "suppressCallRwrdCheck": true
   },
   {
