@@ -5,11 +5,9 @@ const {
   aurora,
   arbitrum,
   bsc,
-  heco,
   avax,
   polygon,
   fantom,
-  one,
   celo,
   moonriver,
   cronos,
@@ -20,6 +18,7 @@ const {
   optimism,
   kava,
   canto,
+  zksync,
 } = addressBook;
 
 const chains = {
@@ -49,32 +48,6 @@ const chains = {
       price: Number(process.env.BSC_GAS_PRICE) || 5e9,
       priceOverride: Number(process.env.BSC_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.BSC_GAS_PRICE_CAP),
-    },
-  },
-  128: {
-    id: 'heco',
-    chainId: 128,
-    wnative: heco.tokens.WNATIVE.address,
-    rewardPool: heco.platforms.beefyfinance.rewardPool,
-    treasury: heco.platforms.beefyfinance.treasury,
-    beefyFeeBatcher: heco.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 4,
-    harvestHourInterval: process.env.HECO_HARVEST_HOUR_INTERVAL
-      ? parseInt(process.env.HECO_HARVEST_HOUR_INTERVAL)
-      : 4,
-    wnativeUnwrapInterval: 4,
-    wnativeMinToUnwrap: process.env.HECO_WNATIVE_MIN_TO_UNWRAP || '0.1',
-    rpc: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
-    multicall: heco.platforms.beefyfinance.multicall,
-    queryLimit: 2000,
-    queryInterval: 100,
-    blockTime: 3,
-    blockExplorer: 'https://hecoinfo.com',
-    gas: {
-      limit: Number(process.env.HECO_GAS_LIMIT) || 30e6,
-      price: Number(process.env.HECO_GAS_PRICE) || 3e9,
-      priceOverride: Number(process.env.HECO_GAS_PRICE_OVERRIDE),
-      priceCap: Number(process.env.HECO_GAS_PRICE_CAP),
     },
   },
   43114: {
@@ -159,32 +132,6 @@ const chains = {
       price: Number(process.env.FANTOM_GAS_PRICE) || 1e9,
       priceOverride: Number(process.env.FANTOM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.FANTOM_GAS_PRICE_CAP),
-    },
-  },
-  1666600000: {
-    id: 'one',
-    chainId: 1666600000,
-    wnative: one.tokens.WNATIVE.address,
-    rewardPool: one.platforms.beefyfinance.rewardPool,
-    treasury: one.platforms.beefyfinance.treasury,
-    beefyFeeBatcher: one.platforms.beefyfinance.beefyFeeRecipient,
-    beefyFeeHarvestInterval: 1,
-    harvestHourInterval: process.env.ONE_HARVEST_HOUR_INTERVAL
-      ? parseInt(process.env.ONE_HARVEST_HOUR_INTERVAL)
-      : 4,
-    wnativeUnwrapInterval: 4,
-    wnativeMinToUnwrap: process.env.ONE_WNATIVE_MIN_TO_UNWRAP || '0.1',
-    rpc: process.env.ONE_RPC || 'https://api.s0.t.hmny.io/',
-    multicall: one.platforms.beefyfinance.multicall,
-    queryLimit: 500,
-    queryInterval: 100,
-    blockTime: 3,
-    blockExplorer: 'https://explorer.harmony.one/',
-    gas: {
-      limit: Number(process.env.ONE_GAS_LIMIT) || 1e6,
-      price: Number(process.env.ONE_GAS_PRICE) || null,
-      priceOverride: Number(process.env.ONE_GAS_PRICE_OVERRIDE),
-      priceCap: Number(process.env.ONE_GAS_PRICE_CAP),
     },
   },
   42161: {
@@ -311,7 +258,7 @@ const chains = {
     blockTime: 5,
     blockExplorer: 'https://explorer.fuse.io/',
     gas: {
-      limit: Number(process.env.FUSE_GAS_LIMIT) || 10e6,
+      limit: Number(process.env.FUSE_GAS_LIMIT) || 7e6,
       price: Number(process.env.FUSE_GAS_PRICE) || 1e9,
       priceOverride: Number(process.env.FUSE_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.FUSE_GAS_PRICE_CAP),
@@ -337,7 +284,7 @@ const chains = {
     blockTime: 1,
     blockExplorer: 'https://andromeda-explorer.metis.io/',
     gas: {
-      limit: Number(process.env.METIS_GAS_LIMIT) || 10e6,
+      limit: Number(process.env.METIS_GAS_LIMIT) || 7e6,
       price: Number(process.env.METIS_GAS_PRICE) || 30e9,
       priceOverride: Number(process.env.METIS_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.METIS_GAS_PRICE_CAP),
@@ -417,7 +364,7 @@ const chains = {
     blockTime: 6,
     blockExplorer: 'https://explorer.emerald.oasis.dev/',
     gas: {
-      limit: Number(process.env.OASIS_GAS_LIMIT) || 10e6,
+      limit: Number(process.env.OASIS_GAS_LIMIT) || 7e6,
       price: Number(process.env.OASIS_GAS_PRICE) || 100e9,
       priceOverride: Number(process.env.OASIS_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.OASIS_GAS_PRICE_CAP),
@@ -449,7 +396,7 @@ const chains = {
       //AT: To be clear, "price" is the minimum price. I got the limit default
       //	via https://www.npmjs.com/package/@eth-optimism/contracts/v/0.5.0
       limit: Number(process.env.OPTIMISM_GAS_LIMIT) || 9e6,
-      price: Number(process.env.OPTIMISM_GAS_PRICE) || 1e6,
+      price: Number(process.env.OPTIMISM_GAS_PRICE) || 0.001e9,
       priceOverride: Number(process.env.OPTIMISM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.OPTIMISM_GAS_PRICE_CAP),
     },
@@ -506,6 +453,33 @@ const chains = {
       price: Number(process.env.KAVA_GAS_PRICE) || 1e9, //observed minimum
       priceOverride: Number(process.env.KAVA_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.KAVA_GAS_PRICE_CAP),
+    },
+  },
+  324: {
+    id: 'zksync',
+    chainId: 324,
+    wnative: zksync.tokens.WNATIVE.address,
+    rewardPool: zksync.platforms.beefyfinance.rewardPool,
+    treasury: zksync.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: zksync.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    hasOnChainHarvesting: false,
+    harvestHourInterval: process.env.ZKSYNC_HARVEST_HOUR_INTERVAL
+      ? parseInt(process.env.ZKSYNC_HARVEST_HOUR_INTERVAL)
+      : 4,
+    wnativeUnwrapInterval: 4,
+    wnativeMinToUnwrap: process.env.ZKSYNC_WNATIVE_MIN_TO_UNWRAP || '0.005',
+    rpc: process.env.ZKSYNC_RPC || 'https://mainnet.era.zksync.io',
+    multicall: zksync.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 3, //observed
+    blockExplorer: 'https://explorer.zksync.io',
+    gas: {
+      limit: Number(process.env.ZKSYNC_GAS_LIMIT) || 2.33e6, //guess
+      price: Number(process.env.ZKSYNC_GAS_PRICE) || 0.25e9, //observed minimum
+      priceOverride: Number(process.env.ZKSYNC_GAS_PRICE_OVERRIDE),
+      priceCap: Number(process.env.ZKSYNC_GAS_PRICE_CAP),
     },
   },
 };
