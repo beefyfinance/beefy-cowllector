@@ -154,7 +154,7 @@ const chains = {
     blockTime: 2.8,
     blockExplorer: 'https://arbiscan.com',
     gas: {
-      limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 2.33e6,
+      limit: Number(process.env.ARBITRUM_GAS_LIMIT) || 3e6,
       price: Number(process.env.ARBITRUM_GAS_PRICE) || 1e8,
       priceOverride: Number(process.env.ARBITRUM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.ARBITRUM_GAS_PRICE_CAP),
