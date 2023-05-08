@@ -143,9 +143,8 @@ const chains = {
     treasury: arbitrum.platforms.beefyfinance.treasury,
     beefyFeeBatcher: arbitrum.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 8,
-    harvestHourInterval: process.env.ARBITRUM_HARVEST_HOUR_INTERVAL
-      ? parseInt(process.env.ARBITRUM_HARVEST_HOUR_INTERVAL)
-      : 4,
+    harvestHourInterval: process.env.ARBITRUM_HARVEST_HOUR_INTERVAL ? 
+											parseInt( process.env.ARBITRUM_HARVEST_HOUR_INTERVAL) : 4,
     wnativeUnwrapInterval: 8,
     wnativeMinToUnwrap: process.env.ARBITRUM_WNATIVE_MIN_TO_UNWRAP || '0.005',
     rpc: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
@@ -155,7 +154,7 @@ const chains = {
     blockTime: 2.8,
     blockExplorer: 'https://arbiscan.com',
     gas: {
-      limit: Number( process.env.ARBITRUM_GAS_LIMIT) || 2.33e6,
+      limit: Number( process.env.ARBITRUM_GAS_LIMIT) || 3e6,
       price: Number( process.env.ARBITRUM_GAS_PRICE) || 1e8,
 			priceOverride: Number( process.env.ARBITRUM_GAS_PRICE_OVERRIDE),
       priceCap: Number( process.env.ARBITRUM_GAS_PRICE_CAP)
@@ -169,9 +168,8 @@ const chains = {
     treasury: celo.platforms.beefyfinance.treasury,
     beefyFeeBatcher: celo.platforms.beefyfinance.beefyFeeRecipient,
     beefyFeeHarvestInterval: 1,
-    harvestHourInterval: process.env.CELO_HARVEST_HOUR_INTERVAL
-      ? parseInt(process.env.CELO_HARVEST_HOUR_INTERVAL)
-      : 4,
+    harvestHourInterval: process.env.CELO_HARVEST_HOUR_INTERVAL ? 
+													parseInt( process.env.CELO_HARVEST_HOUR_INTERVAL) : 4,
     wnativeUnwrapInterval: 4,
     wnativeMinToUnwrap: process.env.CELO_WNATIVE_MIN_TO_UNWRAP || '0.1',
     rpc: process.env.CELO_RPC || 'https://forno.celo.org',
