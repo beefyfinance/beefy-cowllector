@@ -1,8 +1,37 @@
 [
   {
+    "id": "balancer-magic-usdc",
+    "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "kyber-optimism-usdc-mai",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "kyber-arbitrum-usdc-mai",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "gns-arb-gns",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "thena-wusdr-usdc",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "beets-shanghai-shakedown",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "quick-newquick",
+      "suppressCallRwrdCheck": true
+  },
+  {
     "id": "sushi-arb-weth-gohm",
     "suppressCallRwrdCheck": true
-  },{
+  },
+  {
     "id": "balancer-sd-maticx",
     "suppressCallRwrdCheck": true
   },
