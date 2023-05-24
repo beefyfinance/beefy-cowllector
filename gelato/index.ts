@@ -30,7 +30,11 @@ const run = async (): Promise<void> => {
   }
   logger.info('Synchronizing Gelato tasks');
 
-  const pk = process.env.GELATO_ADMIN_PK!;
+  const privateKey = process.env.GELATO_ADMIN_PK!;
+  if (!privateKey) {
+    logger.error("Wallet can't be constructed.");
+    return;
+  }
 
   await Promise.allSettled(
     Object.values(<Readonly<IChains>>require('../data/chains.js')).map(
@@ -46,7 +50,7 @@ const run = async (): Promise<void> => {
         }
 
         const gelatoAdminWallet: NonceManage = new NonceManage(
-          new Wallet(pk, new ethers.providers.JsonRpcProvider(chain.rpc))
+          new Wallet(privateKey, new ethers.providers.JsonRpcProvider(chain.rpc))
         );
 
         logger.info(`>>> on-chain harvester sync: ${chain.id.toUpperCase()}`);
