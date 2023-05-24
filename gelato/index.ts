@@ -52,7 +52,7 @@ const run = async () : Promise< void> => {
     }
 
     const gelatoAdminWallet: NonceManage = new NonceManage( new Wallet( 
-																					private_key, 
+																					privateKey, 
                                           new ethers.providers.JsonRpcProvider( 
                                           chain.rpc)));
 
