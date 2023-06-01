@@ -476,7 +476,7 @@ const chains = {
     blockTime: 3, //observed
     blockExplorer: 'https://explorer.zksync.io',
     gas: {
-      limit: Number(process.env.ZKSYNC_GAS_LIMIT) || 2.33e6, //guess
+      limit: Number(process.env.ZKSYNC_GAS_LIMIT) || 15e6, //observed good level
       price: Number(process.env.ZKSYNC_GAS_PRICE) || 0.25e9, //observed minimum
       priceOverride: Number(process.env.ZKSYNC_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.ZKSYNC_GAS_PRICE_CAP),
