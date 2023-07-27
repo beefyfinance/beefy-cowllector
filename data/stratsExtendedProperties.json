@@ -1,5 +1,33 @@
 [
   {
+      "id": "quick-gamma-zk-weth-matic-narrow",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "quick-gamma-zk-usdt-usdc",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "quick-gamma-zk-weth-wbtc-narrow",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "quick-gamma-zk-weth-usdc-narrow",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "balancer-zkevm-reth-eth",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "balancer-zkevm-wsteth-reth",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "balancer-zkevm-wsteth-eth",
+      "suppressCallRwrdCheck": true
+  },
+  {
       "id": "balancer-tbtc-wbtc",
       "suppressCallRwrdCheck": true
   },
