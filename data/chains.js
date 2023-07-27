@@ -19,6 +19,7 @@ const {
   kava,
   canto,
   zksync,
+  zkevm,
 } = addressBook;
 
 const chains = {
@@ -480,6 +481,33 @@ const chains = {
       price: Number(process.env.ZKSYNC_GAS_PRICE) || 0.25e9, //observed minimum
       priceOverride: Number(process.env.ZKSYNC_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.ZKSYNC_GAS_PRICE_CAP),
+    },
+  },
+  1101: {
+    id: 'zkevm',
+    chainId: 1101,
+    wnative: zkevm.tokens.WNATIVE.address,
+    rewardPool: zkevm.platforms.beefyfinance.rewardPool,
+    treasury: zkevm.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: zkevm.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    hasOnChainHarvesting: false,
+    harvestHourInterval: process.env.ZKEVM_HARVEST_HOUR_INTERVAL
+      ? parseInt(process.env.ZKEVM_HARVEST_HOUR_INTERVAL)
+      : 4,
+    wnativeUnwrapInterval: 4,
+    wnativeMinToUnwrap: process.env.ZKEVM_WNATIVE_MIN_TO_UNWRAP || '0.005',
+    rpc: process.env.ZKEVM_RPC || 'https://zkevm-rpc.com',
+    multicall: zkevm.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 2, //observed
+    blockExplorer: 'https://zkevm.polygonscan.com/',
+    gas: {
+      limit: Number(process.env.ZKEVM_GAS_LIMIT) || 20e6, //observed good level
+      price: Number(process.env.ZKEVM_GAS_PRICE) || 17e8, //observed minimum
+      priceOverride: Number(process.env.ZKEVM_GAS_PRICE_OVERRIDE),
+      priceCap: Number(process.env.ZKEVM_GAS_PRICE_CAP),
     },
   },
 };
