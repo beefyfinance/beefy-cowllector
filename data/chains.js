@@ -20,6 +20,7 @@ const {
   canto,
   zksync,
   zkevm,
+  base,
 } = addressBook;
 
 const chains = {
@@ -504,10 +505,37 @@ const chains = {
     blockTime: 2, //observed
     blockExplorer: 'https://zkevm.polygonscan.com/',
     gas: {
-      limit: Number(process.env.ZKEVM_GAS_LIMIT) || 20e6, //observed good level
+      limit: Number(process.env.ZKEVM_GAS_LIMIT) || 4e6, //observed good level
       price: Number(process.env.ZKEVM_GAS_PRICE) || 17e8, //observed minimum
       priceOverride: Number(process.env.ZKEVM_GAS_PRICE_OVERRIDE),
       priceCap: Number(process.env.ZKEVM_GAS_PRICE_CAP),
+    },
+  },
+  8453: {
+    id: 'base',
+    chainId: 8453,
+    wnative: base.tokens.WNATIVE.address,
+    rewardPool: base.platforms.beefyfinance.rewardPool,
+    treasury: base.platforms.beefyfinance.treasury,
+    beefyFeeBatcher: base.platforms.beefyfinance.beefyFeeRecipient,
+    beefyFeeHarvestInterval: 12,
+    hasOnChainHarvesting: false,
+    harvestHourInterval: process.env.BASE_HARVEST_HOUR_INTERVAL
+      ? parseInt(process.env.BASE_HARVEST_HOUR_INTERVAL)
+      : 4,
+    wnativeUnwrapInterval: 4,
+    wnativeMinToUnwrap: process.env.BASE_WNATIVE_MIN_TO_UNWRAP || '0.005',
+    rpc: process.env.BASE_RPC || 'https://mainnet.base.org',
+    multicall: base.platforms.beefyfinance.multicall,
+    queryLimit: 1000,
+    queryInterval: 100,
+    blockTime: 2, //observed
+    blockExplorer: 'https://basescan.org/',
+    gas: {
+      limit: Number(process.env.BASE_GAS_LIMIT) || 4e6, //observed good level
+      price: Number(process.env.BASE_GAS_PRICE) || 16e8, //observed minimum
+      priceOverride: Number(process.env.BASE_GAS_PRICE_OVERRIDE),
+      priceCap: Number(process.env.BASE_GAS_PRICE_CAP),
     },
   },
 };
