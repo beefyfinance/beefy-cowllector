@@ -48,14 +48,19 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                         args: [vault.strategy_address],
                         account: walletAccount,
                     }),
-                ]).then(([{ result, request }, gasAmountEstimation]) => ({
-                    estimatedCallRewardsWei: result[0],
-                    success: result[1],
-                    request,
-                    rawGasAmountEstimation: gasAmountEstimation,
-                    transactionCostEstimationWei: gasAmountEstimation * gasPrice,
-                    estimatedGainWei: result[0] - gasAmountEstimation * gasPrice,
-                })),
+                ]).then(([{ result, request }, rawGasAmountEstimation]) => {
+                    const estimatedCallRewardsWei = result[0];
+                    const harvestWillSucceed = result[1];
+                    const transactionCostEstimationWei = rawGasAmountEstimation * gasPrice;
+                    const estimatedGainWei = estimatedCallRewardsWei - transactionCostEstimationWei;
+                    return {
+                        estimatedCallRewardsWei,
+                        harvestWillSucceed,
+                        request,
+                        transactionCostEstimationWei,
+                        estimatedGainWei,
+                    };
+                }),
             }))
         )
     );
