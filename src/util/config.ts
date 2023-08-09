@@ -80,7 +80,7 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         account: defaultAccount,
     },
     base: {
-        url: process.env.BASE_RPC_URL || 'https://api.s0.b.hmny.io',
+        url: process.env.BASE_RPC_URL || 'https://mainnet.base.org',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,

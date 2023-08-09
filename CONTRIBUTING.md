@@ -21,3 +21,15 @@ anvil -f https://rpc.ankr.com/eth --accounts 3 --balance 300 --no-cors
 yarn run ncu --upgrade blockchain-addressbook
 yarn
 ```
+
+### Run the tests
+
+```bash
+yarn test:unit
+```
+
+### prettify tho output log
+
+```bash
+cat test.log | yarn pino-pretty
+```

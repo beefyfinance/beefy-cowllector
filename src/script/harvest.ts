@@ -18,6 +18,7 @@ const logger = rootLogger.child({ module: 'harvest-main' });
 type CmdOptions = {
     chain: Chain[];
     contractAddress: string | null;
+    dryRun: boolean;
     now: Date;
 };
 
@@ -43,11 +44,18 @@ async function main() {
             default: 'all',
             describe: 'only harest these chains. eol chains will be ignored',
         },
-        contractAddress: {
+        'contract-address': {
             type: 'string',
             demand: false,
             alias: 'a',
             describe: 'only harvest for this contract address',
+        },
+        'dry-run': {
+            type: 'boolean',
+            demand: false,
+            default: false,
+            alias: 'd',
+            describe: 'do not actually harvest, just simulate',
         },
         now: {
             type: 'string',
@@ -59,7 +67,8 @@ async function main() {
 
     const options: CmdOptions = {
         chain: argv.chain.includes('all') ? allChainIds : (argv.chain as Chain[]),
-        contractAddress: argv.contractAddress || null,
+        contractAddress: argv['contract-address'] || null,
+        dryRun: argv['dry-run'],
         now: argv.now ? new Date(argv.now) : new Date(Date.now()),
     };
     logger.trace({ msg: 'running with options', data: options });
@@ -216,6 +225,11 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
         });
     logger.info({ msg: 'Strategies to be harvested', data: { chain, count: stratsToBeHarvested.length } });
     logger.debug({ msg: 'Strategies to be harvested', data: { chain, stratsToBeHarvested } });
+
+    if (cmd.dryRun) {
+        logger.info({ msg: 'Stopping harvest due to dry run', data: { chain, stratsToBeHarvested } });
+        return;
+    }
 
     // now do the havest dance
     logger.debug({ msg: 'Harvesting strats', data: { chain, count: stratsToBeHarvested.length } });
