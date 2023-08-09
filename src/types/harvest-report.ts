@@ -5,10 +5,13 @@ import { Hex } from 'viem';
 import { Chain } from './chain';
 
 type Timed<T> = Prettify<T & { startedAt: Date; endedAt: Date; durationSec: number }>;
+type MightFail<T> = Prettify<({ success: true } & T) | { success: false; error: string }>;
+type Async<T> = Prettify<Timed<MightFail<T>>>;
 
 export type HarvestReport = Timed<{
     chain: Chain;
-    items: HarvestReportItem[];
+    fetchedVaults: Async<{ vaultFetched: number }>;
+    details: HarvestReportItem[];
     collectorBalance: {
         /** The balance of the collector before the harvest */
         beforeWei: bigint;
@@ -24,48 +27,47 @@ export type HarvestReport = Timed<{
     };
 }>;
 
+type HarvestReportSimulation = Async<{
+    harvestWillSucceed: boolean;
+    gas: GasEstimation;
+}>;
+
+type HarvestReportFetchStrategyData = Async<{
+    lastHarvest: Date;
+    paused: boolean;
+}>;
+
+type HarvestReportDecision = {
+    shouldHarvest: boolean;
+    hoursSinceLastHarvest: number;
+    wouldBeProfitable: boolean;
+    notHarvestingReason: 'strategy paused' | 'call rewards too low' | 'not profitable and harvested too recently';
+};
+
+type HarvestReportHarvestTransaction = Async<{
+    transactionHash: Hex;
+}>;
+
+type HarvestReportTransactionReceipt = Async<{
+    blockNumber: number;
+    /** Gas used by this transaction */
+    gasUsed: bigint;
+    /** Pre-London, it is equal to the transaction's gasPrice. Post-London, it is equal to the actual gas price paid for inclusion. */
+    effectiveGasPrice: bigint;
+}>;
+
 export type HarvestReportItem = {
+    // context data
     vault: BeefyVault;
-    simulation: Timed<
-        | {
-              success: true;
-              harvestWillSucceed: boolean;
-              gas: GasEstimation;
-          }
-        | { success: false; error: string }
-    >;
-    strategyData: Timed<
-        | {
-              success: true;
-              lastHarvest: Date;
-              paused: boolean;
-          }
-        | { success: false; error: string }
-    > | null; // not started
-    harvestDecision: {
-        shouldHarvest: boolean;
-        hoursSinceLastHarvest: number;
-        wouldBeProfitable: boolean;
-        notHarvestingReason: 'strategy paused' | 'call rewards too low' | 'not profitable and harvested too recently';
-    } | null; // not started
-    harvest: Timed<
-        | {
-              success: true;
-              transactionHash: Hex;
-          }
-        | { success: false; error: string }
-    > | null; // not started
-    waitingForConfirmations: Timed<
-        | {
-              success: true;
-              blockNumber: number;
-              /** Gas used by this transaction */
-              gasUsed: bigint;
-              /** Pre-London, it is equal to the transaction's gasPrice. Post-London, it is equal to the actual gas price paid for inclusion. */
-              effectiveGasPrice: bigint;
-          }
-        | { success: false }
-    > | null; // not started
+
+    // harvest steps, null: not started
+    simulation: HarvestReportSimulation;
+    strategyData: HarvestReportFetchStrategyData | null;
+    harvestDecision: HarvestReportDecision | null;
+    harvestTransaction: HarvestReportHarvestTransaction | null;
+    waitingForTransactionReceipt: HarvestReportTransactionReceipt | null;
+
+    // summary
     summary: {
         harvested: boolean;
         error: boolean;
