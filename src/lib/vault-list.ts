@@ -4,6 +4,7 @@ import { BeefyVault } from '../types/vault';
 import { BEEFY_API_URL, RPC_CONFIG } from '../util/config';
 import { rootLogger } from '../util/logger';
 import { Hex } from 'viem';
+import { groupBy } from 'lodash';
 
 const logger = rootLogger.child({ module: 'vault-list' });
 
@@ -16,12 +17,15 @@ type ApiBeefyVault = {
     // + some other fields we don't care about
 };
 
-export async function getVaultsToMonitor(): Promise<BeefyVault[]> {
+export async function getVaultsToMonitor(options: {
+    chains: Chain[];
+    contractAddress: Hex | null;
+}): Promise<Record<Chain, BeefyVault[]>> {
     const response = await axios.get<ApiBeefyVault[]>(`${BEEFY_API_URL}/vaults`);
     const rawVaults = response.data;
 
     // map to a simpler format
-    const vaults = rawVaults
+    const allVaults = rawVaults
         .map(vault => ({
             id: vault.id,
             eol: vault.status === 'eol',
@@ -33,7 +37,21 @@ export async function getVaultsToMonitor(): Promise<BeefyVault[]> {
         // remove eol chains
         .filter(vault => RPC_CONFIG[vault.chain].eol === false);
 
-    logger.trace({ msg: 'Got these vaults from beefy api', data: vaults });
-    logger.info({ msg: 'Got vaults from api', data: { vaultLength: vaults.length } });
-    return vaults;
+    logger.trace({ msg: 'Got these vaults from beefy api', data: allVaults });
+    logger.info({ msg: 'Got vaults from api', data: { vaultLength: allVaults.length } });
+
+    // apply command line options
+    const vaults = allVaults
+        .filter(vault => options.chains.includes(vault.chain))
+        .filter(vault => (options.contractAddress ? vault.strategy_address === options.contractAddress : true));
+    logger.info({ msg: 'Filtered vaults', data: { vaultLength: vaults.length } });
+
+    // split by chain
+    const vaultsByChain = groupBy(vaults, 'chain') as Record<Chain, BeefyVault[]>;
+    logger.trace(() => ({
+        msg: 'Vaults by chain',
+        data: vaultsByChain,
+    }));
+
+    return vaultsByChain;
 }

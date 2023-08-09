@@ -18,9 +18,4 @@ export type RpcConfig = {
     account: {
         privateKey: Hex;
     };
-    harvest: {
-        // amount of time to wait between each strat harvest in milliseconds
-        // mostly to avoid rate limiting and nonce issues
-        waitBetweenEachStratMs: number;
-    };
 };

@@ -55,9 +55,6 @@ const defaultAccount: RpcConfig['account'] = {
     // TODO: pull from environment variables
     privateKey: '0x0000000000000000000000000000000000000000000000000000000000000000',
 };
-const defaultHarvest: RpcConfig['harvest'] = {
-    waitBetweenEachStratMs: 3000,
-};
 
 // TODO: use private rpcs
 export const RPC_CONFIG: Record<Chain, RpcConfig> = {
@@ -67,7 +64,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     aurora: {
         url: process.env.AURORA_RPC_URL || 'https://testnet.aurora.dev',
@@ -75,7 +71,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     avax: {
         url: process.env.AVALANCHE_RPC_URL || 'https://api.avax.network/ext/bc/C/rpc',
@@ -83,7 +78,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     base: {
         url: process.env.BASE_RPC_URL || 'https://mainnet.base.org',
@@ -91,7 +85,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     bsc: {
         url: process.env.BSC_RPC_URL || 'https://bsc-dataseed.binance.org/',
@@ -99,7 +92,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     canto: {
         url: process.env.CANTO_RPC_URL || 'https://canto-rpc.finance.vote',
@@ -107,7 +99,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     celo: {
         url: process.env.CELO_RPC_URL || 'https://forno.celo.org',
@@ -115,7 +106,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     cronos: {
         url: process.env.CRONOS_RPC_URL || 'https://cronos-testnet.crypto.org:8545',
@@ -123,7 +113,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     emerald: {
         url: process.env.EMERALD_RPC_URL || 'https://ethereum.rpc.emeraldpay.io',
@@ -131,7 +120,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     ethereum: {
         url: process.env.ETHEREUM_RPC_URL || 'https://mainnet.infura.io/v3/84842078b09946638c03157f83405213',
@@ -139,7 +127,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     fantom: {
         url: process.env.FANTOM_RPC_URL || 'https://rpcapi.fantom.network',
@@ -147,7 +134,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     fuse: {
         url: process.env.FUSE_RPC_URL || 'https://rpc.fuse.io',
@@ -155,7 +141,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     heco: {
         url: process.env.HECO_RPC_URL || 'https://http-mainnet.hecochain.com',
@@ -163,7 +148,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     kava: {
         url: process.env.KAVA_RPC_URL || 'https://rpc.kava.io',
@@ -171,7 +155,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     metis: {
         url: process.env.METIS_RPC_URL || 'https://api.metis.io',
@@ -179,7 +162,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     moonbeam: {
         url: process.env.MOONBEAM_RPC_URL || 'https://rpc.testnet.moonbeam.network',
@@ -187,7 +169,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     moonriver: {
         url: process.env.MOONRIVER_RPC_URL || 'https://rpc.moonriver.moonbeam.network',
@@ -195,7 +176,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     one: {
         url: process.env.ONE_RPC_URL || 'https://api.s0.t.hmny.io',
@@ -203,7 +183,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     optimism: {
         url: process.env.OPTIMISM_RPC_URL || 'https://mainnet.optimism.io',
@@ -211,7 +190,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     polygon: {
         url: process.env.POLYGON_RPC_URL || 'https://rpc-mainnet.maticvigil.com',
@@ -219,7 +197,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     zkevm: {
         url: process.env.ZKEVM_RPC_URL || 'https://zkevm-testnet.iohkdev.io:443',
@@ -227,7 +204,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
     zksync: {
         url: process.env.ZKSYNC_RPC_URL || 'https://api.zksync.io/jsrpc',
@@ -238,6 +214,5 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
             harvestLens: null,
         },
         account: defaultAccount,
-        harvest: defaultHarvest,
     },
 };
