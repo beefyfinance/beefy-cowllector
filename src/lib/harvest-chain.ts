@@ -27,6 +27,9 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
         address: rpcConfig.contracts.harvestLens,
     };
 
+    const rawGasPrice = await publicClient.getGasPrice();
+    const gasPrice = bigintPercent(rawGasPrice, 1.0 + HARVEST_OVERESTIMATE_GAS_BY_PERCENT);
+
     // run the simulation
     logger.debug({ msg: 'Running simulation', data: { chain, vaults: vaults.length } });
     const { fulfilled: successfulSimulations, rejected: failedSimulations } = splitPromiseResultsByStatus(
@@ -45,12 +48,13 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                         args: [vault.strategy_address],
                         account: walletAccount,
                     }),
-                ]).then(([{ result, request }, gasCostEstimation]) => ({
+                ]).then(([{ result, request }, gasAmountEstimation]) => ({
                     estimatedCallRewardsWei: result[0],
                     success: result[1],
                     request,
-                    rawGasCostEstimation: gasCostEstimation,
-                    gasCostEstimation: bigintPercent(gasCostEstimation, 1.0 + HARVEST_OVERESTIMATE_GAS_BY_PERCENT),
+                    rawGasAmountEstimation: gasAmountEstimation,
+                    transactionCostEstimationWei: gasAmountEstimation * gasPrice,
+                    estimatedGainWei: result[0] - gasAmountEstimation * gasPrice,
                 })),
             }))
         )
@@ -124,18 +128,17 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
         // check for last harvest and profitability
         .filter(stratData => {
             const hoursSinceLastHarvest = (now.getTime() - stratData.lastHarvest.getTime()) / 1000 / 60 / 60;
-            const wouldBeProfitable =
-                stratData.simulation.estimatedCallRewardsWei > stratData.simulation.gasCostEstimation;
+            const wouldBeProfitable = stratData.simulation.estimatedGainWei > 0n;
             const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
             if (!shouldHarvest) {
                 logger.trace({
                     msg: 'Skipping strat due to last harvest being too recent and not profitable',
-                    data: { chain, wouldBeProfitable, stratData, hoursSinceLastHarvest },
+                    data: { chain, stratData, wouldBeProfitable, hoursSinceLastHarvest },
                 });
             } else {
                 logger.trace({
                     msg: 'Strat should be harvested',
-                    data: { chain, wouldBeProfitable, stratData, hoursSinceLastHarvest },
+                    data: { chain, stratData, wouldBeProfitable, hoursSinceLastHarvest },
                 });
             }
             return shouldHarvest;

@@ -33,3 +33,9 @@ yarn test:unit
 ```bash
 cat test.log | yarn pino-pretty
 ```
+
+### Run harvest and explore debug logs
+    
+```bash
+LOG_LEVEL=trace yarn ts-node ./src/script/harvest.ts -c base | yarn pino-pretty > debug-pretty.log
+```
