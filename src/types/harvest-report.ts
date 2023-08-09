@@ -12,12 +12,8 @@ export type HarvestReport = Timed<{
     chain: Chain;
     fetchedVaults: Async<{ vaultFetched: number }>;
     details: HarvestReportItem[];
-    collectorBalance: {
-        /** The balance of the collector before the harvest */
-        beforeWei: bigint;
-        /** The balance of the collector after the harvest */
-        afterWei: bigint;
-    };
+    collectorBalanceBefore: Async<{ balanceWei: bigint }>;
+    collectorBalanceAfter: Async<{ balanceWei: bigint }>;
     summary: {
         totalProfitWei: bigint;
         totalStrategies: number;
