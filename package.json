@@ -7,11 +7,13 @@
     "scripts": {
         "test": "LOG_LEVEL=error TZ=UTC jest --maxConcurrency=1",
         "build": "tsc",
+        "lint:format": "prettier ./src --write",
         "test:outdated": "ncu",
         "test:unused-exports": "ts-unused-exports ./tsconfig.json",
         "test:all": "npm run build && npm run test && npm run test:unused-exports"
     },
     "dependencies": {
+        "axios": "^1.4.0",
         "blockchain-addressbook": "^0.43.66",
         "decimal.js": "^10.4.3",
         "dotenv": "^16.3.1",
