@@ -1,6 +1,6 @@
 import { rootLogger } from './logger';
 
-const logger = rootLogger.child({ module: 'process', component: 'exit-handler' });
+const logger = rootLogger.child({ module: 'process' });
 
 type ExitCallback = () => Promise<any>;
 const exitCallbacks: ExitCallback[] = [];
