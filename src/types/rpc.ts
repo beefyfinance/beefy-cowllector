@@ -1,5 +1,5 @@
-import { Hex, MulticallBatchOptions } from 'viem';
-import { BatchOptions } from 'viem/dist/types/clients/transports/http';
+import type { Hex, MulticallBatchOptions } from 'viem';
+import type { BatchOptions } from 'viem/dist/types/clients/transports/http';
 
 export type RpcConfig = {
     url: string;
@@ -14,5 +14,8 @@ export type RpcConfig = {
     };
     contracts: {
         harvestLens: Hex | null;
+    };
+    account: {
+        privateKey: Hex;
     };
 };

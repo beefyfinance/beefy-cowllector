@@ -6,10 +6,10 @@ import { rootLogger } from '../util/logger';
 import { getVaultsToMonitor } from '../lib/vault-list';
 import { groupBy } from 'lodash';
 import type { BeefyVault } from '../types/vault';
-import { getReadOnlyRpcClient } from '../lib/rpc-client';
+import { getReadOnlyRpcClient, getWalletClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
 import { HARVEST_AT_LEAST_EVERY_HOURS, RPC_CONFIG } from '../util/config';
-import { splitPromiseResultsByStatus } from '../util/promise';
+import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
 import { StrategyABI } from '../abi/StrategyABI';
 
 const logger = rootLogger.child({ module: 'harvest-main' });
@@ -167,11 +167,21 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
     });
 
     // use some kind of logic to filter out strats that we don't want to harvest
-    // - last harvest is too recent
     if (chain === 'ethereum') {
         throw new Error('TODO: implement eth logic');
     }
     const stratsToBeHarvested = fetchedStratData
+        // check for callRewards
+        .filter(stratData => {
+            const shouldHarvest = stratData.simulation.callRewards > 0n;
+            if (!shouldHarvest) {
+                logger.debug({
+                    msg: 'Skipping strat due to callRewards being 0',
+                    data: { chain, stratData },
+                });
+            }
+            return shouldHarvest;
+        })
         // check for paused, even though the simulation would fail if that was really the case
         .filter(stratData => {
             const shouldHarvest = !stratData.paused;
@@ -195,7 +205,16 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
     logger.info({ msg: 'Strategies to be harvested', data: { chain, count: stratsToBeHarvested.length } });
     logger.debug({ msg: 'Strategies to be harvested', data: { chain, stratsToBeHarvested } });
 
-    // now do the havest danse
+    // now do the havest dance
+    logger.debug({ msg: 'Harvesting strats', data: { chain, count: stratsToBeHarvested.length } });
+    const walletClient = getWalletClient({ chain });
+    const { fulfilled: successfulHarvests, rejected: failedHarvests } = splitPromiseResultsByStatus(
+        await runSequentially(stratsToBeHarvested, async strat => ({
+            ...strat,
+            harvestResult: await walletClient.writeContract(strat.simulation.request),
+        }))
+    );
+    console.log({ where: 'end of harvest chain', chain, cmd, successfulHarvests, failedHarvests });
 }
 
 runMain(main);

@@ -14,3 +14,19 @@ export function splitPromiseResultsByStatus<T>(results: PromiseSettledResult<T>[
         .map(result => result.value);
     return { fulfilled, rejected };
 }
+
+export async function runSequentially<T, R>(
+    items: T[],
+    process: (item: T) => Promise<R>
+): Promise<PromiseSettledResult<R>[]> {
+    const results: PromiseSettledResult<R>[] = [];
+    for (const item of items) {
+        try {
+            const result = await process(item);
+            results.push({ status: 'fulfilled', value: result });
+        } catch (error) {
+            results.push({ status: 'rejected', reason: error });
+        }
+    }
+    return results;
+}
