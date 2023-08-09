@@ -1,23 +1,24 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "strict": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "outDir": "dist",
-    "sourceMap": false,
-    "inlineSources": false,
-    "declaration": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowJs": true
-  },
-  "ts-node": {
-    "compilerHost": true,
-    "emit": true
-  },
-  "include": ["scripts/**/*", "gelato/**/*"],
-  "exclude": ["node_modules", "dist"]
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "declaration": true,
+        "resolveJsonModule": true,
+        "types": ["jest"],
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noImplicitOverride": true,
+        "noImplicitThis": true
+    },
+    "ts-node": {
+        "compilerHost": true,
+        "emit": true
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "dist", "old"]
 }
