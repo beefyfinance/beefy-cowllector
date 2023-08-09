@@ -55,6 +55,8 @@ const defaultAccount: RpcConfig['account'] = {
     // TODO: pull from environment variables
     privateKey: '0x0000000000000000000000000000000000000000000000000000000000000000',
 };
+
+// TODO: use private rpcs
 export const RPC_CONFIG: Record<Chain, RpcConfig> = {
     arbitrum: {
         url: process.env.ARBITRUM_RPC_URL || 'https://arb1.arbitrum.io/rpc',

@@ -238,7 +238,9 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
             }))
         )
     );
+
     console.dir({ where: 'end of harvest chain', chain, cmd, successfulReceipts, failedReceipts }, { depth: null });
+    logger.debug({ msg: 'Receipt results', data: { chain, failedReceipts, successfulReceipts } });
 }
 
 runMain(main);
