@@ -33,6 +33,7 @@ if (!allLogLevels.includes(log_level)) {
 export const LOG_LEVEL: LogLevels = log_level as LogLevels;
 
 export const RPC_FORCE_URL = process.env.RPC_FORCE_URL || null;
+export const HARVEST_AT_LEAST_EVERY_HOURS = parseInt(process.env.HARVEST_AT_LEAST_EVERY_HOURS || '24', 10);
 
 const defaultBatch: RpcConfig['batch'] = {
     jsonRpc: {

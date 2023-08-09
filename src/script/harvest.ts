@@ -8,7 +8,7 @@ import { groupBy } from 'lodash';
 import type { BeefyVault } from '../types/vault';
 import { getReadOnlyRpcClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
-import { RPC_CONFIG } from '../util/config';
+import { HARVEST_AT_LEAST_EVERY_HOURS, RPC_CONFIG } from '../util/config';
 import { splitPromiseResultsByStatus } from '../util/promise';
 import { StrategyABI } from '../abi/StrategyABI';
 
@@ -17,6 +17,7 @@ const logger = rootLogger.child({ module: 'harvest-main' });
 type CmdOptions = {
     chain: Chain[];
     contractAddress: string | null;
+    now: Date;
 };
 
 /**
@@ -47,11 +48,18 @@ async function main() {
             alias: 'a',
             describe: 'only harvest for this contract address',
         },
+        now: {
+            type: 'string',
+            demand: false,
+            alias: 'n',
+            describe: 'force the current date time instead of using Date.now()',
+        },
     }).argv;
 
     const options: CmdOptions = {
         chain: argv.chain.includes('all') ? allChainIds : (argv.chain as Chain[]),
         contractAddress: argv.contractAddress || null,
+        now: argv.now ? new Date(argv.now) : new Date(Date.now()),
     };
     logger.trace({ msg: 'running with options', data: options });
 
@@ -152,13 +160,42 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
             )
         )
     );
-    logger.debug({ msg: 'Additional data results', data: { chain, failedSimulations, successfulSimulations } });
+    logger.debug({ msg: 'Additional data results', data: { chain, failedStratData, fetchedStratData } });
     logger.info({
         msg: 'Skipping strats due to error fetching additional data',
         data: { chain, count: failedStratData.length, failedStratData },
     });
 
-    console.dir({ fetchedStratData, failedStratData }, { depth: 3 });
+    // use some kind of logic to filter out strats that we don't want to harvest
+    // - last harvest is too recent
+    if (chain === 'ethereum') {
+        throw new Error('TODO: implement eth logic');
+    }
+    const stratsToBeHarvested = fetchedStratData
+        // check for paused, even though the simulation would fail if that was really the case
+        .filter(stratData => {
+            const shouldHarvest = !stratData.paused;
+            if (!shouldHarvest) {
+                logger.debug({ msg: 'Skipping strat due to being paused', data: { chain, stratData } });
+            }
+            return shouldHarvest;
+        })
+        // check for last harvest
+        .filter(stratData => {
+            const hoursSinceLastHarvest = (cmd.now.getTime() - stratData.lastHarvest.getTime()) / 1000 / 60 / 60;
+            const shouldHarvest = hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
+            if (!shouldHarvest) {
+                logger.debug({
+                    msg: 'Skipping strat due to last harvest being too recent',
+                    data: { chain, stratData, hoursSinceLastHarvest },
+                });
+            }
+            return shouldHarvest;
+        });
+    logger.info({ msg: 'Strategies to be harvested', data: { chain, count: stratsToBeHarvested.length } });
+    logger.debug({ msg: 'Strategies to be harvested', data: { chain, stratsToBeHarvested } });
+
+    // now do the havest danse
 }
 
 runMain(main);
