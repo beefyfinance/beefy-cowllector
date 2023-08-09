@@ -12,6 +12,8 @@
         "test:all": "npm run build && npm run test && npm run test:unused-exports"
     },
     "dependencies": {
+        "blockchain-addressbook": "^0.43.66",
+        "decimal.js": "^10.4.3",
         "dotenv": "^16.3.1",
         "pino": "^8.15.0",
         "viem": "^1.5.4",
@@ -29,6 +31,7 @@
         "prettier": "^3.0.1",
         "ts-jest": "^29.1.1",
         "ts-node": "^10.9.1",
+        "ts-unused-exports": "^9.0.5",
         "typescript": "^5.1.6"
     },
     "lint-staged": {
