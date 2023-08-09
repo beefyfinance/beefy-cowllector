@@ -9,7 +9,8 @@ import type { BeefyVault } from '../types/vault';
 import { getReadOnlyRpcClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
 import { RPC_CONFIG } from '../util/config';
-import type { Prettify } from 'viem/dist/types/types/utils';
+import { splitPromiseResultsByStatus } from '../util/promise';
+import { StrategyABI } from '../abi/StrategyABI';
 
 const logger = rootLogger.child({ module: 'harvest-main' });
 
@@ -79,7 +80,7 @@ async function main() {
             harvestChain({ cmd: options, chain: chain as Chain, vaults })
         )
     );
-    console.log(options, results);
+    console.log({ where: 'end of harvest script', options, results });
 }
 
 async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Chain; vaults: BeefyVault[] }) {
@@ -98,36 +99,66 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
 
     // run the simulation
     logger.debug({ msg: 'Running simulation', data: { chain, vaults: vaults.length } });
-    const results = await Promise.allSettled(
-        vaults.map(vault =>
-            publicClient.simulateContract({
-                ...harvestLensContract,
-                functionName: 'harvest',
-                args: [vault.strategy_address],
-            })
+    const { fulfilled: successfulSimulations, rejected: failedSimulations } = splitPromiseResultsByStatus(
+        await Promise.allSettled(
+            vaults.map(async vault => ({
+                vault,
+                simulation: await publicClient
+                    .simulateContract({
+                        ...harvestLensContract,
+                        functionName: 'harvest',
+                        args: [vault.strategy_address],
+                    })
+                    .then(({ result, request }) => ({
+                        callRewards: result[0],
+                        success: result[1],
+                        request,
+                    })),
+            }))
         )
     );
-
-    // filter and log harvest failures
-    const failedSimulations = results
-        .filter(
-            (result): result is Prettify<Exclude<typeof result, PromiseFulfilledResult<any>>> =>
-                result.status === 'rejected'
-        )
-        .map(result => result.reason);
-    const successfulSimulations = results
-        .filter(
-            (result): result is Prettify<Exclude<typeof result, PromiseRejectedResult>> => result.status === 'fulfilled'
-        )
-        .map(result => result.value);
-
     logger.debug({ msg: 'Simulation results', data: { chain, failedSimulations, successfulSimulations } });
     logger.info({
         msg: 'Skipping simulation errors',
         data: { chain, count: failedSimulations.length, failedSimulations },
     });
 
-    console.log(results);
+    // get `paused` and `lastHarvest` from the strategies
+    // TODO: add this in the lens contract and remove this code?
+    logger.debug({
+        msg: 'Fetching additional strategy data',
+        data: { chain, strategyCount: successfulSimulations.length },
+    });
+    const { fulfilled: fetchedStratData, rejected: failedStratData } = splitPromiseResultsByStatus(
+        await Promise.allSettled(
+            successfulSimulations.map(simulation =>
+                Promise.all([
+                    Promise.resolve(simulation),
+                    publicClient.readContract({
+                        abi: StrategyABI,
+                        address: simulation.vault.strategy_address,
+                        functionName: 'lastHarvest',
+                    }),
+                    publicClient.readContract({
+                        abi: StrategyABI,
+                        address: simulation.vault.strategy_address,
+                        functionName: 'paused',
+                    }),
+                ]).then(([simulation, lastHarvest, paused]) => ({
+                    ...simulation,
+                    lastHarvest: new Date(Number(lastHarvest) * 1000),
+                    paused,
+                }))
+            )
+        )
+    );
+    logger.debug({ msg: 'Additional data results', data: { chain, failedSimulations, successfulSimulations } });
+    logger.info({
+        msg: 'Skipping strats due to error fetching additional data',
+        data: { chain, count: failedStratData.length, failedStratData },
+    });
+
+    console.dir({ fetchedStratData, failedStratData }, { depth: 3 });
 }
 
 runMain(main);
