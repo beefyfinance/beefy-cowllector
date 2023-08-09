@@ -179,6 +179,9 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
         url: process.env.ZKSYNC_RPC_URL || 'https://api.zksync.io/jsrpc',
         eol: false,
         batch: defaultBatch,
-        contracts: defaultContracts,
+        contracts: {
+            ...defaultContracts,
+            harvestLens: null,
+        },
     },
 };

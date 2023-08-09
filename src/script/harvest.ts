@@ -1,13 +1,15 @@
 import yargs from 'yargs';
 import { runMain } from '../util/process';
-import { Chain, allChainIds } from '../types/chain';
+import { allChainIds } from '../types/chain';
+import type { Chain } from '../types/chain';
 import { rootLogger } from '../util/logger';
 import { getVaultsToMonitor } from '../lib/vault-list';
 import { groupBy } from 'lodash';
-import { BeefyVault } from '../types/vault';
+import type { BeefyVault } from '../types/vault';
 import { getReadOnlyRpcClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
 import { RPC_CONFIG } from '../util/config';
+import type { Prettify } from 'viem/dist/types/types/utils';
 
 const logger = rootLogger.child({ module: 'harvest-main' });
 
@@ -72,7 +74,7 @@ async function main() {
     }));
 
     // harvest each chain
-    const results = await Promise.all(
+    const results = await Promise.allSettled(
         Object.entries(vaultsByChain).map(([chain, vaults]) =>
             harvestChain({ cmd: options, chain: chain as Chain, vaults })
         )
@@ -96,7 +98,7 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
 
     // run the simulation
     logger.debug({ msg: 'Running simulation', data: { chain, vaults: vaults.length } });
-    const results = await Promise.all(
+    const results = await Promise.allSettled(
         vaults.map(vault =>
             publicClient.simulateContract({
                 ...harvestLensContract,
@@ -105,6 +107,25 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
             })
         )
     );
+
+    // filter and log harvest failures
+    const failedSimulations = results
+        .filter(
+            (result): result is Prettify<Exclude<typeof result, PromiseFulfilledResult<any>>> =>
+                result.status === 'rejected'
+        )
+        .map(result => result.reason);
+    const successfulSimulations = results
+        .filter(
+            (result): result is Prettify<Exclude<typeof result, PromiseRejectedResult>> => result.status === 'fulfilled'
+        )
+        .map(result => result.value);
+
+    logger.debug({ msg: 'Simulation results', data: { chain, failedSimulations, successfulSimulations } });
+    logger.info({
+        msg: 'Skipping simulation errors',
+        data: { chain, count: failedSimulations.length, failedSimulations },
+    });
 
     console.log(results);
 }
