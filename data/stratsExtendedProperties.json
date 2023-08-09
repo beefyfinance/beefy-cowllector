@@ -1,7 +1,23 @@
 [
   {
-      "id": "quick-gamma-zk-weth-matic-narrow",
+      "id": "exactly-supply-usdc",
       "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "exactly-supply-eth",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "exactly-supply-wsteth",
+      "suppressCallRwrdCheck": true
+  },
+  {
+      "id": "exactly-supply-op",
+      "suppressCallRwrdCheck": true
+  },
+  {
+    "id": "quick-gamma-zk-weth-matic-narrow",
+    "suppressCallRwrdCheck": true
   },
   {
       "id": "quick-gamma-zk-usdt-usdc",
