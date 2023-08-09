@@ -44,7 +44,7 @@ const defaultBatch: RpcConfig['batch'] = {
         wait: undefined,
     },
     multicall: {
-        batchSize: 50,
+        batchSize: 4_096,
         wait: 100,
     },
 };

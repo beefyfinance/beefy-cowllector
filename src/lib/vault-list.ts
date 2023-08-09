@@ -37,7 +37,6 @@ export async function getVaultsToMonitor(options: {
         // remove eol chains
         .filter(vault => RPC_CONFIG[vault.chain].eol === false);
 
-    logger.trace({ msg: 'Got these vaults from beefy api', data: allVaults });
     logger.info({ msg: 'Got vaults from api', data: { vaultLength: allVaults.length } });
 
     // apply command line options
@@ -48,10 +47,7 @@ export async function getVaultsToMonitor(options: {
 
     // split by chain
     const vaultsByChain = groupBy(vaults, 'chain') as Record<Chain, BeefyVault[]>;
-    logger.trace(() => ({
-        msg: 'Vaults by chain',
-        data: vaultsByChain,
-    }));
+    logger.debug({ msg: 'Vaults by chain', data: vaultsByChain });
 
     return vaultsByChain;
 }
