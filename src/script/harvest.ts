@@ -9,7 +9,7 @@ import type { BeefyVault } from '../types/vault';
 import { getReadOnlyRpcClient, getWalletAccount, getWalletClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
 import { HARVEST_AT_LEAST_EVERY_HOURS, HARVEST_OVERESTIMATE_GAS_BY_PERCENT, RPC_CONFIG } from '../util/config';
-import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
+import { runSequentially, sleep, splitPromiseResultsByStatus } from '../util/promise';
 import { StrategyABI } from '../abi/StrategyABI';
 import { bigintPercent } from '../util/bigint';
 
@@ -18,7 +18,6 @@ const logger = rootLogger.child({ module: 'harvest-main' });
 type CmdOptions = {
     chain: Chain[];
     contractAddress: string | null;
-    dryRun: boolean;
     now: Date;
 };
 
@@ -50,13 +49,6 @@ async function main() {
             alias: 'a',
             describe: 'only harvest for this contract address',
         },
-        'dry-run': {
-            type: 'boolean',
-            demand: false,
-            default: false,
-            alias: 'd',
-            describe: 'do not actually harvest, just simulate',
-        },
         now: {
             type: 'string',
             demand: false,
@@ -68,7 +60,6 @@ async function main() {
     const options: CmdOptions = {
         chain: argv.chain.includes('all') ? allChainIds : (argv.chain as Chain[]),
         contractAddress: argv['contract-address'] || null,
-        dryRun: argv['dry-run'],
         now: argv.now ? new Date(argv.now) : new Date(Date.now()),
     };
     logger.trace({ msg: 'running with options', data: options });
@@ -226,18 +217,19 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
     logger.info({ msg: 'Strategies to be harvested', data: { chain, count: stratsToBeHarvested.length } });
     logger.debug({ msg: 'Strategies to be harvested', data: { chain, stratsToBeHarvested } });
 
-    if (cmd.dryRun) {
-        logger.info({ msg: 'Stopping harvest due to dry run', data: { chain, stratsToBeHarvested } });
-        return;
-    }
-
     // now do the havest dance
     logger.debug({ msg: 'Harvesting strats', data: { chain, count: stratsToBeHarvested.length } });
     const { fulfilled: successfulHarvests, rejected: failedHarvests } = splitPromiseResultsByStatus(
-        await runSequentially(stratsToBeHarvested, async strat => ({
-            ...strat,
-            harvestTransactionHash: await walletClient.writeContract(strat.simulation.request),
-        }))
+        await runSequentially(stratsToBeHarvested, async strat => {
+            logger.debug({ msg: 'Harvesting strat', data: { chain, strat } });
+            const res = {
+                ...strat,
+                harvestTransactionHash: await walletClient.writeContract(strat.simulation.request),
+            };
+            logger.debug({ msg: 'Harvested strat', data: { chain, strat, res } });
+            await sleep(rpcConfig.harvest.waitBetweenEachStratMs);
+            return res;
+        })
     );
     logger.debug({ msg: 'Harvest results', data: { chain, failedHarvests, successfulHarvests } });
     logger.info({ msg: 'Skipping strats due to error harvesting', data: { chain, count: failedHarvests.length } });
