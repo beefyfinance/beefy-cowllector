@@ -6,7 +6,7 @@ import { HARVEST_AT_LEAST_EVERY_HOURS, RPC_CONFIG } from '../util/config';
 import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
 import { StrategyABI } from '../abi/StrategyABI';
 import { rootLogger } from '../util/logger';
-import { estimateTransactionGain } from './gas';
+import { createGasEstimation } from './gas';
 
 const logger = rootLogger.child({ module: 'harvest-chain' });
 
@@ -50,7 +50,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                 ]).then(([{ result, request }, rawGasAmountEstimation]) => ({
                     request,
                     harvestWillSucceed: result[1],
-                    gas: estimateTransactionGain({
+                    gas: createGasEstimation({
                         rawGasPrice,
                         estimatedCallRewardsWei: result[0],
                         rawGasAmountEstimation,

@@ -7,7 +7,7 @@ export type RpcConfig = {
     batch: {
         // https://viem.sh/docs/clients/transports/http.html#batch-batchsize-optional
         // applies at the transport level
-        jsonRpc: BatchOptions;
+        jsonRpc: false | BatchOptions;
         // https://viem.sh/docs/clients/public.html#batch-multicall-batchsize-optional
         // only applies for the public client
         multicall: false | MulticallBatchOptions;
