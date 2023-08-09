@@ -2,11 +2,11 @@ import type { Chain } from '../types/chain';
 import type { BeefyVault } from '../types/vault';
 import { getReadOnlyRpcClient, getWalletAccount, getWalletClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
-import { HARVEST_AT_LEAST_EVERY_HOURS, HARVEST_OVERESTIMATE_GAS_BY_PERCENT, RPC_CONFIG } from '../util/config';
+import { HARVEST_AT_LEAST_EVERY_HOURS, RPC_CONFIG } from '../util/config';
 import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
 import { StrategyABI } from '../abi/StrategyABI';
-import { bigintPercent } from '../util/bigint';
 import { rootLogger } from '../util/logger';
+import { estimateTransactionGain } from './gas';
 
 const logger = rootLogger.child({ module: 'harvest-chain' });
 
@@ -28,7 +28,6 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     };
 
     const rawGasPrice = await publicClient.getGasPrice();
-    const gasPrice = bigintPercent(rawGasPrice, 1.0 + HARVEST_OVERESTIMATE_GAS_BY_PERCENT);
 
     // run the simulation
     logger.debug({ msg: 'Running simulation', data: { chain, vaults: vaults.length } });
@@ -48,19 +47,15 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                         args: [vault.strategy_address],
                         account: walletAccount,
                     }),
-                ]).then(([{ result, request }, rawGasAmountEstimation]) => {
-                    const estimatedCallRewardsWei = result[0];
-                    const harvestWillSucceed = result[1];
-                    const transactionCostEstimationWei = rawGasAmountEstimation * gasPrice;
-                    const estimatedGainWei = estimatedCallRewardsWei - transactionCostEstimationWei;
-                    return {
-                        estimatedCallRewardsWei,
-                        harvestWillSucceed,
-                        request,
-                        transactionCostEstimationWei,
-                        estimatedGainWei,
-                    };
-                }),
+                ]).then(([{ result, request }, rawGasAmountEstimation]) => ({
+                    request,
+                    harvestWillSucceed: result[1],
+                    gas: estimateTransactionGain({
+                        rawGasPrice,
+                        estimatedCallRewardsWei: result[0],
+                        rawGasAmountEstimation,
+                    }),
+                })),
             }))
         )
     );
@@ -112,7 +107,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     const stratsToBeHarvested = fetchedStratData
         // check for callRewards
         .filter(stratData => {
-            const shouldHarvest = stratData.simulation.estimatedCallRewardsWei > 0n;
+            const shouldHarvest = stratData.simulation.gas.estimatedCallRewardsWei > 0n;
             if (!shouldHarvest) {
                 logger.trace({ msg: 'Skipping strat due to callRewards being 0', data: { chain, stratData } });
             } else {
@@ -133,7 +128,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
         // check for last harvest and profitability
         .filter(stratData => {
             const hoursSinceLastHarvest = (now.getTime() - stratData.lastHarvest.getTime()) / 1000 / 60 / 60;
-            const wouldBeProfitable = stratData.simulation.estimatedGainWei > 0n;
+            const wouldBeProfitable = stratData.simulation.gas.estimatedGainWei > 0n;
             const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
             if (!shouldHarvest) {
                 logger.trace({
