@@ -66,8 +66,6 @@ export function getReadOnlyRpcClient({ chain }: { chain: Chain }) {
 export function getWalletClient({ chain }: { chain: Chain }) {
     const rpcConfig = RPC_CONFIG[chain];
     const url = RPC_FORCE_URL || rpcConfig.url;
-    const pk = RPC_FORCE_PRIVATE_KEY || rpcConfig.account.privateKey;
-
     const viemChain = VIEM_CHAINS[chain];
     if (!viemChain) {
         throw new Error(`Unsupported chain ${chain}`);
@@ -81,9 +79,15 @@ export function getWalletClient({ chain }: { chain: Chain }) {
 
     return createWalletClient({
         chain: viemChain,
-        account: privateKeyToAccount(pk),
+        account: getWalletAccount({ chain }),
         transport: http(url, {
             batch: false,
         }),
     });
+}
+
+export function getWalletAccount({ chain }: { chain: Chain }) {
+    const rpcConfig = RPC_CONFIG[chain];
+    const pk = RPC_FORCE_PRIVATE_KEY || rpcConfig.account.privateKey;
+    return privateKeyToAccount(pk);
 }

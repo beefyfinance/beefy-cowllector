@@ -6,11 +6,12 @@ import { rootLogger } from '../util/logger';
 import { getVaultsToMonitor } from '../lib/vault-list';
 import { groupBy } from 'lodash';
 import type { BeefyVault } from '../types/vault';
-import { getReadOnlyRpcClient, getWalletClient } from '../lib/rpc-client';
+import { getReadOnlyRpcClient, getWalletAccount, getWalletClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
-import { HARVEST_AT_LEAST_EVERY_HOURS, RPC_CONFIG } from '../util/config';
+import { HARVEST_AT_LEAST_EVERY_HOURS, HARVEST_OVERESTIMATE_GAS_BY_PERCENT, RPC_CONFIG } from '../util/config';
 import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
 import { StrategyABI } from '../abi/StrategyABI';
+import { bigintPercent } from '../util/bigint';
 
 const logger = rootLogger.child({ module: 'harvest-main' });
 
@@ -95,6 +96,8 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
     logger.debug({ msg: 'Harvesting chain', data: { chain, vaults: vaults.length } });
 
     const publicClient = getReadOnlyRpcClient({ chain });
+    const walletClient = getWalletClient({ chain });
+    const walletAccount = getWalletAccount({ chain });
     const rpcConfig = RPC_CONFIG[chain];
     // we need the harvest lense
     if (!rpcConfig.contracts.harvestLens) {
@@ -111,17 +114,25 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
         await Promise.allSettled(
             vaults.map(async vault => ({
                 vault,
-                simulation: await publicClient
-                    .simulateContract({
+                simulation: await Promise.all([
+                    publicClient.simulateContract({
                         ...harvestLensContract,
                         functionName: 'harvest',
                         args: [vault.strategy_address],
-                    })
-                    .then(({ result, request }) => ({
-                        callRewards: result[0],
-                        success: result[1],
-                        request,
-                    })),
+                    }),
+                    publicClient.estimateContractGas({
+                        ...harvestLensContract,
+                        functionName: 'harvest',
+                        args: [vault.strategy_address],
+                        account: walletAccount,
+                    }),
+                ]).then(([{ result, request }, gasCostEstimation]) => ({
+                    callRewards: result[0],
+                    success: result[1],
+                    request,
+                    rawGasCostEstimation: gasCostEstimation,
+                    gasCostEstimation: bigintPercent(gasCostEstimation, 1.0 + HARVEST_OVERESTIMATE_GAS_BY_PERCENT),
+                })),
             }))
         )
     );
@@ -190,14 +201,15 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
             }
             return shouldHarvest;
         })
-        // check for last harvest
+        // check for last harvest and profitability
         .filter(stratData => {
             const hoursSinceLastHarvest = (cmd.now.getTime() - stratData.lastHarvest.getTime()) / 1000 / 60 / 60;
-            const shouldHarvest = hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
+            const wouldBeProfitable = stratData.simulation.callRewards > stratData.simulation.gasCostEstimation;
+            const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
             if (!shouldHarvest) {
                 logger.debug({
-                    msg: 'Skipping strat due to last harvest being too recent',
-                    data: { chain, stratData, hoursSinceLastHarvest },
+                    msg: 'Skipping strat due to last harvest being too recent and not profitable',
+                    data: { chain, wouldBeProfitable, stratData, hoursSinceLastHarvest },
                 });
             }
             return shouldHarvest;
@@ -207,14 +219,26 @@ async function harvestChain({ cmd, chain, vaults }: { cmd: CmdOptions; chain: Ch
 
     // now do the havest dance
     logger.debug({ msg: 'Harvesting strats', data: { chain, count: stratsToBeHarvested.length } });
-    const walletClient = getWalletClient({ chain });
     const { fulfilled: successfulHarvests, rejected: failedHarvests } = splitPromiseResultsByStatus(
         await runSequentially(stratsToBeHarvested, async strat => ({
             ...strat,
-            harvestResult: await walletClient.writeContract(strat.simulation.request),
+            harvestTransactionHash: await walletClient.writeContract(strat.simulation.request),
         }))
     );
-    console.log({ where: 'end of harvest chain', chain, cmd, successfulHarvests, failedHarvests });
+    logger.debug({ msg: 'Harvest results', data: { chain, failedHarvests, successfulHarvests } });
+    logger.info({ msg: 'Skipping strats due to error harvesting', data: { chain, count: failedHarvests.length } });
+
+    // fetch transaction receipts
+    logger.debug({ msg: 'Fetching transaction receipts', data: { chain, count: successfulHarvests.length } });
+    const { fulfilled: successfulReceipts, rejected: failedReceipts } = splitPromiseResultsByStatus(
+        await Promise.allSettled(
+            successfulHarvests.map(async strat => ({
+                ...strat,
+                harvestReceipt: await publicClient.getTransactionReceipt({ hash: strat.harvestTransactionHash }),
+            }))
+        )
+    );
+    console.dir({ where: 'end of harvest chain', chain, cmd, successfulReceipts, failedReceipts }, { depth: null });
 }
 
 runMain(main);

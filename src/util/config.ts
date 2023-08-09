@@ -36,6 +36,7 @@ export const LOG_LEVEL: LogLevels = log_level as LogLevels;
 export const RPC_FORCE_URL = process.env.RPC_FORCE_URL || null;
 export const RPC_FORCE_PRIVATE_KEY = (process.env.RPC_FORCE_PRIVATE_KEY || null) as Hex | null;
 export const HARVEST_AT_LEAST_EVERY_HOURS = parseInt(process.env.HARVEST_AT_LEAST_EVERY_HOURS || '24', 10);
+export const HARVEST_OVERESTIMATE_GAS_BY_PERCENT = parseFloat(process.env.HARVEST_OVERESTIMATE_GAS_BY_PERCENT || '0.5');
 
 const defaultBatch: RpcConfig['batch'] = {
     jsonRpc: {
