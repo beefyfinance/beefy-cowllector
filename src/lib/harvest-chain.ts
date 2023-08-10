@@ -15,6 +15,7 @@ import {
 } from './harvest-report';
 import { typeSafeSet } from '../util/object';
 import { Hex } from 'viem';
+import { IStrategyABI } from '../abi/IStrategyABI';
 
 const logger = rootLogger.child({ module: 'harvest-chain' });
 
@@ -71,13 +72,11 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                             ([
                                 {
                                     result: [estimatedCallRewardsWei, harvestWillSucceed, lastHarvest, strategyPaused],
-                                    request,
                                 },
                                 rawGasAmountEstimation,
                             ]) => ({
                                 vault,
                                 reportItem,
-                                request,
                                 harvestWillSucceed,
                                 lastHarvest: new Date(Number(lastHarvest) * 1000),
                                 strategyPaused,
@@ -200,7 +199,14 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
         await runSequentially(stratsToBeHarvested, async item => {
             logger.debug({ msg: 'Harvesting strat', data: { chain, strat: item } });
             const { transactionHash } = await reportOnAsyncCall<{ transactionHash: Hex }>(
-                () => walletClient.writeContract(item.request).then(transactionHash => ({ transactionHash })),
+                () =>
+                    walletClient
+                        .writeContract({
+                            abi: IStrategyABI,
+                            address: item.vault.strategy_address,
+                            functionName: 'harvest',
+                        })
+                        .then(transactionHash => ({ transactionHash })),
                 res => typeSafeSet(item.reportItem, { harvestTransaction: res, summary: toReportItemSummary(res) })
             );
 
