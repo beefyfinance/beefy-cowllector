@@ -10,7 +10,7 @@ import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
 contract StrategyV7Mock {
     using SafeERC20 for IERC20;
 
-    IERC20 public WETH;
+    IERC20 public native;
     uint256 public lastHarvestMock;
     bool public pausedMock;
     uint256 public harvestLoops;
@@ -18,14 +18,14 @@ contract StrategyV7Mock {
     uint256 public harvestRewards;
 
     constructor(
-        address _WETH,
+        IERC20 _native,
         uint256 _lastHarvestMock,
         bool _pausedMock,
         uint256 _harvestLoops,
         bool _revertOnHarvest,
         uint256 _harvestRewards
     ) {
-        WETH = _WETH;
+        native = _native;
         lastHarvestMock = _lastHarvestMock;
         pausedMock = _pausedMock;
         harvestLoops = _harvestLoops;
@@ -37,7 +37,7 @@ contract StrategyV7Mock {
         return lastHarvestMock;
     }
 
-    function harvest() external {
+    function harvest(address callReceipient) external {
         if (revertOnHarvest) {
             revert('revertOnHarvest');
         }
@@ -46,8 +46,7 @@ contract StrategyV7Mock {
             keccak256(abi.encode(i));
         }
 
-        bool res = payable(msg.sender).send(harvestRewards);
-        require(res, 'send failed');
+        native.safeTransfer(callReceipient, harvestRewards);
     }
 
     function paused() external view returns (bool) {
