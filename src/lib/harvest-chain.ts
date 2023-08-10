@@ -39,7 +39,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     if (!rpcConfig.contracts.harvestLens) {
         throw new Error(`Missing harvest lens address for chain ${chain}`);
     }
-    const harvestLensContract = { abi: BeefyHarvestLensABI, address: rpcConfig.contracts.harvestLens };
+    const harvestContractAddress = rpcConfig.contracts.harvestLens;
 
     const rawGasPrice = await publicClient.getGasPrice();
     const collectorBalanceBefore = await reportOnAsyncCall(
@@ -58,14 +58,15 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                     () =>
                         Promise.all([
                             publicClient.simulateContract({
-                                ...harvestLensContract,
+                                abi: BeefyHarvestLensABI,
+                                address: harvestContractAddress,
                                 functionName: 'harvest',
                                 args: [vault.strategy_address],
                             }),
                             publicClient.estimateContractGas({
-                                ...harvestLensContract,
+                                abi: IStrategyABI,
+                                address: vault.strategy_address,
                                 functionName: 'harvest',
-                                args: [vault.strategy_address],
                                 account: walletAccount,
                             }),
                         ]).then(
