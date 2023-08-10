@@ -1,9 +1,10 @@
 import { GasEstimation } from './gas';
 import { BeefyVault } from './vault';
-import { Hex } from 'viem';
+import { BaseError, Hex, TimeoutError } from 'viem';
 import { Chain } from './chain';
 import { Async, Timed, promiseTimings } from '../util/async';
 import { DeepPartial } from '../util/object';
+import { get, set } from 'lodash';
 
 export type HarvestReport = Timed<{
     chain: Chain;
@@ -138,6 +139,17 @@ export async function reportOnAsyncCall<T>(make: () => Promise<T>, set: (res: As
 
 export function toReportItem<T, O extends DeepPartial<T>>(asyncResult: Async<T>, extract: (o: T) => O): Async<O> {
     if (asyncResult.status === 'rejected') {
+        // prettify the error
+        const error = asyncResult.reason;
+        if (error instanceof TimeoutError) {
+            return { status: 'rejected', reason: 'Request timed out' } as Async<O>;
+        } else if (error instanceof BaseError) {
+            // remove abi from the error object
+            if (get(error, 'abi')) {
+                set(error, 'abi', undefined);
+            }
+            return { status: 'rejected', reason: error } as Async<O>;
+        }
         return asyncResult;
     }
     return { status: 'fulfilled', value: extract(asyncResult.value) } as Async<O>;
