@@ -1,11 +1,12 @@
 export const BeefyHarvestLensABI = [
-    { inputs: [], stateMutability: 'nonpayable', type: 'constructor' },
     {
         inputs: [{ internalType: 'contract IStrategyV7', name: '_strategy', type: 'address' }],
         name: 'harvest',
         outputs: [
             { internalType: 'uint256', name: 'callReward', type: 'uint256' },
             { internalType: 'bool', name: 'success', type: 'bool' },
+            { internalType: 'uint256', name: 'lastHarvest', type: 'uint256' },
+            { internalType: 'bool', name: 'paused', type: 'bool' },
         ],
         stateMutability: 'nonpayable',
         type: 'function',

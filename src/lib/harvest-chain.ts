@@ -4,7 +4,6 @@ import { getReadOnlyRpcClient, getWalletAccount, getWalletClient } from '../lib/
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
 import { HARVEST_AT_LEAST_EVERY_HOURS, RPC_CONFIG } from '../util/config';
 import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
-import { StrategyABI } from '../abi/StrategyABI';
 import { rootLogger } from '../util/logger';
 import { createGasEstimation } from './gas';
 import {
@@ -68,22 +67,34 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                                 args: [vault.strategy_address],
                                 account: walletAccount,
                             }),
-                        ]).then(([{ result, request }, rawGasAmountEstimation]) => ({
-                            vault,
-                            reportItem,
-                            request,
-                            harvestWillSucceed: result[1],
-                            gas: createGasEstimation({
-                                rawGasPrice,
-                                estimatedCallRewardsWei: result[0],
+                        ]).then(
+                            ([
+                                {
+                                    result: [estimatedCallRewardsWei, harvestWillSucceed, lastHarvest, strategyPaused],
+                                    request,
+                                },
                                 rawGasAmountEstimation,
-                            }),
-                        })),
+                            ]) => ({
+                                vault,
+                                reportItem,
+                                request,
+                                harvestWillSucceed,
+                                lastHarvest: new Date(Number(lastHarvest) * 1000),
+                                strategyPaused,
+                                gas: createGasEstimation({
+                                    rawGasPrice,
+                                    estimatedCallRewardsWei,
+                                    rawGasAmountEstimation,
+                                }),
+                            })
+                        ),
                     simulationReport =>
                         typeSafeSet(reportItem, {
                             simulation: toReportItem(simulationReport, v => ({
                                 harvestWillSucceed: v.harvestWillSucceed,
                                 gas: v.gas,
+                                lastHarvest: v.lastHarvest,
+                                paused: v.strategyPaused,
                             })), // don't need to report the request
                             summary: toReportItemSummary(simulationReport),
                         })
@@ -97,54 +108,6 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
         data: { chain, count: failedSimulations.length, failedSimulations },
     });
 
-    // =====================
-    // Fetch additional data
-    // =====================
-    // get `paused` and `lastHarvest` from the strategies
-    // TODO: add this in the lens contract and remove this code?
-    logger.debug({
-        msg: 'Fetching additional strategy data',
-        data: { chain, strategyCount: successfulSimulations.length },
-    });
-    const { fulfilled: fetchedStratData, rejected: failedStratData } = splitPromiseResultsByStatus(
-        await Promise.allSettled(
-            successfulSimulations.map(item =>
-                reportOnAsyncCall(
-                    () =>
-                        Promise.all([
-                            publicClient.readContract({
-                                abi: StrategyABI,
-                                address: item.vault.strategy_address,
-                                functionName: 'lastHarvest',
-                            }),
-                            publicClient.readContract({
-                                abi: StrategyABI,
-                                address: item.vault.strategy_address,
-                                functionName: 'paused',
-                            }),
-                        ]).then(([lastHarvest, paused]) => ({
-                            ...item,
-                            lastHarvest: new Date(Number(lastHarvest) * 1000),
-                            paused,
-                        })),
-                    strategyData =>
-                        typeSafeSet(item.reportItem, {
-                            strategyData: toReportItem(strategyData, v => ({
-                                lastHarvest: v.lastHarvest,
-                                paused: v.paused,
-                            })),
-                            summary: toReportItemSummary(strategyData),
-                        })
-                )
-            )
-        )
-    );
-    logger.debug({ msg: 'Additional data results', data: { chain, failedStratData, fetchedStratData } });
-    logger.info({
-        msg: 'Skipping strats due to error fetching additional data',
-        data: { chain, count: failedStratData.length, failedStratData },
-    });
-
     // ============================
     // Make the decision to harvest
     // ============================
@@ -152,7 +115,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     if (chain === 'ethereum') {
         throw new Error('TODO: implement eth logic');
     }
-    const stratsToBeHarvested = fetchedStratData
+    const stratsToBeHarvested = successfulSimulations
         // check for callRewards
         .filter(item => {
             const shouldHarvest = item.gas.estimatedCallRewardsWei > 0n;
@@ -173,7 +136,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
         })
         // check for paused, even though the simulation would fail if that was really the case
         .filter(item => {
-            const shouldHarvest = !item.paused;
+            const shouldHarvest = !item.strategyPaused;
             if (!shouldHarvest) {
                 logger.trace({ msg: 'Skipping strat due to being paused', data: { chain, stratData: item } });
                 typeSafeSet(item.reportItem, {

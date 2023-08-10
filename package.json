@@ -9,6 +9,7 @@
         "build": "tsc",
         "lint:format": "prettier ./src --write",
         "test:unit": "LOG_LEVEL=error TZ=UTC jest --maxConcurrency=1",
+        "test:ts": "tsc --noEmit",
         "test:outdated": "ncu",
         "test:unused-exports": "ts-unused-exports ./tsconfig.json",
         "test:all": "npm run build && npm run test && npm run test:unused-exports"

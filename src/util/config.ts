@@ -49,7 +49,7 @@ const defaultBatch: RpcConfig['batch'] = {
     },
 };
 const defaultContracts: RpcConfig['contracts'] = {
-    harvestLens: '0x2f7bf1B19A9c30C64b13Fd9cD368DdeF24027Ba8',
+    harvestLens: '0xa9b924a0AaFad0e6aAE25410bc16C205446A11D2',
 };
 const defaultAccount: RpcConfig['account'] = {
     // TODO: pull from environment variables

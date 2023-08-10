@@ -23,9 +23,6 @@ export type HarvestReport = Timed<{
 type HarvestReportSimulation = Async<{
     harvestWillSucceed: boolean;
     gas: GasEstimation;
-}>;
-
-type HarvestReportFetchStrategyData = Async<{
     lastHarvest: Date;
     paused: boolean;
 }>;
@@ -74,7 +71,6 @@ export type HarvestReportItem = {
 
     // harvest steps, null: not started
     simulation: HarvestReportSimulation | null;
-    strategyData: HarvestReportFetchStrategyData | null;
     harvestDecision: HarvestReportDecision | null;
     harvestTransaction: HarvestReportHarvestTransaction | null;
     transactionReceipt: HarvestReportTransactionReceipt | null;
@@ -109,7 +105,6 @@ export function createDefaultReportItem({ vault }: { vault: BeefyVault }): Harve
         vault,
 
         simulation: null,
-        strategyData: null,
         harvestDecision: null,
         harvestTransaction: null,
         transactionReceipt: null,
