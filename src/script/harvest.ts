@@ -59,6 +59,7 @@ async function main() {
             )
         )
     );
+    console.log(rejectedReports);
     logger.trace({ msg: 'harvest results', data: { successfulReports, rejectedReports } });
     logger.debug({
         msg: 'Some chains errored',

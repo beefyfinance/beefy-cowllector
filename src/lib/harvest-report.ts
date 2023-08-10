@@ -8,7 +8,6 @@ import { get, set } from 'lodash';
 
 export type HarvestReport = Timed<{
     chain: Chain;
-    fetchedVaults: Async<{ vaultFetched: number }> | null;
     details: HarvestReportItem[];
     collectorBalanceBefore: Async<{ balanceWei: bigint }> | null;
     collectorBalanceAfter: Async<{ balanceWei: bigint }> | null;
@@ -93,7 +92,6 @@ export function createDefaultReport({ chain }: { chain: Chain }): HarvestReport 
         timing: null,
         chain,
         details: [],
-        fetchedVaults: null,
         collectorBalanceBefore: null,
         collectorBalanceAfter: null,
         summary: {
@@ -142,17 +140,17 @@ export function toReportItem<T, O extends DeepPartial<T>>(asyncResult: Async<T>,
         // prettify the error
         const error = asyncResult.reason;
         if (error instanceof TimeoutError) {
-            return { status: 'rejected', reason: 'Request timed out' } as Async<O>;
+            return { status: 'rejected', reason: 'Request timed out', timing: asyncResult.timing } as Async<O>;
         } else if (error instanceof BaseError) {
             // remove abi from the error object
             if (get(error, 'abi')) {
                 set(error, 'abi', undefined);
             }
-            return { status: 'rejected', reason: error } as Async<O>;
+            return { status: 'rejected', reason: error, timing: asyncResult.timing } as Async<O>;
         }
         return asyncResult;
     }
-    return { status: 'fulfilled', value: extract(asyncResult.value) } as Async<O>;
+    return { status: 'fulfilled', value: extract(asyncResult.value), timing: asyncResult.timing } as Async<O>;
 }
 
 export function toReportItemSummary<T>(asyncResult: Async<T>): Partial<HarvestReportItem['summary']> {

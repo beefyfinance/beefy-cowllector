@@ -21,11 +21,19 @@ const logger = rootLogger.child({ module: 'harvest-chain' });
 
 export async function harvestChain({ now, chain, vaults }: { now: Date; chain: Chain; vaults: BeefyVault[] }) {
     logger.debug({ msg: 'Harvesting chain', data: { chain, vaults: vaults.length } });
+    const harvestStartedAt = new Date();
 
     const publicClient = getReadOnlyRpcClient({ chain });
     const walletClient = getWalletClient({ chain });
     const walletAccount = getWalletAccount({ chain });
     const rpcConfig = RPC_CONFIG[chain];
+
+    // create the report objects
+    const report = createDefaultReport({ chain });
+    var items = vaults.map(vault => ({ vault, reportItem: createDefaultReportItem({ vault }) })); // use var to redefine types along the way
+    // add all report item references to the report
+    // todo: this is far from ideal, but it works for now, means we have to be careful not to create a copy of the report items
+    report.details = items.map(({ reportItem }) => reportItem);
 
     // we need the harvest lense
     if (!rpcConfig.contracts.harvestLens) {
@@ -34,13 +42,10 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     const harvestLensContract = { abi: BeefyHarvestLensABI, address: rpcConfig.contracts.harvestLens };
 
     const rawGasPrice = await publicClient.getGasPrice();
-
-    // create the report objects
-    const report = createDefaultReport({ chain });
-    var items = vaults.map(vault => ({ vault, reportItem: createDefaultReportItem({ vault }) })); // use var to redefine types along the way
-    // add all report item references to the report
-    // todo: this is far from ideal, but it works for now, means we have to be careful not to create a copy of the report items
-    report.details = items.map(({ reportItem }) => reportItem);
+    const collectorBalanceBefore = await reportOnAsyncCall(
+        () => publicClient.getBalance({ address: walletAccount.address }).then(balance => ({ balanceWei: balance })),
+        balanceRes => typeSafeSet(report, { collectorBalanceBefore: balanceRes })
+    );
 
     // ==================
     // run the simulation
@@ -264,15 +269,35 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     logger.debug({ msg: 'Harvest results', data: { chain, failedHarvests, successfulHarvests } });
     logger.info({ msg: 'Skipping strats due to error harvesting', data: { chain, count: failedHarvests.length } });
 
-    // ========================
-    // update the report summary
-    // ========================
+    // =================
+    // update the report
+    // =================
+
     report.summary = {
         errors: report.details.filter(item => item.summary.error).length,
         totalProfitWei: report.details.reduce((acc, item) => acc + item.summary.profitWei, 0n),
         harvested: report.details.filter(item => item.summary.harvested).length,
         skipped: report.details.filter(item => !item.summary.harvested && !item.summary.error).length,
         totalStrategies: report.details.length,
+    };
+
+    // getting the collector balance shouldn't prevent us from sending the report
+    try {
+        const collectorBalanceAfter = await reportOnAsyncCall(
+            () =>
+                publicClient.getBalance({ address: walletAccount.address }).then(balance => ({ balanceWei: balance })),
+            balanceRes => typeSafeSet(report, { collectorBalanceAfter: balanceRes })
+        );
+        report.summary.totalProfitWei = collectorBalanceAfter.balanceWei - collectorBalanceBefore.balanceWei;
+    } catch (e) {
+        logger.error({ msg: 'Error getting collector balance after', data: { chain, e } });
+    }
+
+    const harvestEndedAt = new Date();
+    report.timing = {
+        startedAt: harvestStartedAt,
+        endedAt: harvestEndedAt,
+        durationMs: harvestEndedAt.getTime() - harvestStartedAt.getTime(),
     };
 
     return report;
