@@ -39,7 +39,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     if (!rpcConfig.contracts.harvestLens) {
         throw new Error(`Missing harvest lens address for chain ${chain}`);
     }
-    const harvestContractAddress = rpcConfig.contracts.harvestLens;
+    const harvestLensContract = { abi: BeefyHarvestLensABI, address: rpcConfig.contracts.harvestLens };
 
     const rawGasPrice = await publicClient.getGasPrice();
     const collectorBalanceBefore = await reportOnAsyncCall(
@@ -58,15 +58,16 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                     () =>
                         Promise.all([
                             publicClient.simulateContract({
-                                abi: BeefyHarvestLensABI,
-                                address: harvestContractAddress,
+                                ...harvestLensContract,
                                 functionName: 'harvest',
                                 args: [vault.strategy_address],
                             }),
+                            // we run the gas estimation on the lens
+                            // it overestimates a bit but reduces the amount of errors we get
                             publicClient.estimateContractGas({
-                                abi: IStrategyABI,
-                                address: vault.strategy_address,
+                                ...harvestLensContract,
                                 functionName: 'harvest',
+                                args: [vault.strategy_address],
                                 account: walletAccount,
                             }),
                         ]).then(

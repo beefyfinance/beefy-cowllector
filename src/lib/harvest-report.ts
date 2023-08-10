@@ -6,7 +6,7 @@ import { Async, Timed, promiseTimings } from '../util/async';
 import { DeepPartial } from '../util/object';
 import { get, set } from 'lodash';
 
-export type HarvestReport = Timed<{
+type HarvestReport = Timed<{
     chain: Chain;
     details: HarvestReportItem[];
     collectorBalanceBefore: Async<{ balanceWei: bigint }> | null;
@@ -65,7 +65,7 @@ type HarvestReportTransactionReceipt = Async<{
     effectiveGasPrice: bigint;
 }>;
 
-export type HarvestReportItem = {
+type HarvestReportItem = {
     // context data
     vault: BeefyVault;
 

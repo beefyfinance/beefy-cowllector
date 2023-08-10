@@ -20,10 +20,6 @@ if (timezone !== 'UTC') {
     throw new Error('Please set TZ=UTC in your .env file or command line');
 }
 
-// sometimes the programmer error dump is too large and interferes with the log buffers
-// this messes up the log output. set to true to disable the dump
-export const DISABLE_PROGRAMMER_ERROR_DUMP = process.env.DISABLE_PROGRAMMER_ERROR_DUMP === 'true';
-
 export const BEEFY_API_URL = process.env.BEEFY_API_URL || 'https://api.beefy.finance';
 
 const log_level = process.env.LOG_LEVEL || 'info';
