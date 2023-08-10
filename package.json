@@ -16,6 +16,7 @@
         "test:all": "yarn test:ts && yarn test:unit && yarn test:unused-exports"
     },
     "dependencies": {
+        "@openzeppelin/contracts": "^4.9.3",
         "axios": "^1.4.0",
         "blockchain-addressbook": "^0.43.66",
         "decimal.js": "^10.4.3",
