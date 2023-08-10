@@ -1,0 +1,8 @@
+version: "3.9" # optional since v1.27.0
+
+services:
+  redis:
+    image: redis/redis-stack:6.2.6-v9
+    container_name: redis-dev
+    ports:
+      - "6379:6379"

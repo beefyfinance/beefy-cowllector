@@ -20,6 +20,7 @@ if (timezone !== 'UTC') {
     throw new Error('Please set TZ=UTC in your .env file or command line');
 }
 
+export const REDIS_URL = process.env.REDIS_URL || process.env.REDISCLOUD_URL || 'redis://localhost:6379';
 export const BEEFY_API_URL = process.env.BEEFY_API_URL || 'https://api.beefy.finance';
 
 const log_level = process.env.LOG_LEVEL || 'info';

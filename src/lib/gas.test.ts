@@ -1,14 +1,14 @@
-import { createGasEstimation } from './gas';
+import { GasEstimationResult, createGasEstimationReport } from './gas';
 
 describe('gas', () => {
     it('should estimate transaction gain', () => {
         const input = {
             rawGasPrice: 100n,
             estimatedCallRewardsWei: 1000n,
-            rawGasAmountEstimation: 100n,
+            rawGasAmountEstimation: { from: 'cache', estimation: 100n } satisfies GasEstimationResult,
             overestimateGasByPercent: 0.5,
         };
-        expect(createGasEstimation(input)).toEqual({
+        expect(createGasEstimationReport(input)).toEqual({
             ...input,
             gasPrice: 150n,
             transactionCostEstimationWei: 15000n,
@@ -20,10 +20,10 @@ describe('gas', () => {
         const input = {
             rawGasPrice: 100n,
             estimatedCallRewardsWei: 1000n,
-            rawGasAmountEstimation: 100n,
+            rawGasAmountEstimation: { from: 'cache', estimation: 100n } satisfies GasEstimationResult,
             overestimateGasByPercent: 0.0,
         };
-        expect(createGasEstimation(input)).toEqual({
+        expect(createGasEstimationReport(input)).toEqual({
             ...input,
             gasPrice: 100n,
             transactionCostEstimationWei: 10000n,

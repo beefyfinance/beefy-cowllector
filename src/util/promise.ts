@@ -1,5 +1,9 @@
 import { Prettify } from 'viem/dist/types/types/utils';
 
+export function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export function splitPromiseResultsByStatus<T>(results: PromiseSettledResult<T>[]) {
     const rejected = results
         .filter(

@@ -1,4 +1,4 @@
-import { GasEstimation } from './gas';
+import { GasEstimationReport } from './gas';
 import { BeefyVault } from './vault';
 import { BaseError, Hex, TimeoutError } from 'viem';
 import { Chain } from './chain';
@@ -22,10 +22,11 @@ type HarvestReport = Timed<{
 
 type HarvestReportSimulation = Async<{
     harvestWillSucceed: boolean;
-    gas: GasEstimation;
     lastHarvest: Date;
     paused: boolean;
 }>;
+
+type HarvestReportGasEstimation = Async<GasEstimationReport>;
 
 type HarvestReportDecision =
     | {
@@ -71,6 +72,7 @@ type HarvestReportItem = {
 
     // harvest steps, null: not started
     simulation: HarvestReportSimulation | null;
+    gasEstimation: HarvestReportGasEstimation | null;
     harvestDecision: HarvestReportDecision | null;
     harvestTransaction: HarvestReportHarvestTransaction | null;
     transactionReceipt: HarvestReportTransactionReceipt | null;
@@ -105,6 +107,7 @@ export function createDefaultReportItem({ vault }: { vault: BeefyVault }): Harve
         vault,
 
         simulation: null,
+        gasEstimation: null,
         harvestDecision: null,
         harvestTransaction: null,
         transactionReceipt: null,
@@ -142,6 +145,13 @@ export function toReportItem<T, O extends DeepPartial<T>>(asyncResult: Async<T>,
                 set(error, 'abi', undefined);
             }
             return { status: 'rejected', reason: error, timing: asyncResult.timing } as Async<O>;
+        } else if (error instanceof Error) {
+            error;
+            return {
+                status: 'rejected',
+                reason: { name: error.name, message: error.message, cause: error.cause, stack: error.stack },
+                timing: asyncResult.timing,
+            } as Async<O>;
         }
         return asyncResult;
     }

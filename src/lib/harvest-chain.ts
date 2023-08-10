@@ -2,10 +2,10 @@ import type { Chain } from './chain';
 import type { BeefyVault } from './vault';
 import { getReadOnlyRpcClient, getWalletAccount, getWalletClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
-import { HARVEST_AT_LEAST_EVERY_HOURS, RPC_CONFIG } from '../util/config';
+import { HARVEST_AT_LEAST_EVERY_HOURS, HARVEST_OVERESTIMATE_GAS_BY_PERCENT, RPC_CONFIG } from '../util/config';
 import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
 import { rootLogger } from '../util/logger';
-import { createGasEstimation } from './gas';
+import { createGasEstimationReport, estimateHarvestCallGasAmount } from './gas';
 import {
     createDefaultReport,
     createDefaultReportItem,
@@ -56,44 +56,28 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
             items.map(async ({ reportItem, vault }) =>
                 reportOnAsyncCall(
                     () =>
-                        Promise.all([
-                            publicClient.simulateContract({
+                        publicClient
+                            .simulateContract({
                                 ...harvestLensContract,
                                 functionName: 'harvest',
                                 args: [vault.strategy_address],
-                            }),
-                            // we run the gas estimation on the lens
-                            // it overestimates a bit but reduces the amount of errors we get
-                            publicClient.estimateContractGas({
-                                ...harvestLensContract,
-                                functionName: 'harvest',
-                                args: [vault.strategy_address],
-                                account: walletAccount,
-                            }),
-                        ]).then(
-                            ([
-                                {
-                                    result: [estimatedCallRewardsWei, harvestWillSucceed, lastHarvest, strategyPaused],
-                                },
-                                rawGasAmountEstimation,
-                            ]) => ({
-                                vault,
-                                reportItem,
-                                harvestWillSucceed,
-                                lastHarvest: new Date(Number(lastHarvest) * 1000),
-                                strategyPaused,
-                                gas: createGasEstimation({
-                                    rawGasPrice,
-                                    estimatedCallRewardsWei,
-                                    rawGasAmountEstimation,
-                                }),
                             })
-                        ),
+                            .then(
+                                ({
+                                    result: [estimatedCallRewardsWei, harvestWillSucceed, lastHarvest, strategyPaused],
+                                }) => ({
+                                    vault,
+                                    reportItem,
+                                    harvestWillSucceed,
+                                    lastHarvest: new Date(Number(lastHarvest) * 1000),
+                                    strategyPaused,
+                                    estimatedCallRewardsWei: estimatedCallRewardsWei,
+                                })
+                            ),
                     simulationReport =>
                         typeSafeSet(reportItem, {
                             simulation: toReportItem(simulationReport, v => ({
                                 harvestWillSucceed: v.harvestWillSucceed,
-                                gas: v.gas,
                                 lastHarvest: v.lastHarvest,
                                 paused: v.strategyPaused,
                             })), // don't need to report the request
@@ -110,22 +94,22 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     });
 
     // ============================
-    // Make the decision to harvest
+    // Filter out paused strategies
     // ============================
     // use some kind of logic to filter out strats that we don't want to harvest
     if (chain === 'ethereum') {
         throw new Error('TODO: implement eth logic');
     }
-    const stratsToBeHarvested = successfulSimulations
+    const liveStrats = successfulSimulations
         // check for callRewards
         .filter(item => {
-            const shouldHarvest = item.gas.estimatedCallRewardsWei > 0n;
+            const shouldHarvest = item.estimatedCallRewardsWei > 0n;
             if (!shouldHarvest) {
                 logger.trace({ msg: 'Skipping strat due to callRewards being 0', data: { chain, stratData: item } });
                 typeSafeSet(item.reportItem, {
                     harvestDecision: {
                         shouldHarvest: false,
-                        callRewardsWei: item.gas.estimatedCallRewardsWei,
+                        callRewardsWei: item.estimatedCallRewardsWei,
                         notHarvestingReason: 'call rewards too low',
                     },
                     summary: { harvested: false, error: false, profitWei: 0n },
@@ -151,45 +135,82 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                 logger.trace({ msg: 'Strat is not paused', data: { chain, stratData: item } });
             }
             return shouldHarvest;
-        })
-        // check for last harvest and profitability
-        .filter(item => {
-            const hoursSinceLastHarvest = (now.getTime() - item.lastHarvest.getTime()) / 1000 / 60 / 60;
-            const wouldBeProfitable = item.gas.estimatedGainWei > 0n;
-            const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
-            if (!shouldHarvest) {
-                logger.trace({
-                    msg: 'Skipping strat due to last harvest being too recent and not profitable',
-                    data: { chain, stratData: item, wouldBeProfitable, hoursSinceLastHarvest },
-                });
-                typeSafeSet(item.reportItem, {
-                    harvestDecision: {
-                        shouldHarvest: false,
-                        hoursSinceLastHarvest,
-                        wouldBeProfitable,
-                        callRewardsWei: item.gas.estimatedCallRewardsWei,
-                        estimatedGainWei: item.gas.estimatedGainWei,
-                        notHarvestingReason: 'not profitable and harvested too recently',
-                    },
-                    summary: { harvested: false, error: false, profitWei: 0n },
-                });
-            } else {
-                logger.trace({
-                    msg: 'Strat should be harvested',
-                    data: { chain, stratData: item, wouldBeProfitable, hoursSinceLastHarvest },
-                });
-                typeSafeSet(item.reportItem, {
-                    harvestDecision: {
-                        shouldHarvest: true,
-                        hoursSinceLastHarvest,
-                        wouldBeProfitable,
-                        callRewardsWei: item.gas.estimatedCallRewardsWei,
-                        estimatedGainWei: item.gas.estimatedGainWei,
-                    },
-                });
-            }
-            return shouldHarvest;
         });
+
+    // ===========================================
+    // Gas Estimation for profitability estimation
+    // ===========================================
+
+    const { fulfilled: successfulEstimations, rejected: failedEstimations } = splitPromiseResultsByStatus(
+        await runSequentially(liveStrats, async item => {
+            logger.debug({ msg: 'Fetching gas estimation', data: { chain, strat: item } });
+            const gas = await reportOnAsyncCall(
+                () =>
+                    estimateHarvestCallGasAmount({
+                        chain,
+                        rpcClient: publicClient,
+                        strategyAddress: item.vault.strategy_address,
+                    }).then(gasEst =>
+                        createGasEstimationReport({
+                            rawGasPrice,
+                            rawGasAmountEstimation: gasEst,
+                            estimatedCallRewardsWei: item.estimatedCallRewardsWei,
+                            overestimateGasByPercent: HARVEST_OVERESTIMATE_GAS_BY_PERCENT,
+                        })
+                    ),
+                res =>
+                    typeSafeSet(item.reportItem, {
+                        gasEstimation: toReportItem(res, v => v),
+                        summary: toReportItemSummary(res),
+                    })
+            );
+            return { ...item, gas };
+        })
+    );
+    logger.debug({ msg: 'Gas estimation results', data: { chain, successfulEstimations, failedEstimations } });
+    logger.info({
+        msg: 'Skipping gas estimation errors',
+        data: { chain, count: failedEstimations.length, failedEstimations },
+    });
+
+    // check for last harvest and profitability
+    const stratsToBeHarvested = successfulEstimations.filter(item => {
+        const hoursSinceLastHarvest = (now.getTime() - item.lastHarvest.getTime()) / 1000 / 60 / 60;
+        const wouldBeProfitable = item.gas.estimatedGainWei > 0n;
+        const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
+        if (!shouldHarvest) {
+            logger.trace({
+                msg: 'Skipping strat due to last harvest being too recent and not profitable',
+                data: { chain, stratData: item, wouldBeProfitable, hoursSinceLastHarvest },
+            });
+            typeSafeSet(item.reportItem, {
+                harvestDecision: {
+                    shouldHarvest: false,
+                    hoursSinceLastHarvest,
+                    wouldBeProfitable,
+                    callRewardsWei: item.gas.estimatedCallRewardsWei,
+                    estimatedGainWei: item.gas.estimatedGainWei,
+                    notHarvestingReason: 'not profitable and harvested too recently',
+                },
+                summary: { harvested: false, error: false, profitWei: 0n },
+            });
+        } else {
+            logger.trace({
+                msg: 'Strat should be harvested',
+                data: { chain, stratData: item, wouldBeProfitable, hoursSinceLastHarvest },
+            });
+            typeSafeSet(item.reportItem, {
+                harvestDecision: {
+                    shouldHarvest: true,
+                    hoursSinceLastHarvest,
+                    wouldBeProfitable,
+                    callRewardsWei: item.gas.estimatedCallRewardsWei,
+                    estimatedGainWei: item.gas.estimatedGainWei,
+                },
+            });
+        }
+        return shouldHarvest;
+    });
     logger.info({ msg: 'Strategies to be harvested', data: { chain, count: stratsToBeHarvested.length } });
     logger.debug({ msg: 'Strategies to be harvested', data: { chain, stratsToBeHarvested } });
 
