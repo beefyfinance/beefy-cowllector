@@ -1,5 +1,5 @@
 import { createPublicClient, createWalletClient, http } from 'viem';
-import { Chain } from '../types/chain';
+import { Chain } from './chain';
 import { privateKeyToAccount } from 'viem/accounts';
 import { RPC_FORCE_URL, RPC_FORCE_PRIVATE_KEY, RPC_CONFIG } from '../util/config';
 import type { Chain as ViemChain } from 'viem/chains';

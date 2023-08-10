@@ -1,9 +1,9 @@
 import Decimal from 'decimal.js';
 import dotenv from 'dotenv';
-import type { Chain } from '../types/chain';
-import { allLogLevels } from '../types/logger';
-import type { LogLevels } from '../types/logger';
-import type { RpcConfig } from '../types/rpc';
+import type { Chain } from '../lib/chain';
+import { allLogLevels } from './logger-type';
+import type { LogLevels } from './logger-type';
+import type { RpcConfig } from '../lib/rpc-config';
 import { Hex } from 'viem';
 dotenv.config();
 
@@ -27,7 +27,7 @@ export const DISABLE_PROGRAMMER_ERROR_DUMP = process.env.DISABLE_PROGRAMMER_ERRO
 export const BEEFY_API_URL = process.env.BEEFY_API_URL || 'https://api.beefy.finance';
 
 const log_level = process.env.LOG_LEVEL || 'info';
-if (!allLogLevels.includes(log_level)) {
+if (!allLogLevels.includes(log_level as LogLevels)) {
     throw new Error(`Invalid log level ${log_level}`);
 }
 

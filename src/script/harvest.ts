@@ -1,11 +1,13 @@
 import yargs from 'yargs';
 import { runMain } from '../util/process';
-import { allChainIds } from '../types/chain';
-import type { Chain } from '../types/chain';
+import { allChainIds } from '../lib/chain';
+import type { Chain } from '../lib/chain';
 import { rootLogger } from '../util/logger';
 import { getVaultsToMonitor } from '../lib/vault-list';
 import { harvestChain } from '../lib/harvest-chain';
 import { Hex } from 'viem';
+import { serializeReport } from '../lib/harvest-report';
+import { splitPromiseResultsByStatus } from '../util/promise';
 
 const logger = rootLogger.child({ module: 'harvest-main' });
 
@@ -50,12 +52,20 @@ async function main() {
     const vaultsByChain = await getVaultsToMonitor({ chains: options.chain, contractAddress: options.contractAddress });
 
     // harvest each chain
-    const results = await Promise.allSettled(
-        Object.entries(vaultsByChain).map(([chain, vaults]) =>
-            harvestChain({ now: options.now, chain: chain as Chain, vaults })
+    const { fulfilled: successfulReports, rejected: rejectedReports } = splitPromiseResultsByStatus(
+        await Promise.allSettled(
+            Object.entries(vaultsByChain).map(([chain, vaults]) =>
+                harvestChain({ now: options.now, chain: chain as Chain, vaults })
+            )
         )
     );
-    console.log({ where: 'end of harvest script', options, results });
+    logger.trace({ msg: 'harvest results', data: { successfulReports, rejectedReports } });
+    logger.debug({
+        msg: 'Some chains errored',
+        data: { count: rejectedReports.length, rejectedReports },
+    });
+
+    successfulReports.forEach(r => console.log(serializeReport(r, true)));
 }
 
 runMain(main);

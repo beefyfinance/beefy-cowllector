@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { Chain } from '../types/chain';
-import { BeefyVault } from '../types/vault';
+import { Chain } from './chain';
+import { BeefyVault } from './vault';
 import { BEEFY_API_URL, RPC_CONFIG } from '../util/config';
 import { rootLogger } from '../util/logger';
 import { Hex } from 'viem';
