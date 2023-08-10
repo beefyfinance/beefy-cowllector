@@ -160,7 +160,7 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                     ),
                 res =>
                     typeSafeSet(item.reportItem, {
-                        gasEstimation: toReportItem(res, v => v),
+                        gasEstimation: toReportItem(res),
                         summary: toReportItemSummary(res),
                     })
             );
@@ -217,10 +217,32 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     // =======================
     // now do the havest dance
     // =======================
+    let remainingGas = collectorBalanceBefore.balanceWei;
+
     logger.debug({ msg: 'Harvesting strats', data: { chain, count: stratsToBeHarvested.length } });
     const { fulfilled: successfulHarvests, rejected: failedHarvests } = splitPromiseResultsByStatus(
         await runSequentially(stratsToBeHarvested, async item => {
             logger.debug({ msg: 'Harvesting strat', data: { chain, strat: item } });
+
+            // check if we have enough gas to harvest
+            if (remainingGas < item.gas.transactionCostEstimationWei) {
+                logger.info({ msg: 'Not enough gas to harvest', data: { chain, remainingGas, strat: item } });
+                const error = new NotEnoughRemainingGasError({
+                    chain,
+                    remainingGas,
+                    transactionCostEstimationWei: item.gas.transactionCostEstimationWei,
+                    strategyAddress: item.vault.strategy_address,
+                });
+                typeSafeSet(item.reportItem, {
+                    harvestTransaction: toReportItem<any, any>({
+                        status: 'rejected',
+                        reason: error,
+                        timing: { startedAt: new Date(), endedAt: new Date(), durationMs: 0 },
+                    }),
+                });
+                throw error;
+            }
+
             const { transactionHash } = await reportOnAsyncCall<{ transactionHash: Hex }>(
                 () =>
                     walletClient
@@ -230,7 +252,11 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                             functionName: 'harvest',
                         })
                         .then(transactionHash => ({ transactionHash })),
-                res => typeSafeSet(item.reportItem, { harvestTransaction: res, summary: toReportItemSummary(res) })
+                res =>
+                    typeSafeSet(item.reportItem, {
+                        harvestTransaction: toReportItem(res),
+                        summary: toReportItemSummary(res),
+                    })
             );
 
             // we have to wait for the transaction to be minted in order for the next call to have a proper nonce
@@ -241,10 +267,18 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
                         gasUsed: receipt.gasUsed,
                         effectiveGasPrice: receipt.effectiveGasPrice,
                     })),
-                res => typeSafeSet(item.reportItem, { transactionReceipt: res, summary: toReportItemSummary(res) })
+                res =>
+                    typeSafeSet(item.reportItem, {
+                        transactionReceipt: toReportItem(res),
+                        summary: toReportItemSummary(res),
+                    })
             );
             const res = { ...item, transactionHash, harvestReceipt };
             logger.debug({ msg: 'Harvested strat', data: { chain, strat: item, res } });
+
+            // update the remaining gas
+            // TODO: if we have a failed transaction it will still be deducted from the remaining gas so this value will be too high
+            remainingGas -= harvestReceipt.gasUsed * harvestReceipt.effectiveGasPrice;
 
             // now we officially harvested the strat
             typeSafeSet(item.reportItem, {
@@ -293,4 +327,13 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     };
 
     return report;
+}
+
+class NotEnoughRemainingGasError extends Error {
+    constructor(
+        public data: { remainingGas: bigint; transactionCostEstimationWei: bigint; strategyAddress: Hex; chain: Chain }
+    ) {
+        super('We expect not to have enough gas to harvest');
+        this.name = 'NotEnoughRemainingGasError';
+    }
 }

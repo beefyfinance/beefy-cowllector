@@ -133,7 +133,10 @@ export async function reportOnAsyncCall<T>(make: () => Promise<T>, set: (res: As
     return asyncRes.value;
 }
 
-export function toReportItem<T, O extends DeepPartial<T>>(asyncResult: Async<T>, extract: (o: T) => O): Async<O> {
+export function toReportItem<T, O extends DeepPartial<T>>(
+    asyncResult: Async<T>,
+    extract: (o: T) => O = v => v as any as O
+): Async<O> {
     if (asyncResult.status === 'rejected') {
         // prettify the error
         const error = asyncResult.reason;
