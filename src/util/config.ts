@@ -1,4 +1,3 @@
-import Decimal from 'decimal.js';
 import dotenv from 'dotenv';
 import type { Chain } from '../lib/chain';
 import { allLogLevels } from './logger-type';
@@ -6,14 +5,6 @@ import type { LogLevels } from './logger-type';
 import type { RpcConfig } from '../lib/rpc-config';
 import { Hex } from 'viem';
 dotenv.config();
-
-Decimal.set({
-    // make sure we have enough precision
-    precision: 50,
-    // configure the Decimals lib to format without exponents
-    toExpNeg: -250,
-    toExpPos: 250,
-});
 
 const timezone = process.env.TZ;
 if (timezone !== 'UTC') {
