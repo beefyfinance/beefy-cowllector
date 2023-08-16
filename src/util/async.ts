@@ -1,7 +1,21 @@
 import { Prettify } from 'viem/dist/types/types/utils';
 
-export type Timed<T> = Prettify<T & { timing: { startedAt: Date; endedAt: Date; durationMs: number } | null }>;
-export type Async<T> = Prettify<Timed<PromiseSettledResult<T>>>;
+export type TimingData = { startedAt: Date; endedAt: Date; durationMs: number };
+export type Async<T> = Prettify<PromiseSettledResult<T> & { timing: TimingData }>;
+
+// https://stackoverflow.com/a/69164888/2523414
+// [TObj] turns off distributive conditional types
+export type AsyncSuccessType<TObj> = [TObj] extends [Async<infer TSuccessType> | null]
+    ? TSuccessType
+    : [TObj] extends [Promise<infer TSuccessType> | null]
+    ? TSuccessType
+    : [TObj] extends [Async<infer TSuccessType>]
+    ? TSuccessType
+    : [TObj] extends [Promise<infer TSuccessType>]
+    ? TSuccessType
+    : [TObj] extends [infer TSuccessType | null]
+    ? TSuccessType
+    : never;
 
 /**
  * Make an async call

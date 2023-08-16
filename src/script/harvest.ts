@@ -6,8 +6,9 @@ import { rootLogger } from '../util/logger';
 import { getVaultsToMonitor } from '../lib/vault-list';
 import { harvestChain } from '../lib/harvest-chain';
 import { Hex } from 'viem';
-import { serializeReport } from '../lib/harvest-report';
+import { createDefaultReport, serializeReport } from '../lib/harvest-report';
 import { splitPromiseResultsByStatus } from '../util/promise';
+import { promiseTimings } from '../util/async';
 
 const logger = rootLogger.child({ module: 'harvest-main' });
 
@@ -54,12 +55,41 @@ async function main() {
     // harvest each chain
     const { fulfilled: successfulReports, rejected: rejectedReports } = splitPromiseResultsByStatus(
         await Promise.allSettled(
-            Object.entries(vaultsByChain).map(([chain, vaults]) =>
-                harvestChain({ now: options.now, chain: chain as Chain, vaults })
-            )
+            Object.entries(vaultsByChain).map(async ([c, vaults]) => {
+                const chain = c as Chain;
+
+                // create the report objects
+                let report = createDefaultReport({ chain });
+                const result = await promiseTimings(() =>
+                    harvestChain({ report, now: options.now, chain: chain as Chain, vaults })
+                );
+                // update the summary
+                report.timing = result.timing;
+                report.details.forEach(item => {
+                    item.summary = {
+                        harvested: item.harvestTransaction !== null && item.harvestTransaction.status === 'fulfilled',
+                        error:
+                            (item.gasEstimation !== null && item.gasEstimation.status === 'rejected') ||
+                            (item.simulation !== null && item.simulation.status === 'rejected') ||
+                            (item.harvestTransaction !== null && item.harvestTransaction.status === 'rejected'),
+                        profitWei:
+                            item.harvestTransaction?.status === 'fulfilled'
+                                ? item.harvestTransaction?.value.profitWei
+                                : 0n,
+                    };
+                });
+                report.summary = {
+                    errors: report.details.filter(item => item.summary.error).length,
+                    totalProfitWei: report.details.reduce((acc, item) => acc + item.summary.profitWei, 0n),
+                    harvested: report.details.filter(item => item.summary.harvested).length,
+                    skipped: report.details.filter(item => !item.summary.harvested && !item.summary.error).length,
+                    totalStrategies: report.details.length,
+                };
+
+                return report;
+            })
         )
     );
-    console.log(rejectedReports);
     logger.trace({ msg: 'harvest results', data: { successfulReports, rejectedReports } });
     logger.debug({
         msg: 'Some chains errored',

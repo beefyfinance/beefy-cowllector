@@ -2,7 +2,7 @@ import { GasEstimationReport } from './gas';
 import { BeefyVault } from './vault';
 import { BaseError, Hex, TimeoutError } from 'viem';
 import { Chain } from './chain';
-import { Async, Timed, promiseTimings } from '../util/async';
+import { Async, AsyncSuccessType, TimingData, promiseTimings } from '../util/async';
 import { DeepPartial } from '../util/object';
 import { get, set } from 'lodash';
 import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
@@ -11,7 +11,8 @@ import { Prettify } from 'viem/dist/types/types/utils';
 
 const logger = rootLogger.child({ module: 'harvest-report' });
 
-type HarvestReport = Timed<{
+export type HarvestReport = {
+    timing: TimingData | null;
     chain: Chain;
     details: HarvestReportItem[];
     fetchGasPrice: Async<{ gasPriceWei: bigint }> | null;
@@ -24,7 +25,7 @@ type HarvestReport = Timed<{
         skipped: number;
         errors: number;
     };
-}>;
+};
 
 type HarvestReportSimulation = Async<{
     estimatedCallRewardsWei: bigint;
@@ -131,12 +132,11 @@ export function createDefaultReportItem({ vault }: { vault: BeefyVault }): Harve
     };
 }
 
+/**
+ * This type is used to properly type the result of the helper functions belo
+ */
 type ExpectedResponseType<TReport, TReportKey extends string> = TReportKey extends keyof TReport
-    ? TReport[TReportKey] extends Async<infer T> | null
-        ? T
-        : TReport[TReportKey] extends infer T | null
-        ? T
-        : TReport[TReportKey]
+    ? AsyncSuccessType<TReport[TReportKey]>
     : never;
 
 /**
@@ -224,7 +224,9 @@ export async function reportOnHarvestStep<
         msg: 'Report step results',
         data: { reportKey, itemsCount: items.length, fulfilledCount: fulfilled.length, rejectedCount: rejected.length },
     });
-    logger.debug({ msg: 'Skipped items', data: { reportKey, items: rejected.length } });
+    if (rejected.length > 0) {
+        logger.debug({ msg: 'Skipped items', data: { reportKey, items: rejected.length } });
+    }
     logger.trace({ msg: 'Report step finished', data: { reportKey, itemsCount: items.length, fulfilled, rejected } });
 
     return fulfilled;
