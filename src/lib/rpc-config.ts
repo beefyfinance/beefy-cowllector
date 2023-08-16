@@ -4,6 +4,7 @@ import type { BatchOptions } from 'viem/dist/types/clients/transports/http';
 export type RpcConfig = {
     url: string;
     eol: boolean;
+    timeoutMs: number;
     batch: {
         // https://viem.sh/docs/clients/transports/http.html#batch-batchsize-optional
         // applies at the transport level

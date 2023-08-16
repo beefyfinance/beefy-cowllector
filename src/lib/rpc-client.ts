@@ -118,6 +118,7 @@ export function getReadOnlyRpcClient({ chain }: { chain: Chain }) {
     return createPublicClient({
         transport: http(rpcConfig.url, {
             batch: rpcConfig.batch.jsonRpc,
+            timeout: rpcConfig.timeoutMs,
         }),
         batch: {
             multicall: rpcConfig.batch.multicall,
@@ -137,6 +138,7 @@ export function getWalletClient({ chain }: { chain: Chain }) {
         account: getWalletAccount({ chain }),
         transport: http(rpcConfig.url, {
             batch: false,
+            timeout: rpcConfig.timeoutMs,
         }),
     });
 }
