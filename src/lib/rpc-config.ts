@@ -12,6 +12,10 @@ export type RpcConfig = {
         // only applies for the public client
         multicall: false | MulticallBatchOptions;
     };
+    transaction: {
+        blockConfirmations: number;
+        timeoutMs: number;
+    };
     contracts: {
         harvestLens: Hex | null;
     };

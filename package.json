@@ -12,7 +12,7 @@
         "test:unit": "LOG_LEVEL=error TZ=UTC jest --maxConcurrency=1",
         "test:ts": "tsc --noEmit",
         "test:outdated": "ncu",
-        "test:unused-exports": "ts-unused-exports ./tsconfig.json",
+        "test:unused-exports": "ts-unused-exports ./tsconfig.json --showLineNumber",
         "test:all": "yarn test:ts && yarn test:unit && yarn test:unused-exports",
         "infra:start": "docker compose -p dev -f docker-compose.dev.yml up -d",
         "infra:logs": "docker compose -p dev -f docker-compose.dev.yml logs -f",

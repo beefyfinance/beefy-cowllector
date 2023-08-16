@@ -30,8 +30,8 @@ if (!allLogLevels.includes(log_level as LogLevels)) {
 
 export const LOG_LEVEL: LogLevels = log_level as LogLevels;
 
-export const RPC_FORCE_URL = process.env.RPC_FORCE_URL || null;
-export const RPC_FORCE_PRIVATE_KEY = (process.env.RPC_FORCE_PRIVATE_KEY || null) as Hex | null;
+const RPC_FORCE_URL = process.env.RPC_FORCE_URL || null;
+const RPC_FORCE_PRIVATE_KEY = (process.env.RPC_FORCE_PRIVATE_KEY || null) as Hex | null;
 export const HARVEST_AT_LEAST_EVERY_HOURS = parseInt(process.env.HARVEST_AT_LEAST_EVERY_HOURS || '24', 10);
 export const HARVEST_OVERESTIMATE_GAS_BY_PERCENT = parseFloat(process.env.HARVEST_OVERESTIMATE_GAS_BY_PERCENT || '0.5');
 
@@ -49,160 +49,184 @@ const defaultContracts: RpcConfig['contracts'] = {
     harvestLens: '0xa9b924a0AaFad0e6aAE25410bc16C205446A11D2',
 };
 const defaultAccount: RpcConfig['account'] = {
-    // TODO: pull from environment variables
-    privateKey: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    privateKey: RPC_FORCE_PRIVATE_KEY || '0x0000000000000000000000000000000000000000000000000000000000000000',
+};
+const defaultTransactionConfig = {
+    blockConfirmations: 10,
+    timeoutMs: 60_000,
 };
 
 export const RPC_CONFIG: Record<Chain, RpcConfig> = {
     arbitrum: {
-        url: process.env.ARBITRUM_RPC_URL || 'https://rpc.ankr.com/arbitrum',
+        url: RPC_FORCE_URL || process.env.ARBITRUM_RPC_URL || 'https://rpc.ankr.com/arbitrum',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     aurora: {
-        url: process.env.AURORA_RPC_URL || 'https://mainnet.aurora.dev',
+        url: RPC_FORCE_URL || process.env.AURORA_RPC_URL || 'https://mainnet.aurora.dev',
         eol: true,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     avax: {
-        url: process.env.AVALANCHE_RPC_URL || 'https://rpc.ankr.com/avalanche',
+        url: RPC_FORCE_URL || process.env.AVALANCHE_RPC_URL || 'https://rpc.ankr.com/avalanche',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     base: {
-        url: process.env.BASE_RPC_URL || 'https://rpc.ankr.com/base',
+        url: RPC_FORCE_URL || process.env.BASE_RPC_URL || 'https://rpc.ankr.com/base',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     bsc: {
-        url: process.env.BSC_RPC_URL || 'https://rpc.ankr.com/bsc',
+        url: RPC_FORCE_URL || process.env.BSC_RPC_URL || 'https://rpc.ankr.com/bsc',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     canto: {
-        url: process.env.CANTO_RPC_URL || 'https://canto.slingshot.finance',
+        url: RPC_FORCE_URL || process.env.CANTO_RPC_URL || 'https://canto.slingshot.finance',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     celo: {
-        url: process.env.CELO_RPC_URL || 'https://rpc.ankr.com/celo',
+        url: RPC_FORCE_URL || process.env.CELO_RPC_URL || 'https://rpc.ankr.com/celo',
         eol: true,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     cronos: {
-        url: process.env.CRONOS_RPC_URL || 'https://evm.cronos.org',
+        url: RPC_FORCE_URL || process.env.CRONOS_RPC_URL || 'https://evm.cronos.org',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     emerald: {
-        url: process.env.EMERALD_RPC_URL || 'https://emerald.oasis.dev',
+        url: RPC_FORCE_URL || process.env.EMERALD_RPC_URL || 'https://emerald.oasis.dev',
         eol: true,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     ethereum: {
-        url: process.env.ETHEREUM_RPC_URL || 'https://rpc.ankr.com/eth',
+        url: RPC_FORCE_URL || process.env.ETHEREUM_RPC_URL || 'https://rpc.ankr.com/eth',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     fantom: {
-        url: process.env.FANTOM_RPC_URL || 'https://rpc.ankr.com/fantom',
+        url: RPC_FORCE_URL || process.env.FANTOM_RPC_URL || 'https://rpc.ankr.com/fantom',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     fuse: {
-        url: process.env.FUSE_RPC_URL || 'https://rpc.fuse.io',
+        url: RPC_FORCE_URL || process.env.FUSE_RPC_URL || 'https://rpc.fuse.io',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     heco: {
-        url: process.env.HECO_RPC_URL || 'https://http-mainnet.hecochain.com',
+        url: RPC_FORCE_URL || process.env.HECO_RPC_URL || 'https://http-mainnet.hecochain.com',
         eol: true,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     kava: {
-        url: process.env.KAVA_RPC_URL || 'https://evm.kava.io',
+        url: RPC_FORCE_URL || process.env.KAVA_RPC_URL || 'https://evm.kava.io',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     metis: {
-        url: process.env.METIS_RPC_URL || 'https://andromeda.metis.io/?owner=1088',
+        url: RPC_FORCE_URL || process.env.METIS_RPC_URL || 'https://andromeda.metis.io/?owner=1088',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     moonbeam: {
-        url: process.env.MOONBEAM_RPC_URL || 'https://rpc.testnet.moonbeam.network',
+        url: RPC_FORCE_URL || process.env.MOONBEAM_RPC_URL || 'https://rpc.testnet.moonbeam.network',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     moonriver: {
-        url: process.env.MOONRIVER_RPC_URL || 'https://rpc.api.moonriver.moonbeam.network',
+        url: RPC_FORCE_URL || process.env.MOONRIVER_RPC_URL || 'https://rpc.api.moonriver.moonbeam.network',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     one: {
-        url: process.env.ONE_RPC_URL || 'https://rpc.ankr.com/harmony',
+        url: RPC_FORCE_URL || process.env.ONE_RPC_URL || 'https://rpc.ankr.com/harmony',
         eol: true,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     optimism: {
-        url: process.env.OPTIMISM_RPC_URL || 'https://rpc.ankr.com/optimism',
+        url: RPC_FORCE_URL || process.env.OPTIMISM_RPC_URL || 'https://rpc.ankr.com/optimism',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     polygon: {
-        url: process.env.POLYGON_RPC_URL || 'https://rpc.ankr.com/polygon',
+        url: RPC_FORCE_URL || process.env.POLYGON_RPC_URL || 'https://rpc.ankr.com/polygon',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     zkevm: {
-        url: process.env.ZKEVM_RPC_URL || 'https://rpc.ankr.com/polygon_zkevm',
+        url: RPC_FORCE_URL || process.env.ZKEVM_RPC_URL || 'https://rpc.ankr.com/polygon_zkevm',
         eol: false,
         batch: defaultBatch,
         contracts: defaultContracts,
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
     zksync: {
-        url: process.env.ZKSYNC_RPC_URL || 'https://rpc.ankr.com/zksync_era',
+        url: RPC_FORCE_URL || process.env.ZKSYNC_RPC_URL || 'https://rpc.ankr.com/zksync_era',
         eol: false,
         batch: defaultBatch,
         contracts: {
@@ -210,5 +234,6 @@ export const RPC_CONFIG: Record<Chain, RpcConfig> = {
             harvestLens: null,
         },
         account: defaultAccount,
+        transaction: defaultTransactionConfig,
     },
 };

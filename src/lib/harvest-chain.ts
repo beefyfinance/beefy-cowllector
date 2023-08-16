@@ -3,37 +3,34 @@ import type { BeefyVault } from './vault';
 import { getReadOnlyRpcClient, getWalletAccount, getWalletClient } from '../lib/rpc-client';
 import { BeefyHarvestLensABI } from '../abi/BeefyHarvestLensABI';
 import { HARVEST_AT_LEAST_EVERY_HOURS, HARVEST_OVERESTIMATE_GAS_BY_PERCENT, RPC_CONFIG } from '../util/config';
-import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
 import { rootLogger } from '../util/logger';
 import { createGasEstimationReport, estimateHarvestCallGasAmount } from './gas';
-import {
-    createDefaultReport,
-    createDefaultReportItem,
-    reportOnAsyncCall,
-    toReportItem,
-    toReportItemSummary,
-} from './harvest-report';
-import { typeSafeSet } from '../util/object';
-import { Hex } from 'viem';
+import { reportOnHarvestStep, reportOnAsyncCall, HarvestReport, createDefaultReportItem } from './harvest-report';
 import { IStrategyABI } from '../abi/IStrategyABI';
+import { NotEnoughRemainingGasError, UnsupportedChainError } from './harvest-errors';
 
 const logger = rootLogger.child({ module: 'harvest-chain' });
 
-export async function harvestChain({ now, chain, vaults }: { now: Date; chain: Chain; vaults: BeefyVault[] }) {
+export async function harvestChain({
+    report,
+    now,
+    chain,
+    vaults,
+}: {
+    report: HarvestReport;
+    now: Date;
+    chain: Chain;
+    vaults: BeefyVault[];
+}) {
     logger.debug({ msg: 'Harvesting chain', data: { chain, vaults: vaults.length } });
-    const harvestStartedAt = new Date();
 
     const publicClient = getReadOnlyRpcClient({ chain });
     const walletClient = getWalletClient({ chain });
     const walletAccount = getWalletAccount({ chain });
     const rpcConfig = RPC_CONFIG[chain];
 
-    // create the report objects
-    const report = createDefaultReport({ chain });
-    var items = vaults.map(vault => ({ vault, reportItem: createDefaultReportItem({ vault }) })); // use var to redefine types along the way
-    // add all report item references to the report
-    // todo: this is far from ideal, but it works for now, means we have to be careful not to create a copy of the report items
-    report.details = items.map(({ reportItem }) => reportItem);
+    const items = vaults.map(vault => ({ vault, report: createDefaultReportItem({ vault }) }));
+    report.details = items.map(({ report }) => report);
 
     // we need the harvest lense
     if (!rpcConfig.contracts.harvestLens) {
@@ -41,178 +38,122 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     }
     const harvestLensContract = { abi: BeefyHarvestLensABI, address: rpcConfig.contracts.harvestLens };
 
-    const rawGasPrice = await publicClient.getGasPrice();
-    const collectorBalanceBefore = await reportOnAsyncCall(
-        () => publicClient.getBalance({ address: walletAccount.address }).then(balance => ({ balanceWei: balance })),
-        balanceRes => typeSafeSet(report, { collectorBalanceBefore: balanceRes })
-    );
+    // ======================
+    // get some context first
+    // ======================
+
+    const {
+        fetchGasPrice: { gasPriceWei: rawGasPrice },
+    } = await reportOnAsyncCall({ report }, 'fetchGasPrice', async () => ({
+        gasPriceWei: await publicClient.getGasPrice(),
+    }));
+
+    const { collectorBalanceBefore } = await reportOnAsyncCall({ report }, 'collectorBalanceBefore', async () => ({
+        balanceWei: await publicClient.getBalance({ address: walletAccount.address }),
+    }));
 
     // ==================
     // run the simulation
     // ==================
-    logger.debug({ msg: 'Running simulation', data: { chain, vaults: vaults.length } });
-    const { fulfilled: successfulSimulations, rejected: failedSimulations } = splitPromiseResultsByStatus(
-        await Promise.allSettled(
-            items.map(async ({ reportItem, vault }) =>
-                reportOnAsyncCall(
-                    () =>
-                        publicClient
-                            .simulateContract({
-                                ...harvestLensContract,
-                                functionName: 'harvest',
-                                args: [vault.strategy_address],
-                            })
-                            .then(
-                                ({
-                                    result: [estimatedCallRewardsWei, harvestWillSucceed, lastHarvest, strategyPaused],
-                                }) => ({
-                                    vault,
-                                    reportItem,
-                                    harvestWillSucceed,
-                                    lastHarvest: new Date(Number(lastHarvest) * 1000),
-                                    strategyPaused,
-                                    estimatedCallRewardsWei: estimatedCallRewardsWei,
-                                })
-                            ),
-                    simulationReport =>
-                        typeSafeSet(reportItem, {
-                            simulation: toReportItem(simulationReport, v => ({
-                                harvestWillSucceed: v.harvestWillSucceed,
-                                lastHarvest: v.lastHarvest,
-                                paused: v.strategyPaused,
-                            })), // don't need to report the request
-                            summary: toReportItemSummary(simulationReport),
-                        })
-                )
-            )
-        )
-    );
-    logger.debug({ msg: 'Simulation results', data: { chain, failedSimulations, successfulSimulations } });
-    logger.info({
-        msg: 'Skipping simulation errors',
-        data: { chain, count: failedSimulations.length, failedSimulations },
+    const successfulSimulations = await reportOnHarvestStep(items, 'simulation', 'parallel', async item => {
+        const { result } = await publicClient.simulateContract({
+            ...harvestLensContract,
+            functionName: 'harvest',
+            args: [item.vault.strategy_address],
+        });
+        const [estimatedCallRewardsWei, harvestWillSucceed, lastHarvest, strategyPaused] = result;
+        return {
+            estimatedCallRewardsWei,
+            harvestWillSucceed,
+            lastHarvest: new Date(Number(lastHarvest) * 1000),
+            paused: strategyPaused,
+        };
     });
 
     // ============================
     // Filter out paused strategies
     // ============================
+
     // use some kind of logic to filter out strats that we don't want to harvest
     if (chain === 'ethereum') {
-        throw new Error('TODO: implement eth logic');
+        throw new UnsupportedChainError({ chain });
     }
-    const liveStrats = successfulSimulations
-        // check for callRewards
-        .filter(item => {
-            const shouldHarvest = item.estimatedCallRewardsWei > 0n;
-            if (!shouldHarvest) {
-                logger.trace({ msg: 'Skipping strat due to callRewards being 0', data: { chain, stratData: item } });
-                typeSafeSet(item.reportItem, {
-                    harvestDecision: {
-                        shouldHarvest: false,
-                        callRewardsWei: item.estimatedCallRewardsWei,
-                        notHarvestingReason: 'call rewards too low',
-                    },
-                    summary: { harvested: false, error: false, profitWei: 0n },
-                });
-            } else {
-                logger.trace({ msg: 'Strat has callRewards', data: { chain, stratData: item } });
+    const liveStratsDecisions = await reportOnHarvestStep(
+        successfulSimulations,
+        'isLiveDecision',
+        'parallel',
+        async item => {
+            if (item.simulation.estimatedCallRewardsWei <= 0n) {
+                return {
+                    shouldHarvest: false,
+                    callRewardsWei: item.simulation.estimatedCallRewardsWei,
+                    notHarvestingReason: 'call rewards too low',
+                };
             }
-            return shouldHarvest;
-        })
-        // check for paused, even though the simulation would fail if that was really the case
-        .filter(item => {
-            const shouldHarvest = !item.strategyPaused;
-            if (!shouldHarvest) {
-                logger.trace({ msg: 'Skipping strat due to being paused', data: { chain, stratData: item } });
-                typeSafeSet(item.reportItem, {
-                    harvestDecision: {
-                        shouldHarvest: false,
-                        notHarvestingReason: 'strategy paused',
-                    },
-                    summary: { harvested: false, error: false, profitWei: 0n },
-                });
-            } else {
-                logger.trace({ msg: 'Strat is not paused', data: { chain, stratData: item } });
+
+            if (item.simulation.paused) {
+                return {
+                    shouldHarvest: false,
+                    notHarvestingReason: 'strategy paused',
+                };
             }
-            return shouldHarvest;
-        });
-
-    // ===========================================
-    // Gas Estimation for profitability estimation
-    // ===========================================
-
-    const { fulfilled: successfulEstimations, rejected: failedEstimations } = splitPromiseResultsByStatus(
-        await runSequentially(liveStrats, async item => {
-            logger.debug({ msg: 'Fetching gas estimation', data: { chain, strat: item } });
-            const gas = await reportOnAsyncCall(
-                () =>
-                    estimateHarvestCallGasAmount({
-                        chain,
-                        rpcClient: publicClient,
-                        strategyAddress: item.vault.strategy_address,
-                    }).then(gasEst =>
-                        createGasEstimationReport({
-                            rawGasPrice,
-                            rawGasAmountEstimation: gasEst,
-                            estimatedCallRewardsWei: item.estimatedCallRewardsWei,
-                            overestimateGasByPercent: HARVEST_OVERESTIMATE_GAS_BY_PERCENT,
-                        })
-                    ),
-                res =>
-                    typeSafeSet(item.reportItem, {
-                        gasEstimation: toReportItem(res),
-                        summary: toReportItemSummary(res),
-                    })
-            );
-            return { ...item, gas };
-        })
+            return { shouldHarvest: true };
+        }
     );
-    logger.debug({ msg: 'Gas estimation results', data: { chain, successfulEstimations, failedEstimations } });
-    logger.info({
-        msg: 'Skipping gas estimation errors',
-        data: { chain, count: failedEstimations.length, failedEstimations },
+    const liveStrats = liveStratsDecisions.filter(item => item.isLiveDecision.shouldHarvest);
+
+    // ==============
+    // Gas Estimation
+    // ==============
+
+    const successfulEstimations = await reportOnHarvestStep(liveStrats, 'gasEstimation', 'sequential', async item => {
+        const gasEst = await estimateHarvestCallGasAmount({
+            chain,
+            rpcClient: publicClient,
+            strategyAddress: item.vault.strategy_address,
+        });
+        return createGasEstimationReport({
+            rawGasPrice,
+            rawGasAmountEstimation: gasEst,
+            estimatedCallRewardsWei: item.simulation.estimatedCallRewardsWei,
+            overestimateGasByPercent: HARVEST_OVERESTIMATE_GAS_BY_PERCENT,
+        });
     });
 
+    // ======================
+    // profitability decision
+    // ======================
+
     // check for last harvest and profitability
-    const stratsToBeHarvested = successfulEstimations.filter(item => {
-        const hoursSinceLastHarvest = (now.getTime() - item.lastHarvest.getTime()) / 1000 / 60 / 60;
-        const wouldBeProfitable = item.gas.estimatedGainWei > 0n;
-        const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
-        if (!shouldHarvest) {
-            logger.trace({
-                msg: 'Skipping strat due to last harvest being too recent and not profitable',
-                data: { chain, stratData: item, wouldBeProfitable, hoursSinceLastHarvest },
-            });
-            typeSafeSet(item.reportItem, {
-                harvestDecision: {
+    const harvestDecisions = await reportOnHarvestStep(
+        successfulEstimations,
+        'harvestDecision',
+        'parallel',
+        async item => {
+            const hoursSinceLastHarvest = (now.getTime() - item.simulation.lastHarvest.getTime()) / 1000 / 60 / 60;
+            const wouldBeProfitable = item.gasEstimation.estimatedGainWei > 0n;
+            const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
+            if (!shouldHarvest) {
+                return {
                     shouldHarvest: false,
                     hoursSinceLastHarvest,
                     wouldBeProfitable,
-                    callRewardsWei: item.gas.estimatedCallRewardsWei,
-                    estimatedGainWei: item.gas.estimatedGainWei,
+                    callRewardsWei: item.gasEstimation.estimatedCallRewardsWei,
+                    estimatedGainWei: item.gasEstimation.estimatedGainWei,
                     notHarvestingReason: 'not profitable and harvested too recently',
-                },
-                summary: { harvested: false, error: false, profitWei: 0n },
-            });
-        } else {
-            logger.trace({
-                msg: 'Strat should be harvested',
-                data: { chain, stratData: item, wouldBeProfitable, hoursSinceLastHarvest },
-            });
-            typeSafeSet(item.reportItem, {
-                harvestDecision: {
+                };
+            } else {
+                return {
                     shouldHarvest: true,
                     hoursSinceLastHarvest,
                     wouldBeProfitable,
-                    callRewardsWei: item.gas.estimatedCallRewardsWei,
-                    estimatedGainWei: item.gas.estimatedGainWei,
-                },
-            });
+                    callRewardsWei: item.gasEstimation.estimatedCallRewardsWei,
+                    estimatedGainWei: item.gasEstimation.estimatedGainWei,
+                };
+            }
         }
-        return shouldHarvest;
-    });
-    logger.info({ msg: 'Strategies to be harvested', data: { chain, count: stratsToBeHarvested.length } });
-    logger.debug({ msg: 'Strategies to be harvested', data: { chain, stratsToBeHarvested } });
+    );
+    const stratsToBeHarvested = harvestDecisions.filter(item => item.harvestDecision.shouldHarvest);
 
     // =======================
     // now do the havest dance
@@ -220,120 +161,59 @@ export async function harvestChain({ now, chain, vaults }: { now: Date; chain: C
     let remainingGas = collectorBalanceBefore.balanceWei;
 
     logger.debug({ msg: 'Harvesting strats', data: { chain, count: stratsToBeHarvested.length } });
-    const { fulfilled: successfulHarvests, rejected: failedHarvests } = splitPromiseResultsByStatus(
-        await runSequentially(stratsToBeHarvested, async item => {
-            logger.debug({ msg: 'Harvesting strat', data: { chain, strat: item } });
-
-            // check if we have enough gas to harvest
-            if (remainingGas < item.gas.transactionCostEstimationWei) {
-                logger.info({ msg: 'Not enough gas to harvest', data: { chain, remainingGas, strat: item } });
-                const error = new NotEnoughRemainingGasError({
-                    chain,
-                    remainingGas,
-                    transactionCostEstimationWei: item.gas.transactionCostEstimationWei,
-                    strategyAddress: item.vault.strategy_address,
-                });
-                typeSafeSet(item.reportItem, {
-                    harvestTransaction: toReportItem<any, any>({
-                        status: 'rejected',
-                        reason: error,
-                        timing: { startedAt: new Date(), endedAt: new Date(), durationMs: 0 },
-                    }),
-                });
-                throw error;
-            }
-
-            const { transactionHash } = await reportOnAsyncCall<{ transactionHash: Hex }>(
-                () =>
-                    walletClient
-                        .writeContract({
-                            abi: IStrategyABI,
-                            address: item.vault.strategy_address,
-                            functionName: 'harvest',
-                        })
-                        .then(transactionHash => ({ transactionHash })),
-                res =>
-                    typeSafeSet(item.reportItem, {
-                        harvestTransaction: toReportItem(res),
-                        summary: toReportItemSummary(res),
-                    })
-            );
-
-            // we have to wait for the transaction to be minted in order for the next call to have a proper nonce
-            const harvestReceipt = await reportOnAsyncCall(
-                () =>
-                    publicClient.waitForTransactionReceipt({ hash: transactionHash }).then(receipt => ({
-                        blockNumber: receipt.blockNumber,
-                        gasUsed: receipt.gasUsed,
-                        effectiveGasPrice: receipt.effectiveGasPrice,
-                    })),
-                res =>
-                    typeSafeSet(item.reportItem, {
-                        transactionReceipt: toReportItem(res),
-                        summary: toReportItemSummary(res),
-                    })
-            );
-            const res = { ...item, transactionHash, harvestReceipt };
-            logger.debug({ msg: 'Harvested strat', data: { chain, strat: item, res } });
-
-            // update the remaining gas
-            // TODO: if we have a failed transaction it will still be deducted from the remaining gas so this value will be too high
-            remainingGas -= harvestReceipt.gasUsed * harvestReceipt.effectiveGasPrice;
-
-            // now we officially harvested the strat
-            typeSafeSet(item.reportItem, {
-                summary: {
-                    harvested: true,
-                    error: false,
-                    profitWei:
-                        item.gas.estimatedCallRewardsWei - harvestReceipt.gasUsed * harvestReceipt.effectiveGasPrice,
-                },
+    await reportOnHarvestStep(stratsToBeHarvested, 'harvestTransaction', 'sequential', async item => {
+        // check if we have enough gas to harvest
+        const remainingGasWei = await publicClient.getBalance({ address: walletAccount.address });
+        if (remainingGasWei < item.gasEstimation.transactionCostEstimationWei) {
+            logger.info({ msg: 'Not enough gas to harvest', data: { chain, remainingGas, strat: item } });
+            const error = new NotEnoughRemainingGasError({
+                chain,
+                remainingGas,
+                transactionCostEstimationWei: item.gasEstimation.transactionCostEstimationWei,
+                strategyAddress: item.vault.strategy_address,
             });
-            return res;
-        })
-    );
-    logger.debug({ msg: 'Harvest results', data: { chain, failedHarvests, successfulHarvests } });
-    logger.info({ msg: 'Skipping strats due to error harvesting', data: { chain, count: failedHarvests.length } });
+            throw error;
+        }
 
-    // =================
-    // update the report
-    // =================
+        // harvest the strat
+        const transactionHash = await walletClient.writeContract({
+            abi: IStrategyABI,
+            address: item.vault.strategy_address,
+            functionName: 'harvest',
+        });
 
-    report.summary = {
-        errors: report.details.filter(item => item.summary.error).length,
-        totalProfitWei: report.details.reduce((acc, item) => acc + item.summary.profitWei, 0n),
-        harvested: report.details.filter(item => item.summary.harvested).length,
-        skipped: report.details.filter(item => !item.summary.harvested && !item.summary.error).length,
-        totalStrategies: report.details.length,
-    };
+        // wait for the transaction to be mined so we have a proper nonce for the next transaction
+        const receipt = await publicClient.waitForTransactionReceipt({
+            hash: transactionHash,
+            confirmations: rpcConfig.transaction.blockConfirmations,
+            timeout: rpcConfig.transaction.timeoutMs,
+        });
 
-    // getting the collector balance shouldn't prevent us from sending the report
+        // now we officially harvested the strat
+        return {
+            transactionHash,
+            blockNumber: receipt.blockNumber,
+            gasUsed: receipt.gasUsed,
+            effectiveGasPrice: receipt.effectiveGasPrice,
+            remainingGas,
+            // todo: this shouldn't be an estimate
+            profitWei: item.gasEstimation.estimatedGainWei - item.gasEstimation.transactionCostEstimationWei,
+        };
+    });
+
+    // ===============
+    // final reporting
+    // ===============
+
+    // fetching this additional info shouldn't crash the whole harvest
     try {
-        const collectorBalanceAfter = await reportOnAsyncCall(
-            () =>
-                publicClient.getBalance({ address: walletAccount.address }).then(balance => ({ balanceWei: balance })),
-            balanceRes => typeSafeSet(report, { collectorBalanceAfter: balanceRes })
-        );
+        const { collectorBalanceAfter } = await reportOnAsyncCall({ report }, 'collectorBalanceAfter', async () => ({
+            balanceWei: await publicClient.getBalance({ address: walletAccount.address }),
+        }));
         report.summary.totalProfitWei = collectorBalanceAfter.balanceWei - collectorBalanceBefore.balanceWei;
     } catch (e) {
         logger.error({ msg: 'Error getting collector balance after', data: { chain, e } });
     }
 
-    const harvestEndedAt = new Date();
-    report.timing = {
-        startedAt: harvestStartedAt,
-        endedAt: harvestEndedAt,
-        durationMs: harvestEndedAt.getTime() - harvestStartedAt.getTime(),
-    };
-
     return report;
-}
-
-class NotEnoughRemainingGasError extends Error {
-    constructor(
-        public data: { remainingGas: bigint; transactionCostEstimationWei: bigint; strategyAddress: Hex; chain: Chain }
-    ) {
-        super('We expect not to have enough gas to harvest');
-        this.name = 'NotEnoughRemainingGasError';
-    }
 }
