@@ -1,4 +1,5 @@
-import { GasEstimationResult, createGasEstimationReport } from './gas';
+import { createGasEstimationReport } from './gas';
+import type { GasEstimationResult } from './gas';
 
 describe('gas', () => {
     it('should estimate transaction gain', () => {

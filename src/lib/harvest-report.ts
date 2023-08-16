@@ -5,10 +5,16 @@ import { Chain } from './chain';
 import { Async, Timed, promiseTimings } from '../util/async';
 import { DeepPartial } from '../util/object';
 import { get, set } from 'lodash';
+import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
+import { rootLogger } from '../util/logger';
+import { Prettify } from 'viem/dist/types/types/utils';
+
+const logger = rootLogger.child({ module: 'harvest-report' });
 
 type HarvestReport = Timed<{
     chain: Chain;
     details: HarvestReportItem[];
+    fetchGasPrice: Async<{ gasPriceWei: bigint }> | null;
     collectorBalanceBefore: Async<{ balanceWei: bigint }> | null;
     collectorBalanceAfter: Async<{ balanceWei: bigint }> | null;
     summary: {
@@ -21,6 +27,7 @@ type HarvestReport = Timed<{
 }>;
 
 type HarvestReportSimulation = Async<{
+    estimatedCallRewardsWei: bigint;
     harvestWillSucceed: boolean;
     lastHarvest: Date;
     paused: boolean;
@@ -28,7 +35,7 @@ type HarvestReportSimulation = Async<{
 
 type HarvestReportGasEstimation = Async<GasEstimationReport>;
 
-type HarvestReportDecision =
+type HarvestReportIsLiveDecision =
     | {
           shouldHarvest: false;
           callRewardsWei: bigint;
@@ -38,6 +45,11 @@ type HarvestReportDecision =
           shouldHarvest: false;
           notHarvestingReason: 'strategy paused';
       }
+    | {
+          shouldHarvest: true;
+      };
+
+type HarvestReportShouldHarvestDecision =
     | {
           shouldHarvest: false;
           callRewardsWei: bigint;
@@ -56,10 +68,8 @@ type HarvestReportDecision =
 
 type HarvestReportHarvestTransaction = Async<{
     transactionHash: Hex;
-}>;
-
-type HarvestReportTransactionReceipt = Async<{
     blockNumber: bigint;
+    profitWei: bigint;
     /** Gas used by this transaction */
     gasUsed: bigint;
     /** Pre-London, it is equal to the transaction's gasPrice. Post-London, it is equal to the actual gas price paid for inclusion. */
@@ -72,10 +82,10 @@ type HarvestReportItem = {
 
     // harvest steps, null: not started
     simulation: HarvestReportSimulation | null;
+    isLiveDecision: HarvestReportIsLiveDecision | null;
     gasEstimation: HarvestReportGasEstimation | null;
-    harvestDecision: HarvestReportDecision | null;
+    harvestDecision: HarvestReportShouldHarvestDecision | null;
     harvestTransaction: HarvestReportHarvestTransaction | null;
-    transactionReceipt: HarvestReportTransactionReceipt | null;
 
     // summary
     summary: {
@@ -90,6 +100,7 @@ export function createDefaultReport({ chain }: { chain: Chain }): HarvestReport 
         timing: null,
         chain,
         details: [],
+        fetchGasPrice: null,
         collectorBalanceBefore: null,
         collectorBalanceAfter: null,
         summary: {
@@ -108,9 +119,9 @@ export function createDefaultReportItem({ vault }: { vault: BeefyVault }): Harve
 
         simulation: null,
         gasEstimation: null,
+        isLiveDecision: null,
         harvestDecision: null,
         harvestTransaction: null,
-        transactionReceipt: null,
 
         summary: {
             harvested: false,
@@ -120,54 +131,136 @@ export function createDefaultReportItem({ vault }: { vault: BeefyVault }): Harve
     };
 }
 
+type ExpectedResponseType<TReport, TReportKey extends string> = TReportKey extends keyof TReport
+    ? TReport[TReportKey] extends Async<infer T> | null
+        ? T
+        : TReport[TReportKey] extends infer T | null
+        ? T
+        : TReport[TReportKey]
+    : never;
+
 /**
  * Method to update the report with the result of an async call even if it fails
  * But still throw the error if it fails so our usage of this method is not too confusing
+ *
+ * Takes care of:
+ * - logging and tracing
+ * - error handling
+ * - updating the report
+ * - timing the calls
+ * - properly typing the result
  */
-export async function reportOnAsyncCall<T>(make: () => Promise<T>, set: (res: Async<T>) => void): Promise<T> {
-    const asyncRes = await promiseTimings(make);
-    set(asyncRes);
-    if (asyncRes.status === 'rejected') {
-        throw asyncRes.reason;
+export async function reportOnAsyncCall<
+    TItem extends { report: HarvestReport },
+    TReportKey extends keyof HarvestReport,
+>(
+    item: TItem,
+    reportKey: TReportKey,
+    make: (item: TItem) => Promise<ExpectedResponseType<HarvestReport, TReportKey>>
+): Promise<TItem & { [k in TReportKey]: ExpectedResponseType<HarvestReport, TReportKey> }> {
+    logger.info({ msg: 'Running async call', data: { reportKey } });
+    const result = await promiseTimings(() => make(item));
+    if (result.status === 'rejected') {
+        logger.error({ msg: 'Report step failed', data: { reportKey, item, error: result.reason } });
+        // @ts-ignore
+        item.report[reportKey] = formatAsyncResult(result);
+        throw result.reason;
+    } else {
+        logger.trace({ msg: 'Report step succeeded', data: { reportKey, item, result } });
+        // @ts-ignore
+        item.report[reportKey] = formatAsyncResult(result);
+        return { ...item, [reportKey]: result.value } as TItem & {
+            [k in TReportKey]: ExpectedResponseType<HarvestReport, TReportKey>;
+        };
     }
-    return asyncRes.value;
 }
 
-export function toReportItem<T, O extends DeepPartial<T>>(
-    asyncResult: Async<T>,
-    extract: (o: T) => O = v => v as any as O
-): Async<O> {
+/**
+ * Run a report step on a list of items
+ * Takes care of:
+ * - logging and tracing
+ * - error handling
+ * - updating the report
+ * - returning the successful results only
+ * - timing the calls
+ * - running in parallel or sequentially
+ * - adding the result to the items themselves
+ * - properly typing the result
+ */
+export async function reportOnHarvestStep<
+    TItem extends { report: HarvestReportItem },
+    TReportKey extends keyof HarvestReportItem,
+>(
+    items: TItem[],
+    reportKey: TReportKey,
+    mode: 'parallel' | 'sequential',
+    make: (item: TItem) => Promise<ExpectedResponseType<HarvestReportItem, TReportKey>>
+): Promise<Prettify<TItem & { [k in TReportKey]: ExpectedResponseType<HarvestReportItem, TReportKey> }>[]> {
+    logger.info({ msg: 'Running report step', data: { reportKey, itemsCount: items.length } });
+
+    const processItem = async (item: TItem) => {
+        const result = await promiseTimings(() => make(item));
+        if (result.status === 'rejected') {
+            logger.error({ msg: 'Report step failed', data: { reportKey, item, error: result.reason } });
+            // @ts-ignore
+            item.report[reportKey] = formatAsyncResult(result);
+            throw result.reason;
+        } else {
+            logger.trace({ msg: 'Report step succeeded', data: { reportKey, item, result } });
+            // @ts-ignore
+            item.report[reportKey] = formatAsyncResult(result);
+            return { ...item, [reportKey]: result.value } as TItem & {
+                [k in TReportKey]: ExpectedResponseType<HarvestReportItem, TReportKey>;
+            };
+        }
+    };
+
+    const results = await (mode === 'parallel'
+        ? Promise.allSettled(items.map(processItem))
+        : runSequentially(items, processItem));
+    const { fulfilled, rejected } = splitPromiseResultsByStatus(results);
+
+    logger.info({
+        msg: 'Report step results',
+        data: { reportKey, itemsCount: items.length, fulfilledCount: fulfilled.length, rejectedCount: rejected.length },
+    });
+    logger.debug({ msg: 'Skipped items', data: { reportKey, items: rejected.length } });
+    logger.trace({ msg: 'Report step finished', data: { reportKey, itemsCount: items.length, fulfilled, rejected } });
+
+    return fulfilled;
+}
+
+/**
+ * Format an async result to make it more readable, especially for errors
+ */
+function formatAsyncResult<T>(asyncResult: Async<T>): Async<T> {
     if (asyncResult.status === 'rejected') {
         // prettify the error
         const error = asyncResult.reason;
         if (error instanceof TimeoutError) {
-            return { status: 'rejected', reason: 'Request timed out', timing: asyncResult.timing } as Async<O>;
+            return { status: 'rejected', reason: 'Request timed out', timing: asyncResult.timing } as Async<T>;
         } else if (error instanceof BaseError) {
             // remove abi from the error object
             if (get(error, 'abi')) {
                 set(error, 'abi', undefined);
             }
-            return { status: 'rejected', reason: error, timing: asyncResult.timing } as Async<O>;
+            return { status: 'rejected', reason: error, timing: asyncResult.timing } as Async<T>;
         } else if (error instanceof Error) {
             error;
             return {
                 status: 'rejected',
                 reason: { name: error.name, message: error.message, cause: error.cause, stack: error.stack },
                 timing: asyncResult.timing,
-            } as Async<O>;
+            } as Async<T>;
         }
         return asyncResult;
     }
-    return { status: 'fulfilled', value: extract(asyncResult.value), timing: asyncResult.timing } as Async<O>;
+    return { status: 'fulfilled', value: asyncResult.value, timing: asyncResult.timing } as Async<T>;
 }
 
-export function toReportItemSummary<T>(asyncResult: Async<T>): Partial<HarvestReportItem['summary']> {
-    if (asyncResult.status === 'rejected') {
-        return { harvested: false, error: true };
-    }
-    return {};
-}
-
+/**
+ * JSON.stringify cannot handle BigInt and set a good format for dates, so we need to serialize it ourselves
+ */
 export function serializeReport(o: DeepPartial<HarvestReport>, pretty: boolean = false): string {
     return JSON.stringify(
         o,

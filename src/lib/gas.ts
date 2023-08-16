@@ -71,7 +71,7 @@ export async function estimateHarvestCallGasAmount({
     strategyAddress: Hex;
 }): Promise<GasEstimationResult> {
     const redisClient = await getRedisClient();
-    const walletAccount = await getWalletAccount({ chain });
+    const walletAccount = getWalletAccount({ chain });
 
     const cacheKey = `gas-estimation:harvest:${strategyAddress.toLocaleLowerCase()}`;
     const cached = await redisClient.get(cacheKey);
