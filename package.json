@@ -21,6 +21,7 @@
         "redis:clear": "docker exec -it redis-dev redis-cli flushall"
     },
     "dependencies": {
+        "@openzeppelin/contracts": "^4.9.3",
         "axios": "^1.4.0",
         "blockchain-addressbook": "^0.43.66",
         "dotenv": "^16.3.1",
