@@ -43,8 +43,8 @@ const defaultAccount: RpcConfig['account'] = {
     privateKey: RPC_FORCE_PRIVATE_KEY || '0x0000000000000000000000000000000000000000000000000000000000000000',
 };
 const defaultTransactionConfig = {
-    blockConfirmations: 10,
-    timeoutMs: 60_000,
+    blockConfirmations: 3,
+    timeoutMs: 5 * 60 * 1000,
 };
 const defaultTimeoutMs = 60_000; // high timeout because we batch calls
 const defaultConfig = {
