@@ -83,14 +83,6 @@ export async function harvestChain({
         'isLiveDecision',
         'parallel',
         async item => {
-            if (item.simulation.estimatedCallRewardsWei <= 0n) {
-                return {
-                    shouldHarvest: false,
-                    callRewardsWei: item.simulation.estimatedCallRewardsWei,
-                    notHarvestingReason: 'call rewards too low',
-                };
-            }
-
             if (item.simulation.paused) {
                 return {
                     shouldHarvest: false,
@@ -130,9 +122,12 @@ export async function harvestChain({
         'harvestDecision',
         'parallel',
         async item => {
+            // - If lastHarvest was > 24 hrs ago -> harvest.
+            // - If callReward > gasLimit * gasPrice -> harvest.
             const hoursSinceLastHarvest = (now.getTime() - item.simulation.lastHarvest.getTime()) / 1000 / 60 / 60;
             const wouldBeProfitable = item.gasEstimation.estimatedGainWei > 0n;
             const shouldHarvest = wouldBeProfitable || hoursSinceLastHarvest > HARVEST_AT_LEAST_EVERY_HOURS;
+
             if (!shouldHarvest) {
                 return {
                     shouldHarvest: false,

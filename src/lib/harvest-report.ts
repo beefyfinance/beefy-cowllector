@@ -38,11 +38,6 @@ type HarvestReportGasEstimation = Async<GasEstimationReport>;
 type HarvestReportIsLiveDecision =
     | {
           shouldHarvest: false;
-          callRewardsWei: bigint;
-          notHarvestingReason: 'call rewards too low';
-      }
-    | {
-          shouldHarvest: false;
           notHarvestingReason: 'strategy paused';
       }
     | {
