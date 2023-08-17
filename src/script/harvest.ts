@@ -9,6 +9,7 @@ import { Hex } from 'viem';
 import { createDefaultReport, serializeReport } from '../lib/harvest-report';
 import { splitPromiseResultsByStatus } from '../util/promise';
 import { promiseTimings } from '../util/async';
+import { notifyReport } from '../lib/notify';
 
 const logger = rootLogger.child({ module: 'harvest-main' });
 
@@ -85,6 +86,8 @@ async function main() {
                     skipped: report.details.filter(item => !item.summary.harvested && !item.summary.error).length,
                     totalStrategies: report.details.length,
                 };
+
+                await notifyReport(report);
 
                 return report;
             })

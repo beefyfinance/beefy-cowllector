@@ -3,7 +3,6 @@ import { BeefyVault } from './vault';
 import { BaseError, Hex, TimeoutError } from 'viem';
 import { Chain } from './chain';
 import { Async, AsyncSuccessType, TimingData, promiseTimings } from '../util/async';
-import { DeepPartial } from '../util/object';
 import { get, set } from 'lodash';
 import { runSequentially, splitPromiseResultsByStatus } from '../util/promise';
 import { rootLogger } from '../util/logger';
@@ -263,7 +262,7 @@ function formatAsyncResult<T>(asyncResult: Async<T>): Async<T> {
 /**
  * JSON.stringify cannot handle BigInt and set a good format for dates, so we need to serialize it ourselves
  */
-export function serializeReport(o: DeepPartial<HarvestReport>, pretty: boolean = false): string {
+export function serializeReport(o: object, pretty: boolean = false): string {
     return JSON.stringify(
         o,
         (_, value) => {

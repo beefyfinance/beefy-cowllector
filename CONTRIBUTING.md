@@ -39,3 +39,14 @@ cat test.log | yarn pino-pretty
 ```bash
 LOG_LEVEL=trace yarn ts-node ./src/script/harvest.ts -c base | yarn pino-pretty > debug-pretty.log
 ```
+
+
+### Send reports to discord
+
+Create a server webhook
+
+- In your own server config
+- In Integrations > Webhooks:
+    - click "new webhook"
+    - setup name, picture and channel
+    - copy the webhook url -> DISCORD_WEBHOOK_URL env var
