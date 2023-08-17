@@ -41,6 +41,10 @@ type HarvestReportIsLiveDecision =
           notHarvestingReason: 'strategy paused';
       }
     | {
+          shouldHarvest: false;
+          notHarvestingReason: 'vault is eol';
+      }
+    | {
           shouldHarvest: true;
       };
 

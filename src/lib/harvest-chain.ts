@@ -83,6 +83,13 @@ export async function harvestChain({
         'isLiveDecision',
         'parallel',
         async item => {
+            if (item.vault.eol) {
+                return {
+                    shouldHarvest: false,
+                    notHarvestingReason: 'vault is eol',
+                };
+            }
+
             if (item.simulation.paused) {
                 return {
                     shouldHarvest: false,
