@@ -27,6 +27,11 @@ export async function notifyReport(report: HarvestReport) {
         return;
     }
 
+    if (report.summary.harvested === 0 && report.summary.errors === 0) {
+        logger.info({ msg: 'All strats were skipped, not reporting', data: report.summary });
+        return;
+    }
+
     logger.info({ msg: 'notifying harvest for report', data: { chain: report.chain } });
     const params: DiscordWebhookParams = {
         content: CONTENT_TEMPLATE.replace('{r.chain}', report.chain)
