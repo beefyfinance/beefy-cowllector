@@ -176,6 +176,8 @@ export async function harvestChain({
         }
 
         // harvest the strat
+        // no need to set gas fees as viem has automatic EIP-1559 detection and gas settings
+        // https://github.com/wagmi-dev/viem/blob/viem%401.6.0/src/utils/transaction/prepareRequest.ts#L89
         const transactionHash = await walletClient.writeContract({
             abi: IStrategyABI,
             address: item.vault.strategy_address,
