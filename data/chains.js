@@ -511,6 +511,7 @@ const chains = {
       priceCap: Number(process.env.ZKEVM_GAS_PRICE_CAP),
     },
   },
+  /*
   8453: {
     id: 'base',
     chainId: 8453,
@@ -538,6 +539,7 @@ const chains = {
       priceCap: Number(process.env.BASE_GAS_PRICE_CAP),
     },
   },
+  */
 };
 
 module.exports = chains;
