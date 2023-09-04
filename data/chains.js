@@ -23,7 +23,7 @@ const {
   base,
 } = addressBook;
 
-const chains = {
+const allChains = {
   56: {
     id: 'bsc',
     chainId: 56,
@@ -511,7 +511,6 @@ const chains = {
       priceCap: Number(process.env.ZKEVM_GAS_PRICE_CAP),
     },
   },
-  /*
   8453: {
     id: 'base',
     chainId: 8453,
@@ -539,7 +538,13 @@ const chains = {
       priceCap: Number(process.env.BASE_GAS_PRICE_CAP),
     },
   },
-  */
 };
+
+const disabledChainIds = process.env.DISABLE_CHAIN_IDS ? process.env.DISABLE_CHAIN_IDS.split(',') : ["base"];
+const filteredChains = Object.values(allChains).filter((c) => !disabledChainIds.includes(c.id));
+const chains = {};
+for (const chain of filteredChains) {
+  chains[chain.chainId] = chain;
+}
 
 module.exports = chains;
