@@ -1,4 +1,17 @@
+<div align="center" style="display: block; padding: 1.5rem;  background:#f9e1e5; border-radius: 0.5rem; color: #af233a; box-shadow: 0 2px 15px -3px rgba(0,0,0,.07),0 10px 20px -2px rgba(0,0,0,.04);">
+  <h1>Archived repository</h1>
+  <p>
+    This repository has been <strong>archived and is no longer maintained</strong>.
+  </p>
+  <p>
+  Please use <a href="https://github.com/beefyfinance/beefy-cowllector-v2">https://github.com/beefyfinance/beefy-cowllector-v2</a> instead
+  </p>
+</div>
+
+<br/>
+
 <div align="center">
+
   <br>
   <img alt="Open Sauced" src="https://beefy.com/img/COW.svg" width="100px">
   <br>
